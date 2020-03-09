@@ -1,0 +1,62 @@
+/* ==========================================================================
+   # Name: bootstrap
+   # Date: 01 Nov 2019
+   # Author: sam
+   ========================================================================== */
+
+/**
+ * Add a small description here about the code in this file.
+ * Use *[1]* and so on if need telling with small pieces of css do.
+ * See elements.headings.scss as an Example
+ *
+ */
+
+// BOOTSTRAP AND CUSTOM
+@import "bootstrap/functions";
+
+// Add the fonts
+@import "custom/fonts";
+
+// This will overwrite the custom variables given in bootstrap/variables
+@import "custom/variables";
+
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+@import "bootstrap/root";
+@import "bootstrap/reboot";
+@import "bootstrap/type";
+@import "bootstrap/images";
+@import "bootstrap/code";
+@import "bootstrap/grid";
+@import "bootstrap/tables";
+@import "bootstrap/forms";
+@import "bootstrap/buttons";
+@import "bootstrap/transitions";
+@import "bootstrap/dropdown";
+@import "bootstrap/button-group";
+@import "bootstrap/input-group";
+@import "bootstrap/custom-forms";
+@import "bootstrap/custom-lists";
+@import "bootstrap/nav";
+@import "bootstrap/navbar";
+@import "bootstrap/card";
+@import "bootstrap/breadcrumb";
+@import "bootstrap/pagination";
+@import "bootstrap/badge";
+@import "bootstrap/jumbotron";
+@import "bootstrap/alert";
+@import "bootstrap/progress";
+@import "bootstrap/media";
+@import "bootstrap/list-group";
+@import "bootstrap/close";
+@import "bootstrap/modal";
+@import "bootstrap/tooltip";
+@import "bootstrap/popover";
+@import "bootstrap/carousel";
+@import "bootstrap/utilities";
+@import "bootstrap/print";
+@import "bootstrap/images-ratio";
+@import "custom/button";
+
+// Add custom made scss files
+

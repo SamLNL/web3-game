@@ -1,0 +1,120 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{# @var entry \craft\elements\Entry #}
+{# ======================================================
+  @filename: _macros
+  @date:     29 Nov 2018
+  ====================================================== #}
+{#
+  twig file with all site macros
+#}
+
+{#
+  Renders an image using the <picture> element. Use this if there is need to use
+  different aspect ratios for different sizes.
+
+  If Imager is setup correctly this macro will also generate webp images for every variant.
+
+  Usage:
+   {{ macro.renderPicture(
+        image,
+        [
+            {
+              'sizes': [
+                { width: 1600, ratio: 16/6 },
+                { width: 1200, ratio: 16/6 },
+                { width: 1000, ratio: 16/6 },
+                { width: 800, ratio: 16/6 },
+                { width: 480, ratio: 16/6 },
+              ],
+              'media': 'min-width: 768px'
+            },
+            {
+              'sizes': [
+                { width: 768, ratio: 16/10 },
+                  { width: 480, ratio: 16/10 },
+                ],
+                'media': 'min-width: 575px'
+            },
+            {
+              'sizes': [
+                { width: 768, ratio: 32/37, mode: 'crop' },
+                { width: 600, ratio: 32/37, mode: 'crop' },
+                { width: 480, ratio: 32/37, mode: 'crop' },
+                { width: 320, ratio: 32/37, mode: 'crop' }
+              ]
+            }
+          ], true, entry.title, 'image classes go here')
+      }}
+
+   Params:
+   image: The craft image element
+   transforms: An array with transforms for the image. A transform objext can have the followinf elements: 'sizes': an array with imager transforms
+   lazy: true or false for lazyloading, default false
+   & `media` a media query for when these sizes should be used
+   imgTitle: A optional title, if none is given the title of the image itself is used
+   imgclass: A string with classes for the image
+#}
+
+{% macro renderPicture(image, transforms, lazy, imgTitle, imgClass) %}
+  {% set defaultImage = image %}
+  {% set lazy = lazy ?? false %}
+  <picture>
+    {% for transform in transforms %}
+      {% set srcset = craft.imager.transformImage(image, transform.sizes, {position: image.getFocalpoint()}) %}
+
+      {% if craft.imager.serverSupportsWebp() %}
+        {% set srcsetWebP = craft.imager.transformImage(image, transform.sizes, {format: 'webp', position: image.getFocalpoint()}) %}
+      {% endif %}
+
+      {% if loop.first %}
+        {% set defaultImage = srcset[0] %}
+      {% endif %}
+
+      {% set media = "" %}
+      {% if transform.media is defined %}
+        {% set media = '('~ transform.media ~')' %}
+      {% endif %}
+
+      {% if craft.imager.serverSupportsWebp() %}
+        {% if lazy %}
+          <source data-srcset="{{ craft.imager.srcset(srcsetWebP) }}" media="{{ media }}" type="image/webp">
+        {% else %}
+          <source srcset="{{ craft.imager.srcset(srcsetWebP) }}" media="{{ media }}" type="image/webp">
+        {% endif %}
+      {% endif %}
+
+      {% if lazy %}
+        <source data-srcset="{{ craft.imager.srcset(srcset) }}" media="{{ media }}">
+      {% else %}
+        <source srcset="{{ craft.imager.srcset(srcset) }}" media="{{ media }}">
+      {% endif %}
+
+
+    {% endfor %}
+
+    {% if image.title is defined and imgTitle == null %}
+      {% set imgTitle = image.title %}
+    {% endif %}
+
+    {% if lazy %}
+      <img data-src="{{ defaultImage }}" alt="{{ imgTitle }}" class="lazyload {{ imgClass }}"/>
+    {% else %}
+      <img src="{{ defaultImage }}" alt="{{ imgTitle }}" class="{{ imgClass }}"/>
+    {% endif %}
+
+  </picture>
+
+{% endmacro %}
+
+{#
+  Renders a sprite
+
+  Params:
+  sprite: The icon to use from the sprite
+  classes: Css classes for the icon
+#}
+{% macro renderSvgSprite(icon, classes) %}
+  <svg class="{{ classes }}">
+    <use xlink:href="/assets/images/svg/sprite/sprite.svg#{{ icon }}"></use>
+  </svg>
+{% endmacro %}

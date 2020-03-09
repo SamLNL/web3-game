@@ -1,0 +1,88 @@
+dateModified: 1583766526
+email:
+  fromEmail: interactie@emotion.nl
+  fromName: Biljoenbad
+  transportType: craft\mail\transportadapters\Sendmail
+fieldGroups:
+  01e09fa1-4843-4208-830b-968a6ff4671c:
+    name: Common
+plugins:
+  async-queue:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  cookies:
+    enabled: true
+    schemaVersion: 1.0.0
+  image-resizer:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
+  imager:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
+  minify:
+    enabled: true
+    schemaVersion: 1.0.0
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
+  seomatic:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.0.8
+  twigpack:
+    enabled: true
+    schemaVersion: 1.0.0
+  typogrify:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+sections:
+  d80cf907-7094-43f6-a734-ac89667798ce:
+    enableVersioning: true
+    entryTypes:
+      23853000-5efc-4e23-a11b-46757083fe83:
+        handle: home
+        hasTitleField: false
+        name: Home
+        sortOrder: 1
+        titleFormat: '{section.name|raw}'
+        titleLabel: null
+    handle: home
+    name: Home
+    propagationMethod: all
+    siteSettings:
+      521def3a-78c9-4e7b-8cb5-40b18c2c0705:
+        enabledByDefault: true
+        hasUrls: true
+        template: index
+        uriFormat: __home__
+    type: single
+siteGroups:
+  c12cd4f8-4de7-419d-96f4-edce56b70f16:
+    name: Biljoenbad
+sites:
+  521def3a-78c9-4e7b-8cb5-40b18c2c0705:
+    baseUrl: 'http://biljoenbad.nl'
+    handle: default
+    hasUrls: true
+    language: nl
+    name: Biljoenbad
+    primary: true
+    siteGroup: c12cd4f8-4de7-419d-96f4-edce56b70f16
+    sortOrder: 1
+system:
+  edition: solo
+  live: true
+  name: Biljoenbad
+  schemaVersion: 3.4.10
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: ''
+  photoVolumeUid: null
+  requireEmailVerification: true

@@ -1,0 +1,142 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{# @var entry \craft\elements\Entry #}
+{# ======================================================
+  @filename: _layout
+  @date:     288 Oct 2019
+  ====================================================== #}
+{#
+  Base layout file containing the head and the body of your site
+#}
+
+{# {% import "_partials/_macros.twig" as macro %} #}
+{# uncomment line above if you need to use macros in your template #}
+
+{%- minify -%}
+{% set baseUrl = alias('@baseUrl') ~ '/' %}
+{% set inlineJs = alias('@inlineJs') ~ '/' %}
+{% set inlineSvg = alias('@inlineSvg') ~ '/' %}
+{% set inlineCss = alias('@inlineCss') ~ '/' %}
+
+{% header "Link: <#{baseUrl}>; rel=dns-prefetch;,<#{baseUrl}>; rel=preconnect; crossorigin;" %}
+<!DOCTYPE html>
+{%- endminify -%}
+<html lang="{{ craft.app.language |slice(0,2) }}" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+{%- minify -%}
+<head>
+  <link rel="dns-prefetch" href="{{ baseUrl }}">
+  <link rel="preconnect" href="{{ baseUrl }}" crossorigin>
+
+  {# -- Any <link> tags that should be included in the header #}
+  {% block _head_links %}
+  {% endblock %}
+
+  {% import "_partials/_macros.twig" as macro %}
+  {% include "_partials/_global_header.twig" %}
+
+  {# -- ServiceWorker, tabhandler -- #}
+  <script>
+    {% if craft.app.config.general.isSystemLive %}
+    {{ source("#{inlineJs}/register-service-worker.min.js") }}
+    {% endif %}
+    {{ source("#{inlineJs}/tab-handler.min.js") }}
+  </script>
+  {%- endminify -%}
+
+  {# CSS & Bundled scripts #}
+  {% if craft.app.config.general.isSystemLive and not craft.app.config.general.devMode %}
+    {% set cacheVal = getCookie('critical-css') %}
+    {% set cssAsset = craft.twigpack.getModuleUri("styles.min.css") %}
+    {% set critical %}
+      {{ craft.twigpack.includeCriticalCssTags() }}
+    {% endset %}
+    {% if critical|length and (not cacheVal or cacheVal != cssAsset) %}
+      {{ setCookie('critical-css', cssAsset, now | date_modify("+7 days").timestamp ) }}
+      {{ setCookie('critical-css', cssBootstrapAsset, now | date_modify("+7 days").timestamp ) }}
+      {{ critical }}
+      {{ craft.twigpack.includeCssModule("styles.min.css", true) }}
+      <script>
+        {{ source("#{inlineJs}cssrelpreload.min.js") }}
+      </script>
+    {% else %}
+      {{ craft.twigpack.includeCssModule("styles.min.css") }}
+    {% endif %}
+  {% else %}
+    {{ craft.twigpack.includeCssModule("styles.min.css") }}
+  {% endif %}
+
+  {{ craft.twigpack.includeSafariNomoduleFix() }}
+  {{ craft.twigpack.includeJsModule("main.js", true) }}
+
+  {%- minify -%}
+  {% if not craft.app.config.general.devMode %}
+    {# -- Google Analytics -- #}
+    <script>
+      (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+          (i[r].q = i[r].q || []).push(arguments);
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(window, document, 'script', '/assets/js/analytics.js', 'ga');
+      ga('create', 'XXXXX', 'auto');
+      ga('require', 'displayfeatures');
+      ga('send', 'pageview');
+    </script>
+  {% endif %}
+
+  {# -- PictureFill polyfill -- #}
+  <script>
+    var testImg = document.createElement('img');
+    if (!('srcset' in testImg) || !('sizes' in testImg)) {
+      document.createElement('picture');
+      var s = document.createElement('script');
+      s.setAttribute('src', '/assets/js/picturefill.min.js');
+      if ('async' in s) {
+        s.setAttribute('async', true);
+      }
+      document.head.appendChild(s);
+    }
+  </script>
+
+  {# -- SVG use support for IE #}
+  <script async defer src="/assets/js/svgxuse.min.js"></script>
+  {# -- Lazy sizes #}
+  <script async defer src="/assets/js/lazysizes.min.js"></script>
+
+  {# -- </head> JS -- #}
+  {% block _head_js %}
+  {% endblock %}
+
+</head>
+
+{# -- HTML Body -- #}
+<body>
+<header>
+  {% block header %}
+    <div class="container">
+      {% include '_partials/_global/menu-1' %}
+    </div>
+  {% endblock %}
+</header>
+<main>
+  {# Content goes here #}
+  {% block content %}{% endblock %}
+</main>
+<footer>
+  {% block footer %}
+    <div class="container">
+      {% include '_partials/_global/footers-1' %}
+    </div>
+  {% endblock %}
+</footer>
+
+{# -- Inline JS -- #}
+{% block _inline_js %}
+{% endblock %}
+
+{%- endminify -%}
+</body>
+</html>

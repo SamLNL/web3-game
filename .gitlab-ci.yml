@@ -1,0 +1,440 @@
+variables:
+  REVIEW_DIR: "biljoenbad-$CI_COMMIT_REF_NAME"
+  STAGING_DIR: "biljoenbad"
+  SITE_NAME: "biljoenbad"
+  RELEASES_DIR: "releases"
+  SSH_OPTS: "-i /home/gitlab-runner/.ssh/runner_deploy"
+
+before_script:
+  - export GIT_USER=$(git log -1 --pretty=format:%aN)
+  - export REVIEW_DIR="biljoenbad-${CI_COMMIT_REF_SLUG}"
+
+stages:
+  - install
+  - build
+  - review
+  - deploy_staging
+  - critical
+  - test
+  - protect
+  - notify
+  - deploy_production
+  - critical_production
+  - test_production
+
+  # Cache node_modules for subsequent builds
+cache:
+  key: ${CI_COMMIT_REF_NAME}
+  paths:
+    - node_modules/
+    - vendor/
+
+install:
+  stage: install
+  script:
+    - yarn
+    - composer install --ignore-platform-reqs --no-scripts --no-suggest -o -n
+  cache:
+    key: ${CI_COMMIT_REF_NAME}
+    paths:
+      - node_modules/
+      - vendor/
+
+build project:
+  stage: build
+  cache:
+    key: ${CI_COMMIT_REF_NAME}
+    paths:
+      - node_modules/
+    policy: pull
+  script:
+    - gulp build
+    # Store result of this step as artifact
+  artifacts:
+    expire_in: 14d
+    paths:
+      - public/
+      - templates/sw.js
+      - dist/
+
+start review:
+  stage: review
+  variables:
+    GIT_SUBMODULE_STRATEGY: recursive
+    REVIEW_DIR: ${SITE_NAME}-${CI_COMMIT_REF_SLUG}
+  script:
+    - if [ -z ${HOST_STAGING+x} ]; then echo -e "\n\nHOST_STAGING VARIABLE NOT SET! Check Settings->variables\n\n"; exit 0; fi
+    - if [ -z ${STAGING_DB_PASSWORD+x} ]; then echo -e "\n\STAGING_DB_PASSWORD VARIABLE NOT SET! Check Settings->variables\n\n"; exit -1; fi
+    - if [ -z ${STAGING_DB_USER+x} ]; then echo -e "\n\STAGING_DB_USER VARIABLE NOT SET! Check Settings->variables\n\n"; exit -1; fi
+    - if [ -z ${STAGING_DB_NAME+x} ]; then echo -e "\n\STAGING_DB_NAME NOT SET! Check Settings->variables\n\n"; exit -1; fi
+    - if [ -z ${STAGING_DB_SERVER+x} ]; then echo -e "\n\STAGING_DB_SERVER NOT SET! Check Settings->variables\n\n"; exit -1; fi
+    - if [ -z ${SECURITY_KEY+x} ]; then echo -e "\n\SECURITY_KEY NOT SET! Check Settings->variables\n\n"; exit -1; fi
+    # Create .env file
+    - mv .env.example .env
+    - sed -i "s/ENVIRONMENT=\"dev\"/ENVIRONMENT=\"staging\"/" .env
+    - sed -i "s/DB_USER=\"root\"/DB_USER=\"$STAGING_DB_USER\"/" .env
+    - sed -i "s/DB_PASSWORD=\"\"/DB_PASSWORD=\"$STAGING_DB_PASSWORD\"/" .env
+    - sed -i "s/DB_DATABASE=\"\"/DB_DATABASE=\"$STAGING_DB_NAME\"/" .env
+    - sed -i "s/DB_PORT=\"\"/DB_PORT=\"3306\"/" .env
+    - sed -i "s/DB_SERVER=\"localhost\"/DB_SERVER=\"$STAGING_DB_SERVER\"/" .env
+    - sed -i "s/SECURITY_KEY=\"\"/SECURITY_KEY=\"$SECURITY_KEY\"/" .env
+    # Set correct SITE_URL & BASE_URL
+    - echo $f$f >> .env
+    - echo "# The site url to use" >> .env
+    - echo $f$f >> .env
+    - echo "SITE_URL=\"https://$SITE_NAME-$CI_COMMIT_REF_SLUG.gaafproject.nl/\"" >> .env
+    # Create directory for current release
+    - ssh $SSH_OPTS $HOST_STAGING "mkdir -p $REVIEW_DIR/public"
+    # rsync public to releases
+    - rsync -azhcvv -e "ssh $SSH_OPTS" --delete --exclude 'media' --exclude '.gitkeep' --exclude 'assets/images/' --exclude 'assets/css/' --exclude 'assets/js/' public/ $HOST_STAGING:./$REVIEW_DIR/public/
+    - rsync -azhcvv -e "ssh $SSH_OPTS" --delete --ignore-missing-args --exclude '.gitkeep' --exclude 'manifests/' --exclude 'fonts/' dist/assets dist/public/manifest.json dist/public/sw.js  $HOST_STAGING:./$REVIEW_DIR/public/
+    # check media
+    - ssh $SSH_OPTS -A $HOST_STAGING "mkdir -p medias/$SITE_NAME/media/"
+    - if [ -z ${HOST_PRODUCTION+x} ]; then echo -e "\n\HOST_PRODUCTION VARIABLE NOT SET!\n\n"; else ssh $SSH_OPTS -A $HOST_STAGING "cd medias/$SITE_NAME/media/ && rsync -azhcvv -e "ssh" $HOST_PRODUCTION:media/ ."; fi
+    - ssh $SSH_OPTS $HOST_STAGING "if [ ! -d $REVIEW_DIR/public/media ] ; then cd medias/$SITE_NAME/ && ln -sf \$(pwd)/media ../../$REVIEW_DIR/public/; fi"
+    # rsync rest to releases
+    - rsync -azhcvv -e "ssh $SSH_OPTS" --delete vendor config storage translations craft composer.json composer.lock .env modules $HOST_STAGING:./$REVIEW_DIR/
+    - rsync -azhcvv -e "ssh $SSH_OPTS" --delete dist/templates $HOST_STAGING:./$REVIEW_DIR/
+    # Run pending migrations & flush cache
+    - ssh $SSH_OPTS $HOST_STAGING "cd $REVIEW_DIR/ && ./craft migrate/all && ./craft project-config/sync && ./craft cache/flush-all"
+  when: on_success
+  cache:
+    key: ${CI_COMMIT_REF_NAME}
+    paths:
+      - node_modules/
+      - vendor/
+    policy: pull
+  environment:
+    name: review/$CI_COMMIT_REF_NAME
+    url: https://biljoenbad-$CI_COMMIT_REF_SLUG.gaafproject.nl
+    on_stop: stop_review
+  only:
+    - branches
+  except:
+    - master
+
+stop_review:
+  stage: review
+  cache: {}
+  artifacts: {}
+  variables:
+    REVIEW_DIR: "${SITE_NAME}-${CI_COMMIT_REF_SLUG}"
+    GIT_STRATEGY: none
+  script:
+    - ssh $SSH_OPTS $HOST_STAGING "rm -rf  ./$REVIEW_DIR/"
+  when: manual
+  environment:
+    name: review/$CI_COMMIT_REF_NAME
+    action: stop
+  only:
+    - branches
+  except:
+    - master
+
+deploy to staging:
+  stage: deploy_staging
+  cache:
+    key: ${CI_COMMIT_REF_NAME}
+    paths:
+      - vendor/
+      - node_modules/
+    policy: pull
+  variables:
+    GIT_SUBMODULE_STRATEGY: recursive
+  script:
+    - if [ -z ${HOST_STAGING+x} ]; then echo -e "\n\nHOST_STAGING VARIABLE NOT SET! Check Settings->variables\n\n"; exit 0; fi
+    - if [ -z ${STAGING_DB_PASSWORD+x} ]; then echo -e "\n\STAGING_DB_PASSWORD VARIABLE NOT SET! Check Settings->variables\n\n"; exit -1; fi
+    - if [ -z ${STAGING_DB_USER+x} ]; then echo -e "\n\STAGING_DB_USER VARIABLE NOT SET! Check Settings->variables\n\n"; exit -1; fi
+    - if [ -z ${STAGING_DB_NAME+x} ]; then echo -e "\n\STAGING_DB_NAME NOT SET! Check Settings->variables\n\n"; exit -1; fi
+    - if [ -z ${STAGING_DB_SERVER+x} ]; then echo -e "\n\STAGING_DB_SERVER NOT SET! Check Settings->variables\n\n"; exit -1; fi
+    - if [ -z ${SECURITY_KEY+x} ]; then echo -e "\n\SECURITY_KEY NOT SET! Check Settings->variables\n\n"; exit -1; fi
+    # Create .env file
+    - mv .env.example .env
+    - sed -i "s/ENVIRONMENT=\"dev\"/ENVIRONMENT=\"staging\"/" .env
+    - sed -i "s/DB_USER=\"root\"/DB_USER=\"$STAGING_DB_USER\"/" .env
+    - sed -i "s/DB_PASSWORD=\"\"/DB_PASSWORD=\"$STAGING_DB_PASSWORD\"/" .env
+    - sed -i "s/DB_DATABASE=\"\"/DB_DATABASE=\"$STAGING_DB_NAME\"/" .env
+    - sed -i "s/DB_PORT=\"\"/DB_PORT=\"3306\"/" .env
+    - sed -i "s/DB_SERVER=\"localhost\"/DB_SERVER=\"$STAGING_DB_SERVER\"/" .env
+    - sed -i "s/SECURITY_KEY=\"\"/SECURITY_KEY=\"$SECURITY_KEY\"/" .env
+    # Set correct SITE_URL & BASE_URL
+    - echo $f$f >> .env
+    - echo "# The site url to use" >> .env
+    - echo $f$f >> .env
+    - echo "SITE_URL=\"https://$SITE_NAME.gaafproject.nl/\"" >> .env
+    # Create directory for current release
+    - ssh $SSH_OPTS $HOST_STAGING "mkdir -p $STAGING_DIR/public"
+    # rsync public to releases
+    - rsync -azhcvv -e "ssh $SSH_OPTS" --delete --exclude 'media' --exclude '.gitkeep' --exclude 'assets/images/' --exclude 'assets/css/' --exclude 'assets/js/' public/ $HOST_STAGING:./$STAGING_DIR/public/
+    - rsync -azhcvv -e "ssh $SSH_OPTS" --delete --ignore-missing-args --exclude '.gitkeep' --exclude 'manifests/' --exclude 'fonts/' dist/assets dist/public/manifest.json dist/public/sw.js  $HOST_STAGING:./$STAGING_DIR/public/
+    # check media
+    - ssh $SSH_OPTS -A $HOST_STAGING "mkdir -p medias/$SITE_NAME/media/"
+    - if [ -z ${HOST_PRODUCTION+x} ]; then echo -e "\n\HOST_PRODUCTION VARIABLE NOT SET!\n\n"; else ssh $SSH_OPTS -A $HOST_STAGING "cd medias/$SITE_NAME/media/ && rsync -azhcvv -e "ssh" $HOST_PRODUCTION:media/ ."; fi
+    - ssh $SSH_OPTS $HOST_STAGING "if [ ! -d $STAGING_DIR/public/media ] ; then cd medias/$SITE_NAME/ && ln -sf \$(pwd)/media ../../$STAGING_DIR/public/; fi"
+    # rsync rest to releases
+    - rsync -azhcvv -e "ssh $SSH_OPTS" --delete vendor config storage translations craft composer.json composer.lock .env modules $HOST_STAGING:./$STAGING_DIR/
+    - rsync -azhcvv -e "ssh $SSH_OPTS" --delete dist/templates $HOST_STAGING:./$STAGING_DIR/
+    # Run pending migrations & flush cache
+    - ssh $SSH_OPTS $HOST_STAGING "cd $STAGING_DIR/ && ./craft migrate/all && ./craft project-config/sync && ./craft cache/flush-all"
+
+  when: on_success
+  environment:
+    name: staging
+    url: https://biljoenbad.gaafproject.nl
+  only:
+    - master
+
+generate critical css review:
+  stage: critical
+  variables:
+    REVIEW_DIR: ${SITE_NAME}-${CI_COMMIT_REF_SLUG}
+  cache:
+    key: ${CI_COMMIT_REF_NAME}
+    paths:
+      - node_modules/
+      - vendor/
+    policy: pull
+  script:
+    - node tools/scripts/critical.js --url https://$SITE_NAME-$CI_COMMIT_REF_SLUG.gaafproject.nl
+    - rsync -azhcvv -e "ssh $SSH_OPTS" --exclude '.gitkeep' public/assets/criticalcss $HOST_STAGING:./$REVIEW_DIR/public/assets
+  when: on_success
+  allow_failure: true
+  only:
+    - branches
+  except:
+    - master
+  artifacts:
+    expire_in: 14d
+    paths:
+      - public/
+      - templates/sw.js
+      - dist/
+
+generate critical css staging:
+  stage: critical
+  cache:
+    key: ${CI_COMMIT_REF_NAME}
+    paths:
+      - node_modules/
+      - vendor/
+    policy: pull
+  script:
+    - node tools/scripts/critical.js --url https://$SITE_NAME.gaafproject.nl
+    - rsync -azhcvv -e "ssh $SSH_OPTS" --exclude '.gitkeep' public/assets/criticalcss $HOST_STAGING:./$STAGING_DIR/public/assets/
+  when: on_success
+  allow_failure: true
+  only:
+    - master
+  artifacts:
+    expire_in: 14d
+    paths:
+      - public/
+      - templates/sw.js
+      - dist/
+
+generate critical css production:
+  stage: critical_production
+  cache:
+    key: ${CI_COMMIT_REF_NAME}
+    paths:
+      - node_modules/
+      - vendor/
+    policy: pull
+  script:
+    - node tools/scripts/critical.js --url $PRODUCTION_URL
+    - rsync -azhcvv -e "ssh $SSH_OPTS" --exclude '.gitkeep' public/assets/criticalcss $HOST_PRODUCTION:public/assets/
+  when: on_success
+  allow_failure: true
+  only:
+    - master
+  artifacts:
+    expire_in: 14d
+    paths:
+      - public/
+      - templates/sw.js
+      - dist/
+
+run lighthouse audit staging:
+  stage: test
+  cache:
+    key: ${CI_COMMIT_REF_NAME}
+    paths:
+      - node_modules/
+    policy: pull
+  script:
+    - curl https://$SITE_NAME.gaafproject.nl > /dev/null
+    - node tools/scripts/performance.js --url https://$SITE_NAME.gaafproject.nl
+  only:
+    - master
+  when: on_success
+  allow_failure: true
+
+run lighthouse audit production:
+  stage: test_production
+  cache:
+    key: ${CI_COMMIT_REF_NAME}
+    paths:
+      - node_modules/
+    policy: pull
+  script:
+    - curl $PRODUCTION_URL > /dev/null
+    - node tools/scripts/performance.js --url $PRODUCTION_URL
+  only:
+    - master
+  when: on_success
+  allow_failure: true
+
+run a11y audit production:
+  stage: test_production
+  cache:
+    key: ${CI_COMMIT_REF_NAME}
+    paths:
+      - node_modules/
+    policy: pull
+  script:
+    - node tools/scripts/a11y.js --url $PRODUCTION_URL
+  only:
+    - master
+  when: on_success
+  allow_failure: true
+
+deploy to production:
+  environment: production
+  stage: deploy_production
+  cache:
+    key: ${CI_COMMIT_REF_NAME}
+    paths:
+      - node_modules/
+    policy: pull
+  variables:
+    GIT_STRATEGY: none
+  script:
+    - if [ -z ${PRODUCTION_URL+x} ]; then echo -e "\n\nPRODUCTION_URL VARIABLE NOT SET! Check Settings->variables\n\n"; exit 0; fi
+    - if [ -z ${HOST_PRODUCTION+x} ]; then echo -e "\n\nHOST_PRODUCTION VARIABLE NOT SET! Check Settings->variables\n\n"; exit 0; fi
+    - if [ -z ${PRODUCTION_DB_PASSWORD+x} ]; then echo -e "\n\PRODUCTION_DB_PASSWORD VARIABLE NOT SET! Check Settings->variables\n\n"; exit -1; fi
+    - if [ -z ${PRODUCTION_DB_USER+x} ]; then echo -e "\n\PRODUCTION_DB_USER VARIABLE NOT SET! Check Settings->variables\n\n"; exit -1; fi
+    - if [ -z ${PRODUCTION_DB_NAME+x} ]; then echo -e "\n\PRODUCTION_DB_NAME NOT SET! Check Settings->variables\n\n"; exit -1; fi
+    - if [ -z ${PRODUCTION_DB_SERVER+x} ]; then echo -e "\n\PRODUCTION_DB_SERVER NOT SET! Check Settings->variables\n\n"; exit -1; fi
+    - if [ -z ${SECURITY_KEY+x} ]; then echo -e "\n\SECURITY_KEY NOT SET! Check Settings->variables\n\n"; exit -1; fi
+    # Create .env file
+    - mv .env.example .env
+    - sed -i "s/ENVIRONMENT=\"dev\"/ENVIRONMENT=\"live\"/" .env
+    - sed -i "s/DB_USER=\"root\"/DB_USER=\"$PRODUCTION_DB_USER\"/" .env
+    - sed -i "s/DB_PASSWORD=\"\"/DB_PASSWORD=\"$PRODUCTION_DB_PASSWORD\"/" .env
+    - sed -i "s/DB_DATABASE=\"\"/DB_DATABASE=\"$PRODUCTION_DB_NAME\"/" .env
+    - sed -i "s/DB_PORT=\"\"/DB_PORT=\"3306\"/" .env
+    - sed -i "s/DB_SERVER=\"localhost\"/DB_SERVER=\"$PRODUCTION_DB_SERVER\"/" .env
+    - sed -i "s/SECURITY_KEY=\"\"/SECURITY_KEY=\"$SECURITY_KEY\"/" .env
+    # Set correct SITE_URL & BASE_URL
+    - echo $f$f >> .env
+    - echo "# The site url to use" >> .env
+    - echo $f$f >> .env
+    - echo "SITE_URL=\"$PRODUCTION_URL\"" >> .env
+    # Create directory for current releases
+    - ssh $SSH_OPTS $HOST_PRODUCTION "mkdir -p public_tmp && mkdir -p templates_tmp && mkdir -p translations_tmp"
+    # make sure we have a storage dir
+    - ssh $SSH_OPTS $HOST_PRODUCTION "mkdir -p storage"
+    # copy contents live environment to rsync destination dirs
+    - ssh $SSH_OPTS $HOST_PRODUCTION "if [ -d public ] ; then cp -a public/. public_tmp/ ; fi"
+    - ssh $SSH_OPTS $HOST_PRODUCTION "if [ -d templates ] ; then cp -a templates/. templates_tmp/ ; fi"
+    - ssh $SSH_OPTS $HOST_PRODUCTION "if [ -d translations ] ; then cp -a translations/. translations_tmp/ ; fi"
+    # rsync public, templates & .env to releases
+    - rsync -azhcvv -e "ssh $SSH_OPTS" --exclude 'media' --exclude '.gitkeep' --exclude 'assets/images/' --exclude 'assets/css/' --exclude 'assets/js/' public/ $HOST_PRODUCTION:public_tmp/
+    - rsync -azhcvv -e "ssh $SSH_OPTS" --exclude '.gitkeep' dist/assets dist/public/manifest.json dist/public/sw.js  $HOST_PRODUCTION:public_tmp/
+    - rsync -azhcvv -e "ssh $SSH_OPTS" --delete --exclude '.gitkeep' dist/templates/ $HOST_PRODUCTION:templates_tmp/
+    - rsync -azhcvv -e "ssh $SSH_OPTS" --delete --exclude '.gitkeep' translations/ $HOST_PRODUCTION:translations_tmp/
+    - rsync -azhcvv -e "ssh $SSH_OPTS" --delete .env $HOST_PRODUCTION:./
+    # check media
+    - ssh $SSH_OPTS $HOST_PRODUCTION "mkdir -p media && ln -sf \$(pwd)/media public_tmp/"
+    # replace current live environment
+    - ssh $SSH_OPTS $HOST_PRODUCTION "if [ -d public ] ; then mv public public_old && mv public_tmp public ; else mv public_tmp public ; fi"
+    - ssh $SSH_OPTS $HOST_PRODUCTION "if [ -d templates ] ; then mv templates templates_old && mv templates_tmp templates ; else mv templates_tmp templates ; fi"
+    - ssh $SSH_OPTS $HOST_PRODUCTION "if [ -d translations ] ; then mv translations translations_old && mv translations_tmp translations ; else mv translations_tmp translations ; fi"
+    # clean up old environment
+    - ssh $SSH_OPTS $HOST_PRODUCTION "if [ -d public_old ] ; then rm -rf public_old ; fi"
+    - ssh $SSH_OPTS $HOST_PRODUCTION "if [ -d templates_old ] ; then rm -rf templates_old ; fi"
+    - ssh $SSH_OPTS $HOST_PRODUCTION "if [ -d translations_old ] ; then rm -rf translations_old ; fi"
+  when: manual
+  allow_failure: false
+  only:
+    - master
+
+deploy craft to production:
+  environment: production
+  stage: deploy_production
+  cache:
+    key: ${CI_COMMIT_REF_NAME}
+    paths:
+      - node_modules/
+    policy: pull
+  variables:
+    GIT_STRATEGY: none
+  script:
+    - if [ -z ${HOST_PRODUCTION+x} ]; then echo -e "\n\nHOST_PRODUCTION VARIABLE NOT SET! Check Settings->variables\n\n"; exit 0; fi
+    # Create directory for current releases
+    - ssh $SSH_OPTS $HOST_PRODUCTION "if [ -d deploy_tmp ] ; then rm -rf deploy_tmp ; fi"
+    - ssh $SSH_OPTS $HOST_PRODUCTION "mkdir -p deploy_tmp"
+    # make sure we have a storage dir
+    - ssh $SSH_OPTS $HOST_PRODUCTION "mkdir -p storage"
+    # copy contents live environment to rsync destination dirs
+    - ssh $SSH_OPTS $HOST_PRODUCTION "if [ -d vendor ] ; then cp -a vendor/ deploy_tmp/ ; fi"
+    - ssh $SSH_OPTS $HOST_PRODUCTION "if [ -d config ] ; then cp -a config/ deploy_tmp/ ; fi"
+    - ssh $SSH_OPTS $HOST_PRODUCTION "if [ -d modules ] ; then cp -a modules/ deploy_tmp/ ; fi"
+    # rsync
+    - rsync -azhcvv -e "ssh $SSH_OPTS" --delete vendor config modules $HOST_PRODUCTION:./deploy_tmp/
+    # replace current live environment
+    - ssh $SSH_OPTS $HOST_PRODUCTION "if [ -d vendor ] ; then mv vendor vendor_old && mv deploy_tmp/vendor vendor ; else mkdir -p deploy_tmp/vendor && mv deploy_tmp/vendor vendor ; fi"
+    - ssh $SSH_OPTS $HOST_PRODUCTION "if [ -d config ] ; then mv config config_old && mv deploy_tmp/config config ; else mkdir -p deploy_tmp/config && mv deploy_tmp/config config ; fi"
+    - ssh $SSH_OPTS $HOST_PRODUCTION "if [ -d modules ] ; then mv modules modules_old && mv deploy_tmp/modules modules ; else mkdir -p deploy_tmp/modules && mv deploy_tmp/modules modules ; fi"
+    # clean up old environment
+    - ssh $SSH_OPTS $HOST_PRODUCTION "if [ -d deploy_tmp ] ; then rm -rf deploy_tmp ; fi"
+    - ssh $SSH_OPTS $HOST_PRODUCTION "if [ -d vendor_old ] ; then rm -rf vendor_old ; fi"
+    - ssh $SSH_OPTS $HOST_PRODUCTION "if [ -d config_old ] ; then rm -rf config_old ; fi"
+    - ssh $SSH_OPTS $HOST_PRODUCTION "if [ -d modules_old ] ; then rm -rf modules_old ; fi"
+    # rsync composer files & craft script to root
+    - rsync -azhcvv -e "ssh $SSH_OPTS" --delete craft composer.json composer.lock $HOST_PRODUCTION:./
+    # Run pending migrations & flush cache
+    - ssh $SSH_OPTS $HOST_PRODUCTION "./craft migrate/all && ./craft project-config/sync && ./craft cache/flush-all"
+  when: manual
+  only:
+    - master
+
+notify failure:
+  stage: notify
+  cache: {}
+  artifacts: {}
+  dependencies: []
+  variables:
+    GIT_STRATEGY: none
+  script:
+    - node tools/scripts/slackBuildStatus.js --url $CI_REPOSITORY_URL --type error
+  when: on_failure
+
+notify review:
+  stage: notify
+  cache: {}
+  artifacts: {}
+  dependencies: []
+  variables:
+    REVIEW_DIR: "biljoenbad-${CI_COMMIT_REF_SLUG}"
+    GIT_STRATEGY: none
+  script:
+    - node tools/scripts/slackBuildStatus.js --url https://$REVIEW_DIR.gaafproject.nl --type review
+  when: on_success
+  only:
+    - branches
+  except:
+    - master
+
+notify staging:
+  stage: notify
+  cache: {}
+  artifacts: {}
+  dependencies: []
+  variables:
+    GIT_STRATEGY: none
+  script:
+    - node tools/scripts/slackBuildStatus.js --url https://biljoenbad.gaafproject.nl --type staging
+  when: on_success
+  only:
+    - master

@@ -1,0 +1,8 @@
+.btn {
+  background-color: $yellow;
+  color: $teal-500;
+
+  &:hover {
+    background-color: $yellow-300;
+  }
+}
