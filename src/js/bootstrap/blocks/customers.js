@@ -1,6 +1,6 @@
 import Swiper from 'swiper';
 
-new Swiper('#slider-customers', {
+new Swiper('.swiper .swiper-container', {
     speed: 400,
     navigation: {
         nextEl: '#slider-customers-next',

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="21px" height="29px" viewBox="0 0 21 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>icon-rolstoel</title>
+    <desc>Created with Sketch.</desc>
+    <g id="UI-design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Homepage---Desktop" transform="translate(-579.000000, -2936.000000)" stroke="#033B47">
+            <g id="icon-rolstoel" transform="translate(580.000000, 2937.000000)">
+                <path d="M2.99970295,15.0255 C0.686671735,16.486424 -0.447242436,19.214194 0.163534439,21.8482521 C0.774311313,24.4823102 2.99894069,26.4583974 5.72782135,26.7908806 C8.45670201,27.1233637 11.1052624,25.7410192 12.3524529,23.3333333" id="Path"></path>
+                <path d="M19.0024529,26.8333333 L17.9800154,20.8086667 C17.8848182,20.2461004 17.3896118,19.8335959 16.8091404,19.8333333 L10.3158904,19.8333333 C8.49898276,19.8353063 6.97166744,18.4936351 6.77120295,16.7195 L5.93995295,9.33333333 L16.6274529,9.33333333" id="Path"></path>
+                <ellipse id="Oval" cx="6.53370295" cy="2.91666667" rx="2.96875" ry="2.91666667"></ellipse>
+            </g>
+        </g>
+    </g>
+</svg>

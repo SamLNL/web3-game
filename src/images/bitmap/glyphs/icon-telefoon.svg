@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="27px" height="27px" viewBox="0 0 27 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>icon-telefoon</title>
+    <desc>Created with Sketch.</desc>
+    <g id="UI-design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Homepage---Desktop" transform="translate(-488.000000, -4467.000000)" stroke="#FFFFFF">
+            <g id="Group-15" transform="translate(260.000000, 4312.000000)">
+                <g id="icon-telefoon" transform="translate(229.000000, 156.000000)">
+                    <path d="M16.6906396,15.4407211 L14.6531396,17.9853639 C11.4979874,16.1311573 8.86827391,13.5023657 7.01296104,10.3478639 L9.55983604,8.31036391 C10.173628,7.81888734 10.3789934,6.97542194 10.059836,6.25679248 L7.73840747,1.02911391 C7.3946162,0.254583961 6.54070441,-0.157258455 5.72055033,0.0558996264 L1.30090747,1.2023282 C0.44754868,1.42539141 -0.104187424,2.25136547 0.0165324704,3.12509605 C1.60995477,14.471967 10.5281437,23.3901559 21.8750146,24.9835782 C22.7487452,25.1042981 23.5747193,24.552562 23.7977825,23.6992032 L24.944211,19.2795603 C25.156843,18.4595796 24.7453864,17.6060761 23.9714432,17.2617032 L18.744211,14.9402746 C18.0255274,14.6207226 17.1817308,14.8263522 16.6906396,15.4407211 Z" id="Path"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

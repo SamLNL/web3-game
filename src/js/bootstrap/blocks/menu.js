@@ -1,13 +1,11 @@
 (function() {
-console.log('hallo');
     const toggle = document.querySelector('.navbar-toggler');
-    const close = document.querySelector('.navbar-side');
+    const close = document.querySelector('.navbar-side-close');
 
     if(toggle) {
         toggle.addEventListener('click', function(e){
-          console.log('1');
             e.preventDefault();
-            let sidebar = document.querySelector('.navbar-collapse');
+            let sidebar = document.querySelector('.navbar-side');
             if(sidebar){
                 sidebar.classList.toggle('show');
             }
@@ -17,7 +15,7 @@ console.log('hallo');
     if(close) {
         close.addEventListener('click', function(e){
             e.preventDefault();
-            let sidebar = document.querySelector('.navbar-collapse');
+            let sidebar = document.querySelector('.navbar-side');
             if(sidebar){
                 sidebar.classList.remove('show');
             }

@@ -99,8 +99,12 @@
   },
   "globs": {
     "components": [],
-    "fonts": ["./src/fonts/*.{eot,ttf,woff,woff2,svg}"],
-    "favicon": ["./src/images/favicon/*"],
+    "fonts": [
+      "./src/fonts/*.{eot,ttf,woff,woff2,svg}"
+    ],
+    "favicon": [
+      "./src/images/favicon/*"
+    ],
     "purgecss": [
       "./templates/**/*.{html,twig}",
       "./public/assets/js/**/*.js",
@@ -147,14 +151,19 @@
       "./node_modules/svgxuse/svgxuse.js",
       "./node_modules/lazysizes/lazysizes.min.js"
     ],
-    "lintJs": ["./src/js/**/*.js", "!./src/js/{vendor, dev}/*"],
+    "lintJs": [
+      "./src/js/**/*.js",
+      "!./src/js/{vendor, dev}/*"
+    ],
     "inlineJs": [
       "./node_modules/fg-loadcss/dist/cssrelpreload.js",
       "./node_modules/tiny-cookie/dist/tiny-cookie.min.js",
       "./src/js/_inline/**/*.js"
     ],
     "revision": {
-      "files": ["./public/assets/images/**/*.*"],
+      "files": [
+        "./public/assets/images/**/*.*"
+      ],
       "replace": [
         "./templates/**/*.{html,twig,css,js,svg}",
         "./public/assets/**/*.{css,js}",
@@ -167,6 +176,7 @@
     "lazysizes": "^2.0.6",
     "loadjs": "^3.3.1",
     "picturefill": "^3.0.2",
+    "static-website": "git+ssh://git@git.emotion.nl:emotion/bootstrap-components.git",
     "svgxuse": "^1.2.6",
     "tiny-cookie": "^2.1.2",
     "whatwg-fetch": "^3.0.0"
@@ -271,7 +281,11 @@
   "bugs": {
     "email": "interactie@emotion.nl"
   },
-  "browserslist": ["> 1%", "ie >= 11", "last 3 versions"],
+  "browserslist": [
+    "> 1%",
+    "ie >= 11",
+    "last 3 versions"
+  ],
   "eslintConfig": {
     "parser": "babel-eslint",
     "env": {
@@ -296,7 +310,9 @@
     "syntax": "scss"
   },
   "babel": {
-    "plugins": ["@babel/plugin-syntax-dynamic-import"],
+    "plugins": [
+      "@babel/plugin-syntax-dynamic-import"
+    ],
     "presets": [
       [
         "@babel/preset-env",

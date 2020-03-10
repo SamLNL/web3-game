@@ -1,0 +1,31 @@
+.header {
+  .wave {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    right: 0;
+    z-index: 20;
+
+    svg {
+      display: block;
+    }
+  }
+
+  .payoff {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 30;
+
+    svg {
+      display: block;
+    }
+  }
+}
+
+

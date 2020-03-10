@@ -48,6 +48,11 @@ $grays: map-merge((
 $theme-colors: ();
 $theme-colors: map-merge((
   "teal":     $teal,
+  "teal-100": $teal-100,
+  "teal-200": $teal-200,
+  "teal-300": $teal-300,
+  "teal-400": $teal-400,
+  "teal-500": $teal-500,
   "white":    $white,
   "black":    $black,
   "red":      $red,
@@ -737,7 +742,7 @@ $custom-list-bullet-bg:             url("data:image/svg+xml;base64,PHN2ZyB3aWR0a
 $card-spacer-y:                     .75rem;
 $card-spacer-x:                     1.5rem;
 $card-border-width:                 $card-border-width;
-$card-border-radius:                $border-radius;
+$card-border-radius:                $border-radius-sm;
 $card-border-color:                 rgba($black, .125);
 $card-inner-border-radius:          calc(#{$card-border-radius} - #{$card-border-width});
 $card-cap-bg:                       rgba($black, .03);

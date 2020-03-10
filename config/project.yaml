@@ -1,4 +1,4 @@
-dateModified: 1583766526
+dateModified: 1583848179
 email:
   fromEmail: interactie@emotion.nl
   fromName: Biljoenbad
@@ -6,6 +6,79 @@ email:
 fieldGroups:
   01e09fa1-4843-4208-830b-968a6ff4671c:
     name: Common
+  3e44ea8d-bbc2-4a77-99e7-bd0158f2794c:
+    name: Header
+  be40097e-126e-4a57-854d-f07aa9ea16d7:
+    name: SEO
+fields:
+  3a0f8407-4263-4449-9996-e53070168b78:
+    contentColumnType: string
+    fieldGroup: 3e44ea8d-bbc2-4a77-99e7-bd0158f2794c
+    handle: headerImage
+    instructions: ''
+    name: 'Header afbeelding'
+    searchable: true
+    settings:
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: '1'
+      selectionLabel: ''
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: true
+      validateRelatedElements: ''
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  5e04aee6-fa48-49e3-b86f-882b8ea36b9c:
+    contentColumnType: text
+    fieldGroup: 01e09fa1-4843-4208-830b-968a6ff4671c
+    handle: commonTitle
+    instructions: ''
+    name: Titel
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  8d69ebf3-f317-4814-846f-b7f4fe0494b1:
+    contentColumnType: text
+    fieldGroup: be40097e-126e-4a57-854d-f07aa9ea16d7
+    handle: seo
+    instructions: ''
+    name: SEO
+    searchable: true
+    settings:
+      elementDisplayPreviewType: google
+      facebookTabEnabled: ''
+      generalEnabledFields:
+        - seoPreview
+        - seoTitle
+        - seoDescription
+        - seoImage
+      generalTabEnabled: '1'
+      sitemapTabEnabled: ''
+      twitterTabEnabled: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: nystudio107\seomatic\fields\SeoSettings
 plugins:
   async-queue:
     edition: standard
@@ -45,12 +118,32 @@ sections:
     enableVersioning: true
     entryTypes:
       23853000-5efc-4e23-a11b-46757083fe83:
+        fieldLayouts:
+          921260b8-4dfe-4b92-955d-48ea5ee26bae:
+            tabs:
+              -
+                fields:
+                  3a0f8407-4263-4449-9996-e53070168b78:
+                    required: true
+                    sortOrder: 1
+                name: Header
+                sortOrder: 1
+              -
+                fields:
+                  5e04aee6-fa48-49e3-b86f-882b8ea36b9c:
+                    required: true
+                    sortOrder: 1
+                  8d69ebf3-f317-4814-846f-b7f4fe0494b1:
+                    required: false
+                    sortOrder: 2
+                name: SEO
+                sortOrder: 2
         handle: home
         hasTitleField: false
         name: Home
         sortOrder: 1
         titleFormat: '{section.name|raw}'
-        titleLabel: null
+        titleLabel: ''
     handle: home
     name: Home
     propagationMethod: all
@@ -86,3 +179,13 @@ users:
   photoSubpath: ''
   photoVolumeUid: null
   requireEmailVerification: true
+volumes:
+  6576af27-2464-42a5-93ba-12b804de04f1:
+    handle: header
+    hasUrls: true
+    name: Header
+    settings:
+      path: '@mediaPath/media/hero'
+    sortOrder: 1
+    type: craft\volumes\Local
+    url: '@mediaUrl/media/hero'

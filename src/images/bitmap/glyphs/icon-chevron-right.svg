@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="10px" height="18px" viewBox="0 0 10 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>icon-chevron-right</title>
+    <desc>Created with Sketch.</desc>
+    <g id="UI-design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Homepage---Desktop" transform="translate(-1317.000000, -2270.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <g id="Group-8" transform="translate(1299.000000, 2259.000000)">
+                <g id="icon-chevron-right" transform="translate(23.250000, 20.250000) scale(-1, 1) rotate(90.000000) translate(-23.250000, -20.250000) translate(14.250000, 14.750000)">
+                    <path d="M16.5,0.375 C16.2015797,0.374864793 15.9153326,0.493302572 15.70425,0.70425 L9,7.40925 L2.29575,0.70425 C1.85626941,0.264769435 1.14373061,0.264769447 0.704250027,0.704250027 C0.264769447,1.14373061 0.264769435,1.85626941 0.70425,2.29575 L8.20425,9.79575 C8.41524911,10.0068844 8.70150653,10.1255098 9,10.1255098 C9.29849347,10.1255098 9.58475089,10.0068844 9.79575,9.79575 L17.29575,2.29575 C17.617713,1.97399341 17.714063,1.48993059 17.5398458,1.06941207 C17.3656287,0.648893541 16.9551784,0.374793677 16.5,0.375 Z" id="Path"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

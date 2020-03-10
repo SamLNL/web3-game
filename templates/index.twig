@@ -19,10 +19,23 @@
 {% endblock %}
 
 {% block content %}
+  {% include '_partials/_global/header' with {
+    image: entry.headerImage.first(),
+    wave: true,
+    payoff: true
+  } %}
+  <div class="bg-teal-100">
+    {% include '_partials/_index/customers-8' %}
+  </div>
   <div class="container">
-    {% include '_partials/_index/pricing-4' %}
     {% include '_partials/_index/customers-4' %}
-    {% include '_partials/_index/cover-1' %}
+  </div>
+  <div class="bg-teal-100">
+    <div class="container">
+      {% include '_partials/_index/cover-1' %}
+    </div>
+  </div>
+  <div class="container">
     {% include '_partials/_index/text-13' %}
   </div>
 {% endblock %}
