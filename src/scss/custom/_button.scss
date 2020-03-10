@@ -4,5 +4,32 @@
 
   &:hover {
     background-color: $yellow-300;
+    color: $teal-500;
+  }
+
+  &-yellow {
+    background-color: $yellow;
+    color: $teal-500;
+
+    &:hover {
+      color: $teal-500;
+      background-color: $yellow-300;
+    }
+  }
+
+  &-teal {
+    background-color: $teal;
+    color: $white;
+
+    &:hover {
+      color: $white;
+      background-color: $teal-300;
+    }
+  }
+
+  &:disabled {
+    pointer-events: none;
+    background-color: $gray-300;
+    color: $gray-700;
   }
 }
