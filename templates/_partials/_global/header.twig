@@ -10,7 +10,7 @@
         {
           'media': 'min-width: 1920px',
           'sizes': [
-          {width: 3000, ratio: 3000/700},
+          {width: 3000, ratio: 3000/584},
         ]
         },
         {
@@ -28,36 +28,36 @@
         {
           'media': 'min-width: 960px',
           'sizes': [
-          {width: 1200, ratio: 1200/500},
+          {width: 1200, ratio: 1200/584},
         ]
         },
         {
           'media': 'min-width: 600px',
           'sizes': [
-          {width: 960, ratio: 600/300}
+          {width: 960, ratio: 960/584}
         ],
         },
         {
-          'media': 'min-width: 320px',
+          'media': 'min-width: 400px',
           'sizes': [
-          {width: 600, ratio: 600/300}
+          {width: 600, ratio: 600/600}
         ],
         },
         {
           'sizes': [
-          {width: 320, ratio: 320/320},
-        ]
+          {width: 400, ratio: 400/550}
+        ],
         }
       ] %}
     {{ macro.renderPicture(image, transforms, true, image.title) }}
     <div class="payoff">
       {% if payoff %}
-        {% include '_inline/_svg/pay-off.svg' %}
+        {% include '_partials/_index/svg/payoff' %}
       {% endif %}
     </div>
     {% if wave %}
       <div class="wave">
-        {% include '_inline/_svg/upper-wave.svg' %}
+        {% include '_partials/_index/svg/upper-wave' %}
       </div>
     {% endif %}
   </div>

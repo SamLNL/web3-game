@@ -9,12 +9,14 @@
 
     svg {
       display: block;
+      height: 287px;
+      width: 100%;
     }
   }
 
   .payoff {
     position: absolute;
-    bottom: 0;
+    bottom: 20px;
     left: 0;
     right: 0;
     width: 100%;
@@ -24,6 +26,8 @@
 
     svg {
       display: block;
+      width: 280px;
+      height: 200px;
     }
   }
 }

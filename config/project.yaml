@@ -1,4 +1,4 @@
-dateModified: 1583848179
+dateModified: 1583943697
 email:
   fromEmail: interactie@emotion.nl
   fromName: Biljoenbad
@@ -79,6 +79,18 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: nystudio107\seomatic\fields\SeoSettings
+navigation:
+  navs:
+    085d0005-6965-482f-aae6-7c63000e6845:
+      handle: mainNav
+      instructions: ''
+      maxNodes: ''
+      name: Hoofdmenu
+      propagateNodes: false
+      sortOrder: 1
+      structure:
+        maxLevels: '1'
+        uid: 69cffc8b-74cc-40dc-a2f1-08e024bac4f0
 plugins:
   async-queue:
     edition: standard
@@ -98,6 +110,10 @@ plugins:
   minify:
     enabled: true
     schemaVersion: 1.0.0
+  navigation:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.17
   redactor:
     edition: standard
     enabled: true

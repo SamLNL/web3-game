@@ -1,0 +1,34 @@
+@for $i from 0 through 20 {
+
+  .w-#{$i} {
+    width: ($spacer * $i);
+  }
+
+  .md\:w-#{$i} {
+    @media (min-width: 48em) {
+      width: ($spacer * $i);
+    }
+  }
+
+  .lg\:w-#{$i} {
+    @media (min-width: 60em) {
+      width: ($spacer * $i);
+    }
+  }
+
+  .h-#{$i} {
+    height: ($spacer * $i);
+  }
+
+  .md\:h-#{$i} {
+    @media (min-width: 48em) {
+      height: ($spacer * $i);
+    }
+  }
+
+  .lg\:h-#{$i} {
+    @media (min-width: 60em) {
+      height: ($spacer * $i);
+    }
+  }
+}

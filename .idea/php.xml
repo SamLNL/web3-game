@@ -123,6 +123,8 @@
       <path value="$PROJECT_DIR$/vendor/rize/uri-template" />
       <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
       <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/vendor/verbb/base" />
+      <path value="$PROJECT_DIR$/vendor/verbb/navigation" />
     </include_path>
   </component>
 </project>

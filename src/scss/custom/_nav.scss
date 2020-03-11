@@ -1,0 +1,19 @@
+.navbar {
+  height: 80px;
+
+  &-toggler {
+    color: $teal;
+    p {
+      margin-right: 8px;
+    }
+  }
+}
+
+.navbar-side {
+
+  &-close {
+    p {
+      margin-right: 8px;
+    }
+  }
+}

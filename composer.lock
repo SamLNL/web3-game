@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cc5d03b2baa6622866db3ecad875664a",
+    "content-hash": "81f6ec8b71f8cd9b56353cbc5da9acb7",
     "packages": [
         {
             "name": "aelvan/imager",
@@ -5921,6 +5921,42 @@
             "time": "2020-02-11T15:31:23+00:00"
         },
         {
+            "name": "verbb/base",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/verbb/verbb-base.git",
+                "reference": "c95545f2b86db0791294a4b25e967a007f1dbf57"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/verbb/verbb-base/zipball/c95545f2b86db0791294a4b25e967a007f1dbf57",
+                "reference": "c95545f2b86db0791294a4b25e967a007f1dbf57",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0"
+            },
+            "type": "yii-module",
+            "autoload": {
+                "psr-4": {
+                    "verbb\\base\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Verbb",
+                    "homepage": "https://verbb.io"
+                }
+            ],
+            "description": "Common utilities and building-blocks for Verbb plugins for Craft CMS.",
+            "time": "2020-01-23T22:22:44+00:00"
+        },
+        {
             "name": "verbb/image-resizer",
             "version": "2.0.6",
             "source": {
@@ -5974,6 +6010,57 @@
                 "example"
             ],
             "time": "2019-09-18T12:16:43+00:00"
+        },
+        {
+            "name": "verbb/navigation",
+            "version": "1.3.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/verbb/navigation.git",
+                "reference": "72f79624659d89293245ee6ce26cb86416f3f071"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/verbb/navigation/zipball/72f79624659d89293245ee6ce26cb86416f3f071",
+                "reference": "72f79624659d89293245ee6ce26cb86416f3f071",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.4.0",
+                "verbb/base": "^1.0.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Navigation",
+                "handle": "navigation",
+                "changelogUrl": "https://raw.githubusercontent.com/verbb/navigation/craft-3/CHANGELOG.md",
+                "class": "verbb\\navigation\\Navigation"
+            },
+            "autoload": {
+                "psr-4": {
+                    "verbb\\navigation\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Verbb",
+                    "homepage": "https://verbb.io"
+                }
+            ],
+            "description": "A Craft CMS plugin to create navigation menus for your site.",
+            "keywords": [
+                "Craft",
+                "cms",
+                "craft-plugin",
+                "craftcms",
+                "menu",
+                "navigation"
+            ],
+            "time": "2020-02-24T03:23:57+00:00"
         },
         {
             "name": "vlucas/phpdotenv",

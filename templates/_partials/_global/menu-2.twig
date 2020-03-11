@@ -1,11 +1,17 @@
 <div class="js-nav navbar navbar-expand-lg fixed-top border-bottom bg-white justify-content-between">
   <div class="container px-2 px-md-4">
-    <div class="col-3 d-lg-none px-0"><a title="" class="navbar-toggler mr-1" href="#" data-id="menu-2-sidebar-toggle">
-        <span>Menu</span>
-        <img alt="" src="/assets/images/bitmap/glyphs/burger.svg"/>
+    <div class="d-lg-none px-0">
+      <a title="" class="navbar-toggler mr-1 d-flex flex-row align-items-center" href="#"
+         data-id="menu-2-sidebar-toggle">
+        <p class="font-base mb-0">
+          <small>Menu</small>
+        </p>
+        {% include '_inline/_svg/icon-menu' with {
+          class: 'd-block'
+        } %}
       </a>
     </div>
-    <div class="col-5 collapse navbar-collapse weight-500 px-0">
+    <div class="collapse navbar-collapse weight-500 px-0">
       <div class="navbar-nav">
         <div class="nav-item">
           <a title="" class="nav-link text-dark pl-0" href="#">First</a>
@@ -25,66 +31,56 @@
       </div>
     </div>
     <div>
-      <img alt="" src="/assets/images/bitmap/glyphs/emotion.svg" width="62"/>
-    </div>
-    <div class="col-3 d-lg-none text-right px-0">
-      <a title="" href="#">
-        <img alt="" src="/assets/images/bitmap/glyphs/star-primary.svg" width="24"/>
-      </a>
-    </div>
-    <div class="col-5 d-none d-lg-block text-right px-0">
-      <a title="" class="btn btn-primary" href="#">Action</a>
+      {% include '_partials/_index/svg/logo-biljoenbad' with {
+        class: 'w-9 h-2 d-block'
+      } %}
     </div>
   </div>
 </div>
 <div class="navbar-side" id="menu-2-sidebar" data-id="menu-2-sidebar-close">
   <div class="navbar-side-content d-flex flex-column justify-content-between">
     <div class="weight-700">
-      <a title="" class="navbar-side-close mb-4" href="#" data-id="menu-2-sidebar-close">
-        <span>Sluit</span>
-        <img alt="" src="/assets/images/bitmap/glyphs/close.svg" width="32"/>
-      </a>
+      <div class="navbar">
+        <a title="" class="navbar-side-close mb-4 d-flex flex-row align-items-center ml-0" href="#"
+           data-id="menu-2-sidebar-close">
+          <p class="font-base mb-0">
+            <small>Sluit</small>
+          </p>
+          {% include '_inline/_svg/icon-sluit' with {
+            class: 'd-block'
+          } %}
+        </a>
+      </div>
       <div class="navbar-nav">
-        <div class="nav-item">
-          <a title="" class="nav-link text-dark pl-0" href="#">First</a>
-        </div>
-        <div class="nav-item">
-          <a title="" class="nav-link text-dark" href="#">Second</a>
-        </div>
-        <div class="nav-item">
-          <a title="" class="nav-link text-dark" href="#">Third</a>
-        </div>
-        <div class="nav-item">
-          <a title="" class="nav-link text-dark" href="#">Fourth</a>
-        </div>
-        <div class="nav-item">
-          <a title="" class="nav-link text-dark" href="#">Fifth</a>
-        </div>
+        {{ craft.navigation.render('mainNav', {
+          ulClass: 'nav-items',
+          liClass: 'nav-item',
+          aClass: 'nav-link',
+          activeClass: 'nav-active',
+          ulAttributes: {
+            'data-attr': 'Some value',
+          },
+          liAttributes: {
+            'data-attr': 'Some value',
+          },
+          aAttributes: {
+            'data-attr': 'Some value',
+          },
+        }) }}
       </div>
     </div>
-    <div>
-      <p class="mb-3">
-        <a title="" class="transparent-invert-link" href="#">
-          <img alt="" src="/assets/images/bitmap/glyphs/instagram-small.svg" width="16"/>
+    <div class="w-100 d-flex flex-row justify-content-center align-items-center">
+        <span class="d-block d-xl-inline text-muted mr-2 small">Volg ons ook op</span>
+        <a title="" class="d-block" href="#">
+          <svg class="d-block" width="22" height="22">
+            <use xlink:href="/assets/images/svg/sprite/sprite.svg#icon-facebook"></use>
+          </svg>
         </a>
-        <a title="" class="transparent-invert-link ml-2" href="#">
-          <img alt="" src="/assets/images/bitmap/glyphs/facebook-small.svg" width="16"/>
+        <a title="" class="ml-2 d-block" href="#">
+          <svg class="d-block" width="22" height="22">
+            <use xlink:href="/assets/images/svg/sprite/sprite.svg#icon-insta"></use>
+          </svg>
         </a>
-        <a title="" class="transparent-invert-link ml-2" href="#">
-          <img alt="" src="/assets/images/bitmap/glyphs/twitter-small.svg" width="16"/>
-        </a>
-        <a title="" class="transparent-invert-link ml-2" href="#">
-          <img alt="" src="/assets/images/bitmap/glyphs/pinterest-small.svg" width="16"/>
-        </a>
-        <a title="" class="transparent-invert-link ml-2" href="#">
-          <img alt="" src="/assets/images/bitmap/glyphs/thumbler-small.svg" width="16"/>
-        </a>
-      </p>
-      <p class="small mb-0">
-        <span class="d-block d-xl-inline text-muted mb-1 mb-xl-0 mr-2">&copy; 2019 Acme. All right reserved.</span>
-        <a title="" class="text-muted mr-2" href="#"><span>Privacy Policy</span></a>
-        <a title="" class="text-muted" href="#"><span>Terms of Service</span></a>
-      </p>
     </div>
   </div>
 </div>
