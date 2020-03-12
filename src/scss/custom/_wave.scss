@@ -1,0 +1,15 @@
+.wave {
+  svg {
+    display: block;
+
+    &.upper-wave {
+      height: 287px;
+      width: 100%;
+    }
+
+    &.lower-wave {
+      height: 107px;
+      width: 100%;
+    }
+  }
+}

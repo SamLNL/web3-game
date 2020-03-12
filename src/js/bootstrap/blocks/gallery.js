@@ -1,14 +1,28 @@
 import Swiper from 'swiper';
 
-new Swiper('#slider-gallery', {
-    speed: 400,
-    navigation: {
-        nextEl: '#slider-gallery-next',
-        prevEl: '#slider-gallery-prev',
-    },
+new Swiper('.js-swiper-services', {
     pagination: {
-        el: '#slider-gallery-pagination',
+        el: '.swiper-pagination',
         clickable: true
     },
-    slidesPerView: 'auto'
+    slidesPerView: 'auto',
+    breakpoints: {
+      1024: {
+        pagination: {
+          el: null
+        },
+      },
+    }
+});
+
+new Swiper('.js-swiper-preview', {
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true
+  },
+  navigation: {
+    nextEl: '.carousel-control-next',
+    prevEl: '.carousel-control-prev',
+  },
+  slidesPerView: 'auto',
 });

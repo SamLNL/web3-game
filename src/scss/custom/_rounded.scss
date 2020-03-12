@@ -1,0 +1,21 @@
+.rounded-sm {
+  border-radius: $border-radius-sm;
+}
+
+.rounded-lg {
+  border-radius: $border-radius-lg;
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    .rounded#{$infix}        { @include border-radius($border-radius); }
+    .rounded#{$infix}-top    { @include border-top-radius($border-radius); @include border-bottom-radius(0); }
+    .rounded#{$infix}-right  { @include border-right-radius($border-radius); @include border-left-radius(0); }
+    .rounded#{$infix}-bottom { @include border-bottom-radius($border-radius); @include border-top-radius(0); }
+    .rounded#{$infix}-left   { @include border-left-radius($border-radius); @include border-right-radius(0); }
+    .rounded#{$infix}-circle { border-radius: 50%; }
+    .rounded#{$infix}-0 {  border-top-left-radius: 0 !important; border-top-right-radius: 0 !important;	border-bottom-right-radius: 0 !important; border-bottom-left-radius: 0 !important;}
+  }
+}

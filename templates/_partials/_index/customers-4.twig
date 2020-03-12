@@ -1,54 +1,38 @@
-<div class="swiper has-outside-pagination py-5">
-    <div class="swiper-container" id="slider-customers-4">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <div class="row justify-content-between align-items-center">
-                    <div class="col-12 col-md-6 pr-md-0 mb-4 mb-md-0">
-                        <img alt="" class="w-100" src="https://fakeimg.pl/180x180/"/>
-                    </div>
-                    <div class="col-12 col-md-5">
-                        <blockquote class="blockquote weight-500">“All base UI elements are made using Nested Symbols
-                            and shared styles that are logically connected. Gorgeous, high-quality video sharing on
-                            desktop, mobile, tablet. All base UI elements are made using Nested Symbols”
-                        </blockquote>
-                        <p class="mb-0"><span class="weight-500">Name Surname</span> Lead marketing specialist</p>
-                    </div>
+{% import "_partials/_macros.twig" as macro %}
+<h2 class="text-uppercase text-teal-600 text-center mb-0">Zo ziet het Biljoenbad er straks uit</h2>
+<div class="swiper py-5 pb-lg-4">
+  <div class="swiper-container row js-swiper-preview">
+    <div class="swiper-wrapper d-flex flex-row">
+          {% for slide in entry.preview %}
+            <div class="swiper-slide h-auto d-flex col-11 col-md-12 pb-5 flex-grow-1">
+              <div class="row justify-content-between align-items-center d-md-flex flex-md-row">
+                {% set image = slide.previewImage.first() %}
+                {% set tranformedImage = craft.imager.transformImage(image, {
+                  width: 700,
+                  height: 400
+                }) %}
+                <div class="col-12 col-md-4 col-lg-6 pr-md-0 flex-grow-1 h-12 h-md-100">
+                  <div class="h-100 w-100 rounded-top rounded-md" style="background:url({{ tranformedImage.url }}) center no-repeat;background-size:cover;"></div>
                 </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="row justify-content-between align-items-center">
-                    <div class="col-12 col-md-6 pr-md-0 mb-4 mb-md-0">
-                        <img alt="" class="w-100" src="https://fakeimg.pl/180x180/"/>
-                    </div>
-                    <div class="col-12 col-md-5">
-                        <blockquote class="blockquote weight-500">“All base UI elements are made using Nested Symbols
-                            and shared styles that are logically connected. Gorgeous, high-quality video sharing on
-                            desktop, mobile, tablet. All base UI elements are made using Nested Symbols”
-                        </blockquote>
-                        <p class="mb-0"><span class="weight-500">Name Surname</span> Lead marketing specialist</p>
-                    </div>
+                <div class="col-12 col-md-8 col-lg-6 rounded-bottom">
+                  <div class="bg-teal-100 rounded px-2 py-4">
+                    <blockquote class="blockquote weight-700 text-teal mb-3">
+                      {{ slide.previewQuote }}
+                    </blockquote>
+                    <p class="mb-0">
+                      {{ slide.previewText | striptags }}
+                    </p>
+                  </div>
                 </div>
+              </div>
             </div>
-            <div class="swiper-slide">
-                <div class="row justify-content-between align-items-center">
-                    <div class="col-12 col-md-6 pr-md-0 mb-4 mb-md-0">
-                        <img alt="" class="w-100" src="https://fakeimg.pl/180x180/"/>
-                    </div>
-                    <div class="col-12 col-md-5">
-                        <blockquote class="blockquote weight-500">“All base UI elements are made using Nested Symbols
-                            and shared styles that are logically connected. Gorgeous, high-quality video sharing on
-                            desktop, mobile, tablet. All base UI elements are made using Nested Symbols”
-                        </blockquote>
-                        <p class="mb-0"><span class="weight-500">Name Surname</span> Lead marketing specialist</p>
-                    </div>
-                </div>
-            </div>
+          {% endfor %}
         </div>
-    </div>
-    <a title="" class="carousel-control-prev carousel-control-outside" id="slider-customers-4-prev" href="#">
-        <div class="carousel-control-prev-icon"></div>
-    </a><a title="" class="carousel-control-next carousel-control-outside" id="slider-customers-4-next" href="#">
-        <div class="carousel-control-next-icon"></div>
-    </a>
-    <div class="swiper-pagination swiper-pagination-outside" id="slider-customers-4-pagination"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+  <a title="Vorige slide" class="carousel-control-prev" href="#">
+    {% include '_inline/_svg/icon-chevron-left.svg' %}
+  </a><a title="Volgende slide" class="carousel-control-next" href="#">
+    {% include '_inline/_svg/icon-chevron-right.svg' %}
+  </a>
 </div>

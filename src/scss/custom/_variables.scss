@@ -11,7 +11,8 @@
 // stylelint-disable
 $white:    #fff;
 
-$teal-500:    #033b47;
+$teal-600:    #033b47;
+$teal-500:    #01677d;
 $teal-400:    #00768f;
 $teal-300:    #0090af;
 $teal-200:    #c3e0e4;
@@ -53,6 +54,7 @@ $theme-colors: map-merge((
   "teal-300": $teal-300,
   "teal-400": $teal-400,
   "teal-500": $teal-500,
+  "teal-600": $teal-600,
   "white":    $white,
   "black":    $black,
   "red":      $red,
@@ -66,6 +68,7 @@ $colors: map-merge((
     "teal-300":   $teal-300,
     "teal-400":   $teal-400,
     "teal-500":   $teal-500,
+    "teal-600":   $teal-600,
     "teal":       $teal,
     "white":      $white,
     "black":      $black
@@ -112,7 +115,12 @@ $spacers: map-merge((
     2: $spacer,
     3: ($spacer * 1.5),
     4: ($spacer * 2.5),
-    5: ($spacer * 3.75)
+    5: ($spacer * 3.75),
+    6: ($spacer * 4.25),
+    7: ($spacer * 4.75),
+    8: ($spacer * 5.25),
+    9: ($spacer * 5.75),
+    10: ($spacer * 6.25)
 ), $spacers);
 
 // This variable affects the `.h-*` and `.w-*` classes.
@@ -131,7 +139,7 @@ $sizes: map-merge((
 // Settings for the `<body>` element.
 
 $body-bg:                   $white;
-$body-color:                $black;
+$body-color:                $teal-600;
 
 // Links
 //
@@ -139,7 +147,7 @@ $body-color:                $black;
 
 $link-color:                $teal;
 $link-decoration:           none;
-$link-hover-color:          $teal-500;
+$link-hover-color:          $teal-600;
 $link-hover-decoration:     none;
 
 // Paragraphs
@@ -198,9 +206,9 @@ $border-width:                1px;
 $card-border-width:           0;
 $border-color:                $gray-300;
 
-$border-radius:               22px;
+$border-radius:               5px;
 $border-radius-lg:            22px;
-$border-radius-sm:            2px;
+$border-radius-sm:            5px;
 
 $box-shadow-sm:               0 1px 3px rgba($black, .2);
 $box-shadow:                  0 1px 3px rgba($black, .2);
@@ -248,9 +256,9 @@ $h4-font-size:                $font-size-base * 1.625;
 $h5-font-size:                $font-size-base * 1.125;
 $h6-font-size:                $font-size-base * 0.875;
 
-$h1-line-height:              3;
-$h2-line-height:              3;
-$h3-line-height:              2;
+$h1-line-height:              1.5;
+$h2-line-height:              1.25;
+$h3-line-height:              1.5;
 $h4-line-height:              1.5;
 $h5-line-height:              1.3125;
 $h6-line-height:              1.5;
@@ -273,7 +281,7 @@ $headings-font-weight:        700;
 $headings-line-height:        1.5;
 $headings-margin-bottom:      ($spacer * 1.25);
 $headings-font-family:        $font-family-headings;
-$headings-color:              inherit;
+$headings-color:              $teal;
 
 $display1-size:               6rem;
 $display2-size:               5.5rem;
@@ -317,8 +325,8 @@ $large-line-height:           1.55;
 
 $text-muted:                  $gray-600;
 
-$blockquote-small-color:      $gray-600;
-$blockquote-font-size:        ($font-size-base * 1.5);
+$blockquote-small-color:      $teal;
+$blockquote-font-size:        $font-size-lg;
 
 $hr-border-color:             rgba($black, .1);
 $hr-border-width:             $border-width;
@@ -743,7 +751,7 @@ $custom-list-bullet-bg:             url("data:image/svg+xml;base64,PHN2ZyB3aWR0a
 $card-spacer-y:                     .75rem;
 $card-spacer-x:                     1.5rem;
 $card-border-width:                 $card-border-width;
-$card-border-radius:                $border-radius-sm;
+$card-border-radius:                $border-radius;
 $card-border-color:                 rgba($black, .125);
 $card-inner-border-radius:          calc(#{$card-border-radius} - #{$card-border-width});
 $card-cap-bg:                       rgba($black, .03);

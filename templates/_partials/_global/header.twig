@@ -10,7 +10,7 @@
         {
           'media': 'min-width: 1920px',
           'sizes': [
-          {width: 3000, ratio: 3000/584},
+          {width: 3000, ratio: 3000/650},
         ]
         },
         {
@@ -57,7 +57,9 @@
     </div>
     {% if wave %}
       <div class="wave">
-        {% include '_partials/_index/svg/upper-wave' %}
+        {% include '_partials/_index/svg/upper-wave' with {
+          class: 'upper-wave'
+        } %}
       </div>
     {% endif %}
   </div>

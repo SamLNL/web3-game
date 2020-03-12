@@ -3,5 +3,5 @@ import 'bootstrap.native/dist/polyfill';
 import './blocks/menu';
 import './blocks/gallery';
 import './blocks/customers';
-import './blocks/left';
-import './blocks/right';
+// import './blocks/left';
+// import './blocks/right';

@@ -1,85 +1,65 @@
-<div class="swiper swiper-overflow">
+<div class="container">
+  <div class="d-flex justify-content-center">
+    <h2 class="text-uppercase text-teal-600 text-center mb-4 mb-lg-5">Dit kan je straks doen bij het biljoenbad</h2>
+  </div>
+</div>
+
+<div class="swiper swiper-overflow mb-3 mb-lg-0">
     <div class="container">
-        <div class="swiper-container row" id="slider-customers-8">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide col-11 col-md-5 col-lg-4 py-5">
+        <div class="swiper-container row js-swiper-services">
+            <div class="swiper-wrapper d-flex flex-row">
+                {% for slide in entry.services %}
+                  <div class="swiper-slide h-auto d-flex col-11 col-md-5 col-lg-4 pb-5 flex-grow-1">
                     <div class="card">
-                        <div class="card-body">
-                            <p class="mb-4">“All base UI elements are made using Nested Symbols and shared styles that
-                                are logically connected. Gorgeous, high-quality video sharing on desktop, mobile,
-                                tablet. All base UI elements are made using Nested Symbols”</p>
-                            <img alt="" class="rounded mb-2" src="https://fakeimg.pl/180x180/" width="60" height="60"/>
-                            <div class="d-flex justify-content-between align-items-end">
-                                <div>
-                                    <p class="mb-0">
-                                        <span class="weight-500">Name Surname</span>
-                                    </p>
-                                    <p class="small mb-0">Founder, Acme Company</p>
-                                </div>
-                                <div>
-                                    <a title="" class="transparent-invert-link ml-2" href="#">
-                                        <img alt="" src="/assets/images/bitmap/glyphs/facebook.svg" width="20"/>
-                                    </a>
-                                    <a title="" class="transparent-invert-link ml-2" href="#">
-                                        <img alt="" src="/assets/images/bitmap/glyphs/twitter.svg" width="20"/>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                      {% switch slide.serviceColor.value %}
+                      {% case 'teal' %}
+                        {% set bgColor = 'teal-300' %}
+                        {% set textColor = 'white' %}
+                      {% case 'yellow' %}
+                        {% set bgColor = 'yellow' %}
+                        {% set textColor = 'teal-600' %}
+                      {% case 'red' %}
+                        {% set bgColor = 'red' %}
+                        {% set textColor = 'white' %}
+                      {% endswitch %}
+                      <div class="p-1 text-center rounded-top bg-{{ bgColor }}">
+                        <h3 class="mb-0 text-{{ textColor }} text-uppercase">{{ slide.serviceTitle }}</h3>
+                      </div>
+                      <div class="w-100">
+                        {% set image = slide.serviceImage.first() %}
+                        {% set transformedImage = craft.imager.transformImage(image, {
+                          width: 350,
+                          height: 200,
+                          mode: 'crop'
+                        }) %}
+                        <img class="w-100" src="{{ transformedImage.url }}" alt="{{ image.title }}">
+                      </div>
+                      <div class="card-body">
+                        <ul class="list-usps">
+                        {% for usp in slide.serviceUsps %}
+                          <li class="small text-teal-600">
+                            {{ usp.title }}
+                          </li>
+                        {% endfor %}
+                        </ul>
+                      </div>
                     </div>
-                </div>
-                <div class="swiper-slide col-11 col-md-5 col-lg-4 py-5">
-                    <div class="card shadow-sm">
-                        <div class="card-body">
-                            <p class="mb-4">“All base UI elements are made using Nested Symbols and shared styles that
-                                are logically connected. Gorgeous, high-quality video sharing on desktop, mobile,
-                                tablet. All base UI elements are made using Nested Symbols”</p>
-                            <img alt="" class="rounded mb-2" src="https://fakeimg.pl/180x180/" width="60" height="60"/>
-                            <div class="d-flex justify-content-between align-items-end">
-                                <div>
-                                    <p class="mb-0">
-                                        <span class="weight-500">Name Surname</span>
-                                    </p>
-                                    <p class="small mb-0">Founder, Acme Company</p>
-                                </div>
-                                <div><a title="" class="transparent-invert-link ml-2" href="#">
-                                        <img alt="" src="/assets/images/bitmap/glyphs/facebook.svg" width="20"/>
-                                    </a>
-                                    <a title="" class="transparent-invert-link ml-2" href="#">
-                                        <img alt="" src="/assets/images/bitmap/glyphs/twitter.svg" width="20"/>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide col-11 col-md-5 col-lg-4 py-5">
-                    <div class="card shadow-sm">
-                        <div class="card-body">
-                            <p class="mb-4">“All base UI elements are made using Nested Symbols and shared styles that
-                                are logically connected. Gorgeous, high-quality video sharing on desktop, mobile,
-                                tablet. All base UI elements are made using Nested Symbols”</p>
-                            <img alt="" class="rounded mb-2" src="https://fakeimg.pl/180x180/" width="60" height="60"/>
-                            <div class="d-flex justify-content-between align-items-end">
-                                <div>
-                                    <p class="mb-0">
-                                        <span class="weight-500">Name Surname</span>
-                                    </p>
-                                    <p class="small mb-0">Founder, Acme Company</p>
-                                </div>
-                                <div>
-                                    <a title="" class="transparent-invert-link ml-2" href="#">
-                                        <img alt="" src="/assets/images/bitmap/glyphs/facebook.svg" width="20"/>
-                                    </a>
-                                    <a title="" class="transparent-invert-link ml-2" href="#">
-                                        <img alt="" src="/assets/images/bitmap/glyphs/twitter.svg" width="20"/>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                  </div>
+                {% endfor %}
             </div>
         </div>
+      <div class="swiper-pagination"></div>
     </div>
+</div>
+<div class="container">
+  <div class="d-flex w-100 flex-row justify-content-center">
+    <div class="bg-teal-200 px-2 py-3 d-flex flex-row rounded col-lg-10">
+      <svg class="flex-shrink-0 mr-2" width="35" height="35">
+        <use xlink:href="/assets/images/svg/sprite/sprite.svg#icon-info"></use>
+      </svg>
+      <p class="mb-0 py-1">
+        We bouwen hard aan de ontwikkeling van het Biljoenbad, maar ook aan de website en het programma. Later in het jaar volgt het volledige activiteitenschema.
+      </p>
+    </div>
+  </div>
 </div>

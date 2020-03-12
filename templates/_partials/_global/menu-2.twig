@@ -1,7 +1,7 @@
-<div class="js-nav navbar navbar-expand-lg fixed-top border-bottom bg-white justify-content-between">
-  <div class="container px-2 px-md-4">
+<div class="js-nav navbar p-0 navbar-expand-lg fixed-top border-bottom bg-white justify-content-between">
+  <div class="container px-2 px-md-4 d-flex flex-row navbar-desktop">
     <div class="d-lg-none px-0">
-      <a title="" class="navbar-toggler mr-1 d-flex flex-row align-items-center" href="#"
+      <a title="" class="navbar-toggler mr-1 d-flex flex-row align-items-center text-teal" href="#"
          data-id="menu-2-sidebar-toggle">
         <p class="font-base mb-0">
           <small>Menu</small>
@@ -11,36 +11,25 @@
         } %}
       </a>
     </div>
-    <div class="collapse navbar-collapse weight-500 px-0">
-      <div class="navbar-nav">
-        <div class="nav-item">
-          <a title="" class="nav-link text-dark pl-0" href="#">First</a>
-        </div>
-        <div class="nav-item">
-          <a title="" class="nav-link text-dark" href="#">Second</a>
-        </div>
-        <div class="nav-item">
-          <a title="" class="nav-link text-dark" href="#">Third</a>
-        </div>
-        <div class="nav-item">
-          <a title="" class="nav-link text-dark" href="#">Fourth</a>
-        </div>
-        <div class="nav-item">
-          <a title="" class="nav-link text-dark" href="#">Fifth</a>
-        </div>
-      </div>
-    </div>
-    <div>
+    <a class="d-block" href="/" title="Home">
       {% include '_partials/_index/svg/logo-biljoenbad' with {
         class: 'w-9 h-2 d-block'
       } %}
+    </a>
+    <div class="collapse navbar-collapse weight-500 px-0 ml-auto flex-grow-0">
+      <div class="navbar-nav">
+        {{ craft.navigation.render('mainNav', {
+          ulClass: 'nav-items',
+          liClass: 'nav-item',
+          aClass: 'nav-link',
+          activeClass: 'nav-active'
+        }) }}
+      </div>
     </div>
   </div>
-</div>
-<div class="navbar-side" id="menu-2-sidebar" data-id="menu-2-sidebar-close">
-  <div class="navbar-side-content d-flex flex-column justify-content-between">
-    <div class="weight-700">
-      <div class="navbar">
+  <div class="navbar-side navbar-mobile" id="menu-2-sidebar" data-id="menu-2-sidebar-close">
+    <div class="navbar-side-content d-flex flex-column justify-content-between">
+      <div class="weight-700">
         <a title="" class="navbar-side-close mb-4 d-flex flex-row align-items-center ml-0" href="#"
            data-id="menu-2-sidebar-close">
           <p class="font-base mb-0">
@@ -50,27 +39,17 @@
             class: 'd-block'
           } %}
         </a>
+        <div class="navbar-nav">
+          {{ craft.navigation.render('mainNav', {
+            ulClass: 'nav-items',
+            liClass: 'nav-item',
+            aClass: 'nav-link',
+            activeClass: 'nav-active'
+          }) }}
+        </div>
       </div>
-      <div class="navbar-nav">
-        {{ craft.navigation.render('mainNav', {
-          ulClass: 'nav-items',
-          liClass: 'nav-item',
-          aClass: 'nav-link',
-          activeClass: 'nav-active',
-          ulAttributes: {
-            'data-attr': 'Some value',
-          },
-          liAttributes: {
-            'data-attr': 'Some value',
-          },
-          aAttributes: {
-            'data-attr': 'Some value',
-          },
-        }) }}
-      </div>
-    </div>
-    <div class="w-100 d-flex flex-row justify-content-center align-items-center">
-        <span class="d-block d-xl-inline text-muted mr-2 small">Volg ons ook op</span>
+      <div class="w-100 d-flex flex-row justify-content-center align-items-center">
+        <span class="d-block d-xl-inline mr-2 small text-teal">Volg ons ook op</span>
         <a title="" class="d-block" href="#">
           <svg class="d-block" width="22" height="22">
             <use xlink:href="/assets/images/svg/sprite/sprite.svg#icon-facebook"></use>
@@ -81,6 +60,6 @@
             <use xlink:href="/assets/images/svg/sprite/sprite.svg#icon-insta"></use>
           </svg>
         </a>
+      </div>
     </div>
   </div>
-</div>

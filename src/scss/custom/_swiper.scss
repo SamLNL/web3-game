@@ -1,0 +1,23 @@
+.carousel-control-next,
+.carousel-control-prev {
+  display: none;
+  @include media-breakpoint-up('xl') {
+    display: flex;
+  }
+
+  &.swiper-button-disabled {
+    opacity: 0.2;
+  }
+
+  &:not(.swiper-button-disabled) {
+    opacity: 1;
+  }
+}
+
+.carousel-control-prev {
+  left: -70px
+}
+
+.carousel-control-next {
+  right: -70px
+}
