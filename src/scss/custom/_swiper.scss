@@ -1,23 +1,55 @@
-.carousel-control-next,
-.carousel-control-prev {
-  display: none;
-  @include media-breakpoint-up('xl') {
-    display: flex;
+.swiper {
+  &-slide {
+    &__image {
+      @include media-breakpoint-up('lg') {
+        width: calc(50% - 10px);
+        flex-basis: auto;
+        max-width: none;
+      }
+    }
+    &__content {
+      @include media-breakpoint-up('lg') {
+        width: calc(50% - 10px);
+        flex-basis: auto;
+        max-width: none;
+      }
+    }
   }
 
-  &.swiper-button-disabled {
-    opacity: 0.2;
+  .carousel-control-prev {
+    left: -70px
   }
 
-  &:not(.swiper-button-disabled) {
-    opacity: 1;
+  .carousel-control-next {
+    right: -70px
   }
-}
 
-.carousel-control-prev {
-  left: -70px
-}
+  .swiper-pagination .swiper-pagination-bullet {
+    background-color: $teal-200;
 
-.carousel-control-next {
-  right: -70px
+    @include media-breakpoint-up('lg') {
+      width: 8px;
+      height: 8px;
+    }
+  }
+
+  .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background-color: $teal;
+  }
+
+  .carousel-control-next,
+  .carousel-control-prev {
+    display: none;
+    @include media-breakpoint-up('xl') {
+      display: flex;
+    }
+
+    &.swiper-button-disabled {
+      opacity: 0.2;
+    }
+
+    &:not(.swiper-button-disabled) {
+      opacity: 1;
+    }
+  }
 }

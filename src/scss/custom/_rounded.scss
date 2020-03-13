@@ -17,5 +17,7 @@
     .rounded#{$infix}-left   { @include border-left-radius($border-radius); @include border-right-radius(0); }
     .rounded#{$infix}-circle { border-radius: 50%; }
     .rounded#{$infix}-0 {  border-top-left-radius: 0 !important; border-top-right-radius: 0 !important;	border-bottom-right-radius: 0 !important; border-bottom-left-radius: 0 !important;}
+    .rounded#{$infix}-top-0 {  border-top-left-radius: 0 !important; border-top-right-radius: 0 !important;}
+
   }
 }

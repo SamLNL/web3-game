@@ -1,0 +1,18 @@
+.service {
+  border-bottom: 1px solid $gray-100;
+  width: 100%;
+
+  @include media-breakpoint-up('md') {
+    border: 2px solid $gray-400;
+    border-radius: $border-radius;
+    padding: $spacer;
+    width: calc(50% - 10px);
+  }
+
+  @include media-breakpoint-up('lg') {
+    width: calc(100% / 3 - 14px);
+    &:not(:nth-child(3n + 3)) {
+      margin-right: 21px;
+    }
+  }
+}

@@ -1,33 +1,42 @@
 {% import "_partials/_macros.twig" as macro %}
 <h2 class="text-uppercase text-teal-600 text-center mb-0">Zo ziet het Biljoenbad er straks uit</h2>
-<div class="swiper py-5 pb-lg-4">
+<div class="swiper pt-5 pb-4 pb-lg-5">
   <div class="swiper-container row js-swiper-preview">
     <div class="swiper-wrapper d-flex flex-row">
-          {% for slide in entry.preview %}
-            <div class="swiper-slide h-auto d-flex col-11 col-md-12 pb-5 flex-grow-1">
-              <div class="row justify-content-between align-items-center d-md-flex flex-md-row">
-                {% set image = slide.previewImage.first() %}
-                {% set tranformedImage = craft.imager.transformImage(image, {
-                  width: 700,
-                  height: 400
-                }) %}
-                <div class="col-12 col-md-4 col-lg-6 pr-md-0 flex-grow-1 h-12 h-md-100">
-                  <div class="h-100 w-100 rounded-top rounded-md" style="background:url({{ tranformedImage.url }}) center no-repeat;background-size:cover;"></div>
+      {% for slide in entry.preview %}
+        <div class="swiper-slide col-11 col-md-12 pb-5 h-auto pb-lg-6">
+          <div class="d-flex flex-column justify-content-between flex-md-row h-md-100">
+            {% set image = slide.previewImage.first() %}
+            {% set tranformedImage = craft.imager.transformImage(image, {
+              width: 700,
+              height: 400
+            }) %}
+            <div class="px-0 col-12 d-block col-md-4 pr-md-0 h-12 h-md-100 swiper-slide__image">
+              <div class="h-100 w-100 rounded-top rounded-md"
+                   style="background:url({{ tranformedImage.url }}) center no-repeat;background-size:cover;"></div>
+            </div>
+            <div class="px-0 col-12 d-block col-md-8 swiper-slide__content">
+              <div class="bg-teal-100 rounded-bottom d-flex flex-column rounded-md px-2 py-4 py-lg-6 px-lg-4">
+                <div class="d-flex flex-row align-items-center mb-2 mb-lg-3">
+                  {% if slide.previewTitle == 'Entreeplein' %}
+                    <svg class="mr-2" width="35" height="35">
+                      <use xlink:href="/assets/images/svg/sprite/sprite.svg#icon-marker-yellow"></use>
+                    </svg>
+                  {% endif %}
+                  <p class="mb-0 weight-700 text-teal-600 ">{{ slide.previewTitle }}</p>
                 </div>
-                <div class="col-12 col-md-8 col-lg-6 rounded-bottom">
-                  <div class="bg-teal-100 rounded px-2 py-4">
-                    <blockquote class="blockquote weight-700 text-teal mb-3">
-                      {{ slide.previewQuote }}
-                    </blockquote>
-                    <p class="mb-0">
-                      {{ slide.previewText | striptags }}
-                    </p>
-                  </div>
-                </div>
+                <blockquote class="blockquote weight-700 text-teal mb-3">
+                  {{ slide.previewQuote }}
+                </blockquote>
+                <p class="mb-0">
+                  {{ slide.previewText | striptags }}
+                </p>
               </div>
             </div>
-          {% endfor %}
+          </div>
         </div>
+      {% endfor %}
+    </div>
     <div class="swiper-pagination"></div>
   </div>
   <a title="Vorige slide" class="carousel-control-prev" href="#">
@@ -35,4 +44,81 @@
   </a><a title="Volgende slide" class="carousel-control-next" href="#">
     {% include '_inline/_svg/icon-chevron-right.svg' %}
   </a>
+</div>
+<h3 class="text-uppercase text-teal-600 text-center mb-4">Voorzieningen van het Biljoenbad</h3>
+
+{% set services = [
+  {
+    title: 'Sportzwembad',
+    svg: 'icon-wedstrijdbad'
+  },
+  {
+    title: 'Verwarmd activiteitenbad',
+    svg: 'icon-activiteitenbad'
+  },
+  {
+    title: 'Peuter en Kleuterbad',
+    svg: 'icon-peuterbad'
+  },
+  {
+    title: 'Beweegbare bodem',
+    svg: 'icon-beweegbarebodem'
+  },
+  {
+    title: 'Praktijkruimte',
+    svg: 'icon-praktijkruimte'
+  },
+  {
+    title: 'Familiekleedkamer',
+    svg: 'icon-familiekleedkamer'
+  },
+  {
+    title: 'Gratis lockers',
+    svg: 'icon-locker'
+  },
+  {
+    title: 'Multifunctionele ruimte',
+    rent: true,
+    svg: 'icon-multi-ruimte'
+  },
+  {
+    title: 'Vergaderruimte',
+    rent: true,
+    svg: 'icon-vergaderruimte'
+  },
+  {
+    title: 'Eet- en drinkgelegenheid',
+    svg: 'icon-eten'
+  },
+  {
+    title: 'Rolstoeltoegankelijk',
+    svg: 'icon-rolstoel'
+  },
+  {
+    title: 'Gratis WiFi',
+    svg: 'icon-wifi'
+  },
+  {
+    title: 'Gratis parkeergelegenheid',
+    svg: 'icon-parkeren'
+  },
+  {
+    title: 'Dichtbij openbaar vervoer',
+    svg: 'icon-bus'
+  }
+] %}
+
+<div class="d-flex flex-column pb-5 flex-md-row flex-md-wrap justify-content-between justify-content-lg-start">
+  {% for item in services %}
+    <div class="service d-flex flex-row pt-3 pb-3 mb-md-2">
+      <svg class="mr-2 mr-lg-1" width="25" height="23">
+        <use xlink:href="/assets/images/svg/sprite/sprite.svg#{{ item.svg }}"></use>
+      </svg>
+      <p class="mb-0 ml-1 weight-700 text-teal">{{ item.title }}
+        {% if item['rent'] is defined and item.rent %}
+          <span class="weight-300"> (te huur)</span>
+        {% endif %}
+      </p>
+    </div>
+  {% endfor %}
 </div>

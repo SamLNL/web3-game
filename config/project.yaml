@@ -1,4 +1,4 @@
-dateModified: 1584022897
+dateModified: 1584114568
 email:
   fromEmail: interactie@emotion.nl
   fromName: Biljoenbad
@@ -90,6 +90,35 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Matrix
+  7bb78d7c-6888-4847-9637-2c66a490e5e1:
+    contentColumnType: string
+    fieldGroup: f0c3735f-1b6e-456c-9608-4cfe64ddcd90
+    handle: googleMaps
+    instructions: ''
+    name: 'Google maps'
+    searchable: true
+    settings:
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: '1'
+      selectionLabel: ''
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:4176b138-ab46-48c2-ba93-8f81e9d3c0df'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: true
+      validateRelatedElements: ''
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
   8d69ebf3-f317-4814-846f-b7f4fe0494b1:
     contentColumnType: text
     fieldGroup: be40097e-126e-4a57-854d-f07aa9ea16d7
@@ -440,8 +469,15 @@ sections:
                   79c80430-518c-4d55-a510-ab43f69bc97f:
                     required: true
                     sortOrder: 1
-                name: Preview
+                name: Looks
                 sortOrder: 3
+              -
+                fields:
+                  7bb78d7c-6888-4847-9637-2c66a490e5e1:
+                    required: true
+                    sortOrder: 1
+                name: 'Locatie en bereikbaarheid'
+                sortOrder: 4
               -
                 fields:
                   5e04aee6-fa48-49e3-b86f-882b8ea36b9c:
@@ -451,7 +487,7 @@ sections:
                     required: false
                     sortOrder: 2
                 name: SEO
-                sortOrder: 4
+                sortOrder: 5
         handle: home
         hasTitleField: false
         name: Home

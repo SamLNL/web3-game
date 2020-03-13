@@ -1,11 +1,49 @@
-<div class="row justify-content-between align-items-center py-5">
-    <div class="col-12 col-md-5 order-2 order-md-1">
-        <h1 class="display-4">Medium length display headline</h1>
-        <p class="large mb-4">Separated they live in Bookmarks right at the coast of the famous Semantics, large
-            language ocean Separated they live in Bookmarks right</p>
-        <a title="" class="action-link" href="#"><span>Action link</span></a>
+{% import "_partials/_macros.twig" as macro %}
+<h2 class="text-teal-600 text-uppercase text-center mb-4 mb-lg-6">Locatie en bereikbaarheid</h2>
+<div class="flex flex-column flex-lg-row row">
+  <div class="col-12 col-lg-6 mb-3">
+    <div class="mr-lg-3">
+      <p class="mb-4">
+        Het Biljoenbad wordt gebouwd op de hoek van de Gruttostraat en Reigerstraat in Velp. Er komt voldoende
+        parkeergelegenheid en een overdekte fietsenstalling. Ook krijgt het zwembad een rolstoelvriendelijke ingang.
+      </p>
+      <p class="mb-4">
+        <b>Biljoenbad</b><br>
+        Grutterstraat 123<br>
+        1234 AB, Velp<br>
+        <a href="mailto:info@biljoenbad.nl" title="Mail naar info@biljoenbad.nl">info@biljoenbad.nl</a>
+      </p>
+      <div class="w-100 d-flex flex-row align-items-center">
+        <span class="d-block d-xl-inline mr-2 small text-teal">Volg ons ook op</span>
+        <a title="" class="d-block" href="#">
+          <svg class="d-block" width="22" height="22">
+            <use xlink:href="/assets/images/svg/sprite/sprite.svg#icon-facebook"></use>
+          </svg>
+        </a>
+        <a title="" class="ml-1 d-block" href="#">
+          <svg class="d-block" width="22" height="22">
+            <use xlink:href="/assets/images/svg/sprite/sprite.svg#icon-insta"></use>
+          </svg>
+        </a>
+      </div>
     </div>
-    <div class="col-12 col-md-6 order-1 order-md-2 pl-md-0 mb-4 mb-md-0">
-        <img alt="" class="w-100" src="https://fakeimg.pl/555x380"/>
-    </div>
+  </div>
+  <div class="col-12 col-lg-6">
+    {% set image = entry.googleMaps.first() %}
+    {% set transforms =
+      [
+        {
+          'media': 'min-width: 768px',
+          'sizes': [
+          {width: 540, ratio: 540/345}
+        ],
+        },
+        {
+          'sizes': [
+          {width: 286, ratio: 286/345}
+        ],
+        }
+      ] %}
+    {{ macro.renderPicture(image, transforms, true, image.title, 'w-100 d-block') }}
+  </div>
 </div>
