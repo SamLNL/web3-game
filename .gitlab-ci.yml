@@ -72,7 +72,7 @@ start review:
     # Create .env file
     - mv .env.example .env
     - sed -i "s/ENVIRONMENT=\"dev\"/ENVIRONMENT=\"staging\"/" .env
-    - sed -i "s/DB_DSN=.*/DB_DSN=\"mysql:host=$STAGING_DB_SERVER;port=3306;dbname=$STAGING_DB_NAME\"/"
+    - sed -i "s/DB_DSN=.*/DB_DSN=\"mysql:host=$STAGING_DB_SERVER;port=3306;dbname=$STAGING_DB_NAME\"/" .env
     - sed -i "s/DB_USER=\"root\"/DB_USER=\"$STAGING_DB_USER\"/" .env
     - sed -i "s/DB_PASSWORD=\"\"/DB_PASSWORD=\"$STAGING_DB_PASSWORD\"/" .env
     - sed -i "s/SECURITY_KEY=\"\"/SECURITY_KEY=\"$SECURITY_KEY\"/" .env
