@@ -13,17 +13,17 @@
                     <div class="card w-100">
                       {% switch slide.serviceColor.value %}
                       {% case 'teal' %}
-                        {% set bgColor = 'teal-300' %}
-                        {% set textColor = 'white' %}
+                        {% set bgClass = 'bg-teal-300' %}
+                        {% set textClass = 'white' %}
                       {% case 'yellow' %}
-                        {% set bgColor = 'yellow' %}
-                        {% set textColor = 'teal-600' %}
+                        {% set bgClass = 'bg-yellow' %}
+                        {% set textClass = 'teal-600' %}
                       {% case 'red' %}
-                        {% set bgColor = 'red' %}
-                        {% set textColor = 'white' %}
+                        {% set bgClass = 'bg-red' %}
+                        {% set textClass = 'white' %}
                       {% endswitch %}
-                      <div class="p-1 text-center rounded-top bg-{{ bgColor }}">
-                        <h3 class="mb-0 text-{{ textColor }} text-uppercase">{{ slide.serviceTitle }}</h3>
+                      <div class="p-1 text-center rounded-top {{ bgClass }}">
+                        <h3 class="mb-0 text-{{ textClass }} text-uppercase">{{ slide.serviceTitle }}</h3>
                       </div>
                       <div class="w-100">
                         {% set image = slide.serviceImage.one() %}
