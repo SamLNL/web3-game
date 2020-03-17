@@ -1,4 +1,4 @@
-dateModified: 1584354720
+dateModified: 1584437593
 email:
   fromEmail: interactie@emotion.nl
   fromName: Biljoenbad
@@ -10,6 +10,8 @@ fieldGroups:
     name: Header
   be40097e-126e-4a57-854d-f07aa9ea16d7:
     name: SEO
+  cdcb72f5-a94d-46ed-ab22-67dcb5fff45f:
+    name: Global
   f0c3735f-1b6e-456c-9608-4cfe64ddcd90:
     name: Home
 fields:
@@ -57,6 +59,120 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Assets
+  56974294-62e1-4d99-b0b7-d2ce74ff2dee:
+    contentColumnType: text
+    fieldGroup: cdcb72f5-a94d-46ed-ab22-67dcb5fff45f
+    handle: socialFacebook
+    instructions: ''
+    name: 'Social - Facebook'
+    searchable: true
+    settings:
+      allowCustomText: ''
+      allowTarget: '1'
+      allowedLinkNames:
+        1: asset
+        4: entry
+        6: custom
+        7: email
+        8: tel
+        9: url
+      autoNoReferrer: '1'
+      defaultLinkName: url
+      defaultText: ''
+      enableAriaLabel: ''
+      enableTitle: ''
+      typeSettings:
+        __assoc__:
+          -
+            - asset
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+          -
+            - category
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+          -
+            - user
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+          -
+            - entry
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+          -
+            - site
+            -
+              __assoc__:
+                -
+                  - sites
+                  - '*'
+          -
+            - custom
+            -
+              __assoc__:
+                -
+                  - disableValidation
+                  - ''
+                -
+                  - allowAliases
+                  - ''
+          -
+            - email
+            -
+              __assoc__:
+                -
+                  - disableValidation
+                  - ''
+                -
+                  - allowAliases
+                  - ''
+          -
+            - tel
+            -
+              __assoc__:
+                -
+                  - disableValidation
+                  - ''
+                -
+                  - allowAliases
+                  - ''
+          -
+            - url
+            -
+              __assoc__:
+                -
+                  - disableValidation
+                  - ''
+                -
+                  - allowAliases
+                  - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: typedlinkfield\fields\LinkField
   5e04aee6-fa48-49e3-b86f-882b8ea36b9c:
     contentColumnType: text
     fieldGroup: 01e09fa1-4843-4208-830b-968a6ff4671c
@@ -119,6 +235,120 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Assets
+  8cf5091d-c55c-4348-a57f-b38c56bc0aa0:
+    contentColumnType: text
+    fieldGroup: cdcb72f5-a94d-46ed-ab22-67dcb5fff45f
+    handle: socialInstagram
+    instructions: ''
+    name: 'Social - Instagram'
+    searchable: true
+    settings:
+      allowCustomText: ''
+      allowTarget: '1'
+      allowedLinkNames:
+        1: asset
+        4: entry
+        6: custom
+        7: email
+        8: tel
+        9: url
+      autoNoReferrer: '1'
+      defaultLinkName: url
+      defaultText: ''
+      enableAriaLabel: ''
+      enableTitle: ''
+      typeSettings:
+        __assoc__:
+          -
+            - asset
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+          -
+            - category
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+          -
+            - user
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+          -
+            - entry
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+          -
+            - site
+            -
+              __assoc__:
+                -
+                  - sites
+                  - '*'
+          -
+            - custom
+            -
+              __assoc__:
+                -
+                  - disableValidation
+                  - ''
+                -
+                  - allowAliases
+                  - ''
+          -
+            - email
+            -
+              __assoc__:
+                -
+                  - disableValidation
+                  - ''
+                -
+                  - allowAliases
+                  - ''
+          -
+            - tel
+            -
+              __assoc__:
+                -
+                  - disableValidation
+                  - ''
+                -
+                  - allowAliases
+                  - ''
+          -
+            - url
+            -
+              __assoc__:
+                -
+                  - disableValidation
+                  - ''
+                -
+                  - allowAliases
+                  - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: typedlinkfield\fields\LinkField
   8d69ebf3-f317-4814-846f-b7f4fe0494b1:
     contentColumnType: text
     fieldGroup: be40097e-126e-4a57-854d-f07aa9ea16d7
@@ -140,6 +370,23 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: nystudio107\seomatic\fields\SeoSettings
+globalSets:
+  e0e84f9d-b3be-4dd0-acf4-dcd4b5031a79:
+    fieldLayouts:
+      808033d7-7037-46f1-a757-7411b0f8de27:
+        tabs:
+          -
+            fields:
+              56974294-62e1-4d99-b0b7-d2ce74ff2dee:
+                required: false
+                sortOrder: 1
+              8cf5091d-c55c-4348-a57f-b38c56bc0aa0:
+                required: false
+                sortOrder: 2
+            name: Social
+            sortOrder: 1
+    handle: social
+    name: Social
 matrixBlockTypes:
   0ed7e558-c28c-4678-8099-3fbacc8ee945:
     field: 138d0eae-ea95-4e6e-86c6-9e927e7e72e2
@@ -446,6 +693,10 @@ plugins:
     enabled: true
     schemaVersion: 3.0.8
   twigpack:
+    enabled: true
+    schemaVersion: 1.0.0
+  typedlinkfield:
+    edition: standard
     enabled: true
     schemaVersion: 1.0.0
   typogrify:

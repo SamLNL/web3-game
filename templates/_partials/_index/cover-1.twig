@@ -13,19 +13,25 @@
         1234 AB, Velp<br>
         <a href="mailto:info@biljoenbad.nl" title="Mail naar info@biljoenbad.nl">info@biljoenbad.nl</a>
       </p>
-      <div class="w-100 d-flex flex-row align-items-center">
-        <span class="d-block d-xl-inline mr-2 small text-teal">Volg ons ook op</span>
-        <a title="" class="d-block" href="#">
-          <svg class="d-block" width="22" height="22">
-            <use xlink:href="/assets/images/svg/sprite/sprite.svg#icon-facebook"></use>
-          </svg>
-        </a>
-        <a title="" class="ml-1 d-block" href="#">
-          <svg class="d-block" width="22" height="22">
-            <use xlink:href="/assets/images/svg/sprite/sprite.svg#icon-insta"></use>
-          </svg>
-        </a>
-      </div>
+      {% if social.socialFacebook | length or social.socialInstagram | length %}
+        <div class="w-100 d-flex flex-row align-items-center">
+          <span class="d-block d-xl-inline mr-2 small text-teal">Volg ons ook op</span>
+          {% if social.socialFacebook | length %}
+            <a title="Bekijk onze Facebook pagina" class="d-block" href="{{ social.socialFacebook.getUrl() }}" target="{{ social.socialFacebook.getTarget() }}">
+              <svg class="d-block" width="22" height="22">
+                <use xlink:href="/assets/images/svg/sprite/sprite.svg#icon-facebook"></use>
+              </svg>
+            </a>
+          {% endif %}
+          {% if social.socialInstagram | length %}
+            <a title="Bekijk onze Instagram" class="ml-1 d-block" href="{{ social.socialInstagram.getUrl() }}" target="{{ social.socialInstagram.getTarget() }}">
+              <svg class="d-block" width="22" height="22">
+                <use xlink:href="/assets/images/svg/sprite/sprite.svg#icon-insta"></use>
+              </svg>
+            </a>
+          {% endif %}
+        </div>
+      {% endif %}
     </div>
   </div>
   <div class="col-12 col-lg-6">

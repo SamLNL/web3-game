@@ -19,17 +19,17 @@
     </a>
     <div class="collapse navbar-collapse weight-500 px-0 ml-auto flex-grow-0">
 
-        {% set nodes = craft.navigation.nodes('mainNav').all() %}
-        <ul class="nav-items">
-          {% nav node in nodes %}
-            <li class="nav-item">
-              {% set idLink = node.url|first == '#' ? true : false %}
-              <a class="nav-link{{ node.active ? ' nav-active' }}{{ idLink ? ' js-scroll' }}" href="{{ node.url }}">
-                {{ node.title }}
-              </a>
-            </li>
-          {% endnav %}
-        </ul>
+      {% set nodes = craft.navigation.nodes('mainNav').all() %}
+      <ul class="nav-items">
+        {% nav node in nodes %}
+          <li class="nav-item">
+            {% set idLink = node.url|first == '#' ? true : false %}
+            <a class="nav-link{{ node.active ? ' nav-active' }}{{ idLink ? ' js-scroll' }}" href="{{ node.url }}">
+              {{ node.title }}
+            </a>
+          </li>
+        {% endnav %}
+      </ul>
     </div>
   </div>
   <div class="navbar-side navbar-mobile" id="menu-2-sidebar" data-id="menu-2-sidebar-close">
@@ -53,18 +53,24 @@
           }) }}
         </div>
       </div>
-      <div class="w-100 d-flex flex-row justify-content-center align-items-center">
-        <span class="d-block d-xl-inline mr-2 small text-teal">Volg ons ook op</span>
-        <a title="" class="d-block" href="#">
-          <svg class="d-block" width="22" height="22">
-            <use xlink:href="/assets/images/svg/sprite/sprite.svg#icon-facebook"></use>
-          </svg>
-        </a>
-        <a title="" class="ml-2 d-block" href="#">
-          <svg class="d-block" width="22" height="22">
-            <use xlink:href="/assets/images/svg/sprite/sprite.svg#icon-insta"></use>
-          </svg>
-        </a>
-      </div>
+      {% if social.socialFacebook | length or social.socialInstagram | length %}
+        <div class="w-100 d-flex flex-row justify-content-center align-items-center">
+          <span class="d-block d-xl-inline mr-2 small text-teal">Volg ons ook op</span>
+          {% if social.socialFacebook | length %}
+            <a title="Bekijk onze Facebookpagina" class="d-block" href="{{ social.socialFacebook.getUrl() }}" target="{{ social.socialFacebook.getTarget() }}">
+              <svg class="d-block" width="22" height="22">
+                <use xlink:href="/assets/images/svg/sprite/sprite.svg#icon-facebook"></use>
+              </svg>
+            </a>
+          {% endif %}
+          {% if social.socialInstagram | length %}
+            <a title="Bekijk onze Instagram" class="ml-2 d-block" href="{{ social.socialInstagram.getUrl() }}" target="{{ social.socialInstagram.getTarget() }}">
+              <svg class="d-block" width="22" height="22">
+                <use xlink:href="/assets/images/svg/sprite/sprite.svg#icon-insta"></use>
+              </svg>
+            </a>
+          {% endif %}
+        </div>
+      {% endif %}
     </div>
   </div>
