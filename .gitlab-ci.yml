@@ -72,11 +72,9 @@ start review:
     # Create .env file
     - mv .env.example .env
     - sed -i "s/ENVIRONMENT=\"dev\"/ENVIRONMENT=\"staging\"/" .env
+    - sed -i "s/DB_DSN=\"root\"/DB_DSN=\"mysql:host=$STAGING_DB_SERVER;port=3306;dbname=$STAGING_DB_NAME\"/" .env
     - sed -i "s/DB_USER=\"root\"/DB_USER=\"$STAGING_DB_USER\"/" .env
     - sed -i "s/DB_PASSWORD=\"\"/DB_PASSWORD=\"$STAGING_DB_PASSWORD\"/" .env
-    - sed -i "s/DB_DATABASE=\"\"/DB_DATABASE=\"$STAGING_DB_NAME\"/" .env
-    - sed -i "s/DB_PORT=\"\"/DB_PORT=\"3306\"/" .env
-    - sed -i "s/DB_SERVER=\"localhost\"/DB_SERVER=\"$STAGING_DB_SERVER\"/" .env
     - sed -i "s/SECURITY_KEY=\"\"/SECURITY_KEY=\"$SECURITY_KEY\"/" .env
     # Set correct SITE_URL & BASE_URL
     - echo $f$f >> .env
@@ -317,11 +315,9 @@ deploy to production:
     # Create .env file
     - mv .env.example .env
     - sed -i "s/ENVIRONMENT=\"dev\"/ENVIRONMENT=\"live\"/" .env
-    - sed -i "s/DB_USER=\"root\"/DB_USER=\"$PRODUCTION_DB_USER\"/" .env
-    - sed -i "s/DB_PASSWORD=\"\"/DB_PASSWORD=\"$PRODUCTION_DB_PASSWORD\"/" .env
-    - sed -i "s/DB_DATABASE=\"\"/DB_DATABASE=\"$PRODUCTION_DB_NAME\"/" .env
-    - sed -i "s/DB_PORT=\"\"/DB_PORT=\"3306\"/" .env
-    - sed -i "s/DB_SERVER=\"localhost\"/DB_SERVER=\"$PRODUCTION_DB_SERVER\"/" .env
+    - sed -i "s/DB_DSN=\"root\"/DB_DSN=\"mysql:host=$STAGING_DB_SERVER;port=3306;dbname=$STAGING_DB_NAME\"/" .env
+    - sed -i "s/DB_USER=\"root\"/DB_USER=\"$STAGING_DB_USER\"/" .env
+    - sed -i "s/DB_PASSWORD=\"\"/DB_PASSWORD=\"$STAGING_DB_PASSWORD\"/" .env
     - sed -i "s/SECURITY_KEY=\"\"/SECURITY_KEY=\"$SECURITY_KEY\"/" .env
     # Set correct SITE_URL & BASE_URL
     - echo $f$f >> .env
