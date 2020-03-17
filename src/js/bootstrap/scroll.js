@@ -19,6 +19,11 @@ let links = document.querySelectorAll('.js-scroll');
       let scrollPos = element.getBoundingClientRect().top +
         window.pageYOffset - navHeight;
 
+      let navSidebar = document.querySelector('.navbar-side.show');
+      if(navSidebar) {
+        navSidebar.classList.remove('show');
+      }
+
       window.scrollTo({top: scrollPos, behavior: 'smooth'});
     }
   });
