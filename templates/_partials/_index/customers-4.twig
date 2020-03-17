@@ -2,50 +2,45 @@
 <h2 class="text-uppercase text-teal-600 text-center mb-0">Zo ziet het Biljoenbad er straks uit</h2>
 <div class="swiper pt-5 pb-4 pb-lg-5">
   <div class="swiper-container row js-swiper-preview">
-    <div class="swiper-wrapper d-flex flex-row">
+    <div class="swiper-wrapper d-flex flex-row h-auto">
       {% for slide in entry.preview %}
-        <div class="swiper-slide col-11 col-md-12 pb-5 h-auto pb-lg-6">
-          <div class="d-flex flex-column justify-content-between flex-md-row h-md-100">
-            {% set image = slide.previewImage.first() %}
-            {% set tranformedImage = craft.imager.transformImage(image, {
-              width: 700,
-              height: 400
-            }) %}
-            <div class="px-0 col-12 d-block col-md-4 pr-md-0 h-12 h-md-100 swiper-slide__image">
-              <div class="h-100 w-100 rounded-top rounded-md"
-                   style="background:url({{ tranformedImage.url }}) center no-repeat;background-size:cover;"></div>
-            </div>
-            <div class="px-0 col-12 d-block col-md-8 swiper-slide__content">
-              <div class="bg-teal-100 rounded-bottom d-flex flex-column rounded-md px-2 py-4 py-lg-6 px-lg-4">
-                <div class="d-flex flex-row align-items-center mb-2 mb-lg-3">
-                  {% if slide.previewTitle == 'Entreeplein' %}
-                    <svg class="mr-2" width="35" height="35">
-                      <use xlink:href="/assets/images/svg/sprite/sprite.svg#icon-marker-yellow"></use>
-                    </svg>
-                  {% endif %}
-                  <p class="mb-0 weight-700 text-teal-600 ">{{ slide.previewTitle }}</p>
-                </div>
-                <blockquote class="blockquote weight-700 text-teal mb-3">
-                  {{ slide.previewQuote }}
-                </blockquote>
-                <p class="mb-0">
-                  {{ slide.previewText | striptags }}
-                </p>
-              </div>
-            </div>
+        <div class="swiper-slide swiper-slide-side-by-side col-11 col-md-12 pb-6">
+          {% set image = slide.previewImage.first() %}
+          {% set tranformedImage = craft.imager.transformImage(image, {
+            width: 700,
+            height: 400
+          }) %}
+          <div class="swiper-slide__image"
+               style="background:url({{ tranformedImage.url }}) center no-repeat;background-size:cover;">
           </div>
+          <div class="swiper-slide__content">
+              <div class="d-flex flex-row align-items-center mb-2 mb-lg-3">
+                {% if slide.previewTitle == 'Entreeplein' %}
+                  <svg class="mr-2" width="35" height="35">
+                    <use xlink:href="/assets/images/svg/sprite/sprite.svg#icon-marker-yellow"></use>
+                  </svg>
+                {% endif %}
+                <p class="mb-0 weight-700 text-teal-600 ">{{ slide.previewTitle }}</p>
+              </div>
+              <blockquote class="blockquote weight-700 text-teal mb-3">
+                {{ slide.previewQuote }}
+              </blockquote>
+              <p class="mb-0">
+                {{ slide.previewText | striptags }}
+              </p>
+            </div>
         </div>
       {% endfor %}
     </div>
     <div class="swiper-pagination"></div>
   </div>
-  <a title="Vorige slide" class="carousel-control-prev" href="#">
+  <a title="Vorige slide" class="carousel-control-prev swiper-button" href="#">
     {% include '_inline/_svg/icon-chevron-left.svg' %}
-  </a><a title="Volgende slide" class="carousel-control-next" href="#">
+  </a><a title="Volgende slide" class="carousel-control-next swiper-button" href="#">
     {% include '_inline/_svg/icon-chevron-right.svg' %}
   </a>
 </div>
-<h3 class="text-uppercase text-teal-600 text-center mb-4">Voorzieningen van het Biljoenbad</h3>
+<h3 class="text-uppercase text-teal-600 text-center mb-4" id="voorzieningen">Voorzieningen van het Biljoenbad</h3>
 
 {% set services = [
   {

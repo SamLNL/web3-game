@@ -1,4 +1,4 @@
-dateModified: 1584114568
+dateModified: 1584354720
 email:
   fromEmail: interactie@emotion.nl
   fromName: Biljoenbad
@@ -404,6 +404,16 @@ navigation:
       structure:
         maxLevels: '1'
         uid: 69cffc8b-74cc-40dc-a2f1-08e024bac4f0
+    42e1706f-1fc6-4ff7-aa02-8db53c4aacd9:
+      handle: footerNav
+      instructions: ''
+      maxNodes: ''
+      name: Footermenu
+      propagateNodes: false
+      sortOrder: 2
+      structure:
+        maxLevels: '1'
+        uid: fc5d1e3d-0410-43f0-8c47-f58ed221bb51
 plugins:
   async-queue:
     edition: standard

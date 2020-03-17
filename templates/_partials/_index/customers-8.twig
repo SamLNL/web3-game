@@ -10,7 +10,7 @@
             <div class="swiper-wrapper d-flex flex-row">
                 {% for slide in entry.services %}
                   <div class="swiper-slide h-auto d-flex col-11 col-md-5 col-lg-4 pb-5 flex-grow-1">
-                    <div class="card">
+                    <div class="card w-100">
                       {% switch slide.serviceColor.value %}
                       {% case 'teal' %}
                         {% set bgColor = 'teal-300' %}

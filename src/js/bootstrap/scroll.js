@@ -6,8 +6,10 @@ Add the class 'js-scroll' to the anchor links
  */
 
 let links = document.querySelectorAll('.js-scroll');
+
 [].forEach.call(links, function(link) {
   link.addEventListener('click', function(e) {
+    console.log('est');
     const isSmoothScrollSupported = 'scrollBehavior' in
       document.documentElement.style;
     if (isSmoothScrollSupported) {

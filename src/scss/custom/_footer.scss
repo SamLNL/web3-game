@@ -1,0 +1,38 @@
+.footer {
+  &-items {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: center;
+    margin-bottom: 0;
+
+    @include media-breakpoint-up('sm') {
+      justify-content: center;
+    }
+
+    @include media-breakpoint-up('lg') {
+      align-items: center;
+    }
+  }
+
+  &-item {
+    margin-bottom: $spacer * 2;
+
+    &:not(:last-child) {
+      padding-right: 30px;
+    }
+
+    @include media-breakpoint-up('sm') {
+      margin-bottom: 0;
+    }
+  }
+
+  &-link {
+    color: $white;
+    font-size: $font-size-x-sm;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

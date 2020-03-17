@@ -1,13 +1,14 @@
-<div class="d-lg-flex justify-content-between py-3 py-lg-2">
-  <div class="small mb-2 mb-lg-0">
-    <span class="text-muted mr-5">&copy; 2019 Emotion. All right reserved.</span>
-  </div>
-  <div class="small">
-    <a title="" class="d-block d-lg-inline text-muted ml-lg-3 mb-2 mb-lg-0" href="#">
-      <span>Privacy Policy</span>
-    </a>
-    <a title="" class="d-block d-lg-inline text-muted ml-lg-3" href="#">
-      <span>Terms of Service</span>
+<div class="d-lg-flex justify-content-between pt-3 pt-lg-3 border-top border-gray-400">
+  <div class="d-flex flex-column align-items-center flex-sm-row justify-content-sm-center mb-sm-2 mb-lg-0">
+    <p class="text-white x-small mb-2 text-center mb-sm-0 mr-sm-3">&copy; {{ 'now'|date('Y') }} Biljoenbad is onderdeel van <span class="d-inline-block">Sportbedrijf Rheden</span></p>
+    <a href="https://www.sportbedrijfrheden.nl/" target="_blank" title="Bekijk de website van Sportbedrijf Rheden">
+      <img class="w-4 mb-4 mb-sm-0 w-lg-6" src="/assets/images/bitmap/glyphs/sportbedrijf-rheden.png" title="Logo Sportbedrijf Rheden">
     </a>
   </div>
+
+    {{ craft.navigation.render('footerNav', {
+      ulClass: 'footer-items',
+      liClass: 'footer-item',
+      aClass: 'footer-link'
+    }) }}
 </div>

@@ -1,3 +1,4 @@
+{% import "_partials/_macros.twig" as macro %}
 <div class="js-nav navbar p-0 navbar-expand-lg fixed-top border-bottom bg-white justify-content-between">
   <div class="container px-2 px-md-4 d-flex flex-row navbar-desktop">
     <div class="d-lg-none px-0">
@@ -17,14 +18,18 @@
       } %}
     </a>
     <div class="collapse navbar-collapse weight-500 px-0 ml-auto flex-grow-0">
-      <div class="navbar-nav">
-        {{ craft.navigation.render('mainNav', {
-          ulClass: 'nav-items',
-          liClass: 'nav-item',
-          aClass: 'nav-link',
-          activeClass: 'nav-active'
-        }) }}
-      </div>
+
+        {% set nodes = craft.navigation.nodes('mainNav').all() %}
+        <ul class="nav-items">
+          {% nav node in nodes %}
+            <li class="nav-item">
+              {% set idLink = node.url|first == '#' ? true : false %}
+              <a class="nav-link{{ node.active ? ' nav-active' }}{{ idLink ? ' js-scroll' }}" href="{{ node.url }}">
+                {{ node.title }}
+              </a>
+            </li>
+          {% endnav %}
+        </ul>
     </div>
   </div>
   <div class="navbar-side navbar-mobile" id="menu-2-sidebar" data-id="menu-2-sidebar-close">

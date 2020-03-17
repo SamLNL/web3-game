@@ -56,9 +56,10 @@
       {% endif %}
     </div>
     {% if wave %}
-      <div class="wave">
+      <div class="wave wave-upper">
         {% include '_partials/_index/svg/upper-wave' with {
-          class: 'upper-wave'
+          class: 'upper-wave',
+          double: true
         } %}
       </div>
     {% endif %}
