@@ -8,7 +8,7 @@
     <div class="container">
         <div class="swiper-container row js-swiper-services">
             <div class="swiper-wrapper d-flex flex-row">
-                {% for slide in entry.services %}
+                {% for slide in entry.services.all() %}
                   <div class="swiper-slide h-auto d-flex col-11 col-md-5 col-lg-4 pb-5 flex-grow-1">
                     <div class="card w-100">
                       {% switch slide.serviceColor.value %}
@@ -26,7 +26,7 @@
                         <h3 class="mb-0 text-{{ textColor }} text-uppercase">{{ slide.serviceTitle }}</h3>
                       </div>
                       <div class="w-100">
-                        {% set image = slide.serviceImage.first() %}
+                        {% set image = slide.serviceImage.one() %}
                         {% set transformedImage = craft.imager.transformImage(image, {
                           width: 350,
                           height: 200,
@@ -36,7 +36,7 @@
                       </div>
                       <div class="card-body">
                         <ul class="list-usps">
-                        {% for usp in slide.serviceUsps %}
+                        {% for usp in slide.serviceUsps.all() %}
                           <li class="small text-teal-600">
                             {{ usp.title }}
                           </li>

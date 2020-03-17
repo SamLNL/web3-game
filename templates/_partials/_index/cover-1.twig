@@ -35,7 +35,7 @@
     </div>
   </div>
   <div class="col-12 col-lg-6">
-    {% set image = entry.googleMaps.first() %}
+    {% set image = entry.googleMaps.one() %}
     {% set transforms =
       [
         {
