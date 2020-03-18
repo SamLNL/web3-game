@@ -87,7 +87,6 @@ export const init = () => {
 
 export const sendGAEvent = (eventArray) => {
   // Make sure there are at least 2 values
-  console.log(eventArray);
   if (eventArray.length >= 2) {
 
     // Split up the track event data into GA variables
