@@ -43,68 +43,96 @@
 {% set services = [
   {
     title: 'Sportzwembad',
-    svg: 'icon-wedstrijdbad'
+    svg: 'icon-wedstrijdbad',
+    svgHeight: 32,
+    svgWidth: 31
   },
   {
     title: 'Verwarmd activiteitenbad',
-    svg: 'icon-activiteitenbad'
+    svg: 'icon-activiteitenbad',
+    svgHeight: 29,
+    svgWidth: 16
   },
   {
     title: 'Peuter en Kleuterbad',
-    svg: 'icon-peuterbad'
+    svg: 'icon-peuterbad',
+    svgHeight: 26,
+    svgWidth: 28
   },
   {
     title: 'Beweegbare bodem',
-    svg: 'icon-beweegbarebodem'
+    svg: 'icon-beweegbarebodem',
+    svgHeight: 25,
+    svgWidth: 25
   },
   {
     title: 'Praktijkruimte',
-    svg: 'icon-praktijkruimte'
+    svg: 'icon-praktijkruimte',
+    svgHeight: 25,
+    svgWidth: 20
   },
   {
     title: 'Familiekleedkamer',
-    svg: 'icon-familiekleedkamer'
+    svg: 'icon-familiekleedkamer',
+    svgHeight: 30,
+    svgWidth: 27
   },
   {
     title: 'Gratis lockers',
-    svg: 'icon-locker'
+    svg: 'icon-locker',
+    svgHeight: 27,
+    svgWidth: 18
   },
   {
     title: 'Multifunctionele ruimte',
     rent: true,
-    svg: 'icon-multi-ruimte'
+    svg: 'icon-multi-ruimte',
+    svgHeight: 23,
+    svgWidth: 25
   },
   {
     title: 'Vergaderruimte',
     rent: true,
-    svg: 'icon-vergaderruimte'
+    svg: 'icon-vergaderruimte',
+    svgHeight: 25,
+    svgWidth: 9
   },
   {
     title: 'Eet- en drinkgelegenheid',
-    svg: 'icon-eten'
+    svg: 'icon-eten',
+    svgHeight: 28,
+    svgWidth: 17
   },
   {
     title: 'Rolstoeltoegankelijk',
-    svg: 'icon-rolstoel'
+    svg: 'icon-rolstoel',
+    svgHeight: 29,
+    svgWidth: 21
   },
   {
     title: 'Gratis WiFi',
-    svg: 'icon-wifi'
+    svg: 'icon-wifi',
+    svgHeight: 16,
+    svgWidth: 23
   },
   {
     title: 'Gratis parkeergelegenheid',
-    svg: 'icon-parkeren'
+    svg: 'icon-parkeren',
+    svgHeight: 26,
+    svgWidth: 26
   },
   {
     title: 'Dichtbij openbaar vervoer',
-    svg: 'icon-bus'
+    svg: 'icon-bus',
+    svgHeight: 27,
+    svgWidth: 25
   }
 ] %}
 
 <div class="d-flex flex-column pb-5 flex-md-row flex-md-wrap justify-content-between justify-content-lg-start">
   {% for item in services %}
     <div class="service d-flex flex-row pt-3 pb-3 mb-md-2">
-      <svg class="mr-2 mr-lg-1" width="25" height="23">
+      <svg class="mr-2 mr-lg-1" width="{{ item.svgWidth }}" height="{{ item.svgHeight }}">
         <use xlink:href="/assets/images/svg/sprite/sprite.svg#{{ item.svg }}"></use>
       </svg>
       <p class="mb-0 ml-1 weight-700 text-teal">{{ item.title }}
