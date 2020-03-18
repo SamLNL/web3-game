@@ -22,13 +22,13 @@
     <h2 class="text-center text-teal-600 text-uppercase mb-4 mb-lg-5">Veelgestelde vragen</h2>
     <div class="accordion" id="accordion">
       {% for item in faq %}
-        <div class="faq mb-2 rounded pl-3 pr-3 py-2">
+        <a class="js-faq d-block faq mb-2 rounded pl-3 pr-3 py-2" href="" title="{{ item.question }}">
           <p class="w-100 mb-0 caret-down collapsed pr-4 weight-700" data-toggle="collapse"
               data-target="#faq-{{ loop.index }}">{{ item.question }}</p>
           <div class="collapse" id="faq-{{ loop.index }}" data-parent="accordion">
             <p class="mt-3 mb-0">{{ item.answer }}</p>
           </div>
-        </div>
+        </a>
       {% endfor %}
     </div>
   </div>

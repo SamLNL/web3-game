@@ -4,7 +4,7 @@
   <div class="swiper-container row js-swiper-preview">
     <div class="swiper-wrapper d-flex flex-row h-auto">
       {% for slide in entry.preview.all() %}
-        <div class="swiper-slide swiper-slide-side-by-side col-11 col-md-12 pb-6">
+        <div class="swiper-slide swiper-slide-side-by-side col-11 col-md-12 pb-6" data-title="{{ slide.previewTitle }}">
           {% set image = slide.previewImage.one() %}
           {% set tranformedImage = craft.imager.transformImage(image, {
             width: 700,
@@ -14,21 +14,19 @@
                style="background:url({{ tranformedImage.url }}) center no-repeat;background-size:cover;">
           </div>
           <div class="swiper-slide__content">
-              <div class="d-flex flex-row align-items-center mb-2 mb-lg-3">
-                {% if slide.previewTitle == 'Entreeplein' %}
-                  <svg class="mr-2" width="35" height="35">
-                    <use xlink:href="/assets/images/svg/sprite/sprite.svg#icon-marker-yellow"></use>
-                  </svg>
-                {% endif %}
-                <p class="mb-0 weight-700 text-teal-600 ">{{ slide.previewTitle }}</p>
-              </div>
-              <blockquote class="blockquote weight-700 text-teal mb-3">
-                {{ slide.previewQuote }}
-              </blockquote>
-              <p class="mb-0">
-                {{ slide.previewText | striptags }}
-              </p>
+            <div class="d-flex flex-row align-items-center mb-2 mb-lg-3">
+              <svg class="mr-2" width="35" height="35">
+                <use xlink:href="/assets/images/svg/sprite/sprite.svg#icon-marker-yellow"></use>
+              </svg>
+              <p class="mb-0 weight-700 text-teal-600 ">{{ slide.previewTitle }}</p>
             </div>
+            <blockquote class="blockquote weight-700 text-teal mb-3">
+              {{ slide.previewQuote }}
+            </blockquote>
+            <p class="mb-0">
+              {{ slide.previewText | striptags }}
+            </p>
+          </div>
         </div>
       {% endfor %}
     </div>

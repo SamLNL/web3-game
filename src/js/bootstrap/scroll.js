@@ -6,6 +6,7 @@ Add the class 'js-scroll' to the anchor links
  */
 
 let links = document.querySelectorAll('.js-scroll');
+let extraOffset = 20;
 
 [].forEach.call(links, function(link) {
   link.addEventListener('click', function(e) {
@@ -17,7 +18,7 @@ let links = document.querySelectorAll('.js-scroll');
       let navHeight = document.querySelector('.js-nav').offsetHeight;
       let element = document.getElementById(id);
       let scrollPos = element.getBoundingClientRect().top +
-        window.pageYOffset - navHeight;
+        window.pageYOffset - navHeight - extraOffset;
 
       let navSidebar = document.querySelector('.navbar-side.show');
       if(navSidebar) {

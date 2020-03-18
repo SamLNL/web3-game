@@ -24,7 +24,8 @@
         {% nav node in nodes %}
           <li class="nav-item">
             {% set idLink = node.url|first == '#' ? true : false %}
-            <a class="nav-link{{ node.active ? ' nav-active' }}{{ idLink ? ' js-scroll' }}" href="{{ node.url }}">
+            <a class="nav-link{{ node.active ? ' nav-active' }}{{ idLink ? ' js-scroll' }}" href="{{ node.url }}"
+               ga-on="click" ga-event-category="Menu" ga-event-action="Click" ga-event-label="{{ node.title }}">
               {{ node.title }}
             </a>
           </li>
@@ -50,7 +51,8 @@
             {% nav node in nodes %}
               <li class="nav-item">
                 {% set idLink = node.url|first == '#' ? true : false %}
-                <a class="nav-link{{ node.active ? ' nav-active' }}{{ idLink ? ' js-scroll' }}" href="{{ node.url }}">
+                <a class="nav-link{{ node.active ? ' nav-active' }}{{ idLink ? ' js-scroll' }}" href="{{ node.url }}"
+                   ga-on="click" ga-event-category="Menu" ga-event-action="Click" ga-event-label="{{ node.title }}">
                   {{ node.title }}
                 </a>
               </li>

@@ -84,3 +84,24 @@ export const init = () => {
     trackNavigationTimingMetrics();
   });
 };
+
+export const sendGAEvent = (eventArray) => {
+  // Make sure there are at least 2 values
+  console.log(eventArray);
+  if (eventArray.length >= 2) {
+
+    // Split up the track event data into GA variables
+    var trackCategory = eventArray[0], // Required (String)
+      trackAction = eventArray[1], // Required (String)
+      trackLabel = eventArray[2]; // Optional (String)
+    // Send event data to GA if function exists
+    if (typeof ga === 'function') {
+      ga('send', {
+        hitType: 'event',
+        eventCategory: trackCategory,
+        eventAction: trackAction,
+        eventLabel: trackLabel
+      });
+    }
+  }
+};

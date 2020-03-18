@@ -61,7 +61,7 @@
 
   &-pagination {
     &-bullet {
-      background-color: $teal-200;
+      background-color: $teal-200 !important;
 
       @include media-breakpoint-up('lg') {
         width: 8px;
@@ -69,7 +69,7 @@
       }
 
       &.swiper-pagination-bullet-active {
-        background-color: $teal;
+        background-color: $teal !important;
       }
     }
   }
