@@ -1,19 +1,15 @@
 {% set faq = [
   {
     question: 'Wanneer is het Biljoenbad klaar?',
-    answer: 'Bijna'
-  },
-  {
-    question: 'Wanneer is meer bekend over de kosten en het programma?',
-    answer: 'Bijna'
+    answer: 'We verwachten dat de bouw van het bad op 7 oktober klaar is. Daarna gaan we flink aan de slag met inrichten en gaan we proefdraaien. Vanaf half november hopen we je te ontvangen in het gloednieuwe Biljoenbad!'
   },
   {
     question: 'Kan ik me al inschrijven voor de zwemlessen?',
-    answer: 'Bijna'
+    answer: 'Inschrijven voor de zwemlessen doe je nog even bij Zwembad de Dumpel, of online via de <a href="https://www.sportbedrijfrheden.nl/" target="_blank" title="Ga naar de website van Sportbedrijf Rheden">www.sportbedrijfrheden.nl</a>. We nemen de zwemlessen die gepland staan bij Zwembad de Dumpel mee strak mee naar het nieuwe Biljoenbad.'
   },
   {
     question: 'Wat gebeurt er met De Dumpel?',
-    answer: 'Bijna'
+    answer: 'We zoeken een herbestemming voor Zwembad de Dumpel. De herbestemming zal gerelateerd zijn aan sport, maar het blijft geen zwembad.'
   }
 ] %}
 
@@ -22,13 +18,13 @@
     <h2 class="text-center text-teal-600 text-uppercase mb-4 mb-lg-5">Veelgestelde vragen</h2>
     <div class="accordion" id="accordion">
       {% for item in faq %}
-        <a class="js-faq d-block faq mb-2 rounded pl-3 pr-3 py-2" href="" title="{{ item.question }}">
+        <div class="js-faq d-block faq mb-2 rounded pl-3 pr-3 py-2">
           <p class="w-100 mb-0 caret-down collapsed pr-4 weight-700" data-toggle="collapse"
-              data-target="#faq-{{ loop.index }}">{{ item.question }}</p>
+             data-target="#faq-{{ loop.index }}">{{ item.question }}</p>
           <div class="collapse" id="faq-{{ loop.index }}" data-parent="accordion">
-            <p class="mt-3 mb-0">{{ item.answer }}</p>
+            <p class="mt-3 mb-0">{{ item.answer | raw }}</p>
           </div>
-        </a>
+        </div>
       {% endfor %}
     </div>
   </div>
