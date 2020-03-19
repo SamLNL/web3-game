@@ -68,6 +68,10 @@
         height: 8px;
       }
 
+      &:focus {
+        outline: 2px solid $teal-300;
+      }
+
       &.swiper-pagination-bullet-active {
         background-color: $teal !important;
       }
@@ -95,6 +99,10 @@
     display: none;
     @include media-breakpoint-up('xl') {
       display: flex;
+    }
+
+    &:focus {
+      outline: 2px solid $teal-300;
     }
   }
 }

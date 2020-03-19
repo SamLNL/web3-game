@@ -1,0 +1,12 @@
+.focus {
+  &:focus {
+    outline: $teal-300;
+  }
+
+  &-border {
+    &:focus {
+      outline: 0;
+      border: 2px solid $teal-300;
+    }
+  }
+}

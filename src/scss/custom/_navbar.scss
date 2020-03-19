@@ -17,6 +17,12 @@
   }
 
   &-mobile {
+    display: block;
+
+    @include media-breakpoint-up('lg') {
+      display: none;
+    }
+
     .navbar-side-close {
       margin-top: 0.75rem;
       p {

@@ -22,7 +22,7 @@
 
   &:focus,
   &.focus {
-    outline: 0;
+    outline: $input-btn-focus-width;
     box-shadow: $btn-focus-box-shadow;
   }
 
