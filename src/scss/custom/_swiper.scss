@@ -100,9 +100,5 @@
     @include media-breakpoint-up('xl') {
       display: flex;
     }
-
-    &:focus {
-      outline: 2px solid $teal-300;
-    }
   }
 }
