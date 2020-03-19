@@ -11,6 +11,10 @@
         a.nav-link {
           font-size: $font-size-sm;
           color: $teal;
+
+          &:hover {
+            font-weight: 700;
+          }
         }
       }
     }
