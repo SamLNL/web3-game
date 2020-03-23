@@ -13,17 +13,17 @@
         6883 CN Velp<br>
         <a class="hover-underline" href="mailto:info@biljoenbad.nl" title="Mail naar info@biljoenbad.nl">info@biljoenbad.nl</a>
       </p>
-      {% if social.socialFacebook | length or social.socialInstagram | length %}
+      {% if not social.socialFacebook.isEmpty or not social.socialInstagram.isEmpty %}
         <div class="w-100 d-flex flex-row align-items-center">
           <span class="d-block d-xl-inline mr-2 small text-teal">Volg ons ook op</span>
-          {% if social.socialFacebook | length %}
+          {% if not social.socialFacebook.isEmpty %}
             <a title="Bekijk onze Facebook pagina" class="d-block" href="{{ social.socialFacebook.getUrl() }}" target="{{ social.socialFacebook.getTarget() }}">
               <svg class="d-block" width="22" height="22">
                 <use xlink:href="/assets/images/svg/sprite/sprite.svg#icon-facebook"></use>
               </svg>
             </a>
           {% endif %}
-          {% if social.socialInstagram | length %}
+          {% if not social.socialInstagram.isEmpty %}
             <a title="Bekijk onze Instagram" class="ml-1 d-block" href="{{ social.socialInstagram.getUrl() }}" target="{{ social.socialInstagram.getTarget() }}">
               <svg class="d-block" width="22" height="22">
                 <use xlink:href="/assets/images/svg/sprite/sprite.svg#icon-insta"></use>
