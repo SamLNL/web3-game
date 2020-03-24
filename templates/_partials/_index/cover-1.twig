@@ -39,14 +39,26 @@
     {% set transforms =
       [
         {
+          'media': 'min-width: 994px',
+          'sizes': [
+          {width: 515, ratio: 515/330, quality: 100}
+        ],
+        },
+        {
           'media': 'min-width: 768px',
           'sizes': [
-          {width: 540, ratio: 540/345}
+          {width: 870, ratio: 870/556, quality: 100}
+        ],
+        },
+        {
+          'media': 'min-width: 420px',
+          'sizes': [
+          {width: 722, ratio: 722/500, quality: 100}
         ],
         },
         {
           'sizes': [
-          {width: 286, ratio: 286/345}
+          {width: 300, ratio: 286/345, quality: 100}
         ],
         }
       ] %}
