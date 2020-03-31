@@ -7,3 +7,9 @@
     text-decoration: underline;
   }
 }
+
+.hover-none {
+  &:hover {
+    text-decoration: none;
+  }
+}

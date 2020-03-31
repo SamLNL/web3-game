@@ -101,4 +101,18 @@
       display: flex;
     }
   }
+
+  .js-swiper-services-thumbs {
+    .swiper-slide {
+      &:hover {
+        color: $teal;
+      }
+
+      &.swiper-slide-thumb-active {
+        border-color: $teal !important;
+        color: $teal-500;
+        font-weight: $font-weight-bold;
+      }
+    }
+  }
 }

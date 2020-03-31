@@ -13,6 +13,7 @@ const main = async () => {
   const analytics = await import(/* webpackChunkName: "analytics" */ "./analytics/analytics");
   import ("./bootstrap/index");
   import ("./bootstrap/scroll");
+  import ("./custom/tab-click");
   analytics.init();
 };
 

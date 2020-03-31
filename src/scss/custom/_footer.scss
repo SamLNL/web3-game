@@ -30,10 +30,10 @@
   &-link {
     color: $white;
     font-size: $font-size-x-sm;
+    text-decoration: underline;
 
     &:hover {
-      text-decoration: underline;
-      color: $white;
+      color: $gray-100;
     }
   }
 }

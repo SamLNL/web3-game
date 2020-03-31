@@ -43,19 +43,19 @@
 
 {% set services = [
   {
-    title: 'Sportzwembad',
+    title: 'Wedstrijdbad',
     svg: 'icon-wedstrijdbad',
     svgHeight: 32,
     svgWidth: 31
   },
   {
-    title: 'Verwarmd activiteitenbad',
+    title: 'Verwarmd activiteitenbad <span class="small">32°C</span>',
     svg: 'icon-activiteitenbad',
     svgHeight: 29,
     svgWidth: 16
   },
   {
-    title: 'Peuter en Kleuterbad',
+    title: 'Peuter- en kleuterbad',
     svg: 'icon-peuterbad',
     svgHeight: 26,
     svgWidth: 28
@@ -68,6 +68,7 @@
   },
   {
     title: 'Praktijkruimte',
+    rent: true,
     svg: 'icon-praktijkruimte',
     svgHeight: 25,
     svgWidth: 20
@@ -133,14 +134,18 @@
 <div class="d-flex flex-column pb-5 flex-md-row flex-md-wrap justify-content-between justify-content-lg-start">
   {% for item in services %}
     <div class="service d-flex flex-row pt-3 pb-3 mb-md-2">
-      <svg class="mr-2 mr-lg-1" width="{{ item.svgWidth }}" height="{{ item.svgHeight }}">
-        <use xlink:href="/assets/images/svg/sprite/sprite.svg#{{ item.svg }}"></use>
-      </svg>
-      <p class="mb-0 ml-1 weight-700 text-teal">{{ item.title }}
+      <div class="mr-2 mr-lg-1 w-2 d-flex align-items-center justify-content-center">
+        <svg width="{{ item.svgWidth }}" height="{{ item.svgHeight }}">
+          <use xlink:href="/assets/images/svg/sprite/sprite.svg#{{ item.svg }}"></use>
+        </svg>
+      </div>
+      <div class="mb-0 ml-1 d-flex align-items-center">
+        <p class="weight-700 text-teal mb-0">{{ item.title | raw }}
         {% if item['rent'] is defined and item.rent %}
           <span class="weight-300"> (te huur)</span>
         {% endif %}
-      </p>
+        </p>
+      </div>
     </div>
   {% endfor %}
 </div>

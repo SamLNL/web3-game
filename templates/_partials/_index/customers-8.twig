@@ -4,11 +4,22 @@
   </div>
 </div>
 
+
+
 <div class="swiper swiper-overflow mb-3 mb-lg-0">
     <div class="container">
+      {% set serviceSlides = entry.services.all() %}
+      <div class="w-100 js-swiper-services-thumbs d-md-none">
+        <div class="swiper-wrapper d-flex flex-column">
+          {% for slide in serviceSlides %}
+            <a class="w-100 border-2 border-teal-200 py-1 {{ loop.last ? 'mb-4' : 'mb-1' }} text-center small rounded swiper-slide js-go-to-slide" href="#" title="Spring naar slide '{{ slide.serviceTitle }}'">{{ slide.serviceTitle }}</a>
+          {% endfor %}
+        </div>
+      </div>
+
         <div class="swiper-container row js-swiper-services">
             <div class="swiper-wrapper d-flex flex-row">
-                {% for slide in entry.services.all() %}
+                {% for slide in serviceSlides %}
                   <div class="swiper-slide h-auto d-flex col-11 col-md-5 col-lg-4 pb-5 flex-grow-1" data-title="{{ slide.serviceTitle }}">
                     <div class="card w-100">
                       {% switch slide.serviceColor.value %}

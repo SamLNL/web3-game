@@ -1,0 +1,35 @@
+@for $i from 1 through 5 {
+
+  .border-#{$i} {
+    border-width: #{$i}px !important;
+    border-style: solid;
+  }
+
+  .border-sm-#{$i} {
+    @include media-breakpoint-up('sm') {
+      border-width: #{$i}px !important;
+      border-style: solid;
+    }
+  }
+
+  .border-md-#{$i} {
+    @include media-breakpoint-up('md') {
+      border-width: #{$i}px !important;
+      border-style: solid;
+    }
+  }
+
+  .border-lg-#{$i} {
+    @include media-breakpoint-up('lg') {
+      border-width: #{$i}px !important;
+      border-style: solid;
+    }
+  }
+
+  .border-xl-#{$i} {
+    @include media-breakpoint-up('xl') {
+      border-width: #{$i}px !important;
+      border-style: solid;
+    }
+  }
+}

@@ -1,4 +1,4 @@
-dateModified: 1584437593
+dateModified: 1585581054
 email:
   fromEmail: interactie@emotion.nl
   fromName: Biljoenbad
@@ -683,6 +683,7 @@ plugins:
   navigation:
     edition: standard
     enabled: true
+    licenseKey: RY1GZL106Q8ODBKR9XYEQLLH
     schemaVersion: 1.0.17
   redactor:
     edition: standard
@@ -691,6 +692,7 @@ plugins:
   seomatic:
     edition: standard
     enabled: true
+    licenseKey: UL7PIK4A66LTU8T7FN4XK1RL
     schemaVersion: 3.0.8
   twigpack:
     enabled: true
@@ -779,7 +781,7 @@ sites:
     siteGroup: c12cd4f8-4de7-419d-96f4-edce56b70f16
     sortOrder: 1
 system:
-  edition: solo
+  edition: pro
   live: true
   name: Biljoenbad
   schemaVersion: 3.4.10
@@ -800,16 +802,16 @@ volumes:
     hasUrls: true
     name: Algemeen
     settings:
-      path: '@mediaPath/media/default'
+      path: '@mediaPath/default'
     sortOrder: 2
     type: craft\volumes\Local
-    url: '@mediaUrl/media/default'
+    url: '@mediaUrl/default'
   6576af27-2464-42a5-93ba-12b804de04f1:
     handle: header
     hasUrls: true
     name: Header
     settings:
-      path: '@mediaPath/media/hero'
+      path: '@mediaPath/header'
     sortOrder: 1
     type: craft\volumes\Local
-    url: '@mediaUrl/media/hero'
+    url: '@mediaUrl/header'

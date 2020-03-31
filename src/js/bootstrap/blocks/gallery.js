@@ -1,36 +1,62 @@
 import Swiper from 'swiper';
 import {sendGAEvent} from '../../analytics/analytics';
 
-if(window.innerWidth < 991) {
+if (window.innerWidth < 991) {
+
+  let swiperServiceThumbs = new Swiper('.js-swiper-services-thumbs', {
+    slidesPerView: 'auto',
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
+    observer: true,
+    768: {
+      thumbs: {
+        swiper: null,
+      },
+    },
+  });
+
   let swiperService = new Swiper('.js-swiper-services', {
     pagination: {
       el: '.swiper-pagination',
-      clickable: true
+      clickable: true,
     },
+    observer: true,
     slidesPerView: 'auto',
     breakpoints: {
       1024: {
         pagination: {
-          el: null
+          el: null,
         },
-      },
-    }
+      }
+    },
+    thumbs: {
+      swiper: swiperServiceThumbs,
+    },
   });
 
-  swiperService.init();
-  swiperService.snapGrid[swiperService.snapGrid.length - 1] = swiperService.slidesGrid[swiperService.slidesGrid.length - 1];
+  let goToEl = document.querySelectorAll('.js-go-to-slide');
+  for(var i = 0;i < goToEl.length;i++){
+    goToEl[i].addEventListener('click', function(e){
+      e.preventDefault();
+    });
+  }
 
-  swiperService.on('slideChange', function(){
-    const activeSwiper = document.querySelector('.js-swiper-services .swiper-slide-active');
+  swiperService.init();
+  swiperService.snapGrid[swiperService.snapGrid.length -
+  1] = swiperService.slidesGrid[swiperService.slidesGrid.length - 1];
+
+  swiperService.on('slideChange', function() {
+    const activeSwiper = document.querySelector(
+      '.js-swiper-services .swiper-slide-active');
     const activeSwiperTitle = activeSwiper.getAttribute('data-title');
-    sendGAEvent(['Services - gallery','click', activeSwiperTitle]);
+    sendGAEvent(['Services - gallery', 'click', activeSwiperTitle]);
   });
 }
 
 let swiperPreview = new Swiper('.js-swiper-preview', {
   pagination: {
     el: '.swiper-pagination',
-    clickable: true
+    clickable: true,
   },
   navigation: {
     nextEl: '.carousel-control-next',
@@ -39,10 +65,12 @@ let swiperPreview = new Swiper('.js-swiper-preview', {
   slidesPerView: 'auto',
 });
 
-swiperPreview.snapGrid[swiperPreview.snapGrid.length - 1] = swiperPreview.slidesGrid[swiperPreview.slidesGrid.length - 1];
+swiperPreview.snapGrid[swiperPreview.snapGrid.length -
+1] = swiperPreview.slidesGrid[swiperPreview.slidesGrid.length - 1];
 
-swiperPreview.on('slideChange', function(){
-  const activeSwiper = document.querySelector('.js-swiper-preview .swiper-slide-active');
+swiperPreview.on('slideChange', function() {
+  const activeSwiper = document.querySelector(
+    '.js-swiper-preview .swiper-slide-active');
   const activeSwiperTitle = activeSwiper.getAttribute('data-title');
-  sendGAEvent(['Preview - gallery','click', activeSwiperTitle]);
+  sendGAEvent(['Preview - gallery', 'click', activeSwiperTitle]);
 });
