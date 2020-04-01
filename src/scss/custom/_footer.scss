@@ -31,6 +31,11 @@
     color: $white;
     font-size: $font-size-x-sm;
     text-decoration: underline;
+    text-align: center;
+
+    @include media-breakpoint-up('lg') {
+      text-align: left;
+    }
 
     &:hover {
       color: $gray-100;
