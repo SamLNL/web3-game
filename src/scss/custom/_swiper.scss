@@ -103,6 +103,9 @@
   }
 
   .js-swiper-services-thumbs {
+    .swiper-wrapper {
+    }
+
     .swiper-slide {
       &:hover {
         color: $teal;

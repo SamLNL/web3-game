@@ -4,15 +4,8 @@ import {sendGAEvent} from '../../analytics/analytics';
 if (window.innerWidth < 991) {
 
   let swiperServiceThumbs = new Swiper('.js-swiper-services-thumbs', {
-    slidesPerView: 'auto',
-    watchSlidesVisibility: true,
-    watchSlidesProgress: true,
-    observer: true,
-    768: {
-      thumbs: {
-        swiper: null,
-      },
-    },
+    allowSlidePrev: false,
+    allowSlideNext: false
   });
 
   let swiperService = new Swiper('.js-swiper-services', {
@@ -44,6 +37,10 @@ if (window.innerWidth < 991) {
   swiperService.init();
   swiperService.snapGrid[swiperService.snapGrid.length -
   1] = swiperService.slidesGrid[swiperService.slidesGrid.length - 1];
+
+  swiperServiceThumbs.init();
+  swiperServiceThumbs.snapGrid[swiperServiceThumbs.snapGrid.length -
+  1] = swiperService.slidesGrid[swiperServiceThumbs.slidesGrid.length - 1];
 
   swiperService.on('slideChange', function() {
     const activeSwiper = document.querySelector(
