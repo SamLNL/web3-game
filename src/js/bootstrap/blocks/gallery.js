@@ -40,7 +40,7 @@ if (window.innerWidth < 991) {
 
   swiperServiceThumbs.init();
   swiperServiceThumbs.snapGrid[swiperServiceThumbs.snapGrid.length -
-  1] = swiperService.slidesGrid[swiperServiceThumbs.slidesGrid.length - 1];
+  1] = swiperServiceThumbs.slidesGrid[swiperServiceThumbs.slidesGrid.length - 1];
 
   swiperService.on('slideChange', function() {
     const activeSwiper = document.querySelector(
