@@ -1,12 +1,24 @@
 import Swiper from 'swiper';
 import {sendGAEvent} from '../../analytics/analytics';
 
-if (window.innerWidth < 991) {
+let swiperNav = {
+  getNewActive: function(index) {
+    return document.querySelector('.js-go-to-slide[data-swiper-index="' + index + '"]');
+  },
+  switchActive: function(index) {
+    let newActive = swiperNav.getNewActive(index);
+    swiperNav.disableActive();
+    newActive.classList.add('active');
+  },
+  disableActive: function() {
+    let el = document.querySelector('.js-go-to-slide.active');
+    if(el) {
+      el.classList.remove('active');
+    }
+  }
+};
 
-  let swiperServiceThumbs = new Swiper('.js-swiper-services-thumbs', {
-    allowSlidePrev: false,
-    allowSlideNext: false
-  });
+if (window.innerWidth < 991) {
 
   let swiperService = new Swiper('.js-swiper-services', {
     pagination: {
@@ -22,15 +34,15 @@ if (window.innerWidth < 991) {
         },
       }
     },
-    thumbs: {
-      swiper: swiperServiceThumbs,
-    },
   });
 
   let goToEl = document.querySelectorAll('.js-go-to-slide');
   for(var i = 0;i < goToEl.length;i++){
     goToEl[i].addEventListener('click', function(e){
       e.preventDefault();
+      let index = this.getAttribute('data-swiper-index');
+
+      swiperService.slideTo(index);
     });
   }
 
@@ -38,11 +50,8 @@ if (window.innerWidth < 991) {
   swiperService.snapGrid[swiperService.snapGrid.length -
   1] = swiperService.slidesGrid[swiperService.slidesGrid.length - 1];
 
-  swiperServiceThumbs.init();
-  swiperServiceThumbs.snapGrid[swiperServiceThumbs.snapGrid.length -
-  1] = swiperServiceThumbs.slidesGrid[swiperServiceThumbs.slidesGrid.length - 1];
-
   swiperService.on('slideChange', function() {
+    swiperNav.switchActive(swiperService.activeIndex);
     const activeSwiper = document.querySelector(
       '.js-swiper-services .swiper-slide-active');
     const activeSwiperTitle = activeSwiper.getAttribute('data-title');

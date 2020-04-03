@@ -22,6 +22,7 @@
           border-radius: $border-radius;
         }
       }
+
       & > div:last-child {
         flex-grow: 1;
         border-radius: 0 0 $border-radius $border-radius;
@@ -101,21 +102,18 @@
       display: flex;
     }
   }
+}
 
-  .js-swiper-services-thumbs {
-    .swiper-wrapper {
+.swiper-nav {
+  &__item {
+    &:hover {
+      color: $teal;
     }
 
-    .swiper-slide {
-      &:hover {
-        color: $teal;
-      }
-
-      &.swiper-slide-thumb-active {
-        border-color: $teal !important;
-        color: $teal-500;
-        font-weight: $font-weight-bold;
-      }
+    &.active {
+      border-color: $teal !important;
+      color: $teal-500;
+      font-weight: $font-weight-bold;
     }
   }
 }
