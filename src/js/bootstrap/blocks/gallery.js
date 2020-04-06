@@ -46,10 +46,6 @@ if (window.innerWidth < 991) {
     });
   }
 
-  swiperService.init();
-  swiperService.snapGrid[swiperService.snapGrid.length -
-  1] = swiperService.slidesGrid[swiperService.slidesGrid.length - 1];
-
   swiperService.on('slideChange', function() {
     swiperNav.switchActive(swiperService.activeIndex);
     const activeSwiper = document.querySelector(
