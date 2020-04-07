@@ -19,8 +19,12 @@
       </a>
     </div>
 
-    <div class="collapse navbar-collapse weight-500 px-0 ml-auto flex-grow-0">
-
+    <div class="collapse navbar-collapse weight-500 px-0 w-100 flex-grow-0">
+      <a class="d-block mr-auto" href="/" title="Ga terug naar de homepagina">
+        {% include '_partials/_index/svg/logo-biljoenbad' with {
+          class: 'w-9 h-2 d-block'
+        } %}
+      </a>
       {% set nodes = craft.navigation.nodes('mainNav').all() %}
       <ul class="nav-items">
         {% nav node in nodes %}
