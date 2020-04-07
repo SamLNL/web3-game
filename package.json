@@ -103,7 +103,7 @@
       "./src/fonts/*.{eot,ttf,woff,woff2,svg}"
     ],
     "favicon": [
-      "./src/images/favicon/*"
+      "./src/images/favicon/*.{png,xml,ico,json,svg}"
     ],
     "purgecss": [
       "./templates/**/*.{html,twig}",
