@@ -64,7 +64,7 @@ return [
       '@basePath' => CRAFT_BASE_PATH,
       '@baseUrl' => getenv('SITE_URL'),
       '@mediaPath' => CRAFT_BASE_PATH.'/public/media/',
-      '@mediaUrl' => getenv('SITE_URL').'media/',
+      '@mediaUrl' => getenv('SITE_URL').'/media/',
       '@inlineJs' => '_inline/_js',
       '@inlineSvg' => '_inline/_svg',
       '@inlineCss' => '_inline/_css',
