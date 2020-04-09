@@ -18,7 +18,7 @@
     <h2 class="text-center text-teal-600 text-uppercase mb-4 mb-lg-5">Veelgestelde vragen</h2>
     <div class="accordion" id="accordion">
       {% for item in faq %}
-        <div tabindex="0" class="js-faq js-tab-click faq d-block mb-2 rounded pl-3 pr-3 py-2 focus-border" data-click-selector="#tab-click-{{ loop.index }}">
+        <div tabindex="0" class="js-faq js-tab-click faq d-block mb-2 rounded pl-3 pr-3 py-2 focus-border" data-click-selector="#tab-click-{{ loop.index }}" data-ga-question="{{ item.question }}">
           <p id="tab-click-{{ loop.index }}" class="w-100 mb-0 caret-down collapsed pr-4 weight-700" data-toggle="collapse"
              data-target="#faq-{{ loop.index }}">{{ item.question }}</p>
           <div class="collapse" id="faq-{{ loop.index }}" data-parent="accordion">
