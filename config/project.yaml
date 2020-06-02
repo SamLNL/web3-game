@@ -1,4 +1,4 @@
-dateModified: 1591105487
+dateModified: 1591108193
 email:
   fromEmail: interactie@emotion.nl
   fromName: Biljoenbad
@@ -666,6 +666,10 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
+  calendar:
+    edition: lite
+    enabled: true
+    schemaVersion: 3.0.0
   cookies:
     enabled: true
     schemaVersion: 1.0.0
