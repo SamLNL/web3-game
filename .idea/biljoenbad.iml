@@ -36,8 +36,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/imageoptim/imageoptim" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/imgix/imgix-php" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/intervention/httpauth" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/jakub-onderka/php-console-color" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/jakub-onderka/php-console-highlighter" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/justinrainbow/json-schema" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/kraken-io/kraken-php" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/ksubileau/color-thief-php" />

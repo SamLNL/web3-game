@@ -1,4 +1,4 @@
-dateModified: 1585581054
+dateModified: 1591105487
 email:
   fromEmail: interactie@emotion.nl
   fromName: Biljoenbad
@@ -693,7 +693,7 @@ plugins:
     edition: standard
     enabled: true
     licenseKey: UL7PIK4A66LTU8T7FN4XK1RL
-    schemaVersion: 3.0.8
+    schemaVersion: 3.0.9
   twigpack:
     enabled: true
     schemaVersion: 1.0.0
