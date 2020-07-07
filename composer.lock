@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3b270484a4fc1d13288af844ec0623a0",
+    "content-hash": "e2138898831fbc1ecbac8bc2fafa6eba",
     "packages": [
         {
             "name": "aelvan/imager",
@@ -667,16 +667,16 @@
         },
         {
             "name": "craftcms/redactor",
-            "version": "2.6.0.1",
+            "version": "2.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/craftcms/redactor.git",
-                "reference": "c8cc5b6bd6ac0258666744a4a530496da8d966c3"
+                "reference": "835eaf0d7442acb1bc716985f9672c7cd4e8531c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/redactor/zipball/c8cc5b6bd6ac0258666744a4a530496da8d966c3",
-                "reference": "c8cc5b6bd6ac0258666744a4a530496da8d966c3",
+                "url": "https://api.github.com/repos/craftcms/redactor/zipball/835eaf0d7442acb1bc716985f9672c7cd4e8531c",
+                "reference": "835eaf0d7442acb1bc716985f9672c7cd4e8531c",
                 "shasum": ""
             },
             "require": {
@@ -711,7 +711,7 @@
                 "html",
                 "yii2"
             ],
-            "time": "2020-02-17T15:25:01+00:00"
+            "time": "2020-03-18T14:47:04+00:00"
         },
         {
             "name": "craftcms/server-check",
