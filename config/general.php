@@ -77,7 +77,7 @@ return [
     'allowUpdates' => false,
     'backupOnUpdate' => false,
     // set it to false so only on local admin changes can happen
-    'allowAdminChanges' => true,
+    'allowAdminChanges' => false,
     'devMode' => false,
     'enableTemplateCaching' => true,
     'isSystemLive' => true,
