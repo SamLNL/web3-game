@@ -1,3 +1,11 @@
 body {
-  margin-top: 80px;
+  margin-top: $nav-height;
+
+  @include media-breakpoint-up('md') {
+    margin-top: $nav-height-md;
+  }
+
+  @include media-breakpoint-up('lg') {
+    margin-top: $nav-height-lg;
+  }
 }

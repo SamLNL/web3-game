@@ -1,13 +1,33 @@
 {% import "_partials/_macros.twig" as macro %}
-<div class="js-nav navbar p-0 navbar-expand-lg fixed-top border-bottom bg-white justify-content-between">
-  <div class="container px-2 px-md-4 d-flex flex-row navbar-desktop">
+<div class="js-nav c-nav p-0 navbar-expand-lg fixed-top border-bottom bg-white justify-content-between">
+  <div class="c-nav-desktop container px-2 px-md-4 d-flex flex-column">
+    <div class="c-nav__sub-menu flex flex-row w-100">
+        <form class="c-form-global-search" action="{{ siteUrl('zoeken') }}">
+          <label for="q">
+            {% include '_inline/_svg/search-regular' %}
+          </label>
+          <input class="w-100" name="q" id="q" type="search" placeholder="Zoeken naar...">
+        </form>
+      {% set nodes = craft.navigation.nodes('subNav').all() %}
+      <ul class="nav-items">
+        {% nav node in nodes %}
+          <li class="nav-item">
+            {% set idLink = node.url|first == '#' ? true : false %}
+            <a class="nav-link{{ node.active ? ' nav-active' }}{{ idLink ? ' js-scroll' }}" href="{{ node.url }}"
+               ga-on="click" ga-event-category="Menu" ga-event-action="Click" ga-event-label="{{ node.title }}">
+              {{ node.title }}
+            </a>
+          </li>
+        {% endnav %}
+      </ul>
+    </div>
     <div class="d-flex flex-row w-100 d-lg-none px-0">
       <a class="d-block" href="/" title="Ga terug naar de homepagina">
-        {% include '_partials/_index/svg/logo-biljoenbad' with {
+        {% include '_inline/_svg/logo-biljoenbad' with {
           class: 'w-9 h-2 d-block'
         } %}
       </a>
-      <a title="Open het mobiele menu" class="navbar-toggler ml-auto mr-1 d-flex flex-row align-items-center text-teal"
+      <a title="Open het mobiele menu" class="c-nav__toggler js-nav-toggler ml-auto mr-1 d-flex flex-row align-items-center text-teal"
          href="#"
          data-id="menu-2-sidebar-toggle">
         <p class="font-base mb-0">
@@ -19,9 +39,9 @@
       </a>
     </div>
 
-    <div class="collapse navbar-collapse weight-500 px-0 w-100 flex-grow-0">
+    <div class="c-nav__main-menu d-none d-lg-flex js-nav-collapse weight-500 px-0 w-100 flex-grow-0">
       <a class="d-block mr-auto" href="/" title="Ga terug naar de homepagina">
-        {% include '_partials/_index/svg/logo-biljoenbad' with {
+        {% include '_inline/_svg/logo-biljoenbad' with {
           class: 'w-9 h-2 d-block'
         } %}
       </a>
@@ -39,12 +59,12 @@
       </ul>
     </div>
   </div>
-  <div class="navbar-side navbar-mobile" id="menu-2-sidebar" data-id="menu-2-sidebar-close">
-    <div class="navbar-side-content d-flex flex-column justify-content-between">
+  <div class="c-nav-mobile js-nav-side navbar-side" id="menu-2-sidebar" data-id="menu-2-sidebar-close">
+    <div class="js-nav-side-content navbar-side-content d-flex flex-column justify-content-between">
       <div class="weight-700">
         <div class="d-flex w-100">
           <a title="Sluit het mobiele menu"
-             class="navbar-side-close mb-4 d-flex flex-row align-items-center ml-auto mr-1" href="#"
+             class="c-nav-mobile__side-close js-nav-side-close mb-4 d-flex flex-row align-items-center ml-auto mr-1" href="#"
              data-id="menu-2-sidebar-close">
             <p class="font-base mb-0">
               <small>Sluit</small>

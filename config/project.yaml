@@ -1,4 +1,4 @@
-dateModified: 1591193459
+dateModified: 1594732222
 email:
   fromEmail: interactie@emotion.nl
   fromName: Biljoenbad
@@ -659,7 +659,7 @@ navigation:
       propagateNodes: false
       sortOrder: 1
       structure:
-        maxLevels: '1'
+        maxLevels: '2'
         uid: 69cffc8b-74cc-40dc-a2f1-08e024bac4f0
     42e1706f-1fc6-4ff7-aa02-8db53c4aacd9:
       handle: footerNav
@@ -671,15 +671,25 @@ navigation:
       structure:
         maxLevels: '1'
         uid: fc5d1e3d-0410-43f0-8c47-f58ed221bb51
+    43111301-fd79-492c-97e5-09499765b5a3:
+      handle: subNav
+      instructions: ''
+      maxNodes: ''
+      name: Submenu
+      propagateNodes: false
+      sortOrder: 3
+      structure:
+        maxLevels: '1'
+        uid: 4a781743-9f81-4317-b989-c5a9133ee94b
 plugins:
   async-queue:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
   calendar:
-    edition: lite
+    edition: pro
     enabled: true
-    schemaVersion: 3.0.0
+    schemaVersion: 3.1.0
     settings:
       allDay: false
       authoredEventEditOnly: false

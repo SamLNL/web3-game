@@ -56,23 +56,33 @@
 @import "bootstrap/utilities";
 @import "bootstrap/print";
 @import "bootstrap/images-ratio";
+
+// Settings
+@import "custom/settings/nav";
+@import "custom/settings/typography";
+
+// Utilities
+@import "custom/utilities/hover";
+@import "custom/utilities/focus";
+@import "custom/utilities/border";
+@import "custom/utilities/z-index";
+@import "custom/utilities/rounded";
+@import "custom/utilities/sizing";
+@import "custom/utilities/button";
+@import "custom/utilities/list";
+
 @import "custom/body";
-@import "custom/button";
-@import "custom/navbar";
 @import "custom/header";
-@import "custom/typography";
-@import "custom/sizing";
 @import "custom/wave";
-@import "custom/rounded";
-@import "custom/list";
 @import "custom/swiper";
-@import "custom/service";
 @import "custom/faq";
-@import "custom/z-index";
 @import "custom/footer";
-@import "custom/hover";
-@import "custom/focus";
-@import "custom/border";
+
+
+// Components
+@import "custom/components/c-form";
+@import "custom/components/c-nav";
+@import "custom/components/c-service";
 
 // Add custom made scss files
 

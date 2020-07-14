@@ -12,7 +12,7 @@ let extraOffset = 20;
   link.addEventListener('click', function(e) {
     const isSmoothScrollSupported = 'scrollBehavior' in
       document.documentElement.style;
-    if (isSmoothScrollSupported) {
+
       e.preventDefault();
       let id = e.currentTarget.getAttribute('href').replace('#', '');
       let navHeight = document.querySelector('.js-nav').offsetHeight;
@@ -25,8 +25,11 @@ let extraOffset = 20;
         navSidebar.classList.remove('show');
       }
 
-      window.scrollTo({top: scrollPos, behavior: 'smooth'});
-    }
+      if (isSmoothScrollSupported) {
+        window.scrollTo({top: scrollPos, behavior: 'smooth'});
+      } else {
+        window.scrollTo({top: scrollPos});
+      }
   });
 });
 

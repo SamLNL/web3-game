@@ -10,7 +10,7 @@
         {
           'media': 'min-width: 1920px',
           'sizes': [
-          {width: 3000, ratio: 3000/650},
+          {width: 2000, ratio: 2000/650},
         ]
         },
         {
@@ -52,12 +52,12 @@
     {{ macro.renderPicture(image, transforms, false, image.title, 'w-100') }}
     <div class="payoff">
       {% if payoff %}
-        {% include '_partials/_index/svg/payoff' %}
+        {% include '_inline/_svg/payoff' %}
       {% endif %}
     </div>
     {% if wave %}
       <div class="wave wave-upper">
-        {% include '_partials/_index/svg/upper-wave' with {
+        {% include '_inline/_svg/upper-wave' with {
           class: 'upper-wave',
           double: true
         } %}

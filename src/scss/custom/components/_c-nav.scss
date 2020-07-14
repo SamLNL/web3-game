@@ -1,0 +1,119 @@
+.c-nav {
+  height: $nav-height;
+
+  @include media-breakpoint-up('md') {
+    height: $nav-height-md;
+  }
+
+  @include media-breakpoint-up('lg') {
+    height: $nav-height-lg;
+    transition: transform 0.25s ease-in-out;
+    transform: translateY(-$nav-sub-height-lg);
+
+    .sticky & {
+      transform: translateY(0);
+    }
+  }
+
+
+  &-desktop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+    @include media-breakpoint-up('lg') {
+      flex-direction: row;
+    }
+
+    ul.nav-items {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 0;
+
+      li.nav-item {
+        a.nav-link {
+          font-size: $font-size-sm;
+          color: $teal;
+
+          &:hover {
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+
+  &__sub-menu {
+    display: none;
+    @include media-breakpoint-up('lg') {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height: $nav-sub-height-lg;
+    }
+
+    .nav-items {
+      margin-left: auto;
+      align-self: start;
+      border-radius: 0 0 8px 8px;
+      background-color: $teal-100;
+      padding: 0 10px;
+    }
+  }
+
+  &__main-menu {
+    height: $nav-main-height;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    @include media-breakpoint-up('md') {
+      height: $nav-main-height-md;
+    }
+
+    @include media-breakpoint-up('lg') {
+      height: $nav-main-height-md;
+    }
+  }
+
+  &-mobile {
+    display: block;
+
+    @include media-breakpoint-up('lg') {
+      display: none;
+    }
+
+    &__side-close {
+      margin-top: 0.75rem;
+      p {
+        margin-right: 8px;
+      }
+    }
+
+    ul.nav-items {
+      li.nav-item {
+        a.nav-link {
+          font-size: $font-size-lg;
+          color: $teal-600;
+        }
+      }
+    }
+  }
+
+  &__toggler {
+    p {
+      margin-right: 8px;
+    }
+  }
+
+  ul.nav-items {
+    list-style: none;
+
+    li.nav-item {
+      margin-bottom: 0;
+    }
+  }
+}

@@ -114,52 +114,64 @@ workbox.routing.setCatchHandler(({ event }) => {
 
 workbox.precaching.precacheAndRoute([
   {
+    "url": "assets/calendar-demo/css/full-calendar.css",
+    "revision": "6e56e3ddf5165551df767caba3e6b136"
+  },
+  {
+    "url": "assets/calendar-demo/css/main.css",
+    "revision": "54d180867e5f89c2340977d56fbbdab8"
+  },
+  {
     "url": "assets/css/styles.min-ef0cf7888d.css",
     "revision": "ef0cf7888d8ac11f6a6a2f7223ca014b"
   },
   {
-    "url": "assets/js/0-a01b3b2ff8.js",
-    "revision": "49b7faa13fe72f4a19e713fd41126456"
+    "url": "assets/calendar-demo/js/main.js",
+    "revision": "351c2a9b20411e3b3284feced9f1406d"
   },
   {
-    "url": "assets/js/1-7354824c50.js",
+    "url": "assets/js/0-2db403f1db.js",
+    "revision": "e1ce4ef4f155affd42cb4a00d24ccefe"
+  },
+  {
+    "url": "assets/js/1-4cdcfc6f18.js",
     "revision": "f4c5cf35571dd833270cebcdc19990b2"
   },
   {
-    "url": "assets/js/2-0969094a5b.js",
+    "url": "assets/js/2-16d5657638.js",
     "revision": "785da4f2af58309a5dd4a4564b848b4b"
   },
   {
-    "url": "assets/js/3-aee5ac23a9.js",
+    "url": "assets/js/3-4e8a9458ca.js",
     "revision": "cffbb892d2b262a5f5ac42dddc325618"
   },
   {
-    "url": "assets/js/4-14a726b472.js",
+    "url": "assets/js/4-8bab3ae57c.js",
     "revision": "eae99c25b2476ed3ae5353d2096cd780"
   },
   {
-    "url": "assets/js/6-bbdc9a8adc.js",
-    "revision": "bebe2b178cd14ba0b60b792ad8e5f52e"
+    "url": "assets/js/6-fd2bd8fc2a.js",
+    "revision": "105ff4b1f575e2a04c3ccfd64660dd3e"
   },
   {
-    "url": "assets/js/7-d908bda5eb.js",
+    "url": "assets/js/7-874c8b9110.js",
     "revision": "6a44167b953e198d8367fb75ae4c5096"
   },
   {
-    "url": "assets/js/8-d002eff42a.js",
+    "url": "assets/js/8-4e7ec65de7.js",
     "revision": "7e7108b6dbdda761d661aa0a8b0f78a3"
   },
   {
     "url": "assets/js/analytics.js",
-    "revision": "af5c617d36e28d19710b882a6824e213"
+    "revision": "871c39943ac31c498d591a714a31212c"
   },
   {
     "url": "assets/js/lazysizes.min.js",
     "revision": "1be608f4c66dbd343f4b931f80b02f87"
   },
   {
-    "url": "assets/js/main-e9ad16e351.js",
-    "revision": "06f2f147eb13fee33b8258ef18a02677"
+    "url": "assets/js/main-bed66cc8a7.js",
+    "revision": "c47db85c890ac99e0b4a6d7603c5d8eb"
   },
   {
     "url": "assets/js/picturefill.min.js",
@@ -194,8 +206,8 @@ workbox.precaching.precacheAndRoute([
     "revision": "2498c55b5e23710c67e8d4f4e60319be"
   },
   {
-    "url": "assets/images/svg/sprite/css/svg/sprite.css-0c86792f.svg",
-    "revision": "0c86792fa3f5a771aae89dd5b70c903c"
+    "url": "assets/images/svg/sprite/css/svg/sprite.css-2f65285a.svg",
+    "revision": "2f65285aa5bd178f60cfb8ccd5280515"
   },
   {
     "url": "assets/images/svg/sprite/single/icon-activiteitenbad.svg",

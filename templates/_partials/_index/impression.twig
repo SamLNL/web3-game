@@ -34,9 +34,9 @@
     <div class="swiper-pagination"></div>
   </div>
   <a title="Vorige slide" class="carousel-control-prev swiper-button pb-8" href="#">
-    {% include '_inline/_svg/icon-chevron-left.svg' %}
+    {% include '_inline/_svg/icon-chevron-left' %}
   </a><a title="Volgende slide" class="carousel-control-next swiper-button pb-8" href="#">
-    {% include '_inline/_svg/icon-chevron-right.svg' %}
+    {% include '_inline/_svg/icon-chevron-right' %}
   </a>
 </div>
 <h3 class="text-uppercase text-teal-600 text-center mb-4" id="voorzieningen">Voorzieningen van het Biljoenbad</h3>
@@ -133,7 +133,7 @@
 
 <div class="d-flex flex-column pb-5 flex-md-row flex-md-wrap justify-content-between justify-content-lg-start">
   {% for item in services %}
-    <div class="service d-flex flex-row pt-3 pb-3 mb-md-2">
+    <div class="c-service d-flex flex-row pt-3 pb-3 mb-md-2">
       <div class="mr-2 mr-lg-1 w-2 d-flex align-items-center justify-content-center">
         <svg width="{{ item.svgWidth }}" height="{{ item.svgHeight }}">
           <use xlink:href="/assets/images/svg/sprite/sprite.svg#{{ item.svg }}"></use>
