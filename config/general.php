@@ -52,7 +52,6 @@ return [
     // The base URL to the site(s). If set, it will take precedence over the Base URL settings in Settings → Sites → [Site Name].
     'siteUrl' => getenv('SITE_URL'),
 
-
     // Whether Craft should set users’ usernames to their email addresses, rather than let them set their username separately.
     'useEmailAsUsername' => true,
 
