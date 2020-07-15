@@ -83,6 +83,9 @@ $colors: map-merge((
     "black":      $black
 ), $colors);
 
+$primary:       $teal;
+$secondary:     $gray-600;
+
 // stylelint-enable
 
 // Set a specific jump point for requesting color jumps

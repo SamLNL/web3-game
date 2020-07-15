@@ -1,0 +1,97 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{# @var entry \craft\elements\Entry #}
+{# ======================================================
+  @filename: card
+  @author:   sam
+  ====================================================== #}
+{#
+  Horizontal card
+#}
+{% import "_partials/_macros.twig" as macro %}
+
+{% set url = url is defined ? url : '' %}
+{% set image = image is defined ? image : '' %}
+{% set readingTime = readingTime is defined ? '' %}
+{% set title = title is defined ? title : '' %}
+{% set categories = categories is defined ? categories : '' %}
+{% set date = date is defined ? date : '' %}
+{% set summary = summary is defined ? summary : '' %}
+{% set class = class is defined ? class : '' %}
+
+{% if url | length and title | length %}
+  <a class="c-card {{ class }}" href="{{ url }}" title="Meer info">
+
+    {% if image | length %}
+      <div class="c-card__image">
+        {% set transforms =
+          [
+            {
+              'sizes': [{
+                width: 320, ratio: 320/200
+              }]
+            },
+            {
+              'media': 'min-width: 375px',
+              'sizes': [{
+                width: 375, ratio: 375/250
+              }]
+            },
+            {
+              'media': 'min-width: 425px',
+              'sizes': [{
+                width: 425, ratio: 425/300
+              }]
+            },
+            {
+              'media': 'min-width: 768px',
+              'sizes': [{
+                width: 350, ratio: 350/250
+              }]
+            }
+          ] %}
+        {{ macro.renderImageBackgroundCss(image, transforms, 'c-card__image') }}
+
+        {% if readingTime > 0 and readingTime | length %}
+          <div class="c-card__duration">
+            {% include '_inline/_svg/clock-regular.twig' %}
+            <span>{{ readingTime }} min</span>
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="d-flex flex-column justify-content-start px-2 py-3 py-md-3 px-md-3">
+
+      {% if date | length %}
+        <div class="small text-gray mb-1">
+          {{ craft.app.locale == 'nl' ? date | date('d-m-Y') : date | date('Y-m-d') }}
+        </div>
+      {% endif %}
+
+      <div class="h2 mb-0">{{ title }}</div>
+      {% if categories | length %}
+        <div class="d-flex flex-row flex-wrap mt-2 align-items-start">
+        {% for cat in categories %}
+          <div class="c-label mb-1">
+            {{ cat }}
+          </div>
+        {% endfor %}
+        </div>
+      {% endif %}
+
+      {% if summary | length %}
+        <div class="mt-2 mt-md-3">
+          {{ summary }}
+        </div>
+      {% endif %}
+    </div>
+
+    <div
+      class="d-flex pl-2 pb-3 mt-auto flex-shrink-0 justify-content-md-center pb-md-0 mt-md-0 ml-md-auto pr-md-2 pl-lg-4 pr-lg-4">
+      <div class="d-flex flex-row align-items-center">
+        <div class="mr-1">Lees meer</div>
+        {% include '_inline/_svg/angle-right-light.twig' %}
+      </div>
+    </div>
+  </a>
+{% endif %}

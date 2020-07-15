@@ -15,9 +15,6 @@
   </style>
 {% endblock %}
 
-{% block header %}
-{% endblock %}
-
 {% block content %}
 
   {% set searchQuery = craft.app.request.getParam('q') %}
@@ -33,7 +30,7 @@
       <h1 class="mb-4">Zoeken</h1>
       <form class="c-form-global-search mb-2" action="{{ url('zoeken') }}">
         <label for="q">
-          {% include '_inline/_svg/search-regular.svg' %}
+          {% include '_inline/_svg/search-regular.twig' %}
         </label>
         <input name="q" id="q" type="search"
                placeholder="Zoeken naar..." {{ searchQuery | length ? 'value=' ~ searchQuery : '' }}>
@@ -106,7 +103,7 @@
           <ul class="c-pagination pagination">
             <li class="c-pagination__item{{ pageInfo.prevUrl ? '' : ' disabled' }}">
               <a class="c-pagination__link" href="{{ pageInfo.prevUrl }}">
-                {% include '_inline/_svg/angle-left-light.svg' %}
+                {% include '_inline/_svg/angle-left-light.twig' %}
               </a>
             </li>
 
@@ -131,7 +128,7 @@
 
             <li class="c-pagination__item{{ pageInfo.nextUrl ? '' : ' disabled' }}">
               <a class="c-pagination__link" href="{{ pageInfo.nextUrl }}">
-                {% include '_inline/_svg/angle-right-light.svg' %}
+                {% include '_inline/_svg/angle-right-light.twig' %}
               </a>
             </li>
           </ul>

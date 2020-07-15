@@ -14,11 +14,10 @@
 // BOOTSTRAP AND CUSTOM
 @import "bootstrap/functions";
 
-// Add the fonts
-@import "custom/fonts";
-
-// This will overwrite the custom variables given in bootstrap/variables
-@import "custom/variables";
+// Settings
+@import "custom/settings/nav";
+@import "custom/settings/variables";
+@import "custom/settings/fonts";
 
 @import "bootstrap/variables";
 @import "bootstrap/mixins";
@@ -57,10 +56,6 @@
 @import "bootstrap/print";
 @import "bootstrap/images-ratio";
 
-// Settings
-@import "custom/settings/nav";
-@import "custom/settings/typography";
-
 // Utilities
 @import "custom/utilities/hover";
 @import "custom/utilities/focus";
@@ -69,20 +64,25 @@
 @import "custom/utilities/rounded";
 @import "custom/utilities/sizing";
 @import "custom/utilities/list";
+@import "custom/utilities/typography";
 
-@import "custom/body";
+// Elements
+@import "custom/elements/body";
+@import "custom/elements/main";
+
 @import "custom/header";
 @import "custom/wave";
 @import "custom/swiper";
 @import "custom/faq";
 @import "custom/footer";
 
-
 // Components
 @import "custom/components/c-form";
 @import "custom/components/c-nav";
 @import "custom/components/c-service";
 @import "custom/components/c-btn";
+@import "custom/components/c-card";
+@import "custom/components/c-pagination";
 
 // Add custom made scss files
 

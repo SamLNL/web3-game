@@ -1,12 +1,15 @@
 body {
-  margin-top: $nav-height;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: $nav-height;
 
   @include media-breakpoint-up('md') {
-    margin-top: $nav-height-md;
+    padding-top: $nav-height-md;
   }
 
   @include media-breakpoint-up('lg') {
-    margin-top: $nav-height-lg;
+    padding-top: $nav-height-lg;
   }
 
   &.no-scroll {
