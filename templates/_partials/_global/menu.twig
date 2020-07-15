@@ -1,35 +1,27 @@
 {% import "_partials/_macros.twig" as macro %}
 <div class="js-nav c-nav p-0 navbar-expand-lg fixed-top border-bottom bg-white justify-content-between">
   <div class="c-nav-desktop container px-2 px-md-4 d-flex flex-column">
-    <div class="c-nav__sub-menu flex flex-row w-100">
-        <form class="c-form-global-search" action="{{ siteUrl('zoeken') }}">
-          <label for="q">
-            {% include '_inline/_svg/search-regular' %}
-          </label>
-          <input class="w-100" name="q" id="q" type="search" placeholder="Zoeken naar...">
-        </form>
-      {% set nodes = craft.navigation.nodes('subNav').all() %}
-      <ul class="nav-items">
-        {% nav node in nodes %}
-          <li class="nav-item">
-            {% set idLink = node.url|first == '#' ? true : false %}
-            <a class="nav-link{{ node.active ? ' nav-active' }}{{ idLink ? ' js-scroll' }}" href="{{ node.url }}"
-               ga-on="click" ga-event-category="Menu" ga-event-action="Click" ga-event-label="{{ node.title }}">
-              {{ node.title }}
-            </a>
-          </li>
-        {% endnav %}
-      </ul>
+    <div class="c-nav-desktop__sub-menu">
+      <form class="c-form-global-search" action="{{ siteUrl('zoeken') }}">
+        <label for="q">
+          {% include '_inline/_svg/search-regular' %}
+        </label>
+        <input name="q" id="q" type="search" placeholder="Zoeken naar...">
+      </form>
+      {% set nav = craft.navigation.nodes('subNav').all() %}
+      {{ macro.renderNav(nav) }}
     </div>
+
+    {# Used both for Desktop as for Mobile #}
     <div class="d-flex flex-row w-100 d-lg-none px-0">
       <a class="d-block" href="/" title="Ga terug naar de homepagina">
         {% include '_inline/_svg/logo-biljoenbad' with {
           class: 'w-9 h-2 d-block'
         } %}
       </a>
-      <a title="Open het mobiele menu" class="c-nav__toggler js-nav-toggler ml-auto mr-1 d-flex flex-row align-items-center text-teal"
-         href="#"
-         data-id="menu-2-sidebar-toggle">
+      <a title="Open het mobiele menu"
+         class="c-nav__toggler js-nav-toggler ml-auto mr-1 d-flex flex-row align-items-center text-teal"
+         href="#" data-id="menu-sidebar-toggle">
         <p class="font-base mb-0">
           <small>Menu</small>
         </p>
@@ -39,78 +31,52 @@
       </a>
     </div>
 
-    <div class="c-nav__main-menu d-none d-lg-flex js-nav-collapse weight-500 px-0 w-100 flex-grow-0">
+    <div class="c-nav-desktop__main-menu js-nav-collapse">
       <a class="d-block mr-auto" href="/" title="Ga terug naar de homepagina">
         {% include '_inline/_svg/logo-biljoenbad' with {
-          class: 'w-9 h-2 d-block'
+          class: 'w-9 h-2 mr-2 d-block'
         } %}
       </a>
-      {% set nodes = craft.navigation.nodes('mainNav').all() %}
-      <ul class="nav-items">
-        {% nav node in nodes %}
-          <li class="nav-item">
-            {% set idLink = node.url|first == '#' ? true : false %}
-            <a class="nav-link{{ node.active ? ' nav-active' }}{{ idLink ? ' js-scroll' }}" href="{{ node.url }}"
-               ga-on="click" ga-event-category="Menu" ga-event-action="Click" ga-event-label="{{ node.title }}">
-              {{ node.title }}
-            </a>
-          </li>
-        {% endnav %}
-      </ul>
-    </div>
-  </div>
-  <div class="c-nav-mobile js-nav-side navbar-side" id="menu-2-sidebar" data-id="menu-2-sidebar-close">
-    <div class="js-nav-side-content navbar-side-content d-flex flex-column justify-content-between">
-      <div class="weight-700">
-        <div class="d-flex w-100">
-          <a title="Sluit het mobiele menu"
-             class="c-nav-mobile__side-close js-nav-side-close mb-4 d-flex flex-row align-items-center ml-auto mr-1" href="#"
-             data-id="menu-2-sidebar-close">
-            <p class="font-base mb-0">
-              <small>Sluit</small>
-            </p>
-            {% include '_inline/_svg/icon-sluit' with {
-              class: 'd-block'
-            } %}
-          </a>
-        </div>
-        <div class="navbar-nav">
-          {% set nodes = craft.navigation.nodes('mainNav').all() %}
-          <ul class="nav-items">
-            {% nav node in nodes %}
-              <li class="nav-item">
-                {% set idLink = node.url|first == '#' ? true : false %}
-                <a class="nav-link{{ node.active ? ' nav-active' }}{{ idLink ? ' js-scroll' }}" href="{{ node.url }}"
-                   ga-on="click" ga-event-category="Menu" ga-event-action="Click" ga-event-label="{{ node.title }}">
-                  {{ node.title }}
-                </a>
-              </li>
-            {% endnav %}
-          </ul>
-        </div>
-      </div>
-      {% if not social.socialFacebook.isEmpty or social.socialInstagram.isEmpty %}
-        <div class="w-100 d-flex flex-row justify-content-center align-items-center">
-          <span class="d-block d-xl-inline mr-2 small text-teal">Volg ons ook op</span>
-          {% if not social.socialFacebook.isEmpty %}
-            <a title="Ga naar onze Facebookpagina" class="d-block" href="{{ social.socialFacebook.getUrl() }}"
-               target="{{ social.socialFacebook.getTarget() }}">
-              <svg class="d-block" width="22" height="22">
-                <title>Facebook logo</title>
-                <use xlink:href="/assets/images/svg/sprite/sprite.svg#icon-facebook"></use>
-              </svg>
-            </a>
-          {% endif %}
-          {% if not social.socialInstagram.isEmpty %}
-            <a title="Ga naar onze Instagram" class="ml-2 d-block" href="{{ social.socialInstagram.getUrl() }}"
-               target="{{ social.socialInstagram.getTarget() }}">
-              <svg class="d-block" width="22" height="22">
-                <title>Instagram logo</title>
-                <use xlink:href="/assets/images/svg/sprite/sprite.svg#icon-insta"></use>
-              </svg>
-            </a>
-          {% endif %}
-        </div>
+      {% set nav = craft.navigation.nodes('mainNav').all() %}
+      {{ macro.renderNav(nav) }}
+      {% if menu.menuTickets.url | length %}
+        <a class="c-btn c-btn-yellow ml-4" href="{{ menu.menuTickets.url }}" target="{{ menu.menuTickets.target }}"
+           title="{{ menu.menuTickets.text }}">
+          {{ menu.menuTickets.text }}
+        </a>
       {% endif %}
     </div>
   </div>
+  <div class="c-nav-mobile js-nav-side navbar-side" id="menu-sidebar" data-id="menu-sidebar-close">
+    <div class="js-nav-side-content navbar-side-content">
+      <div class="c-nav-mobile__top">
+        <a title="Sluit het mobiele menu"
+           class="c-nav-mobile__top-close js-nav-side-close" href="#"
+           data-id="menu-sidebar-close">
+          <p class="font-base mb-0">
+            <small>Sluit</small>
+          </p>
+          {% include '_inline/_svg/icon-sluit' with {
+            class: 'd-block'
+          } %}
+        </a>
+      </div>
+      <div class="c-nav-mobile__main-menu">
+        {% set nav = craft.navigation.nodes('mainNav').all() %}
+        {{ macro.renderNav(nav) }}
+      </div>
+      {% if menu.menuTickets.url | length %}
+        <div class="c-nav-mobile__tickets">
+          <a class="c-btn c-btn-yellow" href="{{ menu.menuTickets.url }}" target="{{ menu.menuTickets.target }}"
+             title="{{ menu.menuTickets.text }}">
+            {{ menu.menuTickets.text }}
+          </a>
+        </div>
+      {% endif %}
+      <div class="c-nav-mobile__sub-menu">
+        {% set nav = craft.navigation.nodes('subNav').all() %}
+        {{ macro.renderNav(nav) }}
+      </div>
+    </div>
+  </div>
+</div>

@@ -445,7 +445,7 @@
 
                         <div class="form-group row">
                             <div class="col-12 col-sm-10 offset-sm-2">
-                                <button type="submit" class="btn btn-success">
+                                <button type="submit" class="c-btn c-btn-success">
                                     Submit
                                 </button>
                             </div>
@@ -502,7 +502,7 @@
         $("*[data-toggle-button]").each(function() {
           var self = $(this);
           var button = $("<button />", {
-            class: "btn btn-" + (self.val() == 0 ? "secondary" : "primary"),
+            class: "c-btn c-btn-" + (self.val() == 0 ? "secondary" : "primary"),
             type: "button",
             text: self.val() == 0 ? "Off" : "On",
           });
@@ -511,8 +511,8 @@
             click: function () {
               self.val(1 - self.val());
               $(this)
-                .removeClass("btn-primary btn-secondary")
-                .addClass(self.val() == 0 ? "btn-secondary" : "btn-primary")
+                .removeClass("c-btn-primary c-btn-secondary")
+                .addClass(self.val() == 0 ? "c-btn-secondary" : "c-btn-primary")
                 .text(self.val() == 0 ? "Off" : "On");
 
               self.trigger("change");

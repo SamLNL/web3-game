@@ -21,7 +21,7 @@
       font-size: $font-size-sm;
       padding-bottom: map_get($spacers, 1) * 0.15;
       width: 100%;
-      color: $primary;
+      color: $teal-500;
 
       &::placeholder {
         color: $teal-300;

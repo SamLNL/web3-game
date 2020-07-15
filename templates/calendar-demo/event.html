@@ -35,10 +35,10 @@
 
                 {% if event %}
 
-                    <div class="btn-group float-right" role="group" aria-label="actions">
+                    <div class="c-btn-group float-right" role="group" aria-label="actions">
                         {% if craft.calendar.exportEnabled %}
                             <a href="{{ siteUrl }}calendar-demo/export/event/{{ segment3 }}"
-                               class="btn btn-primary btn-sm"
+                               class="c-btn c-btn-primary c-btn-sm"
                                role="button">
                                 <span class="fas fa-file-export" aria-hidden="true"></span>
                                 &nbsp;Export Event
@@ -47,7 +47,7 @@
 
                         {% if craft.calendar.canEditEvent(event) %}
                             <a href="{{ siteUrl }}calendar-demo/edit/event/{{ segment3 }}"
-                               class="btn btn-warning btn-sm"
+                               class="c-btn c-btn-warning c-btn-sm"
                                role="button">
                                 <span class="fas fa-edit"></span>
                                 &nbsp;Edit

@@ -12,9 +12,9 @@ function stickIt() {
   //get the body element
   let body = document.querySelector('body');
   //check if the body doens't contain the class already
-  if (!body.classList.contains('sticky')) {
+  if (!body.classList.contains('sticky-nav')) {
     //add the class
-    body.classList.add('sticky');
+    body.classList.add('sticky-nav');
   }
 }
 
@@ -22,8 +22,8 @@ function unStick() {
   //get the body element
   let body = document.querySelector('body');
   //check if the body doen'st contain the class already
-  if (body.classList.contains('sticky')) {
-    body.classList.remove('sticky');
+  if (body.classList.contains('sticky-nav')) {
+    body.classList.remove('sticky-nav');
   }
 }
 
@@ -77,7 +77,8 @@ let nav = document.querySelector('.js-nav');
         e.preventDefault();
         let sidebar = nav.querySelector('.js-nav-side');
         if (sidebar) {
-          sidebar.classList.toggle('show');
+          sidebar.classList.add('show');
+          document.body.classList.add('no-scroll');
         }
       });
     }
@@ -88,6 +89,7 @@ let nav = document.querySelector('.js-nav');
         let sidebar = nav.querySelector('.js-nav-side');
         if (sidebar) {
           sidebar.classList.remove('show');
+          document.body.classList.remove('no-scroll');
         }
       });
     }

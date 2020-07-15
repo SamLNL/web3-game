@@ -1,4 +1,6 @@
-.btn {
+.c-btn {
+  @extend .btn;
+
   background-color: $yellow;
   color: $teal-600;
   font-size: $font-size-sm;

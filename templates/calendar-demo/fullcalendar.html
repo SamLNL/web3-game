@@ -238,13 +238,13 @@
                 });
 
                 editButton.append($('<a>', {
-                    class: 'btn btn-outline-warning btn-sm submit',
+                    class: 'c-btn c-btn-outline-warning c-btn-sm submit',
                     href: '{{ siteUrl }}calendar-demo/edit/event/' + event.id,
                     text: '{{ "Edit"|t }}'
                 }));
 
                 editButton.append($('<a>', {
-                    class: 'btn btn-outline-danger text-danger btn-sm delete-event',
+                    class: 'c-btn c-btn-outline-danger text-danger c-btn-sm delete-event',
                     text: "{{ 'Delete'|t }}",
                     data: {
                         id: event.id,
@@ -254,7 +254,7 @@
 
                 if (event.repeats) {
                     editButton.append($('<a>', {
-                        class: 'btn btn-outline-secondary btn-sm delete-event-occurrence',
+                        class: 'c-btn c-btn-outline-secondary c-btn-sm delete-event-occurrence',
                         text: "{{ 'Delete Occurrence'|t }}",
                         data: {
                             id: event.id,
@@ -704,13 +704,13 @@
                               });
 
                               editButton.append($('<a>', {
-                                class: 'btn btn-outline-warning btn-sm submit',
+                                class: 'c-btn c-btn-outline-warning c-btn-sm submit',
                                 href: '{{ siteUrl }}calendar-demo/edit/event/' + event.id,
                                 text: '{{ "Edit"|t }}'
                               }));
 
                               editButton.append($('<a>', {
-                                class: 'btn btn-outline-danger text-danger btn-sm delete-event',
+                                class: 'c-btn c-btn-outline-danger text-danger c-btn-sm delete-event',
                                 text: "{{ 'Delete'|t }}",
                                 data: {
                                   id: event.id,
@@ -720,7 +720,7 @@
 
                               if (event.repeats) {
                                 editButton.append($('<a>', {
-                                  class: 'btn btn-outline-secondary btn-sm delete-event-occurrence',
+                                  class: 'c-btn c-btn-outline-secondary c-btn-sm delete-event-occurrence',
                                   text: "{{ 'Delete Occurrence'|t }}",
                                   data: {
                                     id: event.id,
@@ -1119,8 +1119,8 @@
         <ul class="errors"></ul>
 
         <div class="buttons">
-            <button type="button" class="btn btn-success submit">{{ 'Save'|t }}</button>
-            <button type="button" class="btn btn-default delete">{{ 'Cancel'|t }}</button>
+            <button type="button" class="c-btn c-btn-success submit">{{ 'Save'|t }}</button>
+            <button type="button" class="c-btn c-btn-default delete">{{ 'Cancel'|t }}</button>
         </div>
     </div>
 {% endblock %}

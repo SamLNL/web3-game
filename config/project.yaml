@@ -1,4 +1,4 @@
-dateModified: 1594732222
+dateModified: 1594805225
 email:
   fromEmail: interactie@emotion.nl
   fromName: Biljoenbad
@@ -235,6 +235,130 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Assets
+  8c542cd3-0d01-4457-a609-6088b8bf698c:
+    contentColumnType: text
+    fieldGroup: cdcb72f5-a94d-46ed-ab22-67dcb5fff45f
+    handle: menuTickets
+    instructions: 'Tickets knop in het menu'
+    name: 'Menu - Tickets'
+    searchable: true
+    settings:
+      allowCustomText: '1'
+      allowTarget: '1'
+      allowedLinkNames:
+        1: asset
+        4: entry
+        6: custom
+        7: email
+        8: tel
+        9: url
+      autoNoReferrer: '1'
+      defaultLinkName: url
+      defaultText: ''
+      enableAriaLabel: ''
+      enableTitle: ''
+      typeSettings:
+        __assoc__:
+          -
+            - asset
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+          -
+            - category
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+          -
+            - user
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+          -
+            - entry
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+          -
+            - site
+            -
+              __assoc__:
+                -
+                  - sites
+                  - '*'
+          -
+            - custom
+            -
+              __assoc__:
+                -
+                  - disableValidation
+                  - ''
+                -
+                  - allowAliases
+                  - ''
+          -
+            - email
+            -
+              __assoc__:
+                -
+                  - disableValidation
+                  - ''
+                -
+                  - allowAliases
+                  - ''
+          -
+            - tel
+            -
+              __assoc__:
+                -
+                  - disableValidation
+                  - ''
+                -
+                  - allowAliases
+                  - ''
+          -
+            - url
+            -
+              __assoc__:
+                -
+                  - disableValidation
+                  - ''
+                -
+                  - allowAliases
+                  - ''
+          -
+            - solspaceCalendar-event
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: typedlinkfield\fields\LinkField
   8cf5091d-c55c-4348-a57f-b38c56bc0aa0:
     contentColumnType: text
     fieldGroup: cdcb72f5-a94d-46ed-ab22-67dcb5fff45f
@@ -381,6 +505,19 @@ fields:
     translationMethod: none
     type: Solspace\Calendar\FieldTypes\CalendarFieldType
 globalSets:
+  70182a37-5dc3-4cf6-aa27-b2c0f88c9dbc:
+    fieldLayouts:
+      20afbca5-c858-42a1-90c6-70371f8fe658:
+        tabs:
+          -
+            fields:
+              8c542cd3-0d01-4457-a609-6088b8bf698c:
+                required: false
+                sortOrder: 1
+            name: Menu
+            sortOrder: 1
+    handle: menu
+    name: Menu
   e0e84f9d-b3be-4dd0-acf4-dcd4b5031a79:
     fieldLayouts:
       808033d7-7037-46f1-a757-7411b0f8de27:
