@@ -1,0 +1,63 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{# @var entry \craft\elements\Entry #}
+{# ======================================================
+  @filename: text
+  @author:   sam
+  ====================================================== #}
+{#
+  Text specially for side-by-side
+#}
+
+{% set text = text is defined ? text : '' %}
+{% set cta1 = cta1 is defined ? cta1 : '' %}
+{% set cta1Micro = cta1Micro is defined ? cta1Micro : '' %}
+{% set cta2 = cta2 is defined ? cta2 : '' %}
+{% set cta2Micro = cta2Micro is defined ? cta2Micro : '' %}
+
+{% if text | length %}
+  {{ text }}
+  <div class="c-side-by-side__text">
+
+    {% if cta1.url | length %}
+      <div
+        class="d-flex flex-column text-center align-items-center {{ cta2 | length ? ' mb-2 mb-sm-0 mr-sm-2' : '' }}">
+        <a href="{{ cta1.url }}"
+           title="{{ cta1.text }}"
+           class="c-btn c-btn-primary"
+           ga-on="click"
+           ga-event-category="CTA"
+           ga-event-action="Click"
+           ga-event-label="{{ cta1.text|ucfirst }}"
+        >
+          <span>{{ cta1.text }}</span>
+        </a>
+        {% if cta1Micro | length %}
+          <span class="small text-gray mt-1">
+          {{ cta1Micro }}
+        </span>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {% if cta2.url | length %}
+      <div class="d-flex flex-column text-center align-items-center">
+        <a href="{{ cta2.url }}"
+           title="{{ cta2.text }}"
+           class="c-btn c-btn-secondary"
+           ga-on="click"
+           ga-event-category="CTA"
+           ga-event-action="Click"
+           ga-event-label="{{ cta2.text|ucfirst }}"
+        >
+          <span>{{ cta2.text }}</span>
+        </a>
+        {% if cta2Micro | length %}
+          <span class="small text-gray mt-1">
+            {{ cta2Micro }}
+          </span>
+        {% endif %}
+
+      </div>
+    {% endif %}
+  </div>
+{% endif %}

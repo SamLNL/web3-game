@@ -1,0 +1,20 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{# @var entry \craft\elements\Entry #}
+{# ======================================================
+  @filename: text
+  @author:   sam
+  ====================================================== #}
+
+{# {% import "_partials/_macros.twig" as macro %} #}
+
+{% set text = text is defined ? text :'' %}
+
+{% if text | length %}
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-8 offset-lg-2">
+        {{ text }}
+      </div>
+    </div>
+  </div>
+{% endif %}

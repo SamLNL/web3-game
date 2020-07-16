@@ -172,7 +172,9 @@
     }
   },
   "dependencies": {
+    "@typeform/embed": "^0.22.2",
     "autotrack": "^2.4.1",
+    "baguettebox.js": "^1.11.1",
     "lazysizes": "^2.0.6",
     "loadjs": "^3.3.1",
     "picturefill": "^3.0.2",

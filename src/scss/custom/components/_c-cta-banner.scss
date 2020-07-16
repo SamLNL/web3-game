@@ -1,0 +1,51 @@
+/* ==========================================================================
+   # Name: _c-cta-banner
+   # Author: sam
+   ========================================================================== */
+
+.c-cta-banner {
+  @extend .border;
+  @extend .rounded;
+
+  padding: map_get($spacers, 4) map_get($spacers, 3);
+
+  &__intro {
+    width: 100%;
+    text-align: center;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: map_get($spacers, 4);
+
+    @include media-breakpoint-up(sm) {
+      flex-direction: row;
+      align-items: start;
+    }
+  }
+
+  &__cta {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+
+    & + .c-cta-banner__cta {
+      margin-top: map_get($spacers, 3);
+
+      @include media-breakpoint-up(sm) {
+        margin-top: 0;
+        margin-left: map_get($spacers, 2);
+      }
+    }
+
+    &__micro {
+      @extend .small;
+      color: $gray-600;
+      margin-top: map_get($spacers, 1);
+    }
+  }
+}

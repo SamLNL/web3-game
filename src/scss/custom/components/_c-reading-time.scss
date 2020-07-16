@@ -1,0 +1,8 @@
+.c-reading-time {
+  @extend .small;
+  padding: (map_get($spacers, 1) * 0.25) map_get($spacers, 1);
+  display: flex;
+  align-items: center;
+  background-color: $white;
+  color: $gray-800;
+}

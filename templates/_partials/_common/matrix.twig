@@ -1,0 +1,126 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{# @var entry \craft\elements\Entry #}
+{# ======================================================
+  @filename: matrix
+  @author:   sam
+  ====================================================== #}
+{#
+  Matrix field; body
+#}
+
+{# {% import "_partials/_macros.twig" as macro %} #}
+
+{# Check if body variable is given #}
+{% set body = body is defined and body | length ? body : '' %}
+
+{# If no body variable is given, check if body field exists #}
+{% if not body | length %}
+  {% set body = entry['body'] is defined and entry.body | length ? entry.body : '' %}
+{% endif %}
+
+{% if body | length %}
+  <article>
+    {% for block in entry.body %}
+      {% switch block.type %}
+
+      {% case 'text' %}
+        {% if block.text | length %}
+          <div class="mb-2 mb-lg-6">
+            {% include '_partials/_components/text/text.twig' with {
+              text: block.text
+            } %}
+          </div>
+        {% endif %}
+
+      {% case 'image' %}
+        {% if block.image | length %}
+          <div class="mb-4 mb-lg-8">
+            {% include '_partials/_components/image/image.twig' with {
+              image: block.image[0],
+              format: block.format
+            } %}
+          </div>
+        {% endif %}
+
+      {% case 'imageText' or 'textImage' %}
+        <div class="mb-4 mb-lg-8">
+          {% include '_partials/_components/side-by-side/side-by-side.twig' with {
+            text: block.text,
+            image: block.image | length ? block.image[0] : '',
+            cta1: block.cta1 | length ? block.cta1 : '',
+            cta1Micro: block.cta1Micro | length ? block.cta1Micro : '',
+            cta2: block.cta2 | length ? block.cta2 : '',
+            cta2Micro: block.cta2Micro | length ? block.cta2Micro : '',
+            order: block.type
+          } %}
+        </div>
+
+      {% case 'ctaBanner' %}
+        <div class="mb-4 mb-lg-8">
+          {% include '_partials/_components/cta-banner/cta-banner.twig' with {
+            text: block.text,
+            cta1: block.cta1 | length ? block.cta1 : '',
+            cta1Micro: block.cta1Micro | length ? block.cta1Micro : '',
+            cta2: block.cta2 | length ? block.cta2 : '',
+            cta2Micro: block.cta2Micro | length ? block.cta2Micro : '',
+          } %}
+        </div>
+
+      {% case 'faq' %}
+        {% if block.questions | length %}
+          <div class="mb-4 mb-lg-8">
+            {% include '_partials/_components/faq/faq.twig' with {
+              heading: block.heading | length ? block.heading : '',
+              text: block.text,
+              questions: block.questions,
+              cta: block.cta
+            } %}
+          </div>
+        {% endif %}
+
+      {% case 'gallery' %}
+        <div class="mb-4 mb-lg-8">
+          {% include '_partials/_components/gallery/gallery.twig' with {
+            text: block.text,
+            images: block.images
+          } %}
+        </div>
+
+      {% case 'slider' %}
+        <div class="mb-4 mb-lg-8">
+          {% include '_partials/_components/slider/slider.twig' with {
+            text: block.text,
+            images: block.images
+          } %}
+        </div>
+
+      {% case 'quote' %}
+        <div class="mt-5 mb-8 mt-md-8 mb-md-10 mb-lg-12">
+          {% include '_partials/_components/quote/quote.twig' with {
+            quote: block.quote,
+            author: block.author
+          } %}
+        </div>
+
+      {% case 'teaser' %}
+        <div class="mb-4 mb-lg-8">
+          {% include '_partials/_components/teaser/teaser.twig' with {
+            text: block.text,
+            items: block.items,
+            cta: block.cta,
+            ctaMicro: block.ctaMicro
+          } %}
+        </div>
+
+      {% case 'typeform' %}
+        <div class="mb-4 mb-lg-8">
+          {% include '_partials/_components/typeform/typeform.twig' with {
+            text: block.text,
+            url: block.typeform.url,
+            label: block.typeform.text
+          } %}
+        </div>
+      {% endswitch %}
+    {% endfor %}
+  </article>
+{% endif %}

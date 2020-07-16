@@ -1,0 +1,34 @@
+.c-breadcrumb {
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    li {
+      display: flex;
+      flex-direction: row;
+
+      & > * {
+        font-size: $font-size-sm;
+      }
+
+      a {
+        margin-right: 6px;
+        &:hover {
+          text-decoration: underline;
+
+          span {
+            border-bottom: 0;
+          }
+        }
+      }
+
+      svg {
+        margin-right: 6px;
+        width: 10px;
+        height: 20px;
+      }
+    }
+  }
+}

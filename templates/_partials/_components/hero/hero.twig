@@ -1,0 +1,64 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{# @var entry \craft\elements\Entry #}
+{# ======================================================
+  @filename: hero
+  @author:   sam
+  ====================================================== #}
+{#
+  Hero for all pages
+#}
+
+{% import "_partials/_macros.twig" as macro %}
+
+{% set image = image is defined ? image : '' %}
+{% set contentPath = contentPath is defined ? contentPath : '' %}
+{% set class = class is defined ? class : '' %}
+
+{% if image | length %}
+  {% set transforms =
+    [
+      {
+        'sizes': [
+        {width: 400, ratio: 320/192}
+      ],
+      },
+      {
+        'media': 'min-width: 576px',
+        'sizes': [
+        {width: 600, ratio: 576/192}
+      ],
+      },
+      {
+        'media': 'min-width: 768px',
+        'sizes': [
+        {width: 992, ratio: 768/192},
+      ]
+      },
+      {
+        'media': 'min-width: 992px',
+        'sizes': [
+        {width: 1200, ratio: 992/320},
+      ]
+      },
+      {
+        'media': 'min-width: 1200px',
+        'sizes': [
+        {width: 1600, ratio: 1200/320},
+      ]
+      },
+      {
+        'media': 'min-width: 1600px',
+        'sizes': [
+        {width: 1920, ratio: 1920/584},
+      ]
+      },
+    ] %}
+
+  {{ macro.renderImageBackgroundCss(image, transforms, 'c-hero') }}
+
+  <div class="c-hero {{ class }}">
+    {% if contentPath | length %}
+      {% include contentPath %}
+    {% endif %}
+  </div>
+{% endif %}

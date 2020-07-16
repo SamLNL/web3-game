@@ -1,0 +1,70 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{# @var entry \craft\elements\Entry #}
+{# ======================================================
+  @filename: cta-banner
+  @author:   sam
+  ====================================================== #}
+
+{% set text = text is defined ? text : '' %}
+{% set cta1 = cta1 is defined ? cta1 : '' %}
+{% set cta1Micro = cta1Micro is defined ? cta1Micro : '' %}
+{% set cta2 = cta2 is defined ? cta2 : '' %}
+{% set cta2Micro = cta2Micro is defined ? cta2Micro : '' %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-lg-8 offset-lg-2">
+
+      <div class="c-cta-banner">
+        {% if text | length %}
+          <div class="c-cta-banner__intro">
+            {{ text }}
+          </div>
+        {% endif %}
+        <div class="c-cta-banner__wrapper">
+          {% if cta1.url | length %}
+            <div
+              class="c-cta-banner__cta">
+              <a href="{{ cta1.url }}"
+                 title="{{ cta1.text }}"
+                 class="c-btn c-btn-primary"
+                 ga-on="click"
+                 ga-event-category="CTA"
+                 ga-event-action="Click"
+                 ga-event-label="{{ cta1.text|ucfirst }}"
+              >
+                <span>{{ cta1.text }}</span>
+              </a>
+              {% if cta1Micro | length %}
+                <span class="c-cta-banner__cta__micro">
+                  {{ cta1Micro }}
+                </span>
+              {% endif %}
+            </div>
+          {% endif %}
+
+          {% if cta2.url | length %}
+            <div class="c-cta-banner__cta">
+              <a href="{{ cta2.url }}"
+                 title="{{ cta2.text }}"
+                 class="c-btn c-btn-secondary"
+                 ga-on="click"
+                 ga-event-category="CTA"
+                 ga-event-action="Click"
+                 ga-event-label="{{ cta2.text|ucfirst }}"
+              >
+                <span>{{ cta2.text }}</span>
+              </a>
+              {% if cta2Micro | length %}
+                <span class="c-cta-banner__cta__micro">
+                  {{ cta2Micro }}
+                </span>
+              {% endif %}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

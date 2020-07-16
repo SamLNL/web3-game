@@ -1,0 +1,37 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{# @var entry \craft\elements\Entry #}
+{# ======================================================
+  @filename: gallery
+  @author:   sam
+  ====================================================== #}
+
+{% import "_partials/_macros.twig" as macro %}
+
+{% set text = text is defined ? text : '' %}
+{% set images = images is defined ? images : '' %}
+
+{% if images | length %}
+  <div class="container">
+    <div class="c-gallery js-gallery">
+      {% for image in images %}
+        {% set defaultImage = image %}
+        {% set thumb = craft.imager.transformImage(image, {
+          width: 300,
+          height: 200,
+          position: image.getFocalPoint()
+        }) %}
+
+        {% set largeImage = craft.imager.transformImage(image, {
+          width: 1000,
+          height: 1000,
+          mode: 'fit',
+          position: image.getFocalPoint()
+        }) %}
+
+        <a href="{{ largeImage.url }}" class="c-gallery__item" title="{{ defaultImage.title }}">
+          <img class="lazyload" src="{{ thumb.url }}" alt="{{ defaultImage.title }}">
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}

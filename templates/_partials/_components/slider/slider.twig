@@ -1,0 +1,80 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{# @var entry \craft\elements\Entry #}
+{# ======================================================
+  @filename: slider
+  @author:   sam
+  ====================================================== #}
+{% import "_partials/_macros.twig" as macro %}
+
+{% set text = text is defined ? text : '' %}
+{% set images = images is defined ? images :'' %}
+
+{% if images | length %}
+  <div class="container">
+    {% if text | length %}
+      <div class="row">
+        <div class="col-12 col-lg-8 offset-lg-2 mb-4">
+          {{ text }}
+        </div>
+      </div>
+    {% endif %}
+
+    <div class="c-slider js-slider swiper">
+      <div class="swiper-container swiper-overflow row">
+        <div class="swiper-wrapper">
+          {% for image in images %}
+            {% set transforms =
+              [
+                {
+                  'media': 'min-width: 1440px',
+                  'sizes': [
+                  {width: 1440, ratio: 1440/800}
+                ],
+                },
+                {
+                  'media': 'min-width: 1024px',
+                  'sizes': [
+                  {width: 1024, ratio: 1024/600}
+                ],
+                },
+                {
+                  'media': 'min-width: 768px',
+                  'sizes': [
+                  {width: 768, ratio: 768/400}
+                ],
+                },
+                {
+                  'media': 'min-width: 425px',
+                  'sizes': [
+                  {width: 425, ratio: 425/300}
+                ],
+                },
+                {
+                  'media': 'min-width: 375px',
+                  'sizes': [
+                  {width: 375, ratio: 375/300}
+                ],
+                },
+                {
+                  'sizes': [
+                  {width: 320, ratio: 320/300}
+                ],
+                }
+              ] %}
+
+            <div class="c-slider__slide swiper-slide">
+              {{ macro.renderPicture(image,transforms, true, image.title) }}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      <a title="" class="c-slider__prev swiper-prev" href="#">
+        <span></span>
+      </a>
+      <a title="" class="c-slider__next swiper-next" href="#">
+        <span></span>
+      </a>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+{% endif %}

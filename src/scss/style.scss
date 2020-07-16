@@ -69,6 +69,7 @@
 // Elements
 @import "custom/elements/body";
 @import "custom/elements/main";
+@import "custom/elements/anchor";
 
 @import "custom/header";
 @import "custom/wave";
@@ -83,6 +84,26 @@
 @import "custom/components/c-btn";
 @import "custom/components/c-card";
 @import "custom/components/c-pagination";
+@import "custom/components/c-reading-time";
+@import "custom/components/c-icon";
+@import "custom/components/c-category";
+@import "custom/components/c-label";
+@import "custom/components/c-breadcrumb";
+@import "custom/components/c-hero";
+@import "custom/components/c-gallery";
+@import "custom/components/c-faq";
+@import "custom/components/c-cta-banner";
+@import "custom/components/c-image";
+@import "custom/components/c-quote";
+@import "custom/components/c-side-by-side";
+@import "custom/components/c-slider";
+@import "custom/components/c-teaser";
+@import "custom/components/c-typeform";
 
-// Add custom made scss files
+// Add js scss
+@import "custom/js/js-load-more";
+@import "custom/js/js-slider";
+
+// Add external css
+@import '~baguettebox.js/dist/baguetteBox';
 

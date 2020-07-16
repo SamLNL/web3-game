@@ -131,3 +131,10 @@
     {% endnav %}
   </ul>
 {% endmacro %}
+
+{#
+  Get Rich text area without the <p> elements
+#}
+{% macro renderRichText(text, class = 'd-block') %}
+  {{ text | replace({ '<p>' : '<span class="' ~ class ~ '">', '</p>' : '</span>'}) | raw }}
+{% endmacro %}

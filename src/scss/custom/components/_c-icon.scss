@@ -1,0 +1,11 @@
+.c-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    display: block;
+    width: map_get($spacers, 3);
+    height: map_get($spacers, 3);
+  }
+}

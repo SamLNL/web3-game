@@ -1,0 +1,94 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{# @var entry \craft\elements\Entry #}
+{# ======================================================
+  @filename: teaser
+  @author:   sam
+  ====================================================== #}
+{#
+  Teaser of max. 3 (news) items
+#}
+{% import "_partials/_macros.twig" as macro %}
+
+{% set text = text is defined ? text : '' %}
+{% set items = items is defined ? items : '' %}
+{% set cta = cta is defined ? cta : '' %}
+{% set ctaMicro = ctaMicro is defined ? ctaMicro : '' %}
+
+{% if items | length %}
+  {# Lets us loop through items so we can see if there are any summary's avalaible #}
+
+  {% set teasers = [] %}
+  {% set summaryFound = false %}
+  {% for item in items %}
+    {% set teasers = teasers | merge ([item]) %}
+
+    {# if no summary has been found yet, check if this item has a summary #}
+    {% if not summaryFound %}
+      {% if item['summary'] is defined and item.summary | length %}
+        {% set summaryFound = true %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+
+  <div class="container">
+    <div class="row">
+      {% if text | length %}
+        <div class="col-12 col-lg-8 offset-lg-2 mb-3">
+          {{ text }}
+        </div>
+      {% endif %}
+      {% if not summaryFound %}
+
+        {% endif %}
+
+        <span class="c-teaser{{ summaryFound ? '' : ' c-teaser-small'}} js-teaser swiper">
+          <div class="c-teaser__container swiper-container">
+            <div class="c-teaser__wrapper swiper-wrapper">
+              {% for item in teasers %}
+                {% include '_partials/_components/card/card.twig' with {
+                  url: item.url,
+                  image: item.newsImage[0],
+                  readingTime: item.readingTime,
+                  title: item.title,
+                  categories: item.category,
+                  date: item.dateCreated,
+                  summary: item.summary,
+                  class: 'swiper-slide h-auto'
+                } %}
+              {% endfor %}
+            </div>
+          </div>
+          <a title="" class="c-teaser__prev swiper-prev" href="#">
+            <span></span>
+          </a>
+          <a title="" class="c-teaser__next swiper-next" href="#">
+            <span></span>
+          </a>
+          <div class="swiper-pagination d-none"></div>
+        </div>
+        {% if cta.url | length %}
+          <div class="d-flex flex-column w-100 text-center align-items-center mt-3 mt-lg-4">
+            <a href="{{ cta.url }}"
+               title="{{ cta.text }}"
+               class="c-btn c-btn-primary"
+               ga-on="click"
+               ga-event-category="CTA"
+               ga-event-action="Click"
+               ga-event-label="{{ cta.text|ucfirst }}"
+            >
+              <span>{{ cta.text }}</span>
+            </a>
+            {% if ctaMicro | length %}
+              <span class="small text-gray mt-1">
+                  {{ ctaMicro }}
+                </span>
+            {% endif %}
+          </div>
+        {% endif %}
+
+        {% if not summaryFound %}
+
+      {% endif %}
+    </div>
+  </div>
+{% endif %}

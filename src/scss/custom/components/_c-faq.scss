@@ -1,0 +1,27 @@
+/* ==========================================================================
+   # Name: _c-faq
+   # Author: sam
+   ========================================================================== */
+
+.c-faq {
+  @extend .rounded;
+  @extend .border;
+  display: block;
+  margin-bottom: map_get($spacers, 2);
+  padding: 0 map_get($spacers, 3);
+
+  &__question {
+    width: 100%;
+    margin-bottom: 0;
+    padding: map_get($spacers, 2) map_get($spacers, 4) map_get($spacers, 2) 0;
+    font-weight: $font-weight-bold;
+  }
+
+  &__answer {
+    div {
+      margin-bottom: 0;
+      padding-bottom: map_get($spacers, 2);
+    }
+  }
+}
+

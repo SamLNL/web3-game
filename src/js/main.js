@@ -34,6 +34,20 @@ const main = async () => {
     await import(/* webpackChunkName: "swiper" */ "./custom/swiper-services");
   }
 
+  // Common blocks
+  if(document.querySelectorAll('.js-gallery').length > 0) {
+    await import(/* webpackChunkName: "gallery" */ "./custom/components/gallery");
+  }
+  if(document.querySelectorAll('.js-slider').length > 0) {
+    await import(/* webpackChunkName: "slider" */ "./custom/components/slider");
+  }
+  if(document.querySelectorAll('.js-teaser').length > 0) {
+    await import(/* webpackChunkName: "teaser" */ "./custom/components/teaser");
+  }
+  if(document.querySelectorAll('.js-typeform').length > 0) {
+    await import(/* webpackChunkName: "typeform" */ "./custom/components/typeform");
+  }
+
   analytics.init();
 };
 

@@ -1,0 +1,24 @@
+/* ==========================================================================
+   # Name: _c-gallery
+   # Author: sam
+   ========================================================================== */
+
+.c-gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  &__item {
+    width: 50%;
+
+    @include media-breakpoint-up('md') {
+      width: 25%;
+    }
+
+    padding: map_get($spacers, 1);
+
+    img {
+      width: 100%;
+    }
+  }
+}
