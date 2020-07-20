@@ -30,6 +30,10 @@
     }
   }
 
+  &:focus {
+    box-shadow: none;
+  }
+
   &:disabled {
     pointer-events: none;
     background-color: $gray-300;

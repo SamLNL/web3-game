@@ -1,0 +1,21 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{# @var entry \craft\elements\Entry #}
+{# ======================================================
+  @filename: hero-content
+  @author:   sam
+  ====================================================== #}
+
+{% if entry is defined and entry['readingTime'] is defined and entry.readingTime | length %}
+  <div class="container d-flex h-100">
+    <div class="row h-100 w-100">
+      <div class="w-100 h-100 d-flex col-12 col-lg-8 offset-lg-2">
+        <div class="c-reading-time mt-auto mb-2">
+          <span class="d-flex align-items-center mr-1">
+            {% include '_inline/_svg/clock-regular.twig' %}
+          </span>
+          {{ entry.readingTime }} minuten leestijd
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}

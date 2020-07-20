@@ -32,4 +32,66 @@
       }
     }
   }
+
+  &-search {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    label {
+      color: $gray-600;
+      margin-right: 6px;
+      margin-bottom: 2px;
+
+      svg {
+        width: $spacer;
+        display: block;
+      }
+    }
+
+    input[type='search'] {
+      border-width: 1px;
+      border-style: solid;
+      border-color: $gray-300;
+      padding: (map_get($spacers, 1) * 0.75) map_get($spacers, 1);
+      width: calc(100% - 10px);
+      margin-right: 10px;
+
+      @include media-breakpoint-up(md) {
+        padding: (map_get($spacers, 1) * 0.75) map_get($spacers, 2);
+      }
+
+      &:active {
+        border-color: $gray-600;
+      }
+
+      &:focus {
+        outline: none;
+        border-color: $gray-600;
+      }
+    }
+
+    &__button {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      padding: map_get($spacers, 1) map_get($spacers, 2);
+
+      &__search {
+        margin-right: 8px;
+
+        svg {
+          display: block;
+          width: 18px;
+          height: 18px;
+        }
+      }
+
+      &__loader {
+        display: none;
+      }
+    }
+  }
 }

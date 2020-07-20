@@ -47,6 +47,9 @@ const main = async () => {
   if(document.querySelectorAll('.js-typeform').length > 0) {
     await import(/* webpackChunkName: "typeform" */ "./custom/components/typeform");
   }
+  if(document.querySelectorAll('.js-load-more-button').length > 0) {
+    await import(/* webpackChunkName: "load-more" */ "./custom/load-more");
+  }
 
   analytics.init();
 };

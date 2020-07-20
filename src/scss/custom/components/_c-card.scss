@@ -1,11 +1,12 @@
 .c-card {
   display: flex;
   flex-direction: column;
-  background-color: $teal-100;
+  background-color: $white;
   border: 1px solid $teal-100;
   width: 100%;
   color: $black;
   margin-bottom: map_get($spacers, 1);
+  transition: border 0.15s ease-in-out;
 
   @include media-breakpoint-up(md) {
     flex-direction: row;
@@ -23,12 +24,12 @@
   }
 
   &__image {
+    @extend .col-md-3;
     position: relative;
     padding-left: 0;
     padding-right: 0;
     height: map_get($spacers, 12);
     width: 100%;
-    @extend .col-md-3;
 
     @include media-breakpoint-up(md) {
       height: auto;

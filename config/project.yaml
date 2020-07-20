@@ -1,4 +1,4 @@
-dateModified: 1594911914
+dateModified: 1595249556
 email:
   fromEmail: interactie@emotion.nl
   fromName: Biljoenbad
@@ -10,10 +10,14 @@ fieldGroups:
     name: Header
   75c4c41b-4b5d-4f5b-bf8a-0d1bbe387b16:
     name: FAQ
+  ac562d11-9c01-4cfa-b780-88224473e650:
+    name: Nieuws
   be40097e-126e-4a57-854d-f07aa9ea16d7:
     name: SEO
   cdcb72f5-a94d-46ed-ab22-67dcb5fff45f:
     name: Global
+  df78e26d-9aa7-49a4-bd8a-75980ddba39d:
+    name: 'Rooster en tarieven'
   f0c3735f-1b6e-456c-9608-4cfe64ddcd90:
     name: Home
 fields:
@@ -84,6 +88,194 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Assets
+  3e2b5bdb-289a-48b9-a5da-b0f6582a6a9d:
+    contentColumnType: integer
+    fieldGroup: df78e26d-9aa7-49a4-bd8a-75980ddba39d
+    handle: calendar2
+    instructions: ''
+    name: 'Kalender - 2'
+    searchable: true
+    translationKeyFormat: null
+    translationMethod: none
+    type: Solspace\Calendar\FieldTypes\CalendarFieldType
+  4a1103f1-acec-4eae-9259-d9ef1e9a05fb:
+    contentColumnType: text
+    fieldGroup: cdcb72f5-a94d-46ed-ab22-67dcb5fff45f
+    handle: contactMail
+    instructions: ''
+    name: 'Contact - Email'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  4ca82977-e9ee-4f4b-87fd-5a879b9b4707:
+    contentColumnType: text
+    fieldGroup: cdcb72f5-a94d-46ed-ab22-67dcb5fff45f
+    handle: contactBlockHeading
+    instructions: ''
+    name: 'Contact blok - Titel'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  4e9173fd-9444-4cad-8f4e-532eaa7ce1f7:
+    contentColumnType: text
+    fieldGroup: cdcb72f5-a94d-46ed-ab22-67dcb5fff45f
+    handle: contactStreet
+    instructions: ''
+    name: 'Contact - Straat & huisnummer'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  4ee2616b-f4be-4e07-8a12-780b1b1b2a4b:
+    contentColumnType: text
+    fieldGroup: df78e26d-9aa7-49a4-bd8a-75980ddba39d
+    handle: calendarCta
+    instructions: ''
+    name: 'Kalender - CTA'
+    searchable: true
+    settings:
+      allowCustomText: '1'
+      allowTarget: '1'
+      allowedLinkNames:
+        1: asset
+        4: entry
+        6: custom
+        7: email
+        8: tel
+        9: url
+      autoNoReferrer: '1'
+      defaultLinkName: custom
+      defaultText: 'Bekijk alle activiteiten'
+      enableAriaLabel: ''
+      enableTitle: ''
+      typeSettings:
+        __assoc__:
+          -
+            - asset
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+          -
+            - category
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+          -
+            - user
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+          -
+            - entry
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+          -
+            - site
+            -
+              __assoc__:
+                -
+                  - sites
+                  - '*'
+          -
+            - custom
+            -
+              __assoc__:
+                -
+                  - disableValidation
+                  - ''
+                -
+                  - allowAliases
+                  - ''
+          -
+            - email
+            -
+              __assoc__:
+                -
+                  - disableValidation
+                  - ''
+                -
+                  - allowAliases
+                  - ''
+          -
+            - tel
+            -
+              __assoc__:
+                -
+                  - disableValidation
+                  - ''
+                -
+                  - allowAliases
+                  - ''
+          -
+            - url
+            -
+              __assoc__:
+                -
+                  - disableValidation
+                  - ''
+                -
+                  - allowAliases
+                  - ''
+          -
+            - solspaceCalendar-event
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: typedlinkfield\fields\LinkField
   56974294-62e1-4d99-b0b7-d2ce74ff2dee:
     contentColumnType: text
     fieldGroup: cdcb72f5-a94d-46ed-ab22-67dcb5fff45f
@@ -216,6 +408,148 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
+  5e62c5d6-3509-4229-9629-b4e5bb02adb2:
+    contentColumnType: integer(10)
+    fieldGroup: ac562d11-9c01-4cfa-b780-88224473e650
+    handle: readingTime
+    instructions: 'Leestijd in minuten'
+    name: Leestijd
+    searchable: true
+    settings:
+      decimals: 0
+      defaultValue: null
+      max: null
+      min: '0'
+      prefix: ''
+      size: null
+      suffix: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  799b722b-ef73-43c7-81e8-60712f17e3d5:
+    contentColumnType: text
+    fieldGroup: cdcb72f5-a94d-46ed-ab22-67dcb5fff45f
+    handle: contactBlockCta
+    instructions: ''
+    name: 'Contact blok - CTA'
+    searchable: true
+    settings:
+      allowCustomText: '1'
+      allowTarget: '1'
+      allowedLinkNames:
+        1: asset
+        4: entry
+        6: custom
+        7: email
+        8: tel
+        9: url
+      autoNoReferrer: '1'
+      defaultLinkName: url
+      defaultText: 'Stuur een mail'
+      enableAriaLabel: ''
+      enableTitle: ''
+      typeSettings:
+        __assoc__:
+          -
+            - asset
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+          -
+            - category
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+          -
+            - user
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+          -
+            - entry
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+          -
+            - site
+            -
+              __assoc__:
+                -
+                  - sites
+                  - '*'
+          -
+            - custom
+            -
+              __assoc__:
+                -
+                  - disableValidation
+                  - ''
+                -
+                  - allowAliases
+                  - ''
+          -
+            - email
+            -
+              __assoc__:
+                -
+                  - disableValidation
+                  - ''
+                -
+                  - allowAliases
+                  - ''
+          -
+            - tel
+            -
+              __assoc__:
+                -
+                  - disableValidation
+                  - ''
+                -
+                  - allowAliases
+                  - ''
+          -
+            - url
+            -
+              __assoc__:
+                -
+                  - disableValidation
+                  - ''
+                -
+                  - allowAliases
+                  - ''
+          -
+            - solspaceCalendar-event
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: typedlinkfield\fields\LinkField
   79c80430-518c-4d55-a510-ab43f69bc97f:
     contentColumnType: string
     fieldGroup: f0c3735f-1b6e-456c-9608-4cfe64ddcd90
@@ -260,6 +594,42 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Assets
+  7eece0b1-6795-48be-b79a-61781ca2c48e:
+    contentColumnType: text
+    fieldGroup: df78e26d-9aa7-49a4-bd8a-75980ddba39d
+    handle: calendarTitle
+    instructions: ''
+    name: 'Kalender - Titel'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  7ffa6f74-ddee-45e0-bb12-68def0320384:
+    contentColumnType: text
+    fieldGroup: cdcb72f5-a94d-46ed-ab22-67dcb5fff45f
+    handle: contactPhone
+    instructions: ''
+    name: 'Contact - Telefoonnummer'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
   88787612-5b03-4a0b-82b6-2113e3a05dc4:
     contentColumnType: text
     fieldGroup: 75c4c41b-4b5d-4f5b-bf8a-0d1bbe387b16
@@ -539,14 +909,135 @@ fields:
     type: nystudio107\seomatic\fields\SeoSettings
   912b06cd-b395-423a-9608-fef79a7d60f3:
     contentColumnType: integer
-    fieldGroup: 01e09fa1-4843-4208-830b-968a6ff4671c
-    handle: calendar
+    fieldGroup: df78e26d-9aa7-49a4-bd8a-75980ddba39d
+    handle: calendar1
     instructions: ''
-    name: Kalender
+    name: 'Kalender - 1'
     searchable: true
     translationKeyFormat: null
     translationMethod: none
     type: Solspace\Calendar\FieldTypes\CalendarFieldType
+  990e683c-9217-48b2-9d27-0208bc3339fd:
+    contentColumnType: text
+    fieldGroup: cdcb72f5-a94d-46ed-ab22-67dcb5fff45f
+    handle: contactZipcode
+    instructions: ''
+    name: 'Contact - Postcode & plaats'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  9e59715b-62eb-4d90-a95b-6f1fad60076a:
+    contentColumnType: text
+    fieldGroup: ac562d11-9c01-4cfa-b780-88224473e650
+    handle: summary
+    instructions: 'Deze samenvatting wordt enkel op de overzichtspagina getoond'
+    name: Samenvatting
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  a460ba7f-4818-4183-b551-28d816e087db:
+    contentColumnType: string
+    fieldGroup: cdcb72f5-a94d-46ed-ab22-67dcb5fff45f
+    handle: tickets
+    instructions: ''
+    name: Tickets
+    searchable: true
+    settings:
+      contentTable: '{{%matrixcontent_tickets}}'
+      maxBlocks: '3'
+      minBlocks: ''
+      propagationMethod: all
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Matrix
+  b8d61e82-3d4b-42fd-a7a6-35861f851f89:
+    contentColumnType: text
+    fieldGroup: ac562d11-9c01-4cfa-b780-88224473e650
+    handle: newsText
+    instructions: ''
+    name: Tekst
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: ''
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  bc6ad484-fb43-4e27-ab54-1b0eab2c92b8:
+    contentColumnType: text
+    fieldGroup: cdcb72f5-a94d-46ed-ab22-67dcb5fff45f
+    handle: contactBlockPhone
+    instructions: ''
+    name: 'Contact blok - Telefoonnummer'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  ce0ab64a-efa8-483e-a652-729c62dbf35c:
+    contentColumnType: string
+    fieldGroup: ac562d11-9c01-4cfa-b780-88224473e650
+    handle: newsImage
+    instructions: 'Deze wordt zowel in het overzicht als op de pagina zelf getoond'
+    name: Afbeelding
+    searchable: true
+    settings:
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:22d4221f-f69b-42f0-9c2c-e4b3dccf0815'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: '1'
+      selectionLabel: ''
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:c910b349-51e3-41a5-b45c-1c9a8c1d223f'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: true
+      validateRelatedElements: ''
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
   d16c24d1-abfe-4e08-b18c-45bcb368c93f:
     contentColumnType: string
     fieldGroup: 01e09fa1-4843-4208-830b-968a6ff4671c
@@ -562,7 +1053,83 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Matrix
+  dcba1bec-77c1-4e56-98bb-7b73ff2a87fc:
+    contentColumnType: text
+    fieldGroup: 3e44ea8d-bbc2-4a77-99e7-bd0158f2794c
+    handle: intro
+    instructions: ''
+    name: Intro
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Simple.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  ec603de9-e3d1-4a29-b16b-81354b135640:
+    contentColumnType: text
+    fieldGroup: ac562d11-9c01-4cfa-b780-88224473e650
+    handle: newsTitle
+    instructions: ''
+    name: Titel
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
 globalSets:
+  4592cafe-d6ff-406b-9990-e551c95b62f0:
+    fieldLayouts:
+      da5a2b56-e6b9-4bf8-bc9c-7b4cd7dd7448:
+        tabs:
+          -
+            fields:
+              4a1103f1-acec-4eae-9259-d9ef1e9a05fb:
+                required: false
+                sortOrder: 4
+              4e9173fd-9444-4cad-8f4e-532eaa7ce1f7:
+                required: false
+                sortOrder: 1
+              7ffa6f74-ddee-45e0-bb12-68def0320384:
+                required: false
+                sortOrder: 3
+              990e683c-9217-48b2-9d27-0208bc3339fd:
+                required: false
+                sortOrder: 2
+            name: Contact
+            sortOrder: 1
+          -
+            fields:
+              4ca82977-e9ee-4f4b-87fd-5a879b9b4707:
+                required: true
+                sortOrder: 1
+              799b722b-ef73-43c7-81e8-60712f17e3d5:
+                required: false
+                sortOrder: 3
+              bc6ad484-fb43-4e27-ab54-1b0eab2c92b8:
+                required: false
+                sortOrder: 2
+            name: Contactblok
+            sortOrder: 2
+    handle: contact
+    name: Contact
   70182a37-5dc3-4cf6-aa27-b2c0f88c9dbc:
     fieldLayouts:
       20afbca5-c858-42a1-90c6-70371f8fe658:
@@ -592,6 +1159,19 @@ globalSets:
             sortOrder: 1
     handle: social
     name: Social
+  eab18fef-c4db-47d8-bb89-76ce961dc96b:
+    fieldLayouts:
+      2ced5afb-e715-43b6-9eae-03950c6ecc0d:
+        tabs:
+          -
+            fields:
+              a460ba7f-4818-4183-b551-28d816e087db:
+                required: false
+                sortOrder: 1
+            name: Tickets
+            sortOrder: 1
+    handle: tickets
+    name: Tickets
 matrixBlockTypes:
   0ed7e558-c28c-4678-8099-3fbacc8ee945:
     field: 138d0eae-ea95-4e6e-86c6-9e927e7e72e2
@@ -1572,6 +2152,81 @@ matrixBlockTypes:
     handle: faq
     name: FAQ
     sortOrder: 6
+  87f2ab1d-f8a6-4af3-985a-8984f31feb1f:
+    field: d16c24d1-abfe-4e08-b18c-45bcb368c93f
+    fieldLayouts:
+      b1b8f2e3-8568-4c5c-bdf3-4e8b1467fcce:
+        tabs:
+          -
+            fields:
+              787104e2-3595-4d9d-9499-40e8b4067201:
+                required: false
+                sortOrder: 2
+              ad105665-a7e7-4cb9-b341-ea251b579a1f:
+                required: true
+                sortOrder: 3
+              eaba7965-34ac-4343-ae62-b4d330abf473:
+                required: false
+                sortOrder: 1
+            name: Content
+            sortOrder: 1
+    fields:
+      787104e2-3595-4d9d-9499-40e8b4067201:
+        contentColumnType: text
+        fieldGroup: null
+        handle: intro
+        instructions: ''
+        name: Intro
+        searchable: true
+        settings:
+          availableTransforms: '*'
+          availableVolumes: '*'
+          cleanupHtml: true
+          columnType: text
+          purifierConfig: ''
+          purifyHtml: '1'
+          redactorConfig: ''
+          removeEmptyTags: '1'
+          removeInlineStyles: '1'
+          removeNbsp: '1'
+          showUnpermittedFiles: false
+          showUnpermittedVolumes: false
+        translationKeyFormat: null
+        translationMethod: none
+        type: craft\redactor\Field
+      ad105665-a7e7-4cb9-b341-ea251b579a1f:
+        contentColumnType: boolean
+        fieldGroup: null
+        handle: showPrices
+        instructions: 'Dit blok wordt enkel getoond wanneer dit aanstaat'
+        name: 'Toon tarieven'
+        searchable: true
+        settings:
+          default: '1'
+        translationKeyFormat: null
+        translationMethod: none
+        type: craft\fields\Lightswitch
+      eaba7965-34ac-4343-ae62-b4d330abf473:
+        contentColumnType: text
+        fieldGroup: null
+        handle: heading
+        instructions: ''
+        name: Titel
+        searchable: true
+        settings:
+          byteLimit: null
+          charLimit: null
+          code: ''
+          columnType: null
+          initialRows: '4'
+          multiline: ''
+          placeholder: ''
+        translationKeyFormat: null
+        translationMethod: none
+        type: craft\fields\PlainText
+    handle: prices
+    name: Tarieven
+    sortOrder: 13
   94220efd-03af-48a9-835f-63a2db6fa83a:
     field: d16c24d1-abfe-4e08-b18c-45bcb368c93f
     fieldLayouts:
@@ -1940,6 +2595,294 @@ matrixBlockTypes:
     handle: imageText
     name: 'Afbeelding - tekst'
     sortOrder: 3
+  aa5e3f1c-61fb-4f30-9486-a52c58584198:
+    field: a460ba7f-4818-4183-b551-28d816e087db
+    fieldLayouts:
+      fabc1b88-fa1c-40bf-988f-0c553c2776bf:
+        tabs:
+          -
+            fields:
+              0d1f7f70-9e1a-4b5b-82b3-ea80e7e20143:
+                required: false
+                sortOrder: 5
+              1326cc83-fe6a-49c4-8309-60baabe0c674:
+                required: true
+                sortOrder: 1
+              2c7938d0-1f35-455e-93a2-e4f9776322c9:
+                required: true
+                sortOrder: 7
+              2cad35cf-b344-433a-bf7d-2625f8be0c67:
+                required: true
+                sortOrder: 4
+              576ee5c3-9e4e-4ab8-a1a6-40ba3aa07167:
+                required: false
+                sortOrder: 3
+              c0aa99af-2247-4512-935d-c4e48c014d40:
+                required: false
+                sortOrder: 6
+              f720f988-3ad1-42f7-b0e1-6cf094d2e939:
+                required: false
+                sortOrder: 2
+            name: Content
+            sortOrder: 1
+    fields:
+      0d1f7f70-9e1a-4b5b-82b3-ea80e7e20143:
+        contentColumnType: text
+        fieldGroup: null
+        handle: subPrice
+        instructions: ''
+        name: Subprijs
+        searchable: true
+        settings:
+          byteLimit: null
+          charLimit: null
+          code: ''
+          columnType: null
+          initialRows: '4'
+          multiline: ''
+          placeholder: ''
+        translationKeyFormat: null
+        translationMethod: none
+        type: craft\fields\PlainText
+      1326cc83-fe6a-49c4-8309-60baabe0c674:
+        contentColumnType: text
+        fieldGroup: null
+        handle: heading
+        instructions: ''
+        name: Titel
+        searchable: true
+        settings:
+          byteLimit: null
+          charLimit: null
+          code: ''
+          columnType: null
+          initialRows: '4'
+          multiline: ''
+          placeholder: ''
+        translationKeyFormat: null
+        translationMethod: none
+        type: craft\fields\PlainText
+      2c7938d0-1f35-455e-93a2-e4f9776322c9:
+        contentColumnType: text
+        fieldGroup: null
+        handle: cta
+        instructions: ''
+        name: CTA
+        searchable: true
+        settings:
+          allowCustomText: '1'
+          allowTarget: '1'
+          allowedLinkNames:
+            1: asset
+            4: entry
+            6: custom
+            7: email
+            8: tel
+            9: url
+            10: solspaceCalendar-event
+          autoNoReferrer: '1'
+          defaultLinkName: url
+          defaultText: 'Bestel direct'
+          enableAriaLabel: ''
+          enableTitle: ''
+          typeSettings:
+            __assoc__:
+              -
+                - asset
+                -
+                  __assoc__:
+                    -
+                      - sources
+                      - '*'
+                    -
+                      - allowCustomQuery
+                      - ''
+              -
+                - category
+                -
+                  __assoc__:
+                    -
+                      - sources
+                      - '*'
+                    -
+                      - allowCustomQuery
+                      - ''
+              -
+                - user
+                -
+                  __assoc__:
+                    -
+                      - sources
+                      - '*'
+                    -
+                      - allowCustomQuery
+                      - ''
+              -
+                - entry
+                -
+                  __assoc__:
+                    -
+                      - sources
+                      - '*'
+                    -
+                      - allowCustomQuery
+                      - ''
+              -
+                - site
+                -
+                  __assoc__:
+                    -
+                      - sites
+                      - '*'
+              -
+                - custom
+                -
+                  __assoc__:
+                    -
+                      - disableValidation
+                      - ''
+                    -
+                      - allowAliases
+                      - ''
+              -
+                - email
+                -
+                  __assoc__:
+                    -
+                      - disableValidation
+                      - ''
+                    -
+                      - allowAliases
+                      - ''
+              -
+                - tel
+                -
+                  __assoc__:
+                    -
+                      - disableValidation
+                      - ''
+                    -
+                      - allowAliases
+                      - ''
+              -
+                - url
+                -
+                  __assoc__:
+                    -
+                      - disableValidation
+                      - ''
+                    -
+                      - allowAliases
+                      - ''
+              -
+                - solspaceCalendar-event
+                -
+                  __assoc__:
+                    -
+                      - sources
+                      - '*'
+                    -
+                      - allowCustomQuery
+                      - ''
+        translationKeyFormat: null
+        translationMethod: none
+        type: typedlinkfield\fields\LinkField
+      2cad35cf-b344-433a-bf7d-2625f8be0c67:
+        contentColumnType: text
+        fieldGroup: null
+        handle: price
+        instructions: ''
+        name: Prijs
+        searchable: true
+        settings:
+          byteLimit: null
+          charLimit: null
+          code: ''
+          columnType: null
+          initialRows: '4'
+          multiline: ''
+          placeholder: ''
+        translationKeyFormat: null
+        translationMethod: none
+        type: craft\fields\PlainText
+      576ee5c3-9e4e-4ab8-a1a6-40ba3aa07167:
+        contentColumnType: string
+        fieldGroup: null
+        handle: color
+        instructions: ''
+        name: Kleur
+        searchable: true
+        settings:
+          options:
+            -
+              __assoc__:
+                -
+                  - label
+                  - Blauw
+                -
+                  - value
+                  - blue
+                -
+                  - default
+                  - '1'
+            -
+              __assoc__:
+                -
+                  - label
+                  - Geel
+                -
+                  - value
+                  - yellow
+                -
+                  - default
+                  - ''
+        translationKeyFormat: null
+        translationMethod: none
+        type: craft\fields\RadioButtons
+      c0aa99af-2247-4512-935d-c4e48c014d40:
+        contentColumnType: text
+        fieldGroup: null
+        handle: usps
+        instructions: ''
+        name: 'USP''s'
+        searchable: true
+        settings:
+          availableTransforms: '*'
+          availableVolumes: '*'
+          cleanupHtml: true
+          columnType: text
+          purifierConfig: ''
+          purifyHtml: '1'
+          redactorConfig: List.json
+          removeEmptyTags: '1'
+          removeInlineStyles: '1'
+          removeNbsp: '1'
+          showUnpermittedFiles: false
+          showUnpermittedVolumes: false
+        translationKeyFormat: null
+        translationMethod: none
+        type: craft\redactor\Field
+      f720f988-3ad1-42f7-b0e1-6cf094d2e939:
+        contentColumnType: text
+        fieldGroup: null
+        handle: subTitle
+        instructions: ''
+        name: Subtitel
+        searchable: true
+        settings:
+          byteLimit: null
+          charLimit: null
+          code: ''
+          columnType: null
+          initialRows: '4'
+          multiline: ''
+          placeholder: ''
+        translationKeyFormat: null
+        translationMethod: none
+        type: craft\fields\PlainText
+    handle: ticket
+    name: Ticket
+    sortOrder: 1
   be63a79e-ba2a-4ecf-a97e-645b99c3a38d:
     field: d16c24d1-abfe-4e08-b18c-45bcb368c93f
     fieldLayouts:
@@ -3527,25 +4470,55 @@ navigation:
         maxLevels: '2'
         uid: 69cffc8b-74cc-40dc-a2f1-08e024bac4f0
     42e1706f-1fc6-4ff7-aa02-8db53c4aacd9:
-      handle: footerNav
+      handle: footerNavSub
       instructions: ''
       maxNodes: ''
-      name: Footermenu
+      name: 'Footermenu - Submenu'
       propagateNodes: false
       sortOrder: 2
       structure:
         maxLevels: '1'
         uid: fc5d1e3d-0410-43f0-8c47-f58ed221bb51
     43111301-fd79-492c-97e5-09499765b5a3:
-      handle: subNav
+      handle: mainNavSub
       instructions: ''
       maxNodes: ''
-      name: Submenu
+      name: 'Hoofdmenu - Submenu'
       propagateNodes: false
       sortOrder: 3
       structure:
         maxLevels: '1'
         uid: 4a781743-9f81-4317-b989-c5a9133ee94b
+    4e067a15-4f7a-4341-8cb9-e349590268ce:
+      handle: footerNavActivities
+      instructions: ''
+      maxNodes: ''
+      name: 'Footermenu - Activiteiten'
+      propagateNodes: false
+      sortOrder: 4
+      structure:
+        maxLevels: '1'
+        uid: 52ddde65-724f-4d3a-be61-2263d9a99b6e
+    65afbb40-bd1c-4c3e-82da-26338839eaa5:
+      handle: footerNavRest
+      instructions: ''
+      maxNodes: ''
+      name: 'Footermenu - Overig'
+      propagateNodes: false
+      sortOrder: 6
+      structure:
+        maxLevels: '1'
+        uid: afd97690-473e-402c-a9b3-d1c4c99edc6e
+    97e04e36-b39b-4b15-b3b4-5ac1f2c23a3d:
+      handle: footerNavFacilitiesRent
+      instructions: ''
+      maxNodes: ''
+      name: 'Footermenu - Faciliteiten en verhuur'
+      propagateNodes: false
+      sortOrder: 5
+      structure:
+        maxLevels: '1'
+        uid: 4d333a44-e765-4473-bac6-b1d766e842bd
 plugins:
   async-queue:
     edition: standard
@@ -3684,6 +4657,70 @@ sections:
         template: calendar-demo/index.html
         uriFormat: kalender
     type: single
+  563737d9-c7ae-49cc-8221-79b449bf6d7e:
+    enableVersioning: true
+    entryTypes:
+      9a801b72-4cf8-4bf7-9517-6719ec5b2fb9:
+        handle: facilitiesRentOverview
+        hasTitleField: false
+        name: 'Faciliteiten en verhuur - overzicht'
+        sortOrder: 1
+        titleFormat: '{section.name|raw}'
+        titleLabel: null
+    handle: facilitiesRentOverview
+    name: 'Faciliteiten en verhuur - overzicht'
+    previewTargets:
+      -
+        __assoc__:
+          -
+            - label
+            - 'Primaire invoer-pagina'
+          -
+            - urlFormat
+            - '{url}'
+          -
+            - refresh
+            - '1'
+    propagationMethod: all
+    siteSettings:
+      521def3a-78c9-4e7b-8cb5-40b18c2c0705:
+        enabledByDefault: true
+        hasUrls: true
+        template: facilities-rent/overview
+        uriFormat: faciliteiten-en-verhuur
+    type: single
+  6c837388-83a1-497d-b47b-ed3dbdff5dac:
+    enableVersioning: true
+    entryTypes:
+      87df6b31-4ad8-4317-82d1-05deec7c1686:
+        handle: activitiesOverview
+        hasTitleField: false
+        name: 'Activiteiten - overzicht'
+        sortOrder: 1
+        titleFormat: '{section.name|raw}'
+        titleLabel: null
+    handle: activitiesOverview
+    name: 'Activiteiten - overzicht'
+    previewTargets:
+      -
+        __assoc__:
+          -
+            - label
+            - 'Primaire invoer-pagina'
+          -
+            - urlFormat
+            - '{url}'
+          -
+            - refresh
+            - '1'
+    propagationMethod: all
+    siteSettings:
+      521def3a-78c9-4e7b-8cb5-40b18c2c0705:
+        enabledByDefault: true
+        hasUrls: true
+        template: activities/overview
+        uriFormat: activiteiten
+    type: single
   b541f192-3512-4391-af9d-aaad78edfeb5:
     enableVersioning: true
     entryTypes:
@@ -3736,6 +4773,150 @@ sections:
       maxLevels: null
       uid: fa2626ba-b9d4-4363-8bcd-31119217c682
     type: structure
+  b8b9d7b2-37ec-4448-9ebb-6e32ee552f42:
+    enableVersioning: true
+    entryTypes:
+      dd8692fe-e691-4c62-b7fd-8ded6927cf8b:
+        fieldLayouts:
+          e799eaff-a023-4f1a-aa28-7b70a0b7a4e8:
+            tabs:
+              -
+                fields:
+                  5e62c5d6-3509-4229-9629-b4e5bb02adb2:
+                    required: false
+                    sortOrder: 2
+                  9e59715b-62eb-4d90-a95b-6f1fad60076a:
+                    required: true
+                    sortOrder: 3
+                  ce0ab64a-efa8-483e-a652-729c62dbf35c:
+                    required: true
+                    sortOrder: 4
+                  d16c24d1-abfe-4e08-b18c-45bcb368c93f:
+                    required: false
+                    sortOrder: 5
+                  ec603de9-e3d1-4a29-b16b-81354b135640:
+                    required: true
+                    sortOrder: 1
+                name: Inhoud
+                sortOrder: 1
+              -
+                fields:
+                  8d69ebf3-f317-4814-846f-b7f4fe0494b1:
+                    required: false
+                    sortOrder: 1
+                name: SEO
+                sortOrder: 2
+        handle: newsItems
+        hasTitleField: false
+        name: 'Nieuws items'
+        sortOrder: 1
+        titleFormat: '{newsTitle}'
+        titleLabel: Titel
+    handle: newsItems
+    name: 'Nieuws items'
+    propagationMethod: all
+    siteSettings:
+      521def3a-78c9-4e7b-8cb5-40b18c2c0705:
+        enabledByDefault: true
+        hasUrls: true
+        template: news/detail.twig
+        uriFormat: 'nieuws/{slug}'
+    type: channel
+  ba1b5070-fa2e-46d4-9f20-f4473d388cdc:
+    enableVersioning: true
+    entryTypes:
+      18598fdb-d9a6-4858-bee5-aabddf068c24:
+        fieldLayouts:
+          1ff1ab73-57a3-4623-a5cf-91e8c62bd256:
+            tabs:
+              -
+                fields:
+                  3e2b5bdb-289a-48b9-a5da-b0f6582a6a9d:
+                    required: false
+                    sortOrder: 2
+                  912b06cd-b395-423a-9608-fef79a7d60f3:
+                    required: true
+                    sortOrder: 1
+                  d16c24d1-abfe-4e08-b18c-45bcb368c93f:
+                    required: false
+                    sortOrder: 3
+                name: Inhoud
+                sortOrder: 1
+              -
+                fields:
+                  8d69ebf3-f317-4814-846f-b7f4fe0494b1:
+                    required: false
+                    sortOrder: 1
+                name: SEO
+                sortOrder: 2
+        handle: calendarPrices
+        hasTitleField: false
+        name: 'Rooster en tarieven'
+        sortOrder: 1
+        titleFormat: '{section.name|raw}'
+        titleLabel: ''
+    handle: calendarPrices
+    name: 'Rooster en tarieven'
+    previewTargets:
+      -
+        __assoc__:
+          -
+            - label
+            - 'Primaire invoer-pagina'
+          -
+            - urlFormat
+            - '{url}'
+          -
+            - refresh
+            - '1'
+    propagationMethod: all
+    siteSettings:
+      521def3a-78c9-4e7b-8cb5-40b18c2c0705:
+        enabledByDefault: true
+        hasUrls: true
+        template: calendar-prices
+        uriFormat: rooster-en-tarieven
+    type: single
+  cbbb2500-274f-40f3-9703-1aa87a10a738:
+    enableVersioning: true
+    entryTypes:
+      791ab164-f9e4-444b-9ddd-8028b7db0929:
+        fieldLayouts:
+          bb5a1cde-ad77-4bd0-a4b6-ecfa9394c42e:
+            tabs:
+              -
+                fields:
+                  b8d61e82-3d4b-42fd-a7a6-35861f851f89:
+                    required: false
+                    sortOrder: 2
+                  ec603de9-e3d1-4a29-b16b-81354b135640:
+                    required: true
+                    sortOrder: 1
+                name: Inhoud
+                sortOrder: 1
+              -
+                fields:
+                  8d69ebf3-f317-4814-846f-b7f4fe0494b1:
+                    required: false
+                    sortOrder: 1
+                name: SEO
+                sortOrder: 2
+        handle: newsOverview
+        hasTitleField: false
+        name: 'Nieuws - overzicht'
+        sortOrder: 1
+        titleFormat: '{newsTitle}'
+        titleLabel: ''
+    handle: newsOverview
+    name: 'Nieuws - overzicht'
+    propagationMethod: all
+    siteSettings:
+      521def3a-78c9-4e7b-8cb5-40b18c2c0705:
+        enabledByDefault: true
+        hasUrls: true
+        template: news/overview.twig
+        uriFormat: nieuws
+    type: single
   d80cf907-7094-43f6-a734-ac89667798ce:
     enableVersioning: true
     entryTypes:
@@ -3845,3 +5026,12 @@ volumes:
     sortOrder: 1
     type: craft\volumes\Local
     url: '@mediaUrl/header'
+  c910b349-51e3-41a5-b45c-1c9a8c1d223f:
+    handle: news
+    hasUrls: true
+    name: Nieuws
+    settings:
+      path: '@mediaPath/news'
+    sortOrder: 2
+    type: craft\volumes\Local
+    url: '@mediaUrl/news'

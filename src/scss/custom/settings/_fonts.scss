@@ -41,3 +41,11 @@ $fontsUrl: '../fonts/';
   url($fontsUrl + 'oswald-v31-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
   url($fontsUrl + 'oswald-v31-latin-700.svg#Oswald') format('svg'); /* Legacy iOS */
 }
+
+.font-sans {
+  font-family: 'PT Sans', sans-serif;
+}
+
+.font-oswald {
+  font-family: 'Oswald', sans-serif;
+}

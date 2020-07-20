@@ -1,0 +1,89 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{# @var entry \craft\elements\Entry #}
+{# ======================================================
+  @filename: _entry
+  @author:   sam
+  ====================================================== #}
+{#
+  Detail page for news item
+#}
+
+{% import "_partials/_macros.twig" as macro %}
+{% extends "_layouts/_layout.twig" %}
+
+{% block _inline_css %}
+  <style>
+    {{ source ("index_critical.min.css", ignore_missing = true) }}
+  </style>
+{% endblock %}
+
+{% block content %}
+
+  {% include '_partials/_components/hero/hero.twig' with {
+    image: entry.newsImage[0],
+    contentPath: 'news/hero-content.twig'
+  } %}
+
+  <div class="container mt-4 mb-4 mt-lg-6 mb-lg-4" id="mainContentSkip">
+    <div class="row">
+      <div class="w-100 col-12 col-lg-8 offset-lg-2">
+        {% include '_partials/_components/breadcrumb/breadcrumb.twig' with {
+          class: 'mb-1 mb-md-2'
+        } %}
+        <h1 class="mb-1">{{ entry.title }}</h1>
+        <div class="d-flex flex-column text-gray-700">
+          <div class="small">
+            {{ entry.postDate | date ('d-m-Y') }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% include "_partials/_common/matrix.twig" %}
+
+  {% set overview = craft.entries.section('newsOverview') %}
+
+  {% if overview | length %}
+    {% set overview = overview[0] %}
+    <div class="container">
+      <div class="border-top border-gray-400">
+        <div class="row">
+          <div class="w-100 col-12 col-lg-8 offset-lg-2">
+            <div class="py-4 mb-4">
+              <div class="d-flex flex-column flex-md-row">
+                <a class="c-btn c-btn-primary" href="{{ overview.url }}">
+                  {% include '_inline/_svg/angle-left-light.twig' %} <span>Terug naar overzicht</span>
+                </a>
+                {% if social.socialFacebook | length or social.socialInstagram | length %}
+                  <div class="d-flex flex-row justify-content-center align-items-center mt-4 mt-md-0 ml-md-auto">
+                    <p class="mb-0">Volg ons op</p>
+                    {% if social.socialFacebook | length %}
+                      <a title="Ga naar onze Facebookpagina" class="d-block ml-1 hover-none" href="{{ social.socialFacebook }}"
+                         target="_blank">
+                      <span class="c-icon">
+                        {% include '_inline/_svg/facebook-square-brands.twig' %}
+                      </span>
+                      </a>
+                    {% endif %}
+                    {% if social.socialInstagram | length %}
+                      <a title="Ga naar onze Instagram" class="d-block ml-1 hover-none" href="{{ social.socialInstagram }}"
+                         target="_blank">
+                  <span class="c-icon">
+                    {% include '_inline/_svg/instagram-square-brands.twig' %}
+                  </span>
+                      </a>
+                    {% endif %}
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}
+
+{% block _inline_js %}
+{% endblock %}

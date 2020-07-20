@@ -132,6 +132,41 @@
   </ul>
 {% endmacro %}
 
+{% macro renderImageBackgroundCss(image, transforms, class) %}
+  {% if class | length %}
+    {% set sizes = [] %}
+
+    {% for item in transforms %}
+      {% set sizes = sizes | merge(item.sizes) %}
+    {% endfor %}
+
+    {% set transformedImages = craft.imager.transformImage(image, sizes,
+      {position: image.getFocalpoint()}) %}
+
+    {% set myCss %}
+      {% for idx,transform in transforms %}
+        {% if transform['media'] is defined %}
+          @media only screen and ({{ transform.media }}) {
+          .{{ class|join('.') }} {
+          background-size: cover;
+          background-image: url({{ transformedImages[ idx ] }});
+          background-position: {{ image.getFocalpoint().x * 100 }}% {{ image.getFocalpoint().y * 100 }}%;
+          }
+          }
+        {% else %}
+          .{{ class|join('.') }} {
+          background-size: cover;
+          background-image: url({{ transformedImages[ idx ] }});
+          background-position: {{ image.getFocalpoint().x * 100 }}% {{ image.getFocalpoint().y * 100 }}%;
+          }
+        {% endif %}
+      {% endfor %}
+    {% endset %}
+  {% endif %}
+
+  {% includeCss myCss %}
+{% endmacro %}
+
 {#
   Get Rich text area without the <p> elements
 #}

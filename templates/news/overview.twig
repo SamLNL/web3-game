@@ -1,0 +1,131 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{# @var entry \craft\elements\Entry #}
+{# ======================================================
+  @filename: overview
+  @author:   sam
+  ====================================================== #}
+{#
+  Overview for news items
+#}
+
+{# {% import "_partials/_macros.twig" as macro %} #}
+{% extends (craft.app.request.isAjax) ? "_layouts/_ajax.twig" : "_layouts/_layout.twig" %}
+
+{% block _inline_css %}
+  {% if not craft.app.request.isAjax %}
+    <style>
+      {{ source ("index_critical.min.css", ignore_missing = true) }}
+    </style>
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+  {% set searchQuery = craft.request.getQuery('q') | length ? craft.request.getQuery('q') : '' %}
+
+  {# ----------- Start - No ajax request ----------- #}
+  {% if not craft.app.request.isAjax %}
+    {% set entry = entry is defined ? entry : category %}
+
+<div class="container mt-4 mt-lg-6" id="mainContentSkip">
+  <div class="row">
+    <div class="mb-4 col-12 col-lg-8 offset-lg-2">
+      {% include '_partials/_components/breadcrumb/breadcrumb.twig' with {
+        class: 'mb-1 mb-md-2'
+      } %}
+      <h1>{{ entry.title }}</h1>
+      {% if entry.newsText | length %}
+        {{ entry.newsText }}
+      {% endif %}
+    </div>
+  </div>
+</div>
+<div class="bg-teal-100 py-6">
+  <div class="container">
+
+    {# Search #}
+    <form class="js-load-more-search-form c-form-search" method="post">
+      <span class="js-load-more-search-url d-none" data-url="{{ entry.url }}"></span>
+      <label for="search" class="d-none"></label>
+      <input id="search" type="search" class="js-load-more-search-input" name="q" placeholder="{{ "Zoeken..."|t }}"
+             {% if searchQuery | length %}value="{{ searchQuery }}{% endif %}">
+      <button class="c-form-search__button c-btn c-btn-yellow" type="submit">
+        <span class="c-form-search__button__search">
+          {% include '_inline/_svg/search-regular.twig' %}
+        </span>
+        <span class="c-form-search__button__label">{{ 'Zoeken' | t }}</span>
+        <span class="c-form-search__button__loader">
+          {% include '_inline/_svg/loading.twig' %}
+        </span>
+      </button>
+    </form>
+    {% set entriesLength = craft.entries.section('newsItems') | length %}
+    {% set overviewPage = craft.entries.section('newsOverview')[0] %}
+
+    <div class="d-flex flex-column flex-lg-row">
+      {% endif %}
+  {# ----------- End - No ajax request ----------- #}
+
+      {% set items = craft.entries({
+        section: 'newsItems',
+        search: searchQuery,
+      }) %}
+
+  {# ----------- Start - No ajax request ----------- #}
+      {% if not craft.app.request.isAjax %}
+      {% set foundAmount = items | length %}
+
+      <div class="w-100 flex-grow-1 mt-4">
+        {% if searchQuery | length %}
+          {% if items | length %}
+            <p>{{ foundAmount }} resultaten gevonden voor "{{ searchQuery }}"</p>
+          {% else %}
+            <p>Geen resultaten gevonden voor "{{ searchQuery }}"</p>
+          {% endif %}
+        {% endif %}
+
+        {# Wrapper that is used for js ajax #}
+        <div class="js-load-more-wrapper w-100">
+          {% endif %}
+  {# ----------- End - No ajax request ----------- #}
+
+          {% paginate items.limit(2).orderBy('postDate desc') as pageInfo, entries %}
+
+          {% if entries | length %}
+            <div class="d-flex flex-column">
+              {% for item in entries %}
+                {% include '_partials/_components/card/card.twig' with {
+                  url: item.url,
+                  image: item.newsImage[0],
+                  readingTime: item.readingTime,
+                  title: item.title,
+                  date: item.dateCreated,
+                  summary: (item.summary|striptags[:40] ~ '...')
+                } %}
+              {% endfor %}
+            </div>
+          {% endif %}
+
+          {# Url of next page and ajax call #}
+          <span class="js-load-more-next-page" data-next-page="{{ pageInfo.nextUrl }}"></span>
+
+  {# ----------- Start - No ajax request ----------- #}
+          {% if not craft.app.request.isAjax %}
+        </div>
+        <div class="d-flex justify-content-center mt-4">
+          <a class="c-btn c-btn-teal js-load-more-button hide" href="" title="Bekijk meer items">
+            <span>Meer nieuws</span>
+            <span>
+        {% include '_inline/_svg/loading.twig' %}
+      </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  {# ----------- End - No ajax request ----------- #}
+
+  {% endblock %}
+
+  {% block _inline_js %}
+  {% endblock %}

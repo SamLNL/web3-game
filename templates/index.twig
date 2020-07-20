@@ -74,45 +74,11 @@
   <div class="container pt-5 pb-2 pb-lg-3 pt-lg-8" id="veelgestelde-vragen">
     {% include '_partials/_index/faq' %}
   </div>
-  <div class="pt-2 pt-lg-4 position-relative" id="contact">
-    <div class="container d-flex justify-content-center">
-      <div class="wave wave-upper">
-        {% include '_inline/_svg/upper-wave' with {
-          class: 'upper-wave'
-        } %}
-        <div class="h-6 w-100 bg-teal h-lg-auto">
-        </div>
-      </div>
-      <div
-        class="bg-teal-600 col-lg-10 px-3 pt-4 pb-5 rounded position-relative z-30 d-lg-flex flex-lg-row justify-content-lg-center">
-        <div class="d-flex flex-column w-100">
-          <p class="mb-4 weight-700 text-white text-center large px-md-4 px-lg-0">
-            Er zijn diverse mogelijkheden tot samenwerking met het Biljoenbad. Zo kan je gebruikmaken van de praktijkruimten en de diverse baden. Vraag ons gerust naar de opties.
-          </p>
-          <div class="d-flex flex-column flex-md-row justify-content-md-center">
-            <div class="d-flex flex-column justify-content-center align-items-center mb-4 mr-md-10 mb-md-0 mr-lg-8">
-              <p class="text-white large">
-                  Bel om samen te werken
-              </p>
-              <div class="d-flex flex-row">
-                <svg class="mr-2" width="25" height="25">
-                  <use xlink:href="/assets/images/svg/sprite/sprite.svg#icon-telefoon"></use>
-                </svg>
-                <a class="text-yellow weight-700 large hover-underline" href="tel:0264976556"
-                   rel="external">026 - 497 65 56</a>
-              </div>
-            </div>
-            <div class="d-flex flex-column align-items-center justify-content-center">
-              <p class="text-white large">of heb je een andere vraag?</p>
-              <a class="c-btn c-btn-yellow" href="mailto:biljoenbad@rheden.nl" title="Stuur een mail">
-                Stuur een mail
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  {% include '_partials/_components/contact-block/contact-block.twig' with {
+    title: contact.contactBlockHeading,
+    phone: contact.contactBlockPhone | length ? contact.contactBlockPhone : '',
+    cta: contact.contactBlockCta.url | length ? contact.contactBlockCta : '',
+  } %}
 {% endblock %}
 
 {% block _inline_js %}
