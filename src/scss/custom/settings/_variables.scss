@@ -84,7 +84,7 @@ $colors: map-merge((
 ), $colors);
 
 $primary:       $teal;
-$secondary:     $gray-600;
+$secondary:     $yellow;
 
 // stylelint-enable
 
@@ -142,7 +142,11 @@ $spacers: map-merge((
   17: ($spacer * 9.75),
   18: ($spacer * 10.25),
   19: ($spacer * 10.75),
-  20: ($spacer * 11.25)
+  20: ($spacer * 11.25),
+  21: ($spacer * 12.75),
+  22: ($spacer * 14.25),
+  23: ($spacer * 15.75),
+  24: ($spacer * 17.25)
 ), $spacers);
 
 // This variable affects the `.h-*` and `.w-*` classes.
@@ -274,19 +278,19 @@ $font-weight-extrabold:       900;
 $font-weight-base:            $font-weight-normal;
 $line-height-base:            1.5;
 
-$h1-font-size:                $font-size-base * 3.125;
-$h2-font-size:                $font-size-base * 2.315;
-$h3-font-size:                $font-size-base * 1.4375;
+$h1-font-size:                $font-size-base * 2.777;
+$h2-font-size:                $font-size-base * 2;
+$h3-font-size:                $font-size-base * 1.277;
 $h4-font-size:                $font-size-base * 1.625;
 $h5-font-size:                $font-size-base * 1.125;
 $h6-font-size:                $font-size-base * 0.875;
 
-$h1-line-height:              1.5;
-$h2-line-height:              1.25;
+$h1-line-height:              1;
+$h2-line-height:              1.5;
 $h3-line-height:              1.5;
-$h4-line-height:              1.5;
-$h5-line-height:              1.3125;
-$h6-line-height:              1.5;
+$h4-line-height:              1.444;
+$h5-line-height:              1.166;
+$h6-line-height:              1;
 
 $h1-letter-spacing:           -0.5px;
 $h2-letter-spacing:           -0.1px;

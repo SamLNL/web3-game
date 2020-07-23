@@ -1,0 +1,23 @@
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    @each $i in map-keys($spacers) {
+      .-mt#{$infix}-#{$i} {
+        margin-top: -(map_get($spacers, $i)) !important;
+      }
+
+      .-mb#{$infix}-#{$i} {
+        margin-bottom: -(map_get($spacers, $i)) !important;
+      }
+
+      .-mr#{$infix}-#{$i} {
+        margin-right: -(map_get($spacers, $i)) !important;
+      }
+
+      .-ml#{$infix}-#{$i} {
+        margin-left: -(map_get($spacers, $i)) !important;
+      }
+    }
+  }
+}

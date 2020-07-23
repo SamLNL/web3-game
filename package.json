@@ -158,7 +158,8 @@
     "inlineJs": [
       "./node_modules/fg-loadcss/dist/cssrelpreload.js",
       "./node_modules/tiny-cookie/dist/tiny-cookie.min.js",
-      "./src/js/_inline/**/*.js"
+      "./src/js/_inline/**/*.js",
+      "./node_modules/fullcalendar-scheduler/main.min.js"
     ],
     "revision": {
       "files": [
@@ -172,12 +173,19 @@
     }
   },
   "dependencies": {
+    "@fullcalendar/core": "^5.1.0",
+    "@fullcalendar/daygrid": "^5.1.0",
+    "@fullcalendar/resource-timegrid": "^5.1.0",
     "@typeform/embed": "^0.22.2",
     "autotrack": "^2.4.1",
     "baguettebox.js": "^1.11.1",
+    "css-loader": "^3.6.0",
+    "fullcalendar": "^5.1.0",
+    "fullcalendar-scheduler": "^5.1.0",
     "lazysizes": "^2.0.6",
     "loadjs": "^3.3.1",
     "picturefill": "^3.0.2",
+    "remove": "^0.1.5",
     "static-website": "git+ssh://git@git.emotion.nl:emotion/bootstrap-components.git",
     "svgxuse": "^1.2.6",
     "tiny-cookie": "^2.1.2",

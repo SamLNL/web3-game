@@ -1,0 +1,136 @@
+.js-calendar {
+  @include media-breakpoint-up('sm') {
+    margin-top: -($spacer * 3);
+  }
+  @include media-breakpoint-up('md') {
+    margin-top: -($spacer * 3.25);
+  }
+
+  .fc-header-toolbar {
+    @extend .col-sm-6;
+    @extend .col-md-5;
+    margin-left: auto;
+    padding: 0;
+    align-items: center;
+
+    .fc-toolbar-chunk {
+      &:last-child {
+        width: 100%;
+
+        @include media-breakpoint-up('sm') {
+          width: auto;
+        }
+
+        .btn-group {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-end;
+
+          .fc-today-button {
+            flex-grow: 1;
+
+            @include media-breakpoint-up('sm') {
+              flex-grow: initial;
+            }
+          }
+        }
+      }
+    }
+
+    .fc-prev-button,
+    .fc-next-button {
+      position: relative;
+      background-color: $teal-100;
+      border: 2px solid $teal-200;
+
+      &:before {
+        width: 24px;
+        height: 24px;
+        display: block;
+        content: '';
+        position: absolute;
+        left: calc(50% - 12px);
+        top: calc(50% - 11px);
+      }
+    }
+
+    .fc-prev-button {
+      &:before {
+        background: url('/assets/images/svg/single/angle-left-light-teal.svg') no-repeat center;
+        background-size: cover;
+      }
+    }
+
+    .fc-next-button {
+      &:before {
+        background: url('/assets/images/svg/single/angle-right-light-teal.svg') no-repeat center;
+        background-size: cover;
+      }
+    }
+
+    .fc-today-button {
+      background-color: $teal-100;
+      border-top: 2px solid $teal-200;
+      border-bottom: 2px solid $teal-200;
+      color: $teal-600;
+    }
+  }
+
+  .fc-view-harness {
+    .fc-scrollgrid {
+      thead {
+        background-color: $white;
+
+        .fc-resource {
+          font-size: $font-size-sm;
+
+          @include media-breakpoint-up('md') {
+            font-size: $font-size-base;
+          }
+        }
+      }
+
+      tbody {
+        .fc-timegrid-slot {
+          font-size: $font-size-sm;
+
+          @include media-breakpoint-up('md') {
+            font-size: $font-size-base;
+          }
+        }
+
+        [data-resource-id] {
+          &:nth-child(even) {
+            .fc-timegrid-event {
+              background-color: $teal-200;
+              border-color: $teal-200;
+            }
+          }
+
+          &:nth-child(odd) {
+            .fc-timegrid-event {
+              background-color: $secondary;
+              border-color: $secondary;
+            }
+          }
+        }
+
+        .fc-event {
+          &-main {
+            &-frame {
+              padding: map_get($spacers, 2);
+              font-weight: $font-weight-bold;
+              color: $teal-600;
+              text-align: center;
+
+              @include media-breakpoint-up('sm') {
+                text-align: left;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

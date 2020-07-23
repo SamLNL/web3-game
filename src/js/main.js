@@ -50,6 +50,9 @@ const main = async () => {
   if(document.querySelectorAll('.js-load-more-button').length > 0) {
     await import(/* webpackChunkName: "load-more" */ "./custom/load-more");
   }
+  if(document.querySelectorAll('.js-calendar').length > 0) {
+    await import(/* webpackChunkName: "load-more" */ "./custom/components/calendar");
+  }
 
   analytics.init();
 };

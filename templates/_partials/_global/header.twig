@@ -1,67 +1,80 @@
 {% import "_partials/_macros.twig" as macro %}
-{% set image = image is defined and image | length ? image : '' %}
-{% set wave = wave ?? false %}
-{% set payoff = payoff ?? false %}
 
-{% if image | length %}
-  <div class="header position-relative">
-    {% set transforms =
-      [
-        {
-          'media': 'min-width: 1920px',
-          'sizes': [
-          {width: 2000, ratio: 2000/650},
-        ]
-        },
-        {
-          'media': 'min-width: 1600px',
-          'sizes': [
-          {width: 1600, ratio: 1920/584},
-        ]
-        },
-        {
-          'media': 'min-width: 1200px',
-          'sizes': [
-          {width: 1600, ratio: 1600/584},
-        ]
-        },
-        {
-          'media': 'min-width: 960px',
-          'sizes': [
-          {width: 1200, ratio: 1200/584},
-        ]
-        },
-        {
-          'media': 'min-width: 600px',
-          'sizes': [
-          {width: 960, ratio: 960/584}
-        ],
-        },
-        {
-          'media': 'min-width: 400px',
-          'sizes': [
-          {width: 600, ratio: 600/600}
-        ],
-        },
-        {
-          'sizes': [
-          {width: 400, ratio: 400/550}
-        ],
-        }
-      ] %}
-    {{ macro.renderPicture(image, transforms, false, image.title, 'w-100') }}
-    <div class="payoff">
-      {% if payoff %}
-        {% include '_inline/_svg/payoff' %}
+{% set title = title is defined ? title : entry.title %}
+{% set image = image is defined and image | length ? image : '' %}
+{% set intro = intro is defined and intro | length ? intro : '' %}
+
+<div class="bg-teal pt-3 pb-9 pb-sm-10 pt-lg-5 pb-lg-9 d-flex flex-column">
+    <div class="container">
+      {% if title | length %}
+        {% include '_partials/_components/breadcrumb/breadcrumb.twig' with {
+          class: 'text-white'
+        } %}
+        <h1 class="mb-0 text-white">
+          {{ entry.title }}
+        </h1>
       {% endif %}
     </div>
-    {% if wave %}
-      <div class="wave wave-upper">
-        {% include '_inline/_svg/upper-wave' with {
-          class: 'upper-wave',
-          double: true
-        } %}
+</div>
+<div class="position-relative w-100 -z-10">
+  <div class="position-absolute w-100 top-0 left-0 right-0">
+    {% include '_inline/_svg/global-wave.twig' %}
+  </div>
+</div>
+
+<div class="container -mt-5 mb-4 -mt-lg-4 mb-lg-6">
+  {% if image | length %}
+    <div class="header">
+      {% set transforms =
+        [
+          {
+            'media': 'min-width: 1920px',
+            'sizes': [
+            {width: 2000, ratio: 2000/650},
+          ]
+          },
+          {
+            'media': 'min-width: 1600px',
+            'sizes': [
+            {width: 1600, ratio: 1920/584},
+          ]
+          },
+          {
+            'media': 'min-width: 1200px',
+            'sizes': [
+            {width: 1600, ratio: 1600/584},
+          ]
+          },
+          {
+            'media': 'min-width: 960px',
+            'sizes': [
+            {width: 1200, ratio: 1200/584},
+          ]
+          },
+          {
+            'media': 'min-width: 600px',
+            'sizes': [
+            {width: 960, ratio: 960/584}
+          ],
+          },
+          {
+            'media': 'min-width: 400px',
+            'sizes': [
+            {width: 600, ratio: 289/171}
+          ],
+          },
+          {
+            'sizes': [
+            {width: 400, ratio: 289/171}
+          ],
+          }
+        ] %}
+      {{ macro.renderPicture(image, transforms, false, image.title, 'w-100 rounded') }}
+    </div>
+    {% if intro | length %}
+      <div class="mt-3 mt-lg-4">
+        {{ intro }}
       </div>
     {% endif %}
-  </div>
-{% endif %}
+  {% endif %}
+</div>

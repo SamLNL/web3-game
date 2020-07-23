@@ -1,4 +1,4 @@
-dateModified: 1595249556
+dateModified: 1595408709
 email:
   fromEmail: interactie@emotion.nl
   fromName: Biljoenbad
@@ -4584,6 +4584,13 @@ plugins:
     enabled: true
     schemaVersion: 1.0.0
 routes:
+  61752a57-1c38-4625-83ab-67198d72f65c:
+    siteUid: null
+    sortOrder: 2
+    template: _partials/_components/calendar/resources/calendars.twig
+    uriParts:
+      - fullcalendar-calendars
+    uriPattern: fullcalendar-calendars
   e0db59f6-08c7-4622-8687-5ca8ba62aa22:
     siteUid: null
     sortOrder: 1
@@ -4591,6 +4598,13 @@ routes:
     uriParts:
       - zoeken
     uriPattern: zoeken
+  e6db692e-0938-4a11-96a2-5b381c7d0842:
+    siteUid: null
+    sortOrder: 3
+    template: _partials/_components/calendar/resources/events.twig
+    uriParts:
+      - fullcalendar-events
+    uriPattern: fullcalendar-events
 sections:
   138fd91c-e286-44c3-823f-e2380e31883c:
     enableVersioning: true
@@ -4831,15 +4845,27 @@ sections:
             tabs:
               -
                 fields:
+                  3a0f8407-4263-4449-9996-e53070168b78:
+                    required: false
+                    sortOrder: 1
                   3e2b5bdb-289a-48b9-a5da-b0f6582a6a9d:
                     required: false
-                    sortOrder: 2
+                    sortOrder: 5
+                  4ee2616b-f4be-4e07-8a12-780b1b1b2a4b:
+                    required: false
+                    sortOrder: 6
+                  7eece0b1-6795-48be-b79a-61781ca2c48e:
+                    required: true
+                    sortOrder: 3
                   912b06cd-b395-423a-9608-fef79a7d60f3:
                     required: true
-                    sortOrder: 1
+                    sortOrder: 4
                   d16c24d1-abfe-4e08-b18c-45bcb368c93f:
                     required: false
-                    sortOrder: 3
+                    sortOrder: 7
+                  dcba1bec-77c1-4e56-98bb-7b73ff2a87fc:
+                    required: false
+                    sortOrder: 2
                 name: Inhoud
                 sortOrder: 1
               -
@@ -4874,7 +4900,7 @@ sections:
       521def3a-78c9-4e7b-8cb5-40b18c2c0705:
         enabledByDefault: true
         hasUrls: true
-        template: calendar-prices
+        template: calendar-prices/entry
         uriFormat: rooster-en-tarieven
     type: single
   cbbb2500-274f-40f3-9703-1aa87a10a738:

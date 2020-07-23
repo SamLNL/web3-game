@@ -9,8 +9,12 @@
       display: flex;
       flex-direction: row;
 
+      &.active {
+        color: rgba($white, 0.75)
+      }
+
       & > * {
-        font-size: $font-size-sm;
+        font-size: $font-size-x-sm;
       }
 
       a {
@@ -27,8 +31,20 @@
       svg {
         margin-right: 6px;
         width: 10px;
-        height: 20px;
+        margin-top: 2px;
+        margin-bottom: 2px;
+        height: 16px;
       }
+    }
+  }
+
+  &.text-white {
+    a {
+      color: $white;
+    }
+
+    svg {
+      color: $teal-600;
     }
   }
 }
