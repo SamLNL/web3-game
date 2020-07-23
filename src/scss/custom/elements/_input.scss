@@ -7,12 +7,13 @@
 input[type="date"] {
   appearance: none;
   -webkit-appearance: none;
-  color: #95a5a6;
-  font-family: "Helvetica", arial, sans-serif;
-  font-size: 18px;
-  border:1px solid #ecf0f1;
-  background:#ecf0f1;
-  padding:5px;
+  color: $teal-600;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  border: 2px solid $teal-200;
+  background: $teal-100;
+  border-radius: 25px;
+  padding: 7px 20px;
   display: inline-block !important;
   visibility: visible !important;
 
@@ -25,11 +26,14 @@ input[type="date"] {
 
   /* Always display the drop down caret */
   &::-webkit-calendar-picker-indicator {
-    color: #2c3e50;
+    color: $teal-600;
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   &:focus {
-    color: #95a5a6;
+    color: $teal-600;
     box-shadow: none;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;

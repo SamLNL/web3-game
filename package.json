@@ -159,7 +159,8 @@
       "./node_modules/fg-loadcss/dist/cssrelpreload.js",
       "./node_modules/tiny-cookie/dist/tiny-cookie.min.js",
       "./src/js/_inline/**/*.js",
-      "./node_modules/fullcalendar-scheduler/main.min.js"
+      "./node_modules/fullcalendar-scheduler/main.min.js",
+      "./node_modules/fullcalendar/locales/nl.js"
     ],
     "revision": {
       "files": [

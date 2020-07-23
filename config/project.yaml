@@ -1,4 +1,4 @@
-dateModified: 1595408709
+dateModified: 1595514551
 email:
   fromEmail: interactie@emotion.nl
   fromName: Biljoenbad
@@ -4454,8 +4454,8 @@ matrixBlockTypes:
         translationKeyFormat: null
         translationMethod: none
         type: typedlinkfield\fields\LinkField
-    handle: table
-    name: Tabel
+    handle: table2
+    name: 'Tabel (2 kolommen)'
     sortOrder: 12
 navigation:
   navs:

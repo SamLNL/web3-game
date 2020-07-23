@@ -1,118 +1,100 @@
 /* global FullCalendar */
 
-let calendar;
-let datepicker = document.querySelector('.js-calendar-datepicker');
+import { fadeIn } from '../fade';
 
-if(datepicker){
-  datepicker.addEventListener('change', () => {
-    let dateValue = datepicker.value;
-    calendar.gotoDate(new Date(dateValue));
-  });
-}
+let calendar, calendarEl, prevButton, nextButton, todayButton, datepicker;
 
-function getDropDownValue(date) {
-  let day = (date.getDate()).toString();
-  let month = (date.getMonth() + 1).toString();
-  let year = (date.getFullYear()).toString();
 
-  if(day.length === 1){
-    day = '0' + day;
+function getTwoNumeric(int) {
+  int = int.toString();
+  if (int.length === 1) {
+    return ('0' + int);
   }
-
-  if(month.length === 1){
-    month = '0' + month;
-  }
-
-  return (year + '-' + month + '-' + day);
+  return int;
 }
 
-function getDropDownText(date) {
-  const monthNames = [
-    "januari",
-    "februari",
-    "maart",
-    "april",
-    "mei",
-    "juni",
-    "juli",
-    "augustus",
-    "september",
-    "oktober",
-    "november",
-    "december"
-  ];
-
-  let day = date.getDate();
-  let month = monthNames[date.getMonth()];
-  let year = date.getFullYear();
-
-  return (day + ' ' + month + ' ' + year);
+function changeDatepicker(selectedDate) {
+  datepicker.value = (selectedDate.getFullYear() + '-' +
+    getTwoNumeric(selectedDate.getMonth() + 1) + '-' +
+    getTwoNumeric(selectedDate.getDate()));
 }
 
-function changeDatepicker(focusDate) {
-  datepicker.setAttribute()
+function runAnimation() {
+  if(calendarEl){
+    let timegrid = calendarEl.querySelector('.fc-timegrid');
 
-  let today = calendar.getDate();
-  let amountDays = 6;
-
-  for(let i = 0;i < amountDays;i++) {
-    let opt = document.createElement('option');
-    let newDate = new Date();
-    newDate.setDate(today.getDate()+i);
-
-    if(i === 0) {
-      opt.selected = getDropDownValue(newDate);
-    }
-
-    opt.value = getDropDownValue(newDate);
-    opt.text = getDropDownText(newDate);
-
-    dropdown.appendChild(opt);
+    fadeIn(timegrid, 500);
   }
 }
 
-
-(function(){
-  let calendarEl = document.querySelector('.js-calendar');
+(function() {
+  calendarEl = document.querySelector('.js-calendar');
   let timezone = calendarEl.getAttribute('data-timezone');
+
   calendar = new FullCalendar.Calendar(calendarEl, {
     headerToolbar: {
       start: '',
-      right: 'prev,today,next'
+      right: 'prev,today,next',
     },
     allDaySlot: false,
-    slotMinTime: "07:00:00",
-    slotMaxTime: "19:00:00",
+    slotMinTime: '07:00:00',
+    slotMaxTime: '19:00:00',
     initialView: 'resourceTimeGridDay',
     themeSystem: 'bootstrap',
     timeZone: timezone,
+    schedulerLicenseKey: '0951498686-fcs-1595515022',
     slotLabelFormat: {
       hour: 'numeric',
       minute: '2-digit',
       omitZeroMinute: false,
-      hour12: false
+      hour12: false,
     },
+    locale: 'nl',
     eventTimeFormat: {
       hour: 'numeric',
       minute: '2-digit',
       omitZeroMinute: false,
-      hour12: false
+      hour12: false,
     },
     resources: {
-      url: '/fullcalendar-calendars'
+      url: '/fullcalendar-calendars',
     },
     events: '/fullcalendar-events',
-    timeFormat: 'H(:mm)',
-    datesSet: function() {
-      if(dropdown) {
-        buildDaysList();
-      }
-    },
+    timeFormat: 'H(:mm)'
   });
 
   calendar.render();
 
-  if(dropdown) {
-    buildDaysList();
+  datepicker = document.querySelector('.js-calendar-datepicker');
+
+  if(datepicker) {
+    datepicker.addEventListener('change', () => {
+
+      let dateValue = datepicker.value;
+      calendar.gotoDate(new Date(dateValue));
+      runAnimation();
+    });
   }
+
+  nextButton = calendarEl.querySelector('.fc-next-button');
+  prevButton = calendarEl.querySelector('.fc-prev-button');
+  todayButton = calendarEl.querySelector('.fc-today-button');
+
+  nextButton.addEventListener('click', () => {
+    let date = calendar.getDate();
+    changeDatepicker(date);
+    runAnimation();
+  });
+
+  todayButton.addEventListener('click', () => {
+    let date = calendar.getDate();
+    changeDatepicker(date);
+    runAnimation();
+  });
+
+  prevButton.addEventListener('click', () => {
+    let date = calendar.getDate();
+    changeDatepicker(date);
+    runAnimation();
+  });
 })();
