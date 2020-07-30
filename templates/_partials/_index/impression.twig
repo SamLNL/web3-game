@@ -5,7 +5,7 @@
   <div class="swiper-container row js-swiper-preview">
     <div class="swiper-wrapper d-flex flex-row h-auto">
       {% for slide in entry.preview.all() %}
-        <div class="swiper-slide swiper-slide-side-by-side col-11 col-md-12 pb-6" data-title="{{ slide.previewTitle }}">
+        <div class="swiper-slide swiper-slide-side-by-side col-11 col-md-12" data-title="{{ slide.previewTitle }}">
           {% set image = slide.previewImage.one() %}
           {% set tranformedImage = craft.imager.transformImage(image, {
             width: 700,

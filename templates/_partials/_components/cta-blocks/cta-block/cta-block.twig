@@ -1,0 +1,85 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{# @var entry \craft\elements\Entry #}
+{# ======================================================
+  @filename: block
+  @date:     09 jul. 2020
+  @author:   sam
+  ====================================================== #}
+{#
+  Add a small discription about this file/componennt and what it does
+#}
+
+{% import "_partials/_macros.twig" as macro %}
+
+{% set class = class is defined ? class : '' %}
+{% set title = title is defined ? title : '' %}
+{% set subTitle = subTitle is defined ? subTitle : '' %}
+{% set mainTitle = mainTitle is defined ? mainTitle : '' %}
+{% set mainSubTitle = mainSubTitle is defined ? mainSubTitle : '' %}
+{% set mainImage = mainImage is defined ? mainImage : '' %}
+{% set subContent = subContent is defined ? subContent : '' %}
+{% set cta = cta is defined ? cta : '' %}
+{% set ctaMicro = ctaMicro is defined ? ctaMicro : '' %}
+{% set swiper = swiper is defined ? swiper : true %}
+
+{% if title | length and (mainTitle | length or mainImage | length) %}
+  <div class="c-cta-block {{ swiper ? 'swiper-slide' }} {{ class }}"
+       data-title="{{ title }}">
+    <div class="c-cta-block__title">
+      <div>{{ title }}</div>
+      {% if subTitle | length %}
+        <div>{{ subTitle }}</div>
+      {% endif %}
+    </div>
+
+    {# image gets more priority than title #}
+    {% if mainImage | length %}
+      <div class="c-cta-block__main-content-image">#}
+        {% set image = mainImage %}
+        {% set transformedImage = craft.imager.transformImage(image, {
+          width: 350,
+          height: 200,
+          mode: 'crop'
+        }) %}
+        <img src="{{ transformedImage.url }}" alt="{{ image.title }}">
+      </div>
+    {% else %}
+      <div class="c-cta-block__main-content-text">
+        <div class="c-cta-block__main-content-text__title">
+          {{ mainTitle }}
+        </div>
+        {% if mainSubTitle | length %}
+          <div class="c-cta-block__main-content-text__sub-title">
+            {{ mainSubTitle }}
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {% if subContent | length %}
+      <div class="c-cta-block__sub-content">
+        {{ subContent }}
+      </div>
+    {% endif %}
+
+    {% if cta | length and cta.url | length %}
+      <div class="c-cta-block__cta">
+        <a href="{{ cta.url }}"
+           title="{{ cta.text }}"
+           class="c-btn c-btn-white"
+           ga-on="click"
+           ga-event-category="CTA"
+           ga-event-action="Click"
+           ga-event-label="{{ cta.text|ucfirst }}"
+        >
+          <span>{{ cta.text }}</span>
+        </a>
+        {% if ctaMicro | length %}
+          <span class="c-cta__micro">
+                  {{ ctaMicro }}
+                </span>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+{% endif %}

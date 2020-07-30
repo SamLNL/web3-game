@@ -15,7 +15,7 @@
 {% if questions | length %}
   <div class="container">
     <div class="row">
-      <div class="col-12 col-lg-8 offset-lg-2">
+      <div class="col-12">
         {% for item in questions %}
           <div tabindex="0" class="c-faq js-faq js-tab-click"
                data-click-selector="#tab-click-{{ loop.index }}" data-ga-question="{{ item.question }}">

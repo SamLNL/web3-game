@@ -117,6 +117,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/verbb/base" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/verbb/image-resizer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/verbb/navigation" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/verbb/super-table" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/vlucas/phpdotenv" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/voku/anti-xss" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/voku/arrayy" />

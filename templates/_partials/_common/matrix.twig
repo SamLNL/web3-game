@@ -66,6 +66,17 @@
           } %}
         </div>
 
+      {% case 'ctaBlocks' %}
+        <div class="mb-4 mb-lg-8">
+          {% include '_partials/_components/cta-blocks/cta-blocks.twig' with {
+            text: block.text,
+            cta1: block.cta1 | length ? block.cta1 : '',
+            cta1Micro: block.cta1Micro | length ? block.cta1Micro : '',
+            cta2: block.cta2 | length ? block.cta2 : '',
+            cta2Micro: block.cta2Micro | length ? block.cta2Micro : '',
+          } %}
+        </div>
+
       {% case 'faq' %}
         {% if block.questions | length %}
           <div class="mb-4 mb-lg-8">
@@ -118,6 +129,60 @@
             text: block.text,
             url: block.typeform.url,
             label: block.typeform.text
+          } %}
+        </div>
+
+      {% case 'table' %}
+        <div class="mb-4 mb-lg-8">
+          {% include '_partials/_components/table/table.twig' with {
+            text: block.text,
+            url: block.typeform.url,
+            label: block.typeform.text
+          } %}
+        </div>
+
+      {% case 'prices' %}
+        {% if block.showPrices and prices.pricesTickets | length %}
+          <div class="mb-4 mb-lg-8">
+            <div class="container">
+              <div class="row">
+                <div class="col-12">
+                  {% if block.text | length %}
+                    <div>
+                      {{ block.text }}
+                    </div>
+                  {% endif %}
+                  <div class="swiper mt-4">
+                    <div class="c-cta-blocks js-cta-blocks swiper-container js-swiper-destroy"
+                         data-destroy-breakpoint="1024">
+                      <div class="swiper-wrapper">
+                        {% for price in prices.pricesTickets %}
+                          {% include '_partials/_components/cta-blocks/cta-block/cta-block.twig' with {
+                            class: 'c-cta-block-price c-cta-block-' ~ price.color,
+                            title: price.heading,
+                            subTitle: price.subHeading,
+                            mainTitle: price.price,
+                            mainSubTitle: price.subPrice,
+                            subContent: price.usps,
+                            cta: price.cta,
+                            ctaMicro: price.ctaMicro
+                          } %}
+                        {% endfor %}
+                      </div>
+                      <div class="swiper-pagination"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+
+      {% case 'pricesRest' %}
+        <div class="mb-4 mb-lg-8">
+          {% include '_partials/_components/table/table.twig' with {
+            text: block.text,
+            table: block.table
           } %}
         </div>
       {% endswitch %}

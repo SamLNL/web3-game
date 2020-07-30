@@ -15,7 +15,7 @@
         </div>
       </div>
 
-        <div class="swiper-container row js-swiper-services">
+        <div class="swiper-container row js-swiper-services js-swiper-destroy" data-destroy-breakpoint="1024">
             <div class="swiper-wrapper d-flex flex-row">
                 {% for slide in serviceSlides %}
                   <div class="swiper-slide h-auto d-flex col-12 col-md-5 col-lg-4 pb-5 flex-grow-1" data-title="{{ slide.serviceTitle }}">

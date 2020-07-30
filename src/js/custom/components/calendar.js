@@ -1,7 +1,5 @@
 /* global FullCalendar */
 
-import { fadeIn } from '../fade';
-
 let calendar, calendarEl, prevButton, nextButton, todayButton, datepicker;
 
 
@@ -22,8 +20,11 @@ function changeDatepicker(selectedDate) {
 function runAnimation() {
   if(calendarEl){
     let timegrid = calendarEl.querySelector('.fc-timegrid');
+    timegrid.classList.add('hide');
 
-    fadeIn(timegrid, 500);
+    setTimeout(() => {
+      timegrid.classList.remove('hide');
+    }, 500);
   }
 }
 

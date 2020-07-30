@@ -4,6 +4,7 @@
   background-color: $yellow;
   color: $teal-600;
   font-size: $font-size-sm;
+  border: 0;
 
   &:hover {
     background-color: $yellow-300;
@@ -13,6 +14,7 @@
   &-yellow {
     background-color: $yellow;
     color: $teal-600;
+    border: 0;
 
     &:hover {
       color: $teal-600;
@@ -23,10 +25,21 @@
   &-teal {
     background-color: $teal;
     color: $white;
+    border: 0;
 
     &:hover {
       color: $white;
       background-color: $teal-300;
+    }
+  }
+
+  &-white {
+    background-color: $white;
+    color: $teal-600;
+    border: 1px solid $teal-200;
+
+    &:hover {
+      background-color: $teal-200;
     }
   }
 

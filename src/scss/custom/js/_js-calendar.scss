@@ -91,12 +91,23 @@
   }
 
   .fc-timegrid {
-    transition: opacity 0.25s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+
+    &.hide {
+      opacity: 0.25;
+    }
 
     .fc-scrollgrid {
       border-radius: 5px;
       padding: 0;
       background-color: $white;
+
+      &-section {
+        td {
+          border-bottom: 0;
+        }
+      }
 
       @include media-breakpoint-up('sm') {
         padding: 0 20px 20px 20px;
@@ -176,10 +187,11 @@
       tbody {
         .fc-timegrid-col {
           background-color: $white;
-          border-bottom: 1px solid $teal-200;
 
-          &:first-child {
-            border-bottom: 0;
+          &:not(:first-child) {
+            .fc-timegrid-col-frame {
+              border-bottom: 1px solid $teal-200;
+            }
           }
 
           &.fc-day-today {

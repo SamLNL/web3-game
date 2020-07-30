@@ -1,4 +1,16 @@
 .swiper {
+  &-container {
+    padding-bottom: map_get($spacers, 5);
+
+    @include media-breakpoint-up('lg') {
+      padding-bottom: map_get($spacers, 6);
+
+      &.js-swiper-destroy {
+        padding-bottom: 0;
+      }
+    }
+  }
+
   &-slide {
     &-side-by-side {
       display: flex;
