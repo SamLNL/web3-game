@@ -1,0 +1,49 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{# @var entry \craft\elements\Entry #}
+{# ======================================================
+  @filename: opening-hours
+  @date:     12 jul. 2020
+  @author:   sam
+  ====================================================== #}
+{#
+  Add a small discription about this file/componennt and what it does
+#}
+
+{% set text = text is defined ? text : '' %}
+{% set default = default is defined ? default : '' %}
+{% set holiday = holiday is defined ? holiday : '' %}
+
+<div class="mb-4 mb-lg-8">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        {% if text | length %}
+          {{ text }}
+        {% endif %}
+        {% if default | length and holiday | length %}
+          <div class="d-flex flex-column mt-3 flex-lg-row mt-lg-4">
+            {% set columnHeadings = [{
+              'col1': 'Reguliere tijden'
+            }] %}
+            <div class="w-100 w-lg-40 mb-4 mb-lg-0 mr-lg-3">
+              {% include '_partials/_components/table/table/table.twig' with {
+                table: columnHeadings | merge(default)
+              } %}
+            </div>
+
+            {% set columnHeadings = [{
+              'col1': 'Vakantie en feestdagen'
+            }] %}
+            <div class="w-100 w-lg-60">
+              {% include '_partials/_components/table/table/table.twig' with {
+                table: columnHeadings | merge(holiday)
+              } %}
+            </div>
+          </div>
+        {% else %}
+
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

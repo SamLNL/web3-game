@@ -153,7 +153,7 @@
             &:nth-child(even) {
               .fc-col-header-cell-cushion {
                 &:before {
-                  background-color: $teal-200;
+                  background-color: #c3e0e4;
                 }
               }
             }
@@ -215,6 +215,7 @@
           border: 0;
           font-size: $font-size-sm;
           font-weight: $font-weight-bold;
+          color: $teal;
 
           @include media-breakpoint-up('md') {
             font-size: $font-size-sm;
@@ -224,7 +225,7 @@
         [data-resource-id] {
           &:nth-child(even) {
             .fc-timegrid-event {
-              background-color: rgba($teal-200, 0.5);
+              background-color: rgba(195, 224, 228, 0.75);
               border: 0;
             }
           }

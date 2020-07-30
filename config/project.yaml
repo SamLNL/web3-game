@@ -1,4 +1,4 @@
-dateModified: 1596098571
+dateModified: 1596112102
 email:
   fromEmail: interactie@emotion.nl
   fromName: Biljoenbad
@@ -1551,13 +1551,6 @@ globalSets:
                 sortOrder: 1
             name: Tickets
             sortOrder: 1
-          -
-            fields:
-              db854b09-4cc0-4d63-90e7-392c45dfe7a5:
-                required: false
-                sortOrder: 1
-            name: 'Overige prijzen'
-            sortOrder: 2
     handle: prices
     name: Tarieven
 graphql:
@@ -1864,7 +1857,7 @@ matrixBlockTypes:
         type: typedlinkfield\fields\LinkField
     handle: typeform
     name: Typeform
-    sortOrder: 12
+    sortOrder: 10
   392ffd23-a640-4a6f-8cca-bf3195175673:
     field: d16c24d1-abfe-4e08-b18c-45bcb368c93f
     fieldLayouts:
@@ -2368,40 +2361,6 @@ matrixBlockTypes:
     handle: text
     name: Tekst
     sortOrder: 1
-  6bee65bc-3aa5-442c-9762-8bf88ce5538f:
-    field: 8a93f01e-d5c4-489e-a7b1-1685865c05d7
-    fieldLayouts:
-      b6691ba0-46a7-4b43-b143-76efbd7937c6:
-        tabs:
-          -
-            fields:
-              f51fcc80-a45b-4eda-ad12-6e30721ec05d:
-                required: true
-                sortOrder: 1
-            name: Content
-            sortOrder: 1
-    fields:
-      f51fcc80-a45b-4eda-ad12-6e30721ec05d:
-        contentColumnType: text
-        fieldGroup: null
-        handle: columnValue
-        instructions: ''
-        name: Waarde
-        searchable: true
-        settings:
-          byteLimit: null
-          charLimit: null
-          code: ''
-          columnType: null
-          initialRows: '4'
-          multiline: ''
-          placeholder: ''
-        translationKeyFormat: null
-        translationMethod: none
-        type: craft\fields\PlainText
-    handle: headColumn
-    name: Hoofdkolom
-    sortOrder: 2
   83eb5178-5840-470d-a651-0ca2ba6aab59:
     field: d16c24d1-abfe-4e08-b18c-45bcb368c93f
     fieldLayouts:
@@ -2666,61 +2625,7 @@ matrixBlockTypes:
         type: craft\fields\Lightswitch
     handle: prices
     name: Tarieven
-    sortOrder: 14
-  8c00225f-dc21-4d47-b7a9-fc2fca1100e2:
-    field: d16c24d1-abfe-4e08-b18c-45bcb368c93f
-    fieldLayouts:
-      62fbbe05-49da-4b39-8fc2-ad7765c80c06:
-        tabs:
-          -
-            fields:
-              052ba6e7-90e9-4c2a-9337-cc1ecfbf36f9:
-                required: false
-                sortOrder: 1
-              46e24b3d-fd07-4fba-a825-578f3b04f4ac:
-                required: false
-                sortOrder: 2
-            name: Content
-            sortOrder: 1
-    fields:
-      052ba6e7-90e9-4c2a-9337-cc1ecfbf36f9:
-        contentColumnType: text
-        fieldGroup: null
-        handle: text
-        instructions: ''
-        name: Tekst
-        searchable: true
-        settings:
-          availableTransforms: '*'
-          availableVolumes: '*'
-          cleanupHtml: true
-          columnType: text
-          purifierConfig: ''
-          purifyHtml: '1'
-          redactorConfig: ''
-          removeEmptyTags: '1'
-          removeInlineStyles: '1'
-          removeNbsp: '1'
-          showUnpermittedFiles: false
-          showUnpermittedVolumes: false
-        translationKeyFormat: null
-        translationMethod: none
-        type: craft\redactor\Field
-      46e24b3d-fd07-4fba-a825-578f3b04f4ac:
-        contentColumnType: boolean
-        fieldGroup: null
-        handle: showPrices
-        instructions: ''
-        name: 'Toon tarieven (overig)'
-        searchable: true
-        settings:
-          default: ''
-        translationKeyFormat: null
-        translationMethod: none
-        type: craft\fields\Lightswitch
-    handle: pricesRest
-    name: 'Tarieven (Overig)'
-    sortOrder: 15
+    sortOrder: 12
   94220efd-03af-48a9-835f-63a2db6fa83a:
     field: d16c24d1-abfe-4e08-b18c-45bcb368c93f
     fieldLayouts:
@@ -3598,7 +3503,7 @@ matrixBlockTypes:
         type: craft\redactor\Field
     handle: slider
     name: Slider
-    sortOrder: 9
+    sortOrder: 8
   c53081c4-88c0-46df-a585-3e54356c2e30:
     field: d16c24d1-abfe-4e08-b18c-45bcb368c93f
     fieldLayouts:
@@ -4358,7 +4263,7 @@ matrixBlockTypes:
       3c84b104-72c4-48a0-844a-9106c2d67158:
         contentColumnType: boolean
         fieldGroup: null
-        handle: toonTabel
+        handle: openingHours
         instructions: 'Toon openingstijden tabel'
         name: 'Toon tabel'
         searchable: true
@@ -4392,7 +4297,7 @@ matrixBlockTypes:
         type: craft\redactor\Field
     handle: openingHours
     name: Openingstijden
-    sortOrder: 16
+    sortOrder: 13
   e0a21d30-1873-422b-8e25-a5d0c55dff34:
     field: d16c24d1-abfe-4e08-b18c-45bcb368c93f
     fieldLayouts:
@@ -4728,138 +4633,6 @@ matrixBlockTypes:
     handle: ctaBanner
     name: 'CTA banner'
     sortOrder: 6
-  e1c0cc76-d1c3-43e5-af5b-e172459920a9:
-    field: d16c24d1-abfe-4e08-b18c-45bcb368c93f
-    fieldLayouts:
-      5445ba6d-7699-46fd-815f-192af379a4f8:
-        tabs:
-          -
-            fields:
-              b2065638-403b-4ef6-9275-e130f7d2784d:
-                required: true
-                sortOrder: 2
-              d8cf92aa-be2e-4fab-bbd8-630f24911325:
-                required: false
-                sortOrder: 1
-            name: Content
-            sortOrder: 1
-    fields:
-      b2065638-403b-4ef6-9275-e130f7d2784d:
-        contentColumnType: string
-        fieldGroup: null
-        handle: images
-        instructions: ''
-        name: Afbeeldingen
-        searchable: true
-        settings:
-          allowSelfRelations: ''
-          allowedKinds:
-            - image
-          defaultUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1'
-          defaultUploadLocationSubpath: ''
-          limit: ''
-          localizeRelations: false
-          restrictFiles: '1'
-          selectionLabel: ''
-          showUnpermittedFiles: false
-          showUnpermittedVolumes: false
-          singleUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1'
-          singleUploadLocationSubpath: ''
-          source: null
-          sources: '*'
-          targetSiteId: null
-          useSingleFolder: true
-          validateRelatedElements: ''
-          viewMode: list
-        translationKeyFormat: null
-        translationMethod: site
-        type: craft\fields\Assets
-      d8cf92aa-be2e-4fab-bbd8-630f24911325:
-        contentColumnType: text
-        fieldGroup: null
-        handle: text
-        instructions: ''
-        name: Tekst
-        searchable: true
-        settings:
-          availableTransforms: '*'
-          availableVolumes: '*'
-          cleanupHtml: true
-          columnType: text
-          purifierConfig: ''
-          purifyHtml: '1'
-          redactorConfig: ''
-          removeEmptyTags: '1'
-          removeInlineStyles: '1'
-          removeNbsp: '1'
-          showUnpermittedFiles: false
-          showUnpermittedVolumes: false
-        translationKeyFormat: null
-        translationMethod: none
-        type: craft\redactor\Field
-    handle: gallery
-    name: Galerij
-    sortOrder: 8
-  f4519b59-4dd6-4ae6-a864-d2015aba8a22:
-    field: d16c24d1-abfe-4e08-b18c-45bcb368c93f
-    fieldLayouts:
-      ae351785-6155-4746-b284-903ba8b4856d:
-        tabs:
-          -
-            fields:
-              58a81c5d-83bd-4466-ae73-b002ac36bbf5:
-                required: false
-                sortOrder: 2
-              866bb715-e174-4bb6-9248-b15c1ff79e60:
-                required: true
-                sortOrder: 1
-            name: Content
-            sortOrder: 1
-    fields:
-      58a81c5d-83bd-4466-ae73-b002ac36bbf5:
-        contentColumnType: text
-        fieldGroup: null
-        handle: author
-        instructions: ''
-        name: Auteur
-        searchable: true
-        settings:
-          byteLimit: null
-          charLimit: null
-          code: ''
-          columnType: null
-          initialRows: '4'
-          multiline: ''
-          placeholder: ''
-        translationKeyFormat: null
-        translationMethod: none
-        type: craft\fields\PlainText
-      866bb715-e174-4bb6-9248-b15c1ff79e60:
-        contentColumnType: text
-        fieldGroup: null
-        handle: quote
-        instructions: ''
-        name: Quote
-        searchable: true
-        settings:
-          availableTransforms: '*'
-          availableVolumes: '*'
-          cleanupHtml: true
-          columnType: text
-          purifierConfig: ''
-          purifyHtml: '1'
-          redactorConfig: ''
-          removeEmptyTags: '1'
-          removeInlineStyles: '1'
-          removeNbsp: '1'
-          showUnpermittedFiles: false
-          showUnpermittedVolumes: false
-        translationKeyFormat: null
-        translationMethod: none
-        type: craft\redactor\Field
-    handle: quote
-    name: Quote
-    sortOrder: 10
   fb0010b3-351c-49db-bd18-c93439c1f571:
     field: d16c24d1-abfe-4e08-b18c-45bcb368c93f
     fieldLayouts:
@@ -5069,7 +4842,7 @@ matrixBlockTypes:
         type: craft\fields\PlainText
     handle: teaser
     name: Teaser
-    sortOrder: 11
+    sortOrder: 9
   ff8108d9-9fc9-4839-9d5c-7fbf281e359a:
     field: d16c24d1-abfe-4e08-b18c-45bcb368c93f
     fieldLayouts:
@@ -5077,51 +4850,18 @@ matrixBlockTypes:
         tabs:
           -
             fields:
-              06851493-fc71-4aac-b14d-c941da6e5033:
-                required: false
-                sortOrder: 8
               49d35a69-4421-4bae-bac8-3397f6d650a5:
                 required: false
                 sortOrder: 1
-              4c882d1e-3506-46ec-8445-90a4b3d60955:
-                required: false
-                sortOrder: 6
-              5132109a-201d-4aa7-bbe3-dd004f8c30b8:
-                required: false
-                sortOrder: 5
-              886e85f8-724a-45f6-8170-f9b493584420:
-                required: true
-                sortOrder: 2
-              d1ecaf0e-ae90-4415-8c16-afc5548d1e20:
-                required: false
-                sortOrder: 7
               e1426067-79a5-4525-903a-b880012b9699:
-                required: false
+                required: true
                 sortOrder: 3
               e4e34eb6-61ee-45c2-87d2-e5844de66f42:
                 required: false
-                sortOrder: 4
+                sortOrder: 2
             name: Content
             sortOrder: 1
     fields:
-      06851493-fc71-4aac-b14d-c941da6e5033:
-        contentColumnType: text
-        fieldGroup: null
-        handle: cta2Micro
-        instructions: 'Micro tekst onder de knop wordt alleen getoond wanneer CTA2 is ingevuld'
-        name: CTA2
-        searchable: true
-        settings:
-          byteLimit: null
-          charLimit: null
-          code: ''
-          columnType: null
-          initialRows: '4'
-          multiline: ''
-          placeholder: ''
-        translationKeyFormat: null
-        translationMethod: none
-        type: craft\fields\PlainText
       49d35a69-4421-4bae-bac8-3397f6d650a5:
         contentColumnType: text
         fieldGroup: null
@@ -5145,305 +4885,12 @@ matrixBlockTypes:
         translationKeyFormat: null
         translationMethod: none
         type: craft\redactor\Field
-      4c882d1e-3506-46ec-8445-90a4b3d60955:
-        contentColumnType: text
-        fieldGroup: null
-        handle: cta1Micro
-        instructions: 'Micro tekst onder de knop wordt alleen getoond wanneer CTA1 is ingevuld'
-        name: 'CTA1 - micro tekst'
-        searchable: true
-        settings:
-          byteLimit: null
-          charLimit: null
-          code: ''
-          columnType: null
-          initialRows: '4'
-          multiline: ''
-          placeholder: ''
-        translationKeyFormat: null
-        translationMethod: none
-        type: craft\fields\PlainText
-      5132109a-201d-4aa7-bbe3-dd004f8c30b8:
-        contentColumnType: text
-        fieldGroup: null
-        handle: cta1
-        instructions: ''
-        name: 'CTA 1'
-        searchable: true
-        settings:
-          allowCustomText: '1'
-          allowTarget: ''
-          allowedLinkNames:
-            1: asset
-            4: entry
-            6: custom
-            7: email
-            8: tel
-            9: url
-          autoNoReferrer: ''
-          defaultLinkName: entry
-          defaultText: ''
-          enableAriaLabel: ''
-          enableTitle: ''
-          typeSettings:
-            __assoc__:
-              -
-                - asset
-                -
-                  __assoc__:
-                    -
-                      - sources
-                      - '*'
-                    -
-                      - allowCustomQuery
-                      - ''
-              -
-                - category
-                -
-                  __assoc__:
-                    -
-                      - sources
-                      - '*'
-                    -
-                      - allowCustomQuery
-                      - ''
-              -
-                - user
-                -
-                  __assoc__:
-                    -
-                      - sources
-                      - '*'
-                    -
-                      - allowCustomQuery
-                      - ''
-              -
-                - entry
-                -
-                  __assoc__:
-                    -
-                      - sources
-                      - '*'
-                    -
-                      - allowCustomQuery
-                      - ''
-              -
-                - site
-                -
-                  __assoc__:
-                    -
-                      - sites
-                      - '*'
-              -
-                - custom
-                -
-                  __assoc__:
-                    -
-                      - disableValidation
-                      - ''
-                    -
-                      - allowAliases
-                      - ''
-              -
-                - email
-                -
-                  __assoc__:
-                    -
-                      - disableValidation
-                      - ''
-                    -
-                      - allowAliases
-                      - ''
-              -
-                - tel
-                -
-                  __assoc__:
-                    -
-                      - disableValidation
-                      - ''
-                    -
-                      - allowAliases
-                      - ''
-              -
-                - url
-                -
-                  __assoc__:
-                    -
-                      - disableValidation
-                      - ''
-                    -
-                      - allowAliases
-                      - ''
-              -
-                - solspaceCalendar-event
-                -
-                  __assoc__:
-                    -
-                      - sources
-                      - '*'
-                    -
-                      - allowCustomQuery
-                      - ''
-        translationKeyFormat: null
-        translationMethod: none
-        type: typedlinkfield\fields\LinkField
-      886e85f8-724a-45f6-8170-f9b493584420:
-        contentColumnType: string
-        fieldGroup: null
-        handle: table
-        instructions: ''
-        name: Tabel
-        searchable: true
-        settings:
-          columns:
-            __assoc__:
-              -
-                - 8a93f01e-d5c4-489e-a7b1-1685865c05d7
-                -
-                  __assoc__:
-                    -
-                      - width
-                      - ''
-          contentTable: '{{%stc_18_table}}'
-          fieldLayout: table
-          maxRows: ''
-          minRows: '1'
-          propagationMethod: all
-          selectionLabel: 'Voeg rij toe'
-          staticField: ''
-        translationKeyFormat: null
-        translationMethod: site
-        type: verbb\supertable\fields\SuperTableField
-      d1ecaf0e-ae90-4415-8c16-afc5548d1e20:
-        contentColumnType: text
-        fieldGroup: null
-        handle: cta2
-        instructions: ''
-        name: CTA2
-        searchable: true
-        settings:
-          allowCustomText: '1'
-          allowTarget: ''
-          allowedLinkNames:
-            1: asset
-            4: entry
-            6: custom
-            7: email
-            8: tel
-            9: url
-          autoNoReferrer: ''
-          defaultLinkName: entry
-          defaultText: ''
-          enableAriaLabel: ''
-          enableTitle: ''
-          typeSettings:
-            __assoc__:
-              -
-                - asset
-                -
-                  __assoc__:
-                    -
-                      - sources
-                      - '*'
-                    -
-                      - allowCustomQuery
-                      - ''
-              -
-                - category
-                -
-                  __assoc__:
-                    -
-                      - sources
-                      - '*'
-                    -
-                      - allowCustomQuery
-                      - ''
-              -
-                - user
-                -
-                  __assoc__:
-                    -
-                      - sources
-                      - '*'
-                    -
-                      - allowCustomQuery
-                      - ''
-              -
-                - entry
-                -
-                  __assoc__:
-                    -
-                      - sources
-                      - '*'
-                    -
-                      - allowCustomQuery
-                      - ''
-              -
-                - site
-                -
-                  __assoc__:
-                    -
-                      - sites
-                      - '*'
-              -
-                - custom
-                -
-                  __assoc__:
-                    -
-                      - disableValidation
-                      - ''
-                    -
-                      - allowAliases
-                      - ''
-              -
-                - email
-                -
-                  __assoc__:
-                    -
-                      - disableValidation
-                      - ''
-                    -
-                      - allowAliases
-                      - ''
-              -
-                - tel
-                -
-                  __assoc__:
-                    -
-                      - disableValidation
-                      - ''
-                    -
-                      - allowAliases
-                      - ''
-              -
-                - url
-                -
-                  __assoc__:
-                    -
-                      - disableValidation
-                      - ''
-                    -
-                      - allowAliases
-                      - ''
-              -
-                - solspaceCalendar-event
-                -
-                  __assoc__:
-                    -
-                      - sources
-                      - '*'
-                    -
-                      - allowCustomQuery
-                      - ''
-        translationKeyFormat: null
-        translationMethod: none
-        type: typedlinkfield\fields\LinkField
       e1426067-79a5-4525-903a-b880012b9699:
         contentColumnType: text
         fieldGroup: null
-        handle: table2
-        instructions: ''
-        name: Tabel2
+        handle: table
+        instructions: "Niet alle kolommen dienen ingevuld te worden.\r\nMocht het een tabel zijn met bijvoorbeeld 3 kolommen, dan dienen alleen de eerste drie kolommen ingevuld te worden."
+        name: Tabel
         searchable: true
         settings:
           addRowLabel: 'Voeg een rij toe'
@@ -5548,41 +4995,7 @@ matrixBlockTypes:
         type: craft\fields\Lightswitch
     handle: table
     name: Tabel
-    sortOrder: 13
-  ffee83a7-0164-4ef7-936b-5667482bd770:
-    field: 8a93f01e-d5c4-489e-a7b1-1685865c05d7
-    fieldLayouts:
-      6dbf129f-c949-47ab-b6ed-c0b23309e329:
-        tabs:
-          -
-            fields:
-              dfbcda8f-c9a6-4fff-9d96-8324cccf3c43:
-                required: true
-                sortOrder: 1
-            name: Content
-            sortOrder: 1
-    fields:
-      dfbcda8f-c9a6-4fff-9d96-8324cccf3c43:
-        contentColumnType: text
-        fieldGroup: null
-        handle: columnValue
-        instructions: ''
-        name: Waarde
-        searchable: true
-        settings:
-          byteLimit: null
-          charLimit: null
-          code: ''
-          columnType: null
-          initialRows: '4'
-          multiline: ''
-          placeholder: ''
-        translationKeyFormat: null
-        translationMethod: none
-        type: craft\fields\PlainText
-    handle: column
-    name: Kolom
-    sortOrder: 1
+    sortOrder: 11
 navigation:
   navs:
     085d0005-6965-482f-aae6-7c63000e6845:
@@ -6399,34 +5812,6 @@ superTableBlockTypes:
         translationKeyFormat: null
         translationMethod: none
         type: craft\fields\PlainText
-  b2f89d21-2d74-4ae7-bc8e-63102bbf6a8f:
-    field: 886e85f8-724a-45f6-8170-f9b493584420
-    fieldLayouts:
-      59e42e03-fa44-4edf-b1cb-56c901cc9469:
-        tabs:
-          -
-            fields:
-              8a93f01e-d5c4-489e-a7b1-1685865c05d7:
-                required: true
-                sortOrder: 1
-            name: Content
-            sortOrder: 1
-    fields:
-      8a93f01e-d5c4-489e-a7b1-1685865c05d7:
-        contentColumnType: string
-        fieldGroup: null
-        handle: row
-        instructions: ''
-        name: Rij
-        searchable: true
-        settings:
-          contentTable: '{{%matrixcontent_row}}'
-          maxBlocks: ''
-          minBlocks: '1'
-          propagationMethod: all
-        translationKeyFormat: null
-        translationMethod: site
-        type: craft\fields\Matrix
 system:
   edition: pro
   live: true

@@ -24,167 +24,152 @@
       {% switch block.type %}
 
       {% case 'text' %}
-        {% if block.text | length %}
-          <div class="mb-2 mb-lg-6">
-            {% include '_partials/_components/text/text.twig' with {
-              text: block.text
-            } %}
-          </div>
-        {% endif %}
+      {% if block.text | length %}
+        <div class="mb-2 mb-lg-6">
+          {% include '_partials/_components/text/text.twig' with {
+            text: block.text
+          } %}
+        </div>
+      {% endif %}
 
       {% case 'image' %}
-        {% if block.image | length %}
-          <div class="mb-4 mb-lg-8">
-            {% include '_partials/_components/image/image.twig' with {
-              image: block.image[0],
-              format: block.format
-            } %}
-          </div>
-        {% endif %}
+      {% if block.image | length %}
+        <div class="mb-4 mb-lg-8">
+          {% include '_partials/_components/image/image.twig' with {
+            image: block.image[0],
+            format: block.format
+          } %}
+        </div>
+      {% endif %}
 
       {% case 'imageText' or 'textImage' %}
-        <div class="mb-4 mb-lg-8">
-          {% include '_partials/_components/side-by-side/side-by-side.twig' with {
-            text: block.text,
-            image: block.image | length ? block.image[0] : '',
-            cta1: block.cta1 | length ? block.cta1 : '',
-            cta1Micro: block.cta1Micro | length ? block.cta1Micro : '',
-            cta2: block.cta2 | length ? block.cta2 : '',
-            cta2Micro: block.cta2Micro | length ? block.cta2Micro : '',
-            order: block.type
-          } %}
-        </div>
+      <div class="mb-4 mb-lg-8">
+        {% include '_partials/_components/side-by-side/side-by-side.twig' with {
+          text: block.text,
+          image: block.image | length ? block.image[0] : '',
+          cta1: block.cta1 | length ? block.cta1 : '',
+          cta1Micro: block.cta1Micro | length ? block.cta1Micro : '',
+          cta2: block.cta2 | length ? block.cta2 : '',
+          cta2Micro: block.cta2Micro | length ? block.cta2Micro : '',
+          order: block.type
+        } %}
+      </div>
 
       {% case 'ctaBanner' %}
-        <div class="mb-4 mb-lg-8">
-          {% include '_partials/_components/cta-banner/cta-banner.twig' with {
-            text: block.text,
-            cta1: block.cta1 | length ? block.cta1 : '',
-            cta1Micro: block.cta1Micro | length ? block.cta1Micro : '',
-            cta2: block.cta2 | length ? block.cta2 : '',
-            cta2Micro: block.cta2Micro | length ? block.cta2Micro : '',
-          } %}
-        </div>
+      <div class="mb-4 mb-lg-8">
+        {% include '_partials/_components/cta-banner/cta-banner.twig' with {
+          text: block.text,
+          cta1: block.cta1 | length ? block.cta1 : '',
+          cta1Micro: block.cta1Micro | length ? block.cta1Micro : '',
+          cta2: block.cta2 | length ? block.cta2 : '',
+          cta2Micro: block.cta2Micro | length ? block.cta2Micro : '',
+        } %}
+      </div>
 
       {% case 'ctaBlocks' %}
-        <div class="mb-4 mb-lg-8">
-          {% include '_partials/_components/cta-blocks/cta-blocks.twig' with {
-            text: block.text,
-            cta1: block.cta1 | length ? block.cta1 : '',
-            cta1Micro: block.cta1Micro | length ? block.cta1Micro : '',
-            cta2: block.cta2 | length ? block.cta2 : '',
-            cta2Micro: block.cta2Micro | length ? block.cta2Micro : '',
-          } %}
-        </div>
+      <div class="mb-4 mb-lg-8">
+        {% include '_partials/_components/cta-blocks/cta-blocks.twig' with {
+          text: block.text,
+          cta1: block.cta1 | length ? block.cta1 : '',
+          cta1Micro: block.cta1Micro | length ? block.cta1Micro : '',
+          cta2: block.cta2 | length ? block.cta2 : '',
+          cta2Micro: block.cta2Micro | length ? block.cta2Micro : '',
+        } %}
+      </div>
 
       {% case 'faq' %}
-        {% if block.questions | length %}
-          <div class="mb-4 mb-lg-8">
-            {% include '_partials/_components/faq/faq.twig' with {
-              heading: block.heading | length ? block.heading : '',
-              text: block.text,
-              questions: block.questions,
-              cta: block.cta
-            } %}
-          </div>
-        {% endif %}
-
-      {% case 'gallery' %}
+      {% if block.questions | length %}
         <div class="mb-4 mb-lg-8">
-          {% include '_partials/_components/gallery/gallery.twig' with {
+          {% include '_partials/_components/faq/faq.twig' with {
+            heading: block.heading | length ? block.heading : '',
             text: block.text,
-            images: block.images
+            questions: block.questions,
+            cta: block.cta
           } %}
         </div>
+      {% endif %}
 
       {% case 'slider' %}
-        <div class="mb-4 mb-lg-8">
-          {% include '_partials/_components/slider/slider.twig' with {
-            text: block.text,
-            images: block.images
-          } %}
-        </div>
-
-      {% case 'quote' %}
-        <div class="mt-5 mb-8 mt-md-8 mb-md-10 mb-lg-12">
-          {% include '_partials/_components/quote/quote.twig' with {
-            quote: block.quote,
-            author: block.author
-          } %}
-        </div>
+      <div class="mb-4 mb-lg-8">
+        {% include '_partials/_components/slider/slider.twig' with {
+          text: block.text,
+          images: block.images
+        } %}
+      </div>
 
       {% case 'teaser' %}
-        <div class="mb-4 mb-lg-8">
-          {% include '_partials/_components/teaser/teaser.twig' with {
-            text: block.text,
-            items: block.items,
-            cta: block.cta,
-            ctaMicro: block.ctaMicro
-          } %}
-        </div>
+      <div class="mb-4 mb-lg-8">
+        {% include '_partials/_components/teaser/teaser.twig' with {
+          text: block.text,
+          items: block.items,
+          cta: block.cta,
+          ctaMicro: block.ctaMicro
+        } %}
+      </div>
 
       {% case 'typeform' %}
-        <div class="mb-4 mb-lg-8">
-          {% include '_partials/_components/typeform/typeform.twig' with {
-            text: block.text,
-            url: block.typeform.url,
-            label: block.typeform.text
-          } %}
-        </div>
+      <div class="mb-4 mb-lg-8">
+        {% include '_partials/_components/typeform/typeform.twig' with {
+          text: block.text,
+          url: block.typeform.url,
+          label: block.typeform.text
+        } %}
+      </div>
 
       {% case 'table' %}
-        <div class="mb-4 mb-lg-8">
-          {% include '_partials/_components/table/table.twig' with {
-            text: block.text,
-            url: block.typeform.url,
-            label: block.typeform.text
-          } %}
-        </div>
+      <div class="mb-4 mb-lg-8">
+        {% include '_partials/_components/table/table.twig' with {
+          intro: block.text,
+          table: block.table,
+          columnTitle: block.columnTitle
+        } %}
+      </div>
 
       {% case 'prices' %}
-        {% if block.showPrices and prices.pricesTickets | length %}
-          <div class="mb-4 mb-lg-8">
-            <div class="container">
-              <div class="row">
-                <div class="col-12">
-                  {% if block.text | length %}
-                    <div>
-                      {{ block.text }}
+      {% if block.showPrices and prices.pricesTickets | length %}
+        <div class="mb-4 mb-lg-8">
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                {% if block.text | length %}
+                  <div>
+                    {{ block.text }}
+                  </div>
+                {% endif %}
+                <div class="swiper mt-4">
+                  <div class="c-cta-blocks js-cta-blocks swiper-container js-swiper-destroy"
+                       data-destroy-breakpoint="1024">
+                    <div class="swiper-wrapper">
+                      {% for price in prices.pricesTickets %}
+                        {% include '_partials/_components/cta-blocks/cta-block/cta-block.twig' with {
+                          class: 'c-cta-block-price c-cta-block-' ~ price.color,
+                          title: price.heading,
+                          subTitle: price.subHeading,
+                          mainTitle: price.price,
+                          mainSubTitle: price.subPrice,
+                          subContent: price.usps,
+                          cta: price.cta,
+                          ctaMicro: price.ctaMicro
+                        } %}
+                      {% endfor %}
                     </div>
-                  {% endif %}
-                  <div class="swiper mt-4">
-                    <div class="c-cta-blocks js-cta-blocks swiper-container js-swiper-destroy"
-                         data-destroy-breakpoint="1024">
-                      <div class="swiper-wrapper">
-                        {% for price in prices.pricesTickets %}
-                          {% include '_partials/_components/cta-blocks/cta-block/cta-block.twig' with {
-                            class: 'c-cta-block-price c-cta-block-' ~ price.color,
-                            title: price.heading,
-                            subTitle: price.subHeading,
-                            mainTitle: price.price,
-                            mainSubTitle: price.subPrice,
-                            subContent: price.usps,
-                            cta: price.cta,
-                            ctaMicro: price.ctaMicro
-                          } %}
-                        {% endfor %}
-                      </div>
-                      <div class="swiper-pagination"></div>
-                    </div>
+                    <div class="swiper-pagination"></div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        {% endif %}
-
-      {% case 'pricesRest' %}
-        <div class="mb-4 mb-lg-8">
-          {% include '_partials/_components/table/table.twig' with {
-            text: block.text,
-            table: block.table
-          } %}
         </div>
+      {% endif %}
+
+      {% case 'openingHours' %}
+        {% if block.text | length or block.openingHours %}
+          {% include '_partials/_components/opening-hours/opening-hours.twig' with {
+            text: block.text,
+            default: block.openingHours ? openingHours.openingHoursDefault : '',
+            holiday: block.openingHours ? openingHours.openingHoursHolidays : '',
+          } %}
+        {% endif %}
       {% endswitch %}
     {% endfor %}
   </article>

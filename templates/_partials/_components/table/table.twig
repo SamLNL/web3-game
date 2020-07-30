@@ -5,6 +5,21 @@
   @author:   sam
   ====================================================== #}
 
-<div class="container">
+{% set intro = intro is defined ? intro : '' %}
+{% set table = table is defined ? table : '' %}
+{% set columnTitle = columnTitle is defined ? columnTitle : true %}
 
+<div class="container">
+  <div class="row">
+    <div class="col-12 mb-4">
+      {% if intro | length %}
+        {{ intro }}
+      {% endif %}
+
+      {% include '_partials/_components/table/table/table.twig' with {
+        table: table,
+        columnTitle: columnTitle
+      } %}
+    </div>
+  </div>
 </div>
