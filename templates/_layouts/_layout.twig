@@ -137,6 +137,16 @@
 <main>
   {# Content goes here #}
   {% block content %}{% endblock %}
+
+  {% set contactTitle = entry is defined and entry['contactBlockTitle'] is defined and entry.contactBlockTitle | length ? entry.contactBlockTitle : contact.contactBlockHeading %}
+  {% set showContact = entry is defined and entry['contactBlockShow'] is defined and not entry.contactBlockShow == null ? entry.contactBlockShow : true %}
+
+  {% include '_partials/_components/contact-block/contact-block.twig' with {
+    title: showContact ? contactTitle : '',
+    phone: showContact and contact.contactBlockPhone | length ? contact.contactBlockPhone : '',
+    cta: showContact and contact.contactBlockCta.url | length ? contact.contactBlockCta : '',
+    wave: true
+  } %}
 </main>
 <footer>
   {% block footer %}

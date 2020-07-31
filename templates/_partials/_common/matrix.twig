@@ -81,7 +81,6 @@
       {% if block.questions | length %}
         <div class="mb-4 mb-lg-8">
           {% include '_partials/_components/faq/faq.twig' with {
-            heading: block.heading | length ? block.heading : '',
             text: block.text,
             questions: block.questions,
             cta: block.cta

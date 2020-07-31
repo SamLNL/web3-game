@@ -34,7 +34,7 @@
 
     {# image gets more priority than title #}
     {% if mainImage | length %}
-      <div class="c-cta-block__main-content-image">#}
+      <div class="c-cta-block__main-content-image">
         {% set image = mainImage %}
         {% set transformedImage = craft.imager.transformImage(image, {
           width: 350,

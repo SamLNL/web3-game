@@ -6,6 +6,16 @@
     left: 0;
     right: 0;
     z-index: 20;
+
+    &-small {
+      svg {
+        height: 100px !important;
+
+        @include media-breakpoint-up('lg') {
+          height: 287px !important;
+        }
+      }
+    }
   }
 
   svg {

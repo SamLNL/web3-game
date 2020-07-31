@@ -8,7 +8,7 @@
         width: ($spacer * $i) !important;
       }
 
-      .w#{$infix}-#{$i * 5} {
+      .w#{$infix}-#{$i * 5}\/100 {
         width: #{$i * 5%} !important;
       }
 
@@ -16,8 +16,19 @@
         height: ($spacer * $i) !important;
       }
 
-      .h#{$infix}-#{$i * 5} {
+      .h#{$infix}-#{$i * 5}\/100 {
         height: #{$i * 5%} !important;
+      }
+    }
+
+    @for $i from 0 through 20 {
+
+      .mh#{$infix}-#{$i} {
+        height: ($spacer * $i) !important;
+      }
+
+      .mw#{$infix}-#{$i} {
+        width: ($spacer * $i) !important;
       }
     }
 

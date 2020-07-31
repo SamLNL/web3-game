@@ -24,19 +24,51 @@
     wave: true,
     payoff: true
   } %}
+
+  {# Get start time and end time of day #}
+  {% set calendars = craft.calendar.calendars() %}
+  {% set calendarsIds = [] %}
+  {% for calendar in calendars %}
+    {% set calendarsIds = calendarsIds | merge ([calendar.id]) %}
+  {% endfor %}
+
+  {% set day = craft.calendar.day({
+    date: 'today',
+    calendarId: calendarsIds
+  }) %}
+
+  {% set startTime = '' %}
+  {% set endTime = '' %}
+
+  {% for event in day.events %}
+    {% if loop.first %}
+      {% set startTime = event.startDate %}
+      {% set endTime = event.endDate %}
+    {% else %}
+      {% set startTime = startTime < event.startDate ? startTime : event.startDate %}
+      {% set endTime = endTime > event.endDate ? endTime : event.endDate %}
+    {% endif %}
+  {% endfor %}
+
   <div class="bg-teal pt-2 pt-lg-4">
     <div class="container">
       <div class="d-flex flex-column justify-content-center w-100 w-sm-auto flex-sm-grow-0 flex-sm-row mb-4">
         <div class="bg-teal-500 rounded-sm d-flex flex-column align-items-center px-2 px-md-4 py-3 px-lg-5">
           <div class="w-14 d-lg-flex flex-lg-row w-lg-auto">
             <div class="d-flex flex-row align-items-center mb-1 mr-lg-2 mb-lg-0">
-              <svg class="mr-2" width="35" height="35">
+              <svg class="mr-2 flex-shrink-0" width="35" height="35">
                 <use xlink:href="/assets/images/svg/sprite/sprite.svg#icon-calendar"></use>
               </svg>
-              <span class="text-white weight-700">Opent najaar 2020</span>
+              <span class="text-white weight-700">
+                {% if startTime | length and endTime | length %}
+                  Vandaag geopend van <span class="text-yellow">{{ startTime.format('H:i') }}</span> tot <span class="text-yellow">{{ endTime.format('H:i') }}</span>
+                {% else %}
+                  Vandaag gesloten
+                {% endif %}
+              </span>
             </div>
             <div class="d-flex flex-row align-items-center ml-lg-2">
-              <svg class="mr-2" width="35" height="35">
+              <svg class="mr-2 flex-shrink-0" width="35" height="35">
                 <use xlink:href="/assets/images/svg/sprite/sprite.svg#icon-marker"></use>
               </svg>
               <span class="text-white weight-700">Gruttostraat 3, Velp</span>
@@ -74,11 +106,6 @@
   <div class="container pt-5 pb-2 pb-lg-3 pt-lg-8" id="veelgestelde-vragen">
     {% include '_partials/_index/faq' %}
   </div>
-  {% include '_partials/_components/contact-block/contact-block.twig' with {
-    title: contact.contactBlockHeading,
-    phone: contact.contactBlockPhone | length ? contact.contactBlockPhone : '',
-    cta: contact.contactBlockCta.url | length ? contact.contactBlockCta : '',
-  } %}
 {% endblock %}
 
 {% block _inline_js %}

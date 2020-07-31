@@ -1,4 +1,4 @@
-dateModified: 1596112102
+dateModified: 1596204298
 email:
   fromEmail: interactie@emotion.nl
   fromName: Biljoenbad
@@ -59,6 +59,18 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Matrix
+  34fc4e87-8df5-481d-bfad-75b58bf17d76:
+    contentColumnType: boolean
+    fieldGroup: 01e09fa1-4843-4208-830b-968a6ff4671c
+    handle: contactBlockShow
+    instructions: 'Toon het contactblok onderaan de pagina'
+    name: 'Contact blok - Toon'
+    searchable: true
+    settings:
+      default: '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
   3a0f8407-4263-4449-9996-e53070168b78:
     contentColumnType: string
     fieldGroup: 3e44ea8d-bbc2-4a77-99e7-bd0158f2794c
@@ -549,6 +561,24 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Number
+  682ecbc3-2252-4e4d-ac77-decc7ed47b7b:
+    contentColumnType: text
+    fieldGroup: 01e09fa1-4843-4208-830b-968a6ff4671c
+    handle: contactBlockTitle
+    instructions: 'Deze overschrijft de ''globale'' contact titel wanneer deze is ingevuld'
+    name: 'Contact blok - Titel'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
   7429758c-bba8-437d-bc91-f5d67d047a84:
     contentColumnType: text
     fieldGroup: df78e26d-9aa7-49a4-bd8a-75980ddba39d
@@ -5218,14 +5248,30 @@ sections:
     enableVersioning: true
     entryTypes:
       9a801b72-4cf8-4bf7-9517-6719ec5b2fb9:
-        handle: facilitiesRentOverview
+        fieldLayouts:
+          85c37893-d61f-40d1-a93d-1351ef650214:
+            tabs:
+              -
+                fields:
+                  3a0f8407-4263-4449-9996-e53070168b78:
+                    required: false
+                    sortOrder: 2
+                  5e04aee6-fa48-49e3-b86f-882b8ea36b9c:
+                    required: true
+                    sortOrder: 1
+                  dcba1bec-77c1-4e56-98bb-7b73ff2a87fc:
+                    required: false
+                    sortOrder: 3
+                name: Content
+                sortOrder: 1
+        handle: facilitiesOverview
         hasTitleField: false
-        name: 'Faciliteiten en verhuur - overzicht'
+        name: 'Faciliteiten - Overzicht'
         sortOrder: 1
-        titleFormat: '{section.name|raw}'
-        titleLabel: null
-    handle: facilitiesRentOverview
-    name: 'Faciliteiten en verhuur - overzicht'
+        titleFormat: '{commenTitle}'
+        titleLabel: ''
+    handle: facilitiesOverview
+    name: 'Faciliteiten - Overzicht'
     previewTargets:
       -
         __assoc__:
@@ -5243,7 +5289,7 @@ sections:
       521def3a-78c9-4e7b-8cb5-40b18c2c0705:
         enabledByDefault: true
         hasUrls: true
-        template: facilities-rent/overview
+        template: facilities/overview
         uriFormat: faciliteiten-en-verhuur
     type: single
   6c837388-83a1-497d-b47b-ed3dbdff5dac:
@@ -5252,12 +5298,12 @@ sections:
       87df6b31-4ad8-4317-82d1-05deec7c1686:
         handle: activitiesOverview
         hasTitleField: false
-        name: 'Activiteiten - overzicht'
+        name: 'Activiteiten - Overzicht'
         sortOrder: 1
         titleFormat: '{section.name|raw}'
         titleLabel: null
     handle: activitiesOverview
-    name: 'Activiteiten - overzicht'
+    name: 'Activiteiten - Overzicht'
     previewTargets:
       -
         __assoc__:
@@ -5278,6 +5324,54 @@ sections:
         template: activities/overview
         uriFormat: activiteiten
     type: single
+  89816d2a-ba5d-4fdf-ab8c-36b20e10af44:
+    enableVersioning: true
+    entryTypes:
+      6c9c694b-56c4-40a1-95cd-29f77a39e532:
+        fieldLayouts:
+          f70221d6-d905-48a4-93d1-43232c388a21:
+            tabs:
+              -
+                fields:
+                  3a0f8407-4263-4449-9996-e53070168b78:
+                    required: true
+                    sortOrder: 2
+                  5e04aee6-fa48-49e3-b86f-882b8ea36b9c:
+                    required: true
+                    sortOrder: 1
+                  d16c24d1-abfe-4e08-b18c-45bcb368c93f:
+                    required: false
+                    sortOrder: 3
+                name: Content
+                sortOrder: 1
+        handle: facilities
+        hasTitleField: false
+        name: Faciliteiten
+        sortOrder: 1
+        titleFormat: '{commonTitle}'
+        titleLabel: Titel
+    handle: facilities
+    name: Faciliteiten
+    previewTargets:
+      -
+        __assoc__:
+          -
+            - label
+            - 'Primaire invoer-pagina'
+          -
+            - urlFormat
+            - '{url}'
+          -
+            - refresh
+            - '1'
+    propagationMethod: all
+    siteSettings:
+      521def3a-78c9-4e7b-8cb5-40b18c2c0705:
+        enabledByDefault: true
+        hasUrls: true
+        template: facilities/detail.twig
+        uriFormat: 'faciliteiten-en-verhuur/{slug}'
+    type: channel
   b541f192-3512-4391-af9d-aaad78edfeb5:
     enableVersioning: true
     entryTypes:
@@ -5390,10 +5484,13 @@ sections:
                 fields:
                   3a0f8407-4263-4449-9996-e53070168b78:
                     required: false
+                    sortOrder: 2
+                  5e04aee6-fa48-49e3-b86f-882b8ea36b9c:
+                    required: true
                     sortOrder: 1
                   dcba1bec-77c1-4e56-98bb-7b73ff2a87fc:
                     required: false
-                    sortOrder: 2
+                    sortOrder: 3
                 name: Inhoud
                 sortOrder: 1
               -
@@ -5421,16 +5518,26 @@ sections:
                 sortOrder: 3
               -
                 fields:
+                  34fc4e87-8df5-481d-bfad-75b58bf17d76:
+                    required: false
+                    sortOrder: 2
+                  682ecbc3-2252-4e4d-ac77-decc7ed47b7b:
+                    required: false
+                    sortOrder: 1
+                name: Contact
+                sortOrder: 4
+              -
+                fields:
                   8d69ebf3-f317-4814-846f-b7f4fe0494b1:
                     required: false
                     sortOrder: 1
                 name: SEO
-                sortOrder: 4
+                sortOrder: 5
         handle: calendarPrices
         hasTitleField: false
         name: 'Rooster en tarieven'
         sortOrder: 1
-        titleFormat: '{section.name|raw}'
+        titleFormat: '{commonTitle}'
         titleLabel: ''
     handle: calendarPrices
     name: 'Rooster en tarieven'
@@ -5480,12 +5587,12 @@ sections:
                 sortOrder: 2
         handle: newsOverview
         hasTitleField: false
-        name: 'Nieuws - overzicht'
+        name: 'Nieuws - Overzicht'
         sortOrder: 1
         titleFormat: '{newsTitle}'
         titleLabel: ''
     handle: newsOverview
-    name: 'Nieuws - overzicht'
+    name: 'Nieuws - Overzicht'
     propagationMethod: all
     siteSettings:
       521def3a-78c9-4e7b-8cb5-40b18c2c0705:
@@ -5504,6 +5611,9 @@ sections:
               -
                 fields:
                   3a0f8407-4263-4449-9996-e53070168b78:
+                    required: true
+                    sortOrder: 2
+                  5e04aee6-fa48-49e3-b86f-882b8ea36b9c:
                     required: true
                     sortOrder: 1
                 name: Header
@@ -5531,12 +5641,9 @@ sections:
                 sortOrder: 4
               -
                 fields:
-                  5e04aee6-fa48-49e3-b86f-882b8ea36b9c:
-                    required: true
-                    sortOrder: 1
                   8d69ebf3-f317-4814-846f-b7f4fe0494b1:
                     required: false
-                    sortOrder: 2
+                    sortOrder: 1
                 name: SEO
                 sortOrder: 5
         handle: home

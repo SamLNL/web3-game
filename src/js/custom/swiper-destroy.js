@@ -26,9 +26,9 @@ function initDestroySwipers() {
     let breakpoint;
 
     let swiper = destroySwipers[i].swiper;
-    let swiperParams = swiper.params;
 
     if (swiper) {
+      let swiperParams = swiper.params;
       breakpoint = destroySwipers[i].getAttribute('data-destroy-breakpoint');
       if (!breakpoint.length > 0) {
         breakpoint = defaultBreakpoint;

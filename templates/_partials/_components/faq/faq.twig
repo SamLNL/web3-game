@@ -7,15 +7,21 @@
 
 {% import "_partials/_macros.twig" as macro %}
 
-{% set heading = heading is defined ? heading :'' %}
 {% set text = text is defined ? text :'' %}
 {% set questions = questions is defined ? questions :'' %}
 {% set cta = cta is defined ? cta : '' %}
+{% set ctaMicro = ctaMicro is defined ? ctaMicro : '' %}
 
 {% if questions | length %}
   <div class="container">
     <div class="row">
       <div class="col-12">
+        {% if text | length %}
+          <div class="mb-4">
+            {{ text }}
+          </div>
+        {% endif %}
+
         {% for item in questions %}
           <div tabindex="0" class="c-faq js-faq js-tab-click"
                data-click-selector="#tab-click-{{ loop.index }}" data-ga-question="{{ item.question }}">

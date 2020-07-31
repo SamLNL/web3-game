@@ -25,7 +25,7 @@
             {% set columnHeadings = [{
               'col1': 'Reguliere tijden'
             }] %}
-            <div class="w-100 w-lg-40 mb-4 mb-lg-0 mr-lg-3">
+            <div class="w-100 w-lg-40/100 mb-4 mb-lg-0 mr-lg-3">
               {% include '_partials/_components/table/table/table.twig' with {
                 table: columnHeadings | merge(default)
               } %}
@@ -34,7 +34,7 @@
             {% set columnHeadings = [{
               'col1': 'Vakantie en feestdagen'
             }] %}
-            <div class="w-100 w-lg-60">
+            <div class="w-100 w-lg-60/100">
               {% include '_partials/_components/table/table/table.twig' with {
                 table: columnHeadings | merge(holiday)
               } %}
