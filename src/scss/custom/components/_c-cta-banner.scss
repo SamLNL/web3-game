@@ -4,14 +4,34 @@
    ========================================================================== */
 
 .c-cta-banner {
-  @extend .border;
-  @extend .rounded;
-
   padding: map_get($spacers, 4) map_get($spacers, 3);
 
-  &__intro {
+  @include media-breakpoint-up('lg') {
+    padding: map_get($spacers, 12) map_get($spacers, 3);
+  }
+
+  &-bg {
+    position: relative;
+
+    &__overlay {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      background: rgba($teal-100, 0.75);
+    }
+  }
+
+  &__title {
+    @extend .h3;
     width: 100%;
     text-align: center;
+
+    @include media-breakpoint-up('lg') {
+      font-size: $h2-font-size;
+      line-height: $h2-line-height;
+    }
   }
 
   &__wrapper {

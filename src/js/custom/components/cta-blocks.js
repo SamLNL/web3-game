@@ -10,9 +10,11 @@ let swiperBlocks = [];
 let ctaBlocks = document.querySelectorAll('.js-cta-blocks');
 
 ctaBlocks.forEach((el, i) => {
-  swiperBlocks[i] = new Swiper('.js-cta-blocks', {
+  let id = el.getAttribute('data-swiper-id');
+
+  swiperBlocks[i] = new Swiper('.js-cta-blocks[data-swiper-id="' + id + '"]', {
     pagination: {
-      el: '.swiper-pagination',
+      el: '.swiper-pagination[data-swiper-id="' + id + '"]',
       clickable: true,
     },
     slidesPerView: 'auto',
@@ -22,7 +24,10 @@ ctaBlocks.forEach((el, i) => {
   swiperBlocks[i].on('slideChange', function() {
     const activeSwiper = this.activeIndex;
 
-    const activeSwiperTitle = this.slides[activeSwiper].getAttribute('data-title');
-    sendGAEvent(['Preview - gallery', 'click', activeSwiperTitle]);
+    let activeSwiperTitle = this.slides[activeSwiper].getAttribute('data-title');
+    if(!activeSwiperTitle.length > 0){
+      activeSwiperTitle = activeSwiper;
+    }
+    sendGAEvent(['Cta-blocks', 'click', activeSwiperTitle]);
   });
 });

@@ -1,4 +1,4 @@
-dateModified: 1596204298
+dateModified: 1596553821
 email:
   fromEmail: interactie@emotion.nl
   fromName: Biljoenbad
@@ -411,6 +411,29 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: typedlinkfield\fields\LinkField
+  526e0682-d673-4a69-abfc-75054fd47251:
+    contentColumnType: text
+    fieldGroup: 01e09fa1-4843-4208-830b-968a6ff4671c
+    handle: summaryText
+    instructions: 'Korte (samenvattende) tekst die enkel getoond zal worden op de overzichtspagina'
+    name: 'Samenvattende tekst'
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Simple.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
   56974294-62e1-4d99-b0b7-d2ce74ff2dee:
     contentColumnType: text
     fieldGroup: cdcb72f5-a94d-46ed-ab22-67dcb5fff45f
@@ -4336,46 +4359,68 @@ matrixBlockTypes:
           -
             fields:
               00797fb6-aa77-4473-8d43-0783dfbe66ca:
-                required: false
+                required: true
                 sortOrder: 1
-              35d71cfd-86ea-4f36-ab4a-4ba7aefcf7c5:
+              0dbc7a77-3a60-4b1f-8746-b9be1cc87e55:
                 required: false
                 sortOrder: 4
-              3ce9c921-1fa9-45dc-a1d4-51c401bcf677:
+              1752ec7a-9652-4157-a83f-57f86d4ecc32:
                 required: false
-                sortOrder: 2
-              b559b40f-c039-4176-a19e-5706a78aacce:
+                sortOrder: 6
+              35d71cfd-86ea-4f36-ab4a-4ba7aefcf7c5:
                 required: false
                 sortOrder: 5
-              f38ec376-2772-486c-a953-591b6cfdda21:
+              3ce9c921-1fa9-45dc-a1d4-51c401bcf677:
                 required: false
                 sortOrder: 3
+              e2db44f5-6f00-49ea-9f27-da4135c80bf6:
+                required: true
+                sortOrder: 2
             name: Content
             sortOrder: 1
     fields:
       00797fb6-aa77-4473-8d43-0783dfbe66ca:
         contentColumnType: text
         fieldGroup: null
-        handle: text
+        handle: heading
         instructions: ''
-        name: Tekst
+        name: Titel
         searchable: true
         settings:
-          availableTransforms: '*'
-          availableVolumes: '*'
-          cleanupHtml: true
-          columnType: text
-          purifierConfig: ''
-          purifyHtml: '1'
-          redactorConfig: ''
-          removeEmptyTags: '1'
-          removeInlineStyles: '1'
-          removeNbsp: '1'
-          showUnpermittedFiles: false
-          showUnpermittedVolumes: false
+          byteLimit: null
+          charLimit: null
+          code: ''
+          columnType: null
+          initialRows: '2'
+          multiline: '1'
+          placeholder: ''
         translationKeyFormat: null
         translationMethod: none
-        type: craft\redactor\Field
+        type: craft\fields\PlainText
+      0dbc7a77-3a60-4b1f-8746-b9be1cc87e55:
+        contentColumnType: boolean
+        fieldGroup: null
+        handle: cta1Primary
+        instructions: 'Moet de knop de primaire style hebben? (geel)'
+        name: 'CTA 1 - Primair'
+        searchable: true
+        settings:
+          default: ''
+        translationKeyFormat: null
+        translationMethod: none
+        type: craft\fields\Lightswitch
+      1752ec7a-9652-4157-a83f-57f86d4ecc32:
+        contentColumnType: boolean
+        fieldGroup: null
+        handle: cta2Primary
+        instructions: 'Moet de knop de primaire style hebben? (geel)'
+        name: 'CTA 2 - Primair'
+        searchable: true
+        settings:
+          default: ''
+        translationKeyFormat: null
+        translationMethod: none
+        type: craft\fields\Lightswitch
       35d71cfd-86ea-4f36-ab4a-4ba7aefcf7c5:
         contentColumnType: text
         fieldGroup: null
@@ -4624,42 +4669,36 @@ matrixBlockTypes:
         translationKeyFormat: null
         translationMethod: none
         type: typedlinkfield\fields\LinkField
-      b559b40f-c039-4176-a19e-5706a78aacce:
-        contentColumnType: text
+      e2db44f5-6f00-49ea-9f27-da4135c80bf6:
+        contentColumnType: string
         fieldGroup: null
-        handle: cta2Micro
-        instructions: 'Micro tekst onder de knop wordt alleen getoond wanneer CTA2 is ingevuld'
-        name: 'CTA2 - micro tekst'
+        handle: image
+        instructions: 'Achtergrond afbeelding'
+        name: Afbeelding
         searchable: true
         settings:
-          byteLimit: null
-          charLimit: null
-          code: ''
-          columnType: null
-          initialRows: '4'
-          multiline: ''
-          placeholder: ''
+          allowSelfRelations: ''
+          allowedKinds:
+            - image
+          defaultUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1'
+          defaultUploadLocationSubpath: ''
+          limit: '1'
+          localizeRelations: false
+          restrictFiles: '1'
+          selectionLabel: ''
+          showUnpermittedFiles: false
+          showUnpermittedVolumes: false
+          singleUploadLocationSource: 'volume:4176b138-ab46-48c2-ba93-8f81e9d3c0df'
+          singleUploadLocationSubpath: ''
+          source: null
+          sources: '*'
+          targetSiteId: null
+          useSingleFolder: true
+          validateRelatedElements: ''
+          viewMode: list
         translationKeyFormat: null
-        translationMethod: none
-        type: craft\fields\PlainText
-      f38ec376-2772-486c-a953-591b6cfdda21:
-        contentColumnType: text
-        fieldGroup: null
-        handle: cta1Micro
-        instructions: 'Micro tekst onder de knop wordt alleen getoond wanneer CTA1 is ingevuld'
-        name: 'CTA1 - micro tekst'
-        searchable: true
-        settings:
-          byteLimit: null
-          charLimit: null
-          code: ''
-          columnType: null
-          initialRows: '4'
-          multiline: ''
-          placeholder: ''
-        translationKeyFormat: null
-        translationMethod: none
-        type: craft\fields\PlainText
+        translationMethod: site
+        type: craft\fields\Assets
     handle: ctaBanner
     name: 'CTA banner'
     sortOrder: 6
@@ -5259,6 +5298,9 @@ sections:
                   5e04aee6-fa48-49e3-b86f-882b8ea36b9c:
                     required: true
                     sortOrder: 1
+                  d16c24d1-abfe-4e08-b18c-45bcb368c93f:
+                    required: false
+                    sortOrder: 4
                   dcba1bec-77c1-4e56-98bb-7b73ff2a87fc:
                     required: false
                     sortOrder: 3
@@ -5268,7 +5310,7 @@ sections:
         hasTitleField: false
         name: 'Faciliteiten - Overzicht'
         sortOrder: 1
-        titleFormat: '{commenTitle}'
+        titleFormat: '{commonTitle}'
         titleLabel: ''
     handle: facilitiesOverview
     name: 'Faciliteiten - Overzicht'
@@ -5296,12 +5338,22 @@ sections:
     enableVersioning: true
     entryTypes:
       87df6b31-4ad8-4317-82d1-05deec7c1686:
+        fieldLayouts:
+          8cb9ecdb-67f2-45e2-bc36-4b3081a37d67:
+            tabs:
+              -
+                fields:
+                  d16c24d1-abfe-4e08-b18c-45bcb368c93f:
+                    required: false
+                    sortOrder: 1
+                name: 'Tab 1'
+                sortOrder: 1
         handle: activitiesOverview
         hasTitleField: false
         name: 'Activiteiten - Overzicht'
         sortOrder: 1
         titleFormat: '{section.name|raw}'
-        titleLabel: null
+        titleLabel: ''
     handle: activitiesOverview
     name: 'Activiteiten - Overzicht'
     previewTargets:
@@ -5335,13 +5387,16 @@ sections:
                 fields:
                   3a0f8407-4263-4449-9996-e53070168b78:
                     required: true
+                    sortOrder: 3
+                  526e0682-d673-4a69-abfc-75054fd47251:
+                    required: true
                     sortOrder: 2
                   5e04aee6-fa48-49e3-b86f-882b8ea36b9c:
                     required: true
                     sortOrder: 1
                   d16c24d1-abfe-4e08-b18c-45bcb368c93f:
                     required: false
-                    sortOrder: 3
+                    sortOrder: 4
                 name: Content
                 sortOrder: 1
         handle: facilities
@@ -5754,8 +5809,8 @@ superTableBlockTypes:
         searchable: true
         settings:
           contentTable: '{{%matrixcontent_maincontent}}'
-          maxBlocks: ''
-          minBlocks: ''
+          maxBlocks: '1'
+          minBlocks: '1'
           propagationMethod: all
         translationKeyFormat: null
         translationMethod: site

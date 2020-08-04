@@ -1,12 +1,10 @@
 {# @var craft \craft\web\twig\variables\CraftVariable #}
 {# @var entry \craft\elements\Entry #}
 {# ======================================================
-  @filename: _entry
+  @filename: overview
+  @date:     17 aug. 2020
   @author:   sam
   ====================================================== #}
-{#
-  Add a small discription about this file/componennt and what it does
-#}
 
 {% extends "_layouts/_layout.twig" %}
 
@@ -20,11 +18,11 @@
 
   <div class="container mt-4 mt-lg-6" id="mainContentSkip">
     <div class="row">
-      <div class="col-12 col-lg-10 offset-lg-1">
+      <div class="col-12 col-lg-8 offset-lg-2">
         {% include '_partials/_components/breadcrumb/breadcrumb.twig' with {
-          class: 'mb-1 mb-md-2 c-breadcrumb__dark'
+          class: 'mb-1 mb-md-2'
         } %}
-        <h1 class="mb-4">{{ entry.title }}</h1>
+        <h1 class="">{{ entry.title }}</h1>
       </div>
     </div>
   </div>

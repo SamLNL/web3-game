@@ -1,4 +1,5 @@
 .c-breadcrumb {
+
   ul {
     list-style: none;
     display: flex;
@@ -10,7 +11,7 @@
       flex-direction: row;
 
       &.active {
-        color: rgba($white, 0.75)
+        color: rgba($white, 0.75);
       }
 
       & > * {
@@ -19,6 +20,7 @@
 
       a {
         margin-right: 6px;
+
         &:hover {
           text-decoration: underline;
 
@@ -34,6 +36,16 @@
         margin-top: 2px;
         margin-bottom: 2px;
         height: 16px;
+      }
+    }
+  }
+
+  &__dark {
+    ul {
+      li {
+        &.active {
+          color: $black;
+        }
       }
     }
   }

@@ -30,7 +30,7 @@
   <div class="row">
     <div class="mb-4 col-12 col-lg-8 offset-lg-2">
       {% include '_partials/_components/breadcrumb/breadcrumb.twig' with {
-        class: 'mb-1 mb-md-2'
+        class: 'mb-1 mb-md-2 c-breadcrumb__dark'
       } %}
       <h1>{{ entry.title }}</h1>
       {% if entry.newsText | length %}
@@ -39,7 +39,7 @@
     </div>
   </div>
 </div>
-<div class="bg-teal-100 py-6">
+<div class="bg-teal-100 pt-6">
   <div class="container">
 
     {# Search #}
@@ -111,12 +111,12 @@
   {# ----------- Start - No ajax request ----------- #}
           {% if not craft.app.request.isAjax %}
         </div>
-        <div class="d-flex justify-content-center mt-4">
+        <div class="d-flex justify-content-center mt-4 mb-4">
           <a class="c-btn c-btn-teal js-load-more-button hide" href="" title="Bekijk meer items">
             <span>Meer nieuws</span>
             <span>
-        {% include '_inline/_svg/loading.twig' %}
-      </span>
+              {% include '_inline/_svg/loading.twig' %}
+            </span>
           </a>
         </div>
       </div>

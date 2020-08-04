@@ -19,6 +19,7 @@
 {% set mainImage = mainImage is defined ? mainImage : '' %}
 {% set subContent = subContent is defined ? subContent : '' %}
 {% set cta = cta is defined ? cta : '' %}
+{% set ctaArrow = ctaArrow is defined ? ctaArrow : false %}
 {% set ctaMicro = ctaMicro is defined ? ctaMicro : '' %}
 {% set swiper = swiper is defined ? swiper : true %}
 
@@ -66,7 +67,7 @@
       <div class="c-cta-block__cta">
         <a href="{{ cta.url }}"
            title="{{ cta.text }}"
-           class="c-btn c-btn-white"
+           class="c-btn c-btn-white{{ ctaArrow ? ' c-btn-arrow' : '' }}"
            ga-on="click"
            ga-event-category="CTA"
            ga-event-action="Click"

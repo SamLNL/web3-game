@@ -4,7 +4,7 @@
 {% set image = image is defined and image | length ? image : '' %}
 {% set intro = intro is defined and intro | length ? intro : '' %}
 
-<div class="bg-teal {{ image | length ? 'pt-3 pb-9 pb-sm-10 pt-lg-5 pb-lg-9' : 'pt-3 pb-3 pb-sm-4 pt-lg-5' }} d-flex flex-column">
+<div class="bg-teal {{ image | length ? 'pt-3 pb-9 pb-sm-10 pt-lg-5 pb-lg-9' : 'pt-3 pb-3 pb-sm-4 pb-lg-1 pt-lg-5' }} d-flex flex-column">
     <div class="container">
       {% if title | length %}
         {% include '_partials/_components/breadcrumb/breadcrumb.twig' with {
@@ -24,7 +24,7 @@
   </div>
 </div>
 
-<div class="container {{ image | length ? '-mt-5 mb-4 -mt-lg-4 mb-lg-6' : '' }}">
+<div class="container {{ image | length ? '-mt-5 mb-4 -mt-lg-4 mb-lg-6' : 'mb-4 mb-lg-6' }}">
   {% if image | length %}
     <div class="header">
       {% set transforms =
