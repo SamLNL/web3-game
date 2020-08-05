@@ -1,74 +1,74 @@
 <div class="container">
   <div class="d-flex justify-content-center">
-    <h2 class="text-uppercase text-teal-600 text-center mb-4 mb-lg-5">Dit kan je straks doen bij het biljoenbad</h2>
+    <h2 class="text-uppercase text-teal-600 text-center mb-4 mb-lg-5">{{ entry.servicesTitle }}</h2>
   </div>
 </div>
 
 <div class="mb-3 mb-lg-0">
-    <div class="container">
-      {% set serviceSlides = entry.services.all() %}
-      <div class="w-100 d-md-none">
-        <div class="d-flex flex-column swiper-nav">
-          {% for slide in serviceSlides %}
-            <a class="swiper-nav__item w-100 border-2 border-teal-200 py-1 {{ loop.last ? 'mb-4' : 'mb-1' }} text-center small rounded js-go-to-slide {{ loop.first ? 'active' : '' }}" data-swiper-index="{{ loop.index0 }}" href="#" title="Spring naar slide '{{ slide.serviceTitle }}'">{{ slide.serviceTitle }}</a>
-          {% endfor %}
-        </div>
+  <div class="container">
+    {% set serviceSlides = entry.services.all() %}
+    <div class="w-100 d-md-none">
+      <div class="d-flex flex-column swiper-nav">
+        {% for slide in serviceSlides %}
+          <a
+            class="swiper-nav__item w-100 border-2 border-teal-200 py-1 {{ loop.last ? 'mb-4' : 'mb-1' }} text-center small rounded js-go-to-slide {{ loop.first ? 'active' : '' }}"
+            data-swiper-index="{{ loop.index0 }}" href="#"
+            title="Spring naar slide '{{ slide.serviceTitle }}'">{{ slide.serviceTitle }}</a>
+        {% endfor %}
       </div>
-
-        <div class="swiper-container row js-swiper-services js-swiper-destroy" data-destroy-breakpoint="1024">
-            <div class="swiper-wrapper d-flex flex-row">
-                {% for slide in serviceSlides %}
-                  <div class="swiper-slide h-auto d-flex col-12 col-md-5 col-lg-4 pb-5 flex-grow-1" data-title="{{ slide.serviceTitle }}">
-                    <div class="card w-100">
-                      {% switch slide.serviceColor.value %}
-                      {% case 'teal' %}
-                        {% set bgClass = 'bg-teal-300' %}
-                        {% set textClass = 'white' %}
-                      {% case 'yellow' %}
-                        {% set bgClass = 'bg-yellow' %}
-                        {% set textClass = 'teal-600' %}
-                      {% case 'red' %}
-                        {% set bgClass = 'bg-red' %}
-                        {% set textClass = 'white' %}
-                      {% endswitch %}
-                      <div class="p-1 text-center rounded-top {{ bgClass }}">
-                        <h3 class="mb-0 text-{{ textClass }} text-uppercase">{{ slide.serviceTitle }}</h3>
-                      </div>
-                      <div class="w-100">
-                        {% set image = slide.serviceImage.one() %}
-                        {% set transformedImage = craft.imager.transformImage(image, {
-                          width: 350,
-                          height: 200,
-                          mode: 'crop'
-                        }) %}
-                        <img class="w-100" src="{{ transformedImage.url }}" alt="{{ image.title }}">
-                      </div>
-                      <div class="card-body">
-                        <ul class="list-usps">
-                        {% for usp in slide.serviceUsps.all() %}
-                          <li class="small text-teal-600">
-                            {{ usp.title }}
-                          </li>
-                        {% endfor %}
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                {% endfor %}
-            </div>
-          <div class="swiper-pagination"></div>
-        </div>
     </div>
-</div>
-<div class="container">
-  <div class="d-flex w-100 flex-row justify-content-center">
-    <div class="bg-teal-200 px-2 py-3 d-flex flex-row rounded col-lg-10">
-      <svg class="flex-shrink-0 mr-2" width="35" height="35">
-        <use xlink:href="/assets/images/svg/sprite/sprite.svg#icon-info"></use>
-      </svg>
-      <p class="mb-0 py-1">
-        We bouwen hard aan de ontwikkeling van het Biljoenbad, maar ook aan de website en het programma. Later in het jaar volgt het volledige activiteitenschema.
-      </p>
+
+    {% set swiperId = random() %}
+    <div class="swiper-container row js-swiper-services js-swiper-destroy" data-swiper-id="{{ swiperId }}">
+      <div class="swiper-wrapper d-flex flex-row">
+        {% for slide in serviceSlides %}
+          <div class="swiper-slide h-auto d-flex col-12 col-md-5 col-lg-4 pb-5 flex-grow-1"
+               data-title="{{ slide.serviceTitle }}">
+            <div class="card w-100">
+              {% switch slide.serviceColor.value %}
+              {% case 'teal' %}
+                {% set bgClass = 'bg-teal-300' %}
+                {% set textClass = 'white' %}
+              {% case 'yellow' %}
+                {% set bgClass = 'bg-yellow' %}
+                {% set textClass = 'teal-600' %}
+              {% case 'red' %}
+                {% set bgClass = 'bg-red' %}
+                {% set textClass = 'white' %}
+              {% endswitch %}
+              <div class="p-1 text-center rounded-top {{ bgClass }}">
+                <h3 class="mb-0 text-{{ textClass }} text-uppercase">{{ slide.serviceTitle }}</h3>
+              </div>
+              <div class="w-100">
+                {% set image = slide.serviceImage.one() %}
+                {% set transformedImage = craft.imager.transformImage(image, {
+                  width: 350,
+                  height: 200,
+                  mode: 'crop'
+                }) %}
+                <img class="w-100" src="{{ transformedImage.url }}" alt="{{ image.title }}">
+              </div>
+              <div class="card-body">
+                <ul class="list-usps">
+                  {% for usp in slide.serviceUsps.all() %}
+                    <li class="small text-teal-600">
+                      {{ usp.title }}
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="swiper-pagination" data-swiper-id="{{ swiperId }}"></div>
+    </div>
+
+    <div class="w-100 text-center">
+      {% set activitiesOverview = craft.entries.section('activitiesOverview').one() %}
+      <a class="c-btn c-btn-yellow" href="{{ activitiesOverview.url }}" title="Bekijk alle activiteiten">
+        Bekijk alle activiteiten
+      </a>
     </div>
   </div>
 </div>

@@ -10,7 +10,9 @@
           <div class="small text-white">{{ contact.contactStreet }}</div>
         {% endif %}
         {% if contact.contactZipcode | length %}
-          <div class="small text-white">{{ contact.contactZipcode }}</div>
+          <div class="small text-white">
+            {{ contact.contactZipcode }}{% if contact.contactPlace | length %} {{ contact.contactPlace }}{% endif %}
+          </div>
         {% endif %}
         {% if contact.contactPhone | length %}
           <a class="text-white underline hover-none small" href="tel:{{ contact.contactPhone | striptags }}" title="Bel naar {{ contact.contactPhone }}" target="_blank">{{ contact.contactPhone }}</a>

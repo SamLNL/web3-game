@@ -9,6 +9,14 @@
  *
  */
 
+if(document.querySelectorAll('.js-slider').length > 0) {
+  import(/* webpackChunkName: "swiper" */ "./custom/components/slider");
+}
+
+if(document.querySelectorAll('.js-cta-blocks').length > 0) {
+  import(/* webpackChunkName: "swiper" */ "./custom/components/cta-blocks");
+}
+
 const main = async () => {
   const analytics = await import(/* webpackChunkName: "analytics" */ "./analytics/analytics");
   import ("./bootstrap/index");
@@ -38,9 +46,6 @@ const main = async () => {
   if(document.querySelectorAll('.js-gallery').length > 0) {
     await import(/* webpackChunkName: "gallery" */ "./custom/components/gallery");
   }
-  if(document.querySelectorAll('.js-slider').length > 0) {
-    await import(/* webpackChunkName: "swiper" */ "./custom/components/slider");
-  }
   if(document.querySelectorAll('.js-teaser').length > 0) {
     await import(/* webpackChunkName: "teaser" */ "./custom/components/teaser");
   }
@@ -52,9 +57,6 @@ const main = async () => {
   }
   if(document.querySelectorAll('.js-calendar').length > 0) {
     await import(/* webpackChunkName: "load-more" */ "./custom/components/calendar");
-  }
-  if(document.querySelectorAll('.js-cta-blocks').length > 0) {
-    await import(/* webpackChunkName: "cswiper" */ "./custom/components/cta-blocks");
   }
 
   if(document.querySelectorAll('.js-swiper-destroy').length > 0) {

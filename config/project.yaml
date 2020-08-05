@@ -1,4 +1,4 @@
-dateModified: 1596553821
+dateModified: 1596617188
 email:
   fromEmail: interactie@emotion.nl
   fromName: Biljoenbad
@@ -16,6 +16,8 @@ fieldGroups:
     name: SEO
   cdcb72f5-a94d-46ed-ab22-67dcb5fff45f:
     name: Global
+  da5dc685-57c1-4c15-b53e-38e1db3474ee:
+    name: 'Belangrijke update'
   df78e26d-9aa7-49a4-bd8a-75980ddba39d:
     name: 'Rooster en tarieven'
   f0c3735f-1b6e-456c-9608-4cfe64ddcd90:
@@ -49,7 +51,7 @@ fields:
     fieldGroup: f0c3735f-1b6e-456c-9608-4cfe64ddcd90
     handle: services
     instructions: ''
-    name: Voorzieningen
+    name: Activiteiten
     searchable: true
     settings:
       contentTable: '{{%matrixcontent_services}}'
@@ -764,35 +766,6 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Matrix
-  7bb78d7c-6888-4847-9637-2c66a490e5e1:
-    contentColumnType: string
-    fieldGroup: f0c3735f-1b6e-456c-9608-4cfe64ddcd90
-    handle: googleMaps
-    instructions: ''
-    name: 'Google maps'
-    searchable: true
-    settings:
-      allowedKinds:
-        - image
-      defaultUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1'
-      defaultUploadLocationSubpath: ''
-      limit: '1'
-      localizeRelations: false
-      restrictFiles: '1'
-      selectionLabel: ''
-      showUnpermittedFiles: false
-      showUnpermittedVolumes: false
-      singleUploadLocationSource: 'volume:4176b138-ab46-48c2-ba93-8f81e9d3c0df'
-      singleUploadLocationSubpath: ''
-      source: null
-      sources: '*'
-      targetSiteId: null
-      useSingleFolder: true
-      validateRelatedElements: ''
-      viewMode: list
-    translationKeyFormat: null
-    translationMethod: site
-    type: craft\fields\Assets
   7eece0b1-6795-48be-b79a-61781ca2c48e:
     contentColumnType: text
     fieldGroup: df78e26d-9aa7-49a4-bd8a-75980ddba39d
@@ -817,6 +790,24 @@ fields:
     handle: contactPhone
     instructions: ''
     name: 'Contact - Telefoonnummer'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  82fef1fa-66e2-48bf-9bdf-aacab3feefb5:
+    contentColumnType: text
+    fieldGroup: f0c3735f-1b6e-456c-9608-4cfe64ddcd90
+    handle: servicesTitle
+    instructions: ''
+    name: 'Activiteiten - Titel'
     searchable: true
     settings:
       byteLimit: null
@@ -1144,7 +1135,7 @@ fields:
     fieldGroup: cdcb72f5-a94d-46ed-ab22-67dcb5fff45f
     handle: contactZipcode
     instructions: ''
-    name: 'Contact - Postcode & plaats'
+    name: 'Contact - Postcode'
     searchable: true
     settings:
       byteLimit: null
@@ -1282,6 +1273,24 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Table
+  b660e663-9d28-4b7f-bf32-2ff921bcc3c1:
+    contentColumnType: text
+    fieldGroup: cdcb72f5-a94d-46ed-ab22-67dcb5fff45f
+    handle: contactPlace
+    instructions: ''
+    name: 'Contact - Plaats'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
   b8d61e82-3d4b-42fd-a7a6-35861f851f89:
     contentColumnType: text
     fieldGroup: ac562d11-9c01-4cfa-b780-88224473e650
@@ -1377,6 +1386,29 @@ fields:
     settings:
       availableTransforms: '*'
       availableVolumes: ''
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: ''
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  d7cb0a1a-91a7-4640-bb5c-2b29d5ec3e12:
+    contentColumnType: text
+    fieldGroup: da5dc685-57c1-4c15-b53e-38e1db3474ee
+    handle: headsUp
+    instructions: 'Wordt enkel getoond wanneer ingevuld.'
+    name: 'Belangrijke update'
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
       cleanupHtml: true
       columnType: text
       purifierConfig: ''
@@ -1537,15 +1569,18 @@ globalSets:
             fields:
               4a1103f1-acec-4eae-9259-d9ef1e9a05fb:
                 required: false
-                sortOrder: 4
+                sortOrder: 5
               4e9173fd-9444-4cad-8f4e-532eaa7ce1f7:
-                required: false
+                required: true
                 sortOrder: 1
               7ffa6f74-ddee-45e0-bb12-68def0320384:
                 required: false
-                sortOrder: 3
+                sortOrder: 4
               990e683c-9217-48b2-9d27-0208bc3339fd:
-                required: false
+                required: true
+                sortOrder: 3
+              b660e663-9d28-4b7f-bf32-2ff921bcc3c1:
+                required: true
                 sortOrder: 2
             name: Contact
             sortOrder: 1
@@ -1660,6 +1695,7 @@ matrixBlockTypes:
         name: Afbeelding
         searchable: true
         settings:
+          allowSelfRelations: ''
           allowedKinds:
             - image
           defaultUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1'
@@ -1691,6 +1727,7 @@ matrixBlockTypes:
         settings:
           allowLimit: false
           allowMultipleSources: false
+          allowSelfRelations: ''
           limit: null
           localizeRelations: false
           selectionLabel: ''
@@ -5671,14 +5708,20 @@ sections:
                   5e04aee6-fa48-49e3-b86f-882b8ea36b9c:
                     required: true
                     sortOrder: 1
+                  dcba1bec-77c1-4e56-98bb-7b73ff2a87fc:
+                    required: false
+                    sortOrder: 3
                 name: Header
                 sortOrder: 1
               -
                 fields:
                   138d0eae-ea95-4e6e-86c6-9e927e7e72e2:
                     required: true
+                    sortOrder: 2
+                  82fef1fa-66e2-48bf-9bdf-aacab3feefb5:
+                    required: true
                     sortOrder: 1
-                name: Voorzieningen
+                name: Activiteiten
                 sortOrder: 2
               -
                 fields:
@@ -5689,10 +5732,10 @@ sections:
                 sortOrder: 3
               -
                 fields:
-                  7bb78d7c-6888-4847-9637-2c66a490e5e1:
-                    required: true
+                  d7cb0a1a-91a7-4640-bb5c-2b29d5ec3e12:
+                    required: false
                     sortOrder: 1
-                name: 'Locatie en bereikbaarheid'
+                name: 'Belangrijke update'
                 sortOrder: 4
               -
                 fields:

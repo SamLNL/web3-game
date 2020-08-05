@@ -17,13 +17,13 @@ function mustDestroy(breakpoint) {
 
 const letsSwipe = {
   init: () => {
-    [].forEach.call(destroySwipers, function(e, i) {
-      let id = destroySwipers[i].getAttribute('data-swiper-id');
-      if(destroySwipers[i]['swiper']){
-        destroySwipersParams[id] = destroySwipers[i].swiper.params;
+    [].forEach.call(destroySwipers, function(e) {
+      let id = e.getAttribute('data-swiper-id');
+      if(e.swiper){
+        destroySwipersParams[id] = e.swiper.params;
       }
 
-      letsSwipe.checkSwiper(destroySwipers[i]);
+      letsSwipe.checkSwiper(e);
     });
 
     window.onresize = () => {
@@ -53,8 +53,11 @@ const letsSwipe = {
   },
   checkSwiper: (el) => {
     let id = el.getAttribute('data-swiper-id');
-    if (el['swiper']) {
-      let swiper = el.swiper;
+    let swiperEl = document.querySelector('[data-swiper-id="' + id + '"]').swiper;
+
+    console.log(swiperEl);
+    if (swiperEl) {
+      let swiper = swiperEl;
       let breakpoint;
 
       destroySwipersParams[id] = swiper.params;
@@ -75,5 +78,5 @@ const letsSwipe = {
 };
 
 (function() {
-  letsSwipe.init();
+    letsSwipe.init();
 })();
