@@ -26,14 +26,14 @@
     <div class="row">
       <div class="col-12">
         {% if intro | length %}
-          <div>
+          <div class="mb-3 mb-lg-4">
             {{ intro }}
           </div>
         {% endif %}
 
         {% if swiper %}
         <div class="swiper">
-          <div class="c-cta-blocks {{ class }} swiper-container js-cta-blocks js-swiper-destroy"
+          <div class="c-cta-blocks {{ class }} swiper-container js-cta-blocks"
                data-swiper-id="{{ uniqueId }}">
             <div class="swiper-wrapper">
               {% else %}

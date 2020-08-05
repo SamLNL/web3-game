@@ -42,6 +42,9 @@ const paging = {
         // Enable the button
         paging.enableButton();
 
+        // No more loading
+        paging.hideLoader();
+
         // Hide the button if the end is reached
         paging.hideButtonOnEnd();
       });
@@ -69,7 +72,7 @@ const paging = {
 
   // Enable the load-more-button
   enableButton: function() {
-    loadMoreButton.setAttribute('disabled', false);
+    loadMoreButton.removeAttribute('disabled');
   },
 
   // Get the next url

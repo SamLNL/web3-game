@@ -103,15 +103,15 @@
       class: 'lower-wave'
     } %}
   </div>
-  <div class="bg-teal-100 pb-4 pb-lg-8" id="activiteiten">
+  <div class="bg-teal-100 pb-4 pb-lg-8">
     {% include '_partials/_index/activities' %}
   </div>
-  <div class="container mt-5 mt-lg-10" id="sfeerimpressie">
-    {% include '_partials/_index/impression' %}
+  <div class="container mt-5 mt-lg-10">
+    {% include '_partials/_index/preview' %}
   </div>
-  <div class="bg-teal-100 pt-5 pb-5 pt-lg-8">
+  {% include '_partials/_index/facilities' %}
 
-  </div>
+  {# TODO: teaser#}
 {% endblock %}
 
 {% block _inline_js %}

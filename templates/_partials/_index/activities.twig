@@ -1,15 +1,15 @@
 <div class="container">
   <div class="d-flex justify-content-center">
-    <h2 class="text-uppercase text-teal-600 text-center mb-4 mb-lg-5">{{ entry.servicesTitle }}</h2>
+    <h2 class="text-uppercase text-teal-600 text-center mb-4 mb-lg-5">{{ entry.activitiesTitle }}</h2>
   </div>
 </div>
 
 <div class="mb-3 mb-lg-0">
   <div class="container">
-    {% set serviceSlides = entry.services.all() %}
+    {% set activitiesSlides = entry.activities.all() %}
     <div class="w-100 d-md-none">
       <div class="d-flex flex-column swiper-nav">
-        {% for slide in serviceSlides %}
+        {% for slide in activitiesSlides %}
           <a
             class="swiper-nav__item w-100 border-2 border-teal-200 py-1 {{ loop.last ? 'mb-4' : 'mb-1' }} text-center small rounded js-go-to-slide {{ loop.first ? 'active' : '' }}"
             data-swiper-index="{{ loop.index0 }}" href="#"
@@ -19,10 +19,10 @@
     </div>
 
     {% set swiperId = random() %}
-    <div class="swiper-container row js-swiper-services js-swiper-destroy" data-swiper-id="{{ swiperId }}">
+    <div class="swiper-container row js-swiper-services mb-2 mb-lg-0" data-swiper-id="{{ swiperId }}">
       <div class="swiper-wrapper d-flex flex-row">
-        {% for slide in serviceSlides %}
-          <div class="swiper-slide h-auto d-flex col-12 col-md-5 col-lg-4 pb-5 flex-grow-1"
+        {% for slide in activitiesSlides %}
+          <div class="swiper-slide h-auto d-flex col-12 col-md-5 col-lg-4 flex-grow-1"
                data-title="{{ slide.serviceTitle }}">
             <div class="card w-100">
               {% switch slide.serviceColor.value %}
@@ -64,7 +64,7 @@
       <div class="swiper-pagination" data-swiper-id="{{ swiperId }}"></div>
     </div>
 
-    <div class="w-100 text-center">
+    <div class="w-100 d-flex flex-row justify-content-center">
       {% set activitiesOverview = craft.entries.section('activitiesOverview').one() %}
       <a class="c-btn c-btn-yellow" href="{{ activitiesOverview.url }}" title="Bekijk alle activiteiten">
         Bekijk alle activiteiten

@@ -9,12 +9,12 @@ import Swiper from 'swiper';
 let sliders = document.querySelectorAll('.js-slider');
 
 [].forEach.call(sliders, function(el) {
-  let swiperEl = el.querySelector('.swiper-container');
-  let prevEl = el.querySelector('.swiper-prev');
-  let nextEl = el.querySelector('.swiper-next');
-  let pagEl = el.querySelector('.swiper-pagination');
+  let id = el.getAttribute('data-swiper-id');
+  let prevEl = document.querySelector('.carousel-control-prev[data-swiper-id="' + id + '"]');
+  let nextEl = document.querySelector('.carousel-control-next[data-swiper-id="' + id + '"]');
+  let pagEl = document.querySelector('.swiper-pagination[data-swiper-id="' + id + '"]');
 
-  new Swiper(swiperEl, {
+  new Swiper(el, {
     navigation: {
       prevEl: prevEl,
       nextEl: nextEl,
@@ -23,6 +23,6 @@ let sliders = document.querySelectorAll('.js-slider');
       el: pagEl,
       clickable: true
     },
-    slidesPerView: 'auto'
+    slidesPerView: 1
   });
 });

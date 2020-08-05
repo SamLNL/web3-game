@@ -19,26 +19,11 @@
 
 {% block content %}
 
-  {% include '_partials/_components/hero/hero.twig' with {
-    image: entry.newsImage[0],
-    contentPath: 'news/hero-content.twig'
+  {% include '_partials/_global/header' with {
+    title: entry.title,
+    image: entry.headerImage.one(),
+    intro: entry.intro
   } %}
-
-  <div class="container mt-4 mb-4 mt-lg-6 mb-lg-4" id="mainContentSkip">
-    <div class="row">
-      <div class="w-100 col-12 col-lg-8 offset-lg-2">
-        {% include '_partials/_components/breadcrumb/breadcrumb.twig' with {
-          class: 'mb-1 mb-md-2'
-        } %}
-        <h1 class="mb-1">{{ entry.title }}</h1>
-        <div class="d-flex flex-column text-gray-700">
-          <div class="small">
-            {{ entry.postDate | date ('d-m-Y') }}
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
   {% include "_partials/_common/matrix.twig" %}
 
@@ -49,7 +34,7 @@
     <div class="container">
       <div class="border-top border-gray-400">
         <div class="row">
-          <div class="w-100 col-12 col-lg-8 offset-lg-2">
+          <div class="col-12">
             <div class="py-4 mb-4">
               <div class="d-flex flex-column flex-md-row">
                 <a class="c-btn c-btn-primary" href="{{ overview.url }}">

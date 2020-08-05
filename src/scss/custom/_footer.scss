@@ -10,8 +10,13 @@
       justify-content: center;
     }
 
+    @include media-breakpoint-up('md') {
+      justify-content: center;
+      align-items: start;
+    }
+
     @include media-breakpoint-up('lg') {
-      align-items: center;
+      align-items: start;
     }
   }
 

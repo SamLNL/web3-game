@@ -26,19 +26,11 @@
   {% if not craft.app.request.isAjax %}
     {% set entry = entry is defined ? entry : category %}
 
-<div class="container mt-4 mt-lg-6" id="mainContentSkip">
-  <div class="row">
-    <div class="mb-4 col-12 col-lg-8 offset-lg-2">
-      {% include '_partials/_components/breadcrumb/breadcrumb.twig' with {
-        class: 'mb-1 mb-md-2 c-breadcrumb__dark'
-      } %}
-      <h1>{{ entry.title }}</h1>
-      {% if entry.newsText | length %}
-        {{ entry.newsText }}
-      {% endif %}
-    </div>
-  </div>
-</div>
+  {% include '_partials/_global/header' with {
+    title: entry.title,
+    image: entry.headerImage.one(),
+    intro: entry.intro
+  } %}
 <div class="bg-teal-100 pt-6">
   <div class="container">
 
@@ -95,11 +87,10 @@
               {% for item in entries %}
                 {% include '_partials/_components/card/card.twig' with {
                   url: item.url,
-                  image: item.newsImage[0],
-                  readingTime: item.readingTime,
+                  image: item.headerImage[0],
                   title: item.title,
                   date: item.dateCreated,
-                  summary: (item.summary|striptags[:40] ~ '...')
+                  summary: (item.summaryText|striptags[:40] ~ '...')
                 } %}
               {% endfor %}
             </div>

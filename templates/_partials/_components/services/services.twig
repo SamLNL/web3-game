@@ -1,0 +1,57 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{# @var entry \craft\elements\Entry #}
+{# ======================================================
+  @filename: services
+  @date:     18 aug. 2020
+  @author:   sam
+  ====================================================== #}
+
+{% set intro = intro is defined ? intro : '' %}
+{% set cta = cta is defined ? cta : '' %}
+
+{% set services = craft.entries.section('services').all() %}
+
+{% if services | length %}
+  <div class="container">
+    <div class="row">
+      <div class="col-12 pb-5">
+        {% if intro | length %}
+          <div class="mb-2 mb-lg-3">
+            {{ intro }}
+          </div>
+        {% endif %}
+        <div class="d-flex flex-column flex-md-row flex-md-wrap pb-3 justify-content-between justify-content-lg-start">
+          {% for item in services %}
+            <div class="c-service d-flex flex-row pt-3 pb-3 mb-md-2">
+              <div class="mr-2 mr-lg-1 w-2 d-flex align-items-center justify-content-center">
+                {% set icon = item.servicesIcon.one() %}
+                <img src="{{ icon.url }}" alt="{{ icon.title }}">
+              </div>
+              <div class="mb-0 ml-1 d-flex align-items-center">
+                <p class="weight-700 text-teal mb-0">{{ item.title | raw }}
+                  {% if item.servicesInfo | length %}
+                    <span class="weight-300"> {{ item.servicesInfo }}</span>
+                  {% endif %}
+                </p>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+        {% if cta.url | length %}
+          <div class="w-100 d-flex flex-row justify-content-center">
+            <a href="{{ cta.url }}"
+               title="{{ cta.text }}"
+               class="c-btn c-btn-primary"
+               ga-on="click"
+               ga-event-category="CTA"
+               ga-event-action="Click"
+               ga-event-label="{{ cta.text|ucfirst }}"
+            >
+              <span>{{ cta.text }}</span>
+            </a>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endif %}

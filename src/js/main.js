@@ -9,14 +9,6 @@
  *
  */
 
-if(document.querySelectorAll('.js-slider').length > 0) {
-  import(/* webpackChunkName: "swiper" */ "./custom/components/slider");
-}
-
-if(document.querySelectorAll('.js-cta-blocks').length > 0) {
-  import(/* webpackChunkName: "swiper" */ "./custom/components/cta-blocks");
-}
-
 const main = async () => {
   const analytics = await import(/* webpackChunkName: "analytics" */ "./analytics/analytics");
   import ("./bootstrap/index");
@@ -59,8 +51,12 @@ const main = async () => {
     await import(/* webpackChunkName: "load-more" */ "./custom/components/calendar");
   }
 
-  if(document.querySelectorAll('.js-swiper-destroy').length > 0) {
-    await import(/* webpackChunkName: "swiper" */ "./custom/swiper-destroy");
+  if(document.querySelectorAll('.js-slider').length > 0) {
+    await import(/* webpackChunkName: "swiper" */ "./custom/components/slider");
+  }
+
+  if(document.querySelectorAll('.js-cta-blocks').length > 0) {
+    await import(/* webpackChunkName: "swiper" */ "./custom/components/cta-blocks");
   }
 
   analytics.init();

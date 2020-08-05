@@ -1,4 +1,4 @@
-dateModified: 1596617188
+dateModified: 1596655947
 email:
   fromEmail: interactie@emotion.nl
   fromName: Biljoenbad
@@ -8,10 +8,14 @@ fieldGroups:
     name: Common
   3e44ea8d-bbc2-4a77-99e7-bd0158f2794c:
     name: Header
+  683b8e9d-6e7a-404d-bb72-c9df03f70f1c:
+    name: 'Contact blok'
   75c4c41b-4b5d-4f5b-bf8a-0d1bbe387b16:
     name: FAQ
-  ac562d11-9c01-4cfa-b780-88224473e650:
-    name: Nieuws
+  7b0ef5c0-4291-4913-932b-32945e1c974f:
+    name: Activiteiten
+  ae9ca910-6694-4017-a02d-bbea31a82b3a:
+    name: Faciliteiten
   be40097e-126e-4a57-854d-f07aa9ea16d7:
     name: SEO
   cdcb72f5-a94d-46ed-ab22-67dcb5fff45f:
@@ -49,12 +53,12 @@ fields:
   138d0eae-ea95-4e6e-86c6-9e927e7e72e2:
     contentColumnType: string
     fieldGroup: f0c3735f-1b6e-456c-9608-4cfe64ddcd90
-    handle: services
+    handle: activities
     instructions: ''
     name: Activiteiten
     searchable: true
     settings:
-      contentTable: '{{%matrixcontent_services}}'
+      contentTable: '{{%matrixcontent_activities}}'
       maxBlocks: '3'
       minBlocks: '3'
       propagationMethod: all
@@ -63,7 +67,7 @@ fields:
     type: craft\fields\Matrix
   34fc4e87-8df5-481d-bfad-75b58bf17d76:
     contentColumnType: boolean
-    fieldGroup: 01e09fa1-4843-4208-830b-968a6ff4671c
+    fieldGroup: 683b8e9d-6e7a-404d-bb72-c9df03f70f1c
     handle: contactBlockShow
     instructions: 'Toon het contactblok onderaan de pagina'
     name: 'Contact blok - Toon'
@@ -568,30 +572,59 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  5e62c5d6-3509-4229-9629-b4e5bb02adb2:
-    contentColumnType: integer(10)
-    fieldGroup: ac562d11-9c01-4cfa-b780-88224473e650
-    handle: readingTime
-    instructions: 'Leestijd in minuten'
-    name: Leestijd
+  6411c6f0-8af3-4a83-8ba6-7a5778adb9e9:
+    contentColumnType: string
+    fieldGroup: ae9ca910-6694-4017-a02d-bbea31a82b3a
+    handle: servicesIcon
+    instructions: ''
+    name: Icoon
     searchable: true
     settings:
-      decimals: 0
-      defaultValue: null
-      max: null
-      min: '0'
-      prefix: ''
-      size: null
-      suffix: ''
+      allowSelfRelations: ''
+      allowedKinds: null
+      defaultUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: ''
+      selectionLabel: ''
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:03ef6c73-3b14-4ae2-bf06-2b1d57cc6605'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: true
+      validateRelatedElements: ''
+      viewMode: list
     translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\Number
+    translationMethod: site
+    type: craft\fields\Assets
   682ecbc3-2252-4e4d-ac77-decc7ed47b7b:
     contentColumnType: text
-    fieldGroup: 01e09fa1-4843-4208-830b-968a6ff4671c
+    fieldGroup: 683b8e9d-6e7a-404d-bb72-c9df03f70f1c
     handle: contactBlockTitle
     instructions: 'Deze overschrijft de ''globale'' contact titel wanneer deze is ingevuld'
     name: 'Contact blok - Titel'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  6d88413a-bf5d-4ffd-ac70-cc11ee28ee04:
+    contentColumnType: text
+    fieldGroup: f0c3735f-1b6e-456c-9608-4cfe64ddcd90
+    handle: servicesTitle
+    instructions: ''
+    name: 'Voorzieningen - Titel'
     searchable: true
     settings:
       byteLimit: null
@@ -805,7 +838,7 @@ fields:
   82fef1fa-66e2-48bf-9bdf-aacab3feefb5:
     contentColumnType: text
     fieldGroup: f0c3735f-1b6e-456c-9608-4cfe64ddcd90
-    handle: servicesTitle
+    handle: activitiesTitle
     instructions: ''
     name: 'Activiteiten - Titel'
     searchable: true
@@ -1163,24 +1196,6 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Matrix
-  9e59715b-62eb-4d90-a95b-6f1fad60076a:
-    contentColumnType: text
-    fieldGroup: ac562d11-9c01-4cfa-b780-88224473e650
-    handle: summary
-    instructions: 'Deze samenvatting wordt enkel op de overzichtspagina getoond'
-    name: Samenvatting
-    searchable: true
-    settings:
-      byteLimit: null
-      charLimit: null
-      code: ''
-      columnType: null
-      initialRows: '4'
-      multiline: ''
-      placeholder: ''
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\PlainText
   a460ba7f-4818-4183-b551-28d816e087db:
     contentColumnType: string
     fieldGroup: cdcb72f5-a94d-46ed-ab22-67dcb5fff45f
@@ -1273,6 +1288,18 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Table
+  b0162006-4be5-43a0-b035-d64e17725734:
+    contentColumnType: string(7)
+    fieldGroup: 7b0ef5c0-4291-4913-932b-32945e1c974f
+    handle: categoryColor
+    instructions: ''
+    name: 'Thema kleur'
+    searchable: true
+    settings:
+      defaultColor: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Color
   b660e663-9d28-4b7f-bf32-2ff921bcc3c1:
     contentColumnType: text
     fieldGroup: cdcb72f5-a94d-46ed-ab22-67dcb5fff45f
@@ -1291,29 +1318,6 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  b8d61e82-3d4b-42fd-a7a6-35861f851f89:
-    contentColumnType: text
-    fieldGroup: ac562d11-9c01-4cfa-b780-88224473e650
-    handle: newsText
-    instructions: ''
-    name: Tekst
-    searchable: true
-    settings:
-      availableTransforms: '*'
-      availableVolumes: '*'
-      cleanupHtml: true
-      columnType: text
-      purifierConfig: ''
-      purifyHtml: '1'
-      redactorConfig: ''
-      removeEmptyTags: '1'
-      removeInlineStyles: '1'
-      removeNbsp: '1'
-      showUnpermittedFiles: false
-      showUnpermittedVolumes: false
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\redactor\Field
   bc6ad484-fb43-4e27-ab54-1b0eab2c92b8:
     contentColumnType: text
     fieldGroup: cdcb72f5-a94d-46ed-ab22-67dcb5fff45f
@@ -1332,35 +1336,27 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  ce0ab64a-efa8-483e-a652-729c62dbf35c:
+  c2b13e49-c3ec-4235-8089-aeb2af9b0f8c:
     contentColumnType: string
-    fieldGroup: ac562d11-9c01-4cfa-b780-88224473e650
-    handle: newsImage
-    instructions: 'Deze wordt zowel in het overzicht als op de pagina zelf getoond'
-    name: Afbeelding
+    fieldGroup: f0c3735f-1b6e-456c-9608-4cfe64ddcd90
+    handle: newsItems
+    instructions: ''
+    name: 'Nieuws - Items'
     searchable: true
     settings:
-      allowedKinds:
-        - image
-      defaultUploadLocationSource: 'volume:22d4221f-f69b-42f0-9c2c-e4b3dccf0815'
-      defaultUploadLocationSubpath: ''
-      limit: '1'
+      allowSelfRelations: ''
+      limit: '3'
       localizeRelations: false
-      restrictFiles: '1'
       selectionLabel: ''
-      showUnpermittedFiles: false
-      showUnpermittedVolumes: false
-      singleUploadLocationSource: 'volume:c910b349-51e3-41a5-b45c-1c9a8c1d223f'
-      singleUploadLocationSubpath: ''
       source: null
-      sources: '*'
+      sources:
+        - 'section:b8b9d7b2-37ec-4448-9ebb-6e32ee552f42'
       targetSiteId: null
-      useSingleFolder: true
       validateRelatedElements: ''
-      viewMode: list
+      viewMode: null
     translationKeyFormat: null
     translationMethod: site
-    type: craft\fields\Assets
+    type: craft\fields\Entries
   d16c24d1-abfe-4e08-b18c-45bcb368c93f:
     contentColumnType: string
     fieldGroup: 01e09fa1-4843-4208-830b-968a6ff4671c
@@ -1376,6 +1372,130 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Matrix
+  d3513c05-8958-4111-8cef-940e6c9d714e:
+    contentColumnType: text
+    fieldGroup: f0c3735f-1b6e-456c-9608-4cfe64ddcd90
+    handle: servicesCta
+    instructions: ''
+    name: 'Voorzieningen - CTA'
+    searchable: true
+    settings:
+      allowCustomText: '1'
+      allowTarget: '1'
+      allowedLinkNames:
+        1: asset
+        4: entry
+        6: custom
+        7: email
+        8: tel
+        9: url
+      autoNoReferrer: '1'
+      defaultLinkName: entry
+      defaultText: ''
+      enableAriaLabel: ''
+      enableTitle: ''
+      typeSettings:
+        __assoc__:
+          -
+            - asset
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+          -
+            - category
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+          -
+            - user
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+          -
+            - entry
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+          -
+            - site
+            -
+              __assoc__:
+                -
+                  - sites
+                  - '*'
+          -
+            - custom
+            -
+              __assoc__:
+                -
+                  - disableValidation
+                  - ''
+                -
+                  - allowAliases
+                  - ''
+          -
+            - email
+            -
+              __assoc__:
+                -
+                  - disableValidation
+                  - ''
+                -
+                  - allowAliases
+                  - ''
+          -
+            - tel
+            -
+              __assoc__:
+                -
+                  - disableValidation
+                  - ''
+                -
+                  - allowAliases
+                  - ''
+          -
+            - url
+            -
+              __assoc__:
+                -
+                  - disableValidation
+                  - ''
+                -
+                  - allowAliases
+                  - ''
+          -
+            - solspaceCalendar-event
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: typedlinkfield\fields\LinkField
   d64c0fca-21c8-4a09-bd4e-3ea37597d970:
     contentColumnType: text
     fieldGroup: df78e26d-9aa7-49a4-bd8a-75980ddba39d
@@ -1522,12 +1642,48 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
-  ec603de9-e3d1-4a29-b16b-81354b135640:
+  e63d11c6-b832-4c11-831f-dbac8d0b4439:
     contentColumnType: text
-    fieldGroup: ac562d11-9c01-4cfa-b780-88224473e650
+    fieldGroup: f0c3735f-1b6e-456c-9608-4cfe64ddcd90
+    handle: previewTitle
+    instructions: ''
+    name: 'Preview - Titel'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  ef04d81b-a107-4503-96ba-170438728574:
+    contentColumnType: text
+    fieldGroup: ae9ca910-6694-4017-a02d-bbea31a82b3a
+    handle: servicesInfo
+    instructions: ''
+    name: 'Extra info'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  f904a62b-8de1-4d60-90b6-97de74a70f21:
+    contentColumnType: text
+    fieldGroup: f0c3735f-1b6e-456c-9608-4cfe64ddcd90
     handle: newsTitle
     instructions: ''
-    name: Titel
+    name: 'Nieuws - Titel'
     searchable: true
     settings:
       byteLimit: null
@@ -1948,6 +2104,45 @@ matrixBlockTypes:
     handle: typeform
     name: Typeform
     sortOrder: 10
+  37e21129-0d0c-40e7-bfdf-4090b81beee4:
+    field: d16c24d1-abfe-4e08-b18c-45bcb368c93f
+    fieldLayouts:
+      31a4a23e-9293-4a2b-aa54-2e4a89b611cd:
+        tabs:
+          -
+            fields:
+              de96ce55-018c-438c-9582-205befc6ca14:
+                required: false
+                sortOrder: 1
+            name: Content
+            sortOrder: 1
+    fields:
+      de96ce55-018c-438c-9582-205befc6ca14:
+        contentColumnType: text
+        fieldGroup: null
+        handle: text
+        instructions: 'Intro tekst wijkt iets af van de ''gewone'' tekst'
+        name: Tekst
+        searchable: true
+        settings:
+          availableTransforms: '*'
+          availableVolumes: '*'
+          cleanupHtml: true
+          columnType: text
+          purifierConfig: ''
+          purifyHtml: '1'
+          redactorConfig: ''
+          removeEmptyTags: '1'
+          removeInlineStyles: '1'
+          removeNbsp: '1'
+          showUnpermittedFiles: false
+          showUnpermittedVolumes: false
+        translationKeyFormat: null
+        translationMethod: none
+        type: craft\redactor\Field
+    handle: intro
+    name: Intro
+    sortOrder: 1
   392ffd23-a640-4a6f-8cca-bf3195175673:
     field: d16c24d1-abfe-4e08-b18c-45bcb368c93f
     fieldLayouts:
@@ -2282,7 +2477,7 @@ matrixBlockTypes:
         type: typedlinkfield\fields\LinkField
     handle: text
     name: Tekst
-    sortOrder: 1
+    sortOrder: 2
   5e281019-838a-4eef-9a32-c4e57474176b:
     field: 79c80430-518c-4d55-a510-ab43f69bc97f
     fieldLayouts:
@@ -2661,7 +2856,188 @@ matrixBlockTypes:
         type: typedlinkfield\fields\LinkField
     handle: faq
     name: FAQ
-    sortOrder: 7
+    sortOrder: 8
+  8572cc82-344f-41ea-8e09-baecd967fac7:
+    field: d16c24d1-abfe-4e08-b18c-45bcb368c93f
+    fieldLayouts:
+      d20b0b7d-09ad-40f6-9fe7-43c9dd07f433:
+        tabs:
+          -
+            fields:
+              60ba4af7-9102-49ee-bdde-8f14a6e03c71:
+                required: false
+                sortOrder: 1
+              ab043be5-9526-4503-b7f2-d7d8e3c5bc7d:
+                required: false
+                sortOrder: 2
+              c8662e4e-330e-469b-9334-72665e8bd5a4:
+                required: false
+                sortOrder: 3
+            name: Content
+            sortOrder: 1
+    fields:
+      60ba4af7-9102-49ee-bdde-8f14a6e03c71:
+        contentColumnType: text
+        fieldGroup: null
+        handle: text
+        instructions: ''
+        name: Tekst
+        searchable: true
+        settings:
+          availableTransforms: '*'
+          availableVolumes: '*'
+          cleanupHtml: true
+          columnType: text
+          purifierConfig: ''
+          purifyHtml: '1'
+          redactorConfig: ''
+          removeEmptyTags: '1'
+          removeInlineStyles: '1'
+          removeNbsp: '1'
+          showUnpermittedFiles: false
+          showUnpermittedVolumes: false
+        translationKeyFormat: null
+        translationMethod: none
+        type: craft\redactor\Field
+      ab043be5-9526-4503-b7f2-d7d8e3c5bc7d:
+        contentColumnType: boolean
+        fieldGroup: null
+        handle: showServices
+        instructions: ''
+        name: 'Toon voorzieningen'
+        searchable: true
+        settings:
+          default: '1'
+        translationKeyFormat: null
+        translationMethod: none
+        type: craft\fields\Lightswitch
+      c8662e4e-330e-469b-9334-72665e8bd5a4:
+        contentColumnType: text
+        fieldGroup: null
+        handle: cta
+        instructions: ''
+        name: CTA
+        searchable: true
+        settings:
+          allowCustomText: '1'
+          allowTarget: '1'
+          allowedLinkNames:
+            1: asset
+            4: entry
+            6: custom
+            7: email
+            8: tel
+            9: url
+          autoNoReferrer: '1'
+          defaultLinkName: entry
+          defaultText: ''
+          enableAriaLabel: ''
+          enableTitle: ''
+          typeSettings:
+            __assoc__:
+              -
+                - asset
+                -
+                  __assoc__:
+                    -
+                      - sources
+                      - '*'
+                    -
+                      - allowCustomQuery
+                      - ''
+              -
+                - category
+                -
+                  __assoc__:
+                    -
+                      - sources
+                      - '*'
+                    -
+                      - allowCustomQuery
+                      - ''
+              -
+                - user
+                -
+                  __assoc__:
+                    -
+                      - sources
+                      - '*'
+                    -
+                      - allowCustomQuery
+                      - ''
+              -
+                - entry
+                -
+                  __assoc__:
+                    -
+                      - sources
+                      - '*'
+                    -
+                      - allowCustomQuery
+                      - ''
+              -
+                - site
+                -
+                  __assoc__:
+                    -
+                      - sites
+                      - '*'
+              -
+                - custom
+                -
+                  __assoc__:
+                    -
+                      - disableValidation
+                      - ''
+                    -
+                      - allowAliases
+                      - ''
+              -
+                - email
+                -
+                  __assoc__:
+                    -
+                      - disableValidation
+                      - ''
+                    -
+                      - allowAliases
+                      - ''
+              -
+                - tel
+                -
+                  __assoc__:
+                    -
+                      - disableValidation
+                      - ''
+                    -
+                      - allowAliases
+                      - ''
+              -
+                - url
+                -
+                  __assoc__:
+                    -
+                      - disableValidation
+                      - ''
+                    -
+                      - allowAliases
+                      - ''
+              -
+                - solspaceCalendar-event
+                -
+                  __assoc__:
+                    -
+                      - sources
+                      - '*'
+                    -
+                      - allowCustomQuery
+                      - ''
+        translationKeyFormat: null
+        translationMethod: none
+        type: typedlinkfield\fields\LinkField
+    handle: services
+    name: Voorzieningen
+    sortOrder: 14
   87f2ab1d-f8a6-4af3-985a-8984f31feb1f:
     field: d16c24d1-abfe-4e08-b18c-45bcb368c93f
     fieldLayouts:
@@ -3083,7 +3459,7 @@ matrixBlockTypes:
         type: typedlinkfield\fields\LinkField
     handle: imageText
     name: 'Afbeelding - tekst'
-    sortOrder: 3
+    sortOrder: 4
   a6c57816-55bd-425e-afcc-953eaf58db58:
     field: 38af146a-0d6b-417d-abe2-dcc73f0bb167
     fieldLayouts:
@@ -3521,7 +3897,7 @@ matrixBlockTypes:
         type: craft\fields\Assets
     handle: image
     name: Afbeelding
-    sortOrder: 2
+    sortOrder: 3
   be883caa-3f79-412e-8c25-730c3b659cb3:
     field: d16c24d1-abfe-4e08-b18c-45bcb368c93f
     fieldLayouts:
@@ -3593,7 +3969,7 @@ matrixBlockTypes:
         type: craft\redactor\Field
     handle: slider
     name: Slider
-    sortOrder: 8
+    sortOrder: 9
   c53081c4-88c0-46df-a585-3e54356c2e30:
     field: d16c24d1-abfe-4e08-b18c-45bcb368c93f
     fieldLayouts:
@@ -3697,7 +4073,7 @@ matrixBlockTypes:
         type: craft\redactor\Field
     handle: ctaBlocks
     name: 'CTA blokken'
-    sortOrder: 5
+    sortOrder: 6
   cb38d12d-3889-4144-abd8-7addc6c549ce:
     field: 9c2304a6-1b77-4cb8-a7c6-adae015eb968
     fieldLayouts:
@@ -4333,7 +4709,7 @@ matrixBlockTypes:
         type: craft\fields\Assets
     handle: textImage
     name: 'Tekst - afbeelding'
-    sortOrder: 4
+    sortOrder: 5
   d7eed2b0-6079-4185-8245-5a62f3180fe2:
     field: d16c24d1-abfe-4e08-b18c-45bcb368c93f
     fieldLayouts:
@@ -4738,217 +5114,7 @@ matrixBlockTypes:
         type: craft\fields\Assets
     handle: ctaBanner
     name: 'CTA banner'
-    sortOrder: 6
-  fb0010b3-351c-49db-bd18-c93439c1f571:
-    field: d16c24d1-abfe-4e08-b18c-45bcb368c93f
-    fieldLayouts:
-      e41c7b07-3c99-4ffa-8b85-3e49b9a44c17:
-        tabs:
-          -
-            fields:
-              0adffc9d-1f09-48b7-96b9-6a8e979347ac:
-                required: false
-                sortOrder: 3
-              1aef4279-db18-4488-aa96-fe6213caae03:
-                required: false
-                sortOrder: 1
-              808ad965-2430-4f73-918a-ff1418734dce:
-                required: true
-                sortOrder: 2
-              8c2a1afd-5634-4077-8116-34e235a8180e:
-                required: false
-                sortOrder: 4
-            name: Content
-            sortOrder: 1
-    fields:
-      0adffc9d-1f09-48b7-96b9-6a8e979347ac:
-        contentColumnType: text
-        fieldGroup: null
-        handle: cta
-        instructions: ''
-        name: CTA
-        searchable: true
-        settings:
-          allowCustomText: '1'
-          allowTarget: '1'
-          allowedLinkNames:
-            1: asset
-            4: entry
-            6: custom
-            7: email
-            8: tel
-            9: url
-          autoNoReferrer: ''
-          defaultLinkName: entry
-          defaultText: ''
-          enableAriaLabel: ''
-          enableTitle: ''
-          typeSettings:
-            __assoc__:
-              -
-                - asset
-                -
-                  __assoc__:
-                    -
-                      - sources
-                      - '*'
-                    -
-                      - allowCustomQuery
-                      - ''
-              -
-                - category
-                -
-                  __assoc__:
-                    -
-                      - sources
-                      - '*'
-                    -
-                      - allowCustomQuery
-                      - ''
-              -
-                - user
-                -
-                  __assoc__:
-                    -
-                      - sources
-                      - '*'
-                    -
-                      - allowCustomQuery
-                      - ''
-              -
-                - entry
-                -
-                  __assoc__:
-                    -
-                      - sources
-                      - '*'
-                    -
-                      - allowCustomQuery
-                      - ''
-              -
-                - site
-                -
-                  __assoc__:
-                    -
-                      - sites
-                      - '*'
-              -
-                - custom
-                -
-                  __assoc__:
-                    -
-                      - disableValidation
-                      - ''
-                    -
-                      - allowAliases
-                      - ''
-              -
-                - email
-                -
-                  __assoc__:
-                    -
-                      - disableValidation
-                      - ''
-                    -
-                      - allowAliases
-                      - ''
-              -
-                - tel
-                -
-                  __assoc__:
-                    -
-                      - disableValidation
-                      - ''
-                    -
-                      - allowAliases
-                      - ''
-              -
-                - url
-                -
-                  __assoc__:
-                    -
-                      - disableValidation
-                      - ''
-                    -
-                      - allowAliases
-                      - ''
-              -
-                - solspaceCalendar-event
-                -
-                  __assoc__:
-                    -
-                      - sources
-                      - '*'
-                    -
-                      - allowCustomQuery
-                      - ''
-        translationKeyFormat: null
-        translationMethod: none
-        type: typedlinkfield\fields\LinkField
-      1aef4279-db18-4488-aa96-fe6213caae03:
-        contentColumnType: text
-        fieldGroup: null
-        handle: text
-        instructions: ''
-        name: Tekst
-        searchable: true
-        settings:
-          availableTransforms: '*'
-          availableVolumes: '*'
-          cleanupHtml: true
-          columnType: text
-          purifierConfig: ''
-          purifyHtml: '1'
-          redactorConfig: ''
-          removeEmptyTags: '1'
-          removeInlineStyles: '1'
-          removeNbsp: '1'
-          showUnpermittedFiles: false
-          showUnpermittedVolumes: false
-        translationKeyFormat: null
-        translationMethod: none
-        type: craft\redactor\Field
-      808ad965-2430-4f73-918a-ff1418734dce:
-        contentColumnType: string
-        fieldGroup: null
-        handle: items
-        instructions: 'Toon max. 3 teaser items'
-        name: Items
-        searchable: true
-        settings:
-          allowSelfRelations: ''
-          limit: '3'
-          localizeRelations: false
-          selectionLabel: ''
-          source: null
-          sources: '*'
-          targetSiteId: null
-          validateRelatedElements: ''
-          viewMode: null
-        translationKeyFormat: null
-        translationMethod: site
-        type: craft\fields\Entries
-      8c2a1afd-5634-4077-8116-34e235a8180e:
-        contentColumnType: text
-        fieldGroup: null
-        handle: ctaMicro
-        instructions: 'Micro tekst onder de knop wordt alleen getoond wanneer CTA is ingevuld'
-        name: 'CTA - micro tekst'
-        searchable: true
-        settings:
-          byteLimit: null
-          charLimit: null
-          code: ''
-          columnType: null
-          initialRows: '4'
-          multiline: ''
-          placeholder: ''
-        translationKeyFormat: null
-        translationMethod: none
-        type: craft\fields\PlainText
-    handle: teaser
-    name: Teaser
-    sortOrder: 9
+    sortOrder: 7
   ff8108d9-9fc9-4839-9d5c-7fbf281e359a:
     field: d16c24d1-abfe-4e08-b18c-45bcb368c93f
     fieldLayouts:
@@ -5288,18 +5454,31 @@ sections:
         template: null
         uriFormat: ''
     type: channel
-  3ca72e6c-53a2-4e24-bb4d-277dd76211c8:
+  4e86169f-ead1-452f-ba4c-37205c2e86dc:
     enableVersioning: true
     entryTypes:
-      c405b271-e4f7-422c-8d78-5db802e1f58f:
-        handle: calendar
-        hasTitleField: false
-        name: Kalender
+      67b6a65f-ea57-4ea4-9751-448816af35e9:
+        fieldLayouts:
+          b5a10ae0-286a-46b9-b1de-663fae6375fb:
+            tabs:
+              -
+                fields:
+                  6411c6f0-8af3-4a83-8ba6-7a5778adb9e9:
+                    required: true
+                    sortOrder: 1
+                  ef04d81b-a107-4503-96ba-170438728574:
+                    required: false
+                    sortOrder: 2
+                name: Content
+                sortOrder: 1
+        handle: services
+        hasTitleField: true
+        name: Voorzieningen
         sortOrder: 1
-        titleFormat: '{section.name|raw}'
-        titleLabel: null
-    handle: calendar
-    name: Kalender
+        titleFormat: ''
+        titleLabel: Titel
+    handle: services
+    name: Voorzieningen
     previewTargets:
       -
         __assoc__:
@@ -5316,10 +5495,10 @@ sections:
     siteSettings:
       521def3a-78c9-4e7b-8cb5-40b18c2c0705:
         enabledByDefault: true
-        hasUrls: true
-        template: calendar-demo/index.html
-        uriFormat: kalender
-    type: single
+        hasUrls: false
+        template: null
+        uriFormat: ''
+    type: channel
   563737d9-c7ae-49cc-8221-79b449bf6d7e:
     enableVersioning: true
     entryTypes:
@@ -5343,6 +5522,23 @@ sections:
                     sortOrder: 3
                 name: Content
                 sortOrder: 1
+              -
+                fields:
+                  34fc4e87-8df5-481d-bfad-75b58bf17d76:
+                    required: false
+                    sortOrder: 2
+                  682ecbc3-2252-4e4d-ac77-decc7ed47b7b:
+                    required: false
+                    sortOrder: 1
+                name: 'Contact blok'
+                sortOrder: 2
+              -
+                fields:
+                  8d69ebf3-f317-4814-846f-b7f4fe0494b1:
+                    required: false
+                    sortOrder: 1
+                name: SEO
+                sortOrder: 3
         handle: facilitiesOverview
         hasTitleField: false
         name: 'Faciliteiten - Overzicht'
@@ -5380,16 +5576,36 @@ sections:
             tabs:
               -
                 fields:
+                  5e04aee6-fa48-49e3-b86f-882b8ea36b9c:
+                    required: true
+                    sortOrder: 1
                   d16c24d1-abfe-4e08-b18c-45bcb368c93f:
                     required: false
-                    sortOrder: 1
-                name: 'Tab 1'
+                    sortOrder: 2
+                name: Content
                 sortOrder: 1
+              -
+                fields:
+                  34fc4e87-8df5-481d-bfad-75b58bf17d76:
+                    required: false
+                    sortOrder: 2
+                  682ecbc3-2252-4e4d-ac77-decc7ed47b7b:
+                    required: false
+                    sortOrder: 1
+                name: 'Contact blok'
+                sortOrder: 2
+              -
+                fields:
+                  8d69ebf3-f317-4814-846f-b7f4fe0494b1:
+                    required: false
+                    sortOrder: 1
+                name: SEO
+                sortOrder: 3
         handle: activitiesOverview
         hasTitleField: false
         name: 'Activiteiten - Overzicht'
         sortOrder: 1
-        titleFormat: '{section.name|raw}'
+        titleFormat: '{commonTitle}'
         titleLabel: ''
     handle: activitiesOverview
     name: 'Activiteiten - Overzicht'
@@ -5436,6 +5652,23 @@ sections:
                     sortOrder: 4
                 name: Content
                 sortOrder: 1
+              -
+                fields:
+                  34fc4e87-8df5-481d-bfad-75b58bf17d76:
+                    required: false
+                    sortOrder: 2
+                  682ecbc3-2252-4e4d-ac77-decc7ed47b7b:
+                    required: false
+                    sortOrder: 1
+                name: 'Contact blok'
+                sortOrder: 2
+              -
+                fields:
+                  8d69ebf3-f317-4814-846f-b7f4fe0494b1:
+                    required: false
+                    sortOrder: 1
+                name: SEO
+                sortOrder: 3
         handle: facilities
         hasTitleField: false
         name: Faciliteiten
@@ -5464,6 +5697,188 @@ sections:
         template: facilities/detail.twig
         uriFormat: 'faciliteiten-en-verhuur/{slug}'
     type: channel
+  a1d76e50-40f3-45ed-a026-3442708a44c4:
+    enableVersioning: true
+    entryTypes:
+      6e01a689-f9aa-478d-9cea-f26fdfa33cf5:
+        fieldLayouts:
+          181f30a8-4bb2-4fb2-8ca0-50501517d718:
+            tabs:
+              -
+                fields:
+                  3a0f8407-4263-4449-9996-e53070168b78:
+                    required: false
+                    sortOrder: 2
+                  5e04aee6-fa48-49e3-b86f-882b8ea36b9c:
+                    required: true
+                    sortOrder: 1
+                  d16c24d1-abfe-4e08-b18c-45bcb368c93f:
+                    required: false
+                    sortOrder: 4
+                  dcba1bec-77c1-4e56-98bb-7b73ff2a87fc:
+                    required: false
+                    sortOrder: 3
+                name: Contact
+                sortOrder: 1
+              -
+                fields:
+                  34fc4e87-8df5-481d-bfad-75b58bf17d76:
+                    required: false
+                    sortOrder: 2
+                  682ecbc3-2252-4e4d-ac77-decc7ed47b7b:
+                    required: false
+                    sortOrder: 1
+                name: 'Contact blok'
+                sortOrder: 2
+              -
+                fields:
+                  8d69ebf3-f317-4814-846f-b7f4fe0494b1:
+                    required: false
+                    sortOrder: 1
+                name: SEO
+                sortOrder: 3
+        handle: partners
+        hasTitleField: false
+        name: Partners
+        sortOrder: 1
+        titleFormat: '{commonTitle}'
+        titleLabel: ''
+    handle: partners
+    name: Partners
+    previewTargets:
+      -
+        __assoc__:
+          -
+            - label
+            - 'Primaire invoer-pagina'
+          -
+            - urlFormat
+            - '{url}'
+          -
+            - refresh
+            - '1'
+    propagationMethod: all
+    siteSettings:
+      521def3a-78c9-4e7b-8cb5-40b18c2c0705:
+        enabledByDefault: true
+        hasUrls: true
+        template: partners/entry
+        uriFormat: partners
+    type: single
+  a9f5d80c-3a46-4c6c-8060-9e91f1246dbb:
+    enableVersioning: true
+    entryTypes:
+      a8ae2abe-b8cb-4de7-8957-04cad141c27e:
+        fieldLayouts:
+          6a1e41ce-f80c-47eb-8642-d27823edbf43:
+            tabs:
+              -
+                fields:
+                  3a0f8407-4263-4449-9996-e53070168b78:
+                    required: true
+                    sortOrder: 2
+                  526e0682-d673-4a69-abfc-75054fd47251:
+                    required: true
+                    sortOrder: 3
+                  5e04aee6-fa48-49e3-b86f-882b8ea36b9c:
+                    required: true
+                    sortOrder: 1
+                  b0162006-4be5-43a0-b035-d64e17725734:
+                    required: true
+                    sortOrder: 4
+                name: Content
+                sortOrder: 1
+              -
+                fields:
+                  34fc4e87-8df5-481d-bfad-75b58bf17d76:
+                    required: false
+                    sortOrder: 2
+                  682ecbc3-2252-4e4d-ac77-decc7ed47b7b:
+                    required: false
+                    sortOrder: 1
+                name: 'Contact blok'
+                sortOrder: 2
+              -
+                fields:
+                  8d69ebf3-f317-4814-846f-b7f4fe0494b1:
+                    required: false
+                    sortOrder: 1
+                name: SEO
+                sortOrder: 3
+        handle: category
+        hasTitleField: false
+        name: Categorie
+        sortOrder: 2
+        titleFormat: '{commonTitle}'
+        titleLabel: Title
+      d400a993-c48a-47a2-bb91-a0d451958d4e:
+        fieldLayouts:
+          c4cffbcf-6442-4189-b9c2-3e5faf0b51ef:
+            tabs:
+              -
+                fields:
+                  3a0f8407-4263-4449-9996-e53070168b78:
+                    required: true
+                    sortOrder: 2
+                  526e0682-d673-4a69-abfc-75054fd47251:
+                    required: true
+                    sortOrder: 3
+                  5e04aee6-fa48-49e3-b86f-882b8ea36b9c:
+                    required: true
+                    sortOrder: 1
+                  d16c24d1-abfe-4e08-b18c-45bcb368c93f:
+                    required: false
+                    sortOrder: 4
+                name: Content
+                sortOrder: 1
+              -
+                fields:
+                  34fc4e87-8df5-481d-bfad-75b58bf17d76:
+                    required: false
+                    sortOrder: 2
+                  682ecbc3-2252-4e4d-ac77-decc7ed47b7b:
+                    required: false
+                    sortOrder: 1
+                name: 'Contact blok'
+                sortOrder: 2
+              -
+                fields:
+                  8d69ebf3-f317-4814-846f-b7f4fe0494b1:
+                    required: false
+                    sortOrder: 1
+                name: SEO
+                sortOrder: 3
+        handle: activity
+        hasTitleField: false
+        name: Activiteit
+        sortOrder: 1
+        titleFormat: '{commonTitle}'
+        titleLabel: Titel
+    handle: activities
+    name: Activiteiten
+    previewTargets:
+      -
+        __assoc__:
+          -
+            - label
+            - 'Primaire invoer-pagina'
+          -
+            - urlFormat
+            - '{url}'
+          -
+            - refresh
+            - '1'
+    propagationMethod: all
+    siteSettings:
+      521def3a-78c9-4e7b-8cb5-40b18c2c0705:
+        enabledByDefault: true
+        hasUrls: true
+        template: activities/entry
+        uriFormat: 'activiteiten/{parent.slug}/{slug}'
+    structure:
+      maxLevels: 2
+      uid: 96dd2081-1805-40b5-8d33-4527bb71ce95
+    type: structure
   b541f192-3512-4391-af9d-aaad78edfeb5:
     enableVersioning: true
     entryTypes:
@@ -5473,18 +5888,31 @@ sections:
             tabs:
               -
                 fields:
-                  d16c24d1-abfe-4e08-b18c-45bcb368c93f:
+                  3a0f8407-4263-4449-9996-e53070168b78:
                     required: false
                     sortOrder: 1
+                  d16c24d1-abfe-4e08-b18c-45bcb368c93f:
+                    required: false
+                    sortOrder: 2
                 name: Inhoud
                 sortOrder: 1
+              -
+                fields:
+                  34fc4e87-8df5-481d-bfad-75b58bf17d76:
+                    required: false
+                    sortOrder: 2
+                  682ecbc3-2252-4e4d-ac77-decc7ed47b7b:
+                    required: false
+                    sortOrder: 1
+                name: 'Contact blok'
+                sortOrder: 2
               -
                 fields:
                   8d69ebf3-f317-4814-846f-b7f4fe0494b1:
                     required: false
                     sortOrder: 1
                 name: SEO
-                sortOrder: 2
+                sortOrder: 3
         handle: contentpage
         hasTitleField: true
         name: Contentpagina
@@ -5525,35 +5953,42 @@ sections:
             tabs:
               -
                 fields:
-                  5e62c5d6-3509-4229-9629-b4e5bb02adb2:
-                    required: false
-                    sortOrder: 2
-                  9e59715b-62eb-4d90-a95b-6f1fad60076a:
+                  3a0f8407-4263-4449-9996-e53070168b78:
                     required: true
                     sortOrder: 3
-                  ce0ab64a-efa8-483e-a652-729c62dbf35c:
+                  526e0682-d673-4a69-abfc-75054fd47251:
                     required: true
-                    sortOrder: 4
-                  d16c24d1-abfe-4e08-b18c-45bcb368c93f:
-                    required: false
-                    sortOrder: 5
-                  ec603de9-e3d1-4a29-b16b-81354b135640:
+                    sortOrder: 2
+                  5e04aee6-fa48-49e3-b86f-882b8ea36b9c:
                     required: true
                     sortOrder: 1
+                  d16c24d1-abfe-4e08-b18c-45bcb368c93f:
+                    required: false
+                    sortOrder: 4
                 name: Inhoud
                 sortOrder: 1
+              -
+                fields:
+                  34fc4e87-8df5-481d-bfad-75b58bf17d76:
+                    required: false
+                    sortOrder: 2
+                  682ecbc3-2252-4e4d-ac77-decc7ed47b7b:
+                    required: false
+                    sortOrder: 1
+                name: 'Contact blok'
+                sortOrder: 2
               -
                 fields:
                   8d69ebf3-f317-4814-846f-b7f4fe0494b1:
                     required: false
                     sortOrder: 1
                 name: SEO
-                sortOrder: 2
+                sortOrder: 3
         handle: newsItems
         hasTitleField: false
         name: 'Nieuws items'
         sortOrder: 1
-        titleFormat: '{newsTitle}'
+        titleFormat: '{commonTitle}'
         titleLabel: Titel
     handle: newsItems
     name: 'Nieuws items'
@@ -5662,26 +6097,39 @@ sections:
             tabs:
               -
                 fields:
-                  b8d61e82-3d4b-42fd-a7a6-35861f851f89:
+                  3a0f8407-4263-4449-9996-e53070168b78:
                     required: false
                     sortOrder: 2
-                  ec603de9-e3d1-4a29-b16b-81354b135640:
+                  5e04aee6-fa48-49e3-b86f-882b8ea36b9c:
                     required: true
                     sortOrder: 1
+                  dcba1bec-77c1-4e56-98bb-7b73ff2a87fc:
+                    required: false
+                    sortOrder: 3
                 name: Inhoud
                 sortOrder: 1
+              -
+                fields:
+                  34fc4e87-8df5-481d-bfad-75b58bf17d76:
+                    required: false
+                    sortOrder: 2
+                  682ecbc3-2252-4e4d-ac77-decc7ed47b7b:
+                    required: false
+                    sortOrder: 1
+                name: 'Contact blok'
+                sortOrder: 2
               -
                 fields:
                   8d69ebf3-f317-4814-846f-b7f4fe0494b1:
                     required: false
                     sortOrder: 1
                 name: SEO
-                sortOrder: 2
+                sortOrder: 3
         handle: newsOverview
         hasTitleField: false
         name: 'Nieuws - Overzicht'
         sortOrder: 1
-        titleFormat: '{newsTitle}'
+        titleFormat: '{commonTitle}'
         titleLabel: ''
     handle: newsOverview
     name: 'Nieuws - Overzicht'
@@ -5704,13 +6152,13 @@ sections:
                 fields:
                   3a0f8407-4263-4449-9996-e53070168b78:
                     required: true
-                    sortOrder: 2
-                  5e04aee6-fa48-49e3-b86f-882b8ea36b9c:
-                    required: true
                     sortOrder: 1
-                  dcba1bec-77c1-4e56-98bb-7b73ff2a87fc:
+                  d7cb0a1a-91a7-4640-bb5c-2b29d5ec3e12:
                     required: false
                     sortOrder: 3
+                  dcba1bec-77c1-4e56-98bb-7b73ff2a87fc:
+                    required: false
+                    sortOrder: 2
                 name: Header
                 sortOrder: 1
               -
@@ -5727,23 +6175,49 @@ sections:
                 fields:
                   79c80430-518c-4d55-a510-ab43f69bc97f:
                     required: true
+                    sortOrder: 2
+                  e63d11c6-b832-4c11-831f-dbac8d0b4439:
+                    required: true
                     sortOrder: 1
-                name: Looks
+                name: Preview
                 sortOrder: 3
               -
                 fields:
-                  d7cb0a1a-91a7-4640-bb5c-2b29d5ec3e12:
+                  6d88413a-bf5d-4ffd-ac70-cc11ee28ee04:
+                    required: true
+                    sortOrder: 1
+                  d3513c05-8958-4111-8cef-940e6c9d714e:
+                    required: false
+                    sortOrder: 2
+                name: Voorzieningen
+                sortOrder: 4
+              -
+                fields:
+                  c2b13e49-c3ec-4235-8089-aeb2af9b0f8c:
+                    required: true
+                    sortOrder: 2
+                  f904a62b-8de1-4d60-90b6-97de74a70f21:
+                    required: true
+                    sortOrder: 1
+                name: Nieuws
+                sortOrder: 5
+              -
+                fields:
+                  34fc4e87-8df5-481d-bfad-75b58bf17d76:
+                    required: false
+                    sortOrder: 2
+                  682ecbc3-2252-4e4d-ac77-decc7ed47b7b:
                     required: false
                     sortOrder: 1
-                name: 'Belangrijke update'
-                sortOrder: 4
+                name: 'Contact blok'
+                sortOrder: 6
               -
                 fields:
                   8d69ebf3-f317-4814-846f-b7f4fe0494b1:
                     required: false
                     sortOrder: 1
                 name: SEO
-                sortOrder: 5
+                sortOrder: 7
         handle: home
         hasTitleField: false
         name: Home
@@ -6034,6 +6508,15 @@ users:
   photoVolumeUid: null
   requireEmailVerification: true
 volumes:
+  03ef6c73-3b14-4ae2-bf06-2b1d57cc6605:
+    handle: services
+    hasUrls: true
+    name: Voorzieningen
+    settings:
+      path: '@mediaPath/services'
+    sortOrder: 3
+    type: craft\volumes\Local
+    url: '@mediaUrl/services'
   4176b138-ab46-48c2-ba93-8f81e9d3c0df:
     handle: default
     hasUrls: true

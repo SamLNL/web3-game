@@ -13,7 +13,9 @@
   <div class="row">
     <div class="col-12">
       {% if intro | length %}
-        {{ intro }}
+        <div class="mb-2 mb-lg-3">
+          {{ intro }}
+        </div>
       {% endif %}
 
       {% include '_partials/_components/table/table/table.twig' with {

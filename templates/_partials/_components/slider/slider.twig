@@ -13,14 +13,16 @@
   <div class="container">
     {% if text | length %}
       <div class="row">
-        <div class="col-12 col-lg-8 offset-lg-2 mb-4">
+        <div class="col-12 mb-3 mb-lg-4">
           {{ text }}
         </div>
       </div>
     {% endif %}
 
-    <div class="c-slider js-slider swiper">
-      <div class="swiper-container swiper-overflow row">
+    {% set swiperId = random() %}
+
+    <div class="c-slider swiper">
+      <div class="swiper-container js-slider swiper-overflow row" data-swiper-id="{{ swiperId }}">
         <div class="swiper-wrapper">
           {% for image in images %}
             {% set transforms =
@@ -28,13 +30,13 @@
                 {
                   'media': 'min-width: 1440px',
                   'sizes': [
-                  {width: 1440, ratio: 1440/800}
+                  {width: 1440, ratio: 600/300}
                 ],
                 },
                 {
                   'media': 'min-width: 1024px',
                   'sizes': [
-                  {width: 1024, ratio: 1024/600}
+                  {width: 1024, ratio: 600/300}
                 ],
                 },
                 {
@@ -68,13 +70,12 @@
           {% endfor %}
         </div>
       </div>
-      <a title="" class="c-slider__prev swiper-prev" href="#">
-        <span></span>
+      <a title="Vorige slide" class="carousel-control-prev swiper-button pb-8" data-swiper-id="{{ swiperId }}" href="#">
+        {% include '_inline/_svg/icon-chevron-left' %}
+      </a><a title="Volgende slide" class="carousel-control-next swiper-button pb-8" data-swiper-id="{{ swiperId }}" href="#">
+        {% include '_inline/_svg/icon-chevron-right' %}
       </a>
-      <a title="" class="c-slider__next swiper-next" href="#">
-        <span></span>
-      </a>
-      <div class="swiper-pagination"></div>
+      <div class="swiper-pagination" data-swiper-id="{{ swiperId }}"></div>
     </div>
   </div>
 {% endif %}

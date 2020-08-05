@@ -4,7 +4,7 @@
 {% set image = image is defined and image | length ? image : '' %}
 {% set intro = intro is defined and intro | length ? intro : '' %}
 
-<div class="bg-teal {{ image | length ? 'pt-3 pb-9 pb-sm-10 pt-lg-5 pb-lg-9' : 'pt-3 pb-3 pb-sm-4 pb-lg-1 pt-lg-5' }} d-flex flex-column">
+<div class="bg-teal {{ image | length ? 'pt-3 pb-9 pb-sm-10 pt-lg-5 pb-lg-9' : 'pt-3 pb-3 pb-sm-4 pb-lg-2 pt-lg-5' }} d-flex flex-column">
     <div class="container">
       {% if title | length %}
         {% include '_partials/_components/breadcrumb/breadcrumb.twig' with {
@@ -19,12 +19,12 @@
 <div class="position-relative w-100 -z-10">
   <div class="{{ image | length ? 'position-absolute' : '' }} w-100 top-0 left-0 right-0">
     {% include '_inline/_svg/global-wave.twig' with {
-      class: 'mh-lg-16 w-100'
+      class: image | length ? 'mh-lg-16 w-100' : 'mh-lg-8 w-100'
     } %}
   </div>
 </div>
 
-<div class="container {{ image | length ? '-mt-5 mb-4 -mt-lg-4 mb-lg-6' : 'mb-4 mb-lg-6' }}">
+<div class="container {{ image | length ? '-mt-5 mb-4 -mt-lg-4 mb-lg-6' : 'mb-2 mb-lg-4' }}">
   {% if image | length %}
     <div class="header">
       {% set transforms =

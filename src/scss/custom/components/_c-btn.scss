@@ -5,6 +5,8 @@
   color: $teal-600;
   font-size: $font-size-sm;
   border: 0;
+  display: flex;
+  flex-direction: row;
 
   &:hover {
     background-color: $yellow-300;
