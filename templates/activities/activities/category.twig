@@ -39,7 +39,8 @@
                   cta: { url: activity.url, text: 'Lees meer', target: '' },
                   ctaArrow: true,
                   swiper: false,
-                  hexColor: entry.categoryColor
+                  titleBgHexColor: entry.categoryColor,
+                  titleHexColor: entry.categoryColor.label == 'Geel' ? '#033b47' : '#fff'
                 } %}
               </div>
             {% endfor %}

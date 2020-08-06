@@ -2,11 +2,10 @@
   display: flex;
   flex-direction: column;
   background-color: $white;
-  border: 1px solid $teal-100;
   width: 100%;
   color: $black;
   margin-bottom: map_get($spacers, 1);
-  transition: border 0.15s ease-in-out;
+  transition: background-color 0.15s ease-in-out;
 
   @include media-breakpoint-up(md) {
     flex-direction: row;
@@ -16,7 +15,7 @@
   &:hover {
     text-decoration: none;
     color: $black;
-    border-color: $teal-300;
+    background-color: $teal-200;
 
     span {
       border-bottom: 0;

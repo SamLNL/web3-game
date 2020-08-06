@@ -40,7 +40,8 @@
                   cta: { url: activity.url, text: 'Lees meer', target: '' },
                   ctaArrow: true,
                   swiper: false,
-                  hexColor: activity.categoryColor
+                  titleBgHexColor: activity.categoryColor,
+                  titleHexColor: activity.categoryColor.label == 'Geel' ? '#033b47' : '#fff'
                 } %}
               </div>
             {% endfor %}
