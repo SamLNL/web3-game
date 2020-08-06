@@ -1,0 +1,53 @@
+fieldLayouts:
+  181f30a8-4bb2-4fb2-8ca0-50501517d718:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: ''
+            type: craft\fieldlayoutelements\EntryTitleField
+          -
+            fieldUid: 5e04aee6-fa48-49e3-b86f-882b8ea36b9c
+            required: true
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 3a0f8407-4263-4449-9996-e53070168b78
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: dcba1bec-77c1-4e56-98bb-7b73ff2a87fc
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: d16c24d1-abfe-4e08-b18c-45bcb368c93f
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: Contact
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: 682ecbc3-2252-4e4d-ac77-decc7ed47b7b
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 34fc4e87-8df5-481d-bfad-75b58bf17d76
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: 'Contact blok'
+        sortOrder: 2
+      -
+        elements:
+          -
+            fieldUid: 8d69ebf3-f317-4814-846f-b7f4fe0494b1
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: SEO
+        sortOrder: 3
+handle: partners
+hasTitleField: false
+name: Partners
+section: a1d76e50-40f3-45ed-a026-3442708a44c4
+sortOrder: 1
+titleFormat: '{commonTitle}'

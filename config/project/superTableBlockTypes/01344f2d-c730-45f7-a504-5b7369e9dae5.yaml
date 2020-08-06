@@ -1,0 +1,242 @@
+field: 34a70bbd-9aba-45a1-82f4-bcf7a1cc1272
+fieldLayouts:
+  0c6e60b9-5875-41c9-bb4a-e98af5abbe49:
+    tabs:
+      -
+        fields:
+          1fc21d5a-9daa-455b-8adb-f1f250beecb5:
+            required: false
+            sortOrder: 4
+          3251a7c0-65ee-4e96-810f-564919de6cf6:
+            required: false
+            sortOrder: 6
+          38af146a-0d6b-417d-abe2-dcc73f0bb167:
+            required: true
+            sortOrder: 3
+          be6d8db1-6e50-4334-987c-ab524c903c0f:
+            required: true
+            sortOrder: 1
+          c6bfc555-2539-4fb7-8c6b-1decfe5a7983:
+            required: false
+            sortOrder: 5
+          f3ecab75-c1e2-4d45-933e-171a328e5a3b:
+            required: false
+            sortOrder: 2
+        name: Content
+        sortOrder: 1
+fields:
+  1fc21d5a-9daa-455b-8adb-f1f250beecb5:
+    contentColumnType: text
+    fieldGroup: null
+    handle: subContent
+    instructions: ''
+    name: Subcontent
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: List.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  3251a7c0-65ee-4e96-810f-564919de6cf6:
+    contentColumnType: text
+    fieldGroup: null
+    handle: ctaMicro
+    instructions: 'Micro tekst onder de knop wordt alleen getoond wanneer CTA is ingevuld'
+    name: 'CTA - micro tekst'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  38af146a-0d6b-417d-abe2-dcc73f0bb167:
+    contentColumnType: string
+    fieldGroup: null
+    handle: mainContent
+    instructions: ''
+    name: Hoofdcontent
+    searchable: true
+    settings:
+      contentTable: '{{%matrixcontent_maincontent}}'
+      maxBlocks: '1'
+      minBlocks: '1'
+      propagationMethod: all
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Matrix
+  be6d8db1-6e50-4334-987c-ab524c903c0f:
+    contentColumnType: text
+    fieldGroup: null
+    handle: heading
+    instructions: ''
+    name: Titel
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  c6bfc555-2539-4fb7-8c6b-1decfe5a7983:
+    contentColumnType: text
+    fieldGroup: null
+    handle: cta
+    instructions: ''
+    name: CTA
+    searchable: true
+    settings:
+      allowCustomText: '1'
+      allowTarget: '1'
+      allowedLinkNames:
+        1: asset
+        4: entry
+        7: email
+        8: tel
+        9: url
+      autoNoReferrer: '1'
+      defaultLinkName: entry
+      defaultText: ''
+      enableAriaLabel: ''
+      enableTitle: ''
+      typeSettings:
+        __assoc__:
+          -
+            - asset
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+          -
+            - category
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+          -
+            - user
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+          -
+            - entry
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+          -
+            - site
+            -
+              __assoc__:
+                -
+                  - sites
+                  - '*'
+          -
+            - custom
+            -
+              __assoc__:
+                -
+                  - disableValidation
+                  - ''
+                -
+                  - allowAliases
+                  - ''
+          -
+            - email
+            -
+              __assoc__:
+                -
+                  - disableValidation
+                  - ''
+                -
+                  - allowAliases
+                  - ''
+          -
+            - tel
+            -
+              __assoc__:
+                -
+                  - disableValidation
+                  - ''
+                -
+                  - allowAliases
+                  - ''
+          -
+            - url
+            -
+              __assoc__:
+                -
+                  - disableValidation
+                  - ''
+                -
+                  - allowAliases
+                  - ''
+          -
+            - solspaceCalendar-event
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: typedlinkfield\fields\LinkField
+  f3ecab75-c1e2-4d45-933e-171a328e5a3b:
+    contentColumnType: text
+    fieldGroup: null
+    handle: subHeading
+    instructions: ''
+    name: Subtitel
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText

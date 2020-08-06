@@ -1,0 +1,210 @@
+field: d16c24d1-abfe-4e08-b18c-45bcb368c93f
+fieldLayouts:
+  4b903267-5510-4867-b0a5-905962416273:
+    tabs:
+      -
+        fields:
+          07352ea8-c711-4288-b354-fd105c7e1e3b:
+            required: false
+            sortOrder: 4
+          34aa52c5-65c1-4806-9311-be0039e4d0e9:
+            required: true
+            sortOrder: 2
+          4ea7444c-b251-489a-af81-91290d313091:
+            required: false
+            sortOrder: 1
+          7f7cdc6f-38cb-406e-836e-aee3faec6df2:
+            required: false
+            sortOrder: 3
+        name: Content
+        sortOrder: 1
+fields:
+  07352ea8-c711-4288-b354-fd105c7e1e3b:
+    contentColumnType: text
+    fieldGroup: null
+    handle: ctaMicro
+    instructions: 'Micro tekst onder de knop wordt alleen getoond wanneer CTA is ingevuld'
+    name: 'CTA - micro tekst'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  34aa52c5-65c1-4806-9311-be0039e4d0e9:
+    contentColumnType: string
+    fieldGroup: null
+    handle: questions
+    instructions: ''
+    name: Vragen
+    searchable: true
+    settings:
+      allowSelfRelations: ''
+      limit: ''
+      localizeRelations: false
+      selectionLabel: ''
+      source: null
+      sources:
+        - 'section:138fd91c-e286-44c3-823f-e2380e31883c'
+      targetSiteId: null
+      validateRelatedElements: ''
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+  4ea7444c-b251-489a-af81-91290d313091:
+    contentColumnType: text
+    fieldGroup: null
+    handle: text
+    instructions: ''
+    name: Tekst
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: ''
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  7f7cdc6f-38cb-406e-836e-aee3faec6df2:
+    contentColumnType: text
+    fieldGroup: null
+    handle: cta
+    instructions: ''
+    name: CTA
+    searchable: true
+    settings:
+      allowCustomText: '1'
+      allowTarget: '1'
+      allowedLinkNames:
+        1: asset
+        4: entry
+        6: custom
+        7: email
+        8: tel
+        9: url
+      autoNoReferrer: ''
+      defaultLinkName: entry
+      defaultText: ''
+      enableAriaLabel: ''
+      enableTitle: ''
+      typeSettings:
+        __assoc__:
+          -
+            - asset
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+          -
+            - category
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+          -
+            - user
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+          -
+            - entry
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+          -
+            - site
+            -
+              __assoc__:
+                -
+                  - sites
+                  - '*'
+          -
+            - custom
+            -
+              __assoc__:
+                -
+                  - disableValidation
+                  - ''
+                -
+                  - allowAliases
+                  - ''
+          -
+            - email
+            -
+              __assoc__:
+                -
+                  - disableValidation
+                  - ''
+                -
+                  - allowAliases
+                  - ''
+          -
+            - tel
+            -
+              __assoc__:
+                -
+                  - disableValidation
+                  - ''
+                -
+                  - allowAliases
+                  - ''
+          -
+            - url
+            -
+              __assoc__:
+                -
+                  - disableValidation
+                  - ''
+                -
+                  - allowAliases
+                  - ''
+          -
+            - solspaceCalendar-event
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: typedlinkfield\fields\LinkField
+handle: faq
+name: FAQ
+sortOrder: 8

@@ -1,0 +1,8 @@
+handle: services
+hasUrls: true
+name: Voorzieningen
+settings:
+  path: '@mediaPath/services'
+sortOrder: 3
+type: craft\volumes\Local
+url: '@mediaUrl/services'

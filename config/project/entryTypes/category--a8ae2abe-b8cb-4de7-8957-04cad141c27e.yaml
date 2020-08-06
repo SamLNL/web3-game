@@ -1,0 +1,57 @@
+fieldLayouts:
+  6a1e41ce-f80c-47eb-8642-d27823edbf43:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: Title
+            type: craft\fieldlayoutelements\EntryTitleField
+          -
+            fieldUid: 5e04aee6-fa48-49e3-b86f-882b8ea36b9c
+            required: true
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 3a0f8407-4263-4449-9996-e53070168b78
+            required: true
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 526e0682-d673-4a69-abfc-75054fd47251
+            required: true
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: b0162006-4be5-43a0-b035-d64e17725734
+            required: true
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 39ac3118-752f-4170-85e7-bef7a88b14ff
+            required: true
+            type: craft\fieldlayoutelements\CustomField
+        name: Content
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: 682ecbc3-2252-4e4d-ac77-decc7ed47b7b
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 34fc4e87-8df5-481d-bfad-75b58bf17d76
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: 'Contact blok'
+        sortOrder: 2
+      -
+        elements:
+          -
+            fieldUid: 8d69ebf3-f317-4814-846f-b7f4fe0494b1
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: SEO
+        sortOrder: 3
+handle: category
+hasTitleField: false
+name: Categorie
+section: a9f5d80c-3a46-4c6c-8060-9e91f1246dbb
+sortOrder: 2
+titleFormat: '{commonTitle}'

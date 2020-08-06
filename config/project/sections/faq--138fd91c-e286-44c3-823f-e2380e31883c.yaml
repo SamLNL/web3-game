@@ -1,0 +1,11 @@
+enableVersioning: true
+handle: faq
+name: FAQ
+propagationMethod: all
+siteSettings:
+  521def3a-78c9-4e7b-8cb5-40b18c2c0705:
+    enabledByDefault: true
+    hasUrls: false
+    template: null
+    uriFormat: ''
+type: channel

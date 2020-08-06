@@ -1,0 +1,9 @@
+handle: footerNavRest
+instructions: ''
+maxNodes: ''
+name: 'Footermenu - Overig'
+propagateNodes: false
+sortOrder: 6
+structure:
+  maxLevels: '1'
+  uid: afd97690-473e-402c-a9b3-d1c4c99edc6e

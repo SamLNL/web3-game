@@ -1,0 +1,17 @@
+contentColumnType: text
+fieldGroup: 683b8e9d-6e7a-404d-bb72-c9df03f70f1c
+handle: contactBlockTitle
+instructions: 'Deze overschrijft de ''globale'' contact titel wanneer deze is ingevuld'
+name: 'Contact blok - Titel'
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

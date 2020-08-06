@@ -1,0 +1,64 @@
+contentColumnType: text
+fieldGroup: df78e26d-9aa7-49a4-bd8a-75980ddba39d
+handle: pricesRestTable
+instructions: ''
+name: 'Overige tarieven - Tabel'
+searchable: true
+settings:
+  addRowLabel: 'Voeg een rij toe'
+  columnType: text
+  columns:
+    __assoc__:
+      -
+        - col1
+        -
+          __assoc__:
+            -
+              - heading
+              - 'Overige activiteiten'
+            -
+              - handle
+              - activities
+            -
+              - width
+              - ''
+            -
+              - type
+              - singleline
+      -
+        - col2
+        -
+          __assoc__:
+            -
+              - heading
+              - 'Per keer'
+            -
+              - handle
+              - price
+            -
+              - width
+              - ''
+            -
+              - type
+              - singleline
+      -
+        - col3
+        -
+          __assoc__:
+            -
+              - heading
+              - Strippenkaart
+            -
+              - handle
+              - priceCard
+            -
+              - width
+              - ''
+            -
+              - type
+              - singleline
+  maxRows: ''
+  minRows: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Table

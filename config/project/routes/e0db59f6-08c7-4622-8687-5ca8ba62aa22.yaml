@@ -1,0 +1,6 @@
+siteUid: null
+sortOrder: 1
+template: search
+uriParts:
+  - zoeken
+uriPattern: zoeken

@@ -1,0 +1,82 @@
+field: d16c24d1-abfe-4e08-b18c-45bcb368c93f
+fieldLayouts:
+  400f140f-30a3-45dd-9431-50adc7310e9b:
+    tabs:
+      -
+        fields:
+          16440e78-c0f7-48d6-a42a-677344f296fd:
+            required: false
+            sortOrder: 2
+          7bc4317f-3190-4df4-88c6-ec8608aba2c6:
+            required: true
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+fields:
+  16440e78-c0f7-48d6-a42a-677344f296fd:
+    contentColumnType: string
+    fieldGroup: null
+    handle: format
+    instructions: ''
+    name: Formaat
+    searchable: true
+    settings:
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Normaal
+            -
+              - value
+              - normal
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - 'Volledige breedte'
+            -
+              - value
+              - full
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\RadioButtons
+  7bc4317f-3190-4df4-88c6-ec8608aba2c6:
+    contentColumnType: string
+    fieldGroup: null
+    handle: image
+    instructions: ''
+    name: Afbeelding
+    searchable: true
+    settings:
+      allowSelfRelations: ''
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: '1'
+      selectionLabel: ''
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: true
+      validateRelatedElements: ''
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+handle: image
+name: Afbeelding
+sortOrder: 3

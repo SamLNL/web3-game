@@ -1,0 +1,25 @@
+fieldLayouts:
+  9f531ed5-f03f-4274-ba10-147b799bff0d:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: Titel
+            type: craft\fieldlayoutelements\EntryTitleField
+          -
+            fieldUid: 88787612-5b03-4a0b-82b6-2113e3a05dc4
+            required: true
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 0e7ee76e-d485-4b6a-9a37-debfe93a5d4c
+            required: true
+            type: craft\fieldlayoutelements\CustomField
+        name: FAQ
+        sortOrder: 1
+handle: faq
+hasTitleField: false
+name: FAQ
+section: 138fd91c-e286-44c3-823f-e2380e31883c
+sortOrder: 1
+titleFormat: '{question}'

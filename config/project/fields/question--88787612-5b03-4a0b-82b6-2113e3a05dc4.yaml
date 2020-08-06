@@ -1,0 +1,17 @@
+contentColumnType: text
+fieldGroup: 75c4c41b-4b5d-4f5b-bf8a-0d1bbe387b16
+handle: question
+instructions: ''
+name: Vraag
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

@@ -1,0 +1,53 @@
+field: d16c24d1-abfe-4e08-b18c-45bcb368c93f
+fieldLayouts:
+  b1b8f2e3-8568-4c5c-bdf3-4e8b1467fcce:
+    tabs:
+      -
+        fields:
+          787104e2-3595-4d9d-9499-40e8b4067201:
+            required: false
+            sortOrder: 1
+          ad105665-a7e7-4cb9-b341-ea251b579a1f:
+            required: false
+            sortOrder: 2
+        name: Content
+        sortOrder: 1
+fields:
+  787104e2-3595-4d9d-9499-40e8b4067201:
+    contentColumnType: text
+    fieldGroup: null
+    handle: text
+    instructions: ''
+    name: Tekst
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: ''
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  ad105665-a7e7-4cb9-b341-ea251b579a1f:
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: showPrices
+    instructions: 'Dit blok wordt enkel getoond wanneer dit aanstaat'
+    name: 'Toon tarieven'
+    searchable: true
+    settings:
+      default: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+handle: prices
+name: Tarieven
+sortOrder: 12

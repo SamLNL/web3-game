@@ -1,0 +1,45 @@
+field: 38af146a-0d6b-417d-abe2-dcc73f0bb167
+fieldLayouts:
+  63eefa2c-c47a-441b-942c-a17137a5f4e7:
+    tabs:
+      -
+        fields:
+          7af48856-e53c-4c35-9290-f8acb168d199:
+            required: true
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+fields:
+  7af48856-e53c-4c35-9290-f8acb168d199:
+    contentColumnType: string
+    fieldGroup: null
+    handle: image
+    instructions: ''
+    name: Afbeelding
+    searchable: true
+    settings:
+      allowSelfRelations: ''
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:4176b138-ab46-48c2-ba93-8f81e9d3c0df'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: '1'
+      selectionLabel: ''
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:4176b138-ab46-48c2-ba93-8f81e9d3c0df'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: true
+      validateRelatedElements: ''
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+handle: image
+name: Afbeelding
+sortOrder: 2

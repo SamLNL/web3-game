@@ -1,0 +1,11 @@
+contentColumnType: boolean
+fieldGroup: 683b8e9d-6e7a-404d-bb72-c9df03f70f1c
+handle: contactBlockShow
+instructions: 'Toon het contactblok onderaan de pagina'
+name: 'Contact blok - Toon'
+searchable: true
+settings:
+  default: '1'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

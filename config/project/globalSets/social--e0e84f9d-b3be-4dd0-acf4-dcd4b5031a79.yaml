@@ -1,0 +1,15 @@
+fieldLayouts:
+  808033d7-7037-46f1-a757-7411b0f8de27:
+    tabs:
+      -
+        fields:
+          56974294-62e1-4d99-b0b7-d2ce74ff2dee:
+            required: false
+            sortOrder: 1
+          8cf5091d-c55c-4348-a57f-b38c56bc0aa0:
+            required: false
+            sortOrder: 2
+        name: Social
+        sortOrder: 1
+handle: social
+name: Social

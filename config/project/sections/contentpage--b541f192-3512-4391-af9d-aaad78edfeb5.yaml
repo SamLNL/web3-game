@@ -1,0 +1,26 @@
+enableVersioning: true
+handle: contentpage
+name: Contentpagina
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primaire invoer-pagina'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  521def3a-78c9-4e7b-8cb5-40b18c2c0705:
+    enabledByDefault: true
+    hasUrls: true
+    template: contentpage/entry.twig
+    uriFormat: '{parent.uri}/{slug}'
+structure:
+  maxLevels: null
+  uid: fa2626ba-b9d4-4363-8bcd-31119217c682
+type: structure
