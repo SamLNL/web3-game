@@ -22,7 +22,7 @@
           </div>
         {% endif %}
 
-        {% for item in questions %}
+        {% for item in questions.all() %}
           <div tabindex="0" class="c-faq js-faq js-tab-click"
                data-click-selector="#tab-click-{{ loop.index }}" data-ga-question="{{ item.question }}">
             <p id="tab-click-{{ loop.index }}" class="c-faq__question caret-down collapsed"
@@ -37,7 +37,7 @@
         {% endfor %}
         {% if cta.url | length %}
           <div class="d-flex justify-content-center w-100 mt-3 mt-lg-4">
-            <a class="c-btn c-btn-primary" href="{{ cta.url }}" title="{{ cta.text }}" target="{{ cta.target }}">{{ cta.text }}</a>
+            <a class="c-btn c-btn-arrow" href="{{ cta.url }}" title="{{ cta.text }}" target="{{ cta.target }}">{{ cta.text }}</a>
           </div>
         {% endif %}
       </div>

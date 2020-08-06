@@ -81,6 +81,10 @@
   &-price {
     background-color: $teal-100;
 
+    &-white {
+      background-color: $white;
+    }
+
     .c-cta-block__title {
       background-color: $teal-400;
 

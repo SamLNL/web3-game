@@ -20,7 +20,7 @@
 
 {% if body | length %}
   <article>
-    {% for block in entry.body %}
+    {% for block in entry.body.all() %}
       {% switch block.type %}
 
       {% case 'intro' %}
@@ -135,50 +135,22 @@
 
       {% case 'prices' %}
         {% if block.showPrices and prices.pricesTickets | length %}
-          {% set uniqueId = block['id'] is defined ? block.id : random() %}
-
           <div class="mb-4 mb-lg-6">
-            <div class="container">
-              <div class="row">
-                <div class="col-12">
-                  {% if block.text | length %}
-                    <div>
-                      {{ block.text }}
-                    </div>
-                  {% endif %}
-                  <div class="swiper mt-4">
-                    <div class="c-cta-blocks js-cta-blocks swiper-container"
-                         data-swiper-id="{{ uniqueId }}">
-                      <div class="swiper-wrapper">
-                        {% for price in prices.pricesTickets %}
-                          {% include '_partials/_components/cta-blocks/cta-block/cta-block.twig' with {
-                            class: 'c-cta-block-price c-cta-block-' ~ price.color,
-                            title: price.heading,
-                            subTitle: price.subHeading,
-                            mainTitle: price.price,
-                            mainSubTitle: price.subPrice,
-                            subContent: price.usps,
-                            cta: price.cta,
-                            ctaMicro: price.ctaMicro
-                          } %}
-                        {% endfor %}
-                      </div>
-                      <div class="swiper-pagination" data-swiper-id="{{ uniqueId }}"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            {% include '_partials/_components/prices/prices.twig' with {
+              intro: block.text
+            } %}
           </div>
         {% endif %}
 
       {% case 'openingHours' %}
         {% if block.text | length or block.openingHours %}
-          {% include '_partials/_components/opening-hours/opening-hours.twig' with {
-            text: block.text,
-            default: block.openingHours ? openingHours.openingHoursDefault : '',
-            holiday: block.openingHours ? openingHours.openingHoursHolidays : '',
-          } %}
+          <div class="mb-4 mb-lg-8">
+            {% include '_partials/_components/opening-hours/opening-hours.twig' with {
+              text: block.text,
+              default: true,
+              holiday: true,
+            } %}
+          </div>
         {% endif %}
 
       {% case 'services' %}

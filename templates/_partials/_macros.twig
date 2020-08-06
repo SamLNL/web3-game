@@ -78,7 +78,7 @@
     <a href="{{ node.url }}" title="{{ node.name }}"{% if node.blank %} target="_blank"{% endif %}>{{ node.name }}</a>
     {% if node.hasChildren %}
       <ul class="nav__level{{ (node.level + 1) }}">
-        {% for subnode in node.children %}
+        {% for subnode in node.children.all() %}
           {{ _self.addNodeToNavigation(subnode, loop.index) }}
         {% endfor %}
       </ul>
@@ -113,7 +113,7 @@
             <a class="dropdown-toggle" href="#" id="main-mobile-dropdown" data-toggle="dropdown">
             </a>
           <ul class="dropdown-menu" aria-labelledby="main-mobile-dropdown">
-            {% for subnode in node.children %}
+            {% for subnode in node.children.all() %}
               <a {% if subnode.url %}href="{{ subnode.url }}"{% endif %} class="nav-link{{ subnode.active ? ' nav-active' }}{{ idLink ? ' js-scroll' }}{{ subnode.classes ? ' ' ~ subnode.classes : '' }}"{% if subnode.newWindow %} target="_blank" rel="noopener"{% endif %}{% for attribute in subnode.customAttributes %}{{ attribute.attribute }}="{{ attribute.value }}"{% endfor %} ga-on="click" ga-event-category="Menu" ga-event-action="Click" ga-event-label="{{ subnode.title }}">
                 {{ subnode.title }}
               </a>

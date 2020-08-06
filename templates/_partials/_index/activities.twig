@@ -10,8 +10,7 @@
     <div class="w-100 d-md-none">
       <div class="d-flex flex-column swiper-nav">
         {% for slide in activitiesSlides %}
-          <a
-            class="swiper-nav__item w-100 border-2 border-teal-200 py-1 {{ loop.last ? 'mb-4' : 'mb-1' }} text-center small rounded js-go-to-slide {{ loop.first ? 'active' : '' }}"
+          <a class="swiper-nav__item w-100 border-2 border-teal-200 py-1 {{ loop.last ? 'mb-4' : 'mb-1' }} text-center small rounded js-go-to-slide {{ loop.first ? 'active' : '' }}"
             data-swiper-index="{{ loop.index0 }}" href="#"
             title="Spring naar slide '{{ slide.serviceTitle }}'">{{ slide.serviceTitle }}</a>
         {% endfor %}
@@ -64,11 +63,13 @@
       <div class="swiper-pagination" data-swiper-id="{{ swiperId }}"></div>
     </div>
 
-    <div class="w-100 d-flex flex-row justify-content-center">
-      {% set activitiesOverview = craft.entries.section('activitiesOverview').one() %}
-      <a class="c-btn c-btn-yellow" href="{{ activitiesOverview.url }}" title="Bekijk alle activiteiten">
-        Bekijk alle activiteiten
-      </a>
-    </div>
+    {% set cta = entry.activitiesCta %}
+    {% if cta.url | length %}
+      <div class="w-100 d-flex flex-row justify-content-center">
+        <a class="c-btn c-btn-arrow" href="{{ cta.url }}" title="{{ cta.text }}">
+          {{ cta.text }}
+        </a>
+      </div>
+    {% endif %}
   </div>
 </div>

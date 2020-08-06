@@ -125,6 +125,11 @@
 
 </head>
 
+{% set contactClass = '' %}
+{% if contactBlockClass is defined %}
+  {% set contactClass = contactBlockClass %}
+{% endif %}
+
 {# -- HTML Body -- #}
 <body class="sticky-nav">
 <header>
@@ -145,7 +150,8 @@
     title: showContact ? contactTitle : '',
     phone: showContact and contact.contactBlockPhone | length ? contact.contactBlockPhone : '',
     cta: showContact and contact.contactBlockCta.url | length ? contact.contactBlockCta : '',
-    wave: true
+    wave: true,
+    class: contactClass
   } %}
 </main>
 <footer>

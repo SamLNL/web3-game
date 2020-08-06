@@ -11,7 +11,7 @@
 
 {% set events = craft.calendar.events({
   calendar: calendars
-}) %}
+}).all() %}
 {% for event in events %}
     {% set eventResource = {
       resourceId: event.calendarId,

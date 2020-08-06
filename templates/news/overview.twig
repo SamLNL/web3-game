@@ -20,7 +20,7 @@
 {% endblock %}
 
 {% block content %}
-  {% set searchQuery = craft.request.getQuery('q') | length ? craft.request.getQuery('q') : '' %}
+  {% set searchQuery = craft.app.request.getQueryParam('q') | length ? craft.app.request.getQueryParam('q') : '' %}
 
   {# ----------- Start - No ajax request ----------- #}
   {% if not craft.app.request.isAjax %}
@@ -40,7 +40,7 @@
       <label for="search" class="d-none"></label>
       <input id="search" type="search" class="js-load-more-search-input" name="q" placeholder="{{ "Zoeken..."|t }}"
              {% if searchQuery | length %}value="{{ searchQuery }}{% endif %}">
-      <button class="c-form-search__button c-btn c-btn-yellow" type="submit">
+      <button class="c-form-search__button c-btn" type="submit">
         <span class="c-form-search__button__search">
           {% include '_inline/_svg/search-regular.twig' %}
         </span>
@@ -69,9 +69,9 @@
       <div class="w-100 flex-grow-1 mt-4">
         {% if searchQuery | length %}
           {% if items | length %}
-            <p>{{ foundAmount }} resultaten gevonden voor "{{ searchQuery }}"</p>
+            <p>{{ foundAmount }} resultaten gevonden voor <span class="weight-700">"{{ searchQuery }}"</span></p>
           {% else %}
-            <p>Geen resultaten gevonden voor "{{ searchQuery }}"</p>
+            <p>Geen resultaten gevonden voor <span class="weight-700">"{{ searchQuery }}"</span></p>
           {% endif %}
         {% endif %}
 
@@ -103,7 +103,7 @@
           {% if not craft.app.request.isAjax %}
         </div>
         <div class="d-flex justify-content-center mt-4 mb-4">
-          <a class="c-btn c-btn-teal js-load-more-button hide" href="" title="Bekijk meer items">
+          <a class="c-btn js-load-more-button hide" href="" title="Bekijk meer items">
             <span>Meer nieuws</span>
             <span>
               {% include '_inline/_svg/loading.twig' %}

@@ -18,12 +18,13 @@
 {% block content %}
 
   {% set searchQuery = craft.app.request.getParam('q') %}
+  {% set pageLimit = 6 %}
 
   {% set items = craft.entries({
     search: searchQuery,
   }) %}
 
-  {% paginate items.orderBy('score desc').limit(6) as pageInfo, entries %}
+  {% paginate items.orderBy('score desc').limit(pageLimit) as pageInfo, entries %}
 
   <div class="container mt-4 mt-lg-6">
     <div class="col-lg-10 offset-lg-1">
@@ -57,7 +58,7 @@
                 {% if entry[assetField].elementType != 'craft\\elements\\MatrixBlock' %}
                   {% set image = not image | length and entry[assetField] is defined and entry[assetField] | length ? entry[assetField][0] : '' %}
                 {% else %}
-                  {% for item in entry[assetField] %}
+                  {% for item in entry[assetField].all() %}
                     {% if item.type == 'image' %}
                       {% set image = not image | length and item['image'] is defined and item['image'] | length ? item['image'][0] : '' %}
                     {% endif %}
@@ -80,7 +81,7 @@
                   {% set summary = not summary | length and entry[summaryField] is defined and entry[summaryField] | length ? entry[summaryField] : '' %}
                 {% else %}
                   {% if entry[summaryField]['elementType'] is defined and entry[summaryField].elementType == 'craft\\elements\\MatrixBlock' %}
-                    {% for item in entry[summaryField] %}
+                    {% for item in entry[summaryField].all() %}
                       {% if item.type == 'text' %}
                         {% set summary = not summary | length and item['text'] is defined and item['text'] | length ? item['text'] : '' %}
                       {% endif %}
@@ -99,40 +100,42 @@
           {% endfor %}
         </ul>
 
-        <nav class="mt-4 mb-6" aria-label="nieuws">
-          <ul class="c-pagination pagination">
-            <li class="c-pagination__item{{ pageInfo.prevUrl ? '' : ' disabled' }}">
-              <a class="c-pagination__link" href="{{ pageInfo.prevUrl }}">
-                {% include '_inline/_svg/angle-left-light.twig' %}
-              </a>
-            </li>
-
-            {% for page, url in pageInfo.getPrevUrls(3) %}
-              <li class="c-pagination__item">
-                <a class="c-pagination__link" href="{{ url }}">
-                  {{ page }}
-                  <span class="sr-only">(current)</span>
+        {% if items | length > pageLimit %}
+          <nav class="mt-4 mb-6" aria-label="nieuws">
+            <ul class="c-pagination pagination">
+              <li class="c-pagination__item{{ pageInfo.prevUrl ? '' : ' disabled' }}">
+                <a class="c-pagination__link" href="{{ pageInfo.prevUrl }}">
+                  {% include '_inline/_svg/angle-left-light.twig' %}
                 </a>
               </li>
-            {% endfor %}
 
-            <li class="c-pagination__item c-pagination__item-active" aria-current="page">
-              <span class="c-pagination__link">{{ pageInfo.currentPage }}</span>
-            </li>
+              {% for page, url in pageInfo.getPrevUrls(3) %}
+                <li class="c-pagination__item">
+                  <a class="c-pagination__link" href="{{ url }}">
+                    {{ page }}
+                    <span class="sr-only">(current)</span>
+                  </a>
+                </li>
+              {% endfor %}
 
-            {% for page, url in pageInfo.getNextUrls(3) %}
-              <li class="c-pagination__item">
-                <a class="c-pagination__link" href="{{ url }}">{{ page }}</a>
+              <li class="c-pagination__item c-pagination__item-active" aria-current="page">
+                <span class="c-pagination__link">{{ pageInfo.currentPage }}</span>
               </li>
-            {% endfor %}
 
-            <li class="c-pagination__item{{ pageInfo.nextUrl ? '' : ' disabled' }}">
-              <a class="c-pagination__link" href="{{ pageInfo.nextUrl }}">
-                {% include '_inline/_svg/angle-right-light.twig' %}
-              </a>
-            </li>
-          </ul>
-        </nav>
+              {% for page, url in pageInfo.getNextUrls(3) %}
+                <li class="c-pagination__item">
+                  <a class="c-pagination__link" href="{{ url }}">{{ page }}</a>
+                </li>
+              {% endfor %}
+
+              <li class="c-pagination__item{{ pageInfo.nextUrl ? '' : ' disabled' }}">
+                <a class="c-pagination__link" href="{{ pageInfo.nextUrl }}">
+                  {% include '_inline/_svg/angle-right-light.twig' %}
+                </a>
+              </li>
+            </ul>
+          </nav>
+        {% endif %}
       {% else %}
         <div class="bg-gray-300 p-2 mb-3">
           <p class="text-sm mb-0">De zoekterm <span class="weight-700">"{{ searchQuery }}"</span> heeft geen

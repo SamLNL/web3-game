@@ -1,16 +1,15 @@
 .c-btn {
   @extend .btn;
-
-  background-color: $yellow;
-  color: $teal-600;
   font-size: $font-size-sm;
   border: 0;
   display: flex;
   flex-direction: row;
+  background-color: $teal-600;
+  color: $white;
 
   &:hover {
-    background-color: $yellow-300;
-    color: $teal-600;
+    color: $white;
+    background-color: $teal-400;
   }
 
   &-yellow {
@@ -41,6 +40,7 @@
     border: 1px solid $teal-200;
 
     &:hover {
+      color: $teal-600;
       background-color: $teal-200;
     }
   }
@@ -55,13 +55,14 @@
       height: 20px;
       width: 5px;
       content: '';
-      background: url('/assets/images/svg/single/angle-right-light-teal.svg') no-repeat center;
+      background: url('/assets/images/svg/single/angle-right-light-white.svg') no-repeat center;
       background-size: cover;
     }
 
-    &.c-btn-teal {
+    &.c-btn-yellow,
+    &.c-btn-white {
       &:after {
-        background: url('/assets/images/svg/single/angle-right-light-white.svg') no-repeat center;
+        background: url('/assets/images/svg/single/angle-right-light-teal.svg') no-repeat center;
         background-size: cover;
       }
     }

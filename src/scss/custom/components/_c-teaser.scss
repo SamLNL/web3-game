@@ -7,15 +7,16 @@
   @extend .col-12;
   display: flex;
   flex-direction: column;
-  padding-bottom: map_get($spacers, 5);
 
-  @include media-breakpoint-up(lg) {
-    padding-bottom: 0;
+  .swiper-container {
+    @include media-breakpoint-up('lg') {
+      padding-bottom: 0;
+    }
   }
 
   &-small {
-    @extend .col-lg-8;
-    @extend .offset-lg-2;
+    @extend .col-lg-10;
+    @extend .offset-lg-1;
   }
 
   &__wrapper {

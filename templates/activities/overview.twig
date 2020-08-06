@@ -1,10 +1,12 @@
 {# @var craft \craft\web\twig\variables\CraftVariable #}
 {# @var entry \craft\elements\Entry #}
 {# ======================================================
-  @filename: overview
-  @date:     17 aug. 2020
+  @filename: _entry
   @author:   sam
   ====================================================== #}
+{#
+  Add a small discription about this file/componennt and what it does
+#}
 
 {% extends "_layouts/_layout.twig" %}
 
@@ -15,18 +17,38 @@
 {% endblock %}
 
 {% block content %}
+  {% include '_partials/_global/header' with {
+    title: entry.title,
+    image: entry.headerImage | length ? entry.headerImage.one() : '',
+    intro: entry.intro
+  } %}
 
-  <div class="container mt-4 mt-lg-6" id="mainContentSkip">
-    <div class="row">
-      <div class="col-12 col-lg-8 offset-lg-2">
-        {% include '_partials/_components/breadcrumb/breadcrumb.twig' with {
-          class: 'mb-1 mb-md-2'
-        } %}
-        <h1 class="">{{ entry.title }}</h1>
+  {% set activities = craft.entries.section('activities').hasDescendants().all() %}
+
+  <div id="mainContentSkip">
+    {% if activities | length %}
+      <div class="container">
+        <h2 class="mb-3">{{ entry.activitiesOverviewTitle }}</h2>
+        <div class="row">
+          <div class="d-flex flex-column mb-4 flex-md-row flex-md-wrap mb-lg-8">
+            {% for activity in activities %}
+              <div class="col-12 mb-3 col-md-6 col-lg-4">
+                {% include '_partials/_components/cta-blocks/cta-block/cta-block.twig' with {
+                  title: activity.title,
+                  mainImage: activity.headerImage.one(),
+                  subContent: activity.summaryText | striptags[:90] ~ '...',
+                  cta: { url: activity.url, text: 'Lees meer', target: '' },
+                  ctaArrow: true,
+                  swiper: false
+                } %}
+              </div>
+            {% endfor %}
+          </div>
+        </div>
       </div>
-    </div>
+      {% include "_partials/_common/matrix.twig" %}
+    {% endif %}
   </div>
-  {% include "_partials/_common/matrix.twig" %}
 {% endblock %}
 
 {% block _inline_js %}
