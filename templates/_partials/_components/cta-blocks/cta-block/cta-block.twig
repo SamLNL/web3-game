@@ -22,11 +22,12 @@
 {% set ctaArrow = ctaArrow is defined ? ctaArrow : false %}
 {% set ctaMicro = ctaMicro is defined ? ctaMicro : '' %}
 {% set swiper = swiper is defined ? swiper : true %}
+{% set hexColor = hexColor is defined ? hexColor : '' %}
 
 {% if title | length and (mainTitle | length or mainImage | length) %}
   <div class="c-cta-block {{ swiper ? 'swiper-slide' }} {{ class }}"
        data-title="{{ title }}">
-    <div class="c-cta-block__title">
+    <div class="c-cta-block__title" {% if hexColor | length %}style="background-color:{{ hexColor }}"{% endif %}>
       <div>{{ title }}</div>
       {% if subTitle | length %}
         <div>{{ subTitle }}</div>

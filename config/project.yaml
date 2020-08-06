@@ -1,4 +1,4 @@
-dateModified: 1596720932
+dateModified: 1596722523
 email:
   fromEmail: interactie@emotion.nl
   fromName: Biljoenbad
@@ -6354,6 +6354,9 @@ sections:
             tabs:
               -
                 fields:
+                  39ac3118-752f-4170-85e7-bef7a88b14ff:
+                    required: true
+                    sortOrder: 5
                   3a0f8407-4263-4449-9996-e53070168b78:
                     required: true
                     sortOrder: 2

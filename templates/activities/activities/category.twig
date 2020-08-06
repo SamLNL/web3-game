@@ -17,15 +17,37 @@
 {% endblock %}
 
 {% block content %}
-
   {% include '_partials/_global/header' with {
     title: entry.title,
-    image: entry.headerImage.one(),
     intro: entry.intro
   } %}
 
+  {% set activities = craft.entries.section('activities').descendantOf(entry.id).all() %}
+
   <div id="mainContentSkip">
-    {% include "_partials/_common/matrix.twig" %}
+    {% if activities | length %}
+      <div class="container">
+        <h2 class="mb-3">{{ entry.activitiesOverviewTitle }}</h2>
+        <div class="row">
+          <div class="d-flex flex-column mb-4 flex-md-row flex-md-wrap mb-lg-8">
+            {% for activity in activities %}
+              <div class="col-12 d-flex mb-3 col-md-6 col-lg-4">
+                {% include '_partials/_components/cta-blocks/cta-block/cta-block.twig' with {
+                  title: activity.title,
+                  mainImage: activity.headerImage.one(),
+                  subContent: activity.summaryText | striptags[:90] ~ '...',
+                  cta: { url: activity.url, text: 'Lees meer', target: '' },
+                  ctaArrow: true,
+                  swiper: false,
+                  hexColor: entry.categoryColor
+                } %}
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      {% include "_partials/_common/matrix.twig" %}
+    {% endif %}
   </div>
 {% endblock %}
 

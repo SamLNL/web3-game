@@ -11,6 +11,7 @@
   flex-direction: column;
   background-color: $white;
   border: 1px solid $gray-300;
+  flex-grow: 1;
 
   &__title {
     background-color: $teal-200;
