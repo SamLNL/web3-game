@@ -49,7 +49,7 @@
     {% set critical %}
       {{ craft.twigpack.includeCriticalCssTags() }}
     {% endset %}
-    {% if critical|length and (not cacheVal or cacheVal != cssAsset) %}
+    {% if critical|trim|length and (not cacheVal or cacheVal != cssHash) %}
       {{ setCookie('critical-css', cssAsset, now | date_modify("+7 days").timestamp ) }}
       {{ setCookie('critical-css', cssBootstrapAsset, now | date_modify("+7 days").timestamp ) }}
       {{ critical }}
