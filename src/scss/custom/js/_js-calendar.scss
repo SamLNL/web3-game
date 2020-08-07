@@ -1,4 +1,3 @@
-/* purgecss start ignore */
 .js-calendar {
   @include media-breakpoint-up('sm') {
     margin-top: -($spacer * 3);
@@ -28,8 +27,19 @@
           flex-direction: row;
           justify-content: flex-end;
 
+          .fc-prev-button {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+          }
+
+          .fc-next-button {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+          }
+
           .fc-today-button {
             flex-grow: 1;
+            border-radius: 0;
 
             @include media-breakpoint-up('sm') {
               flex-grow: initial;
@@ -187,6 +197,7 @@
 
       tbody {
         .fc-timegrid-col {
+          border: 1px solid $teal-200;
           background-color: $white;
 
           &:not(:first-child) {
@@ -257,4 +268,3 @@
     }
   }
 }
-/* purgecss end ignore */

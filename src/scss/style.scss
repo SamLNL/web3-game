@@ -106,12 +106,14 @@
 @import "custom/components/c-table";
 @import "custom/components/c-heads-up";
 
+/* purgecss start ignore */
+
 // Add js scss
 @import "custom/js/js-load-more";
 @import "custom/js/js-slider";
 @import "custom/js/js-calendar";
 
 // Add external css
-@import '~baguettebox.js/dist/baguetteBox';
 @import '~fullcalendar-scheduler/main';
 
+/* purgecss end ignore */

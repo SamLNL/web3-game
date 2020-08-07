@@ -111,7 +111,7 @@
       "./public/*.html",
       "./src/js/**/*.js"
     ],
-    "purgecssWhitelist": [],
+    "purgecssWhitelist": ["btn"],
     "critical": [
       {
         "url": "",
@@ -179,7 +179,6 @@
     "@fullcalendar/resource-timegrid": "^5.1.0",
     "@typeform/embed": "^0.22.2",
     "autotrack": "^2.4.1",
-    "baguettebox.js": "^1.11.1",
     "css-loader": "^3.6.0",
     "fullcalendar": "^5.1.0",
     "fullcalendar-scheduler": "^5.1.0",

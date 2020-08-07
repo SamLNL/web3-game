@@ -35,9 +35,6 @@ const main = async () => {
   }
 
   // components blocks
-  if(document.querySelectorAll('.js-gallery').length > 0) {
-    await import(/* webpackChunkName: "gallery" */ "./custom/components/gallery");
-  }
   if(document.querySelectorAll('.js-teaser').length > 0) {
     await import(/* webpackChunkName: "teaser" */ "./custom/components/teaser");
   }
