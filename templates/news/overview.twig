@@ -90,7 +90,7 @@
                   image: item.headerImage[0],
                   title: item.title,
                   date: item.dateCreated,
-                  summary: (item.summaryText|striptags[:40] ~ '...')
+                  summary: (item.summaryText|striptags[:40] ~ '...'),
                 } %}
               {% endfor %}
             </div>

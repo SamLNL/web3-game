@@ -25,6 +25,8 @@ function destroySwiper(swiper) {
       '.swiper-pagination[data-swiper-id="' + id + '"]').style.display = 'none';
   }
 
+  swiper.$el[0].classList.add('overflow-visible');
+
   swiper.destroy(true, true);
 }
 
@@ -63,7 +65,6 @@ ctaBlocks.forEach((el) => {
   window.onresize = () => {
     for (const id in swiperBlocks) {
       let swiper = swiperBlocks[id];
-
       if (watchBreakpoint(destroyBreakpoint)) {
         if (!swiper.destroyed) {
           destroySwiper(swiper);
@@ -71,8 +72,13 @@ ctaBlocks.forEach((el) => {
       } else if (swiper.destroyed) {
         swiperBlocks[id] = new Swiper(swiperBlocksParams[id].el,
           swiperBlocksParams[id]);
-        document.querySelector('.swiper-pagination[data-swiper-id="' + id +
-          '"]').style.display = 'flex';
+        if(document.querySelector('.swiper-pagination[data-swiper-id="' + id +
+          '"]')) {
+          document.querySelector('.swiper-pagination[data-swiper-id="' + id +
+            '"]').style.display = 'flex';
+        }
+
+        swiperBlocks[id].el.classList.remove('overflow-visible');
       }
     }
   };

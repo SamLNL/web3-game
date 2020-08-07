@@ -24,10 +24,22 @@
 {% set swiper = swiper is defined ? swiper : true %}
 {% set titleBgHexColor = titleBgHexColor is defined ? titleBgHexColor : '' %}
 {% set titleHexColor = titleHexColor is defined ? titleHexColor : '' %}
+{% if not url is defined and cta | length %}
+  {% set url = cta.url %}
+{% else %}
+  {% set url = '' %}
+{% endif %}
 
 {% if title | length and (mainTitle | length or mainImage | length) %}
-  <div class="c-cta-block {{ swiper ? 'swiper-slide' }} {{ class }}"
-       data-title="{{ title }}">
+  {% if url | length %}
+    <a href="{{ url }}" class="c-cta-block {{ swiper ? 'swiper-slide' }} {{ class }}"
+         data-title="{{ title }}" title="{{ title }}">
+  {% else %}
+    <a class="c-cta-block {{ swiper ? 'swiper-slide' }} {{ class }}"
+    data-title="{{ title }}">
+  {% endif %}
+
+
     <div class="c-cta-block__title" style="{% if titleBgHexColor | length %}background-color:{{ titleBgHexColor }};{% endif %}">
       <div style="{% if titleHexColor | length %}color: {{ titleHexColor }}{% endif %}">{{ title }}</div>
       {% if subTitle | length %}
@@ -67,16 +79,14 @@
 
     {% if cta | length and cta.url | length %}
       <div class="c-cta-block__cta">
-        <a href="{{ cta.url }}"
-           title="{{ cta.text }}"
-           class="c-btn c-btn-white{{ ctaArrow ? ' c-btn-arrow' : '' }}"
-           ga-on="click"
-           ga-event-category="CTA"
-           ga-event-action="Click"
-           ga-event-label="{{ cta.text|ucfirst }}"
-        >
-          <span>{{ cta.text }}</span>
-        </a>
+          <div class="c-btn c-btn-white{{ ctaArrow ? ' c-btn-arrow' : '' }}"
+             ga-on="click"
+             ga-event-category="CTA"
+             ga-event-action="Click"
+             ga-event-label="{{ cta.text|ucfirst }}"
+          >
+            <span>{{ cta.text }}</span>
+          </div>
         {% if ctaMicro | length %}
           <span class="c-cta__micro">
                   {{ ctaMicro }}
@@ -84,5 +94,10 @@
         {% endif %}
       </div>
     {% endif %}
-  </div>
+
+      {% if url | length %}
+        </a>
+      {% else %}
+        </div>
+      {% endif %}
 {% endif %}

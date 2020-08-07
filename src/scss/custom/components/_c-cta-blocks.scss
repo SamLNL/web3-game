@@ -22,7 +22,7 @@ $gutter: 15px;
     display: flex;
     flex-direction: row;
 
-    & > div {
+    & > * {
       height: auto;
 
       @include media-breakpoint-up('md') {
