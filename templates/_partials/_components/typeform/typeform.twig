@@ -10,28 +10,24 @@
 
 {% set text = text is defined ? text : '' %}
 {% set url = url is defined ? url : '' %}
-{% set label = label is defined ? label : 'Formulier' %}
+{% set label = label is defined  and label | length ? label : 'Formulier' %}
 
 {% if url | length %}
-  <div class="container">
-    <div class="row">
-      <div class="c-typeform">
-        {% if text | length %}
-          <div class="c-typeform__intro">
-            {{ text }}
-          </div>
-        {% endif %}
-        <a title="{{ label }}"
-           data-mode="popup"
-           href="{{ url }}"
-           ga-on="click"
-           ga-event-category="form"
-           ga-event-action="click"
-           ga-event-label="{{ label }}"
-           class="js-typeform c-btn">
-          {{ label }}
-        </a>
+  <div class="c-typeform">
+    {% if text | length %}
+      <div class="c-typeform__intro">
+        {{ text }}
       </div>
-    </div>
+    {% endif %}
+    <a title="{{ label }}"
+       data-mode="popup"
+       href="{{ url }}"
+       ga-on="click"
+       ga-event-category="form"
+       ga-event-action="click"
+       ga-event-label="{{ label }}"
+       class="js-typeform c-btn c-btn-yellow">
+      {{ label }}
+    </a>
   </div>
 {% endif %}

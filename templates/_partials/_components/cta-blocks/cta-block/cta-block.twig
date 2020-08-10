@@ -35,10 +35,9 @@
     <a href="{{ url }}" class="c-cta-block {{ swiper ? 'swiper-slide' }} {{ class }}"
          data-title="{{ title }}" title="{{ title }}">
   {% else %}
-    <a class="c-cta-block {{ swiper ? 'swiper-slide' }} {{ class }}"
+    <div class="c-cta-block {{ swiper ? 'swiper-slide' }} {{ class }}"
     data-title="{{ title }}">
   {% endif %}
-
 
     <div class="c-cta-block__title" style="{% if titleBgHexColor | length %}background-color:{{ titleBgHexColor }};{% endif %}">
       <div style="{% if titleHexColor | length %}color: {{ titleHexColor }}{% endif %}">{{ title }}</div>
@@ -89,8 +88,8 @@
           </div>
         {% if ctaMicro | length %}
           <span class="c-cta__micro">
-                  {{ ctaMicro }}
-                </span>
+            {{ ctaMicro }}
+          </span>
         {% endif %}
       </div>
     {% endif %}

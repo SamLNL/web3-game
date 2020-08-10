@@ -14,40 +14,35 @@
 {% set holiday = holiday is defined ? holiday : '' %}
 
 {% if default | length or holiday | length %}
-  <div class="container">
-    <div class="row">
-      <div class="col-12{{ default and holiday ? '' : ' col-lg-10 offset-lg-1' }}">
-        {% if text | length %}
-          {{ text }}
-        {% endif %}
 
-        <div class="d-flex flex-column mt-3 flex-lg-row mt-lg-4">
-          {% if default %}
-            {% set defaultCal = openingHours.openingHoursDefault %}
-            {% if defaultCal | length %}
-              {% set columnHeadings = [{
-                'col1': 'Reguliere tijden'
-              }] %}
-              <div class="w-100 {{ holiday | length ? 'mb-4 w-lg-40/100 mr-lg-3 mb-lg-0' : '' }}">
-                {% include '_partials/_components/table/table/table.twig' with {
-                  table: columnHeadings | merge(defaultCal)
-                } %}
-              </div>
-            {% endif %}
-          {% endif %}
-          {% if holiday | length %}
-            {% set holidayCal = openingHours.openingHoursHolidays %}
-            {% set columnHeadings = [{
-              'col1': 'Vakantie en feestdagen'
-            }] %}
-            <div class="w-100 {{ default | length ? 'w-lg-60/100' : '' }}">
-              {% include '_partials/_components/table/table/table.twig' with {
-                table: columnHeadings | merge(holidayCal)
-              } %}
-            </div>
-          {% endif %}
+  {% if text | length %}
+    {{ text }}
+  {% endif %}
+
+  <div class="d-flex flex-column mt-3 flex-lg-row mt-lg-4">
+    {% if default %}
+      {% set defaultCal = openingHours.openingHoursDefault %}
+      {% if defaultCal | length %}
+        {% set columnHeadings = [{
+          'col1': 'Reguliere tijden'
+        }] %}
+        <div class="w-100 {{ holiday | length ? 'mb-4 w-lg-40/100 mr-lg-3 mb-lg-0' : '' }}">
+          {% include '_partials/_components/table/table/table.twig' with {
+            table: columnHeadings | merge(defaultCal)
+          } %}
         </div>
+      {% endif %}
+    {% endif %}
+    {% if holiday | length %}
+      {% set holidayCal = openingHours.openingHoursHolidays %}
+      {% set columnHeadings = [{
+        'col1': 'Vakantie en feestdagen'
+      }] %}
+      <div class="w-100 {{ default | length ? 'w-lg-60/100' : '' }}">
+        {% include '_partials/_components/table/table/table.twig' with {
+          table: columnHeadings | merge(holidayCal)
+        } %}
       </div>
-    </div>
+    {% endif %}
   </div>
 {% endif %}

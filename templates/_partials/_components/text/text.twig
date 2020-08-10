@@ -10,11 +10,5 @@
 {% set text = text is defined ? text :'' %}
 
 {% if text | length %}
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        {{ text }}
-      </div>
-    </div>
-  </div>
+  {{ text }}
 {% endif %}

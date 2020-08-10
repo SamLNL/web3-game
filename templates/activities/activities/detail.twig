@@ -25,7 +25,16 @@
   } %}
 
   <div id="mainContentSkip">
-    {% include "_partials/_common/matrix.twig" %}
+    <div class="container">
+      <div class="row">
+          <div class="d-none d-lg-flex col-lg-3">
+            test
+          </div>
+          <div class="col-12 col-lg-9">
+            {% include "activities/activities/detail-matrix.twig" %}
+          </div>
+      </div>
+    </div>
   </div>
 {% endblock %}
 

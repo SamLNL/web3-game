@@ -9,19 +9,13 @@
 {% set table = table is defined ? table : '' %}
 {% set columnTitle = columnTitle is defined ? columnTitle : true %}
 
-<div class="container">
-  <div class="row">
-    <div class="col-12">
-      {% if intro | length %}
-        <div class="mb-2 mb-lg-3">
-          {{ intro }}
-        </div>
-      {% endif %}
-
-      {% include '_partials/_components/table/table/table.twig' with {
-        table: table,
-        columnTitle: columnTitle
-      } %}
-    </div>
+{% if intro | length %}
+  <div class="mb-2 mb-lg-3">
+    {{ intro }}
   </div>
-</div>
+{% endif %}
+
+{% include '_partials/_components/table/table/table.twig' with {
+  table: table,
+  columnTitle: columnTitle
+} %}

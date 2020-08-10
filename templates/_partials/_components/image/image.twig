@@ -54,13 +54,7 @@
 
   {% switch format %}
   {% case 'normal' %}
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
           {{ macro.renderPicture(image,transforms, true, image.title, 'c-image') }}
-        </div>
-      </div>
-    </div>
   {% case 'full' %}
     {% set transforms =
       [
@@ -101,16 +95,8 @@
         }
       ] %}
 
-    <div class="w-100">
       {{ macro.renderPicture(image,transforms, true, image.title, 'c-image') }}
-    </div>
   {% default %}
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          {{ macro.renderPicture(image,transforms, true, image.title, 'c-image') }}
-        </div>
-      </div>
-    </div>
+    {{ macro.renderPicture(image,transforms, true, image.title, 'c-image') }}
   {% endswitch %}
 {% endif %}

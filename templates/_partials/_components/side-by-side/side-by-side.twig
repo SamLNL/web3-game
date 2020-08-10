@@ -14,38 +14,36 @@
 {% set order = order is defined ? order : 'textImage' %}
 
 {% if image | length and text | length %}
-  <div class="container">
-    <div class="c-side-by-side">
-      <div class="c-side-by-side__block">
-        {% if order == 'textImage' %}
-          {% include "_partials/_components/side-by-side/text.twig" with {
-            text: text,
-            cta1: cta1,
-            cta1Micro: cta1Micro,
-            cta2: cta2,
-            cta2Micro: cta2Micro
-          } %}
-        {% else %}
-          {% include "_partials/_components/side-by-side/image.twig" with {
-            image: image
-          } %}
-        {% endif %}
-      </div>
-      <div class="c-side-by-side__block">
-        {% if order == 'imageText' %}
-          {% include "_partials/_components/side-by-side/text.twig" with {
-            text: text,
-            cta1: cta1,
-            cta1Micro: cta1Micro,
-            cta2: cta2,
-            cta2Micro: cta2Micro
-          } %}
-        {% else %}
-          {% include "_partials/_components/side-by-side/image.twig" with {
-            image: image
-          } %}
-        {% endif %}
-      </div>
+  <div class="c-side-by-side">
+    <div class="c-side-by-side__block">
+      {% if order == 'textImage' %}
+        {% include "_partials/_components/side-by-side/text.twig" with {
+          text: text,
+          cta1: cta1,
+          cta1Micro: cta1Micro,
+          cta2: cta2,
+          cta2Micro: cta2Micro
+        } %}
+      {% else %}
+        {% include "_partials/_components/side-by-side/image.twig" with {
+          image: image
+        } %}
+      {% endif %}
+    </div>
+    <div class="c-side-by-side__block">
+      {% if order == 'imageText' %}
+        {% include "_partials/_components/side-by-side/text.twig" with {
+          text: text,
+          cta1: cta1,
+          cta1Micro: cta1Micro,
+          cta2: cta2,
+          cta2Micro: cta2Micro
+        } %}
+      {% else %}
+        {% include "_partials/_components/side-by-side/image.twig" with {
+          image: image
+        } %}
+      {% endif %}
     </div>
   </div>
 {% endif %}

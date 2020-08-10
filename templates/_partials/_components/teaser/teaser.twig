@@ -30,59 +30,53 @@
     {% endif %}
   {% endfor %}
 
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        {% if title | length %}
-          <h2 class="mb-3 text-center">
-            {{ title }}
-          </h2>
-        {% endif %}
-      </div>
+  {% if title | length %}
+    <h2 class="mb-3 text-center">
+      {{ title }}
+    </h2>
+  {% endif %}
 
-      <div class="c-teaser{{ summaryFound ? '' : ' c-teaser-small' }} js-teaser swiper">
-        <div class="c-teaser__container swiper-container">
-          <div class="c-teaser__wrapper swiper-wrapper">
-            {% for item in teasers %}
-              {% include '_partials/_components/card/card.twig' with {
-                url: item.url,
-                image: item.headerImage[0],
-                title: item.title,
-                date: item.dateCreated,
-                summary: item.summaryText|striptags[:40] ~ '...',
-                class: 'swiper-slide h-auto'
-              } %}
-            {% endfor %}
-          </div>
-          <div class="swiper-pagination d-none"></div>
-        </div>
-        <a title="" class="c-teaser__prev swiper-prev" href="#">
-          <span></span>
-        </a>
-        <a title="" class="c-teaser__next swiper-next" href="#">
-          <span></span>
-        </a>
-
+  <div class="c-teaser{{ summaryFound ? '' : ' c-teaser-small' }} js-teaser swiper">
+    <div class="c-teaser__container swiper-container">
+      <div class="c-teaser__wrapper swiper-wrapper">
+        {% for item in teasers %}
+          {% include '_partials/_components/card/card.twig' with {
+            url: item.url,
+            image: item.headerImage[0],
+            title: item.title,
+            date: item.dateCreated,
+            summary: item.summaryText|striptags[:40] ~ '...',
+            class: 'swiper-slide h-auto'
+          } %}
+        {% endfor %}
       </div>
-      {% if cta.url | length %}
-        <div class="d-flex flex-column w-100 text-center align-items-center mt-3 mt-lg-4">
-          <a href="{{ cta.url }}"
-             title="{{ cta.text }}"
-             class="c-btn c-btn-arrow"
-             ga-on="click"
-             ga-event-category="CTA"
-             ga-event-action="Click"
-             ga-event-label="{{ cta.text|ucfirst }}"
-          >
-            <span>{{ cta.text }}</span>
-          </a>
-          {% if ctaMicro | length %}
-            <span class="small text-gray mt-1">
+      <div class="swiper-pagination d-none"></div>
+    </div>
+    <a title="" class="c-teaser__prev swiper-prev" href="#">
+      <span></span>
+    </a>
+    <a title="" class="c-teaser__next swiper-next" href="#">
+      <span></span>
+    </a>
+
+  </div>
+  {% if cta.url | length %}
+    <div class="d-flex flex-column w-100 text-center align-items-center mt-3 mt-lg-4">
+      <a href="{{ cta.url }}"
+         title="{{ cta.text }}"
+         class="c-btn c-btn-arrow"
+         ga-on="click"
+         ga-event-category="CTA"
+         ga-event-action="Click"
+         ga-event-label="{{ cta.text|ucfirst }}"
+      >
+        <span>{{ cta.text }}</span>
+      </a>
+      {% if ctaMicro | length %}
+        <span class="small text-gray mt-1">
                   {{ ctaMicro }}
                 </span>
-          {% endif %}
-        </div>
       {% endif %}
     </div>
-  </div>
+  {% endif %}
 {% endif %}

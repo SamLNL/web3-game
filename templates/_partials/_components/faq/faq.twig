@@ -13,34 +13,29 @@
 {% set ctaMicro = ctaMicro is defined ? ctaMicro : '' %}
 
 {% if questions | length %}
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        {% if text | length %}
-          <div class="mb-4">
-            {{ text }}
-          </div>
-        {% endif %}
+  {% if text | length %}
+    <div class="mb-4">
+      {{ text }}
+    </div>
+  {% endif %}
 
-        {% for item in questions.all() %}
-          <div tabindex="0" class="c-faq js-faq js-tab-click"
-               data-click-selector="#tab-click-{{ loop.index }}" data-ga-question="{{ item.question }}">
-            <p id="tab-click-{{ loop.index }}" class="c-faq__question caret-down collapsed"
-               data-toggle="collapse"
-               data-target="#faq-{{ loop.index }}">{{ item.question }}</p>
-            <div class="collapse c-faq__answer" id="faq-{{ loop.index }}" data-parent="accordion">
-              <div>
-                {{ macro.renderRichText(item.answer) }}
-              </div>
-            </div>
-          </div>
-        {% endfor %}
-        {% if cta.url | length %}
-          <div class="d-flex justify-content-center w-100 mt-3 mt-lg-4">
-            <a class="c-btn c-btn-arrow" href="{{ cta.url }}" title="{{ cta.text }}" target="{{ cta.target }}">{{ cta.text }}</a>
-          </div>
-        {% endif %}
+  {% for item in questions.all() %}
+    <div tabindex="0" class="c-faq js-faq js-tab-click"
+         data-click-selector="#tab-click-{{ loop.index }}" data-ga-question="{{ item.question }}">
+      <p id="tab-click-{{ loop.index }}" class="c-faq__question caret-down collapsed"
+         data-toggle="collapse"
+         data-target="#faq-{{ loop.index }}">{{ item.question }}</p>
+      <div class="collapse c-faq__answer" id="faq-{{ loop.index }}" data-parent="accordion">
+        <div>
+          {{ macro.renderRichText(item.answer) }}
+        </div>
       </div>
     </div>
-  </div>
+  {% endfor %}
+  {% if cta.url | length %}
+    <div class="d-flex justify-content-center w-100 mt-3 mt-lg-4">
+      <a class="c-btn c-btn-arrow" href="{{ cta.url }}" title="{{ cta.text }}"
+         target="{{ cta.target }}">{{ cta.text }}</a>
+    </div>
+  {% endif %}
 {% endif %}

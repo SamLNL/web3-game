@@ -4,16 +4,20 @@
    ========================================================================== */
 
 .c-typeform {
-  @extend .col-lg-8;
-  @extend .offset-lg-2;
+  @extend .rounded;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: $gray-300;
-  padding: map_get($spacers, 4) map_get($spacers, 2);
+  background-color: $teal-500;
   width: 100%;
+  padding: map_get($spacers, 4) map_get($spacers, 2);
+  color: $white;
+
+  @include media-breakpoint-up('lg') {
+    padding: map_get($spacers, 4) map_get($spacers, 4);
+  }
 
   &__intro {
     margin-bottom: map_get($spacers, 2);

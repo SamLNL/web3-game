@@ -15,6 +15,7 @@ let sliders = document.querySelectorAll('.js-slider');
   let pagEl = document.querySelector('.swiper-pagination[data-swiper-id="' + id + '"]');
 
   new Swiper(el, {
+    slidesPerView: 1,
     navigation: {
       prevEl: prevEl,
       nextEl: nextEl,
@@ -23,6 +24,6 @@ let sliders = document.querySelectorAll('.js-slider');
       el: pagEl,
       clickable: true
     },
-    slidesPerView: 1
+
   });
 });

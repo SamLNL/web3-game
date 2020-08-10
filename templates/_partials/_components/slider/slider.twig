@@ -10,72 +10,70 @@
 {% set images = images is defined ? images :'' %}
 
 {% if images | length %}
-  <div class="container">
-    {% if text | length %}
-      <div class="row">
-        <div class="col-12 mb-3 mb-lg-4">
-          {{ text }}
-        </div>
-      </div>
-    {% endif %}
 
-    {% set swiperId = random() %}
-
-    <div class="c-slider swiper">
-      <div class="swiper-container js-slider swiper-overflow row" data-swiper-id="{{ swiperId }}">
-        <div class="swiper-wrapper">
-          {% for image in images %}
-            {% set transforms =
-              [
-                {
-                  'media': 'min-width: 1440px',
-                  'sizes': [
-                  {width: 1440, ratio: 600/300}
-                ],
-                },
-                {
-                  'media': 'min-width: 1024px',
-                  'sizes': [
-                  {width: 1024, ratio: 600/300}
-                ],
-                },
-                {
-                  'media': 'min-width: 768px',
-                  'sizes': [
-                  {width: 768, ratio: 768/400}
-                ],
-                },
-                {
-                  'media': 'min-width: 425px',
-                  'sizes': [
-                  {width: 425, ratio: 425/300}
-                ],
-                },
-                {
-                  'media': 'min-width: 375px',
-                  'sizes': [
-                  {width: 375, ratio: 375/300}
-                ],
-                },
-                {
-                  'sizes': [
-                  {width: 320, ratio: 320/300}
-                ],
-                }
-              ] %}
-
-            <div class="c-slider__slide swiper-slide">
-              {{ macro.renderPicture(image,transforms, true, image.title) }}
-            </div>
-          {% endfor %}
-        </div>
-      </div>
-      <a title="Vorige slide" class="carousel-control-prev swiper-button pb-8" data-swiper-id="{{ swiperId }}" href="#">
-        {% include '_inline/_svg/icon-chevron-left' %}
-      </a><a title="Volgende slide" class="carousel-control-next swiper-button pb-8" data-swiper-id="{{ swiperId }}" href="#">
-        {% include '_inline/_svg/icon-chevron-right' %}
-      </a>
-      <div class="swiper-pagination" data-swiper-id="{{ swiperId }}"></div>
+  {% if text | length %}
+    <div class="mb-3 mb-lg-4">
+      {{ text }}
     </div>
+  {% endif %}
+
+  {% set swiperId = random() %}
+  <div class="c-slider swiper mx-xl-5">
+    <div class="swiper-container js-slider swiper-overflow" data-swiper-id="{{ swiperId }}">
+      <div class="swiper-wrapper">
+        {% for image in images %}
+          {% set transforms =
+            [
+              {
+                'media': 'min-width: 1440px',
+                'sizes': [
+                {width: 1440, ratio: 600/300}
+              ],
+              },
+              {
+                'media': 'min-width: 1024px',
+                'sizes': [
+                {width: 1024, ratio: 600/300}
+              ],
+              },
+              {
+                'media': 'min-width: 768px',
+                'sizes': [
+                {width: 768, ratio: 768/400}
+              ],
+              },
+              {
+                'media': 'min-width: 425px',
+                'sizes': [
+                {width: 425, ratio: 425/300}
+              ],
+              },
+              {
+                'media': 'min-width: 375px',
+                'sizes': [
+                {width: 375, ratio: 375/300}
+              ],
+              },
+              {
+                'sizes': [
+                {width: 320, ratio: 320/300}
+              ],
+              }
+            ] %}
+
+          <div class="c-slider__slide swiper-slide">
+            {{ macro.renderPicture(image,transforms, true, image.title) }}
+          </div>
+        {% endfor %}
+      </div>
+
+    </div>
+    <a title="Vorige slide" class="carousel-control-prev swiper-button pb-8" data-swiper-id="{{ swiperId }}" href="#">
+      {% include '_inline/_svg/icon-chevron-left' %}
+    </a><a title="Volgende slide" class="carousel-control-next swiper-button pb-8" data-swiper-id="{{ swiperId }}"
+           href="#">
+      {% include '_inline/_svg/icon-chevron-right' %}
+    </a>
+    <div class="swiper-pagination" data-swiper-id="{{ swiperId }}"></div>
   </div>
 {% endif %}
