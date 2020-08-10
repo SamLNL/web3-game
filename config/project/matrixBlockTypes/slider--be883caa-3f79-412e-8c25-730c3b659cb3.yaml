@@ -3,13 +3,25 @@ fieldLayouts:
   6dc945e3-81df-4ca9-b312-d228156d6af8:
     tabs:
       -
-        fields:
-          670a5a79-e711-4d6c-83f9-e57598d510fc:
-            required: true
-            sortOrder: 2
-          b418fe90-7e19-4457-a1b0-4a975cdc9f4d:
+        elements:
+          -
+            fieldUid: b418fe90-7e19-4457-a1b0-4a975cdc9f4d
+            instructions: null
+            label: null
             required: false
-            sortOrder: 1
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 670a5a79-e711-4d6c-83f9-e57598d510fc
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:
@@ -21,7 +33,7 @@ fields:
     name: Afbeeldingen
     searchable: true
     settings:
-      allowSelfRelations: ''
+      allowSelfRelations: false
       allowedKinds:
         - image
       defaultUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1'
@@ -30,6 +42,7 @@ fields:
       localizeRelations: false
       restrictFiles: '1'
       selectionLabel: ''
+      showSiteMenu: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
       singleUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1'
@@ -38,7 +51,7 @@ fields:
       sources: '*'
       targetSiteId: null
       useSingleFolder: true
-      validateRelatedElements: ''
+      validateRelatedElements: false
       viewMode: list
     translationKeyFormat: null
     translationMethod: site

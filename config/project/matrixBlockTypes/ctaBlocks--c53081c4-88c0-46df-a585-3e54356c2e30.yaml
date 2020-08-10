@@ -3,13 +3,25 @@ fieldLayouts:
   71893719-2b48-4d48-af58-3b94683a246a:
     tabs:
       -
-        fields:
-          34a70bbd-9aba-45a1-82f4-bcf7a1cc1272:
+        elements:
+          -
+            fieldUid: af1ecf9f-e8a5-4aac-9ba8-191015443a7c
+            instructions: null
+            label: null
             required: false
-            sortOrder: 2
-          af1ecf9f-e8a5-4aac-9ba8-191015443a7c:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 34a70bbd-9aba-45a1-82f4-bcf7a1cc1272
+            instructions: null
+            label: null
             required: false
-            sortOrder: 1
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:
@@ -69,6 +81,7 @@ fields:
       fieldLayout: matrix
       maxRows: '3'
       minRows: '1'
+      placeholderKey: null
       propagationMethod: all
       selectionLabel: 'Voeg blok toe'
       staticField: ''

@@ -3,13 +3,25 @@ fieldLayouts:
   400f140f-30a3-45dd-9431-50adc7310e9b:
     tabs:
       -
-        fields:
-          16440e78-c0f7-48d6-a42a-677344f296fd:
-            required: false
-            sortOrder: 2
-          7bc4317f-3190-4df4-88c6-ec8608aba2c6:
+        elements:
+          -
+            fieldUid: 7bc4317f-3190-4df4-88c6-ec8608aba2c6
+            instructions: null
+            label: null
             required: true
-            sortOrder: 1
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 16440e78-c0f7-48d6-a42a-677344f296fd
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:
@@ -55,7 +67,7 @@ fields:
     name: Afbeelding
     searchable: true
     settings:
-      allowSelfRelations: ''
+      allowSelfRelations: false
       allowedKinds:
         - image
       defaultUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1'
@@ -64,6 +76,7 @@ fields:
       localizeRelations: false
       restrictFiles: '1'
       selectionLabel: ''
+      showSiteMenu: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
       singleUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1'
@@ -72,7 +85,7 @@ fields:
       sources: '*'
       targetSiteId: null
       useSingleFolder: true
-      validateRelatedElements: ''
+      validateRelatedElements: false
       viewMode: list
     translationKeyFormat: null
     translationMethod: site

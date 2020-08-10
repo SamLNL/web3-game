@@ -8,6 +8,8 @@
 
 <h3 class="text-uppercase text-teal-600 text-center mb-4">{{ entry.servicesTitle }}</h3>
 
-{% include '_partials/_components/services/services.twig' with {
-  cta: entry.servicesCta
-} %}
+<div class="pb-5">
+  {% include '_partials/_components/services/services.twig' with {
+    cta: entry.servicesCta
+  } %}
+</div>

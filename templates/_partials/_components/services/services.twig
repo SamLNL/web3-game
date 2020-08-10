@@ -14,7 +14,7 @@
 {% if services | length %}
   <div class="container">
     <div class="row">
-      <div class="col-12 pb-5">
+      <div class="col-12">
         {% if intro | length %}
           <div class="mb-2 mb-lg-3">
             {{ intro }}
@@ -25,7 +25,7 @@
             <div class="c-service d-flex flex-row pt-3 pb-3 mb-md-2">
               <div class="mr-2 mr-lg-1 w-2 d-flex align-items-center justify-content-center">
                 {% set icon = item.servicesIcon.one() %}
-                <img src="{{ icon.url }}" alt="{{ icon.title }}">
+                <img class="lazyload" src="{{ icon.url }}" alt="{{ icon.title }}">
               </div>
               <div class="mb-0 ml-1 d-flex align-items-center">
                 <p class="weight-700 text-teal mb-0">{{ item.title | raw }}

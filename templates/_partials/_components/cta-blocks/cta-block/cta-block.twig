@@ -56,7 +56,7 @@
           height: 200,
           mode: 'crop'
         }) %}
-        <img src="{{ transformedImage.url }}" alt="{{ image.title }}">
+        <img class="lazyload" src="{{ transformedImage.url }}" alt="{{ image.title }}">
       </div>
     {% else %}
       <div class="c-cta-block__main-content-text">

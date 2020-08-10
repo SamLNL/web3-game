@@ -3,19 +3,43 @@ fieldLayouts:
   4b903267-5510-4867-b0a5-905962416273:
     tabs:
       -
-        fields:
-          07352ea8-c711-4288-b354-fd105c7e1e3b:
+        elements:
+          -
+            fieldUid: 4ea7444c-b251-489a-af81-91290d313091
+            instructions: null
+            label: null
             required: false
-            sortOrder: 4
-          34aa52c5-65c1-4806-9311-be0039e4d0e9:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 34aa52c5-65c1-4806-9311-be0039e4d0e9
+            instructions: null
+            label: null
             required: true
-            sortOrder: 2
-          4ea7444c-b251-489a-af81-91290d313091:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 7f7cdc6f-38cb-406e-836e-aee3faec6df2
+            instructions: null
+            label: null
             required: false
-            sortOrder: 1
-          7f7cdc6f-38cb-406e-836e-aee3faec6df2:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 07352ea8-c711-4288-b354-fd105c7e1e3b
+            instructions: null
+            label: null
             required: false
-            sortOrder: 3
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:
@@ -34,6 +58,7 @@ fields:
       initialRows: '4'
       multiline: ''
       placeholder: ''
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
@@ -45,15 +70,16 @@ fields:
     name: Vragen
     searchable: true
     settings:
-      allowSelfRelations: ''
+      allowSelfRelations: false
       limit: ''
       localizeRelations: false
       selectionLabel: ''
+      showSiteMenu: true
       source: null
       sources:
         - 'section:138fd91c-e286-44c3-823f-e2380e31883c'
       targetSiteId: null
-      validateRelatedElements: ''
+      validateRelatedElements: false
       viewMode: null
     translationKeyFormat: null
     translationMethod: site

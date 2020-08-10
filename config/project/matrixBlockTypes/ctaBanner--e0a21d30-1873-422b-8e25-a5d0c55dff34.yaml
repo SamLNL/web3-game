@@ -3,25 +3,61 @@ fieldLayouts:
   813fc592-c289-4651-bde9-bbd8d87fbd30:
     tabs:
       -
-        fields:
-          00797fb6-aa77-4473-8d43-0783dfbe66ca:
+        elements:
+          -
+            fieldUid: 00797fb6-aa77-4473-8d43-0783dfbe66ca
+            instructions: null
+            label: null
             required: true
-            sortOrder: 1
-          0dbc7a77-3a60-4b1f-8746-b9be1cc87e55:
-            required: false
-            sortOrder: 4
-          1752ec7a-9652-4157-a83f-57f86d4ecc32:
-            required: false
-            sortOrder: 6
-          35d71cfd-86ea-4f36-ab4a-4ba7aefcf7c5:
-            required: false
-            sortOrder: 5
-          3ce9c921-1fa9-45dc-a1d4-51c401bcf677:
-            required: false
-            sortOrder: 3
-          e2db44f5-6f00-49ea-9f27-da4135c80bf6:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: e2db44f5-6f00-49ea-9f27-da4135c80bf6
+            instructions: null
+            label: null
             required: true
-            sortOrder: 2
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 3ce9c921-1fa9-45dc-a1d4-51c401bcf677
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 0dbc7a77-3a60-4b1f-8746-b9be1cc87e55
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 35d71cfd-86ea-4f36-ab4a-4ba7aefcf7c5
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 1752ec7a-9652-4157-a83f-57f86d4ecc32
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:
@@ -40,6 +76,7 @@ fields:
       initialRows: '2'
       multiline: '1'
       placeholder: ''
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
@@ -323,7 +360,7 @@ fields:
     name: Afbeelding
     searchable: true
     settings:
-      allowSelfRelations: ''
+      allowSelfRelations: false
       allowedKinds:
         - image
       defaultUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1'
@@ -332,6 +369,7 @@ fields:
       localizeRelations: false
       restrictFiles: '1'
       selectionLabel: ''
+      showSiteMenu: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
       singleUploadLocationSource: 'volume:4176b138-ab46-48c2-ba93-8f81e9d3c0df'
@@ -340,7 +378,7 @@ fields:
       sources: '*'
       targetSiteId: null
       useSingleFolder: true
-      validateRelatedElements: ''
+      validateRelatedElements: false
       viewMode: list
     translationKeyFormat: null
     translationMethod: site

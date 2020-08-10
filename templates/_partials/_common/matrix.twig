@@ -155,11 +155,30 @@
 
       {% case 'services' %}
         {% if block.showServices %}
-          {% include '_partials/_components/services/services.twig' with {
-            intro: block.text,
-            cta: block.cta,
-          } %}
+          <div class="mb-4 mb-lg-8">
+            {% include '_partials/_components/services/services.twig' with {
+              intro: block.text,
+              cta: block.cta,
+            } %}
+          </div>
         {% endif %}
+
+      {% case 'partners' %}
+        {% set previousBlock = body[(loop.index0) - 1] %}
+        {% if previousBlock %}
+          {% if previousBlock.type == 'partners' %}
+            <div class="mb-4 mb-lg-8 -mt-2 -mt-lg-6">
+          {% else  %}
+            <div class="mb-4 mb-lg-8">
+          {% endif %}
+        {% endif %}
+
+          {% include '_partials/_components/partners/partners.twig' with {
+            intro: block.text,
+            partners: block.partners,
+            showAll: block.partnersShowAll
+          } %}
+        </div>
       {% endswitch %}
     {% endfor %}
   </article>

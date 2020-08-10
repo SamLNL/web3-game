@@ -1,0 +1,55 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{# @var entry \craft\elements\Entry #}
+{# ======================================================
+  @filename: partners
+  @date:     23 aug. 2020
+  @author:   sam
+  ====================================================== #}
+{#
+  Add a small discription about this file/componennt and what it does
+#}
+
+{% set intro = intro is defined ? intro : '' %}
+{% set partners = partners is defined ? partners : '' %}
+{% set showAll = showAll is defined ? showAll : '' %}
+
+{% if showAll %}
+  {% set partners = craft.entries.section('partners').all() %}
+{% endif %}
+
+{% if partners | length %}
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        {% if intro | length %}
+          {{ intro }}
+        {% endif %}
+      </div>
+      <div class="c-partners">
+        {% for partner in partners %}
+          {% set fileType = partner.partnerLogo.one().fileName|split('.')|last %}
+
+          {% if fileType == 'svg' %}
+            {% set logo = partner.partnerLogo.one() %}
+          {% else %}
+            {% set logo = craft.imager.transformImage(partner.partnerLogo.one(), {
+              width: 300, height: 150, position: 'center' ,
+              mode: 'letterbox',
+              letterbox: { color: '#fff', opacity: 0 }
+            }) %}
+          {% endif %}
+
+          {% if partner['partnerUrl'] is defined and partner.partnerUrl | length %}
+            <a href="{{ partner.partnerUrl }}" target="_blank" class="c-partners__item">
+              <img src="{{ logo.url }}" alt="{{ partner.title }}">
+            </a>
+          {% else %}
+            <div class="c-partners__item">
+              <img src="{{ logo.url }}" alt="{{ partner.title }}">
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endif %}
