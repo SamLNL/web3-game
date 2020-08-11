@@ -652,7 +652,7 @@ matrixBlockTypes:
 navigation:
   navs:
     085d0005-6965-482f-aae6-7c63000e6845:
-      handle: mainNav
+      handle: mainNavOld
       instructions: ''
       maxNodes: ''
       name: Hoofdmenu
