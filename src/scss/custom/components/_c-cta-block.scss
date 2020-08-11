@@ -132,4 +132,19 @@
       }
     }
   }
+
+  &-yellow {
+    .c-cta-block__title {
+      background-color: $yellow !important;
+      & > div {
+        &:first-child {
+          color: $teal-600;
+        }
+
+        &:nth-child(2) {
+          color: $teal-600;
+        }
+      }
+    }
+  }
 }
