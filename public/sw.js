@@ -122,8 +122,8 @@ workbox.precaching.precacheAndRoute([
     "revision": "54d180867e5f89c2340977d56fbbdab8"
   },
   {
-    "url": "assets/css/styles.min-b0ff6ba5f1.css",
-    "revision": "b0ff6ba5f16ffde64f73a06dd73006f2"
+    "url": "assets/css/styles.min-18005654a8.css",
+    "revision": "18005654a8175ad8a4942fb0d8b213c2"
   },
   {
     "url": "assets/calendar-demo/js/main.js",
@@ -166,8 +166,8 @@ workbox.precaching.precacheAndRoute([
     "revision": "5e314f836431c759849b3cf73d8c9065"
   },
   {
-    "url": "assets/js/17-5006cd94e6.js",
-    "revision": "7fc348a8a8fa5a8535a8c01de58c210e"
+    "url": "assets/js/17-4e0cec307b.js",
+    "revision": "4404de426a74040a3500e229e84546ad"
   },
   {
     "url": "assets/js/18-88a3e308b2.js",
@@ -226,8 +226,8 @@ workbox.precaching.precacheAndRoute([
     "revision": "1be608f4c66dbd343f4b931f80b02f87"
   },
   {
-    "url": "assets/js/main-18ac4130ab.js",
-    "revision": "5e9211e3a1dfe92a593ac53c96456a40"
+    "url": "assets/js/main-b1f3007cf9.js",
+    "revision": "19f3cee234b5c52c85d14885cb7cf009"
   },
   {
     "url": "assets/js/picturefill.min.js",
@@ -266,6 +266,10 @@ workbox.precaching.precacheAndRoute([
     "revision": "2efda87cbc4fa298ed00cec099ecfe9e"
   },
   {
+    "url": "assets/images/svg/single/check.svg",
+    "revision": "aefe1b282ddfb1f185e05c646be2868d"
+  },
+  {
     "url": "assets/images/svg/single/clock-regular.svg",
     "revision": "6b19d244f3cef3418721327cd3068f48"
   },
@@ -276,6 +280,10 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "assets/images/svg/single/global-wave.svg",
     "revision": "2357a89c72f3c924e51236aaf132c637"
+  },
+  {
+    "url": "assets/images/svg/single/icon-check.svg",
+    "revision": "aefe1b282ddfb1f185e05c646be2868d"
   },
   {
     "url": "assets/images/svg/single/icon-chevron-left.svg",
@@ -326,20 +334,8 @@ workbox.precaching.precacheAndRoute([
     "revision": "42ee5681674f2f9c6043e54b65f88dc1"
   },
   {
-    "url": "assets/images/svg/sprite/css/svg/sprite.css-cf8ea69c.svg",
-    "revision": "cf8ea69ce026f4632c12c68ef5377cc2"
-  },
-  {
-    "url": "assets/images/svg/sprite/single/icon-activiteitenbad.svg",
-    "revision": "6ee2f8a7fd2533403436dec107ffd2c9"
-  },
-  {
-    "url": "assets/images/svg/sprite/single/icon-beweegbarebodem.svg",
-    "revision": "e66f8ba3d7a7b942d6e5b711fa4b91a5"
-  },
-  {
-    "url": "assets/images/svg/sprite/single/icon-bus.svg",
-    "revision": "7b60aa486852f1ef46842f205aa61c7e"
+    "url": "assets/images/svg/sprite/css/svg/sprite.css-e5343968.svg",
+    "revision": "e53439689199dad4dbbce5388644579a"
   },
   {
     "url": "assets/images/svg/sprite/single/icon-calendar.svg",
@@ -350,16 +346,8 @@ workbox.precaching.precacheAndRoute([
     "revision": "cae9f4fd52feabda867bf8303e6dd620"
   },
   {
-    "url": "assets/images/svg/sprite/single/icon-eten.svg",
-    "revision": "b257530c3c22d07f72d64fb78d38b3fb"
-  },
-  {
     "url": "assets/images/svg/sprite/single/icon-facebook.svg",
     "revision": "5faaf99ca10116d9daf081d809c81994"
-  },
-  {
-    "url": "assets/images/svg/sprite/single/icon-familiekleedkamer.svg",
-    "revision": "320e78316be41cc4329b23291ebd5309"
   },
   {
     "url": "assets/images/svg/sprite/single/icon-info.svg",
@@ -370,10 +358,6 @@ workbox.precaching.precacheAndRoute([
     "revision": "c25e9a8b6d4777d32853fe7b7558fc11"
   },
   {
-    "url": "assets/images/svg/sprite/single/icon-locker.svg",
-    "revision": "033c916b0d1d95eb97ebf20a822e46c8"
-  },
-  {
     "url": "assets/images/svg/sprite/single/icon-marker-yellow.svg",
     "revision": "8a94dd55722ddf4b13ff4ea1158b0bcb"
   },
@@ -382,40 +366,12 @@ workbox.precaching.precacheAndRoute([
     "revision": "0a8b478a3e97ff3f4d1f28672e32ac30"
   },
   {
-    "url": "assets/images/svg/sprite/single/icon-multi-ruimte.svg",
-    "revision": "ac4e1ed384a1e9bbc188f529b876bc6f"
-  },
-  {
-    "url": "assets/images/svg/sprite/single/icon-parkeren.svg",
-    "revision": "43090de3548191dc59008d26f66f2fec"
-  },
-  {
-    "url": "assets/images/svg/sprite/single/icon-peuterbad.svg",
-    "revision": "557bd0713d3190d7886728cdba7a1123"
-  },
-  {
-    "url": "assets/images/svg/sprite/single/icon-praktijkruimte.svg",
-    "revision": "576ed1e013a91d5997e5b46946942aa1"
-  },
-  {
-    "url": "assets/images/svg/sprite/single/icon-rolstoel.svg",
-    "revision": "122b5096b4df45ae57e80233230fcad0"
-  },
-  {
     "url": "assets/images/svg/sprite/single/icon-telefoon.svg",
     "revision": "5af76db83022a7f5dae565b0157af2a4"
   },
   {
-    "url": "assets/images/svg/sprite/single/icon-vergaderruimte.svg",
-    "revision": "b767fc3a22eb269661dd550738d81d2e"
-  },
-  {
-    "url": "assets/images/svg/sprite/single/icon-wifi.svg",
-    "revision": "22c5fd2cfb5a6892292fde60b3a09899"
-  },
-  {
     "url": "assets/images/svg/sprite/sprite.svg",
-    "revision": "7356a1dedd6ed3d694271fc43b82b738"
+    "revision": "e1cf37c63c350d934a1c6f89ba5ca5b0"
   },
   {
     "url": "/offline",
