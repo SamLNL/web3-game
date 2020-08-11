@@ -111,7 +111,7 @@
       "./public/*.html",
       "./src/js/**/*.js"
     ],
-    "purgecssWhitelist": ["btn"],
+    "purgecssWhitelist": ["btn", "login"],
     "critical": [
       {
         "url": "",
