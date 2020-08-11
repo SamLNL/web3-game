@@ -2,7 +2,7 @@ contentColumnType: string
 fieldGroup: 7b0ef5c0-4291-4913-932b-32945e1c974f
 handle: categoryColor
 instructions: ''
-name: 'Thema kleur'
+name: 'Categorie - Thema kleur'
 searchable: true
 settings:
   options:

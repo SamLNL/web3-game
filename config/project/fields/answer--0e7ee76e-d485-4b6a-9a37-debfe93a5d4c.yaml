@@ -2,7 +2,7 @@ contentColumnType: text
 fieldGroup: 75c4c41b-4b5d-4f5b-bf8a-0d1bbe387b16
 handle: answer
 instructions: ''
-name: Antwoord
+name: 'FAQ - Antwoord'
 searchable: true
 settings:
   availableTransforms: '*'

@@ -210,6 +210,16 @@
           } %}
         </div>
       </div>
+
+    {% case 'team' %}
+      <div class="mb-4 mb-lg-8">
+        <div class="w-100">
+          {% include '_partials/_components/team/team.twig' with {
+            intro: block.text,
+            members: block.team
+          } %}
+        </div>
+      </div>
     {% endswitch %}
   {% endfor %}
 {% endif %}
