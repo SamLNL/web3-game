@@ -1,0 +1,18 @@
+contentColumnType: text
+fieldGroup: 7b0ef5c0-4291-4913-932b-32945e1c974f
+handle: categoryUspsTitle
+instructions: 'Deze zal enkel getoond worden op de activiteiten pagina''s die onder deze category vallen'
+name: 'Categorie - Usp''s titel'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText
