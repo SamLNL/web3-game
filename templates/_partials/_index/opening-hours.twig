@@ -1,0 +1,23 @@
+<h2 class="text-center mb-0">{{ entry.openingHoursTitle }}</h2>
+<div class="row">
+  <div class="col-12">
+    {% include '_partials/_components/opening-hours/opening-hours.twig' with {
+      default: true,
+      holiday: false
+    } %}
+  </div>
+</div>
+{% if entry.openingHoursCta.url | length %}
+  {% set cta = entry.openingHoursCta %}
+  <div class="d-flex flex-row justify-content-center mt-3 mt-lg-4 mb-4 mb-lg-8">
+    <a href="{{ cta.url }}"
+       title="{{ cta.text }}"
+       class="c-btn c-btn-arrow"
+       ga-on="click"
+       ga-event-category="CTA"
+       ga-event-action="Click"
+       ga-event-label="Home - {{ cta.text|ucfirst }}">
+      <span>{{ cta.text }}</span>
+    </a>
+  </div>
+{% endif %}

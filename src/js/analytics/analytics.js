@@ -86,6 +86,7 @@ export const init = () => {
 };
 
 export const sendGAEvent = (eventArray) => {
+  console.log(sendGAEvent());
   // Make sure there are at least 2 values
   if (eventArray.length >= 2) {
 

@@ -27,12 +27,49 @@
   <div id="mainContentSkip">
     <div class="container">
       <div class="row">
-          <div class="d-none d-lg-flex col-lg-3">
-            test
+        {% set category = entry.parent %}
+        {% set neighbours = craft.entries.section('activities').descendantOf(category).all() %}
+        {% set categoryColor = category.color %}
+        {% set categoryUsps = category.categoryUsps %}
+
+        <div class="c-sidebar">
+          <div class="c-sidebar__category" style="border-left: 8px solid {{ categoryColor }}">
+            <ul>
+              {% for neighbour in neighbours %}
+                <li>
+                  {% if neighbour.id == entry.id %}
+                    <span>
+                      {{ neighbour.title }}
+                    </span>
+                  {% else %}
+                    <a href="{{ neighbour.url }}" title="Ga naar {{ neighbour.title }}">
+                      {{ neighbour.title }}
+                    </a>
+                  {% endif %}
+                </li>
+              {% endfor %}
+            </ul>
           </div>
-          <div class="col-12 col-lg-9">
-            {% include "activities/activities/detail-matrix.twig" %}
-          </div>
+
+          {% if categoryUsps | length %}
+            <div class="c-sidebar__usps">
+              {% if category.categoryUspsTitle | length %}
+                <p class="h3">{{ category.categoryUspsTitle }}</p>
+              {% endif %}
+              <ul class="checks">
+                {% for usp in categoryUsps %}
+                  <li>
+                    {{ usp.title }}
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endif %}
+
+        </div>
+        <div class="col-12 col-lg-9">
+          {% include "activities/activities/detail-matrix.twig" %}
+        </div>
       </div>
     </div>
   </div>

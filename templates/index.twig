@@ -95,9 +95,15 @@
 
     {% if entry.headsUp | length %}
       <div class="mb-3 mt-lg-3 mb-lg-4">
-        {% include '_partials/_components/heads-up/heads-up.twig' with {
-          text: entry.headsUp
-        } %}
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+              {% include '_partials/_components/heads-up/heads-up.twig' with {
+                text: entry.headsUp
+              } %}
+            </div>
+          </div>
+        </div>
       </div>
     {% endif %}
   </div>
@@ -112,57 +118,12 @@
   </div>
   <div class="py-4 py-lg-8">
     <div class="container">
-      <h2 class="text-center mb-0">{{ entry.openingHoursTitle }}</h2>
-      <div class="row">
-        <div class="col-12">
-          {% include '_partials/_components/opening-hours/opening-hours.twig' with {
-            default: true,
-            holiday: false
-          } %}
-        </div>
-      </div>
-      {% if entry.openingHoursCta.url | length %}
-        {% set cta = entry.openingHoursCta %}
-        <div class="d-flex flex-row justify-content-center mt-3 mt-lg-4 mb-4 mb-lg-8">
-          <a href="{{ cta.url }}"
-             title="{{ cta.text }}"
-             class="c-btn c-btn-arrow"
-             ga-on="click"
-             ga-event-category="CTA"
-             ga-event-action="Click"
-             ga-event-label="{{ cta.text|ucfirst }}">
-            <span>{{ cta.text }}</span>
-          </a>
-        </div>
-      {% endif %}
+      {% include '_partials/_index/opening-hours.twig' %}
     </div>
   </div>
   <div class="bg-teal-100 py-4 py-lg-8">
     <div class="container">
-      <h2 class="text-center mb-0">{{ entry.pricesTitle }}</h2>
-
-      <div class="row">
-        <div class="col-12">
-          {% include '_partials/_components/prices/prices.twig' with {
-            blockClass: 'c-cta-block-price-white'
-          } %}
-        </div>
-      </div>
-      {% if entry.pricesCta.url | length %}
-        {% set cta = entry.pricesCta %}
-
-        <div class="d-flex flex-row justify-content-center mt-3 mt-lg-4">
-          <a href="{{ cta.url }}"
-             title="{{ cta.text }}"
-             class="c-btn c-btn-arrow"
-             ga-on="click"
-             ga-event-category="CTA"
-             ga-event-action="Click"
-             ga-event-label="{{ cta.text|ucfirst }}">
-            <span>{{ cta.text }}</span>
-          </a>
-        </div>
-      {% endif %}
+      {% include '_partials/_index/prices.twig' %}
     </div>
   </div>
   <div class="container mt-5 mt-lg-10">

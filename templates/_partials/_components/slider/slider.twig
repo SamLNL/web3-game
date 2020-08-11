@@ -61,7 +61,8 @@
               }
             ] %}
 
-          <div class="c-slider__slide swiper-slide">
+          <div class="c-slider__slide swiper-slide swiper-lazy">
+            <div class="swiper-lazy-preloader"></div>
             {{ macro.renderPicture(image,transforms, true, image.title) }}
           </div>
         {% endfor %}

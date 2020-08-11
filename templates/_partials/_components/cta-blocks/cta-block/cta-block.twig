@@ -19,6 +19,7 @@
 {% set mainImage = mainImage is defined ? mainImage : '' %}
 {% set subContent = subContent is defined ? subContent : '' %}
 {% set cta = cta is defined ? cta : '' %}
+{% set gaLabel = gaLabel is defined ? gaLabel : '' %}
 {% set ctaArrow = ctaArrow is defined ? ctaArrow : false %}
 {% set ctaMicro = ctaMicro is defined ? ctaMicro : '' %}
 {% set swiper = swiper is defined ? swiper : true %}
@@ -77,12 +78,13 @@
     {% endif %}
 
     {% if cta | length and cta.url | length %}
+      {% set gaLabel = gaLabel | length ? gaLabel : cta.text|ucfirst %}
       <div class="c-cta-block__cta">
           <div class="c-btn c-btn-white{{ ctaArrow ? ' c-btn-arrow' : '' }}"
              ga-on="click"
              ga-event-category="CTA"
              ga-event-action="Click"
-             ga-event-label="{{ cta.text|ucfirst }}"
+             ga-event-label="{{ gaLabel }}"
           >
             <span>{{ cta.text }}</span>
           </div>

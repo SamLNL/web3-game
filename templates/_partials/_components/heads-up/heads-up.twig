@@ -12,14 +12,12 @@
 {% set text = text is defined ? text : '' %}
 
 {% if text | length %}
-  <div class="container">
-    <div class="c-heads-up">
-      <div class="c-heads-up__wrapper">
-        <svg class="flex-shrink-0 mr-2" width="35" height="35">
-          <use xlink:href="/assets/images/svg/sprite/sprite.svg#icon-info"></use>
-        </svg>
-        {{ text }}
-      </div>
+  <div class="c-heads-up">
+    <div class="c-heads-up__wrapper">
+      <svg class="flex-shrink-0 mr-2" width="35" height="35">
+        <use xlink:href="/assets/images/svg/sprite/sprite.svg#icon-info"></use>
+      </svg>
+      {{ text }}
     </div>
   </div>
 {% endif %}

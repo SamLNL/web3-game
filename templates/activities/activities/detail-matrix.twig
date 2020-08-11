@@ -201,6 +201,15 @@
           } %}
         </div>
       </div>
+
+    {% case 'headsUp' %}
+      <div class="mb-4 mb-lg-8">
+        <div class="w-100">
+          {% include '_partials/_components/heads-up/heads-up.twig' with {
+            text: block.headsUp
+          } %}
+        </div>
+      </div>
     {% endswitch %}
   {% endfor %}
 {% endif %}

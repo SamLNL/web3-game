@@ -4,49 +4,128 @@ fieldLayouts:
       -
         elements:
           -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            autofocus: false
+            class: null
+            disabled: false
+            id: null
             instructions: null
-            label: Title
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            required: false
+            size: null
+            step: null
+            tip: null
+            title: null
             type: craft\fieldlayoutelements\EntryTitleField
+            warning: null
+            width: 100
           -
             fieldUid: 5e04aee6-fa48-49e3-b86f-882b8ea36b9c
-            required: true
+            instructions: null
+            label: null
+            required: '1'
+            tip: null
             type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
           -
             fieldUid: 3a0f8407-4263-4449-9996-e53070168b78
-            required: true
+            instructions: null
+            label: null
+            required: '1'
+            tip: null
             type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
           -
             fieldUid: 526e0682-d673-4a69-abfc-75054fd47251
-            required: true
+            instructions: null
+            label: null
+            required: '1'
+            tip: null
             type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
           -
             fieldUid: b0162006-4be5-43a0-b035-d64e17725734
-            required: true
+            instructions: null
+            label: null
+            required: '1'
+            tip: null
             type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: ccad0251-6893-4101-bd19-deef0b61526e
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 50683cb1-0916-4b95-82aa-0c8336dee042
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
           -
             fieldUid: 39ac3118-752f-4170-85e7-bef7a88b14ff
-            required: true
+            instructions: null
+            label: null
+            required: '1'
+            tip: null
             type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
       -
         elements:
           -
             fieldUid: 682ecbc3-2252-4e4d-ac77-decc7ed47b7b
-            required: false
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
             type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
           -
             fieldUid: 34fc4e87-8df5-481d-bfad-75b58bf17d76
-            required: false
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
             type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: 'Contact blok'
         sortOrder: 2
       -
         elements:
           -
             fieldUid: 8d69ebf3-f317-4814-846f-b7f4fe0494b1
-            required: false
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
             type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: SEO
         sortOrder: 3
 handle: category
@@ -55,3 +134,5 @@ name: Categorie
 section: a9f5d80c-3a46-4c6c-8060-9e91f1246dbb
 sortOrder: 2
 titleFormat: '{commonTitle}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

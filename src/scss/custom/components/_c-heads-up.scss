@@ -19,7 +19,7 @@
 
   &__wrapper {
     @extend .rounded;
-    @extend .col-lg-10;
+    width: 100%;
     background-color: $teal-200;
     padding: map_get($spacers, 3) map_get($spacers, 2);
     display: flex;
@@ -27,6 +27,7 @@
 
     p {
       margin-bottom: 0;
+      align-self: center;
     }
   }
 }
