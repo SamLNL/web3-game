@@ -59,7 +59,7 @@
                   <p class="h3">{{ category.categoryUspsTitle }}</p>
                 {% endif %}
                 <ul class="checks">
-                  {% for usp in categoryUsps %}
+                  {% for usp in categoryUsps.all() %}
                     <li>
                       {{ usp.title }}
                     </li>

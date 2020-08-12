@@ -21,7 +21,7 @@
     </div>
   {% endif %}
   <div class="c-team d-flex flew-row flex-wrap">
-    {% for member in members %}
+    {% for member in members.all() %}
       <div class="c-team__member">
         <div class="c-team__member__image">
           {% set image = member.teamImage.one() %}

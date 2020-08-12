@@ -38,7 +38,7 @@
       <div class="c-cta-blocks {{ class }}">
         {% endif %}
 
-        {% for block in blocks %}
+        {% for block in blocks.all() %}
           {% if blocksEntries %}
             {% include '_partials/_components/cta-blocks/cta-block/cta-block.twig' with {
               title: block.title,

@@ -21,7 +21,7 @@
   <div class="c-slider swiper mx-xl-5">
     <div class="swiper-container js-slider swiper-overflow" data-swiper-id="{{ swiperId }}">
       <div class="swiper-wrapper">
-        {% for image in images %}
+        {% for image in images.all() %}
 
           <div class="c-slider__slide swiper-slide">
 
