@@ -47,7 +47,7 @@ plugins:
     edition: standard
     enabled: true
     licenseKey: RY1GZL106Q8ODBKR9XYEQLLH
-    schemaVersion: 1.0.17
+    schemaVersion: 1.0.19
   redactor:
     edition: standard
     enabled: true
