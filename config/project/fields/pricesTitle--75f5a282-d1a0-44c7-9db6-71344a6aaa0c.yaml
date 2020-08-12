@@ -1,0 +1,17 @@
+contentColumnType: text
+fieldGroup: f0c3735f-1b6e-456c-9608-4cfe64ddcd90
+handle: pricesTitle
+instructions: ''
+name: 'Prijzen - Titel'
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

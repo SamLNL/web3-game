@@ -1,0 +1,22 @@
+contentColumnType: text
+fieldGroup: da5dc685-57c1-4c15-b53e-38e1db3474ee
+handle: headsUp
+instructions: 'Wordt enkel getoond wanneer ingevuld.'
+name: 'Belangrijke update'
+searchable: true
+settings:
+  availableTransforms: '*'
+  availableVolumes: '*'
+  cleanupHtml: true
+  columnType: text
+  purifierConfig: ''
+  purifyHtml: '1'
+  redactorConfig: ''
+  removeEmptyTags: '1'
+  removeInlineStyles: '1'
+  removeNbsp: '1'
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\redactor\Field

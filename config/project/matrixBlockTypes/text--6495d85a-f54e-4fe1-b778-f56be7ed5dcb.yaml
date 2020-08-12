@@ -1,0 +1,68 @@
+field: 38af146a-0d6b-417d-abe2-dcc73f0bb167
+fieldLayouts:
+  b732d309-7e8d-443c-bde5-33680226ee94:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 81443263-41d9-4aa2-994a-ee1f8edd6fa6
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 8da8ae36-7cc0-45b8-adc8-08a98b785c04
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  81443263-41d9-4aa2-994a-ee1f8edd6fa6:
+    contentColumnType: text
+    fieldGroup: null
+    handle: heading
+    instructions: ''
+    name: Titel
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  8da8ae36-7cc0-45b8-adc8-08a98b785c04:
+    contentColumnType: text
+    fieldGroup: null
+    handle: subHeading
+    instructions: ''
+    name: Subtitel
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: text
+name: Tekst
+sortOrder: 1

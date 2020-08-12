@@ -1,0 +1,22 @@
+contentColumnType: text
+fieldGroup: 01e09fa1-4843-4208-830b-968a6ff4671c
+handle: summaryText
+instructions: 'Korte (samenvattende) tekst die enkel getoond zal worden op de overzichtspagina'
+name: 'Samenvattende tekst'
+searchable: true
+settings:
+  availableTransforms: '*'
+  availableVolumes: '*'
+  cleanupHtml: true
+  columnType: text
+  purifierConfig: ''
+  purifyHtml: '1'
+  redactorConfig: Simple.json
+  removeEmptyTags: '1'
+  removeInlineStyles: '1'
+  removeNbsp: '1'
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\redactor\Field

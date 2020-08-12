@@ -37,7 +37,6 @@
     </div>
   </div>
   <div class="col-12 col-lg-6">
-    {% set image = entry.googleMaps.one() %}
     {% set transforms =
       [
         {
@@ -64,6 +63,6 @@
         ],
         }
       ] %}
-    {{ macro.renderPicture(image, transforms, true, image.title, 'w-100 d-block') }}
+    {{ macro.renderPicture('/assets/images/bitmap/glyphs/Locatie-kaart.png', transforms, true, 'Google Maps', 'w-100 d-block') }}
   </div>
 </div>

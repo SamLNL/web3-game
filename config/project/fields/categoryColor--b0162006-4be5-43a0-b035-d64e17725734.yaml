@@ -1,0 +1,55 @@
+contentColumnType: string
+fieldGroup: 7b0ef5c0-4291-4913-932b-32945e1c974f
+handle: categoryColor
+instructions: ''
+name: 'Categorie - Thema kleur'
+searchable: true
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Lichtblauw
+        -
+          - value
+          - '#0290B0'
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Geel
+        -
+          - value
+          - '#F2E967'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Rood
+        -
+          - value
+          - '#DA273C'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Donkerblauw
+        -
+          - value
+          - '#114E86'
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\RadioButtons

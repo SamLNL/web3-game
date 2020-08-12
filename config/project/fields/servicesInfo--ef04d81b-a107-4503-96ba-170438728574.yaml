@@ -1,0 +1,18 @@
+contentColumnType: text
+fieldGroup: ae9ca910-6694-4017-a02d-bbea31a82b3a
+handle: servicesInfo
+instructions: ''
+name: 'Faciliteiten - Extra info'
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

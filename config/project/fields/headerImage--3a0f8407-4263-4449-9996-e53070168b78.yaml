@@ -1,0 +1,28 @@
+contentColumnType: string
+fieldGroup: 3e44ea8d-bbc2-4a77-99e7-bd0158f2794c
+handle: headerImage
+instructions: ''
+name: 'Header afbeelding'
+searchable: true
+settings:
+  allowedKinds:
+    - image
+  defaultUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1'
+  defaultUploadLocationSubpath: ''
+  limit: '1'
+  localizeRelations: false
+  restrictFiles: '1'
+  selectionLabel: ''
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  singleUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1'
+  singleUploadLocationSubpath: ''
+  source: null
+  sources: '*'
+  targetSiteId: null
+  useSingleFolder: true
+  validateRelatedElements: ''
+  viewMode: list
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

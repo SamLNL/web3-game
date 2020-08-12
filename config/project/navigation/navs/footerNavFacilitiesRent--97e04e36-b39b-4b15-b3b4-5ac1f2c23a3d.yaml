@@ -1,0 +1,9 @@
+handle: footerNavFacilitiesRent
+instructions: ''
+maxNodes: ''
+name: 'Footermenu - Faciliteiten en verhuur'
+propagateNodes: false
+sortOrder: 5
+structure:
+  maxLevels: '1'
+  uid: 4d333a44-e765-4473-bac6-b1d766e842bd

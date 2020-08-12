@@ -1,0 +1,308 @@
+field: a460ba7f-4818-4183-b551-28d816e087db
+fieldLayouts:
+  fabc1b88-fa1c-40bf-988f-0c553c2776bf:
+    tabs:
+      -
+        fields:
+          0d1f7f70-9e1a-4b5b-82b3-ea80e7e20143:
+            required: false
+            sortOrder: 5
+          1326cc83-fe6a-49c4-8309-60baabe0c674:
+            required: true
+            sortOrder: 1
+          2c7938d0-1f35-455e-93a2-e4f9776322c9:
+            required: true
+            sortOrder: 7
+          2cad35cf-b344-433a-bf7d-2625f8be0c67:
+            required: true
+            sortOrder: 4
+          576ee5c3-9e4e-4ab8-a1a6-40ba3aa07167:
+            required: false
+            sortOrder: 3
+          9f91f48a-6042-4608-8ba3-5c93b4b4de87:
+            required: false
+            sortOrder: 8
+          c0aa99af-2247-4512-935d-c4e48c014d40:
+            required: false
+            sortOrder: 6
+          f720f988-3ad1-42f7-b0e1-6cf094d2e939:
+            required: false
+            sortOrder: 2
+        name: Content
+        sortOrder: 1
+fields:
+  0d1f7f70-9e1a-4b5b-82b3-ea80e7e20143:
+    contentColumnType: text
+    fieldGroup: null
+    handle: subPrice
+    instructions: ''
+    name: Subprijs
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  1326cc83-fe6a-49c4-8309-60baabe0c674:
+    contentColumnType: text
+    fieldGroup: null
+    handle: heading
+    instructions: ''
+    name: Titel
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  2c7938d0-1f35-455e-93a2-e4f9776322c9:
+    contentColumnType: text
+    fieldGroup: null
+    handle: cta
+    instructions: ''
+    name: CTA
+    searchable: true
+    settings:
+      allowCustomText: '1'
+      allowTarget: '1'
+      allowedLinkNames:
+        1: asset
+        4: entry
+        6: custom
+        7: email
+        8: tel
+        9: url
+        10: solspaceCalendar-event
+      autoNoReferrer: '1'
+      defaultLinkName: url
+      defaultText: 'Bestel direct'
+      enableAriaLabel: ''
+      enableTitle: ''
+      typeSettings:
+        __assoc__:
+          -
+            - asset
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+          -
+            - category
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+          -
+            - user
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+          -
+            - entry
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+          -
+            - site
+            -
+              __assoc__:
+                -
+                  - sites
+                  - '*'
+          -
+            - custom
+            -
+              __assoc__:
+                -
+                  - disableValidation
+                  - ''
+                -
+                  - allowAliases
+                  - ''
+          -
+            - email
+            -
+              __assoc__:
+                -
+                  - disableValidation
+                  - ''
+                -
+                  - allowAliases
+                  - ''
+          -
+            - tel
+            -
+              __assoc__:
+                -
+                  - disableValidation
+                  - ''
+                -
+                  - allowAliases
+                  - ''
+          -
+            - url
+            -
+              __assoc__:
+                -
+                  - disableValidation
+                  - ''
+                -
+                  - allowAliases
+                  - ''
+          -
+            - solspaceCalendar-event
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: typedlinkfield\fields\LinkField
+  2cad35cf-b344-433a-bf7d-2625f8be0c67:
+    contentColumnType: text
+    fieldGroup: null
+    handle: price
+    instructions: ''
+    name: Prijs
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  576ee5c3-9e4e-4ab8-a1a6-40ba3aa07167:
+    contentColumnType: string
+    fieldGroup: null
+    handle: color
+    instructions: ''
+    name: Kleur
+    searchable: true
+    settings:
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Blauw
+            -
+              - value
+              - teal
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Geel
+            -
+              - value
+              - yellow
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\RadioButtons
+  9f91f48a-6042-4608-8ba3-5c93b4b4de87:
+    contentColumnType: text
+    fieldGroup: null
+    handle: ctaMicro
+    instructions: 'Micro tekst onder de knop wordt alleen getoond wanneer CTA is ingevuld'
+    name: 'CTA - micro tekst'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  c0aa99af-2247-4512-935d-c4e48c014d40:
+    contentColumnType: text
+    fieldGroup: null
+    handle: usps
+    instructions: ''
+    name: 'USP''s'
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: List.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  f720f988-3ad1-42f7-b0e1-6cf094d2e939:
+    contentColumnType: text
+    fieldGroup: null
+    handle: subHeading
+    instructions: ''
+    name: Subtitel
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: ticket
+name: Ticket
+sortOrder: 1

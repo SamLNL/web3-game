@@ -1,0 +1,8 @@
+handle: news
+hasUrls: true
+name: Nieuws
+settings:
+  path: '@mediaPath/news'
+sortOrder: 2
+type: craft\volumes\Local
+url: '@mediaUrl/news'

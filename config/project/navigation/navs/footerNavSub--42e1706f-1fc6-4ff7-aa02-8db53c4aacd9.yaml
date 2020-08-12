@@ -1,0 +1,9 @@
+handle: footerNavSub
+instructions: ''
+maxNodes: ''
+name: 'Footermenu - Submenu'
+propagateNodes: false
+sortOrder: 2
+structure:
+  maxLevels: '1'
+  uid: fc5d1e3d-0410-43f0-8c47-f58ed221bb51

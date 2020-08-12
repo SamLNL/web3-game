@@ -1,0 +1,86 @@
+dateModified: 1597217086
+email:
+  fromEmail: interactie@emotion.nl
+  fromName: Biljoenbad
+  transportType: craft\mail\transportadapters\Sendmail
+plugins:
+  async-queue:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  calendar:
+    edition: pro
+    enabled: true
+    licenseKey: RBCJMPP0I5NGW6Y5U2MWOP30
+    schemaVersion: 3.1.0
+    settings:
+      allDay: false
+      authoredEventEditOnly: false
+      defaultView: month
+      demoBannerDisabled: true
+      descriptionFieldHandle: null
+      eventDuration: 60
+      firstDayOfWeek: -1
+      guestAccess: null
+      locationFieldHandle: null
+      overlapThreshold: 5
+      pluginName: null
+      quickCreateEnabled: true
+      showDisabledEvents: true
+      showMiniCal: true
+      timeInterval: 30
+  cookies:
+    enabled: true
+    schemaVersion: 1.0.0
+  image-resizer:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
+  imager:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
+  minify:
+    enabled: true
+    schemaVersion: 1.0.0
+  navigation:
+    edition: standard
+    enabled: true
+    licenseKey: RY1GZL106Q8ODBKR9XYEQLLH
+    schemaVersion: 1.0.19
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
+  seomatic:
+    edition: standard
+    enabled: true
+    licenseKey: UL7PIK4A66LTU8T7FN4XK1RL
+    schemaVersion: 3.0.9
+  super-table:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.2.1
+  twigpack:
+    enabled: true
+    schemaVersion: 1.0.0
+  typedlinkfield:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  typogrify:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+system:
+  edition: pro
+  live: true
+  name: Biljoenbad
+  schemaVersion: 3.5.12
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: ''
+  photoVolumeUid: null
+  requireEmailVerification: true

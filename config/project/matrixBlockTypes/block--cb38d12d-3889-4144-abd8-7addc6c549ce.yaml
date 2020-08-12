@@ -1,0 +1,265 @@
+field: 9c2304a6-1b77-4cb8-a7c6-adae015eb968
+fieldLayouts:
+  d25d55f2-45da-49e3-91d5-aca22d07f60b:
+    tabs:
+      -
+        fields:
+          09f8e7a1-d5e0-49f0-9dd9-86cb41d024d7:
+            required: true
+            sortOrder: 1
+          172ee4aa-9fdb-4e3b-a94d-1bdca4c5bf2a:
+            required: true
+            sortOrder: 3
+          6c99a8ab-0e57-471c-9744-2552e2487605:
+            required: false
+            sortOrder: 4
+          92c6e846-df59-4d9f-a4c2-ae033aaf0a30:
+            required: true
+            sortOrder: 6
+          c36791eb-fe5c-4ecc-bc15-b149559452ce:
+            required: false
+            sortOrder: 5
+          ce516152-4c93-4392-9eb5-d873dc3e7ece:
+            required: false
+            sortOrder: 2
+        name: Content
+        sortOrder: 1
+fields:
+  09f8e7a1-d5e0-49f0-9dd9-86cb41d024d7:
+    contentColumnType: text
+    fieldGroup: null
+    handle: heading
+    instructions: ''
+    name: Titel
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  172ee4aa-9fdb-4e3b-a94d-1bdca4c5bf2a:
+    contentColumnType: text
+    fieldGroup: null
+    handle: price
+    instructions: ''
+    name: Prijs
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  6c99a8ab-0e57-471c-9744-2552e2487605:
+    contentColumnType: text
+    fieldGroup: null
+    handle: subPrice
+    instructions: ''
+    name: Subprijs
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  92c6e846-df59-4d9f-a4c2-ae033aaf0a30:
+    contentColumnType: text
+    fieldGroup: null
+    handle: cta
+    instructions: ''
+    name: CTA
+    searchable: true
+    settings:
+      allowCustomText: '1'
+      allowTarget: '1'
+      allowedLinkNames:
+        1: asset
+        4: entry
+        6: custom
+        7: email
+        8: tel
+        9: url
+      autoNoReferrer: '1'
+      defaultLinkName: custom
+      defaultText: 'Bestel direct'
+      enableAriaLabel: ''
+      enableTitle: ''
+      typeSettings:
+        __assoc__:
+          -
+            - asset
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+          -
+            - category
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+          -
+            - user
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+          -
+            - entry
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+          -
+            - site
+            -
+              __assoc__:
+                -
+                  - sites
+                  - '*'
+          -
+            - custom
+            -
+              __assoc__:
+                -
+                  - disableValidation
+                  - ''
+                -
+                  - allowAliases
+                  - ''
+          -
+            - email
+            -
+              __assoc__:
+                -
+                  - disableValidation
+                  - ''
+                -
+                  - allowAliases
+                  - ''
+          -
+            - tel
+            -
+              __assoc__:
+                -
+                  - disableValidation
+                  - ''
+                -
+                  - allowAliases
+                  - ''
+          -
+            - url
+            -
+              __assoc__:
+                -
+                  - disableValidation
+                  - ''
+                -
+                  - allowAliases
+                  - ''
+          -
+            - solspaceCalendar-event
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: typedlinkfield\fields\LinkField
+  c36791eb-fe5c-4ecc-bc15-b149559452ce:
+    contentColumnType: text
+    fieldGroup: null
+    handle: usps
+    instructions: ''
+    name: 'USP''s'
+    searchable: true
+    settings:
+      addRowLabel: 'Voeg een rij toe'
+      columnType: text
+      columns:
+        __assoc__:
+          -
+            - col1
+            -
+              __assoc__:
+                -
+                  - heading
+                  - USP
+                -
+                  - handle
+                  - usp
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - singleline
+      defaults:
+        -
+          __assoc__:
+            -
+              - col1
+              - ''
+      maxRows: ''
+      minRows: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Table
+  ce516152-4c93-4392-9eb5-d873dc3e7ece:
+    contentColumnType: text
+    fieldGroup: null
+    handle: subHeading
+    instructions: ''
+    name: Subtitel
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: block
+name: Blok
+sortOrder: 1

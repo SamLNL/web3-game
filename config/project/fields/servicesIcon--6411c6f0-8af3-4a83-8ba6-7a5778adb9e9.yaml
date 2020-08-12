@@ -1,0 +1,29 @@
+contentColumnType: string
+fieldGroup: ae9ca910-6694-4017-a02d-bbea31a82b3a
+handle: servicesIcon
+instructions: ''
+name: 'Faciliteiten - Icoon'
+searchable: true
+settings:
+  allowSelfRelations: false
+  allowedKinds: null
+  defaultUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1'
+  defaultUploadLocationSubpath: ''
+  limit: '1'
+  localizeRelations: false
+  restrictFiles: ''
+  selectionLabel: ''
+  showSiteMenu: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  singleUploadLocationSource: 'volume:03ef6c73-3b14-4ae2-bf06-2b1d57cc6605'
+  singleUploadLocationSubpath: ''
+  source: null
+  sources: '*'
+  targetSiteId: null
+  useSingleFolder: true
+  validateRelatedElements: false
+  viewMode: list
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

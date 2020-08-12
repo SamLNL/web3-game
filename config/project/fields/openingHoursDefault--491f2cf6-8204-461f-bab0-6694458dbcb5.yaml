@@ -1,0 +1,57 @@
+contentColumnType: text
+fieldGroup: cdcb72f5-a94d-46ed-ab22-67dcb5fff45f
+handle: openingHoursDefault
+instructions: ''
+name: 'Openingstijden - Reguliere tijden'
+searchable: true
+settings:
+  addRowLabel: 'Voeg een rij toe'
+  columnType: text
+  columns:
+    __assoc__:
+      -
+        - col1
+        -
+          __assoc__:
+            -
+              - heading
+              - Dag
+            -
+              - handle
+              - dag
+            -
+              - width
+              - ''
+            -
+              - type
+              - singleline
+      -
+        - col2
+        -
+          __assoc__:
+            -
+              - heading
+              - Tijd
+            -
+              - handle
+              - tijd
+            -
+              - width
+              - ''
+            -
+              - type
+              - singleline
+  defaults:
+    -
+      __assoc__:
+        -
+          - col1
+          - ''
+        -
+          - col2
+          - ''
+  maxRows: ''
+  minRows: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Table

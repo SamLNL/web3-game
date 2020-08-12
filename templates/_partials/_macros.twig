@@ -60,10 +60,11 @@
   {% set lazy = lazy ?? false %}
   <picture>
     {% for transform in transforms %}
-      {% set srcset = craft.imager.transformImage(image, transform.sizes, {position: image.getFocalpoint()}) %}
+      {% set focalPoint = image['focalPoint'] is defined ? image.getFocalpoint() : '50% 50%' %}
+      {% set srcset = craft.imager.transformImage(image, transform.sizes, {position: focalPoint}) %}
 
       {% if craft.imager.serverSupportsWebp() %}
-        {% set srcsetWebP = craft.imager.transformImage(image, transform.sizes, {format: 'webp', position: image.getFocalpoint()}) %}
+        {% set srcsetWebP = craft.imager.transformImage(image, transform.sizes, {format: 'webp', position: focalPoint}) %}
       {% endif %}
 
       {% if loop.first %}

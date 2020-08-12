@@ -1,0 +1,12 @@
+fieldLayouts:
+  20afbca5-c858-42a1-90c6-70371f8fe658:
+    tabs:
+      -
+        fields:
+          8c542cd3-0d01-4457-a609-6088b8bf698c:
+            required: false
+            sortOrder: 1
+        name: Menu
+        sortOrder: 1
+handle: menu
+name: Menu

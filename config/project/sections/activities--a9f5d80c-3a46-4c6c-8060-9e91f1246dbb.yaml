@@ -1,0 +1,26 @@
+enableVersioning: true
+handle: activities
+name: Activiteiten
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primaire invoer-pagina'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  521def3a-78c9-4e7b-8cb5-40b18c2c0705:
+    enabledByDefault: true
+    hasUrls: true
+    template: activities/entry
+    uriFormat: 'activiteiten/{parent.slug}/{slug}'
+structure:
+  maxLevels: 2
+  uid: 96dd2081-1805-40b5-8d33-4527bb71ce95
+type: structure

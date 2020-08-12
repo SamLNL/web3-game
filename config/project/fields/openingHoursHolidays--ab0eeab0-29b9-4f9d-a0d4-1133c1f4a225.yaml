@@ -1,0 +1,76 @@
+contentColumnType: text
+fieldGroup: cdcb72f5-a94d-46ed-ab22-67dcb5fff45f
+handle: openingHoursHolidays
+instructions: ''
+name: 'Openingstijden - Vakantie en feestdagen'
+searchable: true
+settings:
+  addRowLabel: 'Voeg een rij toe'
+  columnType: text
+  columns:
+    __assoc__:
+      -
+        - col1
+        -
+          __assoc__:
+            -
+              - heading
+              - 'Vakantie / feestdag'
+            -
+              - handle
+              - holiday
+            -
+              - width
+              - ''
+            -
+              - type
+              - singleline
+      -
+        - col2
+        -
+          __assoc__:
+            -
+              - heading
+              - Datum
+            -
+              - handle
+              - datum
+            -
+              - width
+              - ''
+            -
+              - type
+              - singleline
+      -
+        - col3
+        -
+          __assoc__:
+            -
+              - heading
+              - Tijden
+            -
+              - handle
+              - time
+            -
+              - width
+              - ''
+            -
+              - type
+              - singleline
+  defaults:
+    -
+      __assoc__:
+        -
+          - col1
+          - ''
+        -
+          - col2
+          - ''
+        -
+          - col3
+          - ''
+  maxRows: ''
+  minRows: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Table

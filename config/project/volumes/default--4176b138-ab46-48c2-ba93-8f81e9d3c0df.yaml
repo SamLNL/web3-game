@@ -1,0 +1,8 @@
+handle: default
+hasUrls: true
+name: Algemeen
+settings:
+  path: '@mediaPath/default'
+sortOrder: 2
+type: craft\volumes\Local
+url: '@mediaUrl/default'

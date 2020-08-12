@@ -1,0 +1,6 @@
+siteUid: null
+sortOrder: 3
+template: _partials/_components/calendar/resources/events.twig
+uriParts:
+  - fullcalendar-events
+uriPattern: fullcalendar-events

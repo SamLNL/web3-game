@@ -1,0 +1,75 @@
+field: d16c24d1-abfe-4e08-b18c-45bcb368c93f
+fieldLayouts:
+  70107fba-cb30-425c-ac9a-52c6cbb07761:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 867a840b-ade9-4fd1-8402-6dcd31910941
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 7316c0df-321c-4d4c-bad3-47a0c0b8dac9
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  7316c0df-321c-4d4c-bad3-47a0c0b8dac9:
+    contentColumnType: string
+    fieldGroup: null
+    handle: team
+    instructions: ''
+    name: Team
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      limit: ''
+      localizeRelations: false
+      selectionLabel: ''
+      showSiteMenu: true
+      source: null
+      sources:
+        - 'section:e4de1f49-863a-4529-a6da-ad7fb32a1ef2'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+  867a840b-ade9-4fd1-8402-6dcd31910941:
+    contentColumnType: text
+    fieldGroup: null
+    handle: text
+    instructions: ''
+    name: Tekst
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: ''
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+handle: team
+name: Team
+sortOrder: 17

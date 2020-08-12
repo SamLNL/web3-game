@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: 01e09fa1-4843-4208-830b-968a6ff4671c
+handle: body
+instructions: ''
+name: Inhoud
+searchable: true
+settings:
+  contentTable: '{{%matrixcontent_body}}'
+  maxBlocks: ''
+  minBlocks: ''
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

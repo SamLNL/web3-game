@@ -1,0 +1,17 @@
+contentColumnType: text
+fieldGroup: cdcb72f5-a94d-46ed-ab22-67dcb5fff45f
+handle: contactBlockPhone
+instructions: ''
+name: 'Contact blok - Telefoonnummer'
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

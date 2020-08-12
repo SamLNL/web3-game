@@ -1,0 +1,8 @@
+handle: header
+hasUrls: true
+name: Header
+settings:
+  path: '@mediaPath/header'
+sortOrder: 1
+type: craft\volumes\Local
+url: '@mediaUrl/header'

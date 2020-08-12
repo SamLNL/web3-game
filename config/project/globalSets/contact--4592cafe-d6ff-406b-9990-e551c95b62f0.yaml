@@ -1,0 +1,37 @@
+fieldLayouts:
+  da5a2b56-e6b9-4bf8-bc9c-7b4cd7dd7448:
+    tabs:
+      -
+        fields:
+          4a1103f1-acec-4eae-9259-d9ef1e9a05fb:
+            required: false
+            sortOrder: 5
+          4e9173fd-9444-4cad-8f4e-532eaa7ce1f7:
+            required: true
+            sortOrder: 1
+          7ffa6f74-ddee-45e0-bb12-68def0320384:
+            required: false
+            sortOrder: 4
+          990e683c-9217-48b2-9d27-0208bc3339fd:
+            required: true
+            sortOrder: 3
+          b660e663-9d28-4b7f-bf32-2ff921bcc3c1:
+            required: true
+            sortOrder: 2
+        name: Contact
+        sortOrder: 1
+      -
+        fields:
+          4ca82977-e9ee-4f4b-87fd-5a879b9b4707:
+            required: true
+            sortOrder: 1
+          799b722b-ef73-43c7-81e8-60712f17e3d5:
+            required: false
+            sortOrder: 3
+          bc6ad484-fb43-4e27-ab54-1b0eab2c92b8:
+            required: false
+            sortOrder: 2
+        name: Contactblok
+        sortOrder: 2
+handle: contact
+name: Contact

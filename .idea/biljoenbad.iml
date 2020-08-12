@@ -15,7 +15,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/craftcms/server-check" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/creocoder/yii2-nested-sets" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/davechild/textstatistics" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/dnoegel/php-xdg-base-dir" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/defuse/php-encryption" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/lexer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/egulias/email-validator" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/elvanto/litemoji" />
@@ -58,7 +58,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/mtdowling/jmespath.php" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/mundschenk-at/php-typography" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/nesbot/carbon" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/nikic/php-parser" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/nystudio107/craft-cookies" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/nystudio107/craft-minify" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/nystudio107/craft-seomatic" />
@@ -78,7 +77,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/container" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/http-message" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/log" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/psy/psysh" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/ralouphie/getallheaders" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/ramsey/uuid" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/rize/uri-template" />
@@ -108,7 +106,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/process" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/property-access" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/translation" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/var-dumper" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/yaml" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/tinify/tinify" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/true/punycode" />
@@ -133,7 +130,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/yiisoft/yii2-composer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/yiisoft/yii2-debug" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/yiisoft/yii2-queue" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/yiisoft/yii2-shell" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/yiisoft/yii2-swiftmailer" />
     </content>
     <orderEntry type="inheritedJdk" />
