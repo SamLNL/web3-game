@@ -13,6 +13,7 @@
   position: relative;
   z-index: 30;
   background-color: $teal-600;
+  width: 100%;
 
   @include media-breakpoint-up('lg') {
     padding-left: map_get($spacers, 6);

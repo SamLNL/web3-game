@@ -8,6 +8,9 @@
   justify-content: center;
   align-items: center;
   color: $white;
+  max-width: 100%;
+  hyphens: auto;
+  white-space: normal;
 
   &:hover {
     color: $white;
