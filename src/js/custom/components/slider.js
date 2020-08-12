@@ -19,8 +19,10 @@ let swipers = {};
   swipers[i] = new Swiper(el, {
     slidesPerView: 1,
     preloadImages: false,
-    lazy: true,
     watchSlidesVisibility: true,
+    lazy: {
+      loadPrevNext: true,
+    },
     navigation: {
       prevEl: prevEl,
       nextEl: nextEl,

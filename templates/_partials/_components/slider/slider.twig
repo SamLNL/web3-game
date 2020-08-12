@@ -30,8 +30,8 @@
               height: 470,
               position: image.getFocalpoint()
             }) %}
-            <img class="swiper-lazy" src="{{ transformImage.url }}" alt="{{ image.title }}">
-            <div class="swiper-lazy-preloader"></div>
+            <img class="swiper-lazy" data-src="{{ transformImage.url }}" alt="{{ image.title }}">
+            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
           </div>
         {% endfor %}
       </div>

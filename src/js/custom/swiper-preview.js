@@ -8,7 +8,9 @@ let swiperPreview = new Swiper('.js-swiper-preview', {
   },
   preloadImages: false,
   watchSlidesVisibility: true,
-  lazy: true,
+  lazy: {
+    loadPrevNext: true,
+  },
   navigation: {
     nextEl: '.carousel-control-next',
     prevEl: '.carousel-control-prev',
