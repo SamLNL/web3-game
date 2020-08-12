@@ -107,15 +107,20 @@
     {% nav node in nav %}
       {% if node.hasDescendants %}
         <li class="nav-item dropdown">
-            <a {% if node.url %}href="{{ node.url }}"{% endif %} class="nav-link{{ node.active ? ' nav-active' }}{{ idLink ? ' js-scroll' }}{{ node.classes ? ' ' ~ node.classes : '' }}"{% if node.newWindow %} target="_blank" rel="noopener"{% endif %}{% for attribute in node.customAttributes %}{{ attribute.attribute }}="{{ attribute.value }}"{% endfor %} ga-on="click" ga-event-category="Menu" ga-event-action="Click" ga-event-label="{{ node.title }}">
-              {{ node.title }}
-            </a>
-            <a class="dropdown-toggle" href="#" id="main-mobile-dropdown" data-toggle="dropdown">
-            </a>
+          <a {% if node.url %}href="{{ node.url }}"{% endif %}
+             class="nav-link{{ node.active ? ' nav-active' }}{{ idLink ? ' js-scroll' }}{{ node.classes ? ' ' ~ node.classes : '' }}"{% if node.newWindow %}
+             target="_blank"
+             rel="noopener"{% endif %}{% for attribute in node.customAttributes %}{{ attribute.attribute }}="{{ attribute.value }}"{% endfor %}
+          ga-on="click" ga-event-category="Menu" ga-event-action="Click" ga-event-label="{{ node.title }}">
+          {{ node.title }}
+          </a>
+          <a class="dropdown-toggle" href="#" id="main-mobile-dropdown" data-toggle="dropdown">
+          </a>
           <ul class="dropdown-menu" aria-labelledby="main-mobile-dropdown">
             {% for subnode in node.children.all() %}
-              <a {% if subnode.url %}href="{{ subnode.url }}"{% endif %} class="nav-link{{ subnode.active ? ' nav-active' }}{{ idLink ? ' js-scroll' }}{{ subnode.classes ? ' ' ~ subnode.classes : '' }}"{% if subnode.newWindow %} target="_blank" rel="noopener"{% endif %}{% for attribute in subnode.customAttributes %}{{ attribute.attribute }}="{{ attribute.value }}"{% endfor %} ga-on="click" ga-event-category="Menu" ga-event-action="Click" ga-event-label="{{ subnode.title }}">
-                {{ subnode.title }}
+              <a
+              {% if subnode.url %}href="{{ subnode.url }}"{% endif %} class="nav-link{{ subnode.active ? ' nav-active' }}{{ idLink ? ' js-scroll' }}{{ subnode.classes ? ' ' ~ subnode.classes : '' }}"{% if subnode.newWindow %} target="_blank" rel="noopener"{% endif %}{% for attribute in subnode.customAttributes %}{{ attribute.attribute }}="{{ attribute.value }}"{% endfor %} ga-on="click" ga-event-category="Menu" ga-event-action="Click" ga-event-label="{{ subnode.title }}">
+              {{ subnode.title }}
               </a>
             {% endfor %}
           </ul>
@@ -123,8 +128,13 @@
       {% elseif not node.parent | length %}
         <li class="nav-item">
           {% set idLink = node.url|first == '#' ? true : false %}
-          <a {% if node.url %}href="{{ node.url }}"{% endif %} class="nav-link{{ node.active ? ' nav-active' }}{{ idLink ? ' js-scroll' }}{{ node.classes ? ' ' ~ node.classes : '' }}"{% if node.newWindow %} target="_blank" rel="noopener"{% endif %}{% for attribute in node.customAttributes %}{{ attribute.attribute }}="{{ attribute.value }}"{% endfor %} ga-on="click" ga-event-category="Menu" ga-event-action="Click" ga-event-label="{{ node.title }}">
-             {{ node.title }}
+          <a {% if node.url %}href="{{ node.url }}"{% endif %}
+             class="nav-link{{ node.active ? ' nav-active' }}{{ idLink ? ' js-scroll' }}{{ node.classes ? ' ' ~ node.classes : '' }}"{% if node.newWindow %}
+             target="_blank"
+             rel="noopener"{% endif %}{% for attribute in node.customAttributes %}{{ attribute.attribute }}=
+          "{{ attribute.value }}"{% endfor %} ga-on="click" ga-event-category="Menu" ga-event-action="Click"
+          ga-event-label="{{ node.title }}">
+          {{ node.title }}
           </a>
         </li>
       {% endif %}
@@ -165,6 +175,51 @@
   {% endif %}
 
   {% css myCss %}
+{% endmacro %}
+
+{% macro renderImageBackground(image, transforms, lazyload = false) %}
+
+  {% set sizes = [] %}
+
+  {% for item in transforms %}
+    {% set sizes = sizes | merge(item.sizes) %}
+  {% endfor %}
+
+  {% set transformedImages = craft.imager.transformImage(image, sizes,
+    {position: image.getFocalpoint()}) %}
+
+  {% if lazyload %}
+    {% set bgset = '' %}
+    {% for idx,transform in transforms %}
+      {% if transform['breakpoint'] is defined %}
+        {% set bgset = bgset ~ (loop.first ? '' : ', ') ~ transformedImages[ idx ] ~ ' ' ~ transform.breakpoint ~ 'w' %}
+      {% else %}
+        {% set bgset = bgset ~ (loop.first ? transformedImages[ idx ] : '') %}
+      {% endif %}
+    {% endfor %}
+
+    {% set inlineHtml = 'data-bgset=' ~ bgset %}
+  {% else %}
+    {% set style = '' %}
+    {% for idx,transform in transforms %}
+      {% if transform['media'] is defined %}
+        {% set style = style ~ '
+            @media only screen and (' ~ transform.media ~ ') {
+            background-size: cover;
+            background-image: url(' ~ transformedImages[ idx ] ~ ');
+            background-position: ' ~ image.getFocalpoint().x * 100 ~ '% ' ~ image.getFocalpoint().y * 100~ '%;
+            }' %}
+      {% else %}
+        {% set style = style ~ '
+            background-size: cover;
+            background-image: url(' ~ transformedImages[ idx ] ~ ');
+            background-position: ' ~ image.getFocalpoint().x * 100 ~ '% ' ~ image.getFocalpoint().y * 100~ '%;' %}
+      {% endif %}
+    {% endfor %}
+    {% set inlineHtml = 'style=' ~ style %}
+  {% endif %}
+
+  {{ inlineHtml }}
 {% endmacro %}
 
 {#
