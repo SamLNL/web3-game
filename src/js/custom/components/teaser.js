@@ -32,7 +32,8 @@ const enableSwipers = function() {
         el: pagEl,
         clickable: true
       },
-      slidesPerView: 1
+      slidesPerView: 1,
+      spaceBetween: 10,
     });
   });
 };

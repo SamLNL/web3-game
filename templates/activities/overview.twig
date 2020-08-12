@@ -23,7 +23,7 @@
     intro: entry.intro
   } %}
 
-  {% set activities = craft.entries.section('activities').hasDescendants().all() %}
+  {% set activities = craft.entries.section('activities').with(['headerImage']).hasDescendants().all() %}
 
   <div id="mainContentSkip">
     {% if activities | length %}
@@ -35,7 +35,7 @@
               <div class="col-12 mb-3 d-flex col-md-6 col-lg-4">
                 {% include '_partials/_components/cta-blocks/cta-block/cta-block.twig' with {
                   title: activity.title,
-                  mainImage: activity.headerImage.one(),
+                  mainImage: activity.headerImage[0],
                   subContent: activity.summaryText | striptags[:90] ~ '...',
                   cta: { url: activity.url, text: 'Lees meer', target: '' },
                   ctaArrow: true,

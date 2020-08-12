@@ -17,16 +17,17 @@
 {% endblock %}
 
 {% block content %}
+  {% cache %}
+    {% include '_partials/_global/header' with {
+      title: entry.title,
+      image: entry.headerImage.one(),
+      intro: entry.intro
+    } %}
 
-  {% include '_partials/_global/header' with {
-    title: entry.title,
-    image: entry.headerImage.one(),
-    intro: entry.intro
-  } %}
-
-  <div id="mainContentSkip">
-    {% include "_partials/_common/matrix.twig" %}
-  </div>
+    <div id="mainContentSkip">
+      {% include "_partials/_common/matrix.twig" %}
+    </div>
+  {% endcache %}
 {% endblock %}
 
 {% block _inline_js %}

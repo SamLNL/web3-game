@@ -17,10 +17,12 @@
 {% endblock %}
 
 {% block content %}
-  {% include '_partials/_global/header' with {
-    title: entry.title,
-    intro: entry.intro
-  } %}
+  {% cache %}
+    {% include '_partials/_global/header' with {
+      title: entry.title,
+      intro: entry.intro
+    } %}
+  {% endcache %}
 
   {% set activities = craft.entries.section('activities').descendantOf(entry.id).all() %}
 
@@ -47,7 +49,9 @@
           </div>
         </div>
       </div>
-      {% include "_partials/_common/matrix.twig" %}
+      {% cache %}
+        {% include "_partials/_common/matrix.twig" %}
+      {% endcache %}
     {% endif %}
   </div>
 {% endblock %}

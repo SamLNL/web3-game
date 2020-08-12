@@ -23,7 +23,7 @@
     intro: entry.intro
   } %}
 
-  {% set facilities = craft.entries.section('facilities').all() %}
+  {% set facilities = craft.entries.section('facilities').with(['headerImage']).all() %}
 
   <div id="mainContentSkip">
     {% if facilities | length %}
@@ -35,7 +35,7 @@
               <div class="col-12 mb-3 col-md-6 col-lg-4">
                 {% include '_partials/_components/cta-blocks/cta-block/cta-block.twig' with {
                   title: facility.title,
-                  mainImage: facility.headerImage.one(),
+                  mainImage: facility.headerImage[0],
                   subContent: facility.summaryText | striptags[:90] ~ '...',
                   cta: { url: facility.url, text: 'Lees meer', target: '' },
                   ctaArrow: true,

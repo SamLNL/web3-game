@@ -19,6 +19,8 @@
 
 {% block content %}
 
+  {% cache %}
+
   {% include '_partials/_global/header' with {
     title: entry.title,
     image: entry.headerImage.one(),
@@ -44,7 +46,8 @@
                   <div class="d-flex flex-row justify-content-center align-items-center mt-4 mt-md-0 ml-md-auto">
                     <p class="mb-0">Volg ons op</p>
                     {% if social.socialFacebook | length %}
-                      <a title="Ga naar onze Facebookpagina" class="d-block ml-1 hover-none" href="{{ social.socialFacebook }}"
+                      <a title="Ga naar onze Facebookpagina" class="d-block ml-1 hover-none"
+                         href="{{ social.socialFacebook }}"
                          target="_blank">
                       <span class="c-icon">
                         {% include '_inline/_svg/facebook-square-brands.twig' %}
@@ -52,7 +55,8 @@
                       </a>
                     {% endif %}
                     {% if social.socialInstagram | length %}
-                      <a title="Ga naar onze Instagram" class="d-block ml-1 hover-none" href="{{ social.socialInstagram }}"
+                      <a title="Ga naar onze Instagram" class="d-block ml-1 hover-none"
+                         href="{{ social.socialInstagram }}"
                          target="_blank">
                   <span class="c-icon">
                     {% include '_inline/_svg/instagram-square-brands.twig' %}
@@ -68,6 +72,7 @@
       </div>
     </div>
   {% endif %}
+  {% cache %}
 {% endblock %}
 
 {% block _inline_js %}

@@ -17,22 +17,26 @@
 {% endblock %}
 
 {% block content %}
-  {% include '_partials/_global/header' with {
-    title: entry.title,
-    image: entry.headerImage.one(),
-    intro: entry.intro
-  } %}
+  {% cache %}
+    {% include '_partials/_global/header' with {
+      title: entry.title,
+      image: entry.headerImage.one(),
+      intro: entry.intro
+    } %}
+  {% endcache %}
   <div class="bg-teal-100 py-4 py-lg-6" id="mainContentSkip">
     <div class="container">
       <div class="d-flex flex-column flex-sm-row flex-sm-wrap">
         <h2 class="mb-3 mb-md-0 p-0 w-100 w-md-auto">
           {{ entry.calendarTitle }}
         </h2>
-        <div class="d-flex mb-3 mb-sm-0 mr-sm-3 mr-md-0 w-md-auto flex-md-grow-1 align-items-md-center justify-content-md-center">
+        <div
+          class="d-flex mb-3 mb-sm-0 mr-sm-3 mr-md-0 w-md-auto flex-md-grow-1 align-items-md-center justify-content-md-center">
           <div class="e-datepicker w-100 w-md-auto">
             <label class="position-absolute invisible" for='day'></label>
             <input class="js-calendar-datepicker w-100 w-sm-auto" type="date" id="day" name="trip-start"
-                   value="{{ "now"|date("Y-m-d") }}" min="{{ "now"|date_modify("-1 year")|date("Y-m-d") }}" max="{{ "now"|date_modify("+1 year")|date("Y-m-d") }}">
+                   value="{{ "now"|date("Y-m-d") }}" min="{{ "now"|date_modify("-1 year")|date("Y-m-d") }}"
+                   max="{{ "now"|date_modify("+1 year")|date("Y-m-d") }}">
           </div>
         </div>
         <div class="d-none d-sm-block ml-auto flex-shrink-0" style="width: 243px; height: 47px;"></div>
@@ -49,10 +53,11 @@
       {% endif %}
     </div>
   </div>
-
-  <div class="pt-6 pt-lg-8">
-    {% include "_partials/_common/matrix.twig" %}
-  </div>
+  {% cache %}
+    <div class="pt-6 pt-lg-8">
+      {% include "_partials/_common/matrix.twig" %}
+    </div>
+  {% endcache %}
 
 {% endblock %}
 
