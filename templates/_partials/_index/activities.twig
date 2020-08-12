@@ -21,7 +21,7 @@
     <div class="swiper-container row js-swiper-services mb-2 mb-lg-0" data-swiper-id="{{ swiperId }}">
       <div class="swiper-wrapper d-flex flex-row">
         {% for slide in activitiesSlides %}
-          <div class="swiper-slide swiper-lazy h-auto d-flex col-12 col-md-5 col-lg-4 flex-grow-1"
+          <div class="swiper-slide h-auto d-flex col-12 col-md-5 col-lg-4 flex-grow-1"
                data-title="{{ slide.serviceTitle }}">
             <div class="card w-100">
               {% switch slide.serviceColor.value %}

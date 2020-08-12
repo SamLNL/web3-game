@@ -20,6 +20,7 @@ let swipers = {};
     slidesPerView: 1,
     preloadImages: false,
     lazy: true,
+    watchSlidesVisibility: true,
     navigation: {
       prevEl: prevEl,
       nextEl: nextEl,

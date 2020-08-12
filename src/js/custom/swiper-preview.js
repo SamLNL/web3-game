@@ -3,11 +3,12 @@ import {sendGAEvent} from '../analytics/analytics';
 
 let swiperPreview = new Swiper('.js-swiper-preview', {
   pagination: {
-    preloadImages: false,
-    lazy: true,
     el: '.swiper-pagination',
     clickable: true,
   },
+  preloadImages: false,
+  watchSlidesVisibility: true,
+  lazy: true,
   navigation: {
     nextEl: '.carousel-control-next',
     prevEl: '.carousel-control-prev',

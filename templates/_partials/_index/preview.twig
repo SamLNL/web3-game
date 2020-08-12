@@ -5,14 +5,16 @@
   <div class="swiper-container row js-swiper-preview">
     <div class="swiper-wrapper d-flex flex-row h-auto">
       {% for slide in entry.preview.all() %}
-        <div class="swiper-slide swiper-lazy swiper-slide-side-by-side col-11 col-md-12" data-title="{{ slide.previewTitle }}">
+        <div class="swiper-slide swiper-slide-side-by-side col-11 col-md-12" data-title="{{ slide.previewTitle }}">
           {% set image = slide.previewImage.one() %}
           {% set tranformedImage = craft.imager.transformImage(image, {
             width: 700,
             height: 400
           }) %}
-          <div class="swiper-slide__image"
-               style="background:url({{ tranformedImage.url }}) center no-repeat;background-size:cover;">
+          <div class="swiper-slide__image swiper-lazy"
+               data-background="{{ tranformedImage.url }}"
+               style="background-repeat:no-repeat;background-position:center;background-size:cover;">
+            <div class="swiper-lazy-preloader"></div>
           </div>
           <div class="swiper-slide__content">
             <div class="d-flex flex-row align-items-center mb-2 mb-lg-3">
