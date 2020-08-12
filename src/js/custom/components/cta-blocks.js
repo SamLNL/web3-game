@@ -40,6 +40,8 @@ ctaBlocks.forEach((el) => {
           el: '.swiper-pagination[data-swiper-id="' + id + '"]',
           clickable: true,
         },
+        preloadImages: false,
+        lazy: true,
         slidesPerView: 'auto',
         spaceBetween: 10,
       });

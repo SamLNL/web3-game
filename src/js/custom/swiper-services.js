@@ -27,6 +27,8 @@ if (window.innerWidth < 991) {
     },
     observer: true,
     slidesPerView: 'auto',
+    preloadImages: false,
+    lazy: true,
     breakpoints: {
       1024: {
         pagination: {

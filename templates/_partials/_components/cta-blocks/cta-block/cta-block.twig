@@ -33,7 +33,7 @@
 
 {% if title | length and (mainTitle | length or mainImage | length) %}
   {% if url | length %}
-    <a href="{{ url }}" class="c-cta-block {{ swiper ? 'swiper-slide' }} {{ class }}"
+    <a href="{{ url }}" class="c-cta-block {{ swiper ? 'swiper-slide swiper-lazy' }} {{ class }}"
          data-title="{{ title }}" title="{{ title }}">
   {% else %}
     <div class="c-cta-block {{ swiper ? 'swiper-slide' }} {{ class }}"

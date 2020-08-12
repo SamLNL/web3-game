@@ -5,6 +5,7 @@ $fontsUrl: '../fonts/';
   font-family: 'PT Sans';
   font-style: normal;
   font-weight: 400;
+  font-display: swap;
   src: url($fontsUrl + 'pt-sans-v11-latin-regular.eot'); /* IE9 Compat Modes */
   src: local('PT Sans'), local('PTSans-Regular'),
   url($fontsUrl + 'pt-sans-v11-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
@@ -19,6 +20,7 @@ $fontsUrl: '../fonts/';
   font-family: 'PT Sans';
   font-style: normal;
   font-weight: 700;
+  font-display: swap;
   src: url($fontsUrl + 'pt-sans-v11-latin-700.eot'); /* IE9 Compat Modes */
   src: local('PT Sans Bold'), local('PTSans-Bold'),
   url($fontsUrl + 'pt-sans-v11-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
@@ -33,6 +35,7 @@ $fontsUrl: '../fonts/';
   font-family: 'Oswald';
   font-style: normal;
   font-weight: 700;
+  font-display: swap;
   src: url($fontsUrl + 'oswald-v31-latin-700.eot'); /* IE9 Compat Modes */
   src: local(''),
   url($fontsUrl + 'oswald-v31-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */

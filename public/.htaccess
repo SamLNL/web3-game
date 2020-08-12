@@ -825,6 +825,9 @@ ServerSignature Off
 #     Header merge Cache-Control "no-transform"
 # </IfModule>
 
+# Cache for a year
+Header set Cache-Control "max-age=31536000, public"
+
 # ----------------------------------------------------------------------
 # | ETags                                                              |
 # ----------------------------------------------------------------------
