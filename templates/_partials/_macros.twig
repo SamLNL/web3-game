@@ -177,7 +177,8 @@
   {% css myCss %}
 {% endmacro %}
 
-{% macro renderImageBackground(image, transforms, lazyload = false) %}
+
+{% macro renderLazyloadBackground(image, transforms) %}
 
   {% set sizes = [] %}
 
@@ -188,38 +189,23 @@
   {% set transformedImages = craft.imager.transformImage(image, sizes,
     {position: image.getFocalpoint()}) %}
 
-  {% if lazyload %}
-    {% set bgset = '' %}
-    {% for idx,transform in transforms %}
-      {% if transform['breakpoint'] is defined %}
-        {% set bgset = bgset ~ (loop.first ? '' : ', ') ~ transformedImages[ idx ] ~ ' ' ~ transform.breakpoint ~ 'w' %}
-      {% else %}
-        {% set bgset = bgset ~ (loop.first ? transformedImages[ idx ] : '') %}
-      {% endif %}
-    {% endfor %}
-
-    {% set inlineHtml = 'data-bgset=' ~ bgset %}
-  {% else %}
-    {% set style = '' %}
-    {% for idx,transform in transforms %}
-      {% if transform['media'] is defined %}
-        {% set style = style ~ '
+  {% set style = '' %}
+  {% for idx,transform in transforms %}
+    {% if transform['media'] is defined %}
+      {% set style = style ~ '
             @media only screen and (' ~ transform.media ~ ') {
             background-size: cover;
             background-image: url(' ~ transformedImages[ idx ] ~ ');
-            background-position: ' ~ image.getFocalpoint().x * 100 ~ '% ' ~ image.getFocalpoint().y * 100~ '%;
-            }' %}
-      {% else %}
-        {% set style = style ~ '
+            background-position: ' ~ image.getFocalpoint().x * 100 ~ '% ' ~ image.getFocalpoint().y * 100 ~ '%;}' %}
+    {% else %}
+      {% set style = style ~ '
             background-size: cover;
             background-image: url(' ~ transformedImages[ idx ] ~ ');
             background-position: ' ~ image.getFocalpoint().x * 100 ~ '% ' ~ image.getFocalpoint().y * 100~ '%;' %}
-      {% endif %}
-    {% endfor %}
-    {% set inlineHtml = 'style=' ~ style %}
-  {% endif %}
+    {% endif %}
+  {% endfor %}
 
-  {{ inlineHtml }}
+  {{ style }}
 {% endmacro %}
 
 {#

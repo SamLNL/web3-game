@@ -56,8 +56,8 @@ const main = async () => {
     await import(/* webpackChunkName: "swiper" */ "./custom/components/cta-blocks");
   }
 
-  if(document.querySelectorAll('[data-bgset]').length > 0) {
-    await import(/* webpackChunkName: "lazyload" */ "./custom/bgset");
+  if(document.querySelectorAll('[data-bg]').length > 0) {
+    await import(/* webpackChunkName: "lazyload" */ "./custom/lazyload-bg");
   }
 
   analytics.init();
