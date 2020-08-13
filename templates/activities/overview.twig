@@ -30,9 +30,9 @@
       <div class="container">
         <h2 class="mb-3">{{ entry.activitiesOverviewTitle }}</h2>
         <div class="row">
-          <div class="d-flex flex-column mb-4 flex-md-row flex-md-wrap mb-lg-8">
+          <div class="d-flex flex-column w-100 mb-4 flex-md-row flex-md-wrap mb-lg-8">
             {% for activity in activities %}
-              <div class="col-12 mb-3 d-flex col-md-6 col-lg-4">
+              <div class="col-12 mb-3 d-flex col-md-6">
                 {% include '_partials/_components/cta-blocks/cta-block/cta-block.twig' with {
                   title: activity.title,
                   mainImage: activity.headerImage[0],
