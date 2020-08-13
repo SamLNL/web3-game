@@ -14,19 +14,19 @@
   @include media-breakpoint-up(md) {
     flex-direction: row;
     margin-bottom: map_get($spacers, 1);
-  }
 
-  &:hover {
-    text-decoration: none;
-    transform: translate(8px, 0);
+    &:hover {
+      text-decoration: none;
+      transform: translate(8px, 0);
 
-    .c-btn-white {
-      color: $teal-600;
-      background-color: $teal-200;
-    }
+      .c-btn-white {
+        color: $teal-600;
+        background-color: $teal-200;
+      }
 
-    span {
-      border-bottom: 0;
+      span {
+        border-bottom: 0;
+      }
     }
   }
 
