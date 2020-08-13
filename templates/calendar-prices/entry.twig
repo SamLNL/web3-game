@@ -30,16 +30,33 @@
         <h2 class="mb-3 mb-md-0 p-0 w-100 w-md-auto">
           {{ entry.calendarTitle }}
         </h2>
-        <div
-          class="d-flex mb-3 mb-sm-0 mr-sm-3 mr-md-0 w-md-auto flex-md-grow-1 align-items-md-center justify-content-md-center">
-          <div class="e-datepicker w-100 w-md-auto">
-            <label class="position-absolute invisible" for='day'></label>
-            <input class="js-calendar-datepicker w-100 w-sm-auto" type="date" id="day" name="trip-start"
-                   value="{{ "now"|date("Y-m-d") }}" min="{{ "now"|date_modify("-1 year")|date("Y-m-d") }}"
-                   max="{{ "now"|date_modify("+1 year")|date("Y-m-d") }}">
+        <div class="d-flex flex-row align-items-center w-100 mt-md-2 w-lg-auto ml-auto mt-lg-0">
+          <div class="d-flex flex-shrink-1 mb-3 mb-sm-0 mr-sm-3 w-100 mr-md-0 w-md-auto flex-md-grow-1 align-items-lg-center justify-content-lg-center">
+            <div class="e-datepicker w-100 w-md-auto">
+              <label class="position-absolute invisible" for='day'></label>
+              <input class="js-calendar-datepicker w-100 w-sm-auto" type="date" id="day" name="trip-start"
+                     value="{{ "now"|date("Y-m-d") }}" min="{{ "now"|date_modify("-1 year")|date("Y-m-d") }}"
+                     max="{{ "now"|date_modify("+1 year")|date("Y-m-d") }}">
+            </div>
           </div>
+
+          {% set toolbarCss %}
+            .dateNavigation {
+            width: 243px;
+            height: 47px;
+            }
+
+            @media only screen and (min-width: 768px) {
+            .dateNavigation {
+            width: 286px;
+            }
+            }
+          {% endset %}
+
+          {% css toolbarCss %}
+
+          <div class="dateNavigation d-none d-sm-block ml-auto flex-shrink-0"></div>
         </div>
-        <div class="d-none d-sm-block ml-auto flex-shrink-0" style="width: 243px; height: 47px;"></div>
       </div>
       {% include '_partials/_components/calendar/calendar.twig' with {
         calendar: [entry.calendar1, entry.calendar2]

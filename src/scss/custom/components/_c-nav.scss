@@ -118,10 +118,17 @@
             }
 
             a.dropdown-toggle {
+              @extend .rounded;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: center;
               margin-left: auto;
 
               @include media-breakpoint-up('lg') {
-                padding: 0;
+                margin-left: 8px;
+                padding: 8px 6px;
+                background-color: $teal-100;
               }
 
               &:after {
@@ -130,9 +137,11 @@
                 border-right: 0.25rem solid transparent;
                 border-left: 0.25rem solid transparent;
                 border-bottom: 0;
+                margin-left: 0;
               }
 
               &[aria-expanded="true"] {
+                background-color: $teal-200;
                 &:after {
                   transform: rotate(180deg);
                 }
