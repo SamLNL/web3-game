@@ -35,9 +35,6 @@ const main = async () => {
   }
 
   // components blocks
-  if(document.querySelectorAll('.js-teaser').length > 0) {
-    await import(/* webpackChunkName: "teaser" */ "./custom/components/teaser");
-  }
   if(document.querySelectorAll('.js-typeform').length > 0) {
     await import(/* webpackChunkName: "typeform" */ "./custom/components/typeform");
   }

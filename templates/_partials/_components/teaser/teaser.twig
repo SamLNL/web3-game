@@ -36,28 +36,20 @@
     </h2>
   {% endif %}
 
-  <div class="c-teaser{{ summaryFound ? '' : ' c-teaser-small' }} js-teaser swiper">
-    <div class="c-teaser__container swiper-container">
-      <div class="c-teaser__wrapper swiper-wrapper">
+  <div class="c-teaser{{ summaryFound ? '' : ' c-teaser-small' }}">
+    <div class="c-teaser__container">
+      <div class="c-teaser__wrapper">
         {% for item in teasers %}
           {% include '_partials/_components/card/card.twig' with {
             url: item.url,
             image: item.headerImage[0],
             title: item.title,
             date: item.dateCreated,
-            summary: item.summaryText|striptags[:40] ~ '...',
-            class: 'swiper-slide h-auto'
+            summary: item.summaryText|striptags[:40] ~ '...'
           } %}
         {% endfor %}
       </div>
-      <div class="swiper-pagination d-none"></div>
     </div>
-    <a title="" class="c-teaser__prev swiper-prev" href="#">
-      <span></span>
-    </a>
-    <a title="" class="c-teaser__next swiper-next" href="#">
-      <span></span>
-    </a>
 
   </div>
   {% if cta.url | length %}
