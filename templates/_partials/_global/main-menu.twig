@@ -9,8 +9,9 @@
         <input name="q" id="q" type="search" placeholder="Zoeken naar...">
       </form>
       {% set nav = craft.navigation.nodes('mainNavSub').all() %}
-      {{ macro.renderNav(nav) }}
+      {{ macro.renderNav(nav, true) }}
     </div>
+
 
     {# Used both for Desktop as for Mobile #}
     <div class="d-flex flex-row w-100 d-lg-none px-0">
@@ -70,6 +71,14 @@
           <a class="c-btn c-btn-yellow" href="{{ menu.menuTickets.url }}" target="{{ menu.menuTickets.target }}"
              title="{{ menu.menuTickets.text }}">
             {{ menu.menuTickets.text }}
+          </a>
+        </div>
+      {% endif %}
+      {% if menu.menuStudentSystem.url | length %}
+        <div class="c-nav-mobile__login">
+          <a href="{{ menu.menuStudentSystem.url }}" class="login" ga-on="click" ga-event-category="Menu" ga-event-action="Click"
+             ga-event-label="Inloggen leerlingvolgsysteem">
+            {{ menu.menuStudentSystem.text }}
           </a>
         </div>
       {% endif %}
