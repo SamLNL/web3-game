@@ -1,10 +1,12 @@
 <div class="container">
   <div class="d-flex flex-column align-items-center mb-2 flex-md-row justify-content-md-between align-items-md-start">
     <div class="d-flex flex-column align-items-center mb-3 mr-md-4 align-items-md-start mb-md-0">
-      {% include '_inline/_svg/logo-biljoenbad' with {
-        class: 'w-9 h-2 d-block text-white',
-        fill: 'currentColor'
-      } %}
+      <div style="margin-top: 4px;">
+        {% include '_inline/_svg/logo-biljoenbad' with {
+          class: 'w-9 h-2 d-block text-white',
+          fill: 'currentColor'
+        } %}
+      </div>
       <address class="d-flex flex-column align-items-center mt-2 align-items-md-start">
         {% if contact.contactStreet | length %}
           <div class="small text-white">{{ contact.contactStreet }}</div>

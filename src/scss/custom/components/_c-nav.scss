@@ -26,7 +26,6 @@
     }
   }
 
-
   &-desktop {
     display: flex;
     flex-direction: column;
@@ -120,6 +119,10 @@
 
             a.dropdown-toggle {
               margin-left: auto;
+
+              @include media-breakpoint-up('lg') {
+                padding: 0;
+              }
 
               &:after {
                 transition: transform 0.1s ease-in-out;
@@ -275,10 +278,13 @@
           &.dropdown {
             a.nav-link {
               padding-right: 0;
+              flex-grow: 1;
             }
 
             a.dropdown-toggle {
               margin-left: auto;
+              padding: 0 20px 0 15px;
+              border-left: 1px solid $teal-200;
 
               &:after {
                 transition: transform 0.1s ease-in-out;
@@ -314,6 +320,7 @@
   }
 
   .login {
+    width: 100%;
     padding-left: 26px !important;
     position: relative;
 
