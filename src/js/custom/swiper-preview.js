@@ -27,3 +27,7 @@ swiperPreview.on('slideChange', function() {
   const activeSwiperTitle = activeSwiper.getAttribute('data-title');
   sendGAEvent(['Preview - gallery', 'click', activeSwiperTitle]);
 });
+
+window.onresize = () => {
+  swiperPreview.update();
+};

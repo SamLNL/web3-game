@@ -18,7 +18,7 @@
     </div>
 
     {% set swiperId = random() %}
-    <div class="swiper-container row js-swiper-services mb-2 mb-lg-0" data-swiper-id="{{ swiperId }}">
+    <div class="swiper-container row js-swiper-services mb-2 mb-lg-0 swiper-lg-destroy" data-swiper-id="{{ swiperId }}">
       <div class="swiper-wrapper d-flex flex-row">
         {% for slide in activitiesSlides %}
           <div class="swiper-slide h-auto d-flex col-12 col-md-5 col-lg-4 flex-grow-1"
