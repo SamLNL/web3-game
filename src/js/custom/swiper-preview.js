@@ -16,6 +16,11 @@ let swiperPreview = new Swiper('.js-swiper-preview', {
     prevEl: '.carousel-control-prev',
   },
   slidesPerView: 'auto',
+  breakpoints: {
+    768: {
+      slidesPerView: 1,
+    }
+  }
 });
 
 swiperPreview.snapGrid[swiperPreview.snapGrid.length -
