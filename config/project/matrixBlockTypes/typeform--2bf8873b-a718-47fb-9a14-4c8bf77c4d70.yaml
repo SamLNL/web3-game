@@ -174,4 +174,4 @@ fields:
     type: typedlinkfield\fields\LinkField
 handle: typeform
 name: Typeform
-sortOrder: 10
+sortOrder: 11

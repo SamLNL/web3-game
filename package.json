@@ -111,7 +111,11 @@
       "./public/*.html",
       "./src/js/**/*.js"
     ],
-    "purgecssWhitelist": ["btn", "login", "c-card__border"],
+    "purgecssWhitelist": [
+      "btn",
+      "login",
+      "c-card__border"
+    ],
     "critical": [
       {
         "url": "",

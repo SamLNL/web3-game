@@ -17,7 +17,8 @@
     background-color: $teal-400;
   }
 
-  &-yellow {
+  &-yellow,
+  &-secondary {
     background-color: $yellow;
     color: $teal-600;
     border: 0;
@@ -28,7 +29,8 @@
     }
   }
 
-  &-teal {
+  &-teal,
+  &-primary {
     background-color: $teal-600;
     color: $white;
     border: 0;

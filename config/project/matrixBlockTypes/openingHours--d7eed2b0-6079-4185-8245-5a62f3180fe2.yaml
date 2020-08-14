@@ -67,4 +67,4 @@ fields:
     type: craft\redactor\Field
 handle: openingHours
 name: Openingstijden
-sortOrder: 13
+sortOrder: 14

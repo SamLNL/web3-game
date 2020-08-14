@@ -77,4 +77,4 @@ fields:
     type: craft\redactor\Field
 handle: team
 name: Team
-sortOrder: 17
+sortOrder: 18

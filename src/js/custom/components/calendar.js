@@ -37,6 +37,7 @@ function runAnimation() {
       start: '',
       right: 'prev,today,next',
     },
+    height: 'auto',
     allDaySlot: false,
     slotMinTime: '07:00:00',
     slotMaxTime: '19:00:00',

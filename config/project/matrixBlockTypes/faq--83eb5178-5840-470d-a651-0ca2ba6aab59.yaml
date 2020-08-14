@@ -238,4 +238,4 @@ fields:
     type: typedlinkfield\fields\LinkField
 handle: faq
 name: FAQ
-sortOrder: 8
+sortOrder: 9

@@ -17,12 +17,13 @@
 {% set date = date is defined ? date : '' %}
 {% set summary = summary is defined ? summary : '' %}
 {% set class = class is defined ? class : '' %}
+{% set id = random() %}
 
 {% if url | length and title | length %}
   <a class="c-card {{ class }}" href="{{ url }}" title="Meer info">
 
     {% if image | length %}
-      <div class="c-card__image">
+      <div class="c-card__image c-card__image-{{ id }}">
         {% set transforms =
           [
             {
@@ -49,7 +50,7 @@
               }]
             }
           ] %}
-        {{ macro.renderImageBackgroundCss(image, transforms, 'c-card__image') }}
+        {{ macro.renderImageBackgroundCss(image, transforms, 'c-card__image-' ~ id) }}
 
         {% if readingTime > 0 and readingTime | length %}
           <div class="c-card__duration">

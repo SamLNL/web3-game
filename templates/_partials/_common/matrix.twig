@@ -277,6 +277,26 @@
               </div>
             </div>
           </div>
+
+        {% case 'ctas' %}
+          <div class="-mt-2 mb-4 -mt-lg-5 mb-lg-8">
+            <div class="container">
+              <div class="row">
+                <div class="col-12">
+                  {% if block.cta1.url | length %}
+                  {% include '_partials/_components/ctas/ctas.twig' with {
+                    cta1: block.cta1,
+                    cta1Micro: block.cta1Micro,
+                    cta1Primary: block.cta1Primair,
+                    cta2: block.cta2,
+                    cta2Micro: block.cta2Micro,
+                    cta2Primary: block.cta2Primair
+                  } %}
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
         {% endswitch %}
       {% endfor %}
     </article>

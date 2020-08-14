@@ -97,4 +97,4 @@ fields:
     type: craft\redactor\Field
 handle: partners
 name: Partners
-sortOrder: 15
+sortOrder: 16

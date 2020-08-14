@@ -76,7 +76,7 @@
       {% endif %}
       {% if menu.menuStudentSystem.url | length %}
         <div class="c-nav-mobile__login">
-          <a href="{{ menu.menuStudentSystem.url }}" class="login" ga-on="click" ga-event-category="Menu" ga-event-action="Click"
+          <a href="{{ menu.menuStudentSystem.url }}" class="login" target="{{ menu.menuStudentSystem.target }} ga-on="click" ga-event-category="Menu" ga-event-action="Click"
              ga-event-label="Inloggen leerlingvolgsysteem">
             {{ menu.menuStudentSystem.text }}
           </a>

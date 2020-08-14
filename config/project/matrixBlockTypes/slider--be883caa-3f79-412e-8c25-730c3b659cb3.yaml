@@ -86,4 +86,4 @@ fields:
     type: craft\redactor\Field
 handle: slider
 name: Slider
-sortOrder: 9
+sortOrder: 10

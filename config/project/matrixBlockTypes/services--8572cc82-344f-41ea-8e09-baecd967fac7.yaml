@@ -200,4 +200,4 @@ fields:
     type: typedlinkfield\fields\LinkField
 handle: services
 name: Voorzieningen
-sortOrder: 14
+sortOrder: 15

@@ -1,0 +1,58 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{# @var entry \craft\elements\Entry #}
+{# ======================================================
+  @filename: ctas
+  @date:     227 aug. 2020
+  @author:   sam
+  ====================================================== #}
+
+{% set cta1 = cta1 is defined ? cta1 : '' %}
+{% set cta1Micro = cta1Micro is defined ? cta1Micro : '' %}
+{% set cta1Primary = cta1Primary is defined ? cta1Primary : '' %}
+{% set cta2 = cta2 is defined ? cta2 : '' %}
+{% set cta2Micro = cta2Micro is defined ? cta2Micro : '' %}
+{% set cta2Primary = cta2Primary is defined ? cta2Primary : '' %}
+
+{% if cta1.url | length %}
+  <div class="d-flex flex-column flex-sm-row">
+      <div
+        class="d-flex flex-column text-center align-items-center {{ cta2 | length ? ' mb-2 mb-sm-0 mr-sm-2' : '' }}">
+        <a href="{{ cta1.url }}"
+           title="{{ cta1.text }}"
+           class="c-btn {{ cta1Primary ? 'c-btn-primary' : 'c-btn-secondary' }}"
+           ga-on="click"
+           ga-event-category="CTA"
+           ga-event-action="Click"
+           ga-event-label="{{ cta1.text|ucfirst }}"
+        >
+          <span>{{ cta1.text }}</span>
+        </a>
+        {% if cta1Micro | length %}
+          <span class="small text-gray mt-1">
+          {{ cta1Micro }}
+        </span>
+        {% endif %}
+      </div>
+
+    {% if cta2.url | length %}
+      <div class="d-flex flex-column text-center align-items-center">
+        <a href="{{ cta2.url }}"
+           title="{{ cta2.text }}"
+           class="c-btn {{ cta2Primary ? 'c-btn-primary' : 'c-btn-secondary' }}"
+           ga-on="click"
+           ga-event-category="CTA"
+           ga-event-action="Click"
+           ga-event-label="{{ cta2.text|ucfirst }}"
+        >
+          <span>{{ cta2.text }}</span>
+        </a>
+        {% if cta2Micro | length %}
+          <span class="small text-gray mt-1">
+            {{ cta2Micro }}
+          </span>
+        {% endif %}
+
+      </div>
+    {% endif %}
+  </div>
+{% endif %}

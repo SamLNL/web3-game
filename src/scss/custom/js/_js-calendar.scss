@@ -195,6 +195,12 @@
         }
       }
 
+      .fc-timegrid-slots {
+        tr {
+          height: 2em;
+        }
+      }
+
       tbody {
         .fc-timegrid-col {
           border: 1px solid $teal-200;
@@ -228,6 +234,7 @@
           font-size: $font-size-sm;
           font-weight: $font-weight-bold;
           color: $teal;
+          height: 2.5em;
 
           @include media-breakpoint-up('md') {
             font-size: $font-size-sm;

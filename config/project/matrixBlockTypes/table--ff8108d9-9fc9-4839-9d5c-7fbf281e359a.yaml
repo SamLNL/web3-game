@@ -172,4 +172,4 @@ fields:
     type: craft\fields\Lightswitch
 handle: table
 name: Tabel
-sortOrder: 11
+sortOrder: 12

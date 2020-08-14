@@ -1,80 +1,77 @@
-<div class="container">
-  <div class="d-flex justify-content-center">
-    <h2 class="text-uppercase text-teal-600 text-center mb-4 mb-lg-5">{{ entry.activitiesTitle }}</h2>
-  </div>
-</div>
+{% set categories = craft.entries.section('activities').type('category').with(['headerImage']).all() %}
 
-<div class="mb-3 mb-lg-0">
-  <div class="container">
-    {% set activitiesSlides = entry.activities.all() %}
-    <div class="w-100 d-md-none">
-      <div class="d-flex flex-column swiper-nav">
-        {% for slide in activitiesSlides %}
-          <a class="swiper-nav__item w-100 border-2 border-teal-200 py-1 {{ loop.last ? 'mb-4' : 'mb-1' }} text-center small rounded js-go-to-slide {{ loop.first ? 'active' : '' }}"
-            data-swiper-index="{{ loop.index0 }}" href="#"
-            title="Spring naar slide '{{ slide.serviceTitle }}'">{{ slide.serviceTitle }}</a>
-        {% endfor %}
+{% if categories | length %}
+  <div class="bg-teal-100 pb-4 pb-lg-8">
+    <div class="container">
+      <div class="d-flex justify-content-center">
+        <h2 class="text-uppercase text-teal-600 text-center mb-4 mb-lg-5">{{ entry.activitiesTitle }}</h2>
       </div>
     </div>
 
-    {% set swiperId = random() %}
-    <div class="swiper-container row js-swiper-services mb-2 mb-lg-0 swiper-lg-destroy" data-swiper-id="{{ swiperId }}">
-      <div class="swiper-wrapper d-flex flex-row">
-        {% for slide in activitiesSlides %}
-          <div class="swiper-slide h-auto d-flex col-12 col-md-5 col-lg-4 flex-grow-1"
-               data-title="{{ slide.serviceTitle }}">
-            <div class="card w-100">
-              {% switch slide.serviceColor.value %}
-              {% case 'teal' %}
-                {% set bgClass = 'bg-teal-300' %}
-                {% set textClass = 'white' %}
-              {% case 'yellow' %}
-                {% set bgClass = 'bg-yellow' %}
-                {% set textClass = 'teal-600' %}
-              {% case 'red' %}
-                {% set bgClass = 'bg-red' %}
-                {% set textClass = 'white' %}
-              {% endswitch %}
-              <div class="p-1 text-center rounded-top {{ bgClass }}">
-                <h3 class="mb-0 text-{{ textClass }} text-uppercase">{{ slide.serviceTitle }}</h3>
-              </div>
-              <div class="w-100">
-                {% set image = slide.serviceImage.one() %}
-                {% set transformedImage = craft.imager.transformImage(image, {
-                  width: 350,
-                  height: 200,
-                  mode: 'crop'
-                }) %}
-                <img class="w-100 lazyload" src="{{ transformedImage.url }}" alt="{{ image.title }}">
-              </div>
-              <div class="card-body">
-                <ul class="list-usps">
-                  {% for usp in slide.serviceUsps.all() %}
-                    <li class="small text-teal-600">
-                      {{ usp.title }}
-                    </li>
-                  {% endfor %}
-                </ul>
-              </div>
-            </div>
+    <div class="mb-3 mb-lg-0">
+      <div class="container">
+        <div class="w-100 d-md-none">
+          <div class="d-flex flex-column swiper-nav">
+            {% for item in categories %}
+              <a
+                class="swiper-nav__item w-100 border-2 border-teal-200 py-1 {{ loop.last ? 'mb-4' : 'mb-1' }} text-center small rounded js-go-to-slide {{ loop.first ? 'active' : '' }}"
+                data-swiper-index="{{ loop.index0 }}" href="#"
+                title="Spring naar slide '{{ item.title }}'">{{ item.title }}</a>
+            {% endfor %}
           </div>
-        {% endfor %}
-      </div>
-      <div class="swiper-pagination" data-swiper-id="{{ swiperId }}"></div>
-    </div>
+        </div>
 
-    {% set cta = entry.activitiesCta %}
-    {% if cta.url | length %}
-      <div class="w-100 d-flex flex-row justify-content-center">
-        <a class="c-btn c-btn-arrow" href="{{ cta.url }}" title="{{ cta.text }}"
-           ga-on="click"
-           ga-event-category="CTA"
-           ga-event-action="Click"
-           ga-event-label="Home - {{ cta.text|ucfirst }}"
-        >
-          {{ cta.text }}
-        </a>
+        {% set swiperId = random() %}
+        <div class="swiper-container row js-swiper-services swiper-lg-destroy mb-2 mb-lg-0"
+             data-swiper-id="{{ swiperId }}">
+          <div class="swiper-wrapper d-flex flex-row">
+            {% for slide in categories %}
+              <a class="swiper-slide h-auto d-flex col-12 col-md-5 col-lg-3 flex-grow-1" href="{{ slide.url }}"
+                 title="Bekijk meer over {{ slide.title }}" data-title="{{ slide.serviceTitle }}">
+                <div class="card w-100">
+                  <div class="p-1 text-center rounded-top" style="background-color:{{ slide.categoryColor }}">
+                    <h3
+                      class="mb-0 text-{{ slide.categoryColor.label == 'Geel' ? 'teal-600' : 'white' }} text-uppercase">{{ slide.title }}</h3>
+                  </div>
+                  <div class="w-100">
+                    {% set image = slide.headerImage[0] %}
+                    {% set transformedImage = craft.imager.transformImage(image, {
+                      width: 350,
+                      height: 200,
+                      mode: 'crop'
+                    }) %}
+                    <img class="w-100 lazyload" src="{{ transformedImage.url }}" alt="{{ image.title }}">
+                  </div>
+                  <div class="card-body">
+                    <ul class="list-usps">
+                      {% for usp in slide.getDescendants.all() %}
+                        <li class="small text-teal-600">
+                          {{ usp.title }}
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                </div>
+              </a>
+            {% endfor %}
+          </div>
+          <div class="swiper-pagination" data-swiper-id="{{ swiperId }}"></div>
+        </div>
+
+        {% set cta = entry.activitiesCta %}
+        {% if cta.url | length %}
+          <div class="w-100 d-flex flex-row justify-content-center">
+            <a class="c-btn c-btn-arrow" href="{{ cta.url }}" title="{{ cta.text }}"
+               ga-on="click"
+               ga-event-category="CTA"
+               ga-event-action="Click"
+               ga-event-label="Home - {{ cta.text|ucfirst }}"
+            >
+              {{ cta.text }}
+            </a>
+          </div>
+        {% endif %}
       </div>
-    {% endif %}
+    </div>
   </div>
-</div>
+{% endif %}

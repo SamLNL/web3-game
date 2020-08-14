@@ -46,4 +46,4 @@ fields:
     type: craft\redactor\Field
 handle: headsUp
 name: 'Belangrijke mededeling'
-sortOrder: 16
+sortOrder: 17

@@ -19,5 +19,8 @@ siteSettings:
     enabledByDefault: true
     hasUrls: false
     template: null
-    uriFormat: ''
-type: channel
+    uriFormat: null
+structure:
+  maxLevels: 1
+  uid: b18462a8-e69f-4474-a01b-2d2d6d7729a7
+type: structure

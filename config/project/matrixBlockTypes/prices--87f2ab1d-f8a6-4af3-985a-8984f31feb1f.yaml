@@ -67,4 +67,4 @@ fields:
     type: craft\fields\Lightswitch
 handle: prices
 name: Tarieven
-sortOrder: 12
+sortOrder: 13

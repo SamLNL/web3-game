@@ -54,7 +54,8 @@
   ] %}
 
 {% if title | length and image | length %}
-  <div class="c-cta-banner-bg lazyload c-cta-banner-{{ image.id }}" data-bg="{{ macro.renderLazyloadBackground(image, transforms) }}">
+  <div class="c-cta-banner-bg c-cta-banner-{{ image.id }}">
+    {{ macro.renderImageBackgroundCss(image, transforms, 'c-cta-banner-' ~ image.id ) }}
     <div class="c-cta-banner-bg__overlay">
     </div>
 
