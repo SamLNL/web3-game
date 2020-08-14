@@ -84,7 +84,7 @@
           {% paginate items.limit(6).orderBy('postDate desc') as pageInfo, entries %}
 
           {% if entries | length %}
-            <div class="d-flex flex-column">
+            <div class="d-flex flex-column w-100">
               {% for item in entries %}
                 {% include '_partials/_components/card/card.twig' with {
                   url: item.url,
