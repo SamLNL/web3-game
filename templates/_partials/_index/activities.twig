@@ -12,7 +12,7 @@
       <div class="container">
         <div class="w-100 d-md-none">
           <div class="d-flex flex-column swiper-nav">
-            {% for item in categories %}
+            {% for item in categories.all() %}
               {% if item.linkedCategory | length and item.linkedCategory[0].type == 'category' %}
                 <a
                   class="swiper-nav__item w-100 border-2 border-teal-200 py-1 {{ loop.last ? 'mb-4' : 'mb-1' }} text-center small rounded js-go-to-slide {{ loop.first ? 'active' : '' }}"
@@ -27,7 +27,7 @@
         <div class="swiper-container row js-swiper-services swiper-lg-destroy mb-2 mb-lg-0"
              data-swiper-id="{{ swiperId }}">
           <div class="swiper-wrapper d-flex flex-row">
-            {% for slide in categories %}
+            {% for slide in categories.all() %}
               {% if slide.linkedCategory | length and slide.linkedCategory[0].type == 'category' %}
                 {% set category = slide.linkedCategory[0] %}
                 <a class="swiper-slide h-auto d-flex col-12 col-md-5 col-lg-3 flex-grow-1 hover-up"
@@ -50,7 +50,7 @@
                     </div>
                     <div class="card-body">
                       <ul class="list-usps">
-                        {% for usp in slide.usps %}
+                        {% for usp in slide.usps.all() %}
                           <li class="small text-teal-600">
                             {{ usp.title }}
                           </li>
