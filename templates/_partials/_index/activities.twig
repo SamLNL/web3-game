@@ -26,7 +26,7 @@
              data-swiper-id="{{ swiperId }}">
           <div class="swiper-wrapper d-flex flex-row">
             {% for slide in categories %}
-              <a class="swiper-slide h-auto d-flex col-12 col-md-5 col-lg-3 flex-grow-1" href="{{ slide.url }}"
+              <a class="swiper-slide h-auto d-flex col-12 col-md-5 col-lg-3 flex-grow-1 hover-up" href="{{ slide.url }}"
                  title="Bekijk meer over {{ slide.title }}" data-title="{{ slide.serviceTitle }}">
                 <div class="card w-100">
                   <div class="p-1 text-center rounded-top" style="background-color:{{ slide.categoryColor }}">

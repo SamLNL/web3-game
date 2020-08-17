@@ -114,7 +114,8 @@
     "purgecssWhitelist": [
       "btn",
       "login",
-      "c-card__border"
+      "c-card__border",
+      "c-cta-block-yellow"
     ],
     "critical": [
       {

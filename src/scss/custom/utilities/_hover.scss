@@ -4,12 +4,23 @@
 
 .hover-underline {
   &:hover {
-    text-decoration: underline;
+    text-decoration: underline !important;
   }
 }
 
 .hover-none {
   &:hover {
     text-decoration: none;
+  }
+}
+
+.hover-up {
+  transition: transform 250ms cubic-bezier(.02, .01, .47, 1);
+
+  @include media-breakpoint-up('lg') {
+    &:hover {
+      transform: translate(0, -8px);
+      text-decoration: none;
+    }
   }
 }
