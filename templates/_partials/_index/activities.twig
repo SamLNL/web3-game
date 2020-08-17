@@ -1,4 +1,4 @@
-{% set categories = craft.entries.section('activities').type('category').with(['headerImage']).all() %}
+{% set categories = entry.activities %}
 
 {% if categories | length %}
   <div class="bg-teal-100 pb-4 pb-lg-8">
@@ -13,10 +13,12 @@
         <div class="w-100 d-md-none">
           <div class="d-flex flex-column swiper-nav">
             {% for item in categories %}
-              <a
-                class="swiper-nav__item w-100 border-2 border-teal-200 py-1 {{ loop.last ? 'mb-4' : 'mb-1' }} text-center small rounded js-go-to-slide {{ loop.first ? 'active' : '' }}"
-                data-swiper-index="{{ loop.index0 }}" href="#"
-                title="Spring naar slide '{{ item.title }}'">{{ item.title }}</a>
+              {% if item.linkedCategory | length and item.linkedCategory[0].type == 'category' %}
+                <a
+                  class="swiper-nav__item w-100 border-2 border-teal-200 py-1 {{ loop.last ? 'mb-4' : 'mb-1' }} text-center small rounded js-go-to-slide {{ loop.first ? 'active' : '' }}"
+                  data-swiper-index="{{ loop.index0 }}" href="#"
+                  title="Spring naar slide '{{ item.heading }}'">{{ item.heading }}</a>
+              {% endif %}
             {% endfor %}
           </div>
         </div>
@@ -26,33 +28,38 @@
              data-swiper-id="{{ swiperId }}">
           <div class="swiper-wrapper d-flex flex-row">
             {% for slide in categories %}
-              <a class="swiper-slide h-auto d-flex col-12 col-md-5 col-lg-3 flex-grow-1 hover-up" href="{{ slide.url }}"
-                 title="Bekijk meer over {{ slide.title }}" data-title="{{ slide.serviceTitle }}">
-                <div class="card w-100">
-                  <div class="p-1 text-center rounded-top" style="background-color:{{ slide.categoryColor }}">
-                    <h3
-                      class="mb-0 text-{{ slide.categoryColor.label == 'Geel' ? 'teal-600' : 'white' }} text-uppercase">{{ slide.title }}</h3>
+              {% if slide.linkedCategory | length and slide.linkedCategory[0].type == 'category' %}
+                {% set category = slide.linkedCategory[0] %}
+                <a class="swiper-slide h-auto d-flex col-12 col-md-5 col-lg-3 flex-grow-1 hover-up"
+                   href="{{ category.url }}"
+                   title="Bekijk meer over {{ slide.title }}" data-title="{{ slide.title }}">
+                  <div class="card w-100">
+                    <div class="p-1 text-center rounded-top" style="background-color:{{ category.categoryColor }}">
+                      <h3 class="mb-0 text-{{ category.categoryColor.label == 'Geel' ? 'teal-600' : 'white' }} text-uppercase">
+                        {{ slide.heading }}
+                      </h3>
+                    </div>
+                    <div class="w-100">
+                      {% set image = slide.image[0] %}
+                      {% set transformedImage = craft.imager.transformImage(image, {
+                        width: 350,
+                        height: 200,
+                        mode: 'crop'
+                      }) %}
+                      <img class="w-100 lazyload" src="{{ transformedImage.url }}" alt="{{ image.title }}">
+                    </div>
+                    <div class="card-body">
+                      <ul class="list-usps">
+                        {% for usp in slide.usps %}
+                          <li class="small text-teal-600">
+                            {{ usp.title }}
+                          </li>
+                        {% endfor %}
+                      </ul>
+                    </div>
                   </div>
-                  <div class="w-100">
-                    {% set image = slide.headerImage[0] %}
-                    {% set transformedImage = craft.imager.transformImage(image, {
-                      width: 350,
-                      height: 200,
-                      mode: 'crop'
-                    }) %}
-                    <img class="w-100 lazyload" src="{{ transformedImage.url }}" alt="{{ image.title }}">
-                  </div>
-                  <div class="card-body">
-                    <ul class="list-usps">
-                      {% for usp in slide.getDescendants.all() %}
-                        <li class="small text-teal-600">
-                          {{ usp.title }}
-                        </li>
-                      {% endfor %}
-                    </ul>
-                  </div>
-                </div>
-              </a>
+                </a>
+              {% endif %}
             {% endfor %}
           </div>
           <div class="swiper-pagination" data-swiper-id="{{ swiperId }}"></div>

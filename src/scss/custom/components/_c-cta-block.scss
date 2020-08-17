@@ -15,12 +15,14 @@
   transition: transform 250ms cubic-bezier(.02, .01, .47, 1);
   color: $teal-600;
 
-  &:hover {
-    transform: translate(0, -8px);
+  @include media-breakpoint-up('lg') {
+    &:hover {
+      transform: translate(0, -8px);
 
-    .c-btn-white {
-      color: $teal-600;
-      background-color: $teal-200;
+      .c-btn-white {
+        color: $teal-600;
+        background-color: $teal-200;
+      }
     }
   }
 

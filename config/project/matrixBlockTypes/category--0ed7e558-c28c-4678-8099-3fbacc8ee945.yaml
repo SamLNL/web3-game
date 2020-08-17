@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 99dfec15-fa69-4b28-ab86-c9d47dbf7784
+            fieldUid: cffd4caa-a9b9-42ec-99ed-00eecd64d762
             instructions: null
             label: null
             required: true
@@ -23,7 +23,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: a65105e6-0e11-4b38-9eaf-05498b84ad6f
+            fieldUid: 35bec012-61d9-4a47-9281-05078ece5bc1
             instructions: null
             label: null
             required: true
@@ -43,10 +43,32 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
+  35bec012-61d9-4a47-9281-05078ece5bc1:
+    contentColumnType: string
+    fieldGroup: null
+    handle: linkedCategory
+    instructions: 'Let op: dit moet een category van activiteiten zijn. Wanneer gekozen wordt voor een activiteit, zal deze niet getoond worden. '
+    name: 'Gekoppelde category'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      limit: '1'
+      localizeRelations: false
+      selectionLabel: ''
+      showSiteMenu: true
+      source: null
+      sources:
+        - 'section:a9f5d80c-3a46-4c6c-8060-9e91f1246dbb'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
   58294a97-ce53-40e4-b1c5-c022bd118f7c:
     contentColumnType: text
     fieldGroup: null
-    handle: serviceTitle
+    handle: heading
     instructions: ''
     name: Titel
     searchable: true
@@ -62,41 +84,10 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  99dfec15-fa69-4b28-ab86-c9d47dbf7784:
-    contentColumnType: string
-    fieldGroup: null
-    handle: serviceImage
-    instructions: ''
-    name: Afbeelding
-    searchable: true
-    settings:
-      allowSelfRelations: false
-      allowedKinds:
-        - image
-      defaultUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1'
-      defaultUploadLocationSubpath: ''
-      limit: '1'
-      localizeRelations: false
-      restrictFiles: '1'
-      selectionLabel: ''
-      showSiteMenu: true
-      showUnpermittedFiles: false
-      showUnpermittedVolumes: false
-      singleUploadLocationSource: 'volume:4176b138-ab46-48c2-ba93-8f81e9d3c0df'
-      singleUploadLocationSubpath: ''
-      source: null
-      sources: '*'
-      targetSiteId: null
-      useSingleFolder: true
-      validateRelatedElements: false
-      viewMode: list
-    translationKeyFormat: null
-    translationMethod: site
-    type: craft\fields\Assets
   a5ca32cc-3989-44d0-b160-571b015899f9:
     contentColumnType: string
     fieldGroup: null
-    handle: serviceUsps
+    handle: usps
     instructions: ''
     name: 'Usp''s'
     searchable: true
@@ -116,51 +107,36 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Tags
-  a65105e6-0e11-4b38-9eaf-05498b84ad6f:
+  cffd4caa-a9b9-42ec-99ed-00eecd64d762:
     contentColumnType: string
     fieldGroup: null
-    handle: serviceColor
+    handle: image
     instructions: ''
-    name: Kleur
-    searchable: true
+    name: Afbeelding
+    searchable: false
     settings:
-      options:
-        -
-          __assoc__:
-            -
-              - label
-              - Teal
-            -
-              - value
-              - teal
-            -
-              - default
-              - '1'
-        -
-          __assoc__:
-            -
-              - label
-              - Geel
-            -
-              - value
-              - yellow
-            -
-              - default
-              - ''
-        -
-          __assoc__:
-            -
-              - label
-              - Rood
-            -
-              - value
-              - red
-            -
-              - default
-              - ''
+      allowSelfRelations: false
+      allowedKinds: null
+      defaultUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: ''
+      selectionLabel: ''
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: true
+      validateRelatedElements: false
+      viewMode: list
     translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\RadioButtons
-handle: service
+    translationMethod: site
+    type: craft\fields\Assets
+handle: category
 name: Categorie
 sortOrder: 1
