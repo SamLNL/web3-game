@@ -1,4 +1,4 @@
-dateModified: 1597222488
+dateModified: 1597412767
 email:
   fromEmail: interactie@emotion.nl
   fromName: Biljoenbad
@@ -77,7 +77,7 @@ system:
   live: true
   name: Biljoenbad
   schemaVersion: 3.5.12
-  timeZone: America/Los_Angeles
+  timeZone: Europe/Amsterdam
 users:
   allowPublicRegistration: false
   defaultGroup: null

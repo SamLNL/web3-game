@@ -1,120 +1,221 @@
 field: d16c24d1-abfe-4e08-b18c-45bcb368c93f
 fieldLayouts:
-  4a515314-13c0-4413-afc1-b32a0b2bd8ef:
+  f17823f7-26df-4c5c-add2-a06e581a3f00:
     tabs:
       -
         elements:
           -
-            fieldUid: e465e4d8-ce9b-4a27-8ea6-a08e549e7196
+            fieldUid: 8e1f1a36-a815-49e1-a2ff-e2724c2e94fb
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
-            width: 100
+            width: 50
           -
-            fieldUid: 4dc76d0f-8385-44a2-a955-5564e2c48015
-            instructions: null
-            label: null
-            required: true
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: 54427052-dd03-4279-a515-257038609c13
+            fieldUid: e5fc7dfa-967e-4ae5-9a09-af8fa830d1f3
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
-            width: 100
+            width: 25
           -
-            fieldUid: 433ec8d0-36da-4e9d-b223-384b7c9d30c8
+            fieldUid: 853d403c-e5b5-447a-b43e-f818a93b0146
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
-            width: 100
+            width: 25
           -
-            fieldUid: e4f44529-8c44-44d4-993a-825e99287094
+            fieldUid: 33ed9965-6c00-4756-8383-a62d32656c91
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
-            width: 100
+            width: 50
           -
-            fieldUid: 8cea7e37-dd42-4ee1-bac6-a81ea61597ca
+            fieldUid: c952cf55-bb3d-4176-99a3-f1727f3a672d
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
-            width: 100
+            width: 25
+          -
+            fieldUid: 61abda2a-4b4f-41b7-860e-43c2dc403591
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
         name: Content
         sortOrder: 1
 fields:
-  433ec8d0-36da-4e9d-b223-384b7c9d30c8:
+  33ed9965-6c00-4756-8383-a62d32656c91:
     contentColumnType: text
     fieldGroup: null
-    handle: cta1Micro
-    instructions: 'Micro tekst onder de knop wordt alleen getoond wanneer CTA1 is ingevuld'
-    name: 'CTA1 - micro tekst'
-    searchable: true
-    settings:
-      byteLimit: null
-      charLimit: null
-      code: ''
-      columnType: null
-      initialRows: '4'
-      multiline: ''
-      placeholder: ''
-      uiMode: normal
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\PlainText
-  4dc76d0f-8385-44a2-a955-5564e2c48015:
-    contentColumnType: text
-    fieldGroup: null
-    handle: text
+    handle: cta2
     instructions: ''
-    name: Tekst
-    searchable: true
+    name: 'CTA 2'
+    searchable: false
     settings:
-      availableTransforms: '*'
-      availableVolumes: '*'
-      cleanupHtml: true
-      columnType: text
-      configSelectionMode: choose
-      defaultTransform: ''
-      manualConfig: ''
-      purifierConfig: ''
-      purifyHtml: '1'
-      redactorConfig: ''
-      removeEmptyTags: '1'
-      removeInlineStyles: '1'
-      removeNbsp: '1'
-      showHtmlButtonForNonAdmins: ''
-      showUnpermittedFiles: false
-      showUnpermittedVolumes: false
-      uiMode: enlarged
+      allowCustomText: '1'
+      allowTarget: '1'
+      allowedLinkNames:
+        1: asset
+        4: entry
+        6: custom
+        7: email
+        8: tel
+        9: url
+      autoNoReferrer: ''
+      defaultLinkName: entry
+      defaultText: ''
+      enableAriaLabel: ''
+      enableTitle: ''
+      typeSettings:
+        __assoc__:
+          -
+            - asset
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+          -
+            - category
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+          -
+            - user
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+          -
+            - entry
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+          -
+            - site
+            -
+              __assoc__:
+                -
+                  - sites
+                  - '*'
+          -
+            - custom
+            -
+              __assoc__:
+                -
+                  - disableValidation
+                  - ''
+                -
+                  - allowAliases
+                  - ''
+          -
+            - email
+            -
+              __assoc__:
+                -
+                  - disableValidation
+                  - ''
+                -
+                  - allowAliases
+                  - ''
+          -
+            - tel
+            -
+              __assoc__:
+                -
+                  - disableValidation
+                  - ''
+                -
+                  - allowAliases
+                  - ''
+          -
+            - url
+            -
+              __assoc__:
+                -
+                  - disableValidation
+                  - ''
+                -
+                  - allowAliases
+                  - ''
+          -
+            - solspaceCalendar-event
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
     translationKeyFormat: null
     translationMethod: none
-    type: craft\redactor\Field
-  54427052-dd03-4279-a515-257038609c13:
+    type: typedlinkfield\fields\LinkField
+  61abda2a-4b4f-41b7-860e-43c2dc403591:
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: cta2Primair
+    instructions: ''
+    name: 'CTA 2 - Primair'
+    searchable: false
+    settings:
+      default: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+  853d403c-e5b5-447a-b43e-f818a93b0146:
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: cta1Primair
+    instructions: 'Moet de knop de primaire style hebben?'
+    name: 'CTA 1  - Primair'
+    searchable: false
+    settings:
+      default: '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+  8e1f1a36-a815-49e1-a2ff-e2724c2e94fb:
     contentColumnType: text
     fieldGroup: null
     handle: cta1
     instructions: ''
-    name: CTA1
-    searchable: true
+    name: 'CTA 1'
+    searchable: false
     settings:
       allowCustomText: '1'
       allowTarget: '1'
@@ -125,7 +226,7 @@ fields:
         7: email
         8: tel
         9: url
-      autoNoReferrer: ''
+      autoNoReferrer: '1'
       defaultLinkName: entry
       defaultText: ''
       enableAriaLabel: ''
@@ -232,13 +333,13 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: typedlinkfield\fields\LinkField
-  8cea7e37-dd42-4ee1-bac6-a81ea61597ca:
+  c952cf55-bb3d-4176-99a3-f1727f3a672d:
     contentColumnType: text
     fieldGroup: null
     handle: cta2Micro
     instructions: 'Micro tekst onder de knop wordt alleen getoond wanneer CTA2 is ingevuld'
-    name: 'CTA2 - micro tekst'
-    searchable: true
+    name: 'CTA 2 - Micro tekst'
+    searchable: false
     settings:
       byteLimit: null
       charLimit: null
@@ -251,161 +352,25 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  e465e4d8-ce9b-4a27-8ea6-a08e549e7196:
-    contentColumnType: string
-    fieldGroup: null
-    handle: image
-    instructions: ''
-    name: Afbeelding
-    searchable: true
-    settings:
-      allowSelfRelations: false
-      allowedKinds:
-        - image
-      defaultUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1'
-      defaultUploadLocationSubpath: ''
-      limit: '1'
-      localizeRelations: false
-      restrictFiles: '1'
-      selectionLabel: ''
-      showSiteMenu: true
-      showUnpermittedFiles: false
-      showUnpermittedVolumes: false
-      singleUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1'
-      singleUploadLocationSubpath: ''
-      source: null
-      sources: '*'
-      targetSiteId: null
-      useSingleFolder: true
-      validateRelatedElements: false
-      viewMode: list
-    translationKeyFormat: null
-    translationMethod: site
-    type: craft\fields\Assets
-  e4f44529-8c44-44d4-993a-825e99287094:
+  e5fc7dfa-967e-4ae5-9a09-af8fa830d1f3:
     contentColumnType: text
     fieldGroup: null
-    handle: cta2
-    instructions: 'Alleen zichtbaar als CTA1 is ingevuld'
-    name: CTA2
-    searchable: true
+    handle: cta1Micro
+    instructions: 'Micro tekst onder de knop wordt alleen getoond wanneer CTA1 is ingevuld'
+    name: 'CTA 1 - Micro tekst'
+    searchable: false
     settings:
-      allowCustomText: '1'
-      allowTarget: '1'
-      allowedLinkNames:
-        1: asset
-        4: entry
-        6: custom
-        7: email
-        8: tel
-        9: url
-      autoNoReferrer: ''
-      defaultLinkName: entry
-      defaultText: ''
-      enableAriaLabel: ''
-      enableTitle: ''
-      typeSettings:
-        __assoc__:
-          -
-            - asset
-            -
-              __assoc__:
-                -
-                  - sources
-                  - '*'
-                -
-                  - allowCustomQuery
-                  - ''
-          -
-            - category
-            -
-              __assoc__:
-                -
-                  - sources
-                  - '*'
-                -
-                  - allowCustomQuery
-                  - ''
-          -
-            - user
-            -
-              __assoc__:
-                -
-                  - sources
-                  - '*'
-                -
-                  - allowCustomQuery
-                  - ''
-          -
-            - entry
-            -
-              __assoc__:
-                -
-                  - sources
-                  - '*'
-                -
-                  - allowCustomQuery
-                  - ''
-          -
-            - site
-            -
-              __assoc__:
-                -
-                  - sites
-                  - '*'
-          -
-            - custom
-            -
-              __assoc__:
-                -
-                  - disableValidation
-                  - ''
-                -
-                  - allowAliases
-                  - ''
-          -
-            - email
-            -
-              __assoc__:
-                -
-                  - disableValidation
-                  - ''
-                -
-                  - allowAliases
-                  - ''
-          -
-            - tel
-            -
-              __assoc__:
-                -
-                  - disableValidation
-                  - ''
-                -
-                  - allowAliases
-                  - ''
-          -
-            - url
-            -
-              __assoc__:
-                -
-                  - disableValidation
-                  - ''
-                -
-                  - allowAliases
-                  - ''
-          -
-            - solspaceCalendar-event
-            -
-              __assoc__:
-                -
-                  - sources
-                  - '*'
-                -
-                  - allowCustomQuery
-                  - ''
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
-    type: typedlinkfield\fields\LinkField
-handle: imageText
-name: 'Afbeelding - tekst'
-sortOrder: 4
+    type: craft\fields\PlainText
+handle: ctas
+name: 'CTA''s'
+sortOrder: 8

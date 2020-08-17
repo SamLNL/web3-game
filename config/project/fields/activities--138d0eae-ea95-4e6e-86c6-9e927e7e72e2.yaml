@@ -2,7 +2,7 @@ contentColumnType: string
 fieldGroup: f0c3735f-1b6e-456c-9608-4cfe64ddcd90
 handle: activities
 instructions: ''
-name: Activiteiten
+name: 'Activiteiten - Single'
 searchable: true
 settings:
   contentTable: '{{%matrixcontent_activities}}'
