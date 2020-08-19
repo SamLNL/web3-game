@@ -6,8 +6,8 @@ name: Activiteiten
 searchable: true
 settings:
   contentTable: '{{%matrixcontent_activities}}'
-  maxBlocks: '3'
-  minBlocks: '3'
+  maxBlocks: '4'
+  minBlocks: '4'
   propagationMethod: all
 translationKeyFormat: null
 translationMethod: site
