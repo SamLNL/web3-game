@@ -19,16 +19,21 @@
       .h#{$infix}-#{$i * 5}\/100 {
         height: #{$i * 5%} !important;
       }
-    }
 
-    @for $i from 0 through 20 {
-
-      .mh#{$infix}-#{$i} {
-        height: ($spacer * $i) !important;
+      .max-h#{$infix}-#{$i} {
+        max-height: ($spacer * $i) !important;
       }
 
-      .mw#{$infix}-#{$i} {
-        width: ($spacer * $i) !important;
+      .max-w#{$infix}-#{$i} {
+        max-width: ($spacer * $i) !important;
+      }
+
+      .min-h#{$infix}-#{$i} {
+        min-height: ($spacer * $i) !important;
+      }
+
+      .min-w#{$infix}-#{$i} {
+        min-width: ($spacer * $i) !important;
       }
     }
 

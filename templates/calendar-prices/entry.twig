@@ -31,10 +31,10 @@
           {{ entry.calendarTitle }}
         </h2>
         <div class="d-flex flex-row align-items-center w-100 mt-md-2 w-lg-auto ml-auto mt-lg-0">
-          <div class="d-flex flex-shrink-1 mb-3 mb-sm-0 mr-sm-3 w-100 mr-md-0 w-md-auto flex-md-grow-1 align-items-lg-center justify-content-lg-center">
+          <div class="d-flex flex-shrink-1 position-relative z-10 mb-3 mb-sm-0 mr-sm-3 w-100 mr-md-0 w-md-auto flex-md-grow-1 align-items-lg-center justify-content-lg-center">
             <div class="e-datepicker w-100 w-md-auto">
               <label class="position-absolute invisible" for='day'></label>
-              <input class="js-calendar-datepicker w-100 w-sm-auto" type="date" id="day" name="trip-start"
+              <input class="js-calendar-datepicker w-100 w-sm-auto active-none" type="date" id="day" name="trip-start"
                      value="{{ "now"|date("Y-m-d") }}" min="{{ "now"|date_modify("-1 year")|date("Y-m-d") }}"
                      max="{{ "now"|date_modify("+1 year")|date("Y-m-d") }}">
             </div>

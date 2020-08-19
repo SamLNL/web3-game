@@ -81,7 +81,7 @@
           {% endif %}
   {# ----------- End - No ajax request ----------- #}
 
-          {% paginate items.limit(6).orderBy('postDate desc') as pageInfo, entries %}
+          {% paginate items.limit(6).orderBy('postDate asc') as pageInfo, entries %}
 
           {% if entries | length %}
             <div class="d-flex flex-column">

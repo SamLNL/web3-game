@@ -35,7 +35,9 @@ input[type="date"] {
   &:focus {
     color: $teal-600;
     box-shadow: none;
+    outline: none;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
+    background-color: $teal-200;
   }
 }

@@ -28,76 +28,82 @@
           flex-direction: row;
           justify-content: flex-end;
 
+          .fc-prev-button,
+          .fc-next-button {
+            position: relative;
+            background-color: $teal-100;
+            border: 2px solid $teal-200;
+
+            &:hover {
+              background-color: $teal-200;
+              border-color: $teal-200;
+            }
+
+            &:focus {
+              outline: 0;
+              background-color: $teal-200;
+              color: $white;
+              box-shadow: none;
+            }
+
+            &:before {
+              width: 24px;
+              height: 24px;
+              display: block;
+              content: '';
+              position: absolute;
+              left: calc(50% - 12px);
+              top: calc(50% - 11px);
+            }
+          }
+
           .fc-prev-button {
             border-top-right-radius: 0;
             border-bottom-right-radius: 0;
+            &:before {
+              background: url('/assets/images/svg/single/angle-left-light-teal.svg') no-repeat center;
+              background-size: cover;
+            }
           }
 
           .fc-next-button {
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
+            &:before {
+              background: url('/assets/images/svg/single/angle-right-light-teal.svg') no-repeat center;
+              background-size: cover;
+            }
           }
 
           .fc-today-button {
+            background-color: $teal-100;
+            border-top: 2px solid $teal-200;
+            border-bottom: 2px solid $teal-200;
+            color: $teal-600;
             flex-grow: 1;
             border-radius: 0;
 
             @include media-breakpoint-up('sm') {
               flex-grow: initial;
             }
+
+            &:focus {
+              outline: 0;
+              background-color: $teal-200;
+              box-shadow: none;
+            }
+
+            &:active {
+              border-top: 2px solid $teal-200;
+              border-bottom: 2px solid $teal-200;
+              background-color: $teal-200;
+            }
+
+            &:disabled {
+              color: $teal-200;
+            }
           }
         }
-      }
-    }
-
-    .fc-prev-button,
-    .fc-next-button {
-      position: relative;
-      background-color: $teal-100;
-      border: 2px solid $teal-200;
-
-      &:hover {
-        background-color: $teal-200;
-        border-color: $teal-200;
-      }
-
-      &:focus {
-        background-color: $teal-100;
-      }
-
-      &:before {
-        width: 24px;
-        height: 24px;
-        display: block;
-        content: '';
-        position: absolute;
-        left: calc(50% - 12px);
-        top: calc(50% - 11px);
-      }
-    }
-
-    .fc-prev-button {
-      &:before {
-        background: url('/assets/images/svg/single/angle-left-light-teal.svg') no-repeat center;
-        background-size: cover;
-      }
-    }
-
-    .fc-next-button {
-      &:before {
-        background: url('/assets/images/svg/single/angle-right-light-teal.svg') no-repeat center;
-        background-size: cover;
-      }
-    }
-
-    .fc-today-button {
-      background-color: $teal-100;
-      border-top: 2px solid $teal-200;
-      border-bottom: 2px solid $teal-200;
-      color: $teal-600;
-
-      &:disabled {
-        color: $teal-200;
       }
     }
   }
@@ -171,7 +177,7 @@
             }
 
             &:nth-child(odd) {
-              .fc-col-header-cell-cushion  {
+              .fc-col-header-cell-cushion {
                 &:before {
                   background-color: $yellow;
                 }

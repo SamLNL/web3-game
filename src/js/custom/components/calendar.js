@@ -75,6 +75,7 @@ function runAnimation() {
       let dateValue = datepicker.value;
       calendar.gotoDate(new Date(dateValue));
       runAnimation();
+      datepicker.blur();
     });
   }
 
@@ -86,17 +87,20 @@ function runAnimation() {
     let date = calendar.getDate();
     changeDatepicker(date);
     runAnimation();
+    nextButton.blur();
   });
 
   todayButton.addEventListener('click', () => {
     let date = calendar.getDate();
     changeDatepicker(date);
     runAnimation();
+    todayButton.blur();
   });
 
   prevButton.addEventListener('click', () => {
     let date = calendar.getDate();
     changeDatepicker(date);
     runAnimation();
+    prevButton.blur();
   });
 })();
