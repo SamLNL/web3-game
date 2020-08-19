@@ -1,4 +1,4 @@
-dateModified: 1597827980
+dateModified: 1597859426
 email:
   fromEmail: interactie@emotion.nl
   fromName: Biljoenbad
@@ -78,9 +78,3 @@ system:
   name: Biljoenbad
   schemaVersion: 3.5.12
   timeZone: Europe/Amsterdam
-users:
-  allowPublicRegistration: false
-  defaultGroup: null
-  photoSubpath: ''
-  photoVolumeUid: null
-  requireEmailVerification: true
