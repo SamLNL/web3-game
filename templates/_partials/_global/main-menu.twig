@@ -3,10 +3,11 @@
   <div class="c-nav-desktop container px-2 px-md-4 d-flex flex-column">
     <div class="c-nav-desktop__sub-menu">
       <form class="c-form-global-search" action="{{ siteUrl('zoeken') }}">
-        <label for="q">
-          {% include '_inline/_svg/search-regular' %}
+        {% include '_inline/_svg/search-regular' %}
+        <label class="d-none" id="search-top" for="q">
+          Zoeken
         </label>
-        <input name="q" id="q" type="search" placeholder="Zoeken naar...">
+        <input name="q" id="q" type="search" aria-labelledby="search-top" placeholder="Zoeken naar...">
       </form>
       {% set nav = craft.navigation.nodes('mainNavSub').all() %}
       {{ macro.renderNav(nav, true) }}
@@ -76,12 +77,23 @@
       {% endif %}
       {% if menu.menuStudentSystem.url | length %}
         <div class="c-nav-mobile__login">
-          <a href="{{ menu.menuStudentSystem.url }}" class="login" title="{{ menu.menuStudentSystem.title | length ? menu.menuStudentSystem.title : menu.menuStudentSystem.text }}" target="{{ menu.menuStudentSystem.target }}" ga-on="click" ga-event-category="Menu" ga-event-action="Click"
+          <a href="{{ menu.menuStudentSystem.url }}" class="login"
+             title="{{ menu.menuStudentSystem.title | length ? menu.menuStudentSystem.title : menu.menuStudentSystem.text }}"
+             target="{{ menu.menuStudentSystem.target }}" ga-on="click" ga-event-category="Menu" ga-event-action="Click"
              ga-event-label="Inloggen leerlingvolgsysteem">
             {{ menu.menuStudentSystem.text }}
           </a>
         </div>
       {% endif %}
+      <div class="c-nav-mobile__search">
+        <form class="c-form-global-search" action="{{ siteUrl('zoeken') }}">
+          {% include '_inline/_svg/search-regular' %}
+          <label class="d-none" id="search-top" for="q">
+            Zoeken
+          </label>
+          <input name="q" id="q" type="search" aria-labelledby="search-top" placeholder="Zoeken naar...">
+        </form>
+      </div>
       <div class="c-nav-mobile__sub-menu">
         {% set nav = craft.navigation.nodes('mainNavSub').all() %}
         {{ macro.renderNav(nav) }}

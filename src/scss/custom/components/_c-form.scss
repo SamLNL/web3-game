@@ -5,15 +5,12 @@
     align-items: center;
     margin-top: 2px;
 
-    label {
+    svg {
+      width: $spacer;
+      display: block;
       color: $teal-300;
       margin-right: 6px;
       margin-bottom: 2px;
-
-      svg {
-        width: $spacer;
-        display: block;
-      }
     }
 
     input[type='search'] {

@@ -30,12 +30,12 @@
     <div class="row">
       <div class="col-lg-10 offset-lg-1">
         <h1 class="mb-4">Zoeken</h1>
-        <form class="c-form-global-search mb-2" action="{{ url('zoeken') }}">
-          <label for="q">
-            {% include '_inline/_svg/search-regular.twig' %}
+        <form class="c-form-global-search mb-2" action="{{ siteUrl('zoeken') }}">
+          {% include '_inline/_svg/search-regular' %}
+          <label class="d-none" id="search-top" for="q">
+            Zoeken
           </label>
-          <input name="q" id="q" type="search"
-                 placeholder="Zoeken naar..." {{ searchQuery | length ? 'value=' ~ searchQuery : '' }}>
+          <input name="q" id="q" type="search" aria-labelledby="search-top" placeholder="Zoeken naar...">
         </form>
 
         {% if entries | length %}
@@ -48,7 +48,7 @@
 
               {# What assets fields should be checked? #}
               {% set assetFields = [
-                'newsImage', 'hero', 'body'
+                'headerImage', 'hero', 'body'
               ] %}
 
               {% set image = '' %}
