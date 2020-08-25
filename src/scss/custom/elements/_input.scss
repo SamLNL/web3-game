@@ -41,3 +41,20 @@ input[type="date"] {
     background-color: $teal-200;
   }
 }
+
+select {
+  @extend .rounded;
+  padding: 15px 50px 15px 15px;
+  width: 100%;
+  font-weight: $font-weight-bold;
+  color: $teal-600;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url('/assets/images/svg/single/angle-down-light-teal-dark.svg') right center no-repeat $teal-100;
+  background-size: 50px;
+
+  &::-ms-expand {
+    display: none; /* Remove default arrow in Internet Explorer 10 and 11 */
+  }
+}

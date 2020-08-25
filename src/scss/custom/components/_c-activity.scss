@@ -11,13 +11,16 @@
  *
  */
 
-.c-sidebar {
-  @extend .col-lg-3;
-  display: none;
+.c-activity {
 
-  @include media-breakpoint-up('lg') {
-    display: flex;
-    flex-direction: column;
+  &__sidebar {
+    @extend .col-lg-3;
+    display: none;
+
+    @include media-breakpoint-up('lg') {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   &__category {
@@ -34,6 +37,7 @@
       li {
         padding: ($spacer * 0.75) 0;
         margin-bottom: 0;
+
         &:not(:last-child) {
           border-bottom: 1px solid $teal-200;
         }
@@ -57,11 +61,19 @@
     }
   }
 
+  &__category-select {
+    select {
+      border-width: 0 0 0 8px;
+      padding: 15px 30px 15px 20px;
+    }
+  }
+
   &__usps {
     @extend .rounded;
     margin-top: map_get($spacers, 3);
     padding: map_get($spacers, 2) map_get($spacers, 3);
     border: 1px solid $teal-200;
+
     ul {
       li {
         font-size: $font-size-sm;

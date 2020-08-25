@@ -1,22 +1,22 @@
-.list {
-  &-usps {
-    list-style: none;
-    li {
-      position: relative;
-      padding-left: 30px;
-      &:before {
-        display: block;
-        width: 16px;
-        content: '';
-        height: 12px;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        margin: 0;
-        position: absolute;
-        background: url('/assets/images/svg/single/icon-check.svg') center no-repeat;
-        background-size: cover;
-      }
+.checks {
+  list-style: none;
+
+  li {
+    position: relative;
+    padding-left: 30px;
+
+    &:before {
+      display: block;
+      width: 14px;
+      content: '';
+      height: 10px;
+      left: 0;
+      top: 4px;
+      bottom: 0;
+      margin: 0;
+      position: absolute;
+      background: url('/assets/images/svg/single/icon-check.svg') center no-repeat;
+      background-size: cover;
     }
   }
 }

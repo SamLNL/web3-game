@@ -49,7 +49,7 @@
                       <img class="w-100 lazyload" src="{{ transformedImage.url }}" alt="{{ image.title }}">
                     </div>
                     <div class="card-body">
-                      <ul class="list-usps">
+                      <ul class="checks">
                         {% for usp in slide.usps.all() %}
                           <li class="small text-teal-600">
                             {{ usp.title }}

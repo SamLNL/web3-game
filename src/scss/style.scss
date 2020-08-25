@@ -108,7 +108,7 @@
 @import "custom/components/c-table";
 @import "custom/components/c-heads-up";
 @import "custom/components/c-partners";
-@import "custom/components/c-sidebar";
+@import "custom/components/c-activity";
 @import "custom/components/c-team";
 
 /* purgecss start ignore */
@@ -117,6 +117,7 @@
 @import "custom/js/js-load-more";
 @import "custom/js/js-slider";
 @import "custom/js/js-calendar";
+@import "custom/js/js-sidebar-fixed";
 
 // Add external css
 @import '~fullcalendar-scheduler/main';

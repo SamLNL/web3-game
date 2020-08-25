@@ -57,6 +57,14 @@ const main = async () => {
     await import(/* webpackChunkName: "lazyload" */ "./custom/lazyload-bg");
   }
 
+  if(document.querySelectorAll('.js-select-href').length > 0) {
+    await import(/* webpackChunkName: "select" */ "./custom/select-href");
+  }
+
+  if(document.querySelector('.js-sidebar-sticky')) {
+    await import(/* webpackChunkName: "select" */ "./custom/components/sidebar-sticky");
+  }
+
   analytics.init();
 };
 
