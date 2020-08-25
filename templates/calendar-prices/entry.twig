@@ -27,14 +27,17 @@
   <div class="bg-teal-100 py-4 py-lg-6" id="mainContentSkip">
     <div class="container">
       <div class="d-flex flex-column flex-sm-row flex-sm-wrap">
-        <h2 class="mb-3 mb-md-0 p-0 w-100 w-md-auto">
+        <h2 class="mb-3 p-0 w-100 mb-lg-0 d-lg-none">
           {{ entry.calendarTitle }}
         </h2>
-        <div class="d-flex flex-row align-items-center w-100 mt-md-2 w-lg-auto ml-auto mt-lg-0">
-          <div class="d-flex flex-shrink-1 position-relative z-10 mb-3 mb-sm-0 mr-sm-3 w-100 mr-md-0 w-md-auto flex-md-grow-1 align-items-lg-center justify-content-lg-center">
-            <div class="e-datepicker w-100 w-md-auto">
-              <label class="position-absolute invisible" for='day'></label>
-              <input class="js-calendar-datepicker w-100 w-sm-auto active-none" type="date" id="day" name="trip-start"
+        <div class="d-flex flex-row align-items-center w-100 mt-lg-2 justify-content-lg-between">
+          <h2 class="d-none mb-3 p-0 w-100 w-lg-auto d-lg-flex mb-lg-0">
+            {{ entry.calendarTitle }}
+          </h2>
+          <div class="d-flex flex-shrink-1 position-relative z-10 mb-3 mb-sm-0 mr-sm-3 w-100 justify-content-sm-center mr-lg-0 w-lg-auto flex-lg-grow-1 align-items-lg-center justify-content-lg-center">
+            <div class="e-datepicker w-100 w-lg-auto">
+              <label id="calendar" class="d-none" for='trip-start'>Agenda</label>
+              <input class="js-calendar-datepicker w-100 w-sm-auto active-none" aria-labelledBy="calendar" type="date" id="trip-start" name="trip-start"
                      value="{{ "now"|date("Y-m-d") }}" min="{{ "now"|date_modify("-1 year")|date("Y-m-d") }}"
                      max="{{ "now"|date_modify("+1 year")|date("Y-m-d") }}">
             </div>
@@ -42,20 +45,20 @@
 
           {% set toolbarCss %}
             .dateNavigation {
-            width: 243px;
-            height: 47px;
+            width: 350px;
+            height: 49px;
             }
 
             @media only screen and (min-width: 768px) {
             .dateNavigation {
-            width: 286px;
+            width: 350px;
             }
             }
           {% endset %}
 
           {% css toolbarCss %}
 
-          <div class="dateNavigation d-none d-sm-block ml-auto flex-shrink-0"></div>
+          <div class="dateNavigation d-none ml-auto flex-shrink-0 d-sm-block"></div>
         </div>
       </div>
       {% include '_partials/_components/calendar/calendar.twig' with {

@@ -38,7 +38,7 @@
       {% endif %}
 
       {% if partner['partnerUrl'] is defined and partner.partnerUrl | length %}
-        <a href="{{ partner.partnerUrl }}" target="_blank" class="c-partners__item">
+        <a href="{{ partner.partnerUrl }}" title="Ga naar de website van sponsor {{ partner.title }}" target="_blank" class="c-partners__item">
           <img src="{{ logo.url }}" alt="{{ partner.title }}">
         </a>
       {% else %}

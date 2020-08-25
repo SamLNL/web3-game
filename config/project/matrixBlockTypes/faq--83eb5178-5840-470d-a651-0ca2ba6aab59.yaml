@@ -133,7 +133,7 @@ fields:
       defaultLinkName: entry
       defaultText: ''
       enableAriaLabel: ''
-      enableTitle: ''
+      enableTitle: '1'
       typeSettings:
         __assoc__:
           -

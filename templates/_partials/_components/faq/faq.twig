@@ -34,7 +34,7 @@
   {% endfor %}
   {% if cta.url | length %}
     <div class="d-flex justify-content-center w-100 mt-3 mt-lg-4">
-      <a class="c-btn c-btn-arrow" href="{{ cta.url }}" title="{{ cta.text }}"
+      <a class="c-btn c-btn-arrow" href="{{ cta.url }}" title="{{ cta.title | length ? cta.title : cta.text }}"
          target="{{ cta.target }}">{{ cta.text }}</a>
     </div>
   {% endif %}

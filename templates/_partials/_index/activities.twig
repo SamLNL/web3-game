@@ -32,7 +32,7 @@
                 {% set category = slide.linkedCategory[0] %}
                 <a class="swiper-slide h-auto d-flex col-12 col-md-5 col-lg-3 flex-grow-1 hover-up"
                    href="{{ category.url }}"
-                   title="Bekijk meer over {{ slide.title }}" data-title="{{ slide.title }}">
+                   title="Bekijk meer over {{ slide.heading }}" data-title="{{ slide.heading }}">
                   <div class="card w-100">
                     <div class="p-1 text-center rounded-top" style="background-color:{{ category.categoryColor }}">
                       <h3 class="mb-0 text-{{ category.categoryColor.label == 'Geel' ? 'teal-600' : 'white' }} text-uppercase">

@@ -42,13 +42,13 @@
       {{ macro.renderNav(nav) }}
       {% if menu.menuTickets.url | length %}
         <a class="c-btn c-btn-yellow ml-4" href="{{ menu.menuTickets.url }}" target="{{ menu.menuTickets.target }}"
-           title="{{ menu.menuTickets.text }}">
+           title="{{ menu.menuTickets.title | length ? menu.menuTickets.title : menu.menuTickets.text }}">
           {{ menu.menuTickets.text }}
         </a>
       {% endif %}
     </div>
   </div>
-  <div class="c-nav-mobile js-nav-side navbar-side" id="menu-sidebar" data-id="menu-sidebar-close">
+  <div class="c-nav-mobile js-nav-side navbar-side" id="menu-sidebar">
     <div class="js-nav-side-content navbar-side-content">
       <div class="c-nav-mobile__top">
         <a title="Sluit het mobiele menu"
@@ -69,14 +69,14 @@
       {% if menu.menuTickets.url | length %}
         <div class="c-nav-mobile__tickets">
           <a class="c-btn c-btn-yellow" href="{{ menu.menuTickets.url }}" target="{{ menu.menuTickets.target }}"
-             title="{{ menu.menuTickets.text }}">
+             title="{{ menu.menuTickets.title | length ? menu.menuTickets.title : menu.menuTickets.text }}">
             {{ menu.menuTickets.text }}
           </a>
         </div>
       {% endif %}
       {% if menu.menuStudentSystem.url | length %}
         <div class="c-nav-mobile__login">
-          <a href="{{ menu.menuStudentSystem.url }}" class="login" target="{{ menu.menuStudentSystem.target }} ga-on="click" ga-event-category="Menu" ga-event-action="Click"
+          <a href="{{ menu.menuStudentSystem.url }}" class="login" title="{{ menu.menuStudentSystem.title | length ? menu.menuStudentSystem.title : menu.menuStudentSystem.text }}" target="{{ menu.menuStudentSystem.target }}" ga-on="click" ga-event-category="Menu" ga-event-action="Click"
              ga-event-label="Inloggen leerlingvolgsysteem">
             {{ menu.menuStudentSystem.text }}
           </a>

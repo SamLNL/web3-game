@@ -71,7 +71,7 @@
                 <div
                   class="c-cta-banner__cta">
                   <a href="{{ cta1.url }}"
-                     title="{{ cta1.text }}"
+                     title="{{ cta1.title | length ? cta1.title : cta1.text }}"
                      class="c-btn c-btn-arrow {{ cta1Primary ? 'c-btn-yellow' : 'c-btn-teal' }}"
                      ga-on="click"
                      ga-event-category="CTA"
@@ -86,7 +86,7 @@
               {% if cta2.url | length %}
                 <div class="c-cta-banner__cta">
                   <a href="{{ cta2.url }}"
-                     title="{{ cta2.text }}"
+                     title="{{ cta2.title | length ? cta2.title : cta2.text }}"
                      class="c-btn c-btn-arrow {{ cta2Primary ? 'c-btn-yellow' : 'c-btn-teal' }}"
                      ga-on="click"
                      ga-event-category="CTA"

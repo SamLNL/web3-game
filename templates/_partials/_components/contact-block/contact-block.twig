@@ -48,7 +48,7 @@
                   {% endif %}
                   {% if cta.url | length %}
                     <div class="c-contact-block__cta">
-                      <a class="c-btn c-btn-yellow" href="{{ cta.url }}" title="{{ cta.text }}"
+                      <a class="c-btn c-btn-yellow" href="{{ cta.url }}" title="{{ cta.title | length ? cta.title : cta.text }}"
                          target="{{ cta.target }}">
                         {{ cta.text }}
                       </a>

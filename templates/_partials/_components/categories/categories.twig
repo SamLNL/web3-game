@@ -47,7 +47,7 @@
               <li
                 class="c-category-dropdown__item {{ category['active'] is defined and category.active ? ' c-category-dropdown__item-active' : '' }}">
                 <a class="c-category__link"
-                   href="{{ category.url }}">
+                   href="{{ category.url }}" title="Bekijk alle item binnen de categorie {{ category.title }}">
                   <span class="c-category__link__title">{{ category.title }}</span>
                   <span class="c-category__link__amount">({{ category.amount }})</span>
                 </a>

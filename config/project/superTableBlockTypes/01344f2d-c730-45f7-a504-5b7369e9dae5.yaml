@@ -158,11 +158,11 @@ fields:
         7: email
         8: tel
         9: url
-      autoNoReferrer: '1'
+      autoNoReferrer: ''
       defaultLinkName: entry
       defaultText: ''
       enableAriaLabel: ''
-      enableTitle: ''
+      enableTitle: '1'
       typeSettings:
         __assoc__:
           -

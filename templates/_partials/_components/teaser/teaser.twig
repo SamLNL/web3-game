@@ -55,7 +55,7 @@
   {% if cta.url | length %}
     <div class="d-flex flex-column w-100 text-center align-items-center mt-3 mt-lg-4">
       <a href="{{ cta.url }}"
-         title="{{ cta.text }}"
+         title="{{ cta.title | length ? cta.title : cta.text }}"
          class="c-btn c-btn-arrow"
          ga-on="click"
          ga-event-category="CTA"

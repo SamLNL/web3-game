@@ -20,7 +20,7 @@
 {% set id = random() %}
 
 {% if url | length and title | length %}
-  <a class="c-card {{ class }}" href="{{ url }}" title="Meer info">
+  <a class="c-card {{ class }}" href="{{ url }}" title="Meer info over {{ title }}">
 
     {% if image | length %}
       <div class="c-card__image c-card__image-{{ id }}">

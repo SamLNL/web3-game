@@ -7,8 +7,7 @@
   }
 
   .fc-header-toolbar {
-    @extend .col-sm-6;
-    @extend .col-md-5;
+    @extend .col-sm-8;
     width: 100%;
     margin-left: auto;
     padding: 0;
@@ -82,9 +81,14 @@
             color: $teal-600;
             flex-grow: 1;
             border-radius: 0;
+            font-size: $font-size-sm;
 
             @include media-breakpoint-up('sm') {
               flex-grow: initial;
+            }
+
+            @include media-breakpoint-up('md') {
+              font-size: $font-size-base;
             }
 
             &:focus {

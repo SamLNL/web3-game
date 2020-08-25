@@ -51,7 +51,7 @@
          <li class="{{ loop.last ? 'active' }}" {{ loop.last ? 'aria-current="page"' }} itemprop="itemListElement"
              itemscope itemtype="http://schema.org/ListItem">
            {% if not loop.last %}
-             <a title="Go to page {{ link.name }}" href="{{ link.item }}" itemprop="item">
+             <a title="Ga naar {{ link.name }}" href="{{ link.item }}" itemprop="item">
                <span itemprop="name">{{ link.name }}</span>
              </a>
              {% include '_inline/_svg/angle-right-light.twig' %}

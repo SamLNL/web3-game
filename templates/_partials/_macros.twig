@@ -107,18 +107,18 @@
     {% nav node in nav %}
       {% if node.hasDescendants %}
         <li class="nav-item dropdown">
-          <a {% if node.url %}href="{{ node.url }}"{% endif %}
+          <a title="Ga naar {{ node.title }}" {% if node.url %}href="{{ node.url }}"{% endif %}
              class="nav-link{{ node.active ? ' nav-active' }}{{ idLink ? ' js-scroll' }}{{ node.classes ? ' ' ~ node.classes : '' }}"{% if node.newWindow %}
              target="_blank"
              rel="noopener"{% endif %}{% for attribute in node.customAttributes %}{{ attribute.attribute }}="{{ attribute.value }}"{% endfor %}
           ga-on="click" ga-event-category="Menu" ga-event-action="Click" ga-event-label="{{ node.title }}">
           {{ node.title }}
           </a>
-          <a class="dropdown-toggle" href="#" id="main-mobile-dropdown" data-toggle="dropdown">
+          <a class="dropdown-toggle" href="#" title="Klap menu item uit" data-toggle="dropdown">
           </a>
-          <ul class="dropdown-menu" aria-labelledby="main-mobile-dropdown">
+          <ul class="dropdown-menu" aria-label="Dropdown menu">
             {% for subnode in node.children.all() %}
-              <a
+              <a title="Ga naar {{ subnode.title }}"
               {% if subnode.url %}href="{{ subnode.url }}"{% endif %} class="nav-link{{ subnode.active ? ' nav-active' }}{{ idLink ? ' js-scroll' }}{{ subnode.classes ? ' ' ~ subnode.classes : '' }}"{% if subnode.newWindow %} target="_blank" rel="noopener"{% endif %}{% for attribute in subnode.customAttributes %}{{ attribute.attribute }}="{{ attribute.value }}"{% endfor %} ga-on="click" ga-event-category="Menu" ga-event-action="Click" ga-event-label="{{ subnode.title }}">
               {{ subnode.title }}
               </a>
@@ -128,7 +128,7 @@
       {% elseif not node.parent | length %}
         <li class="nav-item">
           {% set idLink = node.url|first == '#' ? true : false %}
-          <a {% if node.url %}href="{{ node.url }}"{% endif %}
+          <a title="Ga naar {{ node.title }}" {% if node.url %}href="{{ node.url }}"{% endif %}
              class="nav-link{{ node.active ? ' nav-active' }}{{ idLink ? ' js-scroll' }}{{ node.classes ? ' ' ~ node.classes : '' }}"{% if node.newWindow %}
              target="_blank"
              rel="noopener"{% endif %}{% for attribute in node.customAttributes %}{{ attribute.attribute }}=
@@ -141,7 +141,7 @@
     {% endnav %}
     {% if studentSystem and menu.menuStudentSystem.url | length %}
       <li class="nav-item">
-        <a href="{{ menu.menuStudentSystem.url }}" class="nav-link login" ga-on="click" ga-event-category="Menu" ga-event-action="Click" ga-event-label="Inloggen leerlingvolgsysteem">
+        <a href="{{ menu.menuStudentSystem.url }}" title="{{ menu.menuStudentSystem.title | length ? menu.menuStudentSystem.title : menu.menuStudentSystem.text }}" class="nav-link login" ga-on="click" ga-event-category="Menu" ga-event-action="Click" ga-event-label="Inloggen leerlingvolgsysteem">
           {{ menu.menuStudentSystem.text }}
         </a>
       </li>

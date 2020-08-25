@@ -37,8 +37,8 @@
     {# Search #}
     <form class="js-load-more-search-form c-form-search" method="post">
       <span class="js-load-more-search-url d-none" data-url="{{ entry.url }}"></span>
-      <label for="search" class="d-none"></label>
-      <input id="search" type="search" class="js-load-more-search-input" name="q" placeholder="{{ "Zoeken..."|t }}"
+      <label id='search-label' for="search" class="d-none">Zoeken</label>
+      <input id="search" type="search" class="js-load-more-search-input" aria-labelledby="search-label" name="q" placeholder="{{ "Zoeken..."|t }}"
              {% if searchQuery | length %}value="{{ searchQuery }}{% endif %}">
       <button class="c-form-search__button c-btn" type="submit">
         <span class="c-form-search__button__search">
@@ -81,7 +81,7 @@
           {% endif %}
   {# ----------- End - No ajax request ----------- #}
 
-          {% paginate items.limit(6).orderBy('postDate asc') as pageInfo, entries %}
+          {% paginate items.limit(2).orderBy('postDate asc') as pageInfo, entries %}
 
           {% if entries | length %}
             <div class="d-flex flex-column">

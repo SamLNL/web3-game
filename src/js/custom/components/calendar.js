@@ -37,6 +37,7 @@ function runAnimation() {
       start: '',
       right: 'prev,today,next',
     },
+    resourceOrder: 'title',
     height: 'auto',
     allDaySlot: false,
     slotMinTime: '07:00:00',
@@ -50,6 +51,9 @@ function runAnimation() {
       minute: '2-digit',
       omitZeroMinute: false,
       hour12: false,
+    },
+    buttonText: {
+      today: 'Terug naar vandaag'
     },
     locale: 'nl',
     eventTimeFormat: {
