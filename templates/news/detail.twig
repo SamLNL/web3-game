@@ -46,27 +46,30 @@
                   <div class="d-flex flex-row justify-content-center align-items-center mt-4 mt-md-0 ml-md-auto">
                     <p class="mb-0">Volg ons op</p>
                     {% if social.socialFacebook.url | length %}
-                      <a title="Ga naar onze Facebookpagina" class="d-block ml-2 hover-dark"
+                      <a title="{{ social.socialFacebook.title | length ? social.socialFacebook.title : 'Ga naar onze Facebookpagina' }}"
+                         class="d-block ml-2 hover-dark"
                          href="{{ social.socialFacebook.url }}"
-                         target="_blank">
+                         target="{{ social.socialFacebook.target }}">
                         <span class="c-icon">
                           {{ macro.renderSvgSprite('icon-facebook', 'text-teal-400') }}
                         </span>
                       </a>
                     {% endif %}
                     {% if social.socialInstagram.url | length %}
-                      <a title="Ga naar onze Instagram" class="d-block ml-2 hover-dark"
+                      <a title="{{ social.socialInstagram.title | length ? social.socialInstagram.title : 'Ga naar onze Instagram' }}"
+                         class="d-block ml-2 hover-dark"
                          href="{{ social.socialInstagram.url }}"
-                         target="_blank">
+                         target="{{ social.socialInstagram.target }}">
                   <span class="c-icon">
                     {{ macro.renderSvgSprite('icon-insta', 'text-teal-400') }}
                   </span>
                       </a>
                     {% endif %}
                     {% if social.socialYoutube.url | length %}
-                      <a title="Ga naar ons Youtube kanaal" class="d-block ml-2 hover-dark"
+                      <a title="{{ social.socialYoutube.title | length ? social.socialYoutube.title : 'Ga naar ons Youtube kanaal' }}"
+                         class="d-block ml-2 hover-dark"
                          href="{{ social.socialYoutube.url }}"
-                         target="_blank">
+                         target="{{ social.socialYoutube.target }}">
                   <span class="c-icon">
                     {{ macro.renderSvgSprite('icon-youtube', 'text-teal-400') }}
                   </span>
