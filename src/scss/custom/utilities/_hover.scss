@@ -14,6 +14,17 @@
   }
 }
 
+.hover-dark {
+  &:hover {
+    color: $teal-600 !important;
+    text-decoration: none;
+
+    svg {
+      color: $teal-600 !important;
+    }
+  }
+}
+
 .hover-up {
   transition: transform 250ms cubic-bezier(.02, .01, .47, 1);
 

@@ -40,26 +40,35 @@
             <div class="py-4 mb-4">
               <div class="d-flex flex-column flex-md-row">
                 <a class="c-btn" href="{{ overview.url }}">
-                  {% include '_inline/_svg/angle-left-light.twig' %} <span>Terug naar overzicht</span>
+                  {% include '_inline/_svg/angle-left-light.twig' %} <span class="ml-1">Terug naar overzicht</span>
                 </a>
                 {% if social.socialFacebook | length or social.socialInstagram | length %}
                   <div class="d-flex flex-row justify-content-center align-items-center mt-4 mt-md-0 ml-md-auto">
                     <p class="mb-0">Volg ons op</p>
-                    {% if social.socialFacebook | length %}
-                      <a title="Ga naar onze Facebookpagina" class="d-block ml-1 hover-none"
-                         href="{{ social.socialFacebook }}"
+                    {% if social.socialFacebook.url | length %}
+                      <a title="Ga naar onze Facebookpagina" class="d-block ml-2 hover-dark"
+                         href="{{ social.socialFacebook.url }}"
                          target="_blank">
-                      <span class="c-icon">
-                        {% include '_inline/_svg/facebook-square-brands.twig' %}
-                      </span>
+                        <span class="c-icon">
+                          {{ macro.renderSvgSprite('icon-facebook', 'text-teal-400') }}
+                        </span>
                       </a>
                     {% endif %}
-                    {% if social.socialInstagram | length %}
-                      <a title="Ga naar onze Instagram" class="d-block ml-1 hover-none"
-                         href="{{ social.socialInstagram }}"
+                    {% if social.socialInstagram.url | length %}
+                      <a title="Ga naar onze Instagram" class="d-block ml-2 hover-dark"
+                         href="{{ social.socialInstagram.url }}"
                          target="_blank">
                   <span class="c-icon">
-                    {% include '_inline/_svg/instagram-square-brands.twig' %}
+                    {{ macro.renderSvgSprite('icon-insta', 'text-teal-400') }}
+                  </span>
+                      </a>
+                    {% endif %}
+                    {% if social.socialYoutube.url | length %}
+                      <a title="Ga naar ons Youtube kanaal" class="d-block ml-2 hover-dark"
+                         href="{{ social.socialYoutube.url }}"
+                         target="_blank">
+                  <span class="c-icon">
+                    {{ macro.renderSvgSprite('icon-youtube', 'text-teal-400') }}
                   </span>
                       </a>
                     {% endif %}

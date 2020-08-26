@@ -1,3 +1,16 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{# @var entry \craft\elements\Entry #}
+{# ======================================================
+  @filename: footer
+  @date:     239 aug. 2020
+  @author:   sam
+  ====================================================== #}
+{#
+Add a small discription about this file/componennt and what it does
+#}
+
+ {% import "_partials/_macros.twig" as macro %}
+
 <div class="container">
   <div class="d-flex flex-column align-items-center mb-2 flex-md-row justify-content-md-between align-items-md-start">
     <div class="d-flex flex-column align-items-center mb-3 mr-md-4 align-items-md-start mb-md-0">
@@ -17,10 +30,43 @@
           </div>
         {% endif %}
         {% if contact.contactPhone | length %}
-          <a class="text-white underline hover-none small" href="tel:{{ contact.contactPhone | striptags }}" title="Bel naar {{ contact.contactPhone }}" target="_blank">{{ contact.contactPhone }}</a>
+          <a class="text-white underline hover-none small" href="tel:{{ contact.contactPhone | striptags }}"
+             title="Bel naar {{ contact.contactPhone }}" target="_blank">{{ contact.contactPhone }}</a>
         {% endif %}
         {% if contact.contactMail | length %}
-          <a class="text-white underline hover-none small" href="mailto:{{ contact.contactMail }}" title="Mail naar {{ contact.contactMail }}" target="_blank">{{ contact.contactMail }}</a>
+          <a class="text-white underline hover-none small" href="mailto:{{ contact.contactMail }}"
+             title="Mail naar {{ contact.contactMail }}" target="_blank">{{ contact.contactMail }}</a>
+        {% endif %}
+        {% if social.socialFacebook.url | length or social.socialInstagram.url | length or social.socialYoutube.url | length %}
+          <div class="d-flex flex-row mt-2">
+            {% if social.socialFacebook.url | length %}
+              <a title="Ga naar onze Facebookpagina" class="d-block text-white mr-2 hover-dark"
+                 href="{{ social.socialFacebook.url }}"
+                 target="_blank">
+                <span class="c-icon">
+                  {{ macro.renderSvgSprite('icon-facebook', 'text-white') }}
+                </span>
+              </a>
+            {% endif %}
+            {% if social.socialInstagram.url | length %}
+              <a title="Ga naar onze Instagram" class="d-block text-white mr-2 hover-dark"
+                 href="{{ social.socialInstagram.url }}"
+                 target="_blank">
+                  <span class="c-icon">
+                    {{ macro.renderSvgSprite('icon-insta', 'text-white') }}
+                  </span>
+              </a>
+            {% endif %}
+            {% if social.socialYoutube.url | length %}
+              <a title="Ga naar ons Youtube kanaal" class="d-block text-white hover-dark"
+                 href="{{ social.socialYoutube.url }}"
+                 target="_blank">
+                  <span class="c-icon">
+                    {{ macro.renderSvgSprite('icon-youtube', 'text-white') }}
+                  </span>
+              </a>
+            {% endif %}
+          </div>
         {% endif %}
       </address>
     </div>
@@ -52,7 +98,8 @@
 
   <div class="d-lg-flex justify-content-between pt-3 pt-lg-3 border-top border-gray-400">
     <div class="d-flex flex-column align-items-center flex-sm-row justify-content-sm-center mb-sm-2 mb-lg-0">
-      <p class="text-white x-small mb-2 text-center mb-sm-0 mr-sm-3">&copy; {{ 'now'|date('Y') }} Biljoenbad is onderdeel
+      <p class="text-white x-small mb-2 text-center mb-sm-0 mr-sm-3">&copy; {{ 'now'|date('Y') }} Biljoenbad is
+        onderdeel
         van <a class="d-inline-block text-white underline" href="https://www.sportbedrijfrheden.nl/" target="_blank"
                title="Bekijk de website van Sportbedrijf Rheden">Sportbedrijf Rheden</a></p>
     </div>
