@@ -1,4 +1,4 @@
-<svg class="{{ class is defined ? class : '' }}" viewBox="0 0 1440 208" version="1.1" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg class="{{ class }}" viewBox="0 0 1440 208" version="1.1" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <defs>
         <linearGradient x1="79.3447161%" y1="49.500817%" x2="75.4974547%" y2="50.5307638%" id="linearGradient-1">
             <stop stop-color="#00768F" stop-opacity="0.25" offset="0%"></stop>

@@ -18,8 +18,9 @@
 </div>
 <div class="position-relative w-100 -z-10">
   <div class="{{ image | length ? 'position-absolute' : '' }} w-100 top-0 left-0 right-0">
+    {% set class = image | length ? 'max-h-lg-16 w-100' : 'max-h-md-5 max-h-lg-8 w-100' %}
     {% include '_inline/_svg/global-wave.twig' with {
-      class: (image | length) ? 'max-h-lg-16 w-100' : 'max-h-md-5 max-h-lg-8 w-100'
+      class: class
     } %}
   </div>
 </div>
@@ -38,25 +39,25 @@
           {
             'media': 'min-width: 1600px',
             'sizes': [
-            {width: 1600, ratio: 1920/584},
+            {width: 1600, ratio: 2000/650},
           ]
           },
           {
             'media': 'min-width: 1200px',
             'sizes': [
-            {width: 1600, ratio: 1600/584},
+            {width: 1600, ratio: 2000/650},
           ]
           },
           {
             'media': 'min-width: 960px',
             'sizes': [
-            {width: 1200, ratio: 1200/584},
+            {width: 1200, ratio: 2000/650},
           ]
           },
           {
             'media': 'min-width: 600px',
             'sizes': [
-            {width: 960, ratio: 960/584}
+            {width: 960, ratio: 960/400}
           ],
           },
           {
@@ -71,7 +72,7 @@
           ],
           }
         ] %}
-      {{ macro.renderPicture(image, transforms, false, image.title, 'w-100 rounded min-h-10 min-h-md-20') }}
+      {{ macro.renderPicture(image, transforms, false, image.title, 'w-100 rounded min-h-10 min-h-md-16') }}
     </div>
   {% endif %}
   {% if intro | length %}
