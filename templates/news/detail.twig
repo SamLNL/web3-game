@@ -42,7 +42,7 @@
                 <a class="c-btn" href="{{ overview.url }}">
                   {% include '_inline/_svg/angle-left-light.twig' %} <span class="ml-1">Terug naar overzicht</span>
                 </a>
-                {% if social.socialFacebook | length or social.socialInstagram | length %}
+                {% if social.socialFacebook.url | length or social.socialInstagram.url | length or social.socialYoutube.url | length %}
                   <div class="d-flex flex-row justify-content-center align-items-center mt-4 mt-md-0 ml-md-auto">
                     <p class="mb-0">Volg ons op</p>
                     {% if social.socialFacebook.url | length %}
