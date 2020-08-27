@@ -11,6 +11,19 @@
     border: 1px solid $teal-200;
   }
 
+  &__cta-yellow {
+    .c-btn {
+      @extend .c-btn-yellow;
+    }
+
+    &:hover {
+      .c-btn-yellow {
+        color: $teal-600 !important;
+        background-color: $yellow-300 !important;
+      }
+    }
+  }
+
   @include media-breakpoint-up(md) {
     flex-direction: row;
     margin-bottom: map_get($spacers, 2);

@@ -94,7 +94,7 @@
                 url: entry.url,
                 summary: summary | length > maxSummaryChars ? (summary | striptags | slice(0, maxSummaryChars) ~ '...')  | raw : summary,
                 image: image,
-                class: 'c-card__border'
+                class: 'c-card__border c-card__cta-yellow'
               } %}
             {% endfor %}
           </ul>

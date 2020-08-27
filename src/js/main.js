@@ -53,10 +53,6 @@ const main = async () => {
     await import(/* webpackChunkName: "swiper" */ "./custom/components/cta-blocks");
   }
 
-  if(document.querySelectorAll('[data-bg]').length > 0) {
-    await import(/* webpackChunkName: "lazyload" */ "./custom/lazyload-bg");
-  }
-
   if(document.querySelectorAll('.js-select-href').length > 0) {
     await import(/* webpackChunkName: "select" */ "./custom/select-href");
   }

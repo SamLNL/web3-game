@@ -19,7 +19,6 @@
 {% endif %}
 
 {% if body | length %}
-  {% cache %}
     <article>
       {% for block in entry.body.all() %}
         {% switch block.type %}
@@ -300,5 +299,4 @@
         {% endswitch %}
       {% endfor %}
     </article>
-  {% endcache %}
 {% endif %}
