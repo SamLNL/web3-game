@@ -112,8 +112,8 @@ return [
     'allowUpdates' => true,
     'backupOnUpdate' => true,
     'allowAdminChanges' => true,
-    'devMode' => true,
-    'enableTemplateCaching' => false,
+    'devMode' => false,
+    'enableTemplateCaching' => true,
     'isSystemLive' => true,
     // Aliases parsed in sites’ settings, volumes’ settings, and Local volumes’ settings
     'aliases' => [

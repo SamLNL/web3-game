@@ -5,7 +5,7 @@
   @author:   sam
   ====================================================== #}
 {#
-  Add a small discription about this file/componennt and what it does
+Add a small discription about this file/componennt and what it does
 #}
 
 {% extends "_layouts/_layout.twig" %}
@@ -34,10 +34,12 @@
           <h2 class="d-none mb-3 p-0 w-100 w-lg-auto d-lg-flex mb-lg-0">
             {{ entry.calendarTitle }}
           </h2>
-          <div class="d-flex flex-shrink-1 position-relative z-10 mb-3 mb-sm-0 mr-sm-3 w-100 justify-content-sm-center mr-lg-0 w-lg-auto flex-lg-grow-1 align-items-lg-center justify-content-lg-center">
+          <div
+            class="d-flex flex-shrink-1 position-relative z-10 mb-3 mb-sm-0 mr-sm-3 w-100 justify-content-sm-center mr-lg-0 w-lg-auto flex-lg-grow-1 align-items-lg-center justify-content-lg-center">
             <div class="e-datepicker w-100 w-lg-auto">
               <label id="calendar" class="d-none" for='trip-start'>Agenda</label>
-              <input class="js-calendar-datepicker w-100 w-sm-auto active-none" aria-labelledBy="calendar" type="date" id="trip-start" name="trip-start"
+              <input class="js-calendar-datepicker w-100 w-sm-auto active-none" aria-labelledBy="calendar" type="date"
+                     id="trip-start" name="trip-start"
                      value="{{ "now"|date("Y-m-d") }}" min="{{ "now"|date_modify("-1 year")|date("Y-m-d") }}"
                      max="{{ "now"|date_modify("+1 year")|date("Y-m-d") }}">
             </div>
@@ -73,12 +75,9 @@
       {% endif %}
     </div>
   </div>
-  {% cache %}
-    <div class="pt-6 pt-lg-8">
-      {% include "_partials/_common/matrix.twig" %}
-    </div>
-  {% endcache %}
-
+  <div class="pt-6 pt-lg-8">
+    {% include "_partials/_common/matrix.twig" %}
+  </div>
 {% endblock %}
 
 {% block _inline_js %}

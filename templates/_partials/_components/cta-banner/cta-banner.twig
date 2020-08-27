@@ -54,8 +54,9 @@
   ] %}
 
 {% if title | length and image | length %}
-  <div class="c-cta-banner-bg c-cta-banner-{{ image.id }}">
-    {{ macro.renderImageBackgroundCss(image, transforms, 'c-cta-banner-' ~ image.id ) }}
+  {% set id = random() %}
+  <div class="c-cta-banner-bg c-cta-banner-{{ id }}">
+    {{ macro.renderImageBackgroundCss(image, transforms, 'c-cta-banner-' ~ id ) }}
     <div class="c-cta-banner-bg__overlay">
     </div>
 

@@ -5,7 +5,7 @@
   @author:   sam
   ====================================================== #}
 {#
-  Add a small discription about this file/componennt and what it does
+Add a small discription about this file/componennt and what it does
 #}
 
 {% extends "_layouts/_layout.twig" %}
@@ -17,11 +17,13 @@
 {% endblock %}
 
 {% block content %}
-  {% include '_partials/_global/header' with {
-    title: entry.title,
-    image: entry.headerImage.one(),
-    intro: entry.intro
-  } %}
+  {% cache %}
+    {% include '_partials/_global/header' with {
+      title: entry.title,
+      image: entry.headerImage.one(),
+      intro: entry.intro
+    } %}
+  {% endcache %}
 
   {% set facilities = craft.entries.section('facilities').with(['headerImage']).all() %}
 

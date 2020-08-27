@@ -5,7 +5,7 @@
   @author:   sam
   ====================================================== #}
 {#
-  Detail page for news item
+Detail page for news item
 #}
 
 {% import "_partials/_macros.twig" as macro %}
@@ -20,12 +20,12 @@
 {% block content %}
 
   {% cache %}
-
-  {% include '_partials/_global/header' with {
-    title: entry.title,
-    image: entry.headerImage.one(),
-    intro: entry.intro
-  } %}
+    {% include '_partials/_global/header' with {
+      title: entry.title,
+      image: entry.headerImage.one(),
+      intro: entry.intro
+    } %}
+  {% endcache %}
 
   {% include "_partials/_common/matrix.twig" %}
 
@@ -46,30 +46,33 @@
                   <div class="d-flex flex-row justify-content-center align-items-center mt-4 mt-md-0 ml-md-auto">
                     <p class="mb-0">Volg ons op</p>
                     {% if social.socialFacebook.url | length %}
-                      <a title="{{ social.socialFacebook.title | length ? social.socialFacebook.title : 'Ga naar onze Facebookpagina' }}"
-                         class="d-block ml-2 hover-dark"
-                         href="{{ social.socialFacebook.url }}"
-                         target="{{ social.socialFacebook.target }}">
+                      <a
+                        title="{{ social.socialFacebook.title | length ? social.socialFacebook.title : 'Ga naar onze Facebookpagina' }}"
+                        class="d-block ml-2 hover-dark"
+                        href="{{ social.socialFacebook.url }}"
+                        target="{{ social.socialFacebook.target }}">
                         <span class="c-icon">
                           {{ macro.renderSvgSprite('icon-facebook', 'text-teal-400') }}
                         </span>
                       </a>
                     {% endif %}
                     {% if social.socialInstagram.url | length %}
-                      <a title="{{ social.socialInstagram.title | length ? social.socialInstagram.title : 'Ga naar onze Instagram' }}"
-                         class="d-block ml-2 hover-dark"
-                         href="{{ social.socialInstagram.url }}"
-                         target="{{ social.socialInstagram.target }}">
+                      <a
+                        title="{{ social.socialInstagram.title | length ? social.socialInstagram.title : 'Ga naar onze Instagram' }}"
+                        class="d-block ml-2 hover-dark"
+                        href="{{ social.socialInstagram.url }}"
+                        target="{{ social.socialInstagram.target }}">
                   <span class="c-icon">
                     {{ macro.renderSvgSprite('icon-insta', 'text-teal-400') }}
                   </span>
                       </a>
                     {% endif %}
                     {% if social.socialYoutube.url | length %}
-                      <a title="{{ social.socialYoutube.title | length ? social.socialYoutube.title : 'Ga naar ons Youtube kanaal' }}"
-                         class="d-block ml-2 hover-dark"
-                         href="{{ social.socialYoutube.url }}"
-                         target="{{ social.socialYoutube.target }}">
+                      <a
+                        title="{{ social.socialYoutube.title | length ? social.socialYoutube.title : 'Ga naar ons Youtube kanaal' }}"
+                        class="d-block ml-2 hover-dark"
+                        href="{{ social.socialYoutube.url }}"
+                        target="{{ social.socialYoutube.target }}">
                   <span class="c-icon">
                     {{ macro.renderSvgSprite('icon-youtube', 'text-teal-400') }}
                   </span>
@@ -84,7 +87,6 @@
       </div>
     </div>
   {% endif %}
-  {% endcache %}
 {% endblock %}
 
 {% block _inline_js %}
