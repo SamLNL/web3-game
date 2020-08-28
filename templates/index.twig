@@ -72,7 +72,10 @@
             <div class="d-flex flex-column justify-content-center w-100 mb-4 w-sm-auto flex-sm-grow-0 flex-sm-row">
               <div class="bg-teal-500 rounded-sm d-flex flex-column w-100 align-items-center px-2 py-3 px-md-4 px-lg-5">
                 <div class="w-14 d-md-flex flex-md-row w-md-auto">
-                  <div class="d-flex flex-row align-items-center mb-1 mr-md-2 mb-md-0">
+
+                  {% set pricesPage = craft.entries.section('calendarPrices').one() %}
+
+                  <a href="{{ pricesPage.url }}" title="Ga naar de rooster en tarieven pagina" class="d-flex flex-row align-items-center mb-1 mr-md-2 mb-md-0">
                     <svg class="mr-2 flex-shrink-0" width="35" height="35">
                       <use xlink:href="/assets/images/svg/sprite/sprite.svg#icon-calendar"></use>
                     </svg>
@@ -84,7 +87,7 @@
                   Vandaag gesloten
                 {% endif %}
               </span>
-                  </div>
+                  </a>
                   {% if contact.contactStreet | length %}
                     <a class="d-flex flex-row align-items-center ml-lg-2" target="_blank"
                        href="https://maps.google.com/?q={{ contact.contactStreet }}%20{{ contact.contactPlace }}"

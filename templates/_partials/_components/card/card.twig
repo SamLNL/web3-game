@@ -23,35 +23,17 @@
   <a class="c-card {{ class }}" href="{{ url }}" title="Meer info over {{ title }}">
 
     {% if image | length %}
-      <div class="c-card__image c-card__image-{{ id }}">
-        {% set transforms =
-          [
-            {
-              'sizes': [{
-                width: 320, ratio: 320/200
-              }]
-            },
-            {
-              'media': 'min-width: 375px',
-              'sizes': [{
-                width: 375, ratio: 375/250
-              }]
-            },
-            {
-              'media': 'min-width: 425px',
-              'sizes': [{
-                width: 425, ratio: 425/300
-              }]
-            },
-            {
-              'media': 'min-width: 768px',
-              'sizes': [{
-                width: 350, ratio: 350/250
-              }]
-            }
-          ] %}
-        {{ macro.renderImageBackgroundCss(image, transforms, 'c-card__image-' ~ id) }}
+      {% set transformedImage = craft.imager.transformImage(image, {
+        width: 500,
+        height: 500,
+        position: image.getFocalpoint()
+      }) %}
 
+      <div class="c-card__image"
+           style="background-image: url({{ transformedImage.url }});
+             background-repeat: no-repeat;
+             background-position: {{ image.getFocalpoint().x * 100 }}% {{ image.getFocalpoint().y * 100 }}%;
+             background-size: cover;">
         {% if readingTime > 0 and readingTime | length %}
           <div class="c-card__duration">
             {% include '_inline/_svg/clock-regular.twig' %}
