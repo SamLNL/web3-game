@@ -1,0 +1,67 @@
+{% import "_partials/_macros.twig" as macro %}
+{% set image = image is defined and image | length ? image : '' %}
+{% set wave = wave ?? false %}
+{% set payoff = payoff ?? false %}
+
+{% if image | length %}
+  <div class="header position-relative">
+    {% set transforms =
+      [
+        {
+          'media': 'min-width: 1920px',
+          'sizes': [
+          {width: 2000, ratio: 2000/650},
+        ]
+        },
+        {
+          'media': 'min-width: 1600px',
+          'sizes': [
+          {width: 1600, ratio: 1920/584},
+        ]
+        },
+        {
+          'media': 'min-width: 1200px',
+          'sizes': [
+          {width: 1600, ratio: 1600/584},
+        ]
+        },
+        {
+          'media': 'min-width: 960px',
+          'sizes': [
+          {width: 1200, ratio: 1200/584},
+        ]
+        },
+        {
+          'media': 'min-width: 600px',
+          'sizes': [
+          {width: 960, ratio: 960/584}
+        ],
+        },
+        {
+          'media': 'min-width: 400px',
+          'sizes': [
+          {width: 600, ratio: 600/500}
+        ],
+        },
+        {
+          'sizes': [
+          {width: 400, ratio: 400/400}
+        ],
+        }
+      ] %}
+    {{ macro.renderPicture(image, transforms, false, image.title, 'w-100') }}
+    <div class="payoff">
+      {% if payoff %}
+        {% include '_inline/_svg/payoff' %}
+      {% endif %}
+    </div>
+    {% if wave %}
+      <div class="wave wave-upper">
+        {% include '_inline/_svg/upper-wave' with {
+          class: 'upper-wave',
+          double: true
+        } %}
+      </div>
+    {% endif %}
+  </div>
+{% endif %}

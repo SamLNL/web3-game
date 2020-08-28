@@ -1,0 +1,142 @@
+field: 138d0eae-ea95-4e6e-86c6-9e927e7e72e2
+fieldLayouts:
+  0edcb8d7-41b1-426a-b8ae-1713fa3beb7e:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 58294a97-ce53-40e4-b1c5-c022bd118f7c
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: cffd4caa-a9b9-42ec-99ed-00eecd64d762
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 35bec012-61d9-4a47-9281-05078ece5bc1
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: a5ca32cc-3989-44d0-b160-571b015899f9
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  35bec012-61d9-4a47-9281-05078ece5bc1:
+    contentColumnType: string
+    fieldGroup: null
+    handle: linkedCategory
+    instructions: 'Let op: dit moet een category van activiteiten zijn. Wanneer gekozen wordt voor een activiteit, zal deze niet getoond worden. '
+    name: 'Gekoppelde category'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      limit: '1'
+      localizeRelations: false
+      selectionLabel: ''
+      showSiteMenu: true
+      source: null
+      sources:
+        - 'section:a9f5d80c-3a46-4c6c-8060-9e91f1246dbb'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+  58294a97-ce53-40e4-b1c5-c022bd118f7c:
+    contentColumnType: text
+    fieldGroup: null
+    handle: heading
+    instructions: ''
+    name: Titel
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  a5ca32cc-3989-44d0-b160-571b015899f9:
+    contentColumnType: string
+    fieldGroup: null
+    handle: usps
+    instructions: ''
+    name: 'Usp''s'
+    searchable: true
+    settings:
+      allowLimit: false
+      allowMultipleSources: false
+      allowSelfRelations: false
+      limit: null
+      localizeRelations: false
+      selectionLabel: ''
+      showSiteMenu: true
+      source: 'taggroup:8a953043-f1a0-4cd1-b83b-ff73d0458e0d'
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Tags
+  cffd4caa-a9b9-42ec-99ed-00eecd64d762:
+    contentColumnType: string
+    fieldGroup: null
+    handle: image
+    instructions: ''
+    name: Afbeelding
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowedKinds: null
+      defaultUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: ''
+      selectionLabel: ''
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: true
+      validateRelatedElements: false
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+handle: category
+name: Categorie
+sortOrder: 1

@@ -1,0 +1,25 @@
+{% set calendarSection = craft.entries.section('calendarPrices').one() %}
+{% set calendars = [] %}
+{% if calendarSection.calendar1 | length %}
+  {% set calendars = calendars | merge ([calendarSection.calendar1.handle]) %}
+{% endif %}
+{% if calendarSection.calendar2 | length %}
+  {% set calendars = calendars | merge ([calendarSection.calendar2.handle]) %}
+{% endif %}
+
+{% set finalResources = [] %}
+
+{% set events = craft.calendar.events({
+  calendar: calendars
+}).all() %}
+{% for event in events %}
+    {% set eventResource = {
+      resourceId: event.calendarId,
+      title: event.title,
+      allDay: event.allDay == '0' ? 0 : 1,
+      start: event.startDate.date | date ('Y-m-d H:i:s'),
+      end: event.endDate.date | date ('Y-m-d H:i:s'),
+    } %}
+    {% set finalResources = finalResources | merge ([eventResource]) %}
+{% endfor %}
+{{ finalResources|json_encode|raw }}

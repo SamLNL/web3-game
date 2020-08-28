@@ -18,7 +18,7 @@ settings:
   defaultLinkName: custom
   defaultText: 'Bekijk alle activiteiten'
   enableAriaLabel: ''
-  enableTitle: ''
+  enableTitle: '1'
   typeSettings:
     __assoc__:
       -

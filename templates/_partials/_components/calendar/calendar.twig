@@ -1,0 +1,24 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{# @var entry \craft\elements\Entry #}
+{# ======================================================
+  @filename: calendar
+  @date:     203 jul. 2020
+  @author:   sam
+  ====================================================== #}
+
+{# This should be a Solspace calendar #}
+{% set calendar = calendar is defined ? calendar : '' %}
+
+{% block content %}
+  {% if calendar | length %}
+    <div class="js-calendar" data-timezone="{{ craft.app.getTimezone() }}"></div>
+  {% endif %}
+{% endblock %}
+
+{% block _inline_js %}
+  <script>
+    // This is fullcalendar-schedular
+    {{ source("#{inlineJs}/main.min.js") }}
+    {{ source("#{inlineJs}/nl.min.js") }}
+  </script>
+{% endblock %}

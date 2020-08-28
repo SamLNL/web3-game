@@ -1,0 +1,72 @@
+/* ==========================================================================
+   # Name: _c-cta-banner
+   # Author: sam
+   ========================================================================== */
+
+.c-cta-banner {
+  padding: map_get($spacers, 4) map_get($spacers, 3);
+
+  @include media-breakpoint-up('lg') {
+    padding: map_get($spacers, 12) map_get($spacers, 3);
+  }
+
+  &-bg {
+    position: relative;
+
+    &__overlay {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      background: rgba($teal-100, 0.75);
+    }
+  }
+
+  &__title {
+    @extend .h3;
+    width: 100%;
+    text-align: center;
+
+    @include media-breakpoint-up('lg') {
+      font-size: $h2-font-size;
+      line-height: $h2-line-height;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: map_get($spacers, 4);
+
+    @include media-breakpoint-up(sm) {
+      flex-direction: row;
+      align-items: start;
+    }
+  }
+
+  &__cta {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    max-width: 100%;
+
+    & + .c-cta-banner__cta {
+      margin-top: map_get($spacers, 3);
+
+      @include media-breakpoint-up(sm) {
+        margin-top: 0;
+        margin-left: map_get($spacers, 2);
+      }
+    }
+
+    &__micro {
+      @extend .small;
+      color: $gray-600;
+      margin-top: map_get($spacers, 1);
+    }
+  }
+}

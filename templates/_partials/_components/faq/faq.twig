@@ -1,0 +1,41 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{# @var entry \craft\elements\Entry #}
+{# ======================================================
+  @filename: faq
+  @author:   sam
+  ====================================================== #}
+
+{% import "_partials/_macros.twig" as macro %}
+
+{% set text = text is defined ? text :'' %}
+{% set questions = questions is defined ? questions :'' %}
+{% set cta = cta is defined ? cta : '' %}
+{% set ctaMicro = ctaMicro is defined ? ctaMicro : '' %}
+
+{% if questions | length %}
+  {% if text | length %}
+    <div class="mb-4">
+      {{ text }}
+    </div>
+  {% endif %}
+
+  {% for item in questions.all() %}
+    <div tabindex="0" class="c-faq js-faq js-tab-click"
+         data-click-selector="#tab-click-{{ loop.index }}" data-ga-question="{{ item.question }}">
+      <p id="tab-click-{{ loop.index }}" class="c-faq__question caret-down collapsed"
+         data-toggle="collapse"
+         data-target="#faq-{{ loop.index }}">{{ item.question }}</p>
+      <div class="collapse c-faq__answer" id="faq-{{ loop.index }}" data-parent="accordion">
+        <div>
+          {{ macro.renderRichText(item.answer) }}
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+  {% if cta.url | length %}
+    <div class="d-flex justify-content-center w-100 mt-3 mt-lg-4">
+      <a class="c-btn c-btn-arrow" href="{{ cta.url }}" title="{{ cta.title | length ? cta.title : cta.text }}"
+         target="{{ cta.target }}">{{ cta.text }}</a>
+    </div>
+  {% endif %}
+{% endif %}

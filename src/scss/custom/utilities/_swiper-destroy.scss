@@ -1,0 +1,22 @@
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    .swiper#{$infix}-destroy {
+
+      &.swiper-container,
+      .swiper-container {
+        overflow: visible;
+      }
+
+      &.swiper-wrapper,
+      .swiper-wrapper {
+        transform: none !important;
+      }
+
+      .swiper-pagination {
+        display: none;
+      }
+    }
+  }
+}

@@ -114,20 +114,84 @@ workbox.routing.setCatchHandler(({ event }) => {
 
 workbox.precaching.precacheAndRoute([
   {
-    "url": "assets/css/styles.min-ef0cf7888d.css",
-    "revision": "ef0cf7888d8ac11f6a6a2f7223ca014b"
+    "url": "assets/calendar-demo/css/full-calendar.css",
+    "revision": "6e56e3ddf5165551df767caba3e6b136"
   },
   {
-    "url": "assets/js/0-a01b3b2ff8.js",
-    "revision": "49b7faa13fe72f4a19e713fd41126456"
+    "url": "assets/calendar-demo/css/main.css",
+    "revision": "54d180867e5f89c2340977d56fbbdab8"
+  },
+  {
+    "url": "assets/css/styles.min-18005654a8.css",
+    "revision": "18005654a8175ad8a4942fb0d8b213c2"
+  },
+  {
+    "url": "assets/calendar-demo/js/main.js",
+    "revision": "351c2a9b20411e3b3284feced9f1406d"
+  },
+  {
+    "url": "assets/js/0-eae8269579.js",
+    "revision": "81ffb3595a421fe5ea1f72b9dedee27d"
   },
   {
     "url": "assets/js/1-7354824c50.js",
     "revision": "f4c5cf35571dd833270cebcdc19990b2"
   },
   {
+    "url": "assets/js/10-631f261522.js",
+    "revision": "b15a1e6dd742ae155c4dfe9eb68a9a21"
+  },
+  {
+    "url": "assets/js/11-00425897c0.js",
+    "revision": "282802a111f02bff79442f81c67f4385"
+  },
+  {
+    "url": "assets/js/12-a6a5667791.js",
+    "revision": "7144053413dbdc1c6d1d420f1788e94f"
+  },
+  {
+    "url": "assets/js/13-e8401a8177.js",
+    "revision": "da7d6f014804b23df597d1ab0bc0de88"
+  },
+  {
+    "url": "assets/js/14-5d07bbe363.js",
+    "revision": "7285a669681ab06c3bb6390f86789ef2"
+  },
+  {
+    "url": "assets/js/15-8a086828d2.js",
+    "revision": "d71e36fb29cf43ad3c6bb29269f3417d"
+  },
+  {
+    "url": "assets/js/16-8867b31c42.js",
+    "revision": "5e314f836431c759849b3cf73d8c9065"
+  },
+  {
+    "url": "assets/js/17-4e0cec307b.js",
+    "revision": "4404de426a74040a3500e229e84546ad"
+  },
+  {
+    "url": "assets/js/18-88a3e308b2.js",
+    "revision": "b5aecaf41219674008a88f1f4e38f0da"
+  },
+  {
+    "url": "assets/js/19-3a4401900b.js",
+    "revision": "5fb86b7748453270e70ae60b849366fa"
+  },
+  {
     "url": "assets/js/2-0969094a5b.js",
     "revision": "785da4f2af58309a5dd4a4564b848b4b"
+  },
+  {
+    "url": "assets/js/20-81a2393f57.js",
+    "revision": "5360d62244c1561c9c51362c30bdd173"
+  },
+  {
+    "url": "assets/js/21-ebedc89746.js",
+    "revision": "efeaf83ae72903381ad24f17b6250c8b"
+  },
+  {
+    "url": "assets/js/22-552a7fe112.js",
+    "revision": "d241427c8f7db508fc58d3537188921f"
   },
   {
     "url": "assets/js/3-aee5ac23a9.js",
@@ -138,28 +202,32 @@ workbox.precaching.precacheAndRoute([
     "revision": "eae99c25b2476ed3ae5353d2096cd780"
   },
   {
-    "url": "assets/js/6-bbdc9a8adc.js",
-    "revision": "bebe2b178cd14ba0b60b792ad8e5f52e"
+    "url": "assets/js/5-8800a73ccb.js",
+    "revision": "33d254ba04113b6c2759a4eadfd71ffe"
   },
   {
-    "url": "assets/js/7-d908bda5eb.js",
-    "revision": "6a44167b953e198d8367fb75ae4c5096"
+    "url": "assets/js/6-d737a500bb.js",
+    "revision": "da96a4429c14813f82ac3e2fc63d94c9"
   },
   {
-    "url": "assets/js/8-d002eff42a.js",
-    "revision": "7e7108b6dbdda761d661aa0a8b0f78a3"
+    "url": "assets/js/8-abb7e556eb.js",
+    "revision": "05445680f93d2d7b83c6a35fafc874f7"
+  },
+  {
+    "url": "assets/js/9-cd6f32e811.js",
+    "revision": "15440098487c1d54939ee67000e2405e"
   },
   {
     "url": "assets/js/analytics.js",
-    "revision": "af5c617d36e28d19710b882a6824e213"
+    "revision": "871c39943ac31c498d591a714a31212c"
   },
   {
     "url": "assets/js/lazysizes.min.js",
     "revision": "1be608f4c66dbd343f4b931f80b02f87"
   },
   {
-    "url": "assets/js/main-e9ad16e351.js",
-    "revision": "06f2f147eb13fee33b8258ef18a02677"
+    "url": "assets/js/main-b1f3007cf9.js",
+    "revision": "19f3cee234b5c52c85d14885cb7cf009"
   },
   {
     "url": "assets/js/picturefill.min.js",
@@ -174,6 +242,50 @@ workbox.precaching.precacheAndRoute([
     "revision": "76cd003f70b7a728e1e283e7c4cc8896"
   },
   {
+    "url": "assets/images/svg/single/angle-down-light-teal.svg",
+    "revision": "ffe50a31caeff913b78cc135325264a0"
+  },
+  {
+    "url": "assets/images/svg/single/angle-left-light-teal.svg",
+    "revision": "a28b6b3a0cb66ce6c44ed0051bcbac1c"
+  },
+  {
+    "url": "assets/images/svg/single/angle-left-light.svg",
+    "revision": "5b83662ba1cbc780691e5123263b4557"
+  },
+  {
+    "url": "assets/images/svg/single/angle-right-light-teal.svg",
+    "revision": "bab83ee3211ef90f0bcbc0f18428041e"
+  },
+  {
+    "url": "assets/images/svg/single/angle-right-light-white.svg",
+    "revision": "d5771bd372913c3b41a3d4a34042bca7"
+  },
+  {
+    "url": "assets/images/svg/single/angle-right-light.svg",
+    "revision": "2efda87cbc4fa298ed00cec099ecfe9e"
+  },
+  {
+    "url": "assets/images/svg/single/check.svg",
+    "revision": "aefe1b282ddfb1f185e05c646be2868d"
+  },
+  {
+    "url": "assets/images/svg/single/clock-regular.svg",
+    "revision": "6b19d244f3cef3418721327cd3068f48"
+  },
+  {
+    "url": "assets/images/svg/single/facebook-square-brands.svg",
+    "revision": "daf3f5b2198a6f5ac62a34e6f695a770"
+  },
+  {
+    "url": "assets/images/svg/single/global-wave.svg",
+    "revision": "2357a89c72f3c924e51236aaf132c637"
+  },
+  {
+    "url": "assets/images/svg/single/icon-check.svg",
+    "revision": "aefe1b282ddfb1f185e05c646be2868d"
+  },
+  {
     "url": "assets/images/svg/single/icon-chevron-left.svg",
     "revision": "2f73671871bcbf4707ce9001db896c3b"
   },
@@ -186,28 +298,44 @@ workbox.precaching.precacheAndRoute([
     "revision": "ada3e24a018ab93f4149c420873bc67a"
   },
   {
+    "url": "assets/images/svg/single/icon-person.svg",
+    "revision": "49f7e176030f7f3981c526c057d7a9e1"
+  },
+  {
     "url": "assets/images/svg/single/icon-sluit.svg",
     "revision": "5586f1f20810339df998f96eaa479468"
   },
   {
+    "url": "assets/images/svg/single/instagram-square-brands.svg",
+    "revision": "e545ee60230e23fa1f65fe301c64655d"
+  },
+  {
+    "url": "assets/images/svg/single/loading.svg",
+    "revision": "4246f9022854e30f8f8a93df5444b3d5"
+  },
+  {
     "url": "assets/images/svg/single/logo-biljoenbad.svg",
-    "revision": "2498c55b5e23710c67e8d4f4e60319be"
+    "revision": "b97d86ab140cc7fcad64acf3ece6d642"
   },
   {
-    "url": "assets/images/svg/sprite/css/svg/sprite.css-0c86792f.svg",
-    "revision": "0c86792fa3f5a771aae89dd5b70c903c"
+    "url": "assets/images/svg/single/lower-wave.svg",
+    "revision": "279218c905d61f9371edcf081f1cb9a4"
   },
   {
-    "url": "assets/images/svg/sprite/single/icon-activiteitenbad.svg",
-    "revision": "6ee2f8a7fd2533403436dec107ffd2c9"
+    "url": "assets/images/svg/single/payoff.svg",
+    "revision": "b80c0f34c9a4e6a8751aea0a54d15d40"
   },
   {
-    "url": "assets/images/svg/sprite/single/icon-beweegbarebodem.svg",
-    "revision": "e66f8ba3d7a7b942d6e5b711fa4b91a5"
+    "url": "assets/images/svg/single/search-regular.svg",
+    "revision": "bc51bd5fcbf9f84559b782f891e1c974"
   },
   {
-    "url": "assets/images/svg/sprite/single/icon-bus.svg",
-    "revision": "7b60aa486852f1ef46842f205aa61c7e"
+    "url": "assets/images/svg/single/upper-wave.svg",
+    "revision": "42ee5681674f2f9c6043e54b65f88dc1"
+  },
+  {
+    "url": "assets/images/svg/sprite/css/svg/sprite.css-e5343968.svg",
+    "revision": "e53439689199dad4dbbce5388644579a"
   },
   {
     "url": "assets/images/svg/sprite/single/icon-calendar.svg",
@@ -218,16 +346,8 @@ workbox.precaching.precacheAndRoute([
     "revision": "cae9f4fd52feabda867bf8303e6dd620"
   },
   {
-    "url": "assets/images/svg/sprite/single/icon-eten.svg",
-    "revision": "b257530c3c22d07f72d64fb78d38b3fb"
-  },
-  {
     "url": "assets/images/svg/sprite/single/icon-facebook.svg",
     "revision": "5faaf99ca10116d9daf081d809c81994"
-  },
-  {
-    "url": "assets/images/svg/sprite/single/icon-familiekleedkamer.svg",
-    "revision": "320e78316be41cc4329b23291ebd5309"
   },
   {
     "url": "assets/images/svg/sprite/single/icon-info.svg",
@@ -238,10 +358,6 @@ workbox.precaching.precacheAndRoute([
     "revision": "c25e9a8b6d4777d32853fe7b7558fc11"
   },
   {
-    "url": "assets/images/svg/sprite/single/icon-locker.svg",
-    "revision": "033c916b0d1d95eb97ebf20a822e46c8"
-  },
-  {
     "url": "assets/images/svg/sprite/single/icon-marker-yellow.svg",
     "revision": "8a94dd55722ddf4b13ff4ea1158b0bcb"
   },
@@ -250,44 +366,12 @@ workbox.precaching.precacheAndRoute([
     "revision": "0a8b478a3e97ff3f4d1f28672e32ac30"
   },
   {
-    "url": "assets/images/svg/sprite/single/icon-multi-ruimte.svg",
-    "revision": "ac4e1ed384a1e9bbc188f529b876bc6f"
-  },
-  {
-    "url": "assets/images/svg/sprite/single/icon-parkeren.svg",
-    "revision": "43090de3548191dc59008d26f66f2fec"
-  },
-  {
-    "url": "assets/images/svg/sprite/single/icon-peuterbad.svg",
-    "revision": "557bd0713d3190d7886728cdba7a1123"
-  },
-  {
-    "url": "assets/images/svg/sprite/single/icon-praktijkruimte.svg",
-    "revision": "576ed1e013a91d5997e5b46946942aa1"
-  },
-  {
-    "url": "assets/images/svg/sprite/single/icon-rolstoel.svg",
-    "revision": "122b5096b4df45ae57e80233230fcad0"
-  },
-  {
     "url": "assets/images/svg/sprite/single/icon-telefoon.svg",
     "revision": "5af76db83022a7f5dae565b0157af2a4"
   },
   {
-    "url": "assets/images/svg/sprite/single/icon-vergaderruimte.svg",
-    "revision": "b767fc3a22eb269661dd550738d81d2e"
-  },
-  {
-    "url": "assets/images/svg/sprite/single/icon-wedstrijdbad.svg",
-    "revision": "77f0c65be3b19c5d1add0d1762b94dcc"
-  },
-  {
-    "url": "assets/images/svg/sprite/single/icon-wifi.svg",
-    "revision": "22c5fd2cfb5a6892292fde60b3a09899"
-  },
-  {
     "url": "assets/images/svg/sprite/sprite.svg",
-    "revision": "058abdcf5c526e32790dccffe28919d0"
+    "revision": "e1cf37c63c350d934a1c6f89ba5ca5b0"
   },
   {
     "url": "/offline",

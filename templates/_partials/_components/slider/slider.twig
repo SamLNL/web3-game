@@ -1,0 +1,48 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{# @var entry \craft\elements\Entry #}
+{# ======================================================
+  @filename: slider
+  @author:   sam
+  ====================================================== #}
+{% import "_partials/_macros.twig" as macro %}
+
+{% set text = text is defined ? text : '' %}
+{% set images = images is defined ? images :'' %}
+
+{% if images | length %}
+
+  {% if text | length %}
+    <div class="mb-3 mb-lg-4">
+      {{ text }}
+    </div>
+  {% endif %}
+
+  {% set swiperId = random() %}
+  <div class="c-slider swiper mx-xl-5">
+    <div class="swiper-container js-slider swiper-overflow" data-swiper-id="{{ swiperId }}">
+      <div class="swiper-wrapper">
+        {% for image in images.all() %}
+
+          <div class="c-slider__slide swiper-slide">
+
+            {% set transformImage = craft.imager.transformImage(image, {
+              width: 940,
+              height: 470,
+              position: image.getFocalpoint()
+            }) %}
+            <img class="swiper-lazy" data-src="{{ transformImage.url }}" alt="{{ image.title }}">
+            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+          </div>
+        {% endfor %}
+      </div>
+
+    </div>
+    <a title="Vorige slide" class="carousel-control-prev swiper-button pb-8" data-swiper-id="{{ swiperId }}" href="#">
+      {% include '_inline/_svg/icon-chevron-left' %}
+    </a><a title="Volgende slide" class="carousel-control-next swiper-button pb-8" data-swiper-id="{{ swiperId }}"
+           href="#">
+      {% include '_inline/_svg/icon-chevron-right' %}
+    </a>
+    <div class="swiper-pagination" data-swiper-id="{{ swiperId }}"></div>
+  </div>
+{% endif %}

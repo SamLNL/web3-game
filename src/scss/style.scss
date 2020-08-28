@@ -14,11 +14,10 @@
 // BOOTSTRAP AND CUSTOM
 @import "bootstrap/functions";
 
-// Add the fonts
-@import "custom/fonts";
-
-// This will overwrite the custom variables given in bootstrap/variables
-@import "custom/variables";
+// Settings
+@import "custom/settings/nav";
+@import "custom/settings/variables";
+@import "custom/settings/fonts";
 
 @import "bootstrap/variables";
 @import "bootstrap/mixins";
@@ -56,23 +55,70 @@
 @import "bootstrap/utilities";
 @import "bootstrap/print";
 @import "bootstrap/images-ratio";
-@import "custom/body";
-@import "custom/button";
-@import "custom/navbar";
+
+// Utilities
+@import "custom/utilities/hover";
+@import "custom/utilities/focus";
+@import "custom/utilities/border";
+@import "custom/utilities/z-index";
+@import "custom/utilities/rounded";
+@import "custom/utilities/sizing";
+@import "custom/utilities/list";
+@import "custom/utilities/typography";
+@import "custom/utilities/margin";
+@import "custom/utilities/position";
+@import "custom/utilities/overflow";
+@import "custom/utilities/swiper-destroy";
+
+// Elements
+@import "custom/elements/body";
+@import "custom/elements/main";
+@import "custom/elements/anchor";
+@import "custom/elements/heading";
+@import "custom/elements/input";
+
 @import "custom/header";
-@import "custom/typography";
-@import "custom/sizing";
 @import "custom/wave";
-@import "custom/rounded";
-@import "custom/list";
 @import "custom/swiper";
-@import "custom/service";
 @import "custom/faq";
-@import "custom/z-index";
 @import "custom/footer";
-@import "custom/hover";
-@import "custom/focus";
-@import "custom/border";
 
-// Add custom made scss files
+// Components
+@import "custom/components/c-form";
+@import "custom/components/c-nav";
+@import "custom/components/c-service";
+@import "custom/components/c-btn";
+@import "custom/components/c-card";
+@import "custom/components/c-pagination";
+@import "custom/components/c-reading-time";
+@import "custom/components/c-icon";
+@import "custom/components/c-label";
+@import "custom/components/c-breadcrumb";
+@import "custom/components/c-faq";
+@import "custom/components/c-cta-banner";
+@import "custom/components/c-image";
+@import "custom/components/c-side-by-side";
+@import "custom/components/c-slider";
+@import "custom/components/c-teaser";
+@import "custom/components/c-typeform";
+@import "custom/components/c-contact-block";
+@import "custom/components/c-cta-blocks";
+@import "custom/components/c-cta-block";
+@import "custom/components/c-table";
+@import "custom/components/c-heads-up";
+@import "custom/components/c-partners";
+@import "custom/components/c-activity";
+@import "custom/components/c-team";
 
+/* purgecss start ignore */
+
+// Add js scss
+@import "custom/js/js-load-more";
+@import "custom/js/js-slider";
+@import "custom/js/js-calendar";
+@import "custom/js/js-sidebar-sticky";
+
+// Add external css
+@import '~fullcalendar-scheduler/main';
+
+/* purgecss end ignore */

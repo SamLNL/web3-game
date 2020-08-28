@@ -1,0 +1,60 @@
+/* ==========================================================================
+   # Name: _select
+   # Date: 22 jul. 2020
+   # Author: sam
+   ========================================================================== */
+
+input[type="date"] {
+  appearance: none;
+  -webkit-appearance: none;
+  color: $teal-600;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  border: 2px solid $teal-200;
+  background: $teal-100;
+  border-radius: 25px;
+  padding: 7px 20px;
+  display: inline-block !important;
+  visibility: visible !important;
+
+  /* Removes the clear button from date inputs */
+  /* Removes the spin button */
+  &::-webkit-clear-button,
+  &::-webkit-inner-spin-button {
+    display: none;
+  }
+
+  /* Always display the drop down caret */
+  &::-webkit-calendar-picker-indicator {
+    color: $teal-600;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &:focus {
+    color: $teal-600;
+    box-shadow: none;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    background-color: $teal-200;
+  }
+}
+
+select {
+  @extend .rounded;
+  padding: 15px 50px 15px 15px;
+  width: 100%;
+  font-weight: $font-weight-bold;
+  color: $teal-600;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url('/assets/images/svg/single/angle-down-light-teal-dark.svg') right center no-repeat $teal-100;
+  background-size: 50px;
+
+  &::-ms-expand {
+    display: none; /* Remove default arrow in Internet Explorer 10 and 11 */
+  }
+}

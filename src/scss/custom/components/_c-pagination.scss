@@ -1,0 +1,43 @@
+$block-size: $spacer * 2;
+
+.c-pagination {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $gray-300;
+
+    &-active {
+      background-color: $primary;
+      border: 1px solid $primary;
+      color: $white;
+    }
+
+    &.disabled {
+      pointer-events: none;
+      opacity: 0;
+    }
+
+    &:not(.c-pagination__item-active):hover {
+      background-color: $gray-200;
+    }
+  }
+
+  &__link {
+    width: $block-size;
+    height: $block-size;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+   &:hover {
+     text-decoration: none;
+   }
+  }
+}

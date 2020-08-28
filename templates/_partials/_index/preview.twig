@@ -1,0 +1,43 @@
+{% import "_partials/_macros.twig" as macro %}
+<h2 class="text-uppercase text-teal-600 text-center mb-2">{{ entry.previewTitle }}</h2>
+<p class="small text-gray-800 text-center">© Slangen+Koenis Architecten</p>
+<div class="swiper pt-3 pb-4 pb-lg-5 pt-lg-4">
+  <div class="swiper-container row js-swiper-preview">
+    <div class="swiper-wrapper d-flex flex-row h-auto">
+      {% for slide in entry.preview.all() %}
+        <div class="swiper-slide swiper-slide-side-by-side col-11 col-md-12" data-title="{{ slide.previewTitle }}">
+          {% set image = slide.previewImage.one() %}
+          {% set tranformedImage = craft.imager.transformImage(image, {
+            width: 700,
+            height: 400
+          }) %}
+          <div class="swiper-slide__image swiper-lazy"
+               data-background="{{ tranformedImage.url }}"
+               style="background-repeat:no-repeat;background-position:center;background-size:cover;">
+            <div class="swiper-lazy-preloader"></div>
+          </div>
+          <div class="swiper-slide__content">
+            <div class="d-flex flex-row align-items-center mb-2 mb-lg-3">
+              <svg class="mr-2" width="35" height="35">
+                <use xlink:href="/assets/images/svg/sprite/sprite.svg#icon-marker-yellow"></use>
+              </svg>
+              <p class="mb-0 weight-700 text-teal-600 ">{{ slide.previewTitle }}</p>
+            </div>
+            <blockquote class="blockquote weight-700 text-teal mb-3">
+              {{ slide.previewQuote }}
+            </blockquote>
+            <p class="mb-0">
+              {{ slide.previewText | striptags }}
+            </p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+  <a title="Vorige slide" class="carousel-control-prev swiper-button pb-8" href="#">
+    {% include '_inline/_svg/icon-chevron-left' %}
+  </a><a title="Volgende slide" class="carousel-control-next swiper-button pb-8" href="#">
+    {% include '_inline/_svg/icon-chevron-right' %}
+  </a>
+</div>

@@ -18,7 +18,7 @@ settings:
   defaultLinkName: custom
   defaultText: 'Inloggen leerlingvolgsysteem'
   enableAriaLabel: ''
-  enableTitle: ''
+  enableTitle: '1'
   typeSettings:
     __assoc__:
       -

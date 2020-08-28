@@ -1,0 +1,20 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{# @var entry \craft\elements\Entry #}
+{# ======================================================
+  @filename: entry
+  @date:     18 aug. 2020
+  @author:   sam
+  ====================================================== #}
+{#
+  Add a small discription about this file/componennt and what it does
+#}
+
+{# {% import "_partials/_macros.twig" as macro %} #}
+{# uncomment line above if you need to use macros in your template #}
+
+{% switch entry.type %}
+{% case 'activity' %}
+  {% include 'activities/activities/detail.twig' %}
+{% case 'category' %}
+  {% include 'activities/activities/category.twig' %}
+{% endswitch %}

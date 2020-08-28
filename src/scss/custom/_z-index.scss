@@ -1,5 +1,0 @@
-@for $i from 0 through 10 {
-  .z-#{$i * 10} {
-    z-index: ($i * 10) !important;
-  }
-}

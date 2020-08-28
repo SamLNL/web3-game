@@ -1,0 +1,109 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{# @var entry \craft\elements\Entry #}
+{# ======================================================
+  @filename: _entry
+  @author:   sam
+  ====================================================== #}
+{#
+Add a small discription about this file/componennt and what it does
+#}
+
+{% extends "_layouts/_layout.twig" %}
+
+{% block _inline_css %}
+  <style>
+    {{ source ("index_critical.min.css", ignore_missing = true) }}
+  </style>
+{% endblock %}
+
+{% block content %}
+
+    {% include '_partials/_global/header' with {
+      title: entry.title,
+      image: entry.headerImage.one(),
+      intro: entry.intro
+    } %}
+
+    <div id="mainContentSkip">
+      <div class="container">
+        <div class="c-activity row">
+          {% cache %}
+          {% set category = entry.parent %}
+          {% set neighbours = craft.entries.section('activities').descendantOf(category).all() %}
+          {% set categoryColor = category.categoryColor %}
+          {% set categoryUsps = category.categoryUsps %}
+
+          <div class="c-activity__sidebar position-relative js-sidebar-sticky-wrapper">
+            <div class="js-sidebar-sticky" data-wrapper=".js-sidebar-sticky-wrapper" data-offset="151">
+              <div class="c-activity__category" style="border-left: 8px solid {{ categoryColor }}">
+                <ul>
+                  {% for neighbour in neighbours %}
+                    <li>
+                      {% if neighbour.id == entry.id %}
+                        <span>
+                      {{ neighbour.title }}
+                    </span>
+                      {% else %}
+                        <a href="{{ neighbour.url }}" title="Ga naar {{ neighbour.title }}">
+                          {{ neighbour.title }}
+                        </a>
+                      {% endif %}
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+
+              {% if categoryUsps | length %}
+                <div class="c-activity__usps js-sidebar-usps">
+                  {% if category.categoryUspsTitle | length %}
+                    <p class="h3">{{ category.categoryUspsTitle }}</p>
+                  {% endif %}
+                  <ul class="checks">
+                    {% for usp in categoryUsps.all() %}
+                      <li>
+                        {{ usp.title }}
+                      </li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              {% endif %}
+            </div>
+            {% endcache %}
+          </div>
+          <div class="c-activity col-12 col-lg-8">
+            {% cache %}
+              <form class="c-activity__category-select -mt-2 mb-2 d-lg-none">
+                <label class="d-none" id="category-label" for="category">Categorie</label>
+                <select class="js-select-href" name="category" id="category" aria-labelledby="category-label"
+                        style="border-color:{{ categoryColor }}">
+                  {% for neighbour in neighbours %}
+                    <option {{ neighbour.id == entry.id ? 'selected="selected "' : '' }}value="{{ neighbour.url }}">
+                      {{ neighbour.title }}
+                    </option>
+                  {% endfor %}
+                </select>
+              </form>
+              {% if categoryUsps | length %}
+                <div class="c-activity__usps mb-3 d-lg-none">
+                  {% if category.categoryUspsTitle | length %}
+                    <p class="h3">{{ category.categoryUspsTitle }}</p>
+                  {% endif %}
+                  <ul class="checks">
+                    {% for usp in categoryUsps.all() %}
+                      <li>
+                        {{ usp.title }}
+                      </li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              {% endif %}
+            {% endcache %}
+            {% include "activities/activities/detail-matrix.twig" %}
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}
+
+{% block _inline_js %}
+{% endblock %}

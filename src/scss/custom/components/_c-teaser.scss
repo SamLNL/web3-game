@@ -1,0 +1,49 @@
+/* ==========================================================================
+   # Name: _c-teaser
+   # Author: sam
+   ========================================================================== */
+
+.c-teaser {
+  display: flex;
+  flex-direction: column;
+
+  .swiper-container {
+    @include media-breakpoint-up('lg') {
+      padding-bottom: 0;
+    }
+  }
+
+  &-small {
+    @extend .col-lg-10;
+    @extend .offset-lg-1;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__prev,
+  &__next {
+    @extend .carousel-control-outside;
+
+    display: none;
+    padding-bottom: map_get($spacers, 5);
+  }
+
+  &__prev {
+    @extend .carousel-control-prev;
+
+    span {
+      @extend .carousel-control-prev-icon;
+    }
+  }
+
+  &__next {
+    @extend .carousel-control-next;
+
+    span {
+      @extend .carousel-control-next-icon;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{# @var entry \craft\elements\Entry #}
+{# ======================================================
+  @filename: prices
+  @date:     19 aug. 2020
+  @author:   sam
+  ====================================================== #}
+
+{% set uniqueId = random() %}
+
+{% set intro = intro is defined ? intro : '' %}
+{% set blockClass = blockClass is defined ? blockClass : '' %}
+
+{% if intro | length %}
+  <div>
+    {{ intro }}
+  </div>
+{% endif %}
+
+<div class="swiper mt-4 swiper-lg-destroy">
+  <div class="c-cta-blocks js-cta-blocks swiper-container"
+       data-swiper-id="{{ uniqueId }}">
+    <div class="swiper-wrapper">
+      {% for price in prices.pricesTickets.all() %}
+        {% include '_partials/_components/cta-blocks/cta-block/cta-block.twig' with {
+          class: 'c-cta-block-price c-cta-block-' ~ price.color ~ ' ' ~ blockClass,
+          title: price.heading,
+          subTitle: price.subHeading,
+          mainTitle: price.price,
+          mainSubTitle: price.subPrice,
+          subContent: price.usps,
+          cta: price.cta,
+          gaLabel: 'Bestel - ' ~ price.heading,
+          ctaMicro: price.ctaMicro
+        } %}
+      {% endfor %}
+    </div>
+    <div class="swiper-pagination" data-swiper-id="{{ uniqueId }}"></div>
+  </div>
+</div>

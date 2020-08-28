@@ -49,7 +49,7 @@
     {% set critical %}
       {{ craft.twigpack.includeCriticalCssTags() }}
     {% endset %}
-    {% if critical|length and (not cacheVal or cacheVal != cssAsset) %}
+    {% if critical|trim|length and (not cacheVal or cacheVal != cssHash) %}
       {{ setCookie('critical-css', cssAsset, now | date_modify("+7 days").timestamp ) }}
       {{ setCookie('critical-css', cssBootstrapAsset, now | date_modify("+7 days").timestamp ) }}
       {{ critical }}
@@ -125,25 +125,39 @@
 
 </head>
 
+{% set contactClass = '' %}
+{% if contactBlockClass is defined %}
+  {% set contactClass = contactBlockClass %}
+{% endif %}
+
 {# -- HTML Body -- #}
-<body>
+<body class="sticky-nav">
 <header>
   {% block header %}
     <div class="container">
-      {% include '_partials/_global/menu-2' %}
+      {% include '_partials/_global/main-menu' %}
     </div>
   {% endblock %}
 </header>
 <main>
   {# Content goes here #}
   {% block content %}{% endblock %}
+
+  {% set contactTitle = entry is defined and entry['contactBlockTitle'] is defined and entry.contactBlockTitle | length ? entry.contactBlockTitle : contact.contactBlockHeading %}
+  {% set showContact = entry is defined and entry['contactBlockShow'] is defined ? entry.contactBlockShow : true %}
+
+  {% include '_partials/_components/contact-block/contact-block.twig' with {
+    title: showContact == true ? contactTitle : '',
+    phone: showContact == true and contact.contactBlockPhone | length ? contact.contactBlockPhone : '',
+    cta: showContact == true and contact.contactBlockCta.url | length ? contact.contactBlockCta : '',
+    wave: true,
+    class: contactClass
+  } %}
 </main>
 <footer>
   {% block footer %}
     <div class="bg-teal pt-4 pb-md-4 pb-lg-4 pt-lg-5">
-      <div class="container">
-        {% include '_partials/_global/footers-11' %}
-      </div>
+        {% include '_partials/_global/footer' %}
     </div>
   {% endblock %}
 </footer>

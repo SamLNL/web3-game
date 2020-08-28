@@ -1,0 +1,22 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: $nav-height;
+
+  @include media-breakpoint-up('md') {
+    padding-top: $nav-height-md;
+  }
+
+  @include media-breakpoint-up('lg') {
+    padding-top: $nav-height-lg;
+  }
+
+  &.no-scroll {
+    overflow: hidden;
+
+    @include media-breakpoint-up('lg') {
+      overflow: auto;
+    }
+  }
+}

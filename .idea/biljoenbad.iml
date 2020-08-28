@@ -81,6 +81,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/ramsey/uuid" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/rize/uri-template" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/rlanvin/php-rrule" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/diff" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/sebastianlenz/linkfield" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/seld/cli-prompt" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/seld/jsonlint" />
@@ -114,6 +115,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/verbb/base" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/verbb/image-resizer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/verbb/navigation" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/verbb/super-table" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/vlucas/phpdotenv" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/voku/anti-xss" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/voku/arrayy" />

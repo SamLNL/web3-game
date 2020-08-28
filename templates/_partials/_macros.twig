@@ -8,53 +8,6 @@
   twig file with all site macros
 #}
 
-{#
-  Renders an image using the <picture> element. Use this if there is need to use
-  different aspect ratios for different sizes.
-
-  If Imager is setup correctly this macro will also generate webp images for every variant.
-
-  Usage:
-   {{ macro.renderPicture(
-        image,
-        [
-            {
-              'sizes': [
-                { width: 1600, ratio: 16/6 },
-                { width: 1200, ratio: 16/6 },
-                { width: 1000, ratio: 16/6 },
-                { width: 800, ratio: 16/6 },
-                { width: 480, ratio: 16/6 },
-              ],
-              'media': 'min-width: 768px'
-            },
-            {
-              'sizes': [
-                { width: 768, ratio: 16/10 },
-                  { width: 480, ratio: 16/10 },
-                ],
-                'media': 'min-width: 575px'
-            },
-            {
-              'sizes': [
-                { width: 768, ratio: 32/37, mode: 'crop' },
-                { width: 600, ratio: 32/37, mode: 'crop' },
-                { width: 480, ratio: 32/37, mode: 'crop' },
-                { width: 320, ratio: 32/37, mode: 'crop' }
-              ]
-            }
-          ], true, entry.title, 'image classes go here')
-      }}
-
-   Params:
-   image: The craft image element
-   transforms: An array with transforms for the image. A transform objext can have the followinf elements: 'sizes': an array with imager transforms
-   lazy: true or false for lazyloading, default false
-   & `media` a media query for when these sizes should be used
-   imgTitle: A optional title, if none is given the title of the image itself is used
-   imgclass: A string with classes for the image
-#}
-
 {% macro renderPicture(image, transforms, lazy, imgTitle, imgClass) %}
   {% set defaultImage = image %}
   {% set lazy = lazy ?? false %}
@@ -126,7 +79,7 @@
     <a href="{{ node.url }}" title="{{ node.name }}"{% if node.blank %} target="_blank"{% endif %}>{{ node.name }}</a>
     {% if node.hasChildren %}
       <ul class="nav__level{{ (node.level + 1) }}">
-        {% for subnode in node.children %}
+        {% for subnode in node.children.all() %}
           {{ _self.addNodeToNavigation(subnode, loop.index) }}
         {% endfor %}
       </ul>
@@ -145,4 +98,96 @@
   <svg class="{{ classes }}">
     <use xlink:href="/assets/images/svg/sprite/sprite.svg#{{ icon }}"></use>
   </svg>
+{% endmacro %}
+
+{#
+  Renders Navigation menu
+#}
+{% macro renderNav(nav, studentSystem = false) %}
+  <ul class="nav-items">
+    {% nav node in nav %}
+      {% if node.hasDescendants %}
+        <li class="nav-item dropdown">
+          <a title="Ga naar {{ node.title }}" {% if node.url %}href="{{ node.url }}"{% endif %}
+             class="nav-link{{ node.active ? ' nav-active' }}{{ idLink ? ' js-scroll' }}{{ node.classes ? ' ' ~ node.classes : '' }}"{% if node.newWindow %}
+             target="_blank"
+             rel="noopener"{% endif %}{% for attribute in node.customAttributes %}{{ attribute.attribute }}="{{ attribute.value }}"{% endfor %}
+          ga-on="click" ga-event-category="Menu" ga-event-action="Click" ga-event-label="{{ node.title }}">
+          {{ node.title }}
+          </a>
+          <a class="dropdown-toggle" href="#" title="Klap menu item uit" data-toggle="dropdown">
+          </a>
+          <ul class="dropdown-menu" aria-label="Dropdown menu">
+            {% for subnode in node.children.all() %}
+              <a title="Ga naar {{ subnode.title }}"
+              {% if subnode.url %}href="{{ subnode.url }}"{% endif %} class="nav-link{{ subnode.active ? ' nav-active' }}{{ idLink ? ' js-scroll' }}{{ subnode.classes ? ' ' ~ subnode.classes : '' }}"{% if subnode.newWindow %} target="_blank" rel="noopener"{% endif %}{% for attribute in subnode.customAttributes %}{{ attribute.attribute }}="{{ attribute.value }}"{% endfor %} ga-on="click" ga-event-category="Menu" ga-event-action="Click" ga-event-label="{{ subnode.title }}">
+              {{ subnode.title }}
+              </a>
+            {% endfor %}
+          </ul>
+        </li>
+      {% elseif not node.parent | length %}
+        <li class="nav-item">
+          {% set idLink = node.url|first == '#' ? true : false %}
+          <a title="Ga naar {{ node.title }}" {% if node.url %}href="{{ node.url }}"{% endif %}
+             class="nav-link{{ node.active ? ' nav-active' }}{{ idLink ? ' js-scroll' }}{{ node.classes ? ' ' ~ node.classes : '' }}"{% if node.newWindow %}
+             target="_blank"
+             rel="noopener"{% endif %}{% for attribute in node.customAttributes %}{{ attribute.attribute }}=
+          "{{ attribute.value }}"{% endfor %} ga-on="click" ga-event-category="Menu" ga-event-action="Click"
+          ga-event-label="{{ node.title }}">
+          {{ node.title }}
+          </a>
+        </li>
+      {% endif %}
+    {% endnav %}
+    {% if studentSystem and menu.menuStudentSystem.url | length %}
+      <li class="nav-item">
+        <a href="{{ menu.menuStudentSystem.url }}" target="{{ menu.menuStudentSystem.target }}" title="{{ menu.menuStudentSystem.title | length ? menu.menuStudentSystem.title : menu.menuStudentSystem.text }}" class="nav-link login" ga-on="click" ga-event-category="Menu" ga-event-action="Click" ga-event-label="Inloggen leerlingvolgsysteem">
+          {{ menu.menuStudentSystem.text }}
+        </a>
+      </li>
+    {% endif %}
+  </ul>
+{% endmacro %}
+
+{% macro renderImageBackgroundCss(image, transforms, class) %}
+  {% if class | length %}
+    {% set sizes = [] %}
+
+    {% for item in transforms %}
+      {% set sizes = sizes | merge(item.sizes) %}
+    {% endfor %}
+
+    {% set transformedImages = craft.imager.transformImage(image, sizes,
+      {position: image.getFocalpoint()}) %}
+
+    {% set myCss %}
+      {% for idx,transform in transforms %}
+        {% if transform['media'] is defined %}
+          @media only screen and ({{ transform.media }}) {
+          .{{ class|join('.') }} {
+          background-size: cover;
+          background-image: url({{ transformedImages[ idx ] }});
+          background-position: {{ image.getFocalpoint().x * 100 }}% {{ image.getFocalpoint().y * 100 }}%;
+          }
+          }
+        {% else %}
+          .{{ class|join('.') }} {
+          background-size: cover;
+          background-image: url({{ transformedImages[ idx ] }});
+          background-position: {{ image.getFocalpoint().x * 100 }}% {{ image.getFocalpoint().y * 100 }}%;
+          }
+        {% endif %}
+      {% endfor %}
+    {% endset %}
+  {% endif %}
+
+  {% css myCss %}
+{% endmacro %}
+
+{#
+  Get Rich text area without the <p> elements
+#}
+{% macro renderRichText(text, class = 'd-block') %}
+  {{ text | replace({ '<p>' : '<span class="' ~ class ~ '">', '</p>' : '</span>'}) | raw }}
 {% endmacro %}

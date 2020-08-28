@@ -1,0 +1,33 @@
+/* ==========================================================================
+   # Name: _c-heads-up
+   # Date: 05 aug. 2020
+   # Author: sam
+   ========================================================================== */
+
+/**
+ * Add a small description here about the code in this file.
+ * Use *[1]* and so on if need telling with small pieces of css do.
+ * See elements.headings.scss as an Example
+ *
+ */
+
+.c-heads-up {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+
+  &__wrapper {
+    @extend .rounded;
+    width: 100%;
+    background-color: $teal-200;
+    padding: map_get($spacers, 3) map_get($spacers, 2);
+    display: flex;
+    flex-direction: row;
+
+    p {
+      margin-bottom: 0;
+      align-self: center;
+    }
+  }
+}

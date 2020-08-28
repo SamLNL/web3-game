@@ -1,0 +1,7 @@
+.js-sidebar-sticky {
+  &.sticky {
+    position: sticky;
+    top: calc(#{$nav-height-lg} + 20px);
+    left: 0;
+  }
+}

@@ -1,0 +1,39 @@
+/* ==========================================================================
+   # Name: _c-slider
+   # Author: sam
+   ========================================================================== */
+
+.c-slider {
+  margin-bottom: map_get($spacers, 2);
+
+  &__slide {
+    width: 100%;
+
+    img {
+      @extend .rounded;
+      width: 100%;
+    }
+  }
+
+  &__prev,
+  &__next {
+    @extend .carousel-control-outside;
+    padding-bottom: map_get($spacers, 4);
+  }
+
+  &__prev {
+    @extend .carousel-control-prev;
+
+    span {
+      @extend .carousel-control-prev-icon;
+    }
+  }
+
+  &__next {
+    @extend .carousel-control-next;
+
+    span {
+      @extend .carousel-control-next-icon;
+    }
+  }
+}

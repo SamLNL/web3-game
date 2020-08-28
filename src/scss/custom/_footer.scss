@@ -1,21 +1,41 @@
 .footer {
   &-items {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     list-style: none;
     justify-content: center;
-    margin-bottom: 0;
+    align-items: center;
 
     @include media-breakpoint-up('sm') {
       justify-content: center;
     }
 
+    @include media-breakpoint-up('md') {
+      justify-content: center;
+      align-items: start;
+    }
+
     @include media-breakpoint-up('lg') {
-      align-items: center;
+      align-items: start;
     }
   }
 
-  &-item {
+  &-items {
+    a {
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &-sub-items {
+    flex-direction: row;
+    margin-bottom: 0;
+  }
+
+  &-sub-item {
     margin-bottom: $spacer * 2;
 
     &:not(:last-child) {

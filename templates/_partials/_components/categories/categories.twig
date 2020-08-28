@@ -1,0 +1,60 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{# @var entry \craft\elements\Entry #}
+{# ======================================================
+  @filename: categories
+  @author:   sam
+  ====================================================== #}
+
+{# data should be a array of objects, containing the following:
+- title
+- url
+- active (optional)
+- amount (optional)
+#}
+
+{% set data = data is defined ? data : '' %}
+{% set title = title is defined ? title : 'Categorieën' | t %}
+{% set dropdown = dropdown is defined ? dropdown : false %}
+{% set class = class is defined ? class : '' %}
+
+{% if data | length %}
+  {% if not dropdown %}
+        <div class="c-category {{ class }}">
+          <div class="c-category__title">{{ title }}</div>
+          {% for category in data %}
+            {% if category['amount'] is not defined or category.amount > 0 %}
+              <a class="c-category__link{{ category['active'] is defined and category.active ? ' c-category__link-active' : '' }}"
+                href="{{ category.url }}">
+                <span class="c-category__link__title">{{ category.title }}</span>
+                <span class="c-category__link__amount">({{ category.amount }})</span>
+              </a>
+            {% endif %}
+          {% endfor %}
+        </div>
+    {% else %}
+      <div class="c-category c-category-dropdown category-toggle {{ class }}">
+        <a class="js-toggle c-category-dropdown__toggle"
+           data-toggle=".category-toggle"
+           href="#">
+            <span>
+              <span class="c-category-dropdown__title">{{ title }}</span>
+              <span>{% include '_inline/_svg/angle-down-light.twig' %}</span>
+            </span>
+        </a>
+        <ul>
+          {% for category in data %}
+            {% if category.amount > 0 %}
+              <li
+                class="c-category-dropdown__item {{ category['active'] is defined and category.active ? ' c-category-dropdown__item-active' : '' }}">
+                <a class="c-category__link"
+                   href="{{ category.url }}" title="Bekijk alle item binnen de categorie {{ category.title }}">
+                  <span class="c-category__link__title">{{ category.title }}</span>
+                  <span class="c-category__link__amount">({{ category.amount }})</span>
+                </a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+{% endif %}

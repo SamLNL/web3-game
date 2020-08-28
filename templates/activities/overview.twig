@@ -1,0 +1,59 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{# @var entry \craft\elements\Entry #}
+{# ======================================================
+  @filename: _entry
+  @author:   sam
+  ====================================================== #}
+{#
+Add a small discription about this file/componennt and what it does
+#}
+
+{% extends "_layouts/_layout.twig" %}
+
+{% block _inline_css %}
+  <style>
+    {{ source ("index_critical.min.css", ignore_missing = true) }}
+  </style>
+{% endblock %}
+
+{% block content %}
+  {% cache %}
+    {% include '_partials/_global/header' with {
+      title: entry.title,
+      image: entry.headerImage | length ? entry.headerImage.one() : '',
+      intro: entry.intro
+    } %}
+  {% endcache %}
+
+  {% set activities = craft.entries.section('activities').with(['headerImage']).hasDescendants().all() %}
+
+  <div id="mainContentSkip">
+    {% if activities | length %}
+      <div class="container">
+        <h2 class="mb-3">{{ entry.activitiesOverviewTitle }}</h2>
+        <div class="row">
+          <div class="d-flex flex-row flex-wrap w-100 mb-4 mb-lg-8">
+            {% for activity in activities %}
+              <div class="col-12 mb-3 d-flex col-md-6">
+                {% include '_partials/_components/cta-blocks/cta-block/cta-block.twig' with {
+                  title: activity.title,
+                  mainImage: activity.headerImage[0],
+                  subContent: activity.summaryText | striptags[:90] ~ '...',
+                  cta: { url: activity.url, text: 'Bekijk alle activiteiten', target: '' },
+                  ctaArrow: true,
+                  swiper: false,
+                  titleBgHexColor: activity.categoryColor,
+                  titleHexColor: activity.categoryColor.label == 'Geel' ? '#033b47' : '#fff'
+                } %}
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      {% include "_partials/_common/matrix.twig" %}
+    {% endif %}
+  </div>
+{% endblock %}
+
+{% block _inline_js %}
+{% endblock %}

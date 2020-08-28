@@ -1,0 +1,33 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{# @var entry \craft\elements\Entry #}
+{# ======================================================
+  @filename: Typeform
+  @author:   sam
+  ====================================================== #}
+{#
+  Popup Typeform
+#}
+
+{% set text = text is defined ? text : '' %}
+{% set url = url is defined ? url : '' %}
+{% set label = label is defined  and label | length ? label : 'Formulier' %}
+
+{% if url | length %}
+  <div class="c-typeform">
+    {% if text | length %}
+      <div class="c-typeform__intro">
+        {{ text }}
+      </div>
+    {% endif %}
+    <a title="{{ label }}"
+       data-mode="popup"
+       href="{{ url }}"
+       ga-on="click"
+       ga-event-category="form"
+       ga-event-action="click"
+       ga-event-label="typeform - {{ url }}"
+       class="js-typeform c-btn c-btn-yellow">
+      {{ label }}
+    </a>
+  </div>
+{% endif %}

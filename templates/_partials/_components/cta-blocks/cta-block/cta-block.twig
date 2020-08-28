@@ -1,0 +1,104 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{# @var entry \craft\elements\Entry #}
+{# ======================================================
+  @filename: block
+  @date:     09 jul. 2020
+  @author:   sam
+  ====================================================== #}
+{#
+  Add a small discription about this file/componennt and what it does
+#}
+
+{% import "_partials/_macros.twig" as macro %}
+
+{% set class = class is defined ? class : '' %}
+{% set title = title is defined ? title : '' %}
+{% set subTitle = subTitle is defined ? subTitle : '' %}
+{% set mainTitle = mainTitle is defined ? mainTitle : '' %}
+{% set mainSubTitle = mainSubTitle is defined ? mainSubTitle : '' %}
+{% set mainImage = mainImage is defined ? mainImage : '' %}
+{% set subContent = subContent is defined ? subContent : '' %}
+{% set cta = cta is defined ? cta : '' %}
+{% set gaLabel = gaLabel is defined ? gaLabel : '' %}
+{% set ctaArrow = ctaArrow is defined ? ctaArrow : false %}
+{% set ctaMicro = ctaMicro is defined ? ctaMicro : '' %}
+{% set swiper = swiper is defined ? swiper : true %}
+{% set titleBgHexColor = titleBgHexColor is defined ? titleBgHexColor : '' %}
+{% set titleHexColor = titleHexColor is defined ? titleHexColor : '' %}
+{% if not url is defined and cta | length %}
+  {% set url = cta.url %}
+{% else %}
+  {% set url = '' %}
+{% endif %}
+
+{% if title | length and (mainTitle | length or mainImage | length) %}
+  {% if url | length %}
+    <a href="{{ url }}" class="c-cta-block {{ swiper ? 'swiper-slide swiper-lazy' }} {{ class }}"
+         data-title="{{ title }}" title="{{ cta | length and cta.title | length ? cta.title : title }}">
+  {% else %}
+    <div class="c-cta-block {{ swiper ? 'swiper-slide' }} {{ class }}"
+    data-title="{{ title }}">
+  {% endif %}
+
+    <div class="c-cta-block__title" style="{% if titleBgHexColor | length %}background-color:{{ titleBgHexColor }};{% endif %}">
+      <div style="{% if titleHexColor | length %}color: {{ titleHexColor }}{% endif %}">{{ title }}</div>
+      {% if subTitle | length %}
+        <div>{{ subTitle }}</div>
+      {% endif %}
+    </div>
+
+    {# image gets more priority than title #}
+    {% if mainImage | length %}
+      <div class="c-cta-block__main-content-image">
+        {% set image = mainImage %}
+        {% set transformedImage = craft.imager.transformImage(image, {
+          width: 350,
+          height: 200,
+          mode: 'crop'
+        }) %}
+        <img class="lazyload" src="{{ transformedImage.url }}" alt="{{ image.title }}">
+      </div>
+    {% else %}
+      <div class="c-cta-block__main-content-text">
+        <div class="c-cta-block__main-content-text__title">
+          {{ mainTitle }}
+        </div>
+        {% if mainSubTitle | length %}
+          <div class="c-cta-block__main-content-text__sub-title">
+            {{ mainSubTitle }}
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {% if subContent | length %}
+      <div class="c-cta-block__sub-content">
+        {{ subContent }}
+      </div>
+    {% endif %}
+
+    {% if cta | length and cta.url | length %}
+      {% set gaLabel = gaLabel | length ? gaLabel : cta.text|ucfirst %}
+      <div class="c-cta-block__cta">
+          <div class="c-btn c-btn-white{{ ctaArrow ? ' c-btn-arrow' : '' }}"
+             ga-on="click"
+             ga-event-category="CTA"
+             ga-event-action="Click"
+             ga-event-label="{{ gaLabel }}"
+          >
+            <span>{{ cta.text }}</span>
+          </div>
+        {% if ctaMicro | length %}
+          <span class="c-cta__micro">
+            {{ ctaMicro }}
+          </span>
+        {% endif %}
+      </div>
+    {% endif %}
+
+      {% if url | length %}
+        </a>
+      {% else %}
+        </div>
+      {% endif %}
+{% endif %}

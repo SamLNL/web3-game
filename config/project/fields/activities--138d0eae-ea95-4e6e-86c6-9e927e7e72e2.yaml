@@ -2,12 +2,12 @@ contentColumnType: string
 fieldGroup: f0c3735f-1b6e-456c-9608-4cfe64ddcd90
 handle: activities
 instructions: ''
-name: 'Activiteiten - Single'
+name: Activiteiten
 searchable: true
 settings:
   contentTable: '{{%matrixcontent_activities}}'
-  maxBlocks: '3'
-  minBlocks: '3'
+  maxBlocks: '4'
+  minBlocks: '4'
   propagationMethod: all
 translationKeyFormat: null
 translationMethod: site

@@ -1,0 +1,84 @@
+{% set categories = entry.activities %}
+
+{% if categories | length %}
+  <div class="bg-teal-100 pb-4 pb-lg-8">
+    <div class="container">
+      <div class="d-flex justify-content-center">
+        <h2 class="text-uppercase text-teal-600 text-center mb-4 mb-lg-5">{{ entry.activitiesTitle }}</h2>
+      </div>
+    </div>
+
+    <div class="mb-3 mb-lg-0">
+      <div class="container">
+        <div class="w-100 d-md-none">
+          <div class="d-flex flex-column swiper-nav">
+            {% for item in categories.all() %}
+              {% if item.linkedCategory | length and item.linkedCategory[0].type == 'category' %}
+                <a
+                  class="swiper-nav__item w-100 border-2 border-teal-200 py-1 {{ loop.last ? 'mb-4' : 'mb-1' }} text-center small rounded js-go-to-slide {{ loop.first ? 'active' : '' }}"
+                  data-swiper-index="{{ loop.index0 }}" href="#"
+                  title="Spring naar slide '{{ item.heading }}'">{{ item.heading }}</a>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+
+        {% set swiperId = random() %}
+        <div class="swiper-container row js-swiper-services swiper-lg-destroy mb-2 mb-lg-0"
+             data-swiper-id="{{ swiperId }}">
+          <div class="swiper-wrapper d-flex flex-row">
+            {% for slide in categories.all() %}
+              {% if slide.linkedCategory | length and slide.linkedCategory[0].type == 'category' %}
+                {% set category = slide.linkedCategory[0] %}
+                <a class="swiper-slide h-auto d-flex col-12 col-md-5 col-lg-3 flex-grow-1 hover-up"
+                   href="{{ category.url }}"
+                   title="Bekijk meer over {{ slide.heading }}" data-title="{{ slide.heading }}">
+                  <div class="card w-100">
+                    <div class="p-1 text-center rounded-top" style="background-color:{{ category.categoryColor }}">
+                      <h3 class="mb-0 text-{{ category.categoryColor.label == 'Geel' ? 'teal-600' : 'white' }} text-uppercase">
+                        {{ slide.heading }}
+                      </h3>
+                    </div>
+                    <div class="w-100">
+                      {% set image = slide.image[0] %}
+                      {% set transformedImage = craft.imager.transformImage(image, {
+                        width: 350,
+                        height: 200,
+                        mode: 'crop'
+                      }) %}
+                      <img class="w-100 lazyload" src="{{ transformedImage.url }}" alt="{{ image.title }}">
+                    </div>
+                    <div class="card-body">
+                      <ul class="checks">
+                        {% for usp in slide.usps.all() %}
+                          <li class="small text-teal-600">
+                            {{ usp.title }}
+                          </li>
+                        {% endfor %}
+                      </ul>
+                    </div>
+                  </div>
+                </a>
+              {% endif %}
+            {% endfor %}
+          </div>
+          <div class="swiper-pagination" data-swiper-id="{{ swiperId }}"></div>
+        </div>
+
+        {% set cta = entry.activitiesCta %}
+        {% if cta.url | length %}
+          <div class="w-100 d-flex flex-row justify-content-center">
+            <a class="c-btn c-btn-arrow" href="{{ cta.url }}" title="{{ cta.text }}"
+               ga-on="click"
+               ga-event-category="CTA"
+               ga-event-action="Click"
+               ga-event-label="Home - {{ cta.text|ucfirst }}"
+            >
+              {{ cta.text }}
+            </a>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endif %}
