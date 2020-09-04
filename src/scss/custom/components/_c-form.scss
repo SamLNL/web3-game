@@ -5,6 +5,10 @@
     align-items: center;
     margin-top: 2px;
 
+    padding: map_get($spacers, 1) * 0.3 map_get($spacers, 1) * 0.8;
+    border: 2px solid $gray-400;
+    border-radius: $border-radius-lg;
+
     svg {
       width: $spacer;
       display: block;
@@ -14,10 +18,9 @@
     }
 
     input[type='search'] {
-      padding: map_get($spacers, 1) * 0.3 map_get($spacers, 1) * 0.8;
-      border: 2px solid $gray-400;
-      border-radius: $border-radius-lg;
+      border-width: 0;
       font-size: $font-size-sm;
+      padding-bottom: map_get($spacers, 1) * 0.15;
       width: 100%;
       color: $teal-500;
 
