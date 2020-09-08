@@ -34,18 +34,20 @@ Add a small discription about this file/componennt and what it does
         <div class="row">
           <div class="d-flex flex-row flex-wrap w-100 mb-4 mb-lg-8">
             {% for activity in activities %}
-              <div class="col-12 mb-3 d-flex col-md-6">
-                {% include '_partials/_components/cta-blocks/cta-block/cta-block.twig' with {
-                  title: activity.title,
-                  mainImage: activity.headerImage[0],
-                  subContent: activity.summaryText | striptags[:90] ~ '...',
-                  cta: { url: activity.url, text: 'Bekijk alle activiteiten', target: '' },
-                  ctaArrow: true,
-                  swiper: false,
-                  titleBgHexColor: activity.categoryColor,
-                  titleHexColor: activity.categoryColor.label == 'Geel' ? '#033b47' : '#fff'
-                } %}
-              </div>
+              {% if activity.headerImage | length %}
+                <div class="col-12 mb-3 d-flex col-md-6">
+                  {% include '_partials/_components/cta-blocks/cta-block/cta-block.twig' with {
+                    title: activity.title,
+                    mainImage: activity.headerImage[0],
+                    subContent: activity.summaryText | striptags[:90] ~ '...',
+                    cta: { url: activity.url, text: 'Bekijk alle activiteiten', target: '' },
+                    ctaArrow: true,
+                    swiper: false,
+                    titleBgHexColor: activity.categoryColor,
+                    titleHexColor: activity.categoryColor.label == 'Geel' ? '#033b47' : '#fff'
+                  } %}
+                </div>
+              {% endif %}
             {% endfor %}
           </div>
         </div>
