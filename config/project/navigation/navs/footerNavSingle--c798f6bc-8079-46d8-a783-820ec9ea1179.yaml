@@ -1,9 +1,0 @@
-handle: footerNavSingle
-instructions: ''
-maxNodes: ''
-name: 'Footermenu - Single page'
-propagateNodes: false
-sortOrder: 10
-structure:
-  maxLevels: '1'
-  uid: 2586a1d5-7909-425f-8e8a-b503fd9be25e

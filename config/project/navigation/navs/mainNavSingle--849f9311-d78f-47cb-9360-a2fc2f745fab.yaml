@@ -1,9 +1,0 @@
-handle: mainNavSingle
-instructions: ''
-maxNodes: ''
-name: 'Hoofdmenu - Single page'
-propagateNodes: false
-sortOrder: 9
-structure:
-  maxLevels: '1'
-  uid: 08015609-55d5-4941-bcef-c6addb910067
