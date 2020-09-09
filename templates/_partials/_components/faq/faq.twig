@@ -11,6 +11,7 @@
 {% set questions = questions is defined ? questions :'' %}
 {% set cta = cta is defined ? cta : '' %}
 {% set ctaMicro = ctaMicro is defined ? ctaMicro : '' %}
+{% set uid = uid is defined ? uid : random() %}
 
 {% if questions | length %}
   {% if text | length %}
@@ -21,11 +22,11 @@
 
   {% for item in questions.all() %}
     <div tabindex="0" class="c-faq js-faq js-tab-click"
-         data-click-selector="#tab-click-{{ loop.index }}" data-ga-question="{{ item.question }}">
-      <p id="tab-click-{{ loop.index }}" class="c-faq__question caret-down collapsed"
+         data-click-selector="#tab-click-{{ loop.index }}-{{ uid }}" data-ga-question="{{ item.question }}">
+      <p id="tab-click-{{ loop.index }}-{{ uid }}" class="c-faq__question caret-down collapsed"
          data-toggle="collapse"
-         data-target="#faq-{{ loop.index }}">{{ item.question }}</p>
-      <div class="collapse c-faq__answer" id="faq-{{ loop.index }}" data-parent="accordion">
+         data-target="#faq-{{ loop.index }}-{{ uid }}">{{ item.question }}</p>
+      <div class="collapse c-faq__answer" id="faq-{{ loop.index }}-{{ uid }}" data-parent="accordion">
         <div>
           {{ macro.renderRichText(item.answer) }}
         </div>
