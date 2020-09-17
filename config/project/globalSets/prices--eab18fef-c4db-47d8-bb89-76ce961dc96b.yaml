@@ -2,10 +2,16 @@ fieldLayouts:
   2ced5afb-e715-43b6-9eae-03950c6ecc0d:
     tabs:
       -
-        fields:
-          a460ba7f-4818-4183-b551-28d816e087db:
+        elements:
+          -
+            fieldUid: a460ba7f-4818-4183-b551-28d816e087db
+            instructions: null
+            label: null
             required: false
-            sortOrder: 1
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Tickets
         sortOrder: 1
 handle: prices

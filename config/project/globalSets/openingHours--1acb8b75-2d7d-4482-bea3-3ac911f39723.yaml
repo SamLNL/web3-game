@@ -2,17 +2,29 @@ fieldLayouts:
   957150b7-3b03-4194-aca1-1cad4d1df5c9:
     tabs:
       -
-        fields:
-          491f2cf6-8204-461f-bab0-6694458dbcb5:
+        elements:
+          -
+            fieldUid: 491f2cf6-8204-461f-bab0-6694458dbcb5
+            instructions: null
+            label: null
             required: false
-            sortOrder: 1
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: 'Reguliere tijden'
         sortOrder: 1
       -
-        fields:
-          ab0eeab0-29b9-4f9d-a0d4-1133c1f4a225:
+        elements:
+          -
+            fieldUid: ab0eeab0-29b9-4f9d-a0d4-1133c1f4a225
+            instructions: null
+            label: null
             required: false
-            sortOrder: 1
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: 'Vakanties en feestdagen'
         sortOrder: 2
 handle: openingHours

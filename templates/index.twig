@@ -5,7 +5,7 @@
   @date:     288 Oct 2019
   ====================================================== #}
 {#
-  Template file for the homepage
+Template file for the homepage
 #}
 
 {# {% import "_partials/_macros.twig" as macro %} #}
@@ -75,11 +75,13 @@
 
                   {% set pricesPage = craft.entries.section('calendarPrices').one() %}
 
-                  <a href="{{ pricesPage.url }}" title="Ga naar de rooster en tarieven pagina" class="d-flex flex-row align-items-center mb-1 mr-md-2 mb-md-0">
-                    <svg class="mr-2 flex-shrink-0" width="35" height="35">
-                      <use xlink:href="/assets/images/svg/sprite/sprite.svg#icon-calendar"></use>
-                    </svg>
-                    <span class="text-white weight-700">
+                  {% if pricesPage | length %}
+                    <a href="{{ pricesPage.url }}" title="Ga naar de rooster en tarieven pagina"
+                       class="d-flex flex-row align-items-center mb-1 mr-md-2 mb-md-0">
+                      <svg class="mr-2 flex-shrink-0" width="35" height="35">
+                        <use xlink:href="/assets/images/svg/sprite/sprite.svg#icon-calendar"></use>
+                      </svg>
+                      <span class="text-white weight-700">
                 {% if startTime | length and endTime | length %}
                   Vandaag geopend van <span class="text-yellow">{{ startTime.format('H:i') }}</span> tot <span
                   class="text-yellow">{{ endTime.format('H:i') }}</span>
@@ -87,7 +89,17 @@
                   Vandaag gesloten
                 {% endif %}
               </span>
-                  </a>
+                    </a>
+                  {% else %}
+                    <div  class="d-flex flex-row align-items-center mb-1 mr-md-2 mb-md-0">
+                      <svg class="mr-2 flex-shrink-0" width="35" height="35">
+                        <use xlink:href="/assets/images/svg/sprite/sprite.svg#icon-calendar"></use>
+                      </svg>
+                      <span class="text-white weight-700">
+                        Vandaag gesloten
+                      </span>
+                    </div>
+                  {% endif %}
                   {% if contact.contactStreet | length %}
                     <a class="d-flex flex-row align-items-center ml-lg-2" target="_blank"
                        href="https://maps.google.com/?q={{ contact.contactStreet }}%20{{ contact.contactPlace }}"
@@ -123,7 +135,7 @@
     } %}
   </div>
 
-    {% include '_partials/_index/activities' %}
+  {% include '_partials/_index/activities' %}
 
   <div class="container mt-5 mt-lg-10">
     {% include '_partials/_index/preview' %}

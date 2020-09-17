@@ -1,4 +1,5 @@
-baseUrl: 'http://biljoenbad.nl'
+baseUrl: 'http://biljoenbad.loc'
+enabled: true
 handle: default
 hasUrls: true
 language: nl

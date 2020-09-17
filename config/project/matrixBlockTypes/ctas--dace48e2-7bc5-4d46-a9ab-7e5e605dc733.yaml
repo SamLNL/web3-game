@@ -193,7 +193,9 @@ fields:
     name: 'CTA 2 - Primair'
     searchable: false
     settings:
-      default: ''
+      default: false
+      offLabel: null
+      onLabel: null
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Lightswitch
@@ -205,7 +207,9 @@ fields:
     name: 'CTA 1  - Primair'
     searchable: false
     settings:
-      default: '1'
+      default: true
+      offLabel: null
+      onLabel: null
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Lightswitch

@@ -5,15 +5,16 @@ instructions: ''
 name: 'Nieuws - Items'
 searchable: true
 settings:
-  allowSelfRelations: ''
+  allowSelfRelations: false
   limit: '3'
   localizeRelations: false
   selectionLabel: ''
+  showSiteMenu: true
   source: null
   sources:
     - 'section:b8b9d7b2-37ec-4448-9ebb-6e32ee552f42'
   targetSiteId: null
-  validateRelatedElements: ''
+  validateRelatedElements: false
   viewMode: null
 translationKeyFormat: null
 translationMethod: site

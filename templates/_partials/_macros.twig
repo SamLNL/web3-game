@@ -109,7 +109,7 @@
       {% if node.hasDescendants %}
         <li class="nav-item dropdown">
           <a title="Ga naar {{ node.title }}" {% if node.url %}href="{{ node.url }}"{% endif %}
-             class="nav-link{{ node.active ? ' nav-active' }}{{ idLink ? ' js-scroll' }}{{ node.classes ? ' ' ~ node.classes : '' }}"{% if node.newWindow %}
+             class="nav-link{{ node.active ? ' nav-active' }}{{ node.classes ? ' ' ~ node.classes : '' }}"{% if node.newWindow %}
              target="_blank"
              rel="noopener"{% endif %}{% for attribute in node.customAttributes %}{{ attribute.attribute }}="{{ attribute.value }}"{% endfor %}
           ga-on="click" ga-event-category="Menu" ga-event-action="Click" ga-event-label="{{ node.title }}">
@@ -120,7 +120,7 @@
           <ul class="dropdown-menu" aria-label="Dropdown menu">
             {% for subnode in node.children.all() %}
               <a title="Ga naar {{ subnode.title }}"
-              {% if subnode.url %}href="{{ subnode.url }}"{% endif %} class="nav-link{{ subnode.active ? ' nav-active' }}{{ idLink ? ' js-scroll' }}{{ subnode.classes ? ' ' ~ subnode.classes : '' }}"{% if subnode.newWindow %} target="_blank" rel="noopener"{% endif %}{% for attribute in subnode.customAttributes %}{{ attribute.attribute }}="{{ attribute.value }}"{% endfor %} ga-on="click" ga-event-category="Menu" ga-event-action="Click" ga-event-label="{{ subnode.title }}">
+              {% if subnode.url %}href="{{ subnode.url }}"{% endif %} class="nav-link{{ subnode.active ? ' nav-active' }}{{ subnode.classes ? ' ' ~ subnode.classes : '' }}"{% if subnode.newWindow %} target="_blank" rel="noopener"{% endif %}{% for attribute in subnode.customAttributes %}{{ attribute.attribute }}="{{ attribute.value }}"{% endfor %} ga-on="click" ga-event-category="Menu" ga-event-action="Click" ga-event-label="{{ subnode.title }}">
               {{ subnode.title }}
               </a>
             {% endfor %}

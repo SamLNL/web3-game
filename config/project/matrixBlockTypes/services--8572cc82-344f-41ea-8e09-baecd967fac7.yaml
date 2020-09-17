@@ -70,7 +70,9 @@ fields:
     name: 'Toon voorzieningen'
     searchable: true
     settings:
-      default: '1'
+      default: true
+      offLabel: null
+      onLabel: null
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Lightswitch
