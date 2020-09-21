@@ -4,7 +4,7 @@
 {% set payoff = payoff ?? false %}
 
 {% if image | length %}
-  <div class="header position-relative">
+  <div class="header header-home position-relative">
     {% set transforms =
       [
         {
@@ -49,7 +49,7 @@
         ],
         }
       ] %}
-    {{ macro.renderPicture(image, transforms, false, image.title, 'w-100') }}
+    {{ macro.renderPicture(image, transforms, false, image.title, 'w-100 d-block') }}
     <div class="payoff">
       {% if payoff %}
         {% include '_inline/_svg/payoff' %}
