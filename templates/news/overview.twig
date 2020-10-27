@@ -60,7 +60,8 @@
       {% set items = craft.entries({
         section: 'newsItems',
         search: searchQuery,
-        with: (['headerImage'])
+        with: (['headerImage']),
+        orderBy: 'postDate desc'
       }) %}
 
   {# ----------- Start - No ajax request ----------- #}
@@ -81,7 +82,7 @@
           {% endif %}
   {# ----------- End - No ajax request ----------- #}
 
-          {% paginate items.limit(6).orderBy('postDate asc') as pageInfo, entries %}
+          {% paginate items.limit(6).orderBy('postDate desc') as pageInfo, entries %}
 
           {% if entries | length %}
             <div class="d-flex flex-column">
@@ -90,7 +91,7 @@
                   url: item.url,
                   image: item.headerImage[0],
                   title: item.title,
-                  date: item.dateCreated,
+                  date: item.postDate,
                   summary: (item.summaryText|striptags[:40] ~ '...'),
                 } %}
               {% endfor %}
