@@ -41,7 +41,7 @@ function runAnimation() {
     height: 'auto',
     allDaySlot: false,
     slotMinTime: '07:00:00',
-    slotMaxTime: '19:00:00',
+    slotMaxTime: '22:00:00',
     initialView: 'resourceTimeGridDay',
     themeSystem: 'bootstrap',
     timeZone: timezone,
