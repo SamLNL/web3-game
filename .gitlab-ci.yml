@@ -22,31 +22,31 @@ stages:
   - critical_production
   - test_production
 
-# Cache node_modules for subsequent builds
-#cache:
-#  key: ${CI_COMMIT_REF_NAME}
-#  paths:
-#    - node_modules/
-#    - vendor/
+  # Cache node_modules for subsequent builds
+cache:
+  key: ${CI_COMMIT_REF_NAME}
+  paths:
+    - node_modules/
+    - vendor/
 
 install:
   stage: install
   script:
     - yarn
     - composer install --ignore-platform-reqs --no-scripts --no-suggest -o -n
-#  cache:
-#    key: ${CI_COMMIT_REF_NAME}
-#   paths:
-#     - node_modules/
-#     - vendor/
+  cache:
+    key: ${CI_COMMIT_REF_NAME}
+    paths:
+      - node_modules/
+      - vendor/
 
 build project:
   stage: build
-# cache:
-#    key: ${CI_COMMIT_REF_NAME}
-#   paths:
-#     - node_modules/
-#   policy: pull
+  cache:
+    key: ${CI_COMMIT_REF_NAME}
+    paths:
+      - node_modules/
+    policy: pull
   script:
     - gulp build
     # Store result of this step as artifact
