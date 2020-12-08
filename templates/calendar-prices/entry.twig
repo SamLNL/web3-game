@@ -39,7 +39,7 @@ Add a small discription about this file/componennt and what it does
             <div class="e-datepicker w-100 w-lg-auto">
               <label id="calendar" class="d-none" for='trip-start'>Agenda</label>
               <input class="js-calendar-datepicker w-100 w-sm-auto active-none" aria-labelledBy="calendar" type="date"
-                     id="trip-start" name="trip-start"
+                     id="trip-start" name="trip-start" lang="nl"
                      value="{{ "now"|date("Y-m-d") }}" min="{{ "now"|date_modify("-1 year")|date("Y-m-d") }}"
                      max="{{ "now"|date_modify("+1 year")|date("Y-m-d") }}">
             </div>

@@ -63,7 +63,7 @@ function runAnimation() {
       url: '/fullcalendar-calendars',
     },
     events: '/fullcalendar-events',
-    timeFormat: 'H(:mm)',
+    timeFormat: 'H(:mm)'
   });
 
   calendar.render();
