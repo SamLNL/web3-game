@@ -20,6 +20,11 @@
       start: event.startDate.date | date ('Y-m-d H:i:s'),
       end: event.endDate.date | date ('Y-m-d H:i:s'),
     } %}
+
+    {% if event.activitiesLink.getUrl() | length %}
+      {%  set eventResource = eventResource | merge({url: event.activitiesLink.getUrl()}) %}
+    {% endif %}
+
     {% set finalResources = finalResources | merge ([eventResource]) %}
 {% endfor %}
 {{ finalResources|json_encode|raw }}
