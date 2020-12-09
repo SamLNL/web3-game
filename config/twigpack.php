@@ -24,47 +24,51 @@
  */
 
 return [
-    // Global settings
-    '*' => [
-        // If `devMode` is on, use webpack-dev-server to all for HMR (hot module reloading)
-        'useDevServer' => false,
-        // Enforce Absolute URLs on includes
-        'useAbsoluteUrl' => false,
-        // The JavaScript entry from the /assets/manifests/manifest.json to inject on Twig error pages
-        'errorEntry' => '',
-        // String to be appended to the cache key
-        'cacheKeySuffix' => '',
-       // Manifest file names
-        'manifest' => [
-            'legacy' => '/assets/manifests/manifest-legacy.json',
-            'modern' => '/assets/manifests/manifest.json',
-        ],
-        // Public server config
-        'server' => [
-            'manifestPath' => '@webroot/',
-            'publicPath' => '/',
-        ],
-        // webpack-dev-server config
-        'devServer' => [
-            'manifestPath' => 'http://localhost:8000/',
-            'publicPath' => 'http://localhost:8000/',
-        ],
-        // Local files config
-        'localFiles' => [
-            'basePath' => '@webroot/',
-            'criticalPrefix' => 'assets/criticalcss/',
-            'criticalSuffix' => '_critical.min.css',
-        ],
+  // Global settings
+  '*' => [
+    // If `devMode` is on, use webpack-dev-server to all for HMR (hot module reloading)
+    'useDevServer' => false,
+    // Enforce Absolute URLs on includes
+    'useAbsoluteUrl' => false,
+    // The JavaScript entry from the /assets/manifests/manifest.json to inject on Twig error pages
+    'errorEntry' => '',
+    // String to be appended to the cache key
+    'cacheKeySuffix' => '',
+    // Manifest file names
+    'manifest' => [
+      'legacy' => '/assets/manifests/manifest-legacy.json',
+      'modern' => '/assets/manifests/manifest.json',
     ],
-    // Live (production) environment
-    'live' => [
+    // Public server config
+    'server' => [
+      'manifestPath' => '@webroot/',
+      'publicPath' => '/',
     ],
-    // Staging (pre-production) environment
-    'staging' => [
+    // webpack-dev-server config
+    'devServer' => [
+      'manifestPath' => 'http://localhost:8000/',
+      'publicPath' => 'http://localhost:8000/',
     ],
-    // Development environment
-    'dev' => [
-        // If `devMode` is on, use webpack-dev-server to all for HMR (hot module reloading)
-        'useDevServer' => false,
+    // Local files config
+    'localFiles' => [
+      'basePath' => '@webroot/',
+      'criticalPrefix' => 'assets/criticalcss/',
+      'criticalSuffix' => '_critical.min.css',
     ],
+  ],
+  // Live (production) environment
+  'live' => [
+  ],
+  // Staging (pre-production) environment
+  'staging' => [
+  ],
+  // Development environment
+  'dev' => [
+    // If `devMode` is on, use webpack-dev-server to all for HMR (hot module reloading)
+    'useDevServer' => false,
+    'manifest' => [
+      'legacy' => '/var/www/project/public/assets/manifests/manifest-legacy.json',
+      'modern' => '/var/www/project/public/assets/manifests/manifest.json',
+    ],
+  ],
 ];
