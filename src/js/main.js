@@ -62,7 +62,7 @@ const main = async () => {
   }
 
   if(document.querySelector('.js-calendar-datepicker')) {
-    await import(/* webpackChunkName: "select" */ "./custom/date-input-polyfill.dist");
+    await import(/* webpackChunkName: "select" */ "./vendor/date-input-polyfill.dist");
   }
 
   analytics.init();
