@@ -61,6 +61,10 @@ const main = async () => {
     await import(/* webpackChunkName: "select" */ "./custom/components/sidebar-sticky");
   }
 
+  if(document.querySelector('.js-calendar-datepicker')) {
+    await import(/* webpackChunkName: "select" */ "./vendor/date-input-polyfill.dist");
+  }
+
   analytics.init();
 };
 
