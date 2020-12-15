@@ -50,7 +50,7 @@ function runAnimation() {
       hour12: false,
     },
     buttonText: {
-      today: 'Terug naar vandaag'
+      today: 'Vandaag'
     },
     locale: 'nl',
     eventTimeFormat: {
@@ -63,7 +63,9 @@ function runAnimation() {
       url: '/fullcalendar-calendars',
     },
     events: '/fullcalendar-events',
-    timeFormat: 'H(:mm)'
+    timeFormat: 'H(:mm)',
+    aspectRatio: 1,
+    slotDuration: '00:15'
   });
 
   calendar.render();
