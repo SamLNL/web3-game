@@ -66,9 +66,5 @@ return [
   'dev' => [
     // If `devMode` is on, use webpack-dev-server to all for HMR (hot module reloading)
     'useDevServer' => false,
-    'manifest' => [
-      'legacy' => '/var/www/project/public/assets/manifests/manifest-legacy.json',
-      'modern' => '/var/www/project/public/assets/manifests/manifest.json',
-    ],
   ],
 ];
