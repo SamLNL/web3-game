@@ -18,7 +18,7 @@ const serverTask = cb => {
     open: false,
     logPrefix: "DFS",
     proxy: {
-      target: "https://biljoenbad.loc",
+      target: "http://biljoenbad.loc",
       middleware: [
         (req, res, next) => {
           res.setHeader("Access-Control-Allow-Origin", "*");

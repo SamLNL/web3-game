@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="134px" height="134px" viewBox="0 0 134 134" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>play icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Case-detail" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Case-detail-Desktop-Wassenaar" transform="translate(-653.000000, -1793.000000)" fill="#FFFFFF">
+            <g id="project" transform="translate(0.000000, 809.000000)">
+                <g id="case">
+                    <g id="video_screen" transform="translate(258.000000, 796.000000)">
+                        <g id="play-icon" transform="translate(395.000000, 188.000000)">
+                            <g>
+                                <polygon id="Fill-1" points="50.8022 100.2314 103.8442 67.0004 50.8022 33.7694"></polygon>
+                                <path d="M67,120 C37.776,120 14,96.225 14,67 C14,37.776 37.776,14 67,14 C96.224,14 120,37.776 120,67 C120,96.225 96.224,120 67,120 M67,0 C30.056,0 0,30.056 0,67 C0,103.944 30.056,134 67,134 C103.944,134 134,103.944 134,67 C134,30.056 103.944,0 67,0" id="Fill-2"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

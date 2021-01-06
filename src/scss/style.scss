@@ -109,6 +109,7 @@
 @import "custom/components/c-partners";
 @import "custom/components/c-activity";
 @import "custom/components/c-team";
+@import "custom/components/c-youtube";
 
 /* purgecss start ignore */
 
@@ -118,6 +119,7 @@
 @import "custom/js/js-calendar";
 @import "custom/js/js-sidebar-sticky";
 @import "custom/js/js-date-input-polyfill";
+@import "custom/js/js-youtube";
 
 // Add external css
 @import '~fullcalendar-scheduler/main';

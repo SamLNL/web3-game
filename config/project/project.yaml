@@ -1,4 +1,4 @@
-dateModified: 1607445869
+dateModified: 1609944941
 email:
   fromEmail: interactie@emotion.nl
   fromName: Biljoenbad
@@ -32,6 +32,21 @@ plugins:
   cookies:
     enabled: true
     schemaVersion: 1.0.0
+  gdpr:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
+    settings:
+      advertisement: ''
+      facebook: ''
+      gdprFieldGroupId: null
+      gdprMatrixFieldId: null
+      gdprSectionId: null
+      gdprTemplateName: gdpr
+      gdprUrl: /gdpr
+      globalContent: "<h1>Goed omgaan met gegevens</h1>\r\n<p>Bij je bezoek aan deze website slaan wij anoniem gegevens op om onze diensten en websites te verbeteren. We vertellen\r\n    je graag welke gegevens dat zijn en wat wij er mee doen. Welke informatie slaan wij op?</p>\r\n<h3>Functionele cookies</h3>\r\n<p>Om de site goed te laten werken, gebruiken we sessie-cookies. Anders kan de site jouw voorkeuren niet opslaan, zoals\r\n    taalinstellingen. Of je kan niet inloggen. Deze cookies bewaren we maximaal twee jaar.</p>\r\n<h3>Google Analytics</h3>\r\n<p>We gebruiken Google Analytics om de kwaliteit van de site te verbeteren. Gegevens die we hiervoor opslaan zijn\r\n    anoniem en delen we niet met andere gebruikers van Google Analytics. Wij hebben een verwerkersovereenkomst gesloten\r\n    met Google. Deze cookies bewaren we maximaal twee jaar.</p>\r\n<h3>HotJar</h3>\r\n<p>HotJar is ook een tool om de site beter te laten werken en deze tool slaat ook gegevens van bezoekers op. Die zijn\r\n    anoniem en die delen we niet met andere gebruikers van HotJar. Wij hebben een verwerkersovereenkomst gesloten met\r\n    HotJar. Deze cookies bewaren we maximaal tien jaar.<br></p>\r\n<h3>MailChimp</h3>\r\n<p>We sturen alleen berichten van Emotion en Mixed Emotions Live naar je e-mailadres. We delen de gegevens niet met\r\n    anderen. Jouw e-mailadres slaan we op in MailChimp, waarmee we een verwerkersovereenkomst hebben gesloten. We\r\n    verwijderen de gegevens als je je afmeldt voor onze e-mails. Dat kan altijd via een link onderaan elke e-mail.</p>\r\n<h3>YouTube</h3>\r\n<p>Het YouTube-venster plaatst cookies die nodig zijn voor het afspelen van de video. YouTube beheert die gegevens.\r\n    Emotion heeft geen invloed op de cookies en de data die YouTube verzamelt.</p>\r\n<h3>Logfiles</h3>\r\n<p>IP-adressen en webaanvragen slaan we op in logfiles op de webserver voor een periode van maximaal 90 dagen. Alleen\r\n    Emotion kan daar bij.</p>\r\n<h2>Beveiligingsmaatregelen</h2>\r\n<p>Wij beschermen opgeslagen gegevens zo goed mogelijk en zorgen ervoor dat ze niet te herleiden zijn. Met technische en\r\n    administratieve maatregelen maken we het risico zo klein mogelijk, bijvoorbeeld door toegangscontrole op de\r\n    systemen, een beveiligde internetverbinding (SSL) met de site en een firewall.</p>\r\n<h3>Hoe kan ik mijn gegevens inzien, corrigeren of verwijderen?</h3>\r\n<p>Simpel. Stuur even een bericht naar privacy@emotion.nl</p>\r\n<h3>Hoe kan ik cookies uitschakelen of verwijderen?</h3>\r\n<p>Je kunt ons geen toestemming geven voor het plaatsen van cookies. Of stel je internetbrowser zo in dat hij cookies\r\n    blokkeert. De meeste browsers leggen uit hoe dat moet in de help-functie. Als je cookies blokkeert, kan het zijn dat\r\n    onze website minder goed werkt.</p>\r\n<p><strong>Google Chrome</strong><br><a href=\"http://support.google.com/chrome/answer/95647?hl=nl\" data-redactor-span=\"true\">Blokkeer cookies in Google Chrome</a></p>\r\n<p><strong>Microsoft Internet Explorer</strong><br><a href=\"http://support.microsoft.com/nl-nl/help/17442/windows-internet-explorer-delete-manage-cookies\" data-redactor-span=\"true\">Blokkeer cookies in Internet Explorer</a></p>\r\n<p><strong>Microsoft Edge</strong><br><a href=\"http://support.microsoft.com/nl-nl/help/10607/microsoft-edge-view-delete-browser-history\" data-redactor-span=\"true\">Blokkeer cookies in Microsoft Edge</a></p>\r\n<p><strong>Firefox</strong><br><a href=\"http://support.mozilla.org/nl/kb/cookies-in-en-uitschakelen-websites-voorkeuren?redirectlocale=nl&s=cookies&r=2&as=s&redirectslug=Cookies+in-+en+uitschakelen\" data-redactor-span=\"true\">Blokkeer cookies in Firefox</a></p>\r\n<p><strong>Apple Safari</strong><br><a href=\"http://support.apple.com/kb/PH21411?locale=nl_NL\" data-redactor-span=\"true\">Blokkeer cookies in Apple Safari</a></p>\r\n<h2>Vragen?</h2>\r\n<p>Emotion<br>Schumanpark 13<br>7336 AM Apeldoorn<br><a href=\"tel:055 522 15 25\" data-redactor-span=\"true\"></a><a href=\"tel:+31555221525\" data-redactor-span=\"true\">055 522 15 25</a><br><a href=\"mailto:privacy@emotion.nl\" data-redactor-span=\"true\">privacy@emotion.nl</a>\r\n</p>\r\n<h2>Wijzigingen</h2>\r\n<p>Wij behouden het recht bovenstaande gegevens aan te passen. De wijzigingen zullen op emotion.nl gepubliceerd<br>worden.\r\n</p>\r\n<hr>\r\n<h2>Instellingen</h2>\r\n<p>Wijzig hieronder de cookie instellingen:</p>"
+      globalNotification: 'Hoi. We bewaren jouw surfgedrag om de site te verbeteren. Hoi. We bewaren jouw surfgedrag om de site te verbeteren. Hoi. We bewaren jouw surfgedrag om de site te verbeteren. Hoi. We bewaren jouw surfgedrag om de site te verbeteren. Hoi. We bewaren jouw surfgedrag om de site te verbeteren. Hoi. We bewaren jouw surfgedrag om de site te verbeteren. Hoi. We bewaren jouw surfgedrag om de site te verbeteren. Hoi. We bewaren jouw surfgedrag om de site te verbeteren. Hoi. We bewaren jouw surfgedrag om de site te verbeteren. Hoi. We bewaren jouw surfgedrag om de site te verbeteren. Hoi. We bewaren jouw surfgedrag om de site te verbeteren. Hoi. We bewaren jouw surfgedrag om de site te verbeteren.'
+      youtube: '1'
   image-resizer:
     edition: standard
     enabled: true
@@ -69,6 +84,10 @@ plugins:
     enabled: true
     schemaVersion: 1.0.0
   typogrify:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  youtubeid:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0

@@ -1,0 +1,147 @@
+.c-youtube {
+  display: block;
+
+  &__player {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    display: block;
+
+    &:before {
+      content: '';
+      display: block;
+      width: 100%;
+      padding-bottom: 62.5%;
+
+      @include media-breakpoint-up('md') {
+        padding-bottom: 55.2546045504%;
+      }
+    }
+
+    &_play {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 7;
+      width: 134px;
+      height: 134px;
+
+      path {
+        fill: #fff;
+      }
+    }
+
+    &__youtube,
+    &__thumbnail,
+    &__overlay {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+
+    &__thumbnail,
+    &__overlay {
+      opacity: 1;
+      transform: translateX(0);
+      transition: opacity 300ms ease-in-out, transform 10ms ease-in-out 0ms;
+    }
+
+    &__thumbnail {
+      z-index: 5;
+
+      img {
+        height: 100%;
+      }
+    }
+
+    &__youtube {
+      z-index: 7;
+    }
+
+    &__overlay {
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 6;
+    }
+
+    &__gdpr {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      margin: 0 auto;
+      color: #fff;
+      font-size: 16px;
+      line-height: 25px;
+      text-align: center;
+      z-index: 8;
+
+      &_content {
+        font-size: 14px;
+        line-height: 25px;
+        align-self: center;
+        font-weight: 600;
+
+        @include media-breakpoint-up('md') {
+          font-size: 16px;
+        }
+      }
+
+      &_text {
+        padding-bottom: 14px;
+      }
+
+      a,
+      &_link {
+        font-size: 12px;
+        line-height: 25px;
+        color: #fff;
+        font-weight: 400;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      button {
+        font-size: 14px;
+        margin-bottom: 7px;
+        color: #000;
+        padding: 10px 40px;
+        background-color: #fff;
+        border-radius: 50px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #f1e15a;
+        }
+      }
+    }
+
+    &_not-playing {
+      .c-youtube__player_play {
+        opacity: 0;
+        transform: translateX(-9999px);
+        transition: opacity 200ms ease-in-out, transform 10ms ease-in-out 300ms;
+      }
+    }
+
+    &_playing {
+      .c-youtube__player__thumbnail,
+      .c-youtube__player__overlay,
+      .c-youtube__player_play {
+        opacity: 0;
+        transform: translateX(-9999px);
+        transition: opacity 300ms ease-in-out, transform 10ms ease-in-out 300ms;
+      }
+    }
+  }
+}

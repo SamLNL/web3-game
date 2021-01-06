@@ -65,6 +65,9 @@ const main = async () => {
     await import(/* webpackChunkName: "select" */ "./vendor/date-input-polyfill.dist");
   }
 
+  if(document.querySelector('.js-youtube-gdpr-form')) {
+    await import(/* webpackChunkName: "youtube" */ "./custom/components/youtube");
+  }
   analytics.init();
 };
 

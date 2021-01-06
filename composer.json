@@ -1,8 +1,10 @@
 {
   "require": {
     "aelvan/imager": "^2.4",
+    "appmanschap/craft-gdpr": "^2.0.3",
     "craftcms/cms": "^3.4.0",
     "craftcms/redactor": "^2.6.0.1",
+    "emotion/youtubeid": "dev-master",
     "nystudio107/craft-cookies": "^1.1",
     "nystudio107/craft-minify": "^1.2",
     "nystudio107/craft-seomatic": "^3.2",
@@ -21,6 +23,16 @@
       "modules\\": "modules/"
     }
   },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://gitlab-ci-token:qo7vycPUjKWKmBBma9qo@git.emotion.nl/Appmanschap/craft-gdpr"
+    },
+    {
+      "type": "vcs",
+      "url": "https://gitlab-ci-token:qo7vycPUjKWKmBBma9qo@git.emotion.nl/craft/YoutubeId-craft3"
+    }
+  ],
   "config": {
     "sort-packages": true,
     "optimize-autoloader": true,

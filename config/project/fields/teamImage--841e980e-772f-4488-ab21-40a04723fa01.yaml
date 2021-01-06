@@ -6,12 +6,14 @@ name: 'Team - Afbeelding'
 searchable: false
 settings:
   allowSelfRelations: false
+  allowUploads: true
   allowedKinds:
     - image
   defaultUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1'
   defaultUploadLocationSubpath: ''
   limit: '1'
   localizeRelations: false
+  previewMode: full
   restrictFiles: '1'
   selectionLabel: ''
   showSiteMenu: true

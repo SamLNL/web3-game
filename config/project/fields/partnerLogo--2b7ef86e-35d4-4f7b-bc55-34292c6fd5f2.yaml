@@ -6,12 +6,14 @@ name: 'Partner - Logo'
 searchable: false
 settings:
   allowSelfRelations: false
+  allowUploads: true
   allowedKinds:
     - image
   defaultUploadLocationSource: 'volume:4176b138-ab46-48c2-ba93-8f81e9d3c0df'
   defaultUploadLocationSubpath: ''
   limit: '1'
   localizeRelations: false
+  previewMode: full
   restrictFiles: '1'
   selectionLabel: ''
   showSiteMenu: true

@@ -133,6 +133,8 @@
       <path value="$PROJECT_DIR$/vendor/verbb/super-table" />
       <path value="$PROJECT_DIR$/vendor/defuse/php-encryption" />
       <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/vendor/appmanschap/craft-gdpr" />
+      <path value="$PROJECT_DIR$/vendor/emotion/youtubeid" />
     </include_path>
   </component>
 </project>
