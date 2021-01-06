@@ -5,4 +5,6 @@ h3,
 .h2,
 .h3 {
   text-transform: uppercase;
+  hyphens: auto;
+  word-break: break-word;
 }
