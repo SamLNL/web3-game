@@ -162,6 +162,35 @@
   {% endblock %}
 </footer>
 
+{% if craft.gdpr.getCookie('gdprYoutube') %}
+  <script>
+    var tag = document.createElement('script');
+    tag.src = '//www.youtube.com/iframe_api';
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  </script>
+{% endif %}
+<script>
+  function onYouTubeIframeAPIReady() {
+    var youtubePlayers = document.querySelectorAll('.js-youtube');
+
+    for (var a = 0; a < youtubePlayers.length; a++) {
+
+      new YT.Player(youtubePlayers[a].id, {
+        width: '100%',
+        videoId: youtubePlayers[a].getAttribute('data-url'),
+        playerVars: {
+          rel: 0,
+          autoplay: !!youtubePlayers[a].getAttribute('data-autoplay') &&
+            youtubePlayers[a].getAttribute('data-autoplay'),
+          controls: 1,
+        },
+      });
+    }
+  }
+</script>
+
+
 {# -- Inline JS -- #}
 {% block _inline_js %}
 {% endblock %}

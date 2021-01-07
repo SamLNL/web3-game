@@ -22,6 +22,7 @@ function handleYoutubeGDPR(event)
       if (typeof response.cookies !== 'undefined') {
         if (response.cookies.youtube) {
 
+
           // Get all the youtube videos on this page
           let youtubeVideos = document.querySelectorAll('.js-youtube');
 
