@@ -4,7 +4,6 @@ name: Biljoenbad
 permissions:
   - accesssitewhensystemisoff
   - accessplugin-calendar
-  - accessplugin-gdpr
   - accessplugin-navigation
   - accesscp
   - 'createentries:a9f5d80c-3a46-4c6c-8060-9e91f1246dbb'
@@ -87,6 +86,11 @@ permissions:
   - 'deletepeerentrydrafts:8282c6e5-f703-4e5d-b304-6d865da47002'
   - 'editpeerentrydrafts:8282c6e5-f703-4e5d-b304-6d865da47002'
   - 'editentries:8282c6e5-f703-4e5d-b304-6d865da47002'
+  - 'publishentries:4f52e94b-af09-494e-8df9-3dedef4c6b49'
+  - 'publishpeerentrydrafts:4f52e94b-af09-494e-8df9-3dedef4c6b49'
+  - 'deletepeerentrydrafts:4f52e94b-af09-494e-8df9-3dedef4c6b49'
+  - 'editpeerentrydrafts:4f52e94b-af09-494e-8df9-3dedef4c6b49'
+  - 'editentries:4f52e94b-af09-494e-8df9-3dedef4c6b49'
   - 'publishentries:ba1b5070-fa2e-46d4-9f20-f4473d388cdc'
   - 'publishpeerentrydrafts:ba1b5070-fa2e-46d4-9f20-f4473d388cdc'
   - 'deletepeerentrydrafts:ba1b5070-fa2e-46d4-9f20-f4473d388cdc'
