@@ -4,6 +4,7 @@ name: Biljoenbad
 permissions:
   - accesssitewhensystemisoff
   - accessplugin-calendar
+  - accessplugin-gdpr
   - accessplugin-navigation
   - accesscp
   - 'createentries:a9f5d80c-3a46-4c6c-8060-9e91f1246dbb'

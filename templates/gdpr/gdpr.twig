@@ -19,30 +19,36 @@
       <div class="w-100 my-4 col-lg-10 offset-lg-1">
 
         <div id="mainContentSkip">
-          {{ craft.gdpr.getGlobalContent | raw }}
+          {% include "_partials/_common/matrix.twig" %}
 
           {# Get the active parts that needs cookies #}
           {% set checkboxes = craft.gdpr.getCheckboxOptions %}
 
           {% if checkboxes | length > 0 %}
-            <form method="post">
-              {{ csrfInput() }}
+            <div class="container">
+              <div class="row">
+                <div class="col-12">
+                  <form method="post">
+                    {{ csrfInput() }}
 
-              <input name="action" type="hidden" value="gdpr/site/cookies">
+                    <input name="action" type="hidden" value="gdpr/site/cookies">
 
-              {% for key, checkbox in checkboxes %}
-                <div class="mb-2">
-                  <label for="{{ key }}">
-                    <input type="checkbox" id="{{ key }}" title="{{ checkbox.title }}"
-                           name="{{ key }}" {{ checkbox.checked }}>
+                    {% for key, checkbox in checkboxes %}
+                      <div class="mb-2">
+                        <label for="{{ key }}">
+                          <input type="checkbox" id="{{ key }}" title="{{ checkbox.title }}"
+                                 name="{{ key }}" {{ checkbox.checked }}>
 
-                    {% set gdprTitle = 'gdpr.option.title.' ~ checkbox.title %}
-                    <span> {{ gdprTitle | t('gdpr') | capitalize }}</span>
-                  </label>
+                          {% set gdprTitle = 'gdpr.option.title.' ~ checkbox.title %}
+                          <span> {{ gdprTitle | t('gdpr') | capitalize }}</span>
+                        </label>
+                      </div>
+                    {% endfor %}
+                    <button type="submit" class="c-btn">{{ "gdpr.save-settings" | t('gdpr') | capitalize }}</button>
+                  </form>
                 </div>
-              {% endfor %}
-              <button type="submit" class="c-btn">{{ "gdpr.save-settings" | t('gdpr') | capitalize }}</button>
-            </form>
+              </div>
+            </div>
           {% endif %}
         </div>
       </div>
