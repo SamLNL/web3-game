@@ -220,6 +220,18 @@ Matrix field; body
           } %}
         </div>
       </div>
+
+    {% case 'youtubeVideo' %}
+      <div class="mb-4 -mt-lg-4 mb-lg-8">
+        <div class="w-100">
+          {% if block.youtubeLink | length %}
+            {% include '_partials/_components/youtube/youtube.twig' with {
+              link: block.youtubeLink,
+              gdpr: true
+            } %}
+          {% endif %}
+        </div>
+      </div>
     {% endswitch %}
   {% endfor %}
 {% endif %}
