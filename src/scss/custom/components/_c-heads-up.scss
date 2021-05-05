@@ -28,6 +28,11 @@
     p {
       margin-bottom: 0;
       align-self: center;
+
+      a {
+        color: $teal-600;
+        text-decoration: underline;
+      }
     }
   }
 }

@@ -4,10 +4,10 @@
     <div class="c-nav-desktop__sub-menu">
       <form class="c-form-global-search" action="{{ siteUrl('zoeken') }}">
         {% include '_inline/_svg/search-regular' %}
-        <label class="d-none" id="search-top" for="q">
+        <label class="d-none" id="search-desktop" for="q">
           Zoeken
         </label>
-        <input name="q" id="q" type="search" aria-labelledby="search-top" placeholder="Zoeken naar...">
+        <input name="q" id="q" type="search" aria-labelledby="search-desktop" placeholder="Zoeken naar...">
       </form>
       {% set nav = craft.navigation.nodes('mainNavSub').all() %}
       {{ macro.renderNav(nav, true) }}
@@ -88,10 +88,10 @@
       <div class="c-nav-mobile__search">
         <form class="c-form-global-search" action="{{ siteUrl('zoeken') }}">
           {% include '_inline/_svg/search-regular' %}
-          <label class="d-none" id="search-top" for="q">
+          <label class="d-none" id="search-mobile" for="q">
             Zoeken
           </label>
-          <input name="q" id="q" type="search" aria-labelledby="search-top" placeholder="Zoeken naar...">
+          <input name="q" id="q" type="search" aria-labelledby="search-mobile" placeholder="Zoeken naar...">
         </form>
       </div>
       <div class="c-nav-mobile__sub-menu">
