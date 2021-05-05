@@ -91,7 +91,7 @@ Template file for the homepage
               </span>
                     </a>
                   {% else %}
-                    <div  class="d-flex flex-row align-items-center mb-1 mr-md-2 mb-md-0">
+                    <div class="d-flex flex-row align-items-center mb-1 mr-md-2 mb-md-0">
                       <svg class="mr-2 flex-shrink-0" width="35" height="35">
                         <use xlink:href="/assets/images/svg/sprite/sprite.svg#icon-calendar"></use>
                       </svg>
@@ -118,14 +118,14 @@ Template file for the homepage
         </div>
       </div>
 
-
-      {% if entry.intro | length %}
-        <div class="w-100 d-flex flex-row justify-content-center">
-          <div class="mb-2 col-lg-10 text-center text-white">
+      <div class="w-100 d-flex flex-row justify-content-center">
+        <div class="mb-2 text-center text-white col-lg-10 mb-lg-4">
+          <h1 class="mt-2 text-white mt-md-1 mt-lg-3">{{ entry.commonTitle }}</h1>
+          {% if entry.intro | length %}
             {{ entry.intro }}
-          </div>
+          {% endif %}
         </div>
-      {% endif %}
+      </div>
     </div>
   </div>
 

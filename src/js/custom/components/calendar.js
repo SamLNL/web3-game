@@ -2,7 +2,6 @@
 
 let calendar, calendarEl, prevButton, nextButton, todayButton, datepicker;
 
-
 function getTwoNumeric(int) {
   int = int.toString();
   if (int.length === 1) {
@@ -18,7 +17,7 @@ function changeDatepicker(selectedDate) {
 }
 
 function runAnimation() {
-  if(calendarEl){
+  if (calendarEl) {
     let timegrid = calendarEl.querySelector('.fc-timegrid');
     timegrid.classList.add('hide');
 
@@ -50,7 +49,7 @@ function runAnimation() {
       hour12: false,
     },
     buttonText: {
-      today: 'Vandaag'
+      today: 'Vandaag',
     },
     locale: 'nl',
     eventTimeFormat: {
@@ -65,14 +64,22 @@ function runAnimation() {
     events: '/fullcalendar-events',
     timeFormat: 'H(:mm)',
     aspectRatio: 1,
-    slotDuration: '00:15'
-  });
+    slotDuration: '00:15',
+    loading: function(bool) {
+      if(!bool) {
+        let scrollers = calendarEl.querySelectorAll('.fc-scroller');
 
+        scrollers.forEach((el) => {
+          el.setAttribute('tabindex', '0');
+        });
+      }
+    },
+  });
   calendar.render();
 
   datepicker = document.querySelector('.js-calendar-datepicker');
 
-  if(datepicker) {
+  if (datepicker) {
     datepicker.addEventListener('change', () => {
 
       let dateValue = datepicker.value;
