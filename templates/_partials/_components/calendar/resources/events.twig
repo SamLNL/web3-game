@@ -17,8 +17,8 @@
       resourceId: event.calendarId,
       title: event.title,
       allDay: event.allDay == '0' ? 0 : 1,
-      start: event.startDate | date ('Y-m-d H:i:s'),
-      end: event.endDate | date ('Y-m-d H:i:s'),
+      start: event.startDate | date ('Y-m-d H:i:s', timezone='UTC'),
+      end: event.endDate | date ('Y-m-d H:i:s', timezone='UTC'),
     } %}
 
     {% if event.activitiesLink.getUrl() | length %}

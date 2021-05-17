@@ -11,7 +11,7 @@
 
 {% block content %}
   {% if calendar | length %}
-    <div class="js-calendar" data-timezone="{{ craft.app.getTimezone() }}"></div>
+    <div class="js-calendar" data-timezone="UTC"></div>
   {% endif %}
 {% endblock %}
 
