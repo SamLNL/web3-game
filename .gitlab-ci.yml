@@ -32,6 +32,7 @@ cache:
 install:
   stage: install
   script:
+    - nvm use node
     - yarn
     - composer install --ignore-platform-reqs --no-scripts --no-suggest -o -n
   cache:
@@ -48,6 +49,7 @@ build project:
       - node_modules/
     policy: pull
   script:
+    - nvm use node
     - gulp build
     # Store result of this step as artifact
   artifacts:
@@ -63,6 +65,7 @@ start review:
     GIT_SUBMODULE_STRATEGY: recursive
     REVIEW_DIR: ${SITE_NAME}-${CI_COMMIT_REF_SLUG}
   script:
+    - nvm use node
     - if [ -z ${HOST_STAGING+x} ]; then echo -e "\n\nHOST_STAGING VARIABLE NOT SET! Check Settings->variables\n\n"; exit 0; fi
     - if [ -z ${STAGING_DB_PASSWORD+x} ]; then echo -e "\n\STAGING_DB_PASSWORD VARIABLE NOT SET! Check Settings->variables\n\n"; exit -1; fi
     - if [ -z ${STAGING_DB_USER+x} ]; then echo -e "\n\STAGING_DB_USER VARIABLE NOT SET! Check Settings->variables\n\n"; exit -1; fi
@@ -119,6 +122,7 @@ stop_review:
     REVIEW_DIR: "${SITE_NAME}-${CI_COMMIT_REF_SLUG}"
     GIT_STRATEGY: none
   script:
+    - nvm use node
     - ssh $SSH_OPTS $HOST_STAGING "rm -rf  ./$REVIEW_DIR/"
   when: manual
   environment:
@@ -140,6 +144,7 @@ deploy to staging:
   variables:
     GIT_SUBMODULE_STRATEGY: recursive
   script:
+    - nvm use node
     - if [ -z ${HOST_STAGING+x} ]; then echo -e "\n\nHOST_STAGING VARIABLE NOT SET! Check Settings->variables\n\n"; exit 0; fi
     - if [ -z ${STAGING_DB_PASSWORD+x} ]; then echo -e "\n\STAGING_DB_PASSWORD VARIABLE NOT SET! Check Settings->variables\n\n"; exit -1; fi
     - if [ -z ${STAGING_DB_USER+x} ]; then echo -e "\n\STAGING_DB_USER VARIABLE NOT SET! Check Settings->variables\n\n"; exit -1; fi
@@ -191,6 +196,7 @@ generate critical css review:
       - vendor/
     policy: pull
   script:
+    - nvm use node
     - node tools/scripts/critical.js --url https://$SITE_NAME-$CI_COMMIT_REF_SLUG.gaafproject.nl
     - rsync -azhcvv -e "ssh $SSH_OPTS" --exclude '.gitkeep' public/assets/criticalcss $HOST_STAGING:./$REVIEW_DIR/public/assets
   when: on_success
@@ -215,6 +221,7 @@ generate critical css staging:
       - vendor/
     policy: pull
   script:
+    - nvm use node
     - node tools/scripts/critical.js --url https://$SITE_NAME.gaafproject.nl
     - rsync -azhcvv -e "ssh $SSH_OPTS" --exclude '.gitkeep' public/assets/criticalcss $HOST_STAGING:./$STAGING_DIR/public/assets/
   when: on_success
@@ -237,6 +244,7 @@ generate critical css production:
       - vendor/
     policy: pull
   script:
+    - nvm use node
     - node tools/scripts/critical.js --url $PRODUCTION_URL
     - rsync -azhcvv -e "ssh $SSH_OPTS" --exclude '.gitkeep' public/assets/criticalcss $HOST_PRODUCTION:public/assets/
   when: on_success
@@ -258,6 +266,7 @@ run lighthouse audit staging:
       - node_modules/
     policy: pull
   script:
+    - nvm use node
     - curl https://$SITE_NAME.gaafproject.nl > /dev/null
     - node tools/scripts/performance.js --url https://$SITE_NAME.gaafproject.nl
   only:
@@ -273,6 +282,7 @@ run lighthouse audit production:
       - node_modules/
     policy: pull
   script:
+    - nvm use node
     - curl $PRODUCTION_URL > /dev/null
     - node tools/scripts/performance.js --url $PRODUCTION_URL
   only:
@@ -288,6 +298,7 @@ run a11y audit production:
       - node_modules/
     policy: pull
   script:
+    - nvm use node
     - node tools/scripts/a11y.js --url $PRODUCTION_URL
   only:
     - master
@@ -305,6 +316,7 @@ deploy to production:
   variables:
     GIT_STRATEGY: none
   script:
+    - nvm use node
     - if [ -z ${PRODUCTION_URL+x} ]; then echo -e "\n\nPRODUCTION_URL VARIABLE NOT SET! Check Settings->variables\n\n"; exit 0; fi
     - if [ -z ${HOST_PRODUCTION+x} ]; then echo -e "\n\nHOST_PRODUCTION VARIABLE NOT SET! Check Settings->variables\n\n"; exit 0; fi
     - if [ -z ${PRODUCTION_DB_PASSWORD+x} ]; then echo -e "\n\PRODUCTION_DB_PASSWORD VARIABLE NOT SET! Check Settings->variables\n\n"; exit -1; fi
@@ -364,6 +376,7 @@ deploy craft to production:
   variables:
     GIT_STRATEGY: none
   script:
+    - nvm use node
     - if [ -z ${HOST_PRODUCTION+x} ]; then echo -e "\n\nHOST_PRODUCTION VARIABLE NOT SET! Check Settings->variables\n\n"; exit 0; fi
     # Create directory for current releases
     - ssh $SSH_OPTS $HOST_PRODUCTION "if [ -d deploy_tmp ] ; then rm -rf deploy_tmp ; fi"
@@ -401,6 +414,7 @@ notify failure:
   variables:
     GIT_STRATEGY: none
   script:
+    - nvm use node
     - node tools/scripts/slackBuildStatus.js --url $CI_REPOSITORY_URL --type error
   when: on_failure
 
@@ -413,6 +427,7 @@ notify review:
     REVIEW_DIR: "biljoenbad-${CI_COMMIT_REF_SLUG}"
     GIT_STRATEGY: none
   script:
+    - nvm use node
     - node tools/scripts/slackBuildStatus.js --url https://$REVIEW_DIR.gaafproject.nl --type review
   when: on_success
   only:
@@ -428,6 +443,7 @@ notify staging:
   variables:
     GIT_STRATEGY: none
   script:
+    - nvm use node
     - node tools/scripts/slackBuildStatus.js --url https://biljoenbad.gaafproject.nl --type staging
   when: on_success
   only:

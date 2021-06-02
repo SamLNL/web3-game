@@ -6,6 +6,11 @@
     margin-top: -51px;
   }
 
+  .fc th,
+  .fc td {
+    height: inherit !important;
+  }
+
   .fc-header-toolbar {
     @extend .col-sm-8;
     width: 100%;
@@ -124,6 +129,12 @@
       border-radius: 5px;
       padding: 0;
       background-color: $white;
+
+      &-section {
+        td {
+          border-bottom: 0;
+        }
+      }
 
       @include media-breakpoint-up('sm') {
         padding: 0 20px 20px 20px;

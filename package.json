@@ -5,9 +5,6 @@
   "author": "Emotion",
   "copyright": "Emotion",
   "license": "UNLICENSED",
-  "enigine": {
-    "node": "11.15.0"
-  },
   "private": true,
   "paths": {
     "src": {
