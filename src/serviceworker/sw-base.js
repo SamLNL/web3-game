@@ -112,4 +112,4 @@ workbox.routing.setCatchHandler(({ event }) => {
   }
 });
 
-workbox.precaching.precacheAndRoute([]);
+workbox.precaching.precacheAndRoute(self.__WB_MANIFEST);

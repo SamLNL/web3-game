@@ -1,6 +1,6 @@
-const gulp = require("gulp");
+const gulp = require('gulp');
 
-require("./imagesSvgCopy");
-require("./imagesSvgSprite");
+require('./imagesSvgCopy');
+require('./imagesSvgSprite');
 
-gulp.task("create:svg", gulp.parallel("copy:svg-single", "create:svg-sprite"));
+gulp.task('create:svg', gulp.parallel('copy:svg-single', 'create:svg-sprite'));

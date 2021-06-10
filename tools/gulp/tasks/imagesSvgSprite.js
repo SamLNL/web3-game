@@ -1,17 +1,17 @@
-const gulp = require("gulp");
-const fs = require("fs-extra");
-const pkg = require("../../../package.json");
-const errorHandler = require("../lib/errorHandler");
-const $ = require("../lib/loadPlugins");
+const gulp = require('gulp');
+const fs = require('fs-extra');
+const pkg = require('../../../package.json');
+const errorHandler = require('../lib/errorHandler');
+const $ = require('../lib/loadPlugins');
 
 const vectorSource = `${pkg.paths.src.images.svg.sprite}**/*.svg`;
 const vectorDist = pkg.paths.dist.images.svg.sprite;
 
-gulp.task("moveSassFile", async () => {
+gulp.task('moveSassFile', async () => {
   try {
     await fs.rename(
-      `${vectorDist}css/_objects.sprite.scss`,
-      `${pkg.paths.src.scss}objects/_objects.sprite.scss`
+      `${vectorDist}css/_o-sprite.scss`,
+      `${pkg.paths.src.scss}objects/_o-sprite.scss`
     );
     await fs.remove(`${vectorDist}css/`);
   } catch (e) {}
@@ -36,8 +36,8 @@ const svgSprite = () => {
           { collapseGroups: true },
           { sortAttrs: true },
           { removeUselessStrokeAndFill: true },
-          { convertStyleToAttrs: true }
-        ]
+          { convertStyleToAttrs: true },
+        ],
       })
     )
     .pipe(
@@ -45,35 +45,35 @@ const svgSprite = () => {
         shape: {
           dimension: {
             maxWidth: 40,
-            maxHeight: 40
+            maxHeight: 40,
           },
           spacing: {
-            padding: 0
+            padding: 0,
           },
-          dest: "./single/"
+          dest: './single/',
         },
         mode: {
           symbol: {
-            dest: ".",
-            sprite: "sprite.svg",
-            inline: false
+            dest: '.',
+            sprite: 'sprite.svg',
+            inline: false,
           },
           css: {
-            prefix: ".o-",
+            prefix: '.o-',
             render: {
               scss: {
-                dest: "_objects.sprite.scss",
-                template: "tools/gulp/tasks/sprite.mustache"
-              }
-            }
-          }
-        }
+                dest: '_o-sprite.scss',
+                template: 'tools/gulp/tasks/sprite.mustache',
+              },
+            },
+          },
+        },
       })
     )
-    .on("error", errorHandler)
+    .on('error', errorHandler)
     .pipe($.size())
     .pipe(gulp.dest(vectorDist));
 };
 
-gulp.task("create:svg-sprite", gulp.series(svgSprite, "moveSassFile"));
+gulp.task('create:svg-sprite', gulp.series(svgSprite, 'moveSassFile'));
 module.exports = svgSprite;

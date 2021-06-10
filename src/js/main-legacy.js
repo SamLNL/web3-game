@@ -1,14 +1,18 @@
 /**==========================================================================
    # Name: main-legacy
-   # Date: 303 Oct 2018
-   # Author: peter
+   # Date: 23 Apr 2020
+   # Author: almeric
    ========================================================================== */
 
 /**
- * Main js file for older browsers
- *
- */
+  Main entry point for the legacy js bundle
+*/
+
 // Import polyfills not in `@babel/polyfill` need for the nomodule case.
 
 // Import main.js after the polyfills are loaded.
-import "./main";
+import { main } from './main';
+
+// Start the app.
+// noinspection JSIgnoredPromiseFromCall
+main();
