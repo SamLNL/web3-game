@@ -1,0 +1,38 @@
+[
+  {
+    "url": "",
+    "template": "index"
+  },
+  {
+    "url": "activities",
+    "template": "activities/overview"
+  },
+  {
+    "url": "rooster-en-tarieven",
+    "template": "calendar-prices/entry"
+  },
+  {
+    "url": "faciliteiten-en-verhuur",
+    "template": "facilities/overview"
+  },
+  {
+    "url": "nieuws",
+    "template": "news/overview"
+  },
+  {
+    "url": "zoeken",
+    "template": "search"
+  },
+  {
+    "url": "error",
+    "template": "_errors/error"
+  },
+  {
+    "url": "503",
+    "template": "_errors/offline"
+  },
+  {
+    "url": "404",
+    "template": "_errors/404"
+  }
+]

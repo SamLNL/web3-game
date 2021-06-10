@@ -1,8 +1,7 @@
-const gulp = require("gulp");
-const pkg = require("../../../package.json");
-const errorHandler = require("../lib/errorHandler");
-const $ = require("../lib/loadPlugins");
-const rename = require("gulp-rename");
+const gulp = require('gulp');
+const pkg = require('../../../package.json');
+const errorHandler = require('../lib/errorHandler');
+const $ = require('../lib/loadPlugins');
 
 const vectorSource = `${pkg.paths.src.images.svg.single}**/*.svg`;
 const vectorDist = pkg.paths.dist.images.svg.single;
@@ -21,25 +20,21 @@ const copyVectors = () => {
           { removeUselessDefs: false },
           { removeDoctype: true },
           { removeEmptyText: true },
-          { removeUnknownsAndDefaults: false },
-          { cleanupAttrs: false },
+          { removeUnknownsAndDefaults: true },
           { removeEmptyContainers: true },
           { collapseGroups: true },
           { sortAttrs: true },
           { removeUselessStrokeAndFill: true },
-          { convertStyleToAttrs: true }
+          { convertStyleToAttrs: true },
         ],
-        verbose: true
+        verbose: true,
       })
     )
-    .on("error", errorHandler)
+    .on('error', errorHandler)
     .pipe(gulp.dest(vectorDist))
     .pipe($.size({ gzip: true, showFiles: true }))
-    .pipe(rename(function (path) {
-    path.extname = ".twig";
-    }))
     .pipe(gulp.dest(pkg.paths.templates.inlineSvg));
 };
 
-gulp.task("copy:svg-single", copyVectors);
+gulp.task('copy:svg-single', copyVectors);
 module.exports = copyVectors;

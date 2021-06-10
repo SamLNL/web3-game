@@ -1,57 +1,40 @@
 // node modules
-const gulp = require("gulp");
-const webpackDevMiddleware = require("webpack-dev-middleware");
-const webpackHotMiddleware = require("webpack-hot-middleware");
-const Webpack = require("webpack");
-const browserSync = require("browser-sync").create("dev");
+const gulp = require('gulp');
+const browserSync = require('browser-sync').create('dev');
 
 // config
-const hmrConfig = require("../../webpack-config/webpack.hmr");
-const pkg = require("../../../package");
+const pkg = require('../../../package');
 
-const serverTask = cb => {
-  const compiler = Webpack(hmrConfig);
-
+const serverTask = (cb) => {
   browserSync.init({
     notify: false,
     port: 3000,
     open: false,
-    logPrefix: "DFS",
+    logPrefix: 'DFS',
     proxy: {
-      target: "http://biljoenbad.loc",
-      middleware: [
-        (req, res, next) => {
-          res.setHeader("Access-Control-Allow-Origin", "*");
-          next();
-        },
-        webpackDevMiddleware(compiler, {
-          publicPath: hmrConfig[0].output.publicPath,
-          stats: "errors-only"
-        }),
-        webpackHotMiddleware(compiler)
-      ]
+      target: 'biljoenbad.loc',
+    },
+  });
+
+  browserSync.watch(`${pkg.paths.dist.css}**/*.css`, (event) => {
+    if (event === 'change') {
+      browserSync.reload('*.css');
     }
   });
 
-  browserSync.watch(`${pkg.paths.dist.css}**/*.css`, event => {
-    if (event === "change") {
-      browserSync.reload("*.css");
+  browserSync.watch(`${pkg.paths.dist.js}**/*.js`, (event) => {
+    if (event === 'change') {
+      browserSync.reload('*.js');
     }
   });
-  // HMR should handle this for us
-  // browserSync.watch(`${pkg.paths.dist.js}**/*.js`, event => {
-  //   if (event === 'change') {
-  //     browserSync.reload('*.js');
-  //   }
-  // });
-  browserSync.watch(`${pkg.paths.dist.images}**/*.svg`, event => {
-    if (event === "change") {
+  browserSync.watch(`${pkg.paths.dist.images}**/*.svg`, (event) => {
+    if (event === 'change') {
       browserSync.reload();
     }
   });
 
-  browserSync.watch(`${pkg.paths.templates.base}**/*.{html,htm,twig}`, event => {
-    if (event === "change") {
+  browserSync.watch(`${pkg.paths.templates.base}**/*.{html,htm,twig}`, (event) => {
+    if (event === 'change') {
       browserSync.reload();
     }
   });
@@ -59,5 +42,5 @@ const serverTask = cb => {
   cb();
 };
 
-gulp.task("server", serverTask);
+gulp.task('server', serverTask);
 module.exports = serverTask;

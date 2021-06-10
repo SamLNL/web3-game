@@ -40,34 +40,30 @@
     {% endif %}
     {{ source("#{inlineJs}/tab-handler.min.js") }}
   </script>
-  {%- endminify -%}
 
-  {# CSS & Bundled scripts #}
   {% if craft.app.config.general.isSystemLive and not craft.app.config.general.devMode %}
     {% set cacheVal = getCookie('critical-css') %}
-    {% set cssAsset = craft.twigpack.getModuleUri("styles.min.css") %}
+    {% set cssHash = craft.twigpack.getModuleHash("styles.min.css") %}
     {% set critical %}
       {{ craft.twigpack.includeCriticalCssTags() }}
     {% endset %}
     {% if critical|trim|length and (not cacheVal or cacheVal != cssHash) %}
-      {{ setCookie('critical-css', cssAsset, now | date_modify("+7 days").timestamp ) }}
-      {{ setCookie('critical-css', cssBootstrapAsset, now | date_modify("+7 days").timestamp ) }}
+      {# We have a critical css file, no cookie or cookie has different hash -> use critical css #}
+      {% do setCookie('critical-css', cssHash, now | date_modify("+7 days").timestamp ) %}
       {{ critical }}
       {{ craft.twigpack.includeCssModule("styles.min.css", true) }}
-      <script>
-        {{ source("#{inlineJs}cssrelpreload.min.js") }}
-      </script>
     {% else %}
+      {# No file found or cookie is set, so assume css file is cached #}
       {{ craft.twigpack.includeCssModule("styles.min.css") }}
     {% endif %}
   {% else %}
+    {# Dev mode #}
     {{ craft.twigpack.includeCssModule("styles.min.css") }}
   {% endif %}
 
   {{ craft.twigpack.includeSafariNomoduleFix() }}
   {{ craft.twigpack.includeJsModule("main.js", true) }}
 
-  {%- minify -%}
   {% if not craft.app.config.general.devMode %}
     {# -- Google Analytics -- #}
     <script>
@@ -162,6 +158,17 @@
   {% endblock %}
 </footer>
 
+{# -- Inline JS -- #}
+{% block _inline_js %}
+{% endblock %}
+
+{{ craft.twigpack.includeSafariNomoduleFix() }}
+<script async type="module" src="{{ craft.twigpack.getModuleUri('main-module.js') }}"></script>
+{% if craft.app.config.env != 'dev' %}
+  <script nomodule src="{{ craft.twigpack.getModuleUri('main-es5.js') }}"></script>
+{% endif %}
+
+
 {% if craft.gdpr.getCookie('gdprYoutube') %}
   <script>
     var tag = document.createElement('script');
@@ -189,11 +196,6 @@
     }
   }
 </script>
-
-
-{# -- Inline JS -- #}
-{% block _inline_js %}
-{% endblock %}
 
 {%- endminify -%}
 </body>

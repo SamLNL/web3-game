@@ -31,6 +31,7 @@ return [
     // Enforce Absolute URLs on includes
     'useAbsoluteUrl' => false,
     // The JavaScript entry from the /assets/manifests/manifest.json to inject on Twig error pages
+    // This can be a string or an array of strings
     'errorEntry' => '',
     // String to be appended to the cache key
     'cacheKeySuffix' => '',
@@ -46,9 +47,16 @@ return [
     ],
     // webpack-dev-server config
     'devServer' => [
-      'manifestPath' => 'http://localhost:8000/',
-      'publicPath' => 'http://localhost:8000/',
+      'manifestPath' => 'http://localhost:8080/',
+      'publicPath' => 'http://localhost:8080/',
     ],
+    // Bundle to use with the webpack-dev-server
+    'devServerBuildType' => 'modern',
+    // Whether to include a Content Security Policy "nonce" for inline
+    // CSS or JavaScript. Valid values are 'header' or 'tag' for how the CSP
+    // should be included. c.f.:
+    // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/script-src#Unsafe_inline_script
+    'cspNonce' => '',
     // Local files config
     'localFiles' => [
       'basePath' => '@webroot/',

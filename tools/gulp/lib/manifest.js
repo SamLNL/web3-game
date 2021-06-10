@@ -1,21 +1,21 @@
 /* eslint-disable no-console */
-const fs = require("fs-extra");
-const path = require("path");
-const revHash = require("rev-hash");
-const revPath = require("rev-path");
-const pkg = require("../../../package");
+const fs = require('fs-extra');
+const path = require('path');
+const revHash = require('rev-hash');
+const revPath = require('rev-path');
+const pkg = require('../../../package');
 
 let revisionedAssetManifest;
 
-const getManifest = manifestFileName => {
+const getManifest = (manifestFileName) => {
   revisionedAssetManifest =
     fs.readJsonSync(path.join(pkg.paths.dist.manifest, manifestFileName), {
-      throws: false
+      throws: false,
     }) || {};
   return revisionedAssetManifest;
 };
 
-const saveManifest = manifestFileName => {
+const saveManifest = (manifestFileName) => {
   fs.outputJsonSync(
     path.join(pkg.paths.dist.manifest, manifestFileName),
     revisionedAssetManifest,
@@ -60,7 +60,7 @@ const generateRevisionedAsset = async (file, content, manifestFileName) => {
   // Updates the internal revision map so it can be referenced later.
   await addAsset(
     filename,
-    "/" + path.relative(pkg.paths.dist.base, pathInfo.dir + "/" + revisionedFilename),
+    '/' + path.relative(pkg.paths.dist.base, pathInfo.dir + '/' + revisionedFilename),
     manifestFileName
   );
   return path.join(pathInfo.dir, revisionedFilename);
@@ -73,7 +73,7 @@ const generateAsset = async (file, content, manifestFileName) => {
   // Updates the internal revision map so it can be referenced later.
   await addAsset(
     filename,
-    "/" + path.relative(pkg.paths.dist.base, pathInfo.dir + "/" + filename),
+    '/' + path.relative(pkg.paths.dist.base, pathInfo.dir + '/' + filename),
     manifestFileName
   );
   return path.join(pathInfo.dir, filename);
@@ -86,13 +86,13 @@ const generateAsset = async (file, content, manifestFileName) => {
  * @param extensions The extensions to remove
  */
 const clearManifestOfExt = (manifestFileNames, ...extensions) => {
-  manifestFileNames.forEach(manifestFileName => {
+  manifestFileNames.forEach((manifestFileName) => {
     revisionedAssetManifest =
       fs.readJsonSync(path.join(pkg.paths.dist.manifest, manifestFileName), {
-        throws: false
+        throws: false,
       }) || {};
 
-    extensions.forEach(ext => {
+    extensions.forEach((ext) => {
       for (let key in revisionedAssetManifest) {
         if (
           revisionedAssetManifest.hasOwnProperty(key) &&
@@ -116,5 +116,5 @@ module.exports = {
   getRevisionedAssetUrl,
   clearManifestOfExt,
   generateRevisionedAsset,
-  generateAsset
+  generateAsset,
 };

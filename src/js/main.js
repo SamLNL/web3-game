@@ -9,44 +9,44 @@
  *
  */
 
-const main = async () => {
+export const main = async () => {
   const analytics = await import(/* webpackChunkName: "analytics" */ "./analytics/analytics");
   import ("./bootstrap/index");
   import ("./custom/nav");
 
   if(document.querySelectorAll('.js-scroll').length > 0) {
-    await import(/* webpackChunkName: "scroll" */ "./custom/scroll");
+    import(/* webpackChunkName: "scroll" */ "./custom/scroll");
   }
 
   if(document.querySelectorAll('.js-tab-click').length > 0) {
-    await import(/* webpackChunkName: "tab-click" */ "./custom/tab-click");
+    import(/* webpackChunkName: "tab-click" */ "./custom/tab-click");
   }
 
   if(document.querySelectorAll('.js-faq').length > 0) {
-    await import(/* webpackChunkName: "faq" */ "./custom/faq");
+    import(/* webpackChunkName: "faq" */ "./custom/faq");
   }
 
   if(document.querySelectorAll('.js-swiper-preview').length > 0) {
-    await import(/* webpackChunkName: "swiper" */ "./custom/swiper-preview");
+    import(/* webpackChunkName: "swiper" */ "./custom/swiper-preview");
   }
 
   if(document.querySelectorAll('.js-swiper-services').length > 0) {
-    await import(/* webpackChunkName: "swiper" */ "./custom/swiper-services");
+    import(/* webpackChunkName: "swiper" */ "./custom/swiper-services");
   }
 
   // components blocks
   if(document.querySelectorAll('.js-typeform').length > 0) {
-    await import(/* webpackChunkName: "typeform" */ "./custom/components/typeform");
+    import(/* webpackChunkName: "typeform" */ "./custom/components/typeform");
   }
   if(document.querySelectorAll('.js-load-more-button').length > 0) {
-    await import(/* webpackChunkName: "load-more" */ "./custom/load-more");
+    import(/* webpackChunkName: "load-more" */ "./custom/load-more");
   }
   if(document.querySelectorAll('.js-calendar').length > 0) {
-    await import(/* webpackChunkName: "load-more" */ "./custom/components/calendar");
+    import(/* webpackChunkName: "load-more" */ "./custom/components/calendar");
   }
 
   if(document.querySelectorAll('.js-slider').length > 0) {
-    await import(/* webpackChunkName: "swiper" */ "./custom/components/slider");
+    import(/* webpackChunkName: "swiper" */ "./custom/components/slider");
   }
 
   if(document.querySelectorAll('.js-cta-blocks').length > 0) {
@@ -58,24 +58,15 @@ const main = async () => {
   }
 
   if(document.querySelector('.js-sidebar-sticky')) {
-    await import(/* webpackChunkName: "select" */ "./custom/components/sidebar-sticky");
+    import(/* webpackChunkName: "select" */ "./custom/components/sidebar-sticky");
   }
 
   if(document.querySelector('.js-calendar-datepicker')) {
-    await import(/* webpackChunkName: "select" */ "./vendor/date-input-polyfill.dist");
+    import(/* webpackChunkName: "select" */ "./vendor/date-input-polyfill.dist");
   }
 
   if(document.querySelector('.js-youtube-gdpr-form')) {
-    await import(/* webpackChunkName: "youtube" */ "./custom/components/youtube");
+    import(/* webpackChunkName: "youtube" */ "./custom/components/youtube");
   }
   analytics.init();
 };
-
-// noinspection JSIgnoredPromiseFromCall
-main();
-
-// Enable Hot Module Replacement during development
-// See for caveats: https://webpack.js.org/guides/hot-module-replacement/#gotchas
-if (module.hot) {
-  module.hot.accept();
-}

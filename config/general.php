@@ -40,6 +40,8 @@ return [
       'subRight' => true,
     ),
 
+    'errorTemplatePrefix' => "_errors/",
+
     // Whether images transforms should be generated before page load
     'generateTransformsBeforePageLoad' => true,
 
@@ -50,7 +52,7 @@ return [
     'securityKey' => getenv('SECURITY_KEY'),
 
     // The base URL to the site(s). If set, it will take precedence over the Base URL settings in Settings → Sites → [Site Name].
-    'siteUrl' => getenv('SITE_URL'),
+    'siteUrl' => getenv('DEFAULT_SITE_URL'),
 
     // Whether Craft should set users’ usernames to their email addresses, rather than let them set their username separately.
     'useEmailAsUsername' => true,
@@ -61,9 +63,9 @@ return [
     // Aliases parsed in sites’ settings, volumes’ settings, and Local volumes’ settings
     'aliases' => [
       '@basePath' => CRAFT_BASE_PATH,
-      '@baseUrl' => getenv('SITE_URL'),
-      '@mediaPath' => CRAFT_BASE_PATH.'/public/media/',
-      '@mediaUrl' => getenv('SITE_URL').'/media/',
+      '@baseUrl' => getenv('DEFAULT_SITE_URL'),
+      '@mediaPath' => CRAFT_BASE_PATH.'/public_html/media/',
+      '@mediaUrl' => getenv('DEFAULT_SITE_URL').'/media/',
       '@inlineJs' => '_inline/_js',
       '@inlineSvg' => '_inline/_svg',
       '@inlineCss' => '_inline/_css',

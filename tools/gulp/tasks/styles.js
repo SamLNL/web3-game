@@ -1,19 +1,19 @@
-const gulp = require("gulp");
-const pkg = require("../../../package");
-const fs = require("fs-extra");
-const chalk = require("chalk");
-const errorHandler = require("../lib/errorHandler");
-const { isDevMode } = require("../lib/getEnv");
-const { generateRevisionedAsset, generateAsset } = require("../lib/manifest");
-const sass = require("sass");
-const postcss = require("postcss");
-const purgecss = require("@fullhuman/postcss-purgecss");
-const Fiber = require("fibers");
-const prettyBytes = require("pretty-bytes");
-const gzipSize = require("gzip-size");
-const $ = require("../lib/loadPlugins");
-const stylelint = require("stylelint");
-const magicImporter = require("node-sass-magic-importer");
+const gulp = require('gulp');
+const pkg = require('../../../package');
+const fs = require('fs-extra');
+const chalk = require('chalk');
+const errorHandler = require('../lib/errorHandler');
+const { isDevMode } = require('../lib/getEnv');
+const { generateRevisionedAsset, generateAsset } = require('../lib/manifest');
+const sass = require('sass');
+const postcss = require('postcss');
+const purgecss = require('@fullhuman/postcss-purgecss');
+const Fiber = require('fibers');
+const prettyBytes = require('pretty-bytes');
+const gzipSize = require('gzip-size');
+const $ = require('../lib/loadPlugins');
+const stylelint = require('stylelint');
+const magicImporter = require('node-sass-magic-importer');
 
 const getProcessors = () => {
   let postCSSProcessors = [$.autoprefixer()];
@@ -22,29 +22,25 @@ const getProcessors = () => {
     postCSSProcessors = postCSSProcessors.concat([
       $.postcssReporter({
         clearMessages: true,
-        throwError: false
-      })
+        throwError: false,
+      }),
     ]);
   } else {
     postCSSProcessors = postCSSProcessors.concat([
       $.postcssReporter({
         clearMessages: true,
-        throwError: true
-      }),
-      purgecss({
-        whitelist: pkg.globs.purgecssWhitelist,
-        content: pkg.globs.purgecss
+        throwError: true,
       }),
       $.cssnano({
-        preset: "default",
+        preset: 'default',
         discardComments: {
-          removeAll: true
+          removeAll: true,
         },
         discardDuplicates: true,
         discardEmpty: true,
         minifyFontValues: true,
-        minifySelectors: true
-      })
+        minifySelectors: true,
+      }),
     ]);
   }
 
@@ -59,9 +55,9 @@ const createSassCompiler = (from, outfile) => {
           file: from,
           importer: magicImporter(),
           outFile: outfile,
-          outputStyle: "expanded",
+          outputStyle: 'expanded',
           sourceMap: isDevMode(),
-          fiber: Fiber
+          fiber: Fiber,
         },
         (err, result) => {
           if (err) {
@@ -85,16 +81,16 @@ const compileCss = async (from, outfile) => {
     to: pkg.paths.dist.css,
     map: {
       inline: isDevMode(),
-      prev: result.map ? result.map.toString() : false
-    }
+      prev: result.map ? result.map.toString() : false,
+    },
   });
   return result.css;
 };
 
 const lintStylesTask = async () => {
   const result = await stylelint.lint({
-    files: pkg.paths.src.scss + "**/*.scss",
-    formatter: "string"
+    files: pkg.paths.src.scss + '**/*.scss',
+    formatter: 'string',
   });
 
   if (result.errored) {
@@ -102,14 +98,14 @@ const lintStylesTask = async () => {
   }
 };
 
-const stylesTask = async done => {
+const stylesTask = async (done) => {
   try {
     const css = await compileCss(
       pkg.paths.src.scss + pkg.vars.scssName,
       pkg.vars.siteCssName
     );
     // Generated rev'ed filename
-    let filename = "";
+    let filename = '';
 
     if (isDevMode()) {
       filename = await generateAsset(
@@ -148,10 +144,50 @@ const stylesTask = async done => {
   }
 };
 
-gulp.task("lint:styles", lintStylesTask);
+const styleguideTask = async done => {
+  try {
+    if (!isDevMode()) {
+      return;
+    }
+
+    const styleguideCss = await compileCss(
+      pkg.paths.src.scss + pkg.vars.scssStyleguideName,
+      pkg.vars.siteCssStyleguideName
+    );
+    // Generated rev'ed filename
+    let filename = await generateAsset(
+      pkg.paths.dist.css + pkg.vars.siteCssStyleguideName,
+      styleguideCss,
+      pkg.vars.manifest.legacy
+    );
+    await generateAsset(
+      pkg.paths.dist.css + pkg.vars.siteCssStyleguideName,
+      styleguideCss,
+      pkg.vars.manifest.modern
+    );
+
+    await fs.outputFile(filename, styleguideCss);
+    const stats = await fs.stat(filename);
+
+    $.fancyLog(
+      chalk`Generated: {magenta ${filename}} (${prettyBytes(
+        stats.size
+      )}, Gzipped: ${prettyBytes(gzipSize.sync(styleguideCss))})`
+    );
+  } catch (e) {
+    done();
+    errorHandler(e);
+  }
+};
+
+gulp.task('lint:styles', lintStylesTask);
 gulp.task(
-  "compile:styles",
-  gulp.series(gulp.parallel(stylesTask))
+  'compile:styles',
+  gulp.series(lintStylesTask, gulp.parallel(stylesTask))
+);
+gulp.task(
+  'compile:styleguide',
+  gulp.series(lintStylesTask, gulp.parallel(styleguideTask))
 );
 
 module.exports = stylesTask;
