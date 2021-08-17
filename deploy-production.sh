@@ -21,4 +21,4 @@ rsync -azhcvv -e "ssh $SSH_OPTS" --delete dist/templates $SSH_HOST:./$DEPLOY_DIR
 ssh $SSH_OPTS $SSH_HOST "cd $DEPLOY_DIR && mkdir -p media && cd public_html/ && ln -sf ../media/ media"
 # Run pending migrations & flush cache
 # shellcheck disable=SC2086
-ssh $SSH_OPTS $SSH_HOST "cd $DEPLOY_DIR; ./craft db/backup --zip --overwrite && ./craft migrate/all --interactive 0 && ./craft project-config/apply --interactive 0 && ./craft clear-caches/all && ./craft seomatic/sitemap/generate"
+ssh $SSH_OPTS $SSH_HOST "cd $DEPLOY_DIR; ./craft backup --zip --overwrite && ./craft migrate/all --interactive 0 && ./craft project-config/apply --interactive 0 && ./craft clear-caches/all && ./craft seomatic/sitemap/generate"
