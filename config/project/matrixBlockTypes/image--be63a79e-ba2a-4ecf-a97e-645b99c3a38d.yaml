@@ -25,6 +25,39 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
+  7bc4317f-3190-4df4-88c6-ec8608aba2c6:
+    contentColumnType: string
+    fieldGroup: null
+    handle: image
+    instructions: ''
+    name: Afbeelding
+    searchable: true
+    settings:
+      allowSelfRelations: false
+      allowUploads: true
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1' # Header
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: '1'
+      selectionLabel: ''
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1' # Header
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: true
+      validateRelatedElements: false
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
   16440e78-c0f7-48d6-a42a-677344f296fd:
     contentColumnType: string
     fieldGroup: null
@@ -59,39 +92,6 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\RadioButtons
-  7bc4317f-3190-4df4-88c6-ec8608aba2c6:
-    contentColumnType: string
-    fieldGroup: null
-    handle: image
-    instructions: ''
-    name: Afbeelding
-    searchable: true
-    settings:
-      allowSelfRelations: false
-      allowUploads: true
-      allowedKinds:
-        - image
-      defaultUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1'
-      defaultUploadLocationSubpath: ''
-      limit: '1'
-      localizeRelations: false
-      previewMode: full
-      restrictFiles: '1'
-      selectionLabel: ''
-      showSiteMenu: true
-      showUnpermittedFiles: false
-      showUnpermittedVolumes: false
-      singleUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1'
-      singleUploadLocationSubpath: ''
-      source: null
-      sources: '*'
-      targetSiteId: null
-      useSingleFolder: true
-      validateRelatedElements: false
-      viewMode: list
-    translationKeyFormat: null
-    translationMethod: site
-    type: craft\fields\Assets
 handle: image
 name: Afbeelding
 sortOrder: 3

@@ -25,12 +25,12 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  81443263-41d9-4aa2-994a-ee1f8edd6fa6:
+  8da8ae36-7cc0-45b8-adc8-08a98b785c04:
     contentColumnType: text
     fieldGroup: null
-    handle: heading
+    handle: subHeading
     instructions: ''
-    name: Titel
+    name: Subtitel
     searchable: true
     settings:
       byteLimit: null
@@ -44,12 +44,12 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  8da8ae36-7cc0-45b8-adc8-08a98b785c04:
+  81443263-41d9-4aa2-994a-ee1f8edd6fa6:
     contentColumnType: text
     fieldGroup: null
-    handle: subHeading
+    handle: heading
     instructions: ''
-    name: Subtitel
+    name: Titel
     searchable: true
     settings:
       byteLimit: null

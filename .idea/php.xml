@@ -22,7 +22,6 @@
       <path value="$PROJECT_DIR$/vendor/imageoptim/imageoptim" />
       <path value="$PROJECT_DIR$/vendor/mikehaertl/php-shellcommand" />
       <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
       <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
       <path value="$PROJECT_DIR$/vendor/nystudio107/craft-twigpack" />
@@ -34,7 +33,6 @@
       <path value="$PROJECT_DIR$/vendor/masterminds/html5" />
       <path value="$PROJECT_DIR$/vendor/nystudio107/craft-typogrify" />
       <path value="$PROJECT_DIR$/vendor/intervention/httpauth" />
-      <path value="$PROJECT_DIR$/vendor/kylekatarnls/update-helper" />
       <path value="$PROJECT_DIR$/vendor/justinrainbow/json-schema" />
       <path value="$PROJECT_DIR$/vendor/marcusschwarz/lesserphp" />
       <path value="$PROJECT_DIR$/vendor/nystudio107/craft-plugin-manifest" />
@@ -79,16 +77,13 @@
       <path value="$PROJECT_DIR$/vendor/symfony/finder" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php72" />
       <path value="$PROJECT_DIR$/vendor/symfony/translation" />
-      <path value="$PROJECT_DIR$/vendor/symfony/inflector" />
       <path value="$PROJECT_DIR$/vendor/symfony/filesystem" />
       <path value="$PROJECT_DIR$/vendor/symfony/console" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme" />
       <path value="$PROJECT_DIR$/vendor/webonyx/graphql-php" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php70" />
       <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
       <path value="$PROJECT_DIR$/vendor/symfony/process" />
-      <path value="$PROJECT_DIR$/vendor/symfony/debug" />
       <path value="$PROJECT_DIR$/vendor/voku/stringy" />
       <path value="$PROJECT_DIR$/vendor/voku/stop-words" />
       <path value="$PROJECT_DIR$/vendor/voku/portable-ascii" />
@@ -104,7 +99,6 @@
       <path value="$PROJECT_DIR$/vendor/voku/portable-utf8" />
       <path value="$PROJECT_DIR$/vendor/imgix/imgix-php" />
       <path value="$PROJECT_DIR$/vendor/sunra/php-simple-html-dom-parser" />
-      <path value="$PROJECT_DIR$/vendor/verbb/image-resizer" />
       <path value="$PROJECT_DIR$/vendor/google/crc32" />
       <path value="$PROJECT_DIR$/vendor/google/gax" />
       <path value="$PROJECT_DIR$/vendor/google/grpc-gcp" />
@@ -134,6 +128,20 @@
       <path value="$PROJECT_DIR$/vendor/grpc/grpc" />
       <path value="$PROJECT_DIR$/vendor/opis/closure" />
       <path value="$PROJECT_DIR$/vendor/rize/uri-template" />
+      <path value="$PROJECT_DIR$/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/property-info" />
+      <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php81" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/vendor/react/promise" />
+      <path value="$PROJECT_DIR$/vendor/brick/math" />
+      <path value="$PROJECT_DIR$/vendor/league/mime-type-detection" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/vendor/ramsey/collection" />
+      <path value="$PROJECT_DIR$/vendor/verbb/image-resizer" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7">

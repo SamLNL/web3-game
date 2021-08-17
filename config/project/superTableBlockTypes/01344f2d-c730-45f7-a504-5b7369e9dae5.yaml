@@ -89,6 +89,21 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
+  38af146a-0d6b-417d-abe2-dcc73f0bb167:
+    contentColumnType: string
+    fieldGroup: null
+    handle: mainContent
+    instructions: ''
+    name: Hoofdcontent
+    searchable: true
+    settings:
+      contentTable: '{{%matrixcontent_maincontent}}'
+      maxBlocks: '1'
+      minBlocks: '1'
+      propagationMethod: all
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Matrix
   3251a7c0-65ee-4e96-810f-564919de6cf6:
     contentColumnType: text
     fieldGroup: null
@@ -108,21 +123,6 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  38af146a-0d6b-417d-abe2-dcc73f0bb167:
-    contentColumnType: string
-    fieldGroup: null
-    handle: mainContent
-    instructions: ''
-    name: Hoofdcontent
-    searchable: true
-    settings:
-      contentTable: '{{%matrixcontent_maincontent}}'
-      maxBlocks: '1'
-      minBlocks: '1'
-      propagationMethod: all
-    translationKeyFormat: null
-    translationMethod: site
-    type: craft\fields\Matrix
   be6d8db1-6e50-4334-987c-ab524c903c0f:
     contentColumnType: text
     fieldGroup: null

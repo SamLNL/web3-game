@@ -1,8 +1,23 @@
-dateModified: 1620215823
+dateModified: 1629202360
 email:
   fromEmail: interactie@emotion.nl
   fromName: Biljoenbad
   transportType: craft\mail\transportadapters\Sendmail
+meta:
+  __names__:
+    1acb8b75-2d7d-4482-bea3-3ac911f39723: Openingstijden # Openingstijden
+    01ee3501-a0a7-4b13-b46a-308fdc395fd9: Team # Team
+    03ef6c73-3b14-4ae2-bf06-2b1d57cc6605: Voorzieningen # Voorzieningen
+    95b059f1-f990-49cf-a14c-22d089a7a2b5: Partners # Partners
+    4176b138-ab46-48c2-ba93-8f81e9d3c0df: Algemeen # Algemeen
+    4592cafe-d6ff-406b-9990-e551c95b62f0: Contact # Contact
+    5693e63b-62b7-400e-9b07-e9472ad8c06f: Activiteitenbad # Activiteitenbad
+    6576af27-2464-42a5-93ba-12b804de04f1: Header # Header
+    70182a37-5dc3-4cf6-aa27-b2c0f88c9dbc: Menu # Menu
+    c910b349-51e3-41a5-b45c-1c9a8c1d223f: Nieuws # Nieuws
+    e0e84f9d-b3be-4dd0-acf4-dcd4b5031a79: Social # Social
+    e4c41204-0640-4ca7-852a-e717c2b93d28: Wedstrijdbad # Wedstrijdbad
+    eab18fef-c4db-47d8-bb89-76ce961dc96b: Tarieven # Tarieven
 plugins:
   async-queue:
     edition: standard
@@ -95,5 +110,5 @@ system:
   edition: pro
   live: true
   name: Biljoenbad
-  schemaVersion: 3.5.13
+  schemaVersion: 3.7.7
   timeZone: Europe/Amsterdam

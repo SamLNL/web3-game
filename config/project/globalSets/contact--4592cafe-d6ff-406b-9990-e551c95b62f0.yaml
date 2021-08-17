@@ -83,3 +83,4 @@ fieldLayouts:
         sortOrder: 2
 handle: contact
 name: Contact
+sortOrder: 1

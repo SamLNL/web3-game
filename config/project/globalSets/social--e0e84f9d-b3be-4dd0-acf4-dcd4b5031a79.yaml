@@ -34,3 +34,4 @@ fieldLayouts:
         sortOrder: 1
 handle: social
 name: Social
+sortOrder: 4

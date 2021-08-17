@@ -116,77 +116,77 @@ permissions:
   - 'deletepeerentrydrafts:4e86169f-ead1-452f-ba4c-37205c2e86dc'
   - 'editpeerentrydrafts:4e86169f-ead1-452f-ba4c-37205c2e86dc'
   - 'editentries:4e86169f-ead1-452f-ba4c-37205c2e86dc'
-  - 'editglobalset:4592cafe-d6ff-406b-9990-e551c95b62f0'
-  - 'editglobalset:70182a37-5dc3-4cf6-aa27-b2c0f88c9dbc'
-  - 'editglobalset:1acb8b75-2d7d-4482-bea3-3ac911f39723'
-  - 'editglobalset:e0e84f9d-b3be-4dd0-acf4-dcd4b5031a79'
-  - 'editglobalset:eab18fef-c4db-47d8-bb89-76ce961dc96b'
-  - 'saveassetinvolume:6576af27-2464-42a5-93ba-12b804de04f1'
-  - 'createfoldersinvolume:6576af27-2464-42a5-93ba-12b804de04f1'
-  - 'deletefilesandfoldersinvolume:6576af27-2464-42a5-93ba-12b804de04f1'
-  - 'replacefilesinvolume:6576af27-2464-42a5-93ba-12b804de04f1'
-  - 'editimagesinvolume:6576af27-2464-42a5-93ba-12b804de04f1'
-  - 'editpeerfilesinvolume:6576af27-2464-42a5-93ba-12b804de04f1'
-  - 'replacepeerfilesinvolume:6576af27-2464-42a5-93ba-12b804de04f1'
-  - 'deletepeerfilesinvolume:6576af27-2464-42a5-93ba-12b804de04f1'
-  - 'editpeerimagesinvolume:6576af27-2464-42a5-93ba-12b804de04f1'
-  - 'viewpeerfilesinvolume:6576af27-2464-42a5-93ba-12b804de04f1'
-  - 'viewvolume:6576af27-2464-42a5-93ba-12b804de04f1'
-  - 'saveassetinvolume:4176b138-ab46-48c2-ba93-8f81e9d3c0df'
-  - 'createfoldersinvolume:4176b138-ab46-48c2-ba93-8f81e9d3c0df'
-  - 'deletefilesandfoldersinvolume:4176b138-ab46-48c2-ba93-8f81e9d3c0df'
-  - 'replacefilesinvolume:4176b138-ab46-48c2-ba93-8f81e9d3c0df'
-  - 'editimagesinvolume:4176b138-ab46-48c2-ba93-8f81e9d3c0df'
-  - 'editpeerfilesinvolume:4176b138-ab46-48c2-ba93-8f81e9d3c0df'
-  - 'replacepeerfilesinvolume:4176b138-ab46-48c2-ba93-8f81e9d3c0df'
-  - 'deletepeerfilesinvolume:4176b138-ab46-48c2-ba93-8f81e9d3c0df'
-  - 'editpeerimagesinvolume:4176b138-ab46-48c2-ba93-8f81e9d3c0df'
-  - 'viewpeerfilesinvolume:4176b138-ab46-48c2-ba93-8f81e9d3c0df'
-  - 'viewvolume:4176b138-ab46-48c2-ba93-8f81e9d3c0df'
-  - 'saveassetinvolume:c910b349-51e3-41a5-b45c-1c9a8c1d223f'
-  - 'createfoldersinvolume:c910b349-51e3-41a5-b45c-1c9a8c1d223f'
-  - 'deletefilesandfoldersinvolume:c910b349-51e3-41a5-b45c-1c9a8c1d223f'
-  - 'replacefilesinvolume:c910b349-51e3-41a5-b45c-1c9a8c1d223f'
-  - 'editimagesinvolume:c910b349-51e3-41a5-b45c-1c9a8c1d223f'
-  - 'editpeerfilesinvolume:c910b349-51e3-41a5-b45c-1c9a8c1d223f'
-  - 'replacepeerfilesinvolume:c910b349-51e3-41a5-b45c-1c9a8c1d223f'
-  - 'deletepeerfilesinvolume:c910b349-51e3-41a5-b45c-1c9a8c1d223f'
-  - 'editpeerimagesinvolume:c910b349-51e3-41a5-b45c-1c9a8c1d223f'
-  - 'viewpeerfilesinvolume:c910b349-51e3-41a5-b45c-1c9a8c1d223f'
-  - 'viewvolume:c910b349-51e3-41a5-b45c-1c9a8c1d223f'
-  - 'saveassetinvolume:03ef6c73-3b14-4ae2-bf06-2b1d57cc6605'
-  - 'createfoldersinvolume:03ef6c73-3b14-4ae2-bf06-2b1d57cc6605'
-  - 'deletefilesandfoldersinvolume:03ef6c73-3b14-4ae2-bf06-2b1d57cc6605'
-  - 'replacefilesinvolume:03ef6c73-3b14-4ae2-bf06-2b1d57cc6605'
-  - 'editimagesinvolume:03ef6c73-3b14-4ae2-bf06-2b1d57cc6605'
-  - 'editpeerfilesinvolume:03ef6c73-3b14-4ae2-bf06-2b1d57cc6605'
-  - 'replacepeerfilesinvolume:03ef6c73-3b14-4ae2-bf06-2b1d57cc6605'
-  - 'deletepeerfilesinvolume:03ef6c73-3b14-4ae2-bf06-2b1d57cc6605'
-  - 'editpeerimagesinvolume:03ef6c73-3b14-4ae2-bf06-2b1d57cc6605'
-  - 'viewpeerfilesinvolume:03ef6c73-3b14-4ae2-bf06-2b1d57cc6605'
-  - 'viewvolume:03ef6c73-3b14-4ae2-bf06-2b1d57cc6605'
-  - 'saveassetinvolume:95b059f1-f990-49cf-a14c-22d089a7a2b5'
-  - 'createfoldersinvolume:95b059f1-f990-49cf-a14c-22d089a7a2b5'
-  - 'deletefilesandfoldersinvolume:95b059f1-f990-49cf-a14c-22d089a7a2b5'
-  - 'replacefilesinvolume:95b059f1-f990-49cf-a14c-22d089a7a2b5'
-  - 'editimagesinvolume:95b059f1-f990-49cf-a14c-22d089a7a2b5'
-  - 'editpeerfilesinvolume:95b059f1-f990-49cf-a14c-22d089a7a2b5'
-  - 'replacepeerfilesinvolume:95b059f1-f990-49cf-a14c-22d089a7a2b5'
-  - 'deletepeerfilesinvolume:95b059f1-f990-49cf-a14c-22d089a7a2b5'
-  - 'editpeerimagesinvolume:95b059f1-f990-49cf-a14c-22d089a7a2b5'
-  - 'viewpeerfilesinvolume:95b059f1-f990-49cf-a14c-22d089a7a2b5'
-  - 'viewvolume:95b059f1-f990-49cf-a14c-22d089a7a2b5'
-  - 'saveassetinvolume:01ee3501-a0a7-4b13-b46a-308fdc395fd9'
-  - 'createfoldersinvolume:01ee3501-a0a7-4b13-b46a-308fdc395fd9'
-  - 'deletefilesandfoldersinvolume:01ee3501-a0a7-4b13-b46a-308fdc395fd9'
-  - 'replacefilesinvolume:01ee3501-a0a7-4b13-b46a-308fdc395fd9'
-  - 'editimagesinvolume:01ee3501-a0a7-4b13-b46a-308fdc395fd9'
-  - 'editpeerfilesinvolume:01ee3501-a0a7-4b13-b46a-308fdc395fd9'
-  - 'replacepeerfilesinvolume:01ee3501-a0a7-4b13-b46a-308fdc395fd9'
-  - 'deletepeerfilesinvolume:01ee3501-a0a7-4b13-b46a-308fdc395fd9'
-  - 'editpeerimagesinvolume:01ee3501-a0a7-4b13-b46a-308fdc395fd9'
-  - 'viewpeerfilesinvolume:01ee3501-a0a7-4b13-b46a-308fdc395fd9'
-  - 'viewvolume:01ee3501-a0a7-4b13-b46a-308fdc395fd9'
+  - 'editglobalset:4592cafe-d6ff-406b-9990-e551c95b62f0' # Contact
+  - 'editglobalset:70182a37-5dc3-4cf6-aa27-b2c0f88c9dbc' # Menu
+  - 'editglobalset:1acb8b75-2d7d-4482-bea3-3ac911f39723' # Openingstijden
+  - 'editglobalset:e0e84f9d-b3be-4dd0-acf4-dcd4b5031a79' # Social
+  - 'editglobalset:eab18fef-c4db-47d8-bb89-76ce961dc96b' # Tarieven
+  - 'saveassetinvolume:6576af27-2464-42a5-93ba-12b804de04f1' # Header
+  - 'createfoldersinvolume:6576af27-2464-42a5-93ba-12b804de04f1' # Header
+  - 'deletefilesandfoldersinvolume:6576af27-2464-42a5-93ba-12b804de04f1' # Header
+  - 'replacefilesinvolume:6576af27-2464-42a5-93ba-12b804de04f1' # Header
+  - 'editimagesinvolume:6576af27-2464-42a5-93ba-12b804de04f1' # Header
+  - 'editpeerfilesinvolume:6576af27-2464-42a5-93ba-12b804de04f1' # Header
+  - 'replacepeerfilesinvolume:6576af27-2464-42a5-93ba-12b804de04f1' # Header
+  - 'deletepeerfilesinvolume:6576af27-2464-42a5-93ba-12b804de04f1' # Header
+  - 'editpeerimagesinvolume:6576af27-2464-42a5-93ba-12b804de04f1' # Header
+  - 'viewpeerfilesinvolume:6576af27-2464-42a5-93ba-12b804de04f1' # Header
+  - 'viewvolume:6576af27-2464-42a5-93ba-12b804de04f1' # Header
+  - 'saveassetinvolume:4176b138-ab46-48c2-ba93-8f81e9d3c0df' # Algemeen
+  - 'createfoldersinvolume:4176b138-ab46-48c2-ba93-8f81e9d3c0df' # Algemeen
+  - 'deletefilesandfoldersinvolume:4176b138-ab46-48c2-ba93-8f81e9d3c0df' # Algemeen
+  - 'replacefilesinvolume:4176b138-ab46-48c2-ba93-8f81e9d3c0df' # Algemeen
+  - 'editimagesinvolume:4176b138-ab46-48c2-ba93-8f81e9d3c0df' # Algemeen
+  - 'editpeerfilesinvolume:4176b138-ab46-48c2-ba93-8f81e9d3c0df' # Algemeen
+  - 'replacepeerfilesinvolume:4176b138-ab46-48c2-ba93-8f81e9d3c0df' # Algemeen
+  - 'deletepeerfilesinvolume:4176b138-ab46-48c2-ba93-8f81e9d3c0df' # Algemeen
+  - 'editpeerimagesinvolume:4176b138-ab46-48c2-ba93-8f81e9d3c0df' # Algemeen
+  - 'viewpeerfilesinvolume:4176b138-ab46-48c2-ba93-8f81e9d3c0df' # Algemeen
+  - 'viewvolume:4176b138-ab46-48c2-ba93-8f81e9d3c0df' # Algemeen
+  - 'saveassetinvolume:c910b349-51e3-41a5-b45c-1c9a8c1d223f' # Nieuws
+  - 'createfoldersinvolume:c910b349-51e3-41a5-b45c-1c9a8c1d223f' # Nieuws
+  - 'deletefilesandfoldersinvolume:c910b349-51e3-41a5-b45c-1c9a8c1d223f' # Nieuws
+  - 'replacefilesinvolume:c910b349-51e3-41a5-b45c-1c9a8c1d223f' # Nieuws
+  - 'editimagesinvolume:c910b349-51e3-41a5-b45c-1c9a8c1d223f' # Nieuws
+  - 'editpeerfilesinvolume:c910b349-51e3-41a5-b45c-1c9a8c1d223f' # Nieuws
+  - 'replacepeerfilesinvolume:c910b349-51e3-41a5-b45c-1c9a8c1d223f' # Nieuws
+  - 'deletepeerfilesinvolume:c910b349-51e3-41a5-b45c-1c9a8c1d223f' # Nieuws
+  - 'editpeerimagesinvolume:c910b349-51e3-41a5-b45c-1c9a8c1d223f' # Nieuws
+  - 'viewpeerfilesinvolume:c910b349-51e3-41a5-b45c-1c9a8c1d223f' # Nieuws
+  - 'viewvolume:c910b349-51e3-41a5-b45c-1c9a8c1d223f' # Nieuws
+  - 'saveassetinvolume:03ef6c73-3b14-4ae2-bf06-2b1d57cc6605' # Voorzieningen
+  - 'createfoldersinvolume:03ef6c73-3b14-4ae2-bf06-2b1d57cc6605' # Voorzieningen
+  - 'deletefilesandfoldersinvolume:03ef6c73-3b14-4ae2-bf06-2b1d57cc6605' # Voorzieningen
+  - 'replacefilesinvolume:03ef6c73-3b14-4ae2-bf06-2b1d57cc6605' # Voorzieningen
+  - 'editimagesinvolume:03ef6c73-3b14-4ae2-bf06-2b1d57cc6605' # Voorzieningen
+  - 'editpeerfilesinvolume:03ef6c73-3b14-4ae2-bf06-2b1d57cc6605' # Voorzieningen
+  - 'replacepeerfilesinvolume:03ef6c73-3b14-4ae2-bf06-2b1d57cc6605' # Voorzieningen
+  - 'deletepeerfilesinvolume:03ef6c73-3b14-4ae2-bf06-2b1d57cc6605' # Voorzieningen
+  - 'editpeerimagesinvolume:03ef6c73-3b14-4ae2-bf06-2b1d57cc6605' # Voorzieningen
+  - 'viewpeerfilesinvolume:03ef6c73-3b14-4ae2-bf06-2b1d57cc6605' # Voorzieningen
+  - 'viewvolume:03ef6c73-3b14-4ae2-bf06-2b1d57cc6605' # Voorzieningen
+  - 'saveassetinvolume:95b059f1-f990-49cf-a14c-22d089a7a2b5' # Partners
+  - 'createfoldersinvolume:95b059f1-f990-49cf-a14c-22d089a7a2b5' # Partners
+  - 'deletefilesandfoldersinvolume:95b059f1-f990-49cf-a14c-22d089a7a2b5' # Partners
+  - 'replacefilesinvolume:95b059f1-f990-49cf-a14c-22d089a7a2b5' # Partners
+  - 'editimagesinvolume:95b059f1-f990-49cf-a14c-22d089a7a2b5' # Partners
+  - 'editpeerfilesinvolume:95b059f1-f990-49cf-a14c-22d089a7a2b5' # Partners
+  - 'replacepeerfilesinvolume:95b059f1-f990-49cf-a14c-22d089a7a2b5' # Partners
+  - 'deletepeerfilesinvolume:95b059f1-f990-49cf-a14c-22d089a7a2b5' # Partners
+  - 'editpeerimagesinvolume:95b059f1-f990-49cf-a14c-22d089a7a2b5' # Partners
+  - 'viewpeerfilesinvolume:95b059f1-f990-49cf-a14c-22d089a7a2b5' # Partners
+  - 'viewvolume:95b059f1-f990-49cf-a14c-22d089a7a2b5' # Partners
+  - 'saveassetinvolume:01ee3501-a0a7-4b13-b46a-308fdc395fd9' # Team
+  - 'createfoldersinvolume:01ee3501-a0a7-4b13-b46a-308fdc395fd9' # Team
+  - 'deletefilesandfoldersinvolume:01ee3501-a0a7-4b13-b46a-308fdc395fd9' # Team
+  - 'replacefilesinvolume:01ee3501-a0a7-4b13-b46a-308fdc395fd9' # Team
+  - 'editimagesinvolume:01ee3501-a0a7-4b13-b46a-308fdc395fd9' # Team
+  - 'editpeerfilesinvolume:01ee3501-a0a7-4b13-b46a-308fdc395fd9' # Team
+  - 'replacepeerfilesinvolume:01ee3501-a0a7-4b13-b46a-308fdc395fd9' # Team
+  - 'deletepeerfilesinvolume:01ee3501-a0a7-4b13-b46a-308fdc395fd9' # Team
+  - 'editpeerimagesinvolume:01ee3501-a0a7-4b13-b46a-308fdc395fd9' # Team
+  - 'viewpeerfilesinvolume:01ee3501-a0a7-4b13-b46a-308fdc395fd9' # Team
+  - 'viewvolume:01ee3501-a0a7-4b13-b46a-308fdc395fd9' # Team
   - 'navigation-managenav:085d0005-6965-482f-aae6-7c63000e6845'
   - 'navigation-managenav:42e1706f-1fc6-4ff7-aa02-8db53c4aacd9'
   - 'navigation-managenav:43111301-fd79-492c-97e5-09499765b5a3'

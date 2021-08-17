@@ -43,47 +43,6 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  07352ea8-c711-4288-b354-fd105c7e1e3b:
-    contentColumnType: text
-    fieldGroup: null
-    handle: ctaMicro
-    instructions: 'Micro tekst onder de knop wordt alleen getoond wanneer CTA is ingevuld'
-    name: 'CTA - micro tekst'
-    searchable: true
-    settings:
-      byteLimit: null
-      charLimit: null
-      code: ''
-      columnType: null
-      initialRows: '4'
-      multiline: ''
-      placeholder: ''
-      uiMode: normal
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\PlainText
-  34aa52c5-65c1-4806-9311-be0039e4d0e9:
-    contentColumnType: string
-    fieldGroup: null
-    handle: questions
-    instructions: ''
-    name: Vragen
-    searchable: true
-    settings:
-      allowSelfRelations: false
-      limit: ''
-      localizeRelations: false
-      selectionLabel: ''
-      showSiteMenu: true
-      source: null
-      sources:
-        - 'section:138fd91c-e286-44c3-823f-e2380e31883c'
-      targetSiteId: null
-      validateRelatedElements: false
-      viewMode: null
-    translationKeyFormat: null
-    translationMethod: site
-    type: craft\fields\Entries
   4ea7444c-b251-489a-af81-91290d313091:
     contentColumnType: text
     fieldGroup: null
@@ -236,6 +195,47 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: typedlinkfield\fields\LinkField
+  34aa52c5-65c1-4806-9311-be0039e4d0e9:
+    contentColumnType: string
+    fieldGroup: null
+    handle: questions
+    instructions: ''
+    name: Vragen
+    searchable: true
+    settings:
+      allowSelfRelations: false
+      limit: ''
+      localizeRelations: false
+      selectionLabel: ''
+      showSiteMenu: true
+      source: null
+      sources:
+        - 'section:138fd91c-e286-44c3-823f-e2380e31883c'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+  07352ea8-c711-4288-b354-fd105c7e1e3b:
+    contentColumnType: text
+    fieldGroup: null
+    handle: ctaMicro
+    instructions: 'Micro tekst onder de knop wordt alleen getoond wanneer CTA is ingevuld'
+    name: 'CTA - micro tekst'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
 handle: faq
 name: FAQ
 sortOrder: 9

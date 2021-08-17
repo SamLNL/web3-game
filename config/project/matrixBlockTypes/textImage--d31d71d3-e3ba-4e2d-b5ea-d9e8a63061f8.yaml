@@ -61,25 +61,6 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  11c18374-6b81-42dc-b7c3-52a5b4ccce8a:
-    contentColumnType: text
-    fieldGroup: null
-    handle: cta1Micro
-    instructions: 'Micro tekst onder de knop wordt alleen getoond wanneer CTA1 is ingevuld'
-    name: 'CTA1 - micro tekst'
-    searchable: true
-    settings:
-      byteLimit: null
-      charLimit: null
-      code: ''
-      columnType: null
-      initialRows: '4'
-      multiline: ''
-      placeholder: ''
-      uiMode: normal
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\PlainText
   1a4e294f-a7dd-49a6-b9ac-2b0fe65e31ca:
     contentColumnType: text
     fieldGroup: null
@@ -204,34 +185,6 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: typedlinkfield\fields\LinkField
-  26b5c858-2635-4e8c-8063-3cbf12e4f122:
-    contentColumnType: text
-    fieldGroup: null
-    handle: text
-    instructions: ''
-    name: Tekst
-    searchable: true
-    settings:
-      availableTransforms: '*'
-      availableVolumes: '*'
-      cleanupHtml: true
-      columnType: text
-      configSelectionMode: choose
-      defaultTransform: ''
-      manualConfig: ''
-      purifierConfig: ''
-      purifyHtml: '1'
-      redactorConfig: ''
-      removeEmptyTags: '1'
-      removeInlineStyles: '1'
-      removeNbsp: '1'
-      showHtmlButtonForNonAdmins: ''
-      showUnpermittedFiles: false
-      showUnpermittedVolumes: false
-      uiMode: enlarged
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\redactor\Field
   2e97d507-8360-45a3-b8b2-7219954a9301:
     contentColumnType: text
     fieldGroup: null
@@ -377,6 +330,53 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
+  11c18374-6b81-42dc-b7c3-52a5b4ccce8a:
+    contentColumnType: text
+    fieldGroup: null
+    handle: cta1Micro
+    instructions: 'Micro tekst onder de knop wordt alleen getoond wanneer CTA1 is ingevuld'
+    name: 'CTA1 - micro tekst'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  26b5c858-2635-4e8c-8063-3cbf12e4f122:
+    contentColumnType: text
+    fieldGroup: null
+    handle: text
+    instructions: ''
+    name: Tekst
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: ''
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showHtmlButtonForNonAdmins: ''
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      uiMode: enlarged
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
   afe6edf4-4a10-4b5c-a5a9-3011b9f07101:
     contentColumnType: string
     fieldGroup: null
@@ -389,7 +389,7 @@ fields:
       allowUploads: true
       allowedKinds:
         - image
-      defaultUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1'
+      defaultUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1' # Header
       defaultUploadLocationSubpath: ''
       limit: '1'
       localizeRelations: false
@@ -399,7 +399,7 @@ fields:
       showSiteMenu: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
-      singleUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1'
+      singleUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1' # Header
       singleUploadLocationSubpath: ''
       source: null
       sources: '*'

@@ -61,6 +61,130 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
+  8e1f1a36-a815-49e1-a2ff-e2724c2e94fb:
+    contentColumnType: text
+    fieldGroup: null
+    handle: cta1
+    instructions: ''
+    name: 'CTA 1'
+    searchable: false
+    settings:
+      allowCustomText: '1'
+      allowTarget: '1'
+      allowedLinkNames:
+        1: asset
+        4: entry
+        6: custom
+        7: email
+        8: tel
+        9: url
+      autoNoReferrer: '1'
+      defaultLinkName: entry
+      defaultText: ''
+      enableAriaLabel: ''
+      enableTitle: '1'
+      typeSettings:
+        __assoc__:
+          -
+            - asset
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+          -
+            - category
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+          -
+            - user
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+          -
+            - entry
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+          -
+            - site
+            -
+              __assoc__:
+                -
+                  - sites
+                  - '*'
+          -
+            - custom
+            -
+              __assoc__:
+                -
+                  - disableValidation
+                  - ''
+                -
+                  - allowAliases
+                  - ''
+          -
+            - email
+            -
+              __assoc__:
+                -
+                  - disableValidation
+                  - ''
+                -
+                  - allowAliases
+                  - ''
+          -
+            - tel
+            -
+              __assoc__:
+                -
+                  - disableValidation
+                  - ''
+                -
+                  - allowAliases
+                  - ''
+          -
+            - url
+            -
+              __assoc__:
+                -
+                  - disableValidation
+                  - ''
+                -
+                  - allowAliases
+                  - ''
+          -
+            - solspaceCalendar-event
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: typedlinkfield\fields\LinkField
   33ed9965-6c00-4756-8383-a62d32656c91:
     contentColumnType: text
     fieldGroup: null
@@ -213,130 +337,6 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Lightswitch
-  8e1f1a36-a815-49e1-a2ff-e2724c2e94fb:
-    contentColumnType: text
-    fieldGroup: null
-    handle: cta1
-    instructions: ''
-    name: 'CTA 1'
-    searchable: false
-    settings:
-      allowCustomText: '1'
-      allowTarget: '1'
-      allowedLinkNames:
-        1: asset
-        4: entry
-        6: custom
-        7: email
-        8: tel
-        9: url
-      autoNoReferrer: '1'
-      defaultLinkName: entry
-      defaultText: ''
-      enableAriaLabel: ''
-      enableTitle: '1'
-      typeSettings:
-        __assoc__:
-          -
-            - asset
-            -
-              __assoc__:
-                -
-                  - sources
-                  - '*'
-                -
-                  - allowCustomQuery
-                  - ''
-          -
-            - category
-            -
-              __assoc__:
-                -
-                  - sources
-                  - '*'
-                -
-                  - allowCustomQuery
-                  - ''
-          -
-            - user
-            -
-              __assoc__:
-                -
-                  - sources
-                  - '*'
-                -
-                  - allowCustomQuery
-                  - ''
-          -
-            - entry
-            -
-              __assoc__:
-                -
-                  - sources
-                  - '*'
-                -
-                  - allowCustomQuery
-                  - ''
-          -
-            - site
-            -
-              __assoc__:
-                -
-                  - sites
-                  - '*'
-          -
-            - custom
-            -
-              __assoc__:
-                -
-                  - disableValidation
-                  - ''
-                -
-                  - allowAliases
-                  - ''
-          -
-            - email
-            -
-              __assoc__:
-                -
-                  - disableValidation
-                  - ''
-                -
-                  - allowAliases
-                  - ''
-          -
-            - tel
-            -
-              __assoc__:
-                -
-                  - disableValidation
-                  - ''
-                -
-                  - allowAliases
-                  - ''
-          -
-            - url
-            -
-              __assoc__:
-                -
-                  - disableValidation
-                  - ''
-                -
-                  - allowAliases
-                  - ''
-          -
-            - solspaceCalendar-event
-            -
-              __assoc__:
-                -
-                  - sources
-                  - '*'
-                -
-                  - allowCustomQuery
-                  - ''
-    translationKeyFormat: null
-    translationMethod: none
-    type: typedlinkfield\fields\LinkField
   c952cf55-bb3d-4176-99a3-f1727f3a672d:
     contentColumnType: text
     fieldGroup: null

@@ -61,25 +61,6 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  00797fb6-aa77-4473-8d43-0783dfbe66ca:
-    contentColumnType: text
-    fieldGroup: null
-    handle: heading
-    instructions: ''
-    name: Titel
-    searchable: true
-    settings:
-      byteLimit: null
-      charLimit: null
-      code: ''
-      columnType: null
-      initialRows: '2'
-      multiline: '1'
-      placeholder: ''
-      uiMode: normal
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\PlainText
   0dbc7a77-3a60-4b1f-8746-b9be1cc87e55:
     contentColumnType: boolean
     fieldGroup: null
@@ -94,144 +75,6 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Lightswitch
-  1752ec7a-9652-4157-a83f-57f86d4ecc32:
-    contentColumnType: boolean
-    fieldGroup: null
-    handle: cta2Primary
-    instructions: 'Moet de knop de primaire style hebben? (geel)'
-    name: 'CTA 2 - Primair'
-    searchable: true
-    settings:
-      default: false
-      offLabel: null
-      onLabel: null
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\Lightswitch
-  35d71cfd-86ea-4f36-ab4a-4ba7aefcf7c5:
-    contentColumnType: text
-    fieldGroup: null
-    handle: cta2
-    instructions: ''
-    name: 'CTA 2'
-    searchable: true
-    settings:
-      allowCustomText: '1'
-      allowTarget: '1'
-      allowedLinkNames:
-        1: asset
-        4: entry
-        6: custom
-        7: email
-        8: tel
-        9: url
-      autoNoReferrer: ''
-      defaultLinkName: entry
-      defaultText: ''
-      enableAriaLabel: ''
-      enableTitle: '1'
-      typeSettings:
-        __assoc__:
-          -
-            - asset
-            -
-              __assoc__:
-                -
-                  - sources
-                  - '*'
-                -
-                  - allowCustomQuery
-                  - ''
-          -
-            - category
-            -
-              __assoc__:
-                -
-                  - sources
-                  - '*'
-                -
-                  - allowCustomQuery
-                  - ''
-          -
-            - user
-            -
-              __assoc__:
-                -
-                  - sources
-                  - '*'
-                -
-                  - allowCustomQuery
-                  - ''
-          -
-            - entry
-            -
-              __assoc__:
-                -
-                  - sources
-                  - '*'
-                -
-                  - allowCustomQuery
-                  - ''
-          -
-            - site
-            -
-              __assoc__:
-                -
-                  - sites
-                  - '*'
-          -
-            - custom
-            -
-              __assoc__:
-                -
-                  - disableValidation
-                  - ''
-                -
-                  - allowAliases
-                  - ''
-          -
-            - email
-            -
-              __assoc__:
-                -
-                  - disableValidation
-                  - ''
-                -
-                  - allowAliases
-                  - ''
-          -
-            - tel
-            -
-              __assoc__:
-                -
-                  - disableValidation
-                  - ''
-                -
-                  - allowAliases
-                  - ''
-          -
-            - url
-            -
-              __assoc__:
-                -
-                  - disableValidation
-                  - ''
-                -
-                  - allowAliases
-                  - ''
-          -
-            - solspaceCalendar-event
-            -
-              __assoc__:
-                -
-                  - sources
-                  - '*'
-                -
-                  - allowCustomQuery
-                  - ''
-    translationKeyFormat: null
-    translationMethod: none
-    type: typedlinkfield\fields\LinkField
   3ce9c921-1fa9-45dc-a1d4-51c401bcf677:
     contentColumnType: text
     fieldGroup: null
@@ -356,6 +199,163 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: typedlinkfield\fields\LinkField
+  35d71cfd-86ea-4f36-ab4a-4ba7aefcf7c5:
+    contentColumnType: text
+    fieldGroup: null
+    handle: cta2
+    instructions: ''
+    name: 'CTA 2'
+    searchable: true
+    settings:
+      allowCustomText: '1'
+      allowTarget: '1'
+      allowedLinkNames:
+        1: asset
+        4: entry
+        6: custom
+        7: email
+        8: tel
+        9: url
+      autoNoReferrer: ''
+      defaultLinkName: entry
+      defaultText: ''
+      enableAriaLabel: ''
+      enableTitle: '1'
+      typeSettings:
+        __assoc__:
+          -
+            - asset
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+          -
+            - category
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+          -
+            - user
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+          -
+            - entry
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+          -
+            - site
+            -
+              __assoc__:
+                -
+                  - sites
+                  - '*'
+          -
+            - custom
+            -
+              __assoc__:
+                -
+                  - disableValidation
+                  - ''
+                -
+                  - allowAliases
+                  - ''
+          -
+            - email
+            -
+              __assoc__:
+                -
+                  - disableValidation
+                  - ''
+                -
+                  - allowAliases
+                  - ''
+          -
+            - tel
+            -
+              __assoc__:
+                -
+                  - disableValidation
+                  - ''
+                -
+                  - allowAliases
+                  - ''
+          -
+            - url
+            -
+              __assoc__:
+                -
+                  - disableValidation
+                  - ''
+                -
+                  - allowAliases
+                  - ''
+          -
+            - solspaceCalendar-event
+            -
+              __assoc__:
+                -
+                  - sources
+                  - '*'
+                -
+                  - allowCustomQuery
+                  - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: typedlinkfield\fields\LinkField
+  00797fb6-aa77-4473-8d43-0783dfbe66ca:
+    contentColumnType: text
+    fieldGroup: null
+    handle: heading
+    instructions: ''
+    name: Titel
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '2'
+      multiline: '1'
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  1752ec7a-9652-4157-a83f-57f86d4ecc32:
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: cta2Primary
+    instructions: 'Moet de knop de primaire style hebben? (geel)'
+    name: 'CTA 2 - Primair'
+    searchable: true
+    settings:
+      default: false
+      offLabel: null
+      onLabel: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
   e2db44f5-6f00-49ea-9f27-da4135c80bf6:
     contentColumnType: string
     fieldGroup: null
@@ -368,7 +368,7 @@ fields:
       allowUploads: true
       allowedKinds:
         - image
-      defaultUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1'
+      defaultUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1' # Header
       defaultUploadLocationSubpath: ''
       limit: '1'
       localizeRelations: false
@@ -378,7 +378,7 @@ fields:
       showSiteMenu: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
-      singleUploadLocationSource: 'volume:4176b138-ab46-48c2-ba93-8f81e9d3c0df'
+      singleUploadLocationSource: 'volume:4176b138-ab46-48c2-ba93-8f81e9d3c0df' # Algemeen
       singleUploadLocationSubpath: ''
       source: null
       sources: '*'

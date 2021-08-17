@@ -62,6 +62,20 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
+  e4e34eb6-61ee-45c2-87d2-e5844de66f42:
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: columnTitle
+    instructions: 'Moet de eerste rij van de tabel als hoofdkolom dienen'
+    name: 'Kolom titels'
+    searchable: true
+    settings:
+      default: true
+      offLabel: null
+      onLabel: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
   e1426067-79a5-4525-903a-b880012b9699:
     contentColumnType: text
     fieldGroup: null
@@ -158,20 +172,6 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Table
-  e4e34eb6-61ee-45c2-87d2-e5844de66f42:
-    contentColumnType: boolean
-    fieldGroup: null
-    handle: columnTitle
-    instructions: 'Moet de eerste rij van de tabel als hoofdkolom dienen'
-    name: 'Kolom titels'
-    searchable: true
-    settings:
-      default: true
-      offLabel: null
-      onLabel: null
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\Lightswitch
 handle: table
 name: Tabel
 sortOrder: 12

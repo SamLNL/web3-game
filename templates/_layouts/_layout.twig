@@ -61,9 +61,6 @@
     {{ craft.twigpack.includeCssModule("styles.min.css") }}
   {% endif %}
 
-  {{ craft.twigpack.includeSafariNomoduleFix() }}
-  {{ craft.twigpack.includeJsModule("main.js", true) }}
-
   {% if not craft.app.config.general.devMode %}
     {# -- Google Analytics -- #}
     <script>

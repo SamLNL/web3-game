@@ -16,3 +16,4 @@ fieldLayouts:
         sortOrder: 1
 handle: prices
 name: Tarieven
+sortOrder: 5

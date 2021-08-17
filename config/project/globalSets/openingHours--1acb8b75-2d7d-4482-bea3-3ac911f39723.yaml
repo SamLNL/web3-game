@@ -29,3 +29,4 @@ fieldLayouts:
         sortOrder: 2
 handle: openingHours
 name: Openingstijden
+sortOrder: 3
