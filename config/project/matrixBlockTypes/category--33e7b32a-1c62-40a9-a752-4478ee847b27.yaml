@@ -54,7 +54,7 @@ fields:
       allowSelfRelations: false
       allowUploads: true
       allowedKinds: null
-      defaultUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1' # Header
+      defaultUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1'
       defaultUploadLocationSubpath: ''
       limit: '1'
       localizeRelations: false
@@ -64,11 +64,11 @@ fields:
       showSiteMenu: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
-      singleUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1' # Header
+      singleUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1'
       singleUploadLocationSubpath: ''
       source: null
       sources:
-        - 'volume:6576af27-2464-42a5-93ba-12b804de04f1' # Header
+        - 'volume:6576af27-2464-42a5-93ba-12b804de04f1'
       targetSiteId: null
       useSingleFolder: true
       validateRelatedElements: false

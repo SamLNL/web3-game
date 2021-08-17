@@ -1,0 +1,35 @@
+allowRepeatingEvents: true
+color: '#C3E0E4'
+description: 'Rooster van Activiteitenbad'
+descriptionFieldHandle: '0'
+fieldLayout:
+  tabs:
+    -
+      elements:
+        -
+          fieldUid: 25aa4096-013f-4913-8ad6-8bb1dd1c2889
+          instructions: null
+          label: null
+          required: false
+          tip: null
+          type: craft\fieldlayoutelements\CustomField
+          warning: null
+          width: 100
+      name: Gegevens
+      sortOrder: 1
+  uid: 9f8a8681-488a-4a06-a3c5-738c797d48fc
+handle: activityPool
+hasTitleField: true
+icsHash: null
+icsTimezone: floating
+locationFieldHandle: '0'
+name: Activiteitenbad
+siteSettings:
+  d078bb86-fa41-4dc4-b06d-e576f2350563:
+    enabledByDefault: true
+    hasUrls: false
+    siteId: 521def3a-78c9-4e7b-8cb5-40b18c2c0705
+    template: null
+    uriFormat: null
+titleFormat: ''
+titleLabel: Title
