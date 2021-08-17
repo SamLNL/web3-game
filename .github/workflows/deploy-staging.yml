@@ -51,7 +51,7 @@ jobs:
       - name: Setup Staging Environment
         run: |
           echo "SSH_HOST=${{ secrets.STAGING_REMOTE_USER }}@${{ secrets.STAGING_HOST }}" >> $GITHUB_ENV
-          echo "SSH_OPTS=-i ~/.ssh/deploy_key" >> $GITHUB_ENV
+          echo "SSH_OPTS=-i ~/.ssh/id_rsa" >> $GITHUB_ENV
           echo "DEPLOY_DIR=${{ secrets.STAGING_ROOT }}" >> $GITHUB_ENV
           echo "CRAFT_ENVIRONMENT=staging" >> $GITHUB_ENV
           echo "DB_USER=${{ secrets.STAGING_DB_USER }}" >> $GITHUB_ENV
@@ -81,6 +81,6 @@ jobs:
           destinationPath: './criticalcss/'
           configPath: './critical-conf.json'
           sync: 'true'
-          sshPrivateKeyPath: '~/.ssh/antagonist-ssh'
+          sshPrivateKeyPath: '~/.ssh/id_rsa'
           sshHost: ${{ secrets.STAGING_REMOTE_USER }}@${{ secrets.STAGING_HOST }}
           targetDir: './${DEPLOY_DIR}/public_html/assets/criticalcss/'

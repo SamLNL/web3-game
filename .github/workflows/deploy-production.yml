@@ -51,7 +51,7 @@ jobs:
       - name: Setup Production Environment
         run: |
           echo "SSH_HOST=${{ secrets.PRODUCTION_REMOTE_USER }}@${{ secrets.PRODUCTION_HOST }}" >> $GITHUB_ENV
-          echo "SSH_OPTS=-i ~/.ssh/antagonist-ssh" >> $GITHUB_ENV
+          echo "SSH_OPTS=-i ~/.ssh/id_rsa" >> $GITHUB_ENV
           echo "DEPLOY_DIR=${{ secrets.PRODUCTION_ROOT }}" >> $GITHUB_ENV
           echo "CRAFT_ENVIRONMENT=production" >> $GITHUB_ENV
           echo "DB_USER=${{ secrets.PRODUCTION_DB_USER }}" >> $GITHUB_ENV
@@ -80,6 +80,6 @@ jobs:
           destinationPath: './criticalcss/'
           configPath: './critical-conf.json'
           sync: 'true'
-          sshPrivateKeyPath: '~/.ssh/antagonist-ssh'
+          sshPrivateKeyPath: '~/.ssh/id_rsa'
           sshHost: ${{ secrets.PRODUCTION_REMOTE_USER }}@${{ secrets.PRODUCTION_HOST }}
           targetDir: './${DEPLOY_DIR}/public_html/assets/criticalcss/'
