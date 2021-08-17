@@ -11,7 +11,7 @@ return [
   'interlace' => true, // false, true ('line'), 'none', 'line', 'plane', 'partition'
   'allowUpscale' => true,
   'convertToRGB' => true, // Should images be converted to RGB?
-  'useCwebp' => true,
+  'useCwebp' => false,
 
   'fillTransforms' => false,
   'fillAttribute' => 'width', // this could be any attribute that is numeric
