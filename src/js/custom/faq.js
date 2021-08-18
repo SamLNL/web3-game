@@ -1,4 +1,4 @@
-import {sendGAEvent} from '../analytics/analytics';
+import {sendGAEvent} from '../analytics/analytics-utils';
 const faqs = document.querySelectorAll('.js-faq');
 
 for(let i = 0;i < faqs.length;i++) {

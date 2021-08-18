@@ -4,7 +4,7 @@
  # Author: sam
  ========================================================================== */
 import Swiper from 'swiper';
-import {sendGAEvent} from '../../analytics/analytics';
+import {sendGAEvent} from '../../analytics/analytics-utils';
 
 let swiperBlocks = {};
 let ctaBlocks = document.querySelectorAll('.js-cta-blocks');

@@ -5,7 +5,7 @@
  ========================================================================== */
 
 import Swiper from 'swiper';
-import {sendGAEvent} from '../../analytics/analytics';
+import {sendGAEvent} from '../../analytics/analytics-utils';
 
 let sliders = document.querySelectorAll('.js-slider');
 let swipers = {};

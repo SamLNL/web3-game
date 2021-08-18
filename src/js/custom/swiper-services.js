@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import {sendGAEvent} from '../analytics/analytics';
+import {sendGAEvent} from '../analytics/analytics-utils';
 
 let swiperNav = {
   getNewActive: function(index) {

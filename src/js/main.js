@@ -10,7 +10,7 @@
  */
 
 export const main = async () => {
-  const analytics = await import(/* webpackChunkName: "analytics" */ "./analytics/analytics");
+  const { analyticsUtils } = await import('./analytics/analytics-utils');
   import ("./bootstrap/index");
   import ("./custom/nav");
 
@@ -68,5 +68,5 @@ export const main = async () => {
   if(document.querySelector('.js-youtube-gdpr-form')) {
     import(/* webpackChunkName: "youtube" */ "./custom/components/youtube");
   }
-  analytics.init();
+  analyticsUtils();
 };

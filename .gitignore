@@ -170,10 +170,10 @@ Temporary Items
 !/storage/.gitkeep
 
 # ASSETS
-/public/assets/*
-/public/favicon.ico
-/public/manifest.webapp
-/public/manifest.json
+/public_html/assets/*
+/public_html/favicon.ico
+/public_html/manifest.webapp
+/public_html/manifest.json
 /build/
 
 # STYLEGUIDE
@@ -196,12 +196,12 @@ prepros-6.config
 
 # MEDIA
 # Uploads
-/public/media/**/**
-!/public/media/*
-/public/js/**/**
-/public/img/**/**
-/public/fonts/**/**
-/public/css/**/**
+/public_html/media/**/**
+!/public_html/media/*
+/public_html/js/**/**
+/public_html/img/**/**
+/public_html/fonts/**/**
+/public_html/css/**/**
 /dist
 /.tmp
 
