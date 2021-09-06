@@ -1,4 +1,4 @@
-dateModified: 1629203799
+dateModified: 1630933940
 email:
   fromEmail: interactie@emotion.nl
   fromName: Biljoenbad
@@ -11,12 +11,12 @@ meta:
     95b059f1-f990-49cf-a14c-22d089a7a2b5: Partners
     4176b138-ab46-48c2-ba93-8f81e9d3c0df: Algemeen
     4592cafe-d6ff-406b-9990-e551c95b62f0: Contact
-    5693e63b-62b7-400e-9b07-e9472ad8c06f: Activiteitenbad # Activiteitenbad
+    5693e63b-62b7-400e-9b07-e9472ad8c06f: Activiteitenbad
     6576af27-2464-42a5-93ba-12b804de04f1: Header
     70182a37-5dc3-4cf6-aa27-b2c0f88c9dbc: Menu
     c910b349-51e3-41a5-b45c-1c9a8c1d223f: Nieuws
     e0e84f9d-b3be-4dd0-acf4-dcd4b5031a79: Social
-    e4c41204-0640-4ca7-852a-e717c2b93d28: Wedstrijdbad # Wedstrijdbad
+    e4c41204-0640-4ca7-852a-e717c2b93d28: Wedstrijdbad
     eab18fef-c4db-47d8-bb89-76ce961dc96b: Tarieven
 plugins:
   async-queue:
@@ -86,7 +86,7 @@ plugins:
     edition: standard
     enabled: true
     licenseKey: UL7PIK4A66LTU8T7FN4XK1RL
-    schemaVersion: 3.0.10
+    schemaVersion: 3.0.11
   super-table:
     edition: standard
     enabled: true
@@ -110,5 +110,5 @@ system:
   edition: pro
   live: true
   name: Biljoenbad
-  schemaVersion: 3.7.7
+  schemaVersion: 3.7.8
   timeZone: Europe/Amsterdam
