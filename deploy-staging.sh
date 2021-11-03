@@ -23,4 +23,4 @@ ssh $SSH_OPTS $SSH_HOST "cd $DEPLOY_DIR && cd public_html/ && mv robots_staging.
 ssh $SSH_OPTS $SSH_HOST "cd $DEPLOY_DIR && mkdir -p media && cd public_html/ && ln -sf ../media/ media"
 # Run pending migrations & flush cache
 # shellcheck disable=SC2086
-ssh $SSH_OPTS $SSH_HOST "export PATH=/usr/local/php74/bin:$$PATH; cd $DEPLOY_DIR; ./craft db/backup --zip --overwrite && ./craft migrate/all --interactive 0 && ./craft project-config/apply --interactive 0 && ./craft clear-caches/all && ./craft seomatic/sitemap/generate"
+ssh $SSH_OPTS $SSH_HOST "export PATH=/usr/local/php74/bin:\$PATH; cd $DEPLOY_DIR; ./craft db/backup --zip --overwrite && ./craft migrate/all --interactive 0 && ./craft project-config/apply --interactive 0 && ./craft clear-caches/all && ./craft seomatic/sitemap/generate"
