@@ -27,7 +27,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 6411c6f0-8af3-4a83-8ba6-7a5778adb9e9
+            fieldUid: 6411c6f0-8af3-4a83-8ba6-7a5778adb9e9 # Faciliteiten - Icoon
             instructions: null
             label: null
             required: true
@@ -36,7 +36,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: ef04d81b-a107-4503-96ba-170438728574
+            fieldUid: ef04d81b-a107-4503-96ba-170438728574 # Faciliteiten - Extra info
             instructions: null
             label: null
             required: false
@@ -49,7 +49,7 @@ fieldLayouts:
 handle: services
 hasTitleField: true
 name: Voorzieningen
-section: 4e86169f-ead1-452f-ba4c-37205c2e86dc
+section: 4e86169f-ead1-452f-ba4c-37205c2e86dc # Voorzieningen
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

@@ -27,7 +27,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: d16c24d1-abfe-4e08-b18c-45bcb368c93f
+            fieldUid: d16c24d1-abfe-4e08-b18c-45bcb368c93f # Inhoud
             instructions: null
             label: null
             required: false
@@ -40,7 +40,7 @@ fieldLayouts:
 handle: gdpr
 hasTitleField: false
 name: 'Privacy beleid'
-section: 4f52e94b-af09-494e-8df9-3dedef4c6b49
+section: 4f52e94b-af09-494e-8df9-3dedef4c6b49 # Privacy beleid
 sortOrder: 1
 titleFormat: '{section.name|raw}'
 titleTranslationKeyFormat: null

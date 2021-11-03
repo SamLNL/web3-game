@@ -1,5 +1,5 @@
 contentColumnType: string(255)
-fieldGroup: 3218d4a4-32d4-4586-bf1e-4250b36e0bc1
+fieldGroup: 3218d4a4-32d4-4586-bf1e-4250b36e0bc1 # Partners
 handle: partnerUrl
 instructions: 'Url van de website van de partner'
 name: 'Partner - Url'

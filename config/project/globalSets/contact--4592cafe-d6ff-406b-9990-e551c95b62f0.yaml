@@ -4,7 +4,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: 4e9173fd-9444-4cad-8f4e-532eaa7ce1f7
+            fieldUid: 4e9173fd-9444-4cad-8f4e-532eaa7ce1f7 # Contact - Straat & huisnummer
             instructions: null
             label: null
             required: true
@@ -13,7 +13,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: b660e663-9d28-4b7f-bf32-2ff921bcc3c1
+            fieldUid: b660e663-9d28-4b7f-bf32-2ff921bcc3c1 # Contact - Plaats
             instructions: null
             label: null
             required: true
@@ -22,7 +22,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 990e683c-9217-48b2-9d27-0208bc3339fd
+            fieldUid: 990e683c-9217-48b2-9d27-0208bc3339fd # Contact - Postcode
             instructions: null
             label: null
             required: true
@@ -31,7 +31,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 7ffa6f74-ddee-45e0-bb12-68def0320384
+            fieldUid: 7ffa6f74-ddee-45e0-bb12-68def0320384 # Contact - Telefoonnummer
             instructions: null
             label: null
             required: false
@@ -40,7 +40,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 4a1103f1-acec-4eae-9259-d9ef1e9a05fb
+            fieldUid: 4a1103f1-acec-4eae-9259-d9ef1e9a05fb # Contact - Email
             instructions: null
             label: null
             required: false
@@ -53,7 +53,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: 4ca82977-e9ee-4f4b-87fd-5a879b9b4707
+            fieldUid: 4ca82977-e9ee-4f4b-87fd-5a879b9b4707 # Contact blok - Titel
             instructions: null
             label: null
             required: true
@@ -62,7 +62,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: bc6ad484-fb43-4e27-ab54-1b0eab2c92b8
+            fieldUid: bc6ad484-fb43-4e27-ab54-1b0eab2c92b8 # Contact blok - Telefoonnummer
             instructions: null
             label: null
             required: false
@@ -71,7 +71,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 799b722b-ef73-43c7-81e8-60712f17e3d5
+            fieldUid: 799b722b-ef73-43c7-81e8-60712f17e3d5 # Contact blok - CTA
             instructions: null
             label: null
             required: false

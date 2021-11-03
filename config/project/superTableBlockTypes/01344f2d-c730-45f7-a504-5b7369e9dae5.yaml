@@ -1,11 +1,11 @@
-field: 34a70bbd-9aba-45a1-82f4-bcf7a1cc1272
+field: 34a70bbd-9aba-45a1-82f4-bcf7a1cc1272 # Blokken
 fieldLayouts:
   0c6e60b9-5875-41c9-bb4a-e98af5abbe49:
     tabs:
       -
         elements:
           -
-            fieldUid: be6d8db1-6e50-4334-987c-ab524c903c0f
+            fieldUid: be6d8db1-6e50-4334-987c-ab524c903c0f # Titel
             instructions: null
             label: null
             required: true
@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: f3ecab75-c1e2-4d45-933e-171a328e5a3b
+            fieldUid: f3ecab75-c1e2-4d45-933e-171a328e5a3b # Subtitel
             instructions: null
             label: null
             required: false
@@ -23,7 +23,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 38af146a-0d6b-417d-abe2-dcc73f0bb167
+            fieldUid: 38af146a-0d6b-417d-abe2-dcc73f0bb167 # Hoofdcontent
             instructions: null
             label: null
             required: true
@@ -32,7 +32,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 1fc21d5a-9daa-455b-8adb-f1f250beecb5
+            fieldUid: 1fc21d5a-9daa-455b-8adb-f1f250beecb5 # Subcontent
             instructions: null
             label: null
             required: false
@@ -41,7 +41,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: c6bfc555-2539-4fb7-8c6b-1decfe5a7983
+            fieldUid: c6bfc555-2539-4fb7-8c6b-1decfe5a7983 # CTA
             instructions: null
             label: null
             required: false
@@ -50,7 +50,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 3251a7c0-65ee-4e96-810f-564919de6cf6
+            fieldUid: 3251a7c0-65ee-4e96-810f-564919de6cf6 # CTA - micro tekst
             instructions: null
             label: null
             required: false
@@ -61,7 +61,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  1fc21d5a-9daa-455b-8adb-f1f250beecb5:
+  1fc21d5a-9daa-455b-8adb-f1f250beecb5: # Subcontent
     contentColumnType: text
     fieldGroup: null
     handle: subContent
@@ -89,7 +89,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
-  38af146a-0d6b-417d-abe2-dcc73f0bb167:
+  38af146a-0d6b-417d-abe2-dcc73f0bb167: # Hoofdcontent
     contentColumnType: string
     fieldGroup: null
     handle: mainContent
@@ -104,7 +104,7 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Matrix
-  3251a7c0-65ee-4e96-810f-564919de6cf6:
+  3251a7c0-65ee-4e96-810f-564919de6cf6: # CTA - micro tekst
     contentColumnType: text
     fieldGroup: null
     handle: ctaMicro
@@ -123,7 +123,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  be6d8db1-6e50-4334-987c-ab524c903c0f:
+  be6d8db1-6e50-4334-987c-ab524c903c0f: # Titel
     contentColumnType: text
     fieldGroup: null
     handle: heading
@@ -142,7 +142,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  c6bfc555-2539-4fb7-8c6b-1decfe5a7983:
+  c6bfc555-2539-4fb7-8c6b-1decfe5a7983: # CTA
     contentColumnType: text
     fieldGroup: null
     handle: cta
@@ -265,7 +265,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: typedlinkfield\fields\LinkField
-  f3ecab75-c1e2-4d45-933e-171a328e5a3b:
+  f3ecab75-c1e2-4d45-933e-171a328e5a3b: # Subtitel
     contentColumnType: text
     fieldGroup: null
     handle: subHeading

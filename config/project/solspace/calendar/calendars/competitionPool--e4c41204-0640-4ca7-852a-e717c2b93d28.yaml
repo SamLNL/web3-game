@@ -7,7 +7,7 @@ fieldLayout:
     -
       elements:
         -
-          fieldUid: 25aa4096-013f-4913-8ad6-8bb1dd1c2889
+          fieldUid: 25aa4096-013f-4913-8ad6-8bb1dd1c2889 # Activiteiten - Link
           instructions: null
           label: null
           required: false
@@ -28,7 +28,7 @@ siteSettings:
   0fa03155-1ea7-4e70-9dd7-75ad25fb8cb0:
     enabledByDefault: true
     hasUrls: false
-    siteId: 521def3a-78c9-4e7b-8cb5-40b18c2c0705
+    siteId: 521def3a-78c9-4e7b-8cb5-40b18c2c0705 # Biljoenbad
     template: null
     uriFormat: null
 titleFormat: ''

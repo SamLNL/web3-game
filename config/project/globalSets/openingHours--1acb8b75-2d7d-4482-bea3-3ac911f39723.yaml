@@ -4,7 +4,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: 491f2cf6-8204-461f-bab0-6694458dbcb5
+            fieldUid: 491f2cf6-8204-461f-bab0-6694458dbcb5 # Openingstijden - Reguliere tijden
             instructions: null
             label: null
             required: false
@@ -17,7 +17,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: ab0eeab0-29b9-4f9d-a0d4-1133c1f4a225
+            fieldUid: ab0eeab0-29b9-4f9d-a0d4-1133c1f4a225 # Openingstijden - Vakantie en feestdagen
             instructions: null
             label: null
             required: false

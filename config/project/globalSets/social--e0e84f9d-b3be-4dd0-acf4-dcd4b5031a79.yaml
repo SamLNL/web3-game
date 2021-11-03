@@ -4,7 +4,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: 56974294-62e1-4d99-b0b7-d2ce74ff2dee
+            fieldUid: 56974294-62e1-4d99-b0b7-d2ce74ff2dee # Social - Facebook
             instructions: null
             label: null
             required: '0'
@@ -13,7 +13,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: ca1458cf-ba61-4ef9-84aa-2a09d4886e98
+            fieldUid: ca1458cf-ba61-4ef9-84aa-2a09d4886e98 # Social - Youtube
             instructions: null
             label: null
             required: false
@@ -22,7 +22,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 8cf5091d-c55c-4348-a57f-b38c56bc0aa0
+            fieldUid: 8cf5091d-c55c-4348-a57f-b38c56bc0aa0 # Social - Instagram
             instructions: null
             label: null
             required: '0'

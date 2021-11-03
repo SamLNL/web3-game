@@ -1,5 +1,5 @@
 contentColumnType: boolean
-fieldGroup: 683b8e9d-6e7a-404d-bb72-c9df03f70f1c
+fieldGroup: 683b8e9d-6e7a-404d-bb72-c9df03f70f1c # Contact blok
 handle: contactBlockShow
 instructions: 'Toon het contactblok onderaan de pagina'
 name: 'Contact blok - Toon'

@@ -27,7 +27,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 5e04aee6-fa48-49e3-b86f-882b8ea36b9c
+            fieldUid: 5e04aee6-fa48-49e3-b86f-882b8ea36b9c # Titel
             instructions: null
             label: null
             required: true
@@ -36,7 +36,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 3a0f8407-4263-4449-9996-e53070168b78
+            fieldUid: 3a0f8407-4263-4449-9996-e53070168b78 # Header afbeelding
             instructions: null
             label: null
             required: false
@@ -45,7 +45,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: dcba1bec-77c1-4e56-98bb-7b73ff2a87fc
+            fieldUid: dcba1bec-77c1-4e56-98bb-7b73ff2a87fc # Intro
             instructions: null
             label: null
             required: false
@@ -54,7 +54,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 7f8fc789-97d4-49d5-8514-220d88c114cb
+            fieldUid: 7f8fc789-97d4-49d5-8514-220d88c114cb # Faciliteiten - Overzichtstitel
             instructions: null
             label: null
             required: true
@@ -63,7 +63,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: d16c24d1-abfe-4e08-b18c-45bcb368c93f
+            fieldUid: d16c24d1-abfe-4e08-b18c-45bcb368c93f # Inhoud
             instructions: null
             label: null
             required: false
@@ -76,7 +76,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: 682ecbc3-2252-4e4d-ac77-decc7ed47b7b
+            fieldUid: 682ecbc3-2252-4e4d-ac77-decc7ed47b7b # Contact blok - Titel
             instructions: null
             label: null
             required: false
@@ -85,7 +85,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 34fc4e87-8df5-481d-bfad-75b58bf17d76
+            fieldUid: 34fc4e87-8df5-481d-bfad-75b58bf17d76 # Contact blok - Toon
             instructions: null
             label: null
             required: false
@@ -98,7 +98,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: 8d69ebf3-f317-4814-846f-b7f4fe0494b1
+            fieldUid: 8d69ebf3-f317-4814-846f-b7f4fe0494b1 # SEO
             instructions: null
             label: null
             required: false
@@ -111,7 +111,7 @@ fieldLayouts:
 handle: facilitiesOverview
 hasTitleField: false
 name: 'Faciliteiten - Overzicht'
-section: 563737d9-c7ae-49cc-8221-79b449bf6d7e
+section: 563737d9-c7ae-49cc-8221-79b449bf6d7e # Faciliteiten - Overzicht
 sortOrder: 1
 titleFormat: '{commonTitle}'
 titleTranslationKeyFormat: null

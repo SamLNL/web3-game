@@ -1,23 +1,251 @@
-dateModified: 1630933940
+dateModified: 1635930885
 email:
   fromEmail: interactie@emotion.nl
   fromName: Biljoenbad
   transportType: craft\mail\transportadapters\Sendmail
 meta:
   __names__:
-    1acb8b75-2d7d-4482-bea3-3ac911f39723: Openingstijden
-    01ee3501-a0a7-4b13-b46a-308fdc395fd9: Team
-    03ef6c73-3b14-4ae2-bf06-2b1d57cc6605: Voorzieningen
-    95b059f1-f990-49cf-a14c-22d089a7a2b5: Partners
-    4176b138-ab46-48c2-ba93-8f81e9d3c0df: Algemeen
-    4592cafe-d6ff-406b-9990-e551c95b62f0: Contact
-    5693e63b-62b7-400e-9b07-e9472ad8c06f: Activiteitenbad
-    6576af27-2464-42a5-93ba-12b804de04f1: Header
-    70182a37-5dc3-4cf6-aa27-b2c0f88c9dbc: Menu
-    c910b349-51e3-41a5-b45c-1c9a8c1d223f: Nieuws
-    e0e84f9d-b3be-4dd0-acf4-dcd4b5031a79: Social
-    e4c41204-0640-4ca7-852a-e717c2b93d28: Wedstrijdbad
-    eab18fef-c4db-47d8-bb89-76ce961dc96b: Tarieven
+    0d1f7f70-9e1a-4b5b-82b3-ea80e7e20143: Subprijs # Subprijs
+    0dbc7a77-3a60-4b1f-8746-b9be1cc87e55: 'CTA 1 - Primair' # CTA 1 - Primair
+    0e7ee76e-d485-4b6a-9a37-debfe93a5d4c: 'FAQ - Antwoord' # FAQ - Antwoord
+    1a4e294f-a7dd-49a6-b9ac-2b0fe65e31ca: CTA2 # CTA2
+    1acb8b75-2d7d-4482-bea3-3ac911f39723: Openingstijden # Openingstijden
+    1af7a26b-524f-4c88-a76d-4c33f3e5b935: Partners # Partners
+    01d0d0f9-834d-47dd-b027-96b38cd50f6e: Team # Team
+    01e09fa1-4843-4208-830b-968a6ff4671c: Common # Common
+    01ee3501-a0a7-4b13-b46a-308fdc395fd9: Team # Team
+    1fc21d5a-9daa-455b-8adb-f1f250beecb5: Subcontent # Subcontent
+    2b7ef86e-35d4-4f7b-bc55-34292c6fd5f2: 'Partner - Logo' # Partner - Logo
+    2bf8873b-a718-47fb-9a14-4c8bf77c4d70: Typeform # Typeform
+    2c7938d0-1f35-455e-93a2-e4f9776322c9: CTA # CTA
+    2cad35cf-b344-433a-bf7d-2625f8be0c67: Prijs # Prijs
+    2e97d507-8360-45a3-b8b2-7219954a9301: CTA1 # CTA1
+    2f904428-4b19-41f9-9cac-35469bc5e8cf: Partners # Partners
+    3a0f8407-4263-4449-9996-e53070168b78: 'Header afbeelding' # Header afbeelding
+    3c84b104-72c4-48a0-844a-9106c2d67158: 'Toon tabel' # Toon tabel
+    3c2066f8-6ad7-418c-a373-7b97f797ec5a: 'Overige tarieven - Tabel' # Overige tarieven - Tabel
+    3ce9c921-1fa9-45dc-a1d4-51c401bcf677: 'CTA 1' # CTA 1
+    3e2b5bdb-289a-48b9-a5da-b0f6582a6a9d: 'Kalender - 2' # Kalender - 2
+    3e44ea8d-bbc2-4a77-99e7-bd0158f2794c: Header # Header
+    03ef6c73-3b14-4ae2-bf06-2b1d57cc6605: Voorzieningen # Voorzieningen
+    3f9a716a-80d4-4da9-a0e1-cf18876536ec: 'Openingstijden - CTA' # Openingstijden - CTA
+    4a1103f1-acec-4eae-9259-d9ef1e9a05fb: 'Contact - Email' # Contact - Email
+    4ca82977-e9ee-4f4b-87fd-5a879b9b4707: 'Contact blok - Titel' # Contact blok - Titel
+    4dc76d0f-8385-44a2-a955-5564e2c48015: Tekst # Tekst
+    4e067a15-4f7a-4341-8cb9-e349590268ce: 'Footermenu - Activiteiten' # Footermenu - Activiteiten
+    4e9173fd-9444-4cad-8f4e-532eaa7ce1f7: 'Contact - Straat & huisnummer' # Contact - Straat & huisnummer
+    4e86169f-ead1-452f-ba4c-37205c2e86dc: Voorzieningen # Voorzieningen
+    4ea7444c-b251-489a-af81-91290d313091: Tekst # Tekst
+    4ee2616b-f4be-4e07-8a12-780b1b1b2a4b: 'Kalender - CTA' # Kalender - CTA
+    4f52e94b-af09-494e-8df9-3dedef4c6b49: 'Privacy beleid' # Privacy beleid
+    5bf1e76b-7ad0-43de-aa24-b8965476fad8: 'CTA2 - micro tekst' # CTA2 - micro tekst
+    5cec80d5-eb1c-488d-bda3-458c80260135: Tekst # Tekst
+    5e04aee6-fa48-49e3-b86f-882b8ea36b9c: Titel # Titel
+    5e281019-838a-4eef-9a32-c4e57474176b: Preview # Preview
+    6a956667-50c6-45d4-abb1-9585ab9cbdd9: Tekst # Tekst
+    6c9c694b-56c4-40a1-95cd-29f77a39e532: Faciliteiten # Faciliteiten
+    6c99a8ab-0e57-471c-9744-2552e2487605: Subprijs # Subprijs
+    6c837388-83a1-497d-b47b-ed3dbdff5dac: 'Activiteiten - Overzicht' # Activiteiten - Overzicht
+    6d88413a-bf5d-4ffd-ac70-cc11ee28ee04: 'Voorzieningen - Titel' # Voorzieningen - Titel
+    7af48856-e53c-4c35-9290-f8acb168d199: Afbeelding # Afbeelding
+    7b0ef5c0-4291-4913-932b-32945e1c974f: Activiteiten # Activiteiten
+    7bc4317f-3190-4df4-88c6-ec8608aba2c6: Afbeelding # Afbeelding
+    7eece0b1-6795-48be-b79a-61781ca2c48e: 'Kalender - Titel' # Kalender - Titel
+    7f7cdc6f-38cb-406e-836e-aee3faec6df2: CTA # CTA
+    7f8fc789-97d4-49d5-8514-220d88c114cb: 'Faciliteiten - Overzichtstitel' # Faciliteiten - Overzichtstitel
+    7ffa6f74-ddee-45e0-bb12-68def0320384: 'Contact - Telefoonnummer' # Contact - Telefoonnummer
+    8a953043-f1a0-4cd1-b83b-ff73d0458e0d: Voorzieningen # Voorzieningen
+    8c542cd3-0d01-4457-a609-6088b8bf698c: 'Menu - Tickets' # Menu - Tickets
+    8cea7e37-dd42-4ee1-bac6-a81ea61597ca: 'CTA2 - micro tekst' # CTA2 - micro tekst
+    8cf5091d-c55c-4348-a57f-b38c56bc0aa0: 'Social - Instagram' # Social - Instagram
+    8d69ebf3-f317-4814-846f-b7f4fe0494b1: SEO # SEO
+    8da8ae36-7cc0-45b8-adc8-08a98b785c04: Subtitel # Subtitel
+    8e1f1a36-a815-49e1-a2ff-e2724c2e94fb: 'CTA 1' # CTA 1
+    9a520f67-974e-4950-926d-12a892736682: Tekst # Tekst
+    9a801b72-4cf8-4bf7-9517-6719ec5b2fb9: 'Faciliteiten - Overzicht' # Faciliteiten - Overzicht
+    9c2304a6-1b77-4cb8-a7c6-adae015eb968: 'Tarieven - Blokken' # Tarieven - Blokken
+    09f8e7a1-d5e0-49f0-9dd9-86cb41d024d7: Titel # Titel
+    9f91f48a-6042-4608-8ba3-5c93b4b4de87: 'CTA - micro tekst' # CTA - micro tekst
+    11c18374-6b81-42dc-b7c3-52a5b4ccce8a: 'CTA1 - micro tekst' # CTA1 - micro tekst
+    22a14455-b0cb-40cd-b8aa-992754d90b44: 'Public Schema' # Public Schema
+    25aa4096-013f-4913-8ad6-8bb1dd1c2889: 'Activiteiten - Link' # Activiteiten - Link
+    26b5c858-2635-4e8c-8063-3cbf12e4f122: Tekst # Tekst
+    33e7b32a-1c62-40a9-a752-4478ee847b27: 'Categorie item' # Categorie item
+    33ed9965-6c00-4756-8383-a62d32656c91: 'CTA 2' # CTA 2
+    34a70bbd-9aba-45a1-82f4-bcf7a1cc1272: Blokken # Blokken
+    34aa52c5-65c1-4806-9311-be0039e4d0e9: Vragen # Vragen
+    34fc4e87-8df5-481d-bfad-75b58bf17d76: 'Contact blok - Toon' # Contact blok - Toon
+    35d71cfd-86ea-4f36-ab4a-4ba7aefcf7c5: 'CTA 2' # CTA 2
+    37e21129-0d0c-40e7-bfdf-4090b81beee4: Intro # Intro
+    38af146a-0d6b-417d-abe2-dcc73f0bb167: Hoofdcontent # Hoofdcontent
+    39ac3118-752f-4170-85e7-bef7a88b14ff: 'Categorie - Overzichtstitel' # Categorie - Overzichtstitel
+    39e9c765-fab8-4c03-87a8-1d283df15fca: FAQ # FAQ
+    42e1706f-1fc6-4ff7-aa02-8db53c4aacd9: 'Footermenu - Submenu' # Footermenu - Submenu
+    47e76af7-a07d-4cbd-b265-2f905012a012: Team # Team
+    49d35a69-4421-4bae-bac8-3397f6d650a5: Tekst # Tekst
+    60ba4af7-9102-49ee-bdde-8f14a6e03c71: Tekst # Tekst
+    61abda2a-4b4f-41b7-860e-43c2dc403591: 'CTA 2 - Primair' # CTA 2 - Primair
+    65afbb40-bd1c-4c3e-82da-26338839eaa5: 'Footermenu - Overig' # Footermenu - Overig
+    67b6a65f-ea57-4ea4-9751-448816af35e9: Voorzieningen # Voorzieningen
+    75c4c41b-4b5d-4f5b-bf8a-0d1bbe387b16: FAQ # FAQ
+    75f5a282-d1a0-44c7-9db6-71344a6aaa0c: 'Prijzen - Titel' # Prijzen - Titel
+    078a0caf-0a4b-46ab-8793-8fbca16b22da: Contentpagina # Contentpagina
+    79c80430-518c-4d55-a510-ab43f69bc97f: Preview # Preview
+    82fef1fa-66e2-48bf-9bdf-aacab3feefb5: 'Activiteiten - Titel' # Activiteiten - Titel
+    83eb5178-5840-470d-a651-0ca2ba6aab59: FAQ # FAQ
+    085d0005-6965-482f-aae6-7c63000e6845: Hoofdmenu # Hoofdmenu
+    86b901c1-95db-4cde-9f54-9eb935613234: Typeform # Typeform
+    87df6b31-4ad8-4317-82d1-05deec7c1686: 'Activiteiten - Overzicht' # Activiteiten - Overzicht
+    87f2ab1d-f8a6-4af3-985a-8984f31feb1f: Tarieven # Tarieven
+    92c6e846-df59-4d9f-a4c2-ae033aaf0a30: CTA # CTA
+    95b059f1-f990-49cf-a14c-22d089a7a2b5: Partners # Partners
+    97e04e36-b39b-4b15-b3b4-5ac1f2c23a3d: 'Footermenu - Faciliteiten en verhuur' # Footermenu - Faciliteiten en verhuur
+    138d0eae-ea95-4e6e-86c6-9e927e7e72e2: Activiteiten # Activiteiten
+    138fd91c-e286-44c3-823f-e2380e31883c: FAQ # FAQ
+    172ee4aa-9fdb-4e3b-a94d-1bdca4c5bf2a: Prijs # Prijs
+    217ff628-2c13-4158-94e2-bd0e5dce5aa9: 'Openingstijden - Titel' # Openingstijden - Titel
+    392ffd23-a640-4a6f-8cca-bf3195175673: Tekst # Tekst
+    433ec8d0-36da-4e9d-b223-384b7c9d30c8: 'CTA1 - micro tekst' # CTA1 - micro tekst
+    491f2cf6-8204-461f-bab0-6694458dbcb5: 'Openingstijden - Reguliere tijden' # Openingstijden - Reguliere tijden
+    521def3a-78c9-4e7b-8cb5-40b18c2c0705: Biljoenbad # Biljoenbad
+    526e0682-d673-4a69-abfc-75054fd47251: 'Samenvattende tekst' # Samenvattende tekst
+    576ee5c3-9e4e-4ab8-a1a6-40ba3aa07167: Kleur # Kleur
+    634ff73b-0538-4d66-aa2c-478bd994d222: Titel # Titel
+    670a5a79-e711-4d6c-83f9-e57598d510fc: Afbeeldingen # Afbeeldingen
+    682ecbc3-2252-4e4d-ac77-decc7ed47b7b: 'Contact blok - Titel' # Contact blok - Titel
+    683b8e9d-6e7a-404d-bb72-c9df03f70f1c: 'Contact blok' # Contact blok
+    739ca29a-ea7d-47e0-a09d-421e1d26c982: 'Toon alle partners' # Toon alle partners
+    791ab164-f9e4-444b-9ddd-8028b7db0929: 'Nieuws - Overzicht' # Nieuws - Overzicht
+    00797fb6-aa77-4473-8d43-0783dfbe66ca: Titel # Titel
+    799b722b-ef73-43c7-81e8-60712f17e3d5: 'Contact blok - CTA' # Contact blok - CTA
+    841e980e-772f-4488-ab21-40a04723fa01: 'Team - Afbeelding' # Team - Afbeelding
+    853d403c-e5b5-447a-b43e-f818a93b0146: 'CTA 1  - Primair' # CTA 1  - Primair
+    867a840b-ade9-4fd1-8402-6dcd31910941: Tekst # Tekst
+    912b06cd-b395-423a-9608-fef79a7d60f3: 'Kalender - 1' # Kalender - 1
+    990e683c-9217-48b2-9d27-0208bc3339fd: 'Contact - Postcode' # Contact - Postcode
+    1326cc83-fe6a-49c4-8309-60baabe0c674: Titel # Titel
+    1752ec7a-9652-4157-a83f-57f86d4ecc32: 'CTA 2 - Primair' # CTA 2 - Primair
+    1944d704-19fe-46d3-8432-1822b34264b1: 'Menu - Leerlingvolgsysteem' # Menu - Leerlingvolgsysteem
+    3218d4a4-32d4-4586-bf1e-4250b36e0bc1: Partners # Partners
+    3251a7c0-65ee-4e96-810f-564919de6cf6: 'CTA - micro tekst' # CTA - micro tekst
+    4176b138-ab46-48c2-ba93-8f81e9d3c0df: Algemeen # Algemeen
+    4592cafe-d6ff-406b-9990-e551c95b62f0: Contact # Contact
+    4832e518-d3f6-4725-b715-e47b08994840: 'Prijzen - CTA' # Prijzen - CTA
+    5693e63b-62b7-400e-9b07-e9472ad8c06f: Activiteitenbad # Activiteitenbad
+    6411c6f0-8af3-4a83-8ba6-7a5778adb9e9: 'Faciliteiten - Icoon' # Faciliteiten - Icoon
+    6495d85a-f54e-4fe1-b778-f56be7ed5dcb: Tekst # Tekst
+    6576af27-2464-42a5-93ba-12b804de04f1: Header # Header
+    7316c0df-321c-4d4c-bad3-47a0c0b8dac9: Team # Team
+    07352ea8-c711-4288-b354-fd105c7e1e3b: 'CTA - micro tekst' # CTA - micro tekst
+    8224bf13-45fb-4d35-9f1b-00fb5263eff9: 'Partner - Url' # Partner - Url
+    8282c6e5-f703-4e5d-b304-6d865da47002: Partners # Partners
+    8572cc82-344f-41ea-8e09-baecd967fac7: Voorzieningen # Voorzieningen
+    8860e9d9-93a8-4ea0-aed8-b316eb1320b9: Tekst # Tekst
+    16440e78-c0f7-48d6-a42a-677344f296fd: Formaat # Formaat
+    18598fdb-d9a6-4858-bee5-aabddf068c24: 'Rooster en tarieven' # Rooster en tarieven
+    45739ac1-7f29-4aa6-8646-587b074156b1: Team # Team
+    48358b4d-d9df-4e57-a67e-ee2f38c129b0: Afbeelding # Afbeelding
+    50683cb1-0916-4b95-82aa-0c8336dee042: 'Categorie - Usp''s' # Categorie - Usp's
+    70182a37-5dc3-4cf6-aa27-b2c0f88c9dbc: Menu # Menu
+    88602e10-4a84-46a6-93dd-8c1480678523: 'Openingstijden - Tekst' # Openingstijden - Tekst
+    89816d2a-ba5d-4fdf-ab8c-36b20e10af44: Faciliteiten # Faciliteiten
+    94220efd-03af-48a9-835f-63a2db6fa83a: 'Afbeelding - tekst' # Afbeelding - tekst
+    406399f3-6c2e-44d6-bd99-d6d3a0719fbb: 'Youtube link' # Youtube link
+    563737d9-c7ae-49cc-8221-79b449bf6d7e: 'Faciliteiten - Overzicht' # Faciliteiten - Overzicht
+    787104e2-3595-4d9d-9499-40e8b4067201: Tekst # Tekst
+    7429758c-bba8-437d-bc91-f5d67d047a84: 'Tarieven - Tekst' # Tarieven - Tekst
+    20332970-ad6c-4ea7-a66e-9e9f5de929bb: 'Team - Functie' # Team - Functie
+    23853000-5efc-4e23-a11b-46757083fe83: Home # Home
+    43111301-fd79-492c-97e5-09499765b5a3: 'Hoofdmenu - Submenu' # Hoofdmenu - Submenu
+    54427052-dd03-4279-a515-257038609c13: CTA1 # CTA1
+    56974294-62e1-4d99-b0b7-d2ce74ff2dee: 'Social - Facebook' # Social - Facebook
+    81443263-41d9-4aa2-994a-ee1f8edd6fa6: Titel # Titel
+    88787612-5b03-4a0b-82b6-2113e3a05dc4: 'FAQ - Vraag' # FAQ - Vraag
+    a6c57816-55bd-425e-afcc-953eaf58db58: Afbeelding # Afbeelding
+    a8ae2abe-b8cb-4de7-8957-04cad141c27e: Categorie # Categorie
+    a9f5d80c-3a46-4c6c-8060-9e91f1246dbb: Activiteiten # Activiteiten
+    a460ba7f-4818-4183-b551-28d816e087db: 'Tarieven - Tickets' # Tarieven - Tickets
+    aa5e3f1c-61fb-4f30-9486-a52c58584198: Ticket # Ticket
+    ab0eeab0-29b9-4f9d-a0d4-1133c1f4a225: 'Openingstijden - Vakantie en feestdagen' # Openingstijden - Vakantie en feestdagen
+    ab043be5-9526-4503-b7f2-d7d8e3c5bc7d: 'Toon voorzieningen' # Toon voorzieningen
+    ad453c37-14e0-4676-a70a-a4d763f31703: Quote # Quote
+    ad105665-a7e7-4cb9-b341-ea251b579a1f: 'Toon tarieven' # Toon tarieven
+    ae9ca910-6694-4017-a02d-bbea31a82b3a: Faciliteiten # Faciliteiten
+    af1ecf9f-e8a5-4aac-9ba8-191015443a7c: Tekst # Tekst
+    af8feec0-045e-43b9-b0fa-7dbaae915564: Tekst # Tekst
+    afe6edf4-4a10-4b5c-a5a9-3011b9f07101: Afbeelding # Afbeelding
+    b0162006-4be5-43a0-b035-d64e17725734: 'Categorie - Thema kleur' # Categorie - Thema kleur
+    b4dfdaaf-be26-40cb-b3ca-7b10b0dfcc91: 'Activiteiten - CTA' # Activiteiten - CTA
+    b5e240b8-7510-4f85-9c27-f77034980982: Titel # Titel
+    b8b9d7b2-37ec-4448-9ebb-6e32ee552f42: 'Nieuws items' # Nieuws items
+    b418fe90-7e19-4457-a1b0-4a975cdc9f4d: Tekst # Tekst
+    b541f192-3512-4391-af9d-aaad78edfeb5: Contentpagina # Contentpagina
+    b660e663-9d28-4b7f-bf32-2ff921bcc3c1: 'Contact - Plaats' # Contact - Plaats
+    ba1b5070-fa2e-46d4-9f20-f4473d388cdc: 'Rooster en tarieven' # Rooster en tarieven
+    bc2d9e4a-6e3b-4ba8-853b-6ecd47222473: Partners # Partners
+    bc6ad484-fb43-4e27-ab54-1b0eab2c92b8: 'Contact blok - Telefoonnummer' # Contact blok - Telefoonnummer
+    be1c655e-7827-4296-9c27-3420d6081b0e: 'Gekoppelde category' # Gekoppelde category
+    be6d8db1-6e50-4334-987c-ab524c903c0f: Titel # Titel
+    be63a79e-ba2a-4ecf-a97e-645b99c3a38d: Afbeelding # Afbeelding
+    be883caa-3f79-412e-8c25-730c3b659cb3: Slider # Slider
+    be40097e-126e-4a57-854d-f07aa9ea16d7: SEO # SEO
+    c0aa99af-2247-4512-935d-c4e48c014d40: 'USP''s' # USP's
+    c2b13e49-c3ec-4235-8089-aeb2af9b0f8c: 'Nieuws - Items' # Nieuws - Items
+    c6bfc555-2539-4fb7-8c6b-1decfe5a7983: CTA # CTA
+    c12cd4f8-4de7-419d-96f4-edce56b70f16: Biljoenbad # Biljoenbad
+    c23d54a4-c7c0-4a1e-bf16-f8e7d73851ab: 'Privacy beleid' # Privacy beleid
+    c910b349-51e3-41a5-b45c-1c9a8c1d223f: Nieuws # Nieuws
+    c952cf55-bb3d-4176-99a3-f1727f3a672d: 'CTA 2 - Micro tekst' # CTA 2 - Micro tekst
+    c8662e4e-330e-469b-9334-72665e8bd5a4: CTA # CTA
+    c36791eb-fe5c-4ecc-bc15-b149559452ce: 'USP''s' # USP's
+    c53081c4-88c0-46df-a585-3e54356c2e30: 'CTA blokken' # CTA blokken
+    ca1458cf-ba61-4ef9-84aa-2a09d4886e98: 'Social - Youtube' # Social - Youtube
+    cb38d12d-3889-4144-abd8-7addc6c549ce: Blok # Blok
+    cbbb2500-274f-40f3-9703-1aa87a10a738: 'Nieuws - Overzicht' # Nieuws - Overzicht
+    ccad0251-6893-4101-bd19-deef0b61526e: 'Categorie - Usp''s titel' # Categorie - Usp's titel
+    cdcb72f5-a94d-46ed-ab22-67dcb5fff45f: Global # Global
+    ce516152-4c93-4392-9eb5-d873dc3e7ece: Subtitel # Subtitel
+    d1be152c-1de0-49c2-b8d7-c4bafc35166a: 'Nieuws - CTA' # Nieuws - CTA
+    d7cb0a1a-91a7-4640-bb5c-2b29d5ec3e12: 'Belangrijke update' # Belangrijke update
+    d7eed2b0-6079-4185-8245-5a62f3180fe2: Openingstijden # Openingstijden
+    d8cced18-d09d-4f46-898c-95cd0f56146d: 'Belangrijke mededeling' # Belangrijke mededeling
+    d9d2060f-7b6a-411e-8fc1-0ad671e9df58: 'Usp''s' # Usp's
+    d16c24d1-abfe-4e08-b18c-45bcb368c93f: Inhoud # Inhoud
+    d21e9018-f6b6-41ad-9b35-2bc579e850dd: Biljoenbad # Biljoenbad
+    d31d71d3-e3ba-4e2d-b5ea-d9e8a63061f8: 'Tekst - afbeelding' # Tekst - afbeelding
+    d33d3fb6-9ac3-46f3-89c6-a1223b4849bd: 'Youtube video' # Youtube video
+    d64c0fca-21c8-4a09-bd4e-3ea37597d970: 'Overige tarieven - Tekst' # Overige tarieven - Tekst
+    d80cf907-7094-43f6-a734-ac89667798ce: Home # Home
+    d400a993-c48a-47a2-bb91-a0d451958d4e: Activiteit # Activiteit
+    d3513c05-8958-4111-8cef-940e6c9d714e: 'Voorzieningen - CTA' # Voorzieningen - CTA
+    da5dc685-57c1-4c15-b53e-38e1db3474ee: 'Belangrijke update' # Belangrijke update
+    dace48e2-7bc5-4d46-a9ab-7e5e605dc733: 'CTA''s' # CTA's
+    db854b09-4cc0-4d63-90e7-392c45dfe7a5: 'Tarieven - Overige prijzen' # Tarieven - Overige prijzen
+    dcba1bec-77c1-4e56-98bb-7b73ff2a87fc: Intro # Intro
+    dd8692fe-e691-4c62-b7fd-8ded6927cf8b: 'Nieuws items' # Nieuws items
+    de96ce55-018c-438c-9582-205befc6ca14: Tekst # Tekst
+    df78e26d-9aa7-49a4-bd8a-75980ddba39d: 'Rooster en tarieven' # Rooster en tarieven
+    e0a21d30-1873-422b-8e25-a5d0c55dff34: 'CTA banner' # CTA banner
+    e0e84f9d-b3be-4dd0-acf4-dcd4b5031a79: Social # Social
+    e2db44f5-6f00-49ea-9f27-da4135c80bf6: Afbeelding # Afbeelding
+    e4c41204-0640-4ca7-852a-e717c2b93d28: Wedstrijdbad # Wedstrijdbad
+    e4de1f49-863a-4529-a6da-ad7fb32a1ef2: Team # Team
+    e4e34eb6-61ee-45c2-87d2-e5844de66f42: 'Kolom titels' # Kolom titels
+    e4f44529-8c44-44d4-993a-825e99287094: CTA2 # CTA2
+    e5fc7dfa-967e-4ae5-9a09-af8fa830d1f3: 'CTA 1 - Micro tekst' # CTA 1 - Micro tekst
+    e6ce5cf4-7cd5-463c-9f72-6be457425003: Afbeelding # Afbeelding
+    e63d11c6-b832-4c11-831f-dbac8d0b4439: 'Preview - Titel' # Preview - Titel
+    e465e4d8-ce9b-4a27-8ea6-a08e549e7196: Afbeelding # Afbeelding
+    e537099d-d15c-43f3-95ad-646f5d584892: Mededeling # Mededeling
+    e1426067-79a5-4525-903a-b880012b9699: Tabel # Tabel
+    eab18fef-c4db-47d8-bb89-76ce961dc96b: Tarieven # Tarieven
+    ed4a7e0c-3dd1-4a7a-a3cc-4555e5f47aab: Activiteiten # Activiteiten
+    ef04d81b-a107-4503-96ba-170438728574: 'Faciliteiten - Extra info' # Faciliteiten - Extra info
+    f0c3735f-1b6e-456c-9608-4cfe64ddcd90: Home # Home
+    f3ecab75-c1e2-4d45-933e-171a328e5a3b: Subtitel # Subtitel
+    f720f988-3ad1-42f7-b0e1-6cf094d2e939: Subtitel # Subtitel
+    f904a62b-8de1-4d60-90b6-97de74a70f21: 'Nieuws - Titel' # Nieuws - Titel
+    ff8108d9-9fc9-4839-9d5c-7fbf281e359a: Tabel # Tabel
 plugins:
   async-queue:
     edition: standard

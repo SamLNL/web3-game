@@ -1,11 +1,11 @@
-field: d16c24d1-abfe-4e08-b18c-45bcb368c93f
+field: d16c24d1-abfe-4e08-b18c-45bcb368c93f # Inhoud
 fieldLayouts:
   8497de2c-5898-4358-a377-484e568723eb:
     tabs:
       -
         elements:
           -
-            fieldUid: 8860e9d9-93a8-4ea0-aed8-b316eb1320b9
+            fieldUid: 8860e9d9-93a8-4ea0-aed8-b316eb1320b9 # Tekst
             instructions: null
             label: null
             required: false
@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 1af7a26b-524f-4c88-a76d-4c33f3e5b935
+            fieldUid: 1af7a26b-524f-4c88-a76d-4c33f3e5b935 # Partners
             instructions: null
             label: null
             required: false
@@ -23,7 +23,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 739ca29a-ea7d-47e0-a09d-421e1d26c982
+            fieldUid: 739ca29a-ea7d-47e0-a09d-421e1d26c982 # Toon alle partners
             instructions: null
             label: null
             required: false
@@ -34,7 +34,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  1af7a26b-524f-4c88-a76d-4c33f3e5b935:
+  1af7a26b-524f-4c88-a76d-4c33f3e5b935: # Partners
     contentColumnType: string
     fieldGroup: null
     handle: partners
@@ -55,7 +55,7 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Entries
-  739ca29a-ea7d-47e0-a09d-421e1d26c982:
+  739ca29a-ea7d-47e0-a09d-421e1d26c982: # Toon alle partners
     contentColumnType: boolean
     fieldGroup: null
     handle: partnersShowAll
@@ -69,7 +69,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Lightswitch
-  8860e9d9-93a8-4ea0-aed8-b316eb1320b9:
+  8860e9d9-93a8-4ea0-aed8-b316eb1320b9: # Tekst
     contentColumnType: text
     fieldGroup: null
     handle: text

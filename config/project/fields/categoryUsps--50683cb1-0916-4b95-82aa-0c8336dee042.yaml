@@ -1,5 +1,5 @@
 contentColumnType: string
-fieldGroup: 7b0ef5c0-4291-4913-932b-32945e1c974f
+fieldGroup: 7b0ef5c0-4291-4913-932b-32945e1c974f # Activiteiten
 handle: categoryUsps
 instructions: 'Deze zullen enkel getoond worden op de activiteiten pagina''s die onder deze category vallen'
 name: 'Categorie - Usp''s'
@@ -12,7 +12,7 @@ settings:
   localizeRelations: false
   selectionLabel: ''
   showSiteMenu: true
-  source: 'taggroup:ed4a7e0c-3dd1-4a7a-a3cc-4555e5f47aab'
+  source: 'taggroup:ed4a7e0c-3dd1-4a7a-a3cc-4555e5f47aab' # Activiteiten
   sources: '*'
   targetSiteId: null
   validateRelatedElements: false

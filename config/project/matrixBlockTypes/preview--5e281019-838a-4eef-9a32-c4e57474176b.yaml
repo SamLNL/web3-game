@@ -1,11 +1,11 @@
-field: 79c80430-518c-4d55-a510-ab43f69bc97f
+field: 79c80430-518c-4d55-a510-ab43f69bc97f # Preview
 fieldLayouts:
   68bbcc25-1ae3-4b40-b5cc-3a9b6c679f65:
     tabs:
       -
         elements:
           -
-            fieldUid: e6ce5cf4-7cd5-463c-9f72-6be457425003
+            fieldUid: e6ce5cf4-7cd5-463c-9f72-6be457425003 # Afbeelding
             instructions: null
             label: null
             required: true
@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 634ff73b-0538-4d66-aa2c-478bd994d222
+            fieldUid: 634ff73b-0538-4d66-aa2c-478bd994d222 # Titel
             instructions: null
             label: null
             required: true
@@ -23,7 +23,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: ad453c37-14e0-4676-a70a-a4d763f31703
+            fieldUid: ad453c37-14e0-4676-a70a-a4d763f31703 # Quote
             instructions: null
             label: null
             required: false
@@ -32,7 +32,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: af8feec0-045e-43b9-b0fa-7dbaae915564
+            fieldUid: af8feec0-045e-43b9-b0fa-7dbaae915564 # Tekst
             instructions: null
             label: null
             required: true
@@ -43,7 +43,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  634ff73b-0538-4d66-aa2c-478bd994d222:
+  634ff73b-0538-4d66-aa2c-478bd994d222: # Titel
     contentColumnType: text
     fieldGroup: null
     handle: previewTitle
@@ -62,7 +62,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  ad453c37-14e0-4676-a70a-a4d763f31703:
+  ad453c37-14e0-4676-a70a-a4d763f31703: # Quote
     contentColumnType: text
     fieldGroup: null
     handle: previewQuote
@@ -81,7 +81,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  af8feec0-045e-43b9-b0fa-7dbaae915564:
+  af8feec0-045e-43b9-b0fa-7dbaae915564: # Tekst
     contentColumnType: text
     fieldGroup: null
     handle: previewText
@@ -109,7 +109,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
-  e6ce5cf4-7cd5-463c-9f72-6be457425003:
+  e6ce5cf4-7cd5-463c-9f72-6be457425003: # Afbeelding
     contentColumnType: string
     fieldGroup: null
     handle: previewImage
@@ -121,7 +121,7 @@ fields:
       allowUploads: true
       allowedKinds:
         - image
-      defaultUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1'
+      defaultUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1' # Header
       defaultUploadLocationSubpath: ''
       limit: '1'
       localizeRelations: false
@@ -131,7 +131,7 @@ fields:
       showSiteMenu: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
-      singleUploadLocationSource: 'volume:4176b138-ab46-48c2-ba93-8f81e9d3c0df'
+      singleUploadLocationSource: 'volume:4176b138-ab46-48c2-ba93-8f81e9d3c0df' # Algemeen
       singleUploadLocationSubpath: ''
       source: null
       sources: '*'

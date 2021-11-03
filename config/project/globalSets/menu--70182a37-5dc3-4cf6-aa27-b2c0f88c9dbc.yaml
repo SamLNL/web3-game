@@ -4,7 +4,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: 1944d704-19fe-46d3-8432-1822b34264b1
+            fieldUid: 1944d704-19fe-46d3-8432-1822b34264b1 # Menu - Leerlingvolgsysteem
             instructions: null
             label: null
             required: false
@@ -13,7 +13,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 8c542cd3-0d01-4457-a609-6088b8bf698c
+            fieldUid: 8c542cd3-0d01-4457-a609-6088b8bf698c # Menu - Tickets
             instructions: null
             label: null
             required: '0'

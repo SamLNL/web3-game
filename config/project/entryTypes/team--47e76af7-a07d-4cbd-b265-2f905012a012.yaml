@@ -27,7 +27,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 841e980e-772f-4488-ab21-40a04723fa01
+            fieldUid: 841e980e-772f-4488-ab21-40a04723fa01 # Team - Afbeelding
             instructions: ''
             label: ''
             required: '1'
@@ -36,7 +36,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 20332970-ad6c-4ea7-a66e-9e9f5de929bb
+            fieldUid: 20332970-ad6c-4ea7-a66e-9e9f5de929bb # Team - Functie
             instructions: ''
             label: ''
             required: '1'
@@ -49,7 +49,7 @@ fieldLayouts:
 handle: team
 hasTitleField: true
 name: Team
-section: e4de1f49-863a-4529-a6da-ad7fb32a1ef2
+section: e4de1f49-863a-4529-a6da-ad7fb32a1ef2 # Team
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

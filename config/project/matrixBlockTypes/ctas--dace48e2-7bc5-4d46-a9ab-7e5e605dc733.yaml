@@ -1,11 +1,11 @@
-field: d16c24d1-abfe-4e08-b18c-45bcb368c93f
+field: d16c24d1-abfe-4e08-b18c-45bcb368c93f # Inhoud
 fieldLayouts:
   f17823f7-26df-4c5c-add2-a06e581a3f00:
     tabs:
       -
         elements:
           -
-            fieldUid: 8e1f1a36-a815-49e1-a2ff-e2724c2e94fb
+            fieldUid: 8e1f1a36-a815-49e1-a2ff-e2724c2e94fb # CTA 1
             instructions: null
             label: null
             required: true
@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
-            fieldUid: e5fc7dfa-967e-4ae5-9a09-af8fa830d1f3
+            fieldUid: e5fc7dfa-967e-4ae5-9a09-af8fa830d1f3 # CTA 1 - Micro tekst
             instructions: null
             label: null
             required: false
@@ -23,7 +23,7 @@ fieldLayouts:
             warning: null
             width: 25
           -
-            fieldUid: 853d403c-e5b5-447a-b43e-f818a93b0146
+            fieldUid: 853d403c-e5b5-447a-b43e-f818a93b0146 # CTA 1  - Primair
             instructions: null
             label: null
             required: false
@@ -32,7 +32,7 @@ fieldLayouts:
             warning: null
             width: 25
           -
-            fieldUid: 33ed9965-6c00-4756-8383-a62d32656c91
+            fieldUid: 33ed9965-6c00-4756-8383-a62d32656c91 # CTA 2
             instructions: null
             label: null
             required: false
@@ -41,7 +41,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
-            fieldUid: c952cf55-bb3d-4176-99a3-f1727f3a672d
+            fieldUid: c952cf55-bb3d-4176-99a3-f1727f3a672d # CTA 2 - Micro tekst
             instructions: null
             label: null
             required: false
@@ -50,7 +50,7 @@ fieldLayouts:
             warning: null
             width: 25
           -
-            fieldUid: 61abda2a-4b4f-41b7-860e-43c2dc403591
+            fieldUid: 61abda2a-4b4f-41b7-860e-43c2dc403591 # CTA 2 - Primair
             instructions: null
             label: null
             required: false
@@ -61,7 +61,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  8e1f1a36-a815-49e1-a2ff-e2724c2e94fb:
+  8e1f1a36-a815-49e1-a2ff-e2724c2e94fb: # CTA 1
     contentColumnType: text
     fieldGroup: null
     handle: cta1
@@ -185,7 +185,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: typedlinkfield\fields\LinkField
-  33ed9965-6c00-4756-8383-a62d32656c91:
+  33ed9965-6c00-4756-8383-a62d32656c91: # CTA 2
     contentColumnType: text
     fieldGroup: null
     handle: cta2
@@ -309,7 +309,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: typedlinkfield\fields\LinkField
-  61abda2a-4b4f-41b7-860e-43c2dc403591:
+  61abda2a-4b4f-41b7-860e-43c2dc403591: # CTA 2 - Primair
     contentColumnType: boolean
     fieldGroup: null
     handle: cta2Primair
@@ -323,7 +323,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Lightswitch
-  853d403c-e5b5-447a-b43e-f818a93b0146:
+  853d403c-e5b5-447a-b43e-f818a93b0146: # CTA 1  - Primair
     contentColumnType: boolean
     fieldGroup: null
     handle: cta1Primair
@@ -337,7 +337,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Lightswitch
-  c952cf55-bb3d-4176-99a3-f1727f3a672d:
+  c952cf55-bb3d-4176-99a3-f1727f3a672d: # CTA 2 - Micro tekst
     contentColumnType: text
     fieldGroup: null
     handle: cta2Micro
@@ -356,7 +356,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  e5fc7dfa-967e-4ae5-9a09-af8fa830d1f3:
+  e5fc7dfa-967e-4ae5-9a09-af8fa830d1f3: # CTA 1 - Micro tekst
     contentColumnType: text
     fieldGroup: null
     handle: cta1Micro

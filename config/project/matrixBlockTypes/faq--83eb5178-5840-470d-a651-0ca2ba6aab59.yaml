@@ -1,11 +1,11 @@
-field: d16c24d1-abfe-4e08-b18c-45bcb368c93f
+field: d16c24d1-abfe-4e08-b18c-45bcb368c93f # Inhoud
 fieldLayouts:
   4b903267-5510-4867-b0a5-905962416273:
     tabs:
       -
         elements:
           -
-            fieldUid: 4ea7444c-b251-489a-af81-91290d313091
+            fieldUid: 4ea7444c-b251-489a-af81-91290d313091 # Tekst
             instructions: null
             label: null
             required: false
@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 34aa52c5-65c1-4806-9311-be0039e4d0e9
+            fieldUid: 34aa52c5-65c1-4806-9311-be0039e4d0e9 # Vragen
             instructions: null
             label: null
             required: true
@@ -23,7 +23,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 7f7cdc6f-38cb-406e-836e-aee3faec6df2
+            fieldUid: 7f7cdc6f-38cb-406e-836e-aee3faec6df2 # CTA
             instructions: null
             label: null
             required: false
@@ -32,7 +32,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 07352ea8-c711-4288-b354-fd105c7e1e3b
+            fieldUid: 07352ea8-c711-4288-b354-fd105c7e1e3b # CTA - micro tekst
             instructions: null
             label: null
             required: false
@@ -43,7 +43,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  4ea7444c-b251-489a-af81-91290d313091:
+  4ea7444c-b251-489a-af81-91290d313091: # Tekst
     contentColumnType: text
     fieldGroup: null
     handle: text
@@ -71,7 +71,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
-  7f7cdc6f-38cb-406e-836e-aee3faec6df2:
+  7f7cdc6f-38cb-406e-836e-aee3faec6df2: # CTA
     contentColumnType: text
     fieldGroup: null
     handle: cta
@@ -195,7 +195,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: typedlinkfield\fields\LinkField
-  34aa52c5-65c1-4806-9311-be0039e4d0e9:
+  34aa52c5-65c1-4806-9311-be0039e4d0e9: # Vragen
     contentColumnType: string
     fieldGroup: null
     handle: questions
@@ -210,14 +210,14 @@ fields:
       showSiteMenu: true
       source: null
       sources:
-        - 'section:138fd91c-e286-44c3-823f-e2380e31883c'
+        - 'section:138fd91c-e286-44c3-823f-e2380e31883c' # FAQ
       targetSiteId: null
       validateRelatedElements: false
       viewMode: null
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Entries
-  07352ea8-c711-4288-b354-fd105c7e1e3b:
+  07352ea8-c711-4288-b354-fd105c7e1e3b: # CTA - micro tekst
     contentColumnType: text
     fieldGroup: null
     handle: ctaMicro

@@ -15,7 +15,7 @@ previewTargets:
         - '1'
 propagationMethod: all
 siteSettings:
-  521def3a-78c9-4e7b-8cb5-40b18c2c0705:
+  521def3a-78c9-4e7b-8cb5-40b18c2c0705: # Biljoenbad
     enabledByDefault: true
     hasUrls: true
     template: activities/overview

@@ -1,11 +1,11 @@
-field: d16c24d1-abfe-4e08-b18c-45bcb368c93f
+field: d16c24d1-abfe-4e08-b18c-45bcb368c93f # Inhoud
 fieldLayouts:
   e1c23342-b0a3-4fa5-9f30-f6181b601ca6:
     tabs:
       -
         elements:
           -
-            fieldUid: 26b5c858-2635-4e8c-8063-3cbf12e4f122
+            fieldUid: 26b5c858-2635-4e8c-8063-3cbf12e4f122 # Tekst
             instructions: null
             label: null
             required: true
@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: afe6edf4-4a10-4b5c-a5a9-3011b9f07101
+            fieldUid: afe6edf4-4a10-4b5c-a5a9-3011b9f07101 # Afbeelding
             instructions: null
             label: null
             required: true
@@ -23,7 +23,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 2e97d507-8360-45a3-b8b2-7219954a9301
+            fieldUid: 2e97d507-8360-45a3-b8b2-7219954a9301 # CTA1
             instructions: null
             label: null
             required: false
@@ -32,7 +32,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 11c18374-6b81-42dc-b7c3-52a5b4ccce8a
+            fieldUid: 11c18374-6b81-42dc-b7c3-52a5b4ccce8a # CTA1 - micro tekst
             instructions: null
             label: null
             required: false
@@ -41,7 +41,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 1a4e294f-a7dd-49a6-b9ac-2b0fe65e31ca
+            fieldUid: 1a4e294f-a7dd-49a6-b9ac-2b0fe65e31ca # CTA2
             instructions: null
             label: null
             required: false
@@ -50,7 +50,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 5bf1e76b-7ad0-43de-aa24-b8965476fad8
+            fieldUid: 5bf1e76b-7ad0-43de-aa24-b8965476fad8 # CTA2 - micro tekst
             instructions: null
             label: null
             required: false
@@ -61,7 +61,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  1a4e294f-a7dd-49a6-b9ac-2b0fe65e31ca:
+  1a4e294f-a7dd-49a6-b9ac-2b0fe65e31ca: # CTA2
     contentColumnType: text
     fieldGroup: null
     handle: cta2
@@ -185,7 +185,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: typedlinkfield\fields\LinkField
-  2e97d507-8360-45a3-b8b2-7219954a9301:
+  2e97d507-8360-45a3-b8b2-7219954a9301: # CTA1
     contentColumnType: text
     fieldGroup: null
     handle: cta1
@@ -311,7 +311,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: typedlinkfield\fields\LinkField
-  5bf1e76b-7ad0-43de-aa24-b8965476fad8:
+  5bf1e76b-7ad0-43de-aa24-b8965476fad8: # CTA2 - micro tekst
     contentColumnType: text
     fieldGroup: null
     handle: cta2Micro
@@ -330,7 +330,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  11c18374-6b81-42dc-b7c3-52a5b4ccce8a:
+  11c18374-6b81-42dc-b7c3-52a5b4ccce8a: # CTA1 - micro tekst
     contentColumnType: text
     fieldGroup: null
     handle: cta1Micro
@@ -349,7 +349,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  26b5c858-2635-4e8c-8063-3cbf12e4f122:
+  26b5c858-2635-4e8c-8063-3cbf12e4f122: # Tekst
     contentColumnType: text
     fieldGroup: null
     handle: text
@@ -377,7 +377,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
-  afe6edf4-4a10-4b5c-a5a9-3011b9f07101:
+  afe6edf4-4a10-4b5c-a5a9-3011b9f07101: # Afbeelding
     contentColumnType: string
     fieldGroup: null
     handle: image
@@ -389,7 +389,7 @@ fields:
       allowUploads: true
       allowedKinds:
         - image
-      defaultUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1'
+      defaultUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1' # Header
       defaultUploadLocationSubpath: ''
       limit: '1'
       localizeRelations: false
@@ -399,7 +399,7 @@ fields:
       showSiteMenu: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
-      singleUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1'
+      singleUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1' # Header
       singleUploadLocationSubpath: ''
       source: null
       sources: '*'

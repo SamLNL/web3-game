@@ -1,11 +1,11 @@
-field: d16c24d1-abfe-4e08-b18c-45bcb368c93f
+field: d16c24d1-abfe-4e08-b18c-45bcb368c93f # Inhoud
 fieldLayouts:
   71893719-2b48-4d48-af58-3b94683a246a:
     tabs:
       -
         elements:
           -
-            fieldUid: af1ecf9f-e8a5-4aac-9ba8-191015443a7c
+            fieldUid: af1ecf9f-e8a5-4aac-9ba8-191015443a7c # Tekst
             instructions: null
             label: null
             required: false
@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 34a70bbd-9aba-45a1-82f4-bcf7a1cc1272
+            fieldUid: 34a70bbd-9aba-45a1-82f4-bcf7a1cc1272 # Blokken
             instructions: null
             label: null
             required: false
@@ -25,7 +25,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  34a70bbd-9aba-45a1-82f4-bcf7a1cc1272:
+  34a70bbd-9aba-45a1-82f4-bcf7a1cc1272: # Blokken
     contentColumnType: string
     fieldGroup: null
     handle: blocks
@@ -36,42 +36,42 @@ fields:
       columns:
         __assoc__:
           -
-            - be6d8db1-6e50-4334-987c-ab524c903c0f
+            - be6d8db1-6e50-4334-987c-ab524c903c0f # Titel
             -
               __assoc__:
                 -
                   - width
                   - ''
           -
-            - f3ecab75-c1e2-4d45-933e-171a328e5a3b
+            - f3ecab75-c1e2-4d45-933e-171a328e5a3b # Subtitel
             -
               __assoc__:
                 -
                   - width
                   - ''
           -
-            - 38af146a-0d6b-417d-abe2-dcc73f0bb167
+            - 38af146a-0d6b-417d-abe2-dcc73f0bb167 # Hoofdcontent
             -
               __assoc__:
                 -
                   - width
                   - ''
           -
-            - 1fc21d5a-9daa-455b-8adb-f1f250beecb5
+            - 1fc21d5a-9daa-455b-8adb-f1f250beecb5 # Subcontent
             -
               __assoc__:
                 -
                   - width
                   - ''
           -
-            - c6bfc555-2539-4fb7-8c6b-1decfe5a7983
+            - c6bfc555-2539-4fb7-8c6b-1decfe5a7983 # CTA
             -
               __assoc__:
                 -
                   - width
                   - ''
           -
-            - 3251a7c0-65ee-4e96-810f-564919de6cf6
+            - 3251a7c0-65ee-4e96-810f-564919de6cf6 # CTA - micro tekst
             -
               __assoc__:
                 -
@@ -88,7 +88,7 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: verbb\supertable\fields\SuperTableField
-  af1ecf9f-e8a5-4aac-9ba8-191015443a7c:
+  af1ecf9f-e8a5-4aac-9ba8-191015443a7c: # Tekst
     contentColumnType: text
     fieldGroup: null
     handle: text

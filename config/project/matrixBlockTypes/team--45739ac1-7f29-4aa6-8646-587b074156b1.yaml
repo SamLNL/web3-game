@@ -1,11 +1,11 @@
-field: d16c24d1-abfe-4e08-b18c-45bcb368c93f
+field: d16c24d1-abfe-4e08-b18c-45bcb368c93f # Inhoud
 fieldLayouts:
   70107fba-cb30-425c-ac9a-52c6cbb07761:
     tabs:
       -
         elements:
           -
-            fieldUid: 867a840b-ade9-4fd1-8402-6dcd31910941
+            fieldUid: 867a840b-ade9-4fd1-8402-6dcd31910941 # Tekst
             instructions: null
             label: null
             required: false
@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 7316c0df-321c-4d4c-bad3-47a0c0b8dac9
+            fieldUid: 7316c0df-321c-4d4c-bad3-47a0c0b8dac9 # Team
             instructions: null
             label: null
             required: true
@@ -25,7 +25,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  867a840b-ade9-4fd1-8402-6dcd31910941:
+  867a840b-ade9-4fd1-8402-6dcd31910941: # Tekst
     contentColumnType: text
     fieldGroup: null
     handle: text
@@ -53,7 +53,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
-  7316c0df-321c-4d4c-bad3-47a0c0b8dac9:
+  7316c0df-321c-4d4c-bad3-47a0c0b8dac9: # Team
     contentColumnType: string
     fieldGroup: null
     handle: team
@@ -68,7 +68,7 @@ fields:
       showSiteMenu: true
       source: null
       sources:
-        - 'section:e4de1f49-863a-4529-a6da-ad7fb32a1ef2'
+        - 'section:e4de1f49-863a-4529-a6da-ad7fb32a1ef2' # Team
       targetSiteId: null
       validateRelatedElements: false
       viewMode: null

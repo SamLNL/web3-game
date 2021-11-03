@@ -1,11 +1,11 @@
-field: a460ba7f-4818-4183-b551-28d816e087db
+field: a460ba7f-4818-4183-b551-28d816e087db # Tarieven - Tickets
 fieldLayouts:
   fabc1b88-fa1c-40bf-988f-0c553c2776bf:
     tabs:
       -
         elements:
           -
-            fieldUid: 1326cc83-fe6a-49c4-8309-60baabe0c674
+            fieldUid: 1326cc83-fe6a-49c4-8309-60baabe0c674 # Titel
             instructions: null
             label: null
             required: true
@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: f720f988-3ad1-42f7-b0e1-6cf094d2e939
+            fieldUid: f720f988-3ad1-42f7-b0e1-6cf094d2e939 # Subtitel
             instructions: null
             label: null
             required: false
@@ -23,7 +23,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 576ee5c3-9e4e-4ab8-a1a6-40ba3aa07167
+            fieldUid: 576ee5c3-9e4e-4ab8-a1a6-40ba3aa07167 # Kleur
             instructions: null
             label: null
             required: false
@@ -32,7 +32,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 2cad35cf-b344-433a-bf7d-2625f8be0c67
+            fieldUid: 2cad35cf-b344-433a-bf7d-2625f8be0c67 # Prijs
             instructions: null
             label: null
             required: true
@@ -41,7 +41,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 0d1f7f70-9e1a-4b5b-82b3-ea80e7e20143
+            fieldUid: 0d1f7f70-9e1a-4b5b-82b3-ea80e7e20143 # Subprijs
             instructions: null
             label: null
             required: false
@@ -50,7 +50,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: c0aa99af-2247-4512-935d-c4e48c014d40
+            fieldUid: c0aa99af-2247-4512-935d-c4e48c014d40 # USP's
             instructions: null
             label: null
             required: false
@@ -59,7 +59,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 2c7938d0-1f35-455e-93a2-e4f9776322c9
+            fieldUid: 2c7938d0-1f35-455e-93a2-e4f9776322c9 # CTA
             instructions: null
             label: null
             required: true
@@ -68,7 +68,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 9f91f48a-6042-4608-8ba3-5c93b4b4de87
+            fieldUid: 9f91f48a-6042-4608-8ba3-5c93b4b4de87 # CTA - micro tekst
             instructions: null
             label: null
             required: false
@@ -79,7 +79,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  0d1f7f70-9e1a-4b5b-82b3-ea80e7e20143:
+  0d1f7f70-9e1a-4b5b-82b3-ea80e7e20143: # Subprijs
     contentColumnType: text
     fieldGroup: null
     handle: subPrice
@@ -98,7 +98,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  2c7938d0-1f35-455e-93a2-e4f9776322c9:
+  2c7938d0-1f35-455e-93a2-e4f9776322c9: # CTA
     contentColumnType: text
     fieldGroup: null
     handle: cta
@@ -222,7 +222,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: typedlinkfield\fields\LinkField
-  2cad35cf-b344-433a-bf7d-2625f8be0c67:
+  2cad35cf-b344-433a-bf7d-2625f8be0c67: # Prijs
     contentColumnType: text
     fieldGroup: null
     handle: price
@@ -241,7 +241,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  9f91f48a-6042-4608-8ba3-5c93b4b4de87:
+  9f91f48a-6042-4608-8ba3-5c93b4b4de87: # CTA - micro tekst
     contentColumnType: text
     fieldGroup: null
     handle: ctaMicro
@@ -260,7 +260,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  576ee5c3-9e4e-4ab8-a1a6-40ba3aa07167:
+  576ee5c3-9e4e-4ab8-a1a6-40ba3aa07167: # Kleur
     contentColumnType: string
     fieldGroup: null
     handle: color
@@ -294,7 +294,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\RadioButtons
-  1326cc83-fe6a-49c4-8309-60baabe0c674:
+  1326cc83-fe6a-49c4-8309-60baabe0c674: # Titel
     contentColumnType: text
     fieldGroup: null
     handle: heading
@@ -313,7 +313,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  c0aa99af-2247-4512-935d-c4e48c014d40:
+  c0aa99af-2247-4512-935d-c4e48c014d40: # USP's
     contentColumnType: text
     fieldGroup: null
     handle: usps
@@ -341,7 +341,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
-  f720f988-3ad1-42f7-b0e1-6cf094d2e939:
+  f720f988-3ad1-42f7-b0e1-6cf094d2e939: # Subtitel
     contentColumnType: text
     fieldGroup: null
     handle: subHeading

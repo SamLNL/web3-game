@@ -1,11 +1,11 @@
-field: d16c24d1-abfe-4e08-b18c-45bcb368c93f
+field: d16c24d1-abfe-4e08-b18c-45bcb368c93f # Inhoud
 fieldLayouts:
   d20b0b7d-09ad-40f6-9fe7-43c9dd07f433:
     tabs:
       -
         elements:
           -
-            fieldUid: 60ba4af7-9102-49ee-bdde-8f14a6e03c71
+            fieldUid: 60ba4af7-9102-49ee-bdde-8f14a6e03c71 # Tekst
             instructions: null
             label: null
             required: false
@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: ab043be5-9526-4503-b7f2-d7d8e3c5bc7d
+            fieldUid: ab043be5-9526-4503-b7f2-d7d8e3c5bc7d # Toon voorzieningen
             instructions: null
             label: null
             required: false
@@ -23,7 +23,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: c8662e4e-330e-469b-9334-72665e8bd5a4
+            fieldUid: c8662e4e-330e-469b-9334-72665e8bd5a4 # CTA
             instructions: null
             label: null
             required: false
@@ -34,7 +34,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  60ba4af7-9102-49ee-bdde-8f14a6e03c71:
+  60ba4af7-9102-49ee-bdde-8f14a6e03c71: # Tekst
     contentColumnType: text
     fieldGroup: null
     handle: text
@@ -62,7 +62,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
-  ab043be5-9526-4503-b7f2-d7d8e3c5bc7d:
+  ab043be5-9526-4503-b7f2-d7d8e3c5bc7d: # Toon voorzieningen
     contentColumnType: boolean
     fieldGroup: null
     handle: showServices
@@ -76,7 +76,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Lightswitch
-  c8662e4e-330e-469b-9334-72665e8bd5a4:
+  c8662e4e-330e-469b-9334-72665e8bd5a4: # CTA
     contentColumnType: text
     fieldGroup: null
     handle: cta

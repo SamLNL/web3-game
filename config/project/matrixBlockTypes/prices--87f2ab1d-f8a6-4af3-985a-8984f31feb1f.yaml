@@ -1,11 +1,11 @@
-field: d16c24d1-abfe-4e08-b18c-45bcb368c93f
+field: d16c24d1-abfe-4e08-b18c-45bcb368c93f # Inhoud
 fieldLayouts:
   b1b8f2e3-8568-4c5c-bdf3-4e8b1467fcce:
     tabs:
       -
         elements:
           -
-            fieldUid: 787104e2-3595-4d9d-9499-40e8b4067201
+            fieldUid: 787104e2-3595-4d9d-9499-40e8b4067201 # Tekst
             instructions: null
             label: null
             required: false
@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: ad105665-a7e7-4cb9-b341-ea251b579a1f
+            fieldUid: ad105665-a7e7-4cb9-b341-ea251b579a1f # Toon tarieven
             instructions: null
             label: null
             required: false
@@ -25,7 +25,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  787104e2-3595-4d9d-9499-40e8b4067201:
+  787104e2-3595-4d9d-9499-40e8b4067201: # Tekst
     contentColumnType: text
     fieldGroup: null
     handle: text
@@ -53,7 +53,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
-  ad105665-a7e7-4cb9-b341-ea251b579a1f:
+  ad105665-a7e7-4cb9-b341-ea251b579a1f: # Toon tarieven
     contentColumnType: boolean
     fieldGroup: null
     handle: showPrices

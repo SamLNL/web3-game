@@ -1,11 +1,11 @@
-field: d16c24d1-abfe-4e08-b18c-45bcb368c93f
+field: d16c24d1-abfe-4e08-b18c-45bcb368c93f # Inhoud
 fieldLayouts:
   fbb450b9-a2b5-4ba7-9b9c-3252fbbda6bf:
     tabs:
       -
         elements:
           -
-            fieldUid: 6a956667-50c6-45d4-abb1-9585ab9cbdd9
+            fieldUid: 6a956667-50c6-45d4-abb1-9585ab9cbdd9 # Tekst
             instructions: null
             label: null
             required: false
@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 3c84b104-72c4-48a0-844a-9106c2d67158
+            fieldUid: 3c84b104-72c4-48a0-844a-9106c2d67158 # Toon tabel
             instructions: null
             label: null
             required: false
@@ -25,7 +25,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  3c84b104-72c4-48a0-844a-9106c2d67158:
+  3c84b104-72c4-48a0-844a-9106c2d67158: # Toon tabel
     contentColumnType: boolean
     fieldGroup: null
     handle: openingHours
@@ -39,7 +39,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Lightswitch
-  6a956667-50c6-45d4-abb1-9585ab9cbdd9:
+  6a956667-50c6-45d4-abb1-9585ab9cbdd9: # Tekst
     contentColumnType: text
     fieldGroup: null
     handle: text

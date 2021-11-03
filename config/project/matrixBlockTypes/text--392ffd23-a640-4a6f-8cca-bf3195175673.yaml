@@ -1,11 +1,11 @@
-field: d16c24d1-abfe-4e08-b18c-45bcb368c93f
+field: d16c24d1-abfe-4e08-b18c-45bcb368c93f # Inhoud
 fieldLayouts:
   ceee3909-477c-4944-a25a-0a086675b42c:
     tabs:
       -
         elements:
           -
-            fieldUid: 9a520f67-974e-4950-926d-12a892736682
+            fieldUid: 9a520f67-974e-4950-926d-12a892736682 # Tekst
             instructions: null
             label: null
             required: true
@@ -16,7 +16,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  9a520f67-974e-4950-926d-12a892736682:
+  9a520f67-974e-4950-926d-12a892736682: # Tekst
     contentColumnType: text
     fieldGroup: null
     handle: text

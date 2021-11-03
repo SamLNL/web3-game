@@ -1,5 +1,5 @@
 contentColumnType: text
-fieldGroup: df78e26d-9aa7-49a4-bd8a-75980ddba39d
+fieldGroup: df78e26d-9aa7-49a4-bd8a-75980ddba39d # Rooster en tarieven
 handle: openingHoursText
 instructions: ''
 name: 'Openingstijden - Tekst'

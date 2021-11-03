@@ -27,7 +27,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 3a0f8407-4263-4449-9996-e53070168b78
+            fieldUid: 3a0f8407-4263-4449-9996-e53070168b78 # Header afbeelding
             instructions: null
             label: null
             required: false
@@ -36,7 +36,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: d16c24d1-abfe-4e08-b18c-45bcb368c93f
+            fieldUid: d16c24d1-abfe-4e08-b18c-45bcb368c93f # Inhoud
             instructions: null
             label: null
             required: false
@@ -49,7 +49,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: 682ecbc3-2252-4e4d-ac77-decc7ed47b7b
+            fieldUid: 682ecbc3-2252-4e4d-ac77-decc7ed47b7b # Contact blok - Titel
             instructions: null
             label: null
             required: false
@@ -58,7 +58,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 34fc4e87-8df5-481d-bfad-75b58bf17d76
+            fieldUid: 34fc4e87-8df5-481d-bfad-75b58bf17d76 # Contact blok - Toon
             instructions: null
             label: null
             required: false
@@ -71,7 +71,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: 8d69ebf3-f317-4814-846f-b7f4fe0494b1
+            fieldUid: 8d69ebf3-f317-4814-846f-b7f4fe0494b1 # SEO
             instructions: null
             label: null
             required: false
@@ -84,7 +84,7 @@ fieldLayouts:
 handle: contentpage
 hasTitleField: true
 name: Contentpagina
-section: b541f192-3512-4391-af9d-aaad78edfeb5
+section: b541f192-3512-4391-af9d-aaad78edfeb5 # Contentpagina
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

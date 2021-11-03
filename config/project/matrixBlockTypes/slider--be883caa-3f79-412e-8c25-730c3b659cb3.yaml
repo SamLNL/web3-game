@@ -1,11 +1,11 @@
-field: d16c24d1-abfe-4e08-b18c-45bcb368c93f
+field: d16c24d1-abfe-4e08-b18c-45bcb368c93f # Inhoud
 fieldLayouts:
   6dc945e3-81df-4ca9-b312-d228156d6af8:
     tabs:
       -
         elements:
           -
-            fieldUid: b418fe90-7e19-4457-a1b0-4a975cdc9f4d
+            fieldUid: b418fe90-7e19-4457-a1b0-4a975cdc9f4d # Tekst
             instructions: null
             label: null
             required: false
@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 670a5a79-e711-4d6c-83f9-e57598d510fc
+            fieldUid: 670a5a79-e711-4d6c-83f9-e57598d510fc # Afbeeldingen
             instructions: null
             label: null
             required: true
@@ -25,7 +25,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  670a5a79-e711-4d6c-83f9-e57598d510fc:
+  670a5a79-e711-4d6c-83f9-e57598d510fc: # Afbeeldingen
     contentColumnType: string
     fieldGroup: null
     handle: images
@@ -37,7 +37,7 @@ fields:
       allowUploads: true
       allowedKinds:
         - image
-      defaultUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1'
+      defaultUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1' # Header
       defaultUploadLocationSubpath: ''
       limit: ''
       localizeRelations: false
@@ -47,7 +47,7 @@ fields:
       showSiteMenu: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
-      singleUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1'
+      singleUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1' # Header
       singleUploadLocationSubpath: ''
       source: null
       sources: '*'
@@ -58,7 +58,7 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Assets
-  b418fe90-7e19-4457-a1b0-4a975cdc9f4d:
+  b418fe90-7e19-4457-a1b0-4a975cdc9f4d: # Tekst
     contentColumnType: text
     fieldGroup: null
     handle: text

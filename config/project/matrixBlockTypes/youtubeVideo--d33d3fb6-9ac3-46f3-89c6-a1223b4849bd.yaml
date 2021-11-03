@@ -1,11 +1,11 @@
-field: d16c24d1-abfe-4e08-b18c-45bcb368c93f
+field: d16c24d1-abfe-4e08-b18c-45bcb368c93f # Inhoud
 fieldLayouts:
   657542ad-6acc-4f07-a802-bfb5a315dac5:
     tabs:
       -
         elements:
           -
-            fieldUid: 406399f3-6c2e-44d6-bd99-d6d3a0719fbb
+            fieldUid: 406399f3-6c2e-44d6-bd99-d6d3a0719fbb # Youtube link
             instructions: null
             label: null
             required: true
@@ -16,7 +16,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  406399f3-6c2e-44d6-bd99-d6d3a0719fbb:
+  406399f3-6c2e-44d6-bd99-d6d3a0719fbb: # Youtube link
     contentColumnType: string(255)
     fieldGroup: null
     handle: youtubeLink

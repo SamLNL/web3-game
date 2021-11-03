@@ -1,11 +1,11 @@
-field: d16c24d1-abfe-4e08-b18c-45bcb368c93f
+field: d16c24d1-abfe-4e08-b18c-45bcb368c93f # Inhoud
 fieldLayouts:
   20a16d77-3d07-4e73-b291-b60d15edddbd:
     tabs:
       -
         elements:
           -
-            fieldUid: e537099d-d15c-43f3-95ad-646f5d584892
+            fieldUid: e537099d-d15c-43f3-95ad-646f5d584892 # Mededeling
             instructions: null
             label: null
             required: true
@@ -16,7 +16,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  e537099d-d15c-43f3-95ad-646f5d584892:
+  e537099d-d15c-43f3-95ad-646f5d584892: # Mededeling
     contentColumnType: text
     fieldGroup: null
     handle: headsUp

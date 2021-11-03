@@ -1,5 +1,5 @@
 contentColumnType: string
-fieldGroup: 3e44ea8d-bbc2-4a77-99e7-bd0158f2794c
+fieldGroup: 3e44ea8d-bbc2-4a77-99e7-bd0158f2794c # Header
 handle: headerImage
 instructions: ''
 name: 'Header afbeelding'
@@ -9,7 +9,7 @@ settings:
   allowUploads: true
   allowedKinds:
     - image
-  defaultUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1'
+  defaultUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1' # Header
   defaultUploadLocationSubpath: ''
   limit: '1'
   localizeRelations: false
@@ -19,7 +19,7 @@ settings:
   showSiteMenu: true
   showUnpermittedFiles: false
   showUnpermittedVolumes: false
-  singleUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1'
+  singleUploadLocationSource: 'volume:6576af27-2464-42a5-93ba-12b804de04f1' # Header
   singleUploadLocationSubpath: ''
   source: null
   sources: '*'
