@@ -35,10 +35,7 @@
   ],
   "config": {
     "sort-packages": true,
-    "optimize-autoloader": true,
-    "platform": {
-      "php": "7.4.16"
-    }
+    "optimize-autoloader": true
   },
   "scripts": {
     "post-root-package-install": [
