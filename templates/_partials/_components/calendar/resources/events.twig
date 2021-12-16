@@ -10,7 +10,8 @@
 {% set finalResources = [] %}
 
 {% set events = craft.calendar.events({
-  calendar: calendars
+  calendar: calendars,
+  rangeStart: "2 months ago",
 }).all() %}
 {% for event in events %}
     {% set eventResource = {
