@@ -32,8 +32,6 @@ const copyVectors = () => {
     )
     .on('error', errorHandler)
     .pipe(gulp.dest(vectorDist))
-    .pipe($.size({ gzip: true, showFiles: true }))
-    .pipe(gulp.dest(pkg.paths.templates.inlineSvg));
 };
 
 gulp.task('copy:svg-single', copyVectors);

@@ -1,9 +1,0 @@
-handle: mainNav
-instructions: ''
-maxNodes: ''
-name: Hoofdmenu
-propagateNodes: false
-sortOrder: 1
-structure:
-  maxLevels: '2'
-  uid: 69cffc8b-74cc-40dc-a2f1-08e024bac4f0

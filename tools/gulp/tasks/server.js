@@ -12,7 +12,7 @@ const serverTask = (cb) => {
     open: false,
     logPrefix: 'DFS',
     proxy: {
-      target: 'biljoenbad.loc',
+      target: 'web3-game.test',
     },
   });
 
@@ -33,7 +33,7 @@ const serverTask = (cb) => {
     }
   });
 
-  browserSync.watch(`${pkg.paths.templates.base}**/*.{html,htm,twig}`, (event) => {
+  browserSync.watch(`${pkg.paths.dist.base}*.html`, (event) => {
     if (event === 'change') {
       browserSync.reload();
     }

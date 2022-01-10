@@ -4,12 +4,18 @@ const $ = require('../lib/loadPlugins');
 
 // tasks
 require('./server');
+const browserSync = require('browser-sync').create();
+
+function reload(done) {
+  browserSync.reload();
+  done();
+}
 
 const watchTask = () => {
   $.fancyLog('👀 watching files for changes');
 
   // watch css
-  gulp.watch([pkg.paths.src.scss + '**/*.scss', pkg.paths.src.components + '**/*.scss'], gulp.series('compile:styles'));
+  gulp.watch([pkg.paths.src.scss + '**/*.scss'], gulp.series('compile:styles'));
 
   // watch images/svgs
   gulp.watch(
@@ -17,13 +23,12 @@ const watchTask = () => {
     gulp.series('optimize:images')
   );
   gulp.watch(`${pkg.paths.src.images.svg.single}**/*`, gulp.series('create:svg'));
-  gulp.watch(`${pkg.paths.src.images.svg.sprite}**/*`, gulp.series('create:svg-sprite'));
 
   // watch js
   gulp.watch([pkg.paths.src.js + '**/*.js', pkg.paths.src.components + '**/*.js'], gulp.series('compile:javascript'));
 
   // watch templates
-  // gulp.watch([pkg.paths.templates.base + '**/*.{html,htm,twig}'], $.browserSync.reload);
+  gulp.watch(pkg.paths.dist.base + '*.html', gulp.series('compile:styles'));
 };
 
 gulp.task('watch', gulp.series('server', watchTask));

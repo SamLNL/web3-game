@@ -1,6 +1,0 @@
-siteUid: null
-sortOrder: 2
-template: _partials/_components/calendar/resources/calendars.twig
-uriParts:
-  - fullcalendar-calendars
-uriPattern: fullcalendar-calendars

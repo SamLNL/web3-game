@@ -1,9 +1,0 @@
-handle: mainNavSub
-instructions: ''
-maxNodes: ''
-name: 'Hoofdmenu - Submenu'
-propagateNodes: false
-sortOrder: 3
-structure:
-  maxLevels: '1'
-  uid: 4a781743-9f81-4317-b989-c5a9133ee94b

@@ -1,9 +1,0 @@
-handle: footerNavActivities
-instructions: ''
-maxNodes: ''
-name: 'Footermenu - Activiteiten'
-propagateNodes: false
-sortOrder: 4
-structure:
-  maxLevels: '1'
-  uid: 52ddde65-724f-4d3a-be61-2263d9a99b6e

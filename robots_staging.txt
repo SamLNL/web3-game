@@ -1,6 +1,0 @@
-# robots.txt
-Sitemap: /sitemaps.xml
-
-# staging - disallow all
-User-agent: *
-Disallow: /

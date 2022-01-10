@@ -1,9 +1,0 @@
-contentColumnType: integer
-fieldGroup: df78e26d-9aa7-49a4-bd8a-75980ddba39d # Rooster en tarieven
-handle: calendar1
-instructions: ''
-name: 'Kalender - 1'
-searchable: true
-translationKeyFormat: null
-translationMethod: none
-type: Solspace\Calendar\FieldTypes\CalendarFieldType

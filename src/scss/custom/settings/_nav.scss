@@ -1,8 +1,0 @@
-$nav-main-height: 79px;
-$nav-main-height-md: 79px;
-$nav-sub-height-lg: 53px;
-$nav-main-height-lg: 79px;
-
-$nav-height: calc(#{$nav-main-height} - 1px);
-$nav-height-md: calc(#{$nav-main-height-md} - 1px);
-$nav-height-lg: calc(#{$nav-sub-height-lg} + #{$nav-main-height-lg} - 1px);

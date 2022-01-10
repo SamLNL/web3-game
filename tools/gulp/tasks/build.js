@@ -6,8 +6,6 @@ require("./javascript");
 require("./styles");
 require("./clean");
 require("./watch");
-require("./javascriptInline");
-require("./javascriptCopyDist");
 require("./server");
 require("./watch");
 require("./favicons");
@@ -27,8 +25,6 @@ const buildTask = gulp.series(
     "create:svg",
     "optimize:images"
   ),
-  "create:inlineJS",
-  "copy:vendor-javascript",
   "compile:javascript",
   "compile:styles",
   "create:serviceworker",
